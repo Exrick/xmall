@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/../xmall/xmall-parent/pom.xml" />
         <option value="$PROJECT_DIR$/../xmall/xmall-common/pom.xml" />
         <option value="$PROJECT_DIR$/../xmall/xmall-manager/pom.xml" />
+        <option value="$PROJECT_DIR$/../xmall/generatorSqlmapCustom/pom.xml" />
       </list>
     </option>
   </component>

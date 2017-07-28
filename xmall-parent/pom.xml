@@ -226,7 +226,6 @@
                 <artifactId>freemarker</artifactId>
                 <version>${freemarker.version}</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 

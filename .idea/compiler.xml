@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="generatorSqlmapCustom" />
         <module name="xmall-common" />
         <module name="xmall-manager-dao" />
         <module name="xmall-manager-interface" />
@@ -15,6 +16,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="generatorSqlmapCustom" target="1.7" />
       <module name="xmall-common" target="1.7" />
       <module name="xmall-manager" target="1.7" />
       <module name="xmall-manager-dao" target="1.7" />

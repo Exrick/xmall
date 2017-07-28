@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="generatorSqlmapCustom:war exploded">
+    <output-path>$PROJECT_DIR$/../xmall/out/artifacts/generatorSqlmapCustom_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="generatorSqlmapCustom/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="generatorSqlmapCustom" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

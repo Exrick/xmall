@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../xmall/generatorSqlmapCustom/generatorSqlmapCustom.iml" filepath="$PROJECT_DIR$/../xmall/generatorSqlmapCustom/generatorSqlmapCustom.iml" />
       <module fileurl="file://$PROJECT_DIR$/../xmall/xmall-common/xmall-common.iml" filepath="$PROJECT_DIR$/../xmall/xmall-common/xmall-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/../xmall/xmall-manager/xmall-manager.iml" filepath="$PROJECT_DIR$/../xmall/xmall-manager/xmall-manager.iml" />
       <module fileurl="file://$PROJECT_DIR$/../xmall/xmall-manager/xmall-manager-dao/xmall-manager-dao.iml" filepath="$PROJECT_DIR$/../xmall/xmall-manager/xmall-manager-dao/xmall-manager-dao.iml" />
