@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../xmall/xmall-common/xmall-common.iml" filepath="$PROJECT_DIR$/../xmall/xmall-common/xmall-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../xmall/xmall-manager/xmall-manager.iml" filepath="$PROJECT_DIR$/../xmall/xmall-manager/xmall-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../xmall/xmall-manager/xmall-manager-dao/xmall-manager-dao.iml" filepath="$PROJECT_DIR$/../xmall/xmall-manager/xmall-manager-dao/xmall-manager-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../xmall/xmall-manager/xmall-manager-interface/xmall-manager-interface.iml" filepath="$PROJECT_DIR$/../xmall/xmall-manager/xmall-manager-interface/xmall-manager-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../xmall/xmall-manager/xmall-manager-pojo/xmall-manager-pojo.iml" filepath="$PROJECT_DIR$/../xmall/xmall-manager/xmall-manager-pojo/xmall-manager-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../xmall/xmall-manager/xmall-manager-service/xmall-manager-service.iml" filepath="$PROJECT_DIR$/../xmall/xmall-manager/xmall-manager-service/xmall-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../xmall/xmall-manager/xmall-manager-web/xmall-manager-web.iml" filepath="$PROJECT_DIR$/../xmall/xmall-manager/xmall-manager-web/xmall-manager-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../xmall/xmall-parent/xmall-parent.iml" filepath="$PROJECT_DIR$/../xmall/xmall-parent/xmall-parent.iml" />
+    </modules>
+  </component>
+</project>
