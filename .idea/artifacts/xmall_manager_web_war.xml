@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="war" name="xmall-manager-web:war">
-    <output-path>$PROJECT_DIR$/../xmall/xmall-manager/xmall-manager-web/target</output-path>
+    <output-path>$PROJECT_DIR$/xmall-manager-web/target</output-path>
     <root id="archive" name="xmall-manager-web.war">
       <element id="artifact" artifact-name="xmall-manager-web:war exploded" />
     </root>

@@ -16,7 +16,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="generatorSqlmapCustom" target="1.5" />
+      <module name="generatorSqlmapCustom" target="1.7" />
       <module name="xmall-common" target="1.7" />
       <module name="xmall-manager" target="1.7" />
       <module name="xmall-manager-dao" target="1.7" />

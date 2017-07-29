@@ -1,8 +1,9 @@
 package cn.exrick.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class TbContent {
+public class TbContent implements Serializable {
     private Long id;
 
     private Long categoryId;
