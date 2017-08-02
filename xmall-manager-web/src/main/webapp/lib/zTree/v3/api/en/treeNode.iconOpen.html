@@ -1,0 +1,33 @@
+<div class="apiDetail">
+<div>
+	<h2><span>String</span><span class="path">treeNode.</span>iconOpen</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.core</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>URL path of parent node's custom icon when it is expanded.</p>
+			<p class="highlight_red">1. Only parent node support this attribute.</p>
+			<p class="highlight_red">2. This attribute must be used simultaneously with 'iconClose' attribute.</p>
+			<p class="highlight_red">3. If you need to use css to set the custom icon, please set the 'treeNode.iconSkin' attribute.</p>
+			<p>Default: undefined</p>
+		</div>
+	</div>
+	<h3>String Format</h3>
+	<div class="desc">
+	<p>Icon image url can be a relative path or absolute path.</p>
+	<p class="highlight_red">If use a relative path, please note the relationship between icon image and the page, ensure the correct image path.</p>
+	</div>
+	<h3>Examples of treeNode</h3>
+	<h4>1. Set the custom icon</h4>
+	<pre xmlns=""><code>var nodes = [
+	//Only show one icon when it is expanded or collapsed.
+	{ name:"Parent Node 1", icon:"/img/parent.gif"},
+
+	//Show two icons when it is expanded or collapsed.
+	{ name:"Parent Node 2", iconOpen:"/img/open.gif", iconClose:"/img/close.gif"},
+
+	//the custom icon for leaf node
+	{ name:"Leaf Node", icon:"/img/leaf.gif"}
+]</code></pre>
+</div>
+</div>

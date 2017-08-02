@@ -1,0 +1,50 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Function(treeId, treeNodes, targetNode, moveType, isCopy)</span><span class="path">setting.callback.</span>beforeDrop</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.exedit</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Specify callback function to be called before drag-drop of a node, The return value controls the execution of drag-drop callback.</p>
+			<p>Default: null</p>
+			<p class="highlight_red">When a node is dropped, if the drop is not in a valid location, this callback will not be triggered, and will revert to the original position.</p>
+		</div>
+	</div>
+	<h3>Function Parameter Descriptions</h3>
+	<div class="desc">
+	<h4><b>treeId</b><span>String</span></h4>
+	<p>zTree unique identifier: <b class="highlight_red">treeId</b>, the id of the containing tree.</p>
+	<h4 class="topLine"><b>treeNodes</b><span>Array(JSON)</span></h4>
+	<p>A collection of the nodes which has been dragged</p>
+	<p class="highlight_red">The treeNodes which have been dragged, when copying nodes or moving nodes.</p>
+	<h4 class="topLine"><b>targetNode</b><span>JSON</span></h4>
+	<p>JSON data object of the destination node on which treeNodes are being dropped.</p>
+	<p class="highlight_red">If the treeNodes is the root node, the targetNode = null</p>
+	<h4 class="topLine"><b>moveType</b><span>String</span></h4>
+	<p>the relative position of move to the target node</p>
+	<p class="highlight_red">"inner": will be child of targetNode</p>
+	<p class="highlight_red">"prev": will be sibling node, and be in front of targetNode</p>
+	<p class="highlight_red">"next":  will be sibling node, and be behind targetNode</p>
+	<h4 class="topLine"><b>isCopy</b><span>Boolean</span></h4>
+	<p>the flag used to determine if the drop is to copy or move the node</p>
+	<p class="highlight_red">true: copy node; false: move node</p>
+	<h4 class="topLine"><b>Return </b><span>Boolean</span></h4>
+	<p>return true or false</p>
+	<p class="highlight_red">If return false, zTree will restore the dragged nodes, and will not trigger the 'onDrop' callback.</p>
+	</div>
+	<h3>Examples of setting & function</h3>
+	<h4>1. disable to drag nodes to root</h4>
+	<pre xmlns=""><code>function myBeforeDrop(treeId, treeNodes, targetNode, moveType) {
+    return !(targetNode == null || (moveType != "inner" && !targetNode.parentTId));
+};
+var setting = {
+	edit: {
+		enable: true
+	},
+	callback: {
+		beforeDrop: myBeforeDrop
+	}
+};
+......</code></pre>
+</div>
+</div>

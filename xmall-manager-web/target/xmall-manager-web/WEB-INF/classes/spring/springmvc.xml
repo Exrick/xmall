@@ -15,10 +15,13 @@
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
     </bean>
-
+    <!--配置资源映射-->
+    <mvc:resources mapping="/lib/**" location="/lib/"/>
+    <mvc:resources mapping="/static/**" location="/static/"/>
+    <mvc:resources mapping="/temp/**" location="/temp/"/>
     <!-- 引用dubbo服务 -->
     <dubbo:application name="xmall-manager-web"/>
-    <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>
+    <dubbo:registry protocol="zookeeper" address="123.207.121.135:2181"/>
     <dubbo:reference interface="cn.exrick.service.ItemService" id="itemService" />
 
 </beans>

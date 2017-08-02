@@ -14,6 +14,7 @@ cn\exrick\pojo\TbItemParamItemExample.class
 cn\exrick\pojo\TbContentCategory.class
 cn\exrick\pojo\TbUser.class
 cn\exrick\pojo\TbOrderItem.class
+cn\exrick\pojo\DataTablesResult.class
 cn\exrick\pojo\TbOrderExample$GeneratedCriteria.class
 cn\exrick\pojo\TbItemParamExample.class
 cn\exrick\pojo\TbOrderShippingExample.class

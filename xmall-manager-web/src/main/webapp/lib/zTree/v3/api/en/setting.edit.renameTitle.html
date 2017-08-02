@@ -1,0 +1,48 @@
+<div class="apiDetail">
+<div>
+	<h2><span>String / Function(treeId, treeNode)</span><span class="path">setting.edit.</span>renameTitle</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.exedit</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>the title of the rename button DOM. It is valid when <span class="highlight_red">[setting.edit.enable = true & setting.edit.showRenameBtn = true]</span></p>
+			<p>Default: "rename"</p>
+		</div>
+	</div>
+	<h3>String Format</h3>
+	<div class="desc">
+	<p>When the mouse over the rename button, the browser auto pop-up message content.</p>
+	</div>
+	<h3>Function Parameter Descriptions</h3>
+	<div class="desc">
+	<h4><b>treeId</b><span>String</span></h4>
+	<p>zTree unique identifier: <b class="highlight_red">treeId</b>.</p>
+	<h4 class="topLine"><b>treeNode</b><span>JSON</span></h4>
+	<p>JSON data object of the node which show the rename button</p>
+	<h4 class="topLine"><b>Return </b><span>String</span></h4>
+	<p>return value is same as 'String Format'</p>
+	</div>
+	<h3>Examples of setting & function</h3>
+	<h4>1. Set title is 'rename the node' about all the rename button</h4>
+	<pre xmlns=""><code>var setting = {
+	edit: {
+		enable: true,
+		showRenameBtn: true,
+		renameTitle: "rename the node"
+	}
+};
+......</code></pre>
+	<h4>2. Set title is 'rename the parent node' about the parent node, and is 'rename the leaf node' about the leaf node</h4>
+	<pre xmlns=""><code>function setRenameTitle(treeId, treeNode) {
+	return treeNode.isParent ? "rename the parent node":"rename the leaf node";
+}
+var setting = {
+	edit: {
+		enable: true,
+		showRenameBtn: true,
+		renameTitle: setRenameTitle
+	}
+};
+......</code></pre>
+</div>
+</div>

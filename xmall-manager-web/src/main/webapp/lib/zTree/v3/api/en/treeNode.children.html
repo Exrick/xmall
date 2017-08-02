@@ -1,0 +1,35 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Array(JSON)</span><span class="path">treeNode.</span>children</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.core</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>The data collections of node's child nodes.</p>
+			<p class="highlight_red">1. If change the 'children' to other attribute, please set the 'setting.data.key.children' attribute.</p>
+			<p class="highlight_red">2. If you set to use dynamic tree, when a node is expanded which 'isParent' attribute is true and which has no child nodes, zTree will use ajax to get its child nodes.</p>
+			<p>Default: undefined</p>
+		</div>
+	</div>
+	<h3>Array(JSON) Format</h3>
+	<div class="desc">
+	<p>Standard JSON Data object</p>
+	</div>
+	<h3>Examples of treeNode</h3>
+	<h4>1. Use the standard JSON data object.</h4>
+	<pre xmlns=""><code>var nodes = [
+{ "id":1, "name":"test1",
+	children: [
+	{ "id":3, "name":"test3"},
+	{ "id":4, "name":"test4"},
+	{ "id":5, "name":"test5"}
+	]
+},
+{ "id":2, "name":"test2"  }
+]</code></pre>
+	<h4>2. Get the first root node's child nodes</h4>
+	<pre xmlns=""><code>var treeObj = $.fn.zTree.getZTreeObj("tree");
+var nodes = treeObj.getNodes()[0].children;
+</code></pre>
+</div>
+</div>

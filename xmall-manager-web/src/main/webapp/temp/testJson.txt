@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "checkbox": "<input name=\"\" type=\"checkbox\" value=\"\">",
+      "id": 860275,
+      "title": "长虹（CHANGHONG） 3D51C1080i 51英寸 快门式3D智能Android 电视（黑色）",
+      "sellPoint": "智能安卓系统 可自由安装应用程序 <a  target=\"blank\"  href=\"http://sale.jd.com/act/Kt0aHzbU7uR1M.html\">“点击进入长虹新年专场”</a>",
+      "price": 269900,
+      "num": 99999,
+      "barcode": null,
+      "image": "http://image.e3mall.cn/jd/08dabc37342943ffb717632f9ee40685.jpg",
+      "cid": 76,
+      "status": 1,
+      "created": 1425821255000,
+      "updated": 1425821255000,
+      "operation": "<a style=\"text-decoration:none\" onClick=\"product_stop(this,'10001')\" href=\"javascript:;\" title=\"下架\"><i class=\"Hui-iconfont\">&#xe6de;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_edit('产品编辑','product-add.html','10001')\" href=\"javascript:;\" title=\"编辑\"><i class=\"Hui-iconfont\">&#xe6df;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_del(this,'10001')\" href=\"javascript:;\" title=\"删除\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>"
+    }
+  ]
+}

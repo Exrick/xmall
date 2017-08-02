@@ -1,0 +1,28 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Function(checked)</span><span class="path">zTreeObj.</span>getCheckedNodes</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.excheck</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Get the collection of nodes which be checked or unchecked. It is valid when <span class="highlight_red">[setting.check.enable = true]</span></p>
+			<p class="highlight_red">Please use zTree object to executing the method.</p>
+		</div>
+	</div>
+	<h3>Function Parameter Descriptions</h3>
+	<div class="desc">
+	<h4><b>checked</b><span>Boolean</span></h4>
+	<p>checked = true means: get the collection of nodes which be checked</p>
+	<p>checked = false means: get the collection of nodes which be unchecked</p>
+	<p class="highlight_red">If this parameter is omitted, it is same as 'checked = true'</p>
+	<p class="highlight_red">Don't get the nodes which 'nochecked' attribute is true.</p>
+	<h4 class="topLine"><b>Return </b><span>Array(JSON)</span></h4>
+	<p>return the collection of nodes which be checked or unchecked. (Array)</p>
+	</div>
+	<h3>Examples of function</h3>
+	<h4>1. Get the collection of nodes which be checked.</h4>
+	<pre xmlns=""><code>var treeObj = $.fn.zTree.getZTreeObj("tree");
+var nodes = treeObj.getCheckedNodes(true);
+</code></pre>
+</div>
+</div>

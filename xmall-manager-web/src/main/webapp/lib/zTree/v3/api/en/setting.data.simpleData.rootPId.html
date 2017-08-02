@@ -1,0 +1,32 @@
+<div class="apiDetail">
+<div>
+	<h2><span>String / Number</span><span class="path">setting.data.simpleData.</span>rootPId</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.core</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Set the default value of root's 'pIdKey' specified attribute values​​. It is valid when <span class="highlight_red">[setting.data.simpleData.enable = true]</span></p>
+			<p>Default: null</p>
+		</div>
+	</div>
+	<h3>Examples of setting</h3>
+	<h4>1. use the simple data format</h4>
+	<pre xmlns=""><code>var setting = {
+	data: {
+		simpleData: {
+			enable: true,
+			idKey: "id",
+			pIdKey: "pId",
+			rootPId: 0
+		}
+	}
+};
+var treeNodes = [
+    {"id":1, "pId":0, "name":"test1"},
+    {"id":11, "pId":1, "name":"test11"},
+    {"id":12, "pId":1, "name":"test12"},
+    {"id":111, "pId":11, "name":"test111"}
+];
+......</code></pre>
+</div>
+</div>

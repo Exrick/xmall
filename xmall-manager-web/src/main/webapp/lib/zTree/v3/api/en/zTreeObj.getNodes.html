@@ -1,0 +1,26 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Function()</span><span class="path">zTreeObj.</span>getNodes</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.core</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Get all of the nodes in zTree</p>
+			<p class="highlight_red">Please use zTree object to executing the method.</p>
+		</div>
+	</div>
+	<h3>Function Parameter Descriptions</h3>
+	<div class="desc">
+	<h4><b>Return </b><span>Array(JSON)</span></h4>
+	<p>return all of the nodes</p>
+	<p class="highlight_red">1. This array is a collection of the root nodes  (the default child nodes are in the 'children' attributes);</p>
+	<p class="highlight_red">2. Traverse all the nodes need to use recursion, or the use of transformToArray() method make the nodes to be a simple array.</p>
+	<p class="highlight_red">3. For the asynchronous loading mode, can't get the nodes which are yet loaded.</p>
+	</div>
+	<h3>Examples of function</h3>
+	<h4>1. Get all of the nodes</h4>
+	<pre xmlns=""><code>var treeObj = $.fn.zTree.getZTreeObj("tree");
+var nodes = treeObj.getNodes();
+</code></pre>
+</div>
+</div>

@@ -1,0 +1,29 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Boolean</span><span class="path">treeNode.</span>halfCheck</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.excheck</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Force node checkBox / radio to the half-checked status. It is valid when <span class="highlight_red">[setting.check.enable = true & treeNode.nocheck = false]</span></p>
+			<p class="highlight_red">1. If you force to the half-checked status, zTree will not automatically calculated the half-checked status about this node.</p>
+			<p class="highlight_red">2. Until you set treeNode.halfCheck to false or null, zTree will automatically calculated the half-checked status about this node.</p>
+			<p class="highlight_red">3. zTree support identification string 'true' & 'false'.</p>
+			<p>Defaul: false</p>
+		</div>
+	</div>
+	<h3>Boolean Format</h3>
+	<div class="desc">
+	<p>true means: the checkbox or radio is half-checked when zTree is initialized.</p>
+	<p>false means: the half-checked status will be automatically calculated</p>
+	</div>
+	<h3>Examples of treeNode</h3>
+	<h4>1. set the half-checked status when zTree is initialized</h4>
+	<pre xmlns=""><code>var nodes = [
+{ "id":1, "name":"test1", isParent:true, checked:true, halfCheck:true },
+{ "id":2, "name":"test2", isParent:true, checked:false, halfCheck:true },
+{ "id":3, "name":"test3", isParent:true, checked:true },
+{ "id":4, "name":"test4", isParent:true, checked:false }
+]</code></pre>
+</div>
+</div>

@@ -1,0 +1,45 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Function(treeId, treeNode)</span><span class="path">setting.view.</span>removeHoverDom</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.exedit</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Used to hide custom control when mouse move out the node. (e.g. the rename and remove button)</p>
+			<p class="highlight_red">If you use this function, so must set <span class="highlight_red">setting.view.addHoverDom</span>, please make sure that a better understanding of zTree before you use it.</p>
+			<p>Default: null</p>
+		</div>
+	</div>
+	<h3>Function Parameter Descriptions</h3>
+	<div class="desc">
+	<h4><b>treeId</b><span>String</span></h4>
+	<p>zTree unique identifier: <b class="highlight_red">treeId</b>.</p>
+	<h4><b>treeNode</b><span>JSON</span></h4>
+	<p>JSON data object of the node which need to hide the custom control.</p>
+	</div>
+	<h3>Examples of setting & function</h3>
+	<h4>1. Display a button when mouse move over the node, and hide the button when mouse move out.</h4>
+	<pre xmlns=""><code>var setting = {
+	view: {
+		addHoverDom: addHoverDom,
+		removeHoverDom: removeHoverDom,
+		......
+	}
+};
+function addHoverDom(treeId, treeNode) {
+	var aObj = $("#" + treeNode.tId + "_a");
+	if ($("#diyBtn_"+treeNode.id).length>0) return;
+	var editStr = "&lt;span id='diyBtn_space_" +treeNode.id+ "' &gt;&nbsp;&lt;/span&gt;"
+		+ "&lt;button type='button' class='diyBtn1' id='diyBtn_" + treeNode.id
+		+ "' title='"+treeNode.name+"' onfocus='this.blur();'&gt;&lt;/button&gt;";
+	aObj.append(editStr);
+	var btn = $("#diyBtn_"+treeNode.id);
+	if (btn) btn.bind("click", function(){alert("diy Button for " + treeNode.name);});
+};
+function removeHoverDom(treeId, treeNode) {
+	$("#diyBtn_"+treeNode.id).unbind().remove();
+	$("#diyBtn_space_" +treeNode.id).unbind().remove();
+};
+......</code></pre>
+</div>
+</div>

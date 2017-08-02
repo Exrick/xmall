@@ -1,0 +1,30 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Boolean</span><span class="path">setting.async.</span>enable</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.core</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Set zTree asynchronous loading mode on/off.</p>
+			<p>Default: false</p>
+		</div>
+	</div>
+	<h3>Boolean Format</h3>
+	<div class="desc">
+	<p> true - turn on asynchronous loading mode</p>
+	<p> false - turn off asynchronous loading mode</p>
+	<p class="highlight_red">If set it is true, you must set other attributes in setting.async</p>
+	<p class="highlight_red">If you don't pass the 'treeNodes' parameter when you initialize zTree, the root nodes will be retrieved using ajax.</p>
+	</div>
+	<h3>Examples of setting</h3>
+	<h4>1. Turn on asynchronous loading mode</h4>
+	<pre xmlns=""><code>var setting = {
+	async: {
+		enable: true,
+		url: "http://host/getNode.php",
+		autoParam: ["id", "name"]
+	}
+};
+......</code></pre>
+</div>
+</div>

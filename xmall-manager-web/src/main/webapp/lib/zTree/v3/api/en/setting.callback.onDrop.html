@@ -1,0 +1,48 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Function(event, treeId, treeNodes, targetNode, moveType, isCopy)</span><span class="path">setting.callback.</span>onDrop</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.exedit</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Used to capture the drop event when drag-drop node.</p>
+			<p class="highlight_red">If you set 'setting.callback.beforeDrop',and return false, zTree will restore the dragged nodes, and will not trigger the 'onDrop' callback.</p>
+			<p>Default: null</p>
+		</div>
+	</div>
+	<h3>Function Parameter Descriptions</h3>
+	<div class="desc">
+	<h4><b>event</b><span>js event Object</span></h4>
+	<p>event Object</p>
+	<h4 class="topLine"><b>treeId</b><span>String</span></h4>
+	<p>zTree unique identifier: <b class="highlight_red">treeId</b>, the id of the containing tree.</p>
+	<h4 class="topLine"><b>treeNodes</b><span>Array(JSON)</span></h4>
+	<p>A collection of the nodes which has been dragged</p>
+	<p class="highlight_red">The treeNodes are the data of the nodes which be dragged, when move nodes.</p>
+	<p class="highlight_red">The treeNodes are the clone data of the nodes which be dragged, when copy nodes.</p>
+	<h4 class="topLine"><b>targetNode</b><span>JSON</span></h4>
+	<p>JSON data object of the target node which treeNodes are drag-dropped.</p>
+	<p class="highlight_red">If the treeNodes will be root node, the targetNode = null</p>
+	<h4 class="topLine"><b>moveType</b><span>String</span></h4>
+	<p>the relative position of move to the target node</p>
+	<p class="highlight_red">"inner": will be child of targetNode</p>
+	<p class="highlight_red">"prev": will be sibling node, and be in front of targetNode</p>
+	<p class="highlight_red">"next":  will be sibling node, and be behind targetNode</p>
+	<p class="highlight_red">If moveType is null, means drag & drop is cancel.</p>
+	<h4 class="topLine"><b>isCopy</b><span>Boolean</span></h4>
+	<p>the flag used to judge copy node or move node</p>
+	<p class="highlight_red">true: copy node; false: move node</p>
+	</div>
+	<h3>Examples of setting & function</h3>
+	<h4>1. When drag-drop nodes complete, alert the number of dragged nodes and info about targetNode.</h4>
+	<pre xmlns=""><code>function myOnDrop(event, treeId, treeNodes, targetNode, moveType) {
+    alert(treeNodes.length + "," + (targetNode ? (targetNode.tId + ", " + targetNode.name) : "isRoot" ));
+};
+var setting = {
+	callback: {
+		onDrop: myOnDrop
+	}
+};
+......</code></pre>
+</div>
+</div>

@@ -16,7 +16,7 @@
     <!-- 提供方应用信息，用于计算依赖关系 -->
     <dubbo:application name="xmall-manager" />
     <dubbo:registry protocol="zookeeper"
-                    address="127.0.0.1:2181" />
+                    address="123.207.121.135:2181" />
     <!-- 用dubbo协议在20880端口暴露服务 -->
     <dubbo:protocol name="dubbo" port="20880" />
     <!-- 声明需要暴露的服务接口 -->

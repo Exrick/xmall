@@ -1,0 +1,47 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Function(targetNode, treeNode, moveType, isSilent)</span><span class="path">zTreeObj.</span>copyNode</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.exedit</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Copy the node</p>
+			<p class="highlight_red">When copy nodes, zTree v3.x will clone nodes. If you need to get the data object in zTree, please get the return value of this method.</p>
+			<p class="highlight_red">Please use zTree object to executing the method.</p>
+		</div>
+	</div>
+	<h3>Function Parameter Descriptions</h3>
+	<div class="desc">
+	<h4><b>targetNode</b><span>JSON</span></h4>
+	<p>JSON data object of the node to be target.</p>
+	<p class="highlight_red">If copy the node to root node, please set the 'targetNode' to null.</p>
+	<p class="highlight_red">Please ensure that this data object is an internal node data object in zTree.</p>
+	<h4 class="topLine"><b>treeNode</b><span>JSON</span></h4>
+	<p>JSON data object of the node to be copied.</p>
+	<p class="highlight_red">Please ensure that this data object is an internal node data object in zTree.</p>
+	<h4 class="topLine"><b>moveType</b><span>String</span></h4>
+	<p>Copied to the target node's relative position.</p>
+	<p class="highlight_red">"inner" means: to be taregetNode's child node.</p>
+	<p class="highlight_red">"prev" means: to be taregetNode's previous sibling node.</p>
+	<p class="highlight_red">"next" means: to be taregetNode's next sibling node.</p>
+	<h4 class="topLine"><b>isSilent</b><span>Boolean</span></h4>
+	<p>After copy the node, whether to automatically expand its parent node.</p>
+	<p>isSilent = true means: don't expand its parent node.</p>
+	<p>isSilent = false or omit this parameter means: expand its parent node.</p>
+	<h4 class="topLine"><b>Return </b><span>JSON</span></h4>
+	<p>return the new node in zTree</p>
+	<p class="highlight_red">Note: the node data JSON object in the return value is not equal to the treeNode.</p>
+	</div>
+	<h3>Examples of function</h3>
+	<h4>1. Copy the second root node to the first root node's child node.</h4>
+	<pre xmlns=""><code>var treeObj = $.fn.zTree.getZTreeObj("tree");
+var nodes = treeObj.getNodes();
+treeObj.copyNode(nodes[0], nodes[1], "inner");
+</code></pre>
+	<h4>2. Copy the second root node to the first root node's previous sibling node.</h4>
+	<pre xmlns=""><code>var treeObj = $.fn.zTree.getZTreeObj("tree");
+var nodes = treeObj.getNodes();
+treeObj.copyNode(nodes[0], nodes[1], "before");
+</code></pre>
+</div>
+</div>

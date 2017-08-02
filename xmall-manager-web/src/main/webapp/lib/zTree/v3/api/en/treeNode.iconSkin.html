@@ -1,0 +1,43 @@
+<div class="apiDetail">
+<div>
+	<h2><span>String</span><span class="path">treeNode.</span>iconSkin</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.core</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>The className of node's custom icon.</p>
+			<p class="highlight_red">1. You need to modify the css, add the definition of className.</p>
+			<p class="highlight_red">2. The css is simple, convenient, and support the parent node to switch icons when it is expanded or collapsed.</p>
+			<p class="highlight_red">3. Recommend the use of CSS Sprites, can reduce repeating load the image, to avoid image flicker.</p>
+			<p class="highlight_red">4. The 'iconSkin' support IE6 in zTree v3.x.</p>
+			<p class="highlight_red">5. If you need to use image's URL to set the custom icon, please set the 'treeNode.icon' or 'treeNode.iconOpen' or 'treeNode.iconClose' attribute.</p>
+			<p>Default: undefined</p>
+		</div>
+	</div>
+	<h3>String Format</h3>
+	<div class="desc">
+	<p>The string about custom icon's className.</p>
+	</div>
+	<h3>Examples of css & treeNode</h3>
+	<h4>1. Set the custom icon</h4>
+	<pre xmlns=""><code>css example：
+.ztree li span.button.diy01_ico_open, .ztree li span.button.diy01_ico_close{...}
+
+.ztree li span.button.diy02_ico_open{...}
+.ztree li span.button.diy02_ico_close{...}
+
+.ztree li span.button.diy03_ico_docu{...}
+
+node's data example：
+var nodes = [
+	//Only show one icon when it is expanded or collapsed.
+	{ name:"Parent Node 1", iconSkin:"diy01"},
+
+	//Show two icons when it is expanded or collapsed.
+	{ name:"Parent Node 2", iconSkin:"diy02"},
+
+	//the custom icon for leaf node
+	{ name:"Leaf Node", iconSkin:"diy03"}
+]</code></pre>
+</div>
+</div>

@@ -28,4 +28,6 @@ public interface TbItemMapper {
     int updateByPrimaryKeySelective(TbItem record);
 
     int updateByPrimaryKey(TbItem record);
+
+    List<TbItem> selectByItemTitleAndDescription(@Param("search") String search);
 }

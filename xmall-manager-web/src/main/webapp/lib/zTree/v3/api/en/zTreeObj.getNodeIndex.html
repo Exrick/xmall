@@ -1,0 +1,30 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Function(treeNode)</span><span class="path">zTreeObj.</span>getNodeIndex</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.core</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Get the node's index in the same level nodes. (start from 0)</p>
+			<p class="highlight_red">Please use zTree object to executing the method.</p>
+		</div>
+	</div>
+	<h3>Function Parameter Descriptions</h3>
+	<div class="desc">
+	<h4><b>treeNode</b><span>JSON</span></h4>
+	<p>JSON data object of the node which need to get index.</p>
+	<p class="highlight_red">Please ensure that this data object is an internal node data object in zTree.</p>
+	<h4 class="topLine"><b>Return </b><span>Number</span></h4>
+	<p class="highlight_red">return the index. (start from 0)</p>
+	<p class="highlight_red">If there is no this node, return -1.</p>
+	</div>
+	<h3>Examples of function</h3>
+	<h4>1. Get the first selected node's index in the same level nodes.</h4>
+	<pre xmlns=""><code>var treeObj = $.fn.zTree.getZTreeObj("tree");
+var nodes = treeObj.getSelectedNodes();
+if (nodes.length>0) {
+	var index = treeObj.getNodeIndex(nodes[0]);
+}
+</code></pre>
+</div>
+</div>

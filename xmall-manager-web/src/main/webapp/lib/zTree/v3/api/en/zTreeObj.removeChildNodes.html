@@ -1,0 +1,32 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Function(parentNode)</span><span class="path">zTreeObj.</span>removeChildNodes</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.core</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Remove a parent node's child nodes</p>
+			<p class="highlight_red">1. After remove child nodes, the parent node will become a leaf node. Such as the need to maintain the parent node is still a parent node, set 'setting.data.keep.parent' attribute.</p>
+			<p class="highlight_red">2. Do not use this method to empty the root. If you need to empty the root, you can initialization zTree, and set the initial nodes is null.</p>
+			<p class="highlight_red">3. This method does not trigger any callback function.</p>
+			<p class="highlight_red">Please use zTree object to executing the method.</p>
+		</div>
+	</div>
+	<h3>Function Parameter Descriptions</h3>
+	<div class="desc">
+	<h4><b>parentNode</b><span>JSON</span></h4>
+	<p>The parent node which need to clear its child nodes.</p>
+	<p class="highlight_red">Please ensure that this data object is an internal node data object in zTree.</p>
+	<h4 class="topLine"><b>Return </b><span>Array(JSON)</span></h4>
+	<p>Return the parent node's child nodes which have been removed. If has no child nodes, return null.</p>
+	</div>
+	<h3>Examples of function</h3>
+	<h4>1. Remove the first selected node's child nodes</h4>
+	<pre xmlns=""><code>var treeObj = $.fn.zTree.getZTreeObj("tree");
+var nodes = treeObj.getSelectedNodes();
+if (nodes && nodes.length>0) {
+	treeObj.removeChildNodes(nodes[0]);
+}
+</code></pre>
+</div>
+</div>

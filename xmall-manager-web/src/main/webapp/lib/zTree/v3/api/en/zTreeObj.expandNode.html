@@ -1,0 +1,50 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Function(treeNode, expandFlag, sonSign, focus, callbackFlag)</span><span class="path">zTreeObj.</span>expandNode</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.core</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Expand or collapse single node.</p>
+			<p class="highlight_red">Use expandNode() method of zTree v3.x can trigger 'beforeExpand / onExpand' or 'beforeCollapse / onCollapse' callback function. for reduce redundant code.</p>
+			<p class="highlight_red">Please use zTree object to executing the method.</p>
+		</div>
+	</div>
+	<h3>Function Parameter Descriptions</h3>
+	<div class="desc">
+	<h4><b>treeNode</b><span>JSON</span></h4>
+	<p>JSON data object of the node to be expanded or collapsed</p>
+	<p class="highlight_red">Please ensure that this data object is an internal node data object in zTree.</p>
+	<h4 class="topLine"><b>expandFlag</b><span>Boolean</span></h4>
+	<p>expandFlag = true means: expand the node.</p>
+	<p>expandFlag = false means: collapse the node.</p>
+	<p class="highlight_red">If this parameter is omitted, then toggle expand or collapse depend this node's expanded state.</p>
+	<h4 class="topLine"><b>sonSign</b><span>Boolean</span></h4>
+	<p>sonSign = true means: expand or collapse all of the child nodes depend the 'expandFlag' parameter.</p>
+	<p>sonSign = false means: only expand or collapse this node.</p>
+	<p class="highlight_red">When sonSign = false and treeNode.open = expandFlag, will not trigger the callback.</p>
+	<p class="highlight_red">If this parameter is omitted, it is same as 'sonSign = false'.</p>
+	<h4 class="topLine"><b>focus</b><span>Boolean</span></h4>
+	<p>focus = true means: after expand or collapse, set the focus of this node for view.</p>
+	<p>focus =  false means: after expand or coolapse, don't set the focus of this node.</p>
+	<p class="highlight_red">If this parameter is omitted, it is same as 'focus = true'.</p>
+	<h4 class="topLine"><b>callbackFlag</b><span>Boolean</span></h4>
+	<p>callbackFlag = true means: call this method, will trigger 'beforeExpand / onExpand' or 'beforeCollapse / onCollapse' callback.</p>
+	<p>callbackFlag = false means: call this method, will not trigger callback.</p>
+	<p class="highlight_red">If this parameter is omitted, it is same as 'callbackFlag = false'</p>
+	<h4 class="topLine"><b>Return </b><span>Boolean</span></h4>
+	<p>return the result of expand or collapse.</p>
+	<p>true means: expand node</p>
+	<p>false means: collapse node</p>
+	<p>null means: the node is not parent node.</p>
+	</div>
+	<h3>Examples of function</h3>
+	<h4>1. Expand the first selected node. (and expand this node's child nodes)</h4>
+	<pre xmlns=""><code>var treeObj = $.fn.zTree.getZTreeObj("tree");
+var nodes = treeObj.getSelectedNodes();
+if (nodes.length>0) {
+	treeObj.expandNode(nodes[0], true, true, true);
+}
+</code></pre>
+</div>
+</div>

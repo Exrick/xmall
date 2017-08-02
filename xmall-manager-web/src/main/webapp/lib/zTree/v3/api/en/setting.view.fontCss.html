@@ -1,0 +1,42 @@
+<div class="apiDetail">
+<div>
+	<h2><span>JSON / Function(treeId, treeNode)</span><span class="path">setting.view.</span>fontCss</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.core</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Personalized text style, only applies to &lt;A&gt; object in the node DOM</p>
+			<p>Default: {}</p>
+		</div>
+	</div>
+	<h3>JSON Format</h3>
+	<div class="desc">
+	<p>As same as .css() method in jQuery. e.g. <span class="highlight_red">{color:"#ff0011", background:"blue"}</span></p>
+	</div>
+	<h3>Function Parameter Descriptions</h3>
+	<div class="desc">
+	<h4><b>treeId</b><span>String</span></h4>
+	<p>zTree unique identifier: <b class="highlight_red">treeId</b>.</p>
+	<h4 class="topLine"><b>treeNode</b><span>JSON</span></h4>
+	<p>JSON data object of the node which use the personalized text style</p>
+	<h4 class="topLine"><b>Return </b><span>JSON</span></h4>
+	<p>Return value is same as 'JSON Format'. e.g. <span class="highlight_red">{color:"#ff0011", background:"blue"}</span></p>
+	</div>
+	<h3>Examples of setting & function</h3>
+	<h4>1. Don't modify css file, and set the node name's color to red</h4>
+	<pre xmlns=""><code>var setting = {
+	view: {
+		fontCss : {color:"red"}
+	}
+};</code></pre>
+	<h4>2. Don't modify css file, and set the root node name's color to red</h4>
+	<pre xmlns=""><code>function setFontCss(treeId, treeNode) {
+	return treeNode.level == 0 ? {color:"red"} : {};
+};
+var setting = {
+	view: {
+		fontCss: setFontCss
+	}
+};</code></pre>
+</div>
+</div>

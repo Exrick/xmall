@@ -1,0 +1,26 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Boolean</span><span class="path">treeNode.</span>isAjaxing</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.core</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Judge whether the node's child nodes being loaded asynchronously.</p>
+			<p class="highlight_red">Do not initialize or modify it, it is created by the zTree.</p>
+		</div>
+	</div>
+	<h3>Boolean Format</h3>
+	<div class="desc">
+	<p> true means: the node's child nodes is being loaded asynchronously</p>
+	<p> false means: the node's child nodes is not being loaded asynchronously</p>
+	</div>
+	<h3>Examples of treeNode</h3>
+	<h4>1. Judge whether the first selected node's child nodes being loaded asynchronously</h4>
+	<pre xmlns=""><code>var treeObj = $.fn.zTree.getZTreeObj("tree");
+var sNodes = treeObj.getSelectedNodes();
+if (sNodes.length > 0) {
+	var isAjaxing = sNodes[0].isAjaxing;
+}
+</code></pre>
+</div>
+</div>

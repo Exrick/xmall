@@ -1,0 +1,30 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Boolean</span><span class="path">treeNode.</span>open</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.core</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Used to record the parent node's expand status.</p>
+			<p class="highlight_red">1. When zTree initialize the node data, if you set treeNode.open = true, zTree will default expand this parent node.</p>
+			<p class="highlight_red">2. Leaf node's 'open' attribute is false.</p>
+			<p class="highlight_red">3. In order to solve the problem of someone make json data, supporting "false", "true" format of the data string.</p>
+			<p class="highlight_red">4. When setting.async.enable = false, the parent node will be expanded which have no child nodes and its attribute 'open' is true. (v3.5.15+)  </p>
+			<p>Default: false</p>
+		</div>
+	</div>
+	<h3>Boolean Format</h3>
+	<div class="desc">
+	<p> true means: the parent node is expanded.</p>
+	<p> false means: the parent node is collapsed.</p>
+	</div>
+	<h3>Examples of treeNode</h3>
+	<h4>1. Get the first selected node's expand status.</h4>
+	<pre xmlns=""><code>var treeObj = $.fn.zTree.getZTreeObj("tree");
+var sNodes = treeObj.getSelectedNodes();
+if (sNodes.length > 0) {
+	var isOpen = sNodes[0].open;
+}
+</code></pre>
+</div>
+</div>

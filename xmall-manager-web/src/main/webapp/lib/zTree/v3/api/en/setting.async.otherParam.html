@@ -1,0 +1,40 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Array(String) / JSON</span><span class="path">setting.async.</span>otherParam</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.core</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>The query parameters of the Ajax request. (key - value) It is valid when <span class="highlight_red">[setting.async.enable = true]</span></p>
+			<p>Default: [ ]</p>
+		</div>
+	</div>
+	<h3>Array(String) Format</h3>
+	<div class="desc">
+	<p>Can be an empty array. e.g. [ ].  The array should contain key value pairs, e.g. [key, value]. (Either or [key] or [key, value, key] is wrong!!)</p>
+	</div>
+	<h3>JSON Format</h3>
+	<div class="desc">
+	<p>Use JSON hash data to set the key-value pairs. e.g. { key1:value1, key2:value2 }</p>
+	</div>
+	<h3>Examples of setting</h3>
+	<h4>1. Using Array(String) Format</h4>
+	<pre xmlns=""><code>var setting = {
+	async: {
+		enable: true,
+		url: "http://host/getNode.php",
+		<span style="color:red">otherParam: ["id", "1", "name", "test"]</span>
+	}
+};
+when zTree sends the ajax request, the query string will be like this: id=1&name=test</code></pre>
+	<h4>2. Using JSON data Format</h4>
+	<pre xmlns=""><code>var setting = {
+	async: {
+		enable: true,
+		url: "http://host/getNode.php",
+		<span style="color:red">otherParam: { "id":"1", "name":"test"}</span>
+	}
+};
+when zTree sends the ajax request, the query string will be like this: id=1&name=test</code></pre>
+</div>
+</div>

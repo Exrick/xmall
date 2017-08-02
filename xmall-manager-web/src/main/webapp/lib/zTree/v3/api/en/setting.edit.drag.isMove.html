@@ -1,0 +1,32 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Boolean</span><span class="path">setting.edit.drag.</span>isMove</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.exedit</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>When drag-drop node, set whether to allow to move node. It is valid when <span class="highlight_red">[setting.edit.enable = true]</span></p>
+			<p>Default: true</p>
+		</div>
+	</div>
+	<h3>Rules Description</h3>
+	<div class="desc">
+	<p>1. If isCopy = true and isMove = true, when drag-drop node, press Ctrl-Key or Cmd-key can copy node, don't press Ctrl-Key or Cmd-key can move node.</p>
+	<p>2. If isCopy = true and isMove = false, when drag-drop node, will copy node.</p>
+	<p>3. If isCopy = false and isMove = true, when drag-drop node, will move node.</p>
+	<p>4. If isCopy = false and isMove = false, so disable to drag-drop node.</p>
+	</div>
+	<h3>Examples of setting</h3>
+	<h4>1. all of the drag-drop operation will move node.</h4>
+	<pre xmlns=""><code>var setting = {
+	edit: {
+		enable: true,
+		drag: {
+			isCopy: false,
+			isMove: true
+		}
+	}
+};
+......</code></pre>
+</div>
+</div>

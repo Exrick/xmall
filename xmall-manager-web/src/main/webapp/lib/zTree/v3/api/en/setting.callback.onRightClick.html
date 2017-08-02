@@ -1,0 +1,36 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Function(event, treeId, treeNode)</span><span class="path">setting.callback.</span>onRightClick</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.core</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Callback for mouse right click node.</p>
+			<p class="highlight_red">If you set 'setting.callback.beforeRightClick',and return false, zTree will not trigger the 'onRightClick' callback.</p>
+			<p class="highlight_red">If you set 'setting.callback.onRightClick', zTree will shield the browser context menu when mouse right click on zTree.</p>
+			<p>Default: null</p>
+		</div>
+	</div>
+	<h3>Function Parameter Descriptions</h3>
+	<div class="desc">
+	<h4><b>event</b><span>js event Object</span></h4>
+	<p>event Object</p>
+	<h4 class="topLine"><b>treeId</b><span>String</span></h4>
+	<p>zTree unique identifier: <b class="highlight_red">treeId</b>.</p>
+	<h4 class="topLine"><b>treeNode</b><span>JSON</span></h4>
+	<p>JSON data object of the node which is mouse right clicked</p>
+	<p class="highlight_red">If the DOM which mouse right clicked isn't a node, it will return null.</p>
+	</div>
+	<h3>Examples of setting & function</h3>
+	<h4>1. When mouse right click node, alert info about 'tId' and 'name'.</h4>
+	<pre xmlns=""><code>function myOnRightClick(event, treeId, treeNode) {
+    alert(treeNode ? treeNode.tId + ", " + treeNode.name : "isRoot");
+};
+var setting = {
+	callback: {
+		onRightClick: myOnRightClick
+	}
+};
+......</code></pre>
+</div>
+</div>

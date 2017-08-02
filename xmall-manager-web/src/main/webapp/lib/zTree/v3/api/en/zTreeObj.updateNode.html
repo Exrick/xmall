@@ -1,0 +1,37 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Function(treeNode, checkTypeFlag)</span><span class="path">zTreeObj.</span>updateNode</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.core</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Update node data. Primarily used to update the node's DOM.</p>
+			<p class="highlight_red">1. Can update the attributes for display (e.g. 'name', 'target', 'url', 'icon', 'iconSkin', 'checked', 'nocheck'), do not update the other attributes. For example: If you need to expand the node, please use expandNode() method, do not modify the 'open' attribute.</p>
+			<p class="highlight_red">2. Use updateNode() method of zTree can't trigger 'beforeCheck' or 'onCheck' callback function.</p>
+			<p class="highlight_red">Please use zTree object to executing the method.</p>
+		</div>
+	</div>
+	<h3>Function Parameter Descriptions</h3>
+	<div class="desc">
+	<h4><b>treeNode</b><span>JSON</span></h4>
+	<p>JSON data object of the node which need to update.</p>
+	<p class="highlight_red">Please ensure that this data object is an internal node data object in zTree.</p>
+	<h4 class="topLine"><b>checkTypeFlag</b><span>Boolean</span></h4>
+	<p>checkTypeFlag = true means: According to 'setting.check.chkboxType' attribute automatically check or uncheck the parent and child nodes.</p>
+	<p>checkTypeFlag = false means: only check or uncheck this node, don't affect its parent and child nodes.</p>
+	<p class="highlight_red">This parameter is valid when 'setting.check.enable = true' and 'setting.check.chkStyle = "checkbox"'</p>
+	<p class="highlight_red">Don't affect the parent and child nodes which 'nochecked' attribute is true.</p>
+	<h4 class="topLine"><b>Return </b><span>none</span></h4>
+	<p>no return value</p>
+	</div>
+	<h3>Examples of function</h3>
+	<h4>1. Modify the first selected node's name, and update it.</h4>
+	<pre xmlns=""><code>var treeObj = $.fn.zTree.getZTreeObj("tree");
+var nodes = treeObj.getNodes();
+if (nodes.length>0) {
+	nodes[0].name = "test";
+	treeObj.updateNode(nodes[0]);
+}
+</code></pre>
+</div>
+</div>

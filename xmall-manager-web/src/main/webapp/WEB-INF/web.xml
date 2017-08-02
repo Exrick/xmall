@@ -34,9 +34,16 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <!--"/"拦截所有请求-->
     <servlet-mapping>
         <servlet-name>xmall-manager</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+    <!--错误页面-->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.jsp</location>
+    </error-page>
 
 </web-app>

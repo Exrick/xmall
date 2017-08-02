@@ -1,0 +1,44 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Function(treeNode, checked, checkTypeFlag, callbackFlag)</span><span class="path">zTreeObj.</span>checkNode</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.excheck</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Check or unCheck a single node. It is valid when <span class="highlight_red">[setting.check.enable = true]</span></p>
+			<p class="highlight_red">Use checkNode() method of zTree v3.x can trigger 'beforeCheck' or 'onCheck' callback function. for reduce redundant code.</p>
+			<p class="highlight_red">Please use zTree object to executing the method.</p>
+		</div>
+	</div>
+	<h3>Function Parameter Descriptions</h3>
+	<div class="desc">
+	<h4><b>treeNode</b><span>JSON</span></h4>
+	<p>JSON data object of the node which need to be checked or unchecked.</p>
+	<p class="highlight_red">Please ensure that this data object is an internal node data object in zTree.</p>
+	<h4 class="topLine"><b>checked</b><span>Boolean</span></h4>
+	<p>checked = true means: check node.</p>
+	<p>checked = false means: uncheck node.</p>
+	<p class="highlight_red">If this parameter is omitted, then toggle check or uncheck depend this node's expanded state.</p>
+	<p class="highlight_red">Don't affect the node which 'nochecked' attribute is true.</p>
+	<h4 class="topLine"><b>checkTypeFlag</b><span>Boolean</span></h4>
+	<p>checkTypeFlag = true means: According to 'setting.check.chkboxType' attribute automatically check or uncheck the parent and child nodes.</p>
+	<p>checkTypeFlag = false means: only check or uncheck this node, don't affect its parent and child nodes.</p>
+	<p class="highlight_red">When checkTypeFlag = false and treeNode.checked = checked, will not trigger callback function.</p>
+	<p class="highlight_red">Don't affect the parent and child nodes which 'nochecked' attribute is true.</p>
+	<h4 class="topLine"><b>callbackFlag</b><span>Boolean</span></h4>
+	<p>callbackFlag = true means: call this method, will trigger 'beforeCheck' & 'onCheck' callback.</p>
+	<p>callbackFlag = false means: call this method, will not trigger callback.</p>
+	<p class="highlight_red">If this parameter is omitted, it is same as 'callbackFlag = false'</p>
+	<h4 class="topLine"><b>Return </b><span>none</span></h4>
+	<p>no return value</p>
+	</div>
+	<h3>Examples of function</h3>
+	<h4>1. check the selected nodes</h4>
+	<pre xmlns=""><code>var treeObj = $.fn.zTree.getZTreeObj("tree");
+var nodes = treeObj.getSelectedNodes();
+for (var i=0, l=nodes.length; i < l; i++) {
+	treeObj.checkNode(nodes[i], true, true);
+}
+</code></pre>
+</div>
+</div>

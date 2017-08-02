@@ -1,0 +1,50 @@
+<div class="apiDetail">
+<div>
+	<h2><span>String / Function(treeId, treeNode)</span><span class="path">setting.async.</span>url</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.core</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>The URL to which the ajax request is sent. It is valid when <span class="highlight_red">[setting.async.enable = true]</span></p>
+			<p>Default: ""</p>
+		</div>
+	</div>
+	<h3>String Format</h3>
+	<div class="desc">
+	<p>A url string(e.g. "http://www.domain.com/cgi-bin/my-script.cgi"). Note: please check that the url can be loaded with a browser</p>
+	<p class="highlight_red">Url can also take parameters, please note that they need to be urlencoded.</p>
+	</div>
+	<h3>Function Parameter Descriptions</h3>
+	<div class="desc">
+	<h4><b>treeId</b><span>String</span></h4>
+	<p>zTree unique identifier: <b class="highlight_red">treeId</b>.</p>
+	<h4 class="topLine"><b>treeNode</b><span>JSON</span></h4>
+	<p>Parent node's JSON data object</p>
+	<p class="highlight_red">When asynchronously loading the root, the treeNode = null</p>
+	<h4 class="topLine"><b>Return </b><span>String</span></h4>
+	<p>Return value is same as 'String Format'</p>
+	</div>
+	<h3>Examples of setting & function</h3>
+	<h4>1. set ajax url is "nodes.php"</h4>
+	<pre xmlns=""><code>var setting = {
+	async: {
+		enable: true,
+		url: "nodes.php",
+		autoParam: ["id", "name"]
+	}
+};
+......</code></pre>
+	<h4>2. set ajax url is "function"</h4>
+	<pre xmlns=""><code>function getAsyncUrl(treeId, treeNode) {
+    return treeNode.isParent ? "nodes1.php" : "nodes2.php";
+};
+var setting = {
+	async: {
+		enable: true,
+		url: getAsyncUrl,
+		autoParam: ["id", "name"]
+	}
+};
+......</code></pre>
+</div>
+</div>

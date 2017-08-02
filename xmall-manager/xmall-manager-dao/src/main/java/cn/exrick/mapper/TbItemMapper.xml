@@ -302,4 +302,12 @@
       updated = #{updated,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select id="selectByItemTitleAndDescription" parameterType="string" resultMap="BaseResultMap">
+    SELECT * FROM tb_item
+    WHERE (title LIKE #{search})
+    OR
+    (sell_point LIKE #{search})
+    OR
+    (price LIKE #{search})
+  </select>
 </mapper>

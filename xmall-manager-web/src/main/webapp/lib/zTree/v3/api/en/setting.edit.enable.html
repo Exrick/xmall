@@ -1,0 +1,39 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Boolean</span><span class="path">setting.edit.</span>enable</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.exedit</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Set zTree is in edit mode</p>
+			<p class="highlight_red">Please set this attribute before zTree initialization. If you need to change the edit mode after the initialization, please use zTreeObj.setEditable() method.</p>
+			<p>Default: false</p>
+		</div>
+	</div>
+	<h3>Boolean Format</h3>
+	<div class="desc">
+	<p> true means: zTree is in edit mode.</p>
+	<p> false means: zTree is not in edit mode.</p>
+	</div>
+	<h3>Editing Rules Description</h3>
+	<div class="desc">
+	<p>1. When click the node, it will not open '<span class="highlight_red">node.url</span>' specified URL.
+<br/>2. Support for dynamic tree editing.
+<br/>3. You can drag-drop nodes, and support drag-drop nodes between multiple trees.
+<br/>4. Support use drag-drop to copy or move the node. (Reference: <span class="highlight_red">setting.edit.drag.isCopy / setting.edit.drag.isMove</span>)
+<br/>5. You can use the Edit button to modify the name attribute.
+<br/>6. You can use the Remove button to remove the node.
+<br/>
+	</p>
+	<p class="highlight_red">Please note that letter case, do not change.</p>
+	</div>
+	<h3>Examples of setting</h3>
+	<h4>1. edit the tree</h4>
+	<pre xmlns=""><code>var setting = {
+	edit: {
+		enable: true
+	}
+};
+......</code></pre>
+</div>
+</div>

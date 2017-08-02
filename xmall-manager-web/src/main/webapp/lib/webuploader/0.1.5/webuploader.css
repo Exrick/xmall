@@ -1,0 +1,95 @@
+.webuploader-container{position: relative; display:inline-block; vertical-align:top}
+.webuploader-element-invisible{position: absolute !important;clip: rect(1px 1px 1px 1px);/* IE6, IE7*/clip: rect(1px,1px,1px,1px)}
+.webuploader-pick{position: relative;display: inline-block;cursor: pointer;background:#3bb4f2;padding:4px 12px;color: #fff;text-align: center;border-radius: 3px;overflow: hidden}
+.webuploader-pick-hover{background: #00a2d4}
+.webuploader-pick-disable{opacity: 0.6;pointer-events:none}
+.uploader-list{width: 100%;overflow: hidden}
+.btn-uploadstar{vertical-align:top}
+.file-item{float: left;position: relative;margin: 0 20px 20px 0;padding: 4px}
+.file-item .error{position: absolute;top: 4px;left: 4px;right: 4px;background: red;color: white;text-align: center;height: 20px;font-size: 14px;line-height: 23px}
+.file-item .info{position: absolute;left: 4px;bottom: 4px;right: 4px;height: 20px;line-height: 20px;text-indent: 5px;background: rgba(0, 0, 0, 0.6);color: white;overflow: hidden;white-space: nowrap;text-overflow : ellipsis;font-size: 12px;z-index: 10}
+.upload-state-done:after{content:"\f00c";font-family: FontAwesome;font-style: normal;font-weight: normal;line-height: 1;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-size: 32px;position: absolute;bottom: 0;right: 4px;color: #4cae4c;z-index: 99}
+.cropper-container{position: relative; overflow: hidden; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; background-color: #fff; -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none;}
+.cropper-container .cropper-modal{position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: #000; filter: alpha(opacity=50); opacity: .5;}
+.cropper-container .cropper-dragger{position: absolute; top: 10%; left: 10%; width: 80%; height: 80%;}
+.cropper-container .cropper-preview{display: block; width: 100%; height: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; overflow: hidden; border-color: #69f; border-color: rgba(51, 102, 255, .75); border-style: solid; border-width: 1px;}
+.cropper-container .cropper-dashed{position: absolute; display: block; filter: alpha(opacity=50); border: 0 dashed #fff; opacity: .5;}
+.cropper-container .dashed-h{top: 33.3%; left: 0; width: 100%; height: 33.3%; border-top-width: 1px; border-bottom-width: 1px;}
+.cropper-container .dashed-v{top: 0; left: 33.3%; width: 33.3%; height: 100%; border-right-width: 1px; border-left-width: 1px;}
+.cropper-container .cropper-face,
+.cropper-container .cropper-line,
+.cropper-container .cropper-point{position: absolute; display: block; width: 100%; height: 100%; filter: alpha(opacity=10); opacity: .1;}
+.cropper-container .cropper-face{top: 0; left: 0; cursor: move; background-color: #fff;}
+.cropper-container .cropper-line{background-color: #69f;}
+.cropper-container .line-e{top: 0; right: -2px; width: 5px; cursor: e-resize;}
+.cropper-container .line-n{top: -2px; left: 0; height: 5px; cursor: n-resize;}
+.cropper-container .line-w{top: 0; left: -2px; width: 5px; cursor: w-resize;}
+.cropper-container .line-s{bottom: -2px; left: 0; height: 5px; cursor: s-resize;}
+.cropper-container .cropper-point{width: 5px; height: 5px; background-color: #69f; filter: alpha(opacity=75); opacity: .75;}
+.cropper-container .point-e{top: 49%; right: -2px; cursor: e-resize;}
+.cropper-container .point-n{top: -2px; left: 49%; cursor: n-resize;}
+.cropper-container .point-w{top: 49%; left: -2px; cursor: w-resize;}
+.cropper-container .point-s{bottom: -2px; left: 49%; cursor: s-resize;}
+.cropper-container .point-ne{top: -2px; right: -2px; cursor: ne-resize;}
+.cropper-container .point-nw{top: -2px; left: -2px; cursor: nw-resize;}
+.cropper-container .point-sw{bottom: -2px; left: -2px; cursor: sw-resize;}
+.cropper-container .point-se{right: -2px; bottom: -2px; width: 20px; height: 20px; cursor: se-resize; filter: alpha(opacity=100); opacity: 1;}
+.cropper-container .point-se:before{position: absolute; right: -50%; bottom: -50%; display: block; width: 200%; height: 200%; content: " "; background-color: #69f; filter: alpha(opacity=0); opacity: 0;}
+@media (min-width: 768px){.cropper-container .point-se{width: 15px; height: 15px;}}
+@media (min-width: 992px){.cropper-container .point-se{width: 10px; height: 10px;}}
+@media (min-width: 1200px){.cropper-container .point-se{width: 5px; height: 5px; filter: alpha(opacity=75); opacity: .75;}}
+.cropper-hidden{display: none !important;}
+.img-preview{width: 160px; height: 90px; margin-top: 1em; border: 1px solid #ccc;}
+
+
+.uploader-list-container{color: #838383; font-size: 12px; margin-top: 10px; background-color: #FFF; border:solid 1px #ddd}
+.uploader-list-container .queueList{margin: 20px;}
+.element-invisible{position: absolute !important; clip: rect(1px 1px 1px 1px); /* IE6, IE7 */ clip: rect(1px,1px,1px,1px);}
+.uploader-list-container .placeholder{border: 3px dashed #e6e6e6; min-height: 238px; padding-top: 158px; text-align: center; background: url(images/image.png) center 93px no-repeat; color: #cccccc; font-size: 18px; position: relative;}
+.uploader-list-container .placeholder .webuploader-pick{font-size: 18px; background: #00b7ee; border-radius: 3px; line-height: 44px; padding: 0 30px; color: #fff; display: inline-block; margin: 20px auto; cursor: pointer; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);}
+.uploader-list-container .placeholder .webuploader-pick-hover{background: #00a2d4;}
+.uploader-list-container .placeholder .flashTip{color: #666666; font-size: 12px; position: absolute; width: 100%; text-align: center; bottom: 20px;}
+.uploader-list-container .placeholder .flashTip a{color: #0785d1; text-decoration: none;}
+.uploader-list-container .placeholder .flashTip a:hover{text-decoration: underline;}
+.uploader-list-container .placeholder.webuploader-dnd-over{border-color: #999999;}
+.uploader-list-container .placeholder.webuploader-dnd-over.webuploader-dnd-denied{border-color: red;}
+.uploader-list-container .filelist{list-style: none; margin: 0; padding: 0;}
+.uploader-list-container .filelist:after{content: ''; display: block; width: 0; height: 0; overflow: hidden; clear: both;}
+.uploader-list-container .filelist li{width: 110px; height: 110px; background: url(images/bg.png) no-repeat; text-align: center; margin: 0 8px 20px 0; position: relative; display: inline; float: left; overflow: hidden; font-size: 12px;}
+.uploader-list-container .filelist li p.log{position: relative; top: -45px;}
+.uploader-list-container .filelist li p.title{position: absolute; top: 0; left: 0; width: 100%; overflow: hidden; white-space: nowrap; text-overflow : ellipsis; top: 5px; text-indent: 5px; text-align: left;}
+.uploader-list-container .filelist li p.progress{position: absolute; width: 100%; bottom: 0; left: 0; height: 8px; overflow: hidden; z-index: 50;}
+.uploader-list-container .filelist li p.progress span{display: none; overflow: hidden; width: 0; height: 100%; background: #1483d8 url(images/progress.png) repeat-x; -webit-transition: width 200ms linear; -moz-transition: width 200ms linear; -o-transition: width 200ms linear; -ms-transition: width 200ms linear; transition: width 200ms linear; -webkit-animation: progressmove 2s linear infinite; -moz-animation: progressmove 2s linear infinite; -o-animation: progressmove 2s linear infinite; -ms-animation: progressmove 2s linear infinite; animation: progressmove 2s linear infinite; -webkit-transform: translateZ(0);}
+@-webkit-keyframes progressmove{0%{background-position: 0 0;} 100%{background-position: 17px 0;}}
+@-moz-keyframes progressmove{0%{background-position: 0 0;} 100%{background-position: 17px 0;}}
+@keyframes progressmove{0%{background-position: 0 0;} 100%{background-position: 17px 0;}}
+.uploader-list-container .filelist li p.imgWrap{position: relative; z-index: 2; line-height: 110px; vertical-align: middle; overflow: hidden; width: 110px; height: 110px; -webkit-transform-origin: 50% 50%; -moz-transform-origin: 50% 50%; -o-transform-origin: 50% 50%; -ms-transform-origin: 50% 50%; transform-origin: 50% 50%; -webit-transition: 200ms ease-out; -moz-transition: 200ms ease-out; -o-transition: 200ms ease-out; -ms-transition: 200ms ease-out; transition: 200ms ease-out;}
+.uploader-list-container .filelist li img{width: 100%;}
+.uploader-list-container .filelist li p.error{background: #f43838; color: #fff; position: absolute; bottom: 0; left: 0; height: 28px; line-height: 28px; width: 100%; z-index: 100;}
+.uploader-list-container .filelist li .success{display: block; position: absolute; left: 0; bottom: 0; height: 40px; width: 100%; z-index: 200; background: url(images/success.png) no-repeat right bottom;}
+.uploader-list-container .filelist div.file-panel{position: absolute; height: 0; filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#80000000', endColorstr='#80000000')\0; background: rgba( 0, 0, 0, 0.5 ); width: 100%; top: 0; left: 0; overflow: hidden; z-index: 300;}
+.uploader-list-container .filelist div.file-panel span{width: 24px; height: 24px; display: inline; float: right; text-indent: -9999px; overflow: hidden; background: url(images/icons.png) no-repeat; margin: 5px 1px 1px; cursor: pointer;}
+.uploader-list-container .filelist div.file-panel span.rotateLeft{background-position: 0 -24px;}
+.uploader-list-container .filelist div.file-panel span.rotateLeft:hover{background-position: 0 0;}
+.uploader-list-container .filelist div.file-panel span.rotateRight{background-position: -24px -24px;}
+.uploader-list-container .filelist div.file-panel span.rotateRight:hover{background-position: -24px 0;}
+.uploader-list-container .filelist div.file-panel span.cancel{background-position: -48px -24px;}
+.uploader-list-container .filelist div.file-panel span.cancel:hover{background-position: -48px 0;}
+.uploader-list-container .statusBar{height: 63px; border-top: 1px solid #dadada; padding: 0 20px; line-height: 63px; vertical-align: middle; position: relative;}
+.uploader-list-container .statusBar .progress{border: 1px solid #1483d8; width: 198px; background: #fff; height: 18px; position: relative; display: inline-block; text-align: center; line-height: 20px; color: #6dbfff; position: relative; margin-right: 10px;}
+.uploader-list-container .statusBar .progress span.percentage{width: 0; height: 100%; left: 0; top: 0; background: #1483d8; position: absolute;}
+.uploader-list-container .statusBar .progress span.text{position: relative; z-index: 10;}
+.uploader-list-container .statusBar .info{display: inline-block; font-size: 14px; color: #666666;}
+.uploader-list-container .statusBar .btns{position: absolute; top: 10px; right: 20px; line-height: 40px;}
+#filePicker{display: inline-block; float: left;}
+.uploader-list-container .statusBar .btns .webuploader-pick,
+.uploader-list-container .statusBar .btns .uploadBtn,
+.uploader-list-container .statusBar .btns .uploadBtn.state-uploading,
+.uploader-list-container .statusBar .btns .uploadBtn.state-paused{background: #ffffff; border: 1px solid #cfcfcf; color: #565656; padding: 0 18px; display: inline-block; border-radius: 3px; margin-left: 10px; cursor: pointer; font-size: 14px; float: left;}
+.uploader-list-container .statusBar .btns .webuploader-pick-hover,
+.uploader-list-container .statusBar .btns .uploadBtn:hover,
+.uploader-list-container .statusBar .btns .uploadBtn.state-uploading:hover,
+.uploader-list-container .statusBar .btns .uploadBtn.state-paused:hover{background: #f0f0f0;}
+.uploader-list-container .statusBar .btns .uploadBtn{background: #00b7ee; color: #fff; border-color: transparent;}
+.uploader-list-container .statusBar .btns .uploadBtn:hover{background: #00a2d4;}
+.uploader-list-container .statusBar .btns .uploadBtn.disabled{pointer-events: none; opacity: 0.6;}

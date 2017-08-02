@@ -1,0 +1,21 @@
+/*!
+ laypage默认样式
+*/
+.laypage_main{font-size:0; clear:both; color:#666}
+.laypage_main *{display:inline-block; vertical-align: top; font-size:12px}
+.laypage_main a{height:26px; line-height:26px; text-decoration:none; color:#666}
+.laypage_main a, .laypage_main span{margin:0 3px 6px; padding:0 10px}
+.laypage_main span{height:26px; line-height:26px}
+.laypage_main input, .laypage_main button{ border:1px solid #ccc; background-color:#fff}
+.laypage_main input{width:40px; height:26px; line-height:26px; margin:0 5px; padding:0 5px}
+.laypage_main button{height:28px; line-height:28px; margin-left:5px; padding:0 10px; color:#666}
+
+/* 默认皮肤 */
+.laypageskin_default a{border:1px solid #ddd; background-color:#fff}
+.laypageskin_default a:hover{ background-color:#5a98de; border-color:#5a98de; color:#fff}
+.laypageskin_default span{height:28px; line-height:28px; color:#999}
+.laypageskin_default .laypage_curr{font-weight:700; color:#666}
+
+/* 一般用于信息流加载 */
+.laypageskin_flow{text-align:center}
+.laypageskin_flow .page_nomore{color:#999}

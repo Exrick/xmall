@@ -1,0 +1,38 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Function(event, treeId, treeNode, msg)</span><span class="path">setting.callback.</span>onAsyncSuccess</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.core</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Used to capture the complete success event when execute ajax.</p>
+			<p class="highlight_red">If you set 'setting.callback.beforeAsync',and return false, zTree will not execute ajax, and will not trigger the 'onAsyncSuccess / onAsyncError' callback.</p>
+			<p>Default: null</p>
+		</div>
+	</div>
+	<h3>Function Parameter Descriptions</h3>
+	<div class="desc">
+	<h4><b>event</b><span>js event Object</span></h4>
+	<p>event Object</p>
+	<h4 class="topLine"><b>treeId</b><span>String</span></h4>
+	<p>zTree unique identifier: <b class="highlight_red">treeId</b>.</p>
+	<h4 class="topLine"><b>treeNode</b><span>JSON</span></h4>
+	<p>JSON data object of the parent node</p>
+	<p class="highlight_red">When load root nodes, treeNode = null</p>
+	<h4 class="topLine"><b>msg</b><span>String / Object</span></h4>
+	<p>The actualnode data which got by ajax. User-friendly debugging.</p>
+	<p class="highlight_red">The actual data's type of msg is affected by 'setting.async.dataType', please refer to JQuery API documentation.</p>
+	</div>
+	<h3>Examples of setting & function</h3>
+	<h4>1. When execute ajax complete success, alert message.</h4>
+	<pre xmlns=""><code>function myOnAsyncSuccess(event, treeId, treeNode, msg) {
+    alert(msg);
+};
+var setting = {
+	callback: {
+		onAsyncSuccess: myOnAsyncSuccess
+	}
+};
+......</code></pre>
+</div>
+</div>

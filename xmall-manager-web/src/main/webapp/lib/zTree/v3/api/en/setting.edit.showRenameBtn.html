@@ -1,0 +1,52 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Boolean / Function(treeId, treeNode)</span><span class="path">setting.edit.</span>showRenameBtn</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.exedit</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Set to show or hide the rename button. It is valid when <span class="highlight_red">[setting.edit.enable = true]</span></p>
+			<p>When you click the rename button:</p>
+			<p>1. Click the rename button, you can rename the node.</p>
+			<p>2. After rename operation (the input DOM blur or press the Enter Key), zTree will trigger the <span class="highlight_red">setting.callback.beforeRename</span> callback, and you can decide whether to allow rename.</p>
+			<p>3. If the 'beforeRename' callback return false, so zTree will keep the edit status. (Press the ESC key, can be restored to the original state.</p>
+			<p>4. If you don't set the 'beforeRename' or  the 'beforeRename' callback return true, so zTree will trigger the <span class="highlight_red">setting.callback.onRename</span> callback after rename the node.</p>
+			<p>Default: true</p>
+		</div>
+	</div>
+	<h3>Boolean Format</h3>
+	<div class="desc">
+	<p> true means: show the rename button</p>
+	<p> false means: hide the rename button</p>
+	</div>
+	<h3>Function Parameter Descriptions</h3>
+	<div class="desc">
+	<h4><b>treeId</b><span>String</span></h4>
+	<p>zTree unique identifier: <b class="highlight_red">treeId</b>.</p>
+	<h4 class="topLine"><b>treeNode</b><span>JSON</span></h4>
+	<p>JSON data object of the node which show the rename button</p>
+	<h4 class="topLine"><b>Return </b><span>Boolean</span></h4>
+	<p>Return value is same as 'Boolean Format'</p>
+	</div>
+	<h3>Examples of setting & function</h3>
+	<h4>1. Hide the rename button</h4>
+	<pre xmlns=""><code>var setting = {
+	edit: {
+		enable: true,
+		showRenameBtn: false
+	}
+};
+......</code></pre>
+	<h4>2. Hide the rename button of parent node</h4>
+	<pre xmlns=""><code>function setRenameBtn(treeId, treeNode) {
+	return !treeNode.isParent;
+}
+var setting = {
+	edit: {
+		enable: true,
+		showRenameBtn: setRenameBtn
+	}
+};
+......</code></pre>
+</div>
+</div>

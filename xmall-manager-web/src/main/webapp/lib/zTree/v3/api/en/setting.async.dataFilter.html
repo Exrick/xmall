@@ -1,0 +1,45 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Function(treeId, parentNode, responseData)</span><span class="path">setting.async.</span>dataFilter</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.core</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Callback function to pre-process Ajax return data. It is valid when <span class="highlight_red">[setting.async.enable = true]</span></p>
+			<p>Default: null</p>
+		</div>
+	</div>
+	<h3>Function Parameter Descriptions</h3>
+	<div class="desc">
+	<h4><b>treeId</b><span>String</span></h4>
+	<p>zTree unique identifier: <b class="highlight_red">treeId</b></p>
+	<h4 class="topLine"><b>parentNode</b><span>JSON</span></h4>
+	<p>Parent node's JSON data object</p>
+	<p class="highlight_red">When asynchronously loading the root, the parentNode = null</p>
+	<h4 class="topLine"><b>responseData</b><span>Array(JSON) / JSON / String</span></h4>
+	<p>Array (JSON) / JSON / String data objects</p>
+	<p class="highlight_red">From v3.4, support XML strings.</p>
+	<h4 class="topLine"><b>Return </b><span>Array(JSON) / JSON</span></h4>
+	<p>The return value should be the JSON data structure which is supported by the zTree.</p>
+	<p class="highlight_red">v3.x supports to load single node JSON data object.</p>
+	</div>
+	<h3>Examples of setting & function</h3>
+	<h4>1. Modify the node name attributes returned by an Ajax request.</h4>
+	<pre xmlns=""><code>function ajaxDataFilter(treeId, parentNode, responseData) {
+    if (responseData) {
+      for(var i =0; i < responseData.length; i++) {
+        responseData[i].name += "_filter";
+      }
+    }
+    return responseData;
+};
+var setting = {
+	async: {
+		enable: true,
+		url: "http://host/getNode.php",
+		dataFilter: ajaxDataFilter
+	}
+};
+......</code></pre>
+</div>
+</div>

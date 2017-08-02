@@ -1,0 +1,44 @@
+<div class="apiDetail">
+<div>
+	<h2><span>Function(simpleNodes)</span><span class="path">zTreeObj.</span>transformTozTreeNodes</h2>
+	<h3>Overview<span class="h3_info">[ depends on <span class="highlight_green">jquery.ztree.core</span> js ]</span></h3>
+	<div class="desc">
+		<p></p>
+		<div class="longdesc">
+			<p>Transform the simple array into zTree nodes data.</p>
+			<p class="highlight_red">If you use this method, you must set 'setting.data.simpleData.idKey' and 'setting.data.simpleData.pIdKey' attribute, and let the data are consistent with parent-child relationship.</p>
+			<p class="highlight_red">Please use zTree object to executing the method.</p>
+		</div>
+	</div>
+	<h3>Function Parameter Descriptions</h3>
+	<div class="desc">
+	<h4><b>simpleNodes</b><span>Array(JSON) / JSON</span></h4>
+	<p>JSON data object of the node which need to be transformed.</p>
+	<p>or JSON data objects array of the nodes which need to be transformed.</p>
+	<h4 class="topLine"><b>Return </b><span>Array(JSON)</span></h4>
+	<p>Standard data which zTree use. The child nodes are stored in the parent node's 'children' attribute.</p>
+	<p class="highlight_red">If simpleNodes is a single JSON, so the return array's length is 1.</p>
+	</div>
+	<h3>Examples of function</h3>
+	<h4>1. Transform the simple array data into zTree nodes format.</h4>
+	<pre xmlns=""><code>var setting = {
+	data: {
+		simpleData: {
+			enable: true,
+			idKey: "id",
+			pIdKey: "pId",
+			rootPId: 0
+		}
+	}
+};
+var simpleNodes = [
+    {"id":1, "pId":0, "name":"test1"},
+    {"id":11, "pId":1, "name":"test11"},
+    {"id":12, "pId":1, "name":"test12"},
+    {"id":111, "pId":11, "name":"test111"}
+];
+var treeObj = $.fn.zTree.getZTreeObj("tree");
+var nodes = treeObj.transformTozTreeNodes(simpleNodes);
+</code></pre>
+</div>
+</div>
