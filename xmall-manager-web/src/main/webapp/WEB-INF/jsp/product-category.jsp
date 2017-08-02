@@ -38,11 +38,11 @@
 <script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="lib/zTree/v3/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="lib/zTree/v3/js/jquery.ztree.all-3.5.js"></script>
 <script type="text/javascript">
     var setting = {
         view: {
-            dblClickExpand: false,
+            dblClickExpand: true,
             showLine: false,
             selectedMulti: false
         },
@@ -54,21 +54,28 @@
                 rootPId: ""
             }
         },
+        async: {
+            enable: true,
+            url: "item/cat/list",
+            type: "get",
+            contentType: "application/json",
+            autoParam: ["id"]
+        },
         callback: {
             beforeClick: function(treeId, treeNode) {
                 var zTree = $.fn.zTree.getZTreeObj("tree");
                 if (treeNode.isParent) {
-                    zTree.expandNode(treeNode);
+                    //zTree.expandNode(treeNode);
                     return false;
                 } else {
-                    demoIframe.attr("src",treeNode.file + ".html");
+                    demoIframe.attr("src","item/cat/list?id=2");
                     return true;
                 }
             }
         }
     };
 
-    var zNodes =[
+    /*var zNodes =[
         { id:1, pId:0, name:"一级分类", open:true},
         { id:11, pId:1, name:"二级分类"},
         { id:111, pId:11, name:"三级分类"},
@@ -78,8 +85,8 @@
         { id:115, pId:11, name:"三级分类"},
         { id:12, pId:1, name:"二级分类 1-2"},
         { id:121, pId:12, name:"三级分类 1-2-1"},
-        { id:122, pId:12, name:"三级分类 1-2-2"},
-    ];
+        { id:122, pId:12, name:"三级分类 1-2-2"}
+    ];*/
 
     var code;
 
@@ -91,7 +98,7 @@
 
     $(document).ready(function(){
         var t = $("#treeDemo");
-        t = $.fn.zTree.init(t, setting, zNodes);
+        t = $.fn.zTree.init(t, setting);
         demoIframe = $("#testIframe");
         //demoIframe.on("load", loadReady);
         var zTree = $.fn.zTree.getZTreeObj("tree");

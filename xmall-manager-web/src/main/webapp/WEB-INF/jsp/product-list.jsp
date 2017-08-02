@@ -30,10 +30,11 @@
 </style>
 
 <body class="pos-r">
-<div class="pos-a" style="width:180px;left:0;top:0; bottom:0; height:100%; border-right:1px solid #e5e5e5; background-color:#f5f5f5; overflow:auto;">
-    <ul id="treeDemo" class="ztree"></ul>
+<div class="pos-a" style="width:200px;left:0;top:0; bottom:0; height:100%; border-right:1px solid #e5e5e5; background-color:#f5f5f5; overflow:auto;">
+    <ul style="margin-top: 15px;margin-left: 20px"><i class="Hui-iconfont Hui-iconfont-fenlei"></i> 商品分类</ul>
+    <ul id="treeDemo" style="margin-left: 10px" class="ztree"></ul>
 </div>
-<div style="margin-left:180px;">
+<div style="margin-left:200px;">
     <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品管理 <span class="c-gray en">&gt;</span> 商品列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
     <div class="page-container">
         <div class="text-c"> 日期范围：
@@ -159,7 +160,7 @@
 
     var setting = {
         view: {
-            dblClickExpand: false,
+            dblClickExpand: true,
             showLine: false,
             selectedMulti: false
         },
@@ -171,11 +172,18 @@
                 rootPId: ""
             }
         },
+        async: {
+            enable: true,
+            url: "item/cat/list",
+            type: "get",
+            contentType: "application/json",
+            autoParam: ["id"]
+        },
         callback: {
             beforeClick: function(treeId, treeNode) {
                 var zTree = $.fn.zTree.getZTreeObj("tree");
                 if (treeNode.isParent) {
-                    zTree.expandNode(treeNode);
+                    //zTree.expandNode(treeNode);
                     return false;
                 } else {
                     //demoIframe.attr("src",treeNode.file + ".html");
@@ -185,7 +193,7 @@
         }
     };
 
-    var zNodes =[
+    /*var zNodes =[
         { id:1, pId:0, name:"一级分类", open:true},
         { id:11, pId:1, name:"二级分类"},
         { id:111, pId:11, name:"三级分类"},
@@ -196,13 +204,11 @@
         { id:12, pId:1, name:"二级分类 1-2"},
         { id:121, pId:12, name:"三级分类 1-2-1"},
         { id:122, pId:12, name:"三级分类 1-2-2"},
-    ];
-
-
+    ];*/
 
     $(document).ready(function(){
         var t = $("#treeDemo");
-        t = $.fn.zTree.init(t, setting, zNodes);
+        t = $.fn.zTree.init(t, setting);
         //demoIframe = $("#testIframe");
         //demoIframe.on("load", loadReady);
         var zTree = $.fn.zTree.getZTreeObj("tree");
