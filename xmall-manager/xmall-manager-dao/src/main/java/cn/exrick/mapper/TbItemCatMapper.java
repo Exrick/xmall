@@ -2,9 +2,8 @@ package cn.exrick.mapper;
 
 import cn.exrick.pojo.TbItemCat;
 import cn.exrick.pojo.TbItemCatExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface TbItemCatMapper {
     long countByExample(TbItemCatExample example);

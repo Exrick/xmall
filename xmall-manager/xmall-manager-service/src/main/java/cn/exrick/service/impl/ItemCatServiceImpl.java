@@ -39,6 +39,7 @@ public class ItemCatServiceImpl implements ItemCatService {
             node.setName(tbItemCat.getName());
             node.setIsParent(tbItemCat.getIsParent()?true:false);
             node.setOpen(tbItemCat.getIsParent()?false:true);
+            node.setIcon(tbItemCat.getIcon());
 
             resultList.add(node);
         }
