@@ -7,8 +7,36 @@
 - 搜索系统：提供商品的搜索功能。
 - 单点登录系统：为多个系统之间提供用户登录凭证以及查询登录用户的信息。
 
-### dependency_files文件夹包含
+![](http://otabkoy17.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20170802225212.png)
+
+### dependency_files文件夹提供部分安装文件
 - sql文件
 - dubbo.xsd 需手动配置避免报错
 - zookeeper 
+- Ngix安装(Linux) 
+    - 1. gcc环境 `yum install gcc-c++`
+    - 2. 第三方的开发包
+    - PCRE `yum install -y pcre pcre-devel`
+    - zlib `yum install -y zlib zlib-devel`
+    - openssl `yum install -y openssl openssl-devel`
+    - 解压 `[root@localhost ~]# tar zxf nginx-1.8.0.tar.gz`
+    - 复制执行以下命令
+    `./configure \
+    --prefix=/usr/local/nginx \
+    --pid-path=/var/run/nginx/nginx.pid \
+    --lock-path=/var/lock/nginx.lock \
+    --error-log-path=/var/log/nginx/error.log \
+    --http-log-path=/var/log/nginx/access.log \
+    --with-http_gzip_static_module \
+    --http-client-body-temp-path=/var/temp/nginx/client \
+    --http-proxy-temp-path=/var/temp/nginx/proxy \
+    --http-fastcgi-temp-path=/var/temp/nginx/fastcgi \
+    --http-uwsgi-temp-path=/var/temp/nginx/uwsgi \
+    --http-scgi-temp-path=/var/temp/nginx/scgi`
+    - `[root@localhost ~]# make`
+    - `[root@localhost ~]# make install`
+    - `[root@localhost sbin]# mkdir /var/temp/nginx/client -p`
+    - 进入目录 `cd /usr/local/nginx/` 
+    - 启动 `[root@localhost sbin]# ./nginx`
+
 
