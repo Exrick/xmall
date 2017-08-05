@@ -17,6 +17,12 @@ public class TbUser {
 
     private Date updated;
 
+    private String sex;
+
+    private String address;
+
+    private Integer state;
+
     public Long getId() {
         return id;
     }
@@ -71,5 +77,29 @@ public class TbUser {
 
     public void setUpdated(Date updated) {
         this.updated = updated;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex == null ? null : sex.trim();
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address == null ? null : address.trim();
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
     }
 }

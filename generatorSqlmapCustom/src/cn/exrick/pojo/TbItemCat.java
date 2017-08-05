@@ -19,6 +19,8 @@ public class TbItemCat {
 
     private Date updated;
 
+    private String icon;
+
     public Long getId() {
         return id;
     }
@@ -81,5 +83,13 @@ public class TbItemCat {
 
     public void setUpdated(Date updated) {
         this.updated = updated;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon == null ? null : icon.trim();
     }
 }

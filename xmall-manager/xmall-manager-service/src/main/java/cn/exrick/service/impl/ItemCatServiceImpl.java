@@ -27,8 +27,10 @@ public class ItemCatServiceImpl implements ItemCatService {
         //条件查询
         criteria.andParentIdEqualTo(new Long(parentId));
         List<TbItemCat> list = tbItemCatMapper.selectByExample(example);
+
         //转换成ZtreeNode
         List<ZTreeNode> resultList=new ArrayList<>();
+
         for(TbItemCat tbItemCat:list){
 
             ZTreeNode node=new ZTreeNode();
@@ -40,6 +42,7 @@ public class ItemCatServiceImpl implements ItemCatService {
 
             resultList.add(node);
         }
+
         return resultList;
     }
 }

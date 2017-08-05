@@ -2,9 +2,8 @@ package cn.exrick.mapper;
 
 import cn.exrick.pojo.TbUser;
 import cn.exrick.pojo.TbUserExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface TbUserMapper {
     long countByExample(TbUserExample example);

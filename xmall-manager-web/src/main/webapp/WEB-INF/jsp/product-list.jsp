@@ -114,7 +114,7 @@
     $(document).ready(function () {
         $('#example').DataTable({
             serverSide: true,//开启服务器模式
-            "processing": true,//加载显示
+            "processing": false,//加载显示提示
             "ajax": {
                 url:"item/list",
                 type: 'POST'
@@ -255,8 +255,8 @@
     /*产品-下架*/
     function product_stop(obj,id){
         layer.confirm('确认要下架吗？',function(index){
-            $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="product_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
-            $(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
+            $(obj).parents("td").prepend('<a style="text-decoration:none" onClick="product_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
+            //$(obj).parents("td").html('<span class="label label-defaunt radius">已下架</span>');
             $(obj).remove();
             layer.msg('已下架!',{icon: 5,time:1000});
         });
@@ -265,8 +265,8 @@
     /*产品-发布*/
     function product_start(obj,id){
         layer.confirm('确认要发布吗？',function(index){
-            $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="product_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>');
-            $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
+            $(obj).parents("td").prepend('<a style="text-decoration:none" onClick="product_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>');
+            //$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
             $(obj).remove();
             layer.msg('已发布!',{icon: 6,time:1000});
         });
