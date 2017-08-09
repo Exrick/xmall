@@ -28,6 +28,14 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">
                 <span class="c-red">*</span>
+                选择类别：</label>
+            <div class="formControls col-xs-6 col-sm-6">
+                <input type="text" class="input-text" value="" placeholder="" id="user-name" name="product-category-name">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">
+                <span class="c-red">*</span>
                 分类名称：</label>
             <div class="formControls col-xs-6 col-sm-6">
                 <input type="text" class="input-text" value="" placeholder="" id="user-name" name="product-category-name">
