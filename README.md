@@ -24,7 +24,7 @@
 - MyBatis
 - Dubbo
 - ZooKeeper
-- ![Nginx](https://github.com/Exrick/xmall/blob/master/study/Nginx.md)
+- [Nginx](https://github.com/Exrick/xmall/blob/master/study/Nginx.md)
 - Tomcat
 
 ### dependency_files文件夹提供部分安装文件
