@@ -1,3 +1,4 @@
 cn\exrick\controller\PageController.class
 cn\exrick\controller\ItemCatController.class
+cn\exrick\controller\UserController.class
 cn\exrick\controller\ItemController.class

@@ -287,4 +287,16 @@
       state = #{state,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select id="selectByUserInformation" parameterType="string" resultMap="BaseResultMap">
+    SELECT * FROM tb_user
+    WHERE (username LIKE #{search})
+    OR
+    (phone LIKE #{search})
+    OR
+    (email LIKE #{search})
+    OR
+    (sex LIKE #{search})
+    OR
+    (address LIKE #{search})
+  </select>
 </mapper>
