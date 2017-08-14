@@ -53,6 +53,7 @@
 		<table schema="" tableName="tb_order_item"></table>
 		<table schema="" tableName="tb_order_shipping"></table>
 		<table schema="" tableName="tb_user"></table>
+		<table schema="" tableName="tb_member"></table>
 
 	</context>
 </generatorConfiguration>

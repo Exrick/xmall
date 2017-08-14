@@ -8,6 +8,8 @@ import java.util.List;
  */
 public class DataTablesResult implements Serializable{
 
+    private Boolean success;
+
     private int draw;
 
     private int recordsTotal;
@@ -20,6 +22,14 @@ public class DataTablesResult implements Serializable{
 
     public int getRecordsTotal() {
         return recordsTotal;
+    }
+
+    public Boolean getSuccess() {
+        return success;
+    }
+
+    public void setSuccess(Boolean success) {
+        this.success = success;
     }
 
     public void setRecordsTotal(int recordsTotal) {

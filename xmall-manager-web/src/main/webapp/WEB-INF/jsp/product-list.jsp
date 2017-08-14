@@ -134,7 +134,7 @@
             "aaSorting": [[ 1, "desc" ]],//默认第几个排序
             "bStateSave": false,//状态保存
             "aoColumnDefs": [
-                {"orderable":false,"aTargets":[0,2,9]}// 制定列不参与排序
+                {"orderable":false,"aTargets":[0,2,6,9]}// 制定列不参与排序
             ]
         });
 

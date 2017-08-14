@@ -2,8 +2,8 @@ cn\exrick\mapper\TbItemParamItemMapper.class
 cn\exrick\mapper\TbOrderShippingMapper.class
 cn\exrick\mapper\TbContentMapper.class
 cn\exrick\mapper\TbItemCatMapper.class
-cn\exrick\mapper\TbUserMapper.class
 cn\exrick\mapper\TbItemMapper.class
+cn\exrick\mapper\TbMemberMapper.class
 cn\exrick\mapper\TbOrderItemMapper.class
 cn\exrick\mapper\TbContentCategoryMapper.class
 cn\exrick\mapper\TbItemParamMapper.class

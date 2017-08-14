@@ -21,6 +21,6 @@
     <dubbo:protocol name="dubbo" port="20880" />
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service interface="cn.exrick.service.ItemService" ref="itemServiceImpl" timeout="5000"/>
-    <dubbo:service interface="cn.exrick.service.UserService" ref="userServiceImpl" timeout="5000"/>
+    <dubbo:service interface="cn.exrick.service.MemberService" ref="userServiceImpl" timeout="5000"/>
     <dubbo:service interface="cn.exrick.service.ItemCatService" ref="itemCatServiceImpl" timeout="5000"/>
 </beans>

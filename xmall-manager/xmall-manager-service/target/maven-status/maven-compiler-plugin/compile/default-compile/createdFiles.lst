@@ -1,3 +1,4 @@
-cn\exrick\service\impl\UserServiceImpl.class
+cn\exrick\service\exception\XMallException.class
 cn\exrick\service\impl\ItemCatServiceImpl.class
+cn\exrick\service\impl\MemberServiceImpl.class
 cn\exrick\service\impl\ItemServiceImpl.class
