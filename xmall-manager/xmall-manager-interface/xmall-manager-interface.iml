@@ -12,6 +12,7 @@
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="xmall-manager-pojo" />
+    <orderEntry type="library" name="Maven: io.swagger:swagger-annotations:1.5.10" level="project" />
     <orderEntry type="module" module-name="xmall-common" />
     <orderEntry type="library" name="Maven: joda-time:joda-time:2.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.3.2" level="project" />

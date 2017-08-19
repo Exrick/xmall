@@ -15,6 +15,7 @@
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
     </bean>
+    <bean name="applicationSwaggerConfig" class="cn.exrick.swagger.Swagger2Config"/>
     <!--配置资源映射-->
     <mvc:resources mapping="/lib/**" location="/lib/"/>
     <mvc:resources mapping="/static/**" location="/static/"/>

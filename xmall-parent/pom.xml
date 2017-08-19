@@ -40,6 +40,8 @@
         <freemarker.version>2.3.23</freemarker.version>
         <quartz.version>2.2.2</quartz.version>
         <javassist.version>3.21.0-GA</javassist.version>
+        <swagger2.version>2.6.1</swagger2.version>
+        <swagger-ui.version>2.6.1</swagger-ui.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -231,6 +233,17 @@
                 <groupId>org.javassist</groupId>
                 <artifactId>javassist</artifactId>
                 <version>${javassist.version}</version>
+            </dependency>
+            <!-- swagger2 -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger-ui.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

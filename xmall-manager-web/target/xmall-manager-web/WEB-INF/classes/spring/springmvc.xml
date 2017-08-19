@@ -10,19 +10,23 @@
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
     <context:component-scan base-package="cn.exrick.controller" />
+    <context:component-scan base-package="cn.exrick.swagger" />
     <mvc:annotation-driven />
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
     </bean>
+    <bean name="applicationSwaggerConfig" class="cn.exrick.swagger.Swagger2Config"/>
     <!--配置资源映射-->
     <mvc:resources mapping="/lib/**" location="/lib/"/>
     <mvc:resources mapping="/static/**" location="/static/"/>
     <mvc:resources mapping="/temp/**" location="/temp/"/>
+    <mvc:resources location="classpath:/META-INF/resources/" mapping="swagger-ui.html"/>
+    <mvc:resources location="classpath:/META-INF/resources/webjars/" mapping="/webjars/**"/>
     <!-- 引用dubbo服务 -->
     <dubbo:application name="xmall-manager-web"/>
     <dubbo:registry protocol="zookeeper" address="123.207.121.135:2181"/>
     <dubbo:reference interface="cn.exrick.service.ItemService" id="itemService" />
-    <dubbo:reference interface="cn.exrick.service.MemberService" id="userService" />
+    <dubbo:reference interface="cn.exrick.service.MemberService" id="memberService" />
     <dubbo:reference interface="cn.exrick.service.ItemCatService" id="itemCatService" />
 </beans>

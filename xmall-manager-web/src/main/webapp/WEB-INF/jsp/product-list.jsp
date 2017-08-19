@@ -117,7 +117,7 @@
             "processing": false,//加载显示提示
             "ajax": {
                 url:"item/list",
-                type: 'POST'
+                type: 'GET'
             },
             "columns": [
                 { "data": null,"defaultContent": "<input name=\"\" type=\"checkbox\" value=\"\">"},
@@ -140,7 +140,7 @@
 
         $.ajax({
             url:"item/count",
-            type: 'POST',
+            type: 'GET',
             success:function (result) {
                 $("#itemListCount").html(result.recordsTotal);
             }
@@ -175,7 +175,7 @@
         async: {
             enable: true,
             url: "item/cat/list",
-            type: "get",
+            type: "GET",
             contentType: "application/json",
             autoParam: ["id"]
         },
