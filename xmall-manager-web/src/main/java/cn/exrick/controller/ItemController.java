@@ -19,7 +19,6 @@ public class ItemController {
     private ItemService itemService;
 
     @RequestMapping(value = "/item/{itemId}",method = RequestMethod.GET)
-    @ResponseBody
     @ApiOperation(value = "通过ID获取商品")
     public TbItem getItemById(@PathVariable Long itemId){
         TbItem tbItem=itemService.getItemById(itemId);
@@ -27,7 +26,6 @@ public class ItemController {
     }
 
     @RequestMapping(value = "/item/list",method = RequestMethod.GET)
-    @ResponseBody
     @ApiOperation(value = "分页搜索查询获取商品列表")
     public DataTablesResult getItemList(int draw, int start, int length,@RequestParam("search[value]") String search){
         DataTablesResult result=itemService.getItemList(draw,start,length,search);
@@ -35,7 +33,6 @@ public class ItemController {
     }
 
     @RequestMapping(value = "/item/count",method = RequestMethod.GET)
-    @ResponseBody
     @ApiOperation(value = "获得商品总数目")
     public DataTablesResult getAllItemCount(){
         DataTablesResult result=itemService.getAllItemCount();

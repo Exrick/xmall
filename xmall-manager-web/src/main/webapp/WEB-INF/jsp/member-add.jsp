@@ -29,7 +29,7 @@
 </head>
 <body>
 <article class="page-container">
-    <form action="/member/add" method="POST" class="form form-horizontal" id="form-member-add">
+    <form action="" method="POST" class="form form-horizontal" id="form-member-add">
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户名：</label>
             <div class="formControls col-xs-8 col-sm-9">
@@ -87,8 +87,7 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3">备注：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <textarea name="beizhu" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" onKeyUp="$.Huitextarealength(this,100)"></textarea>
-                <p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
+                <textarea name="beizhu" cols="" rows="" class="textarea"  placeholder="说点什么...最多输入100个字符"></textarea>
             </div>
         </div>
         <div class="row cl">
@@ -111,6 +110,10 @@
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <script type="text/javascript">
+    $(".textarea").Huitextarealength({
+        minlength:0,
+        maxlength:100
+    });
     $(function(){
         $('.skin-minimal input').iCheck({
             checkboxClass: 'icheckbox-blue',
@@ -137,7 +140,7 @@
                     email:true,
                 },
                 uploadfile:{
-                    required:true,
+                    required:false,
                 },
 
             },
@@ -145,7 +148,21 @@
             focusCleanup:true,
             success:"valid",
             submitHandler:function(form){
-                $(form).serialize().ajaxSubmit();
+                var param = $(form).serialize();
+                console.log(param);
+                var params = $(form).serializeArray();
+                console.log(params.username);
+                $.ajax({
+                    type:"POST",
+                    url:"member/add",
+                    data:params,
+                    success:function(data){
+                        alert("成功");
+                    },
+                    error:function(e) {
+                        alert("出错："+e);
+                    }
+                });
                 var index = parent.layer.getFrameIndex(window.name);
                 parent.$('.btn-refresh').click();
                 parent.layer.close(index);

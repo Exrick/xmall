@@ -16,15 +16,15 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="generatorSqlmapCustom" target="1.7" />
-      <module name="xmall-common" target="1.7" />
-      <module name="xmall-manager" target="1.7" />
-      <module name="xmall-manager-dao" target="1.7" />
-      <module name="xmall-manager-interface" target="1.7" />
-      <module name="xmall-manager-pojo" target="1.7" />
-      <module name="xmall-manager-service" target="1.7" />
-      <module name="xmall-manager-web" target="1.7" />
-      <module name="xmall-parent" target="1.7" />
+      <module name="generatorSqlmapCustom" target="1.8" />
+      <module name="xmall-common" target="1.8" />
+      <module name="xmall-manager" target="1.8" />
+      <module name="xmall-manager-dao" target="1.8" />
+      <module name="xmall-manager-interface" target="1.8" />
+      <module name="xmall-manager-pojo" target="1.8" />
+      <module name="xmall-manager-service" target="1.8" />
+      <module name="xmall-manager-web" target="1.8" />
+      <module name="xmall-parent" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

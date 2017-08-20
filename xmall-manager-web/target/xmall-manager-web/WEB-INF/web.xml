@@ -39,16 +39,6 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>xmall-manager-web</servlet-name>
-        <url-pattern>/swagger-resources</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>xmall-manager-web</servlet-name>
-        <url-pattern>/v2/api-docs</url-pattern>
-    </servlet-mapping>
-
     <!--错误页面-->
     <error-page>
         <error-code>404</error-code>

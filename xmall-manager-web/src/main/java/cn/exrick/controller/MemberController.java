@@ -1,6 +1,6 @@
 package cn.exrick.controller;
 
-import cn.exrick.common.utils.XMallResult;
+import cn.exrick.common.utils.Result;
 import cn.exrick.pojo.DataTablesResult;
 import cn.exrick.pojo.TbMember;
 import cn.exrick.service.MemberService;
@@ -29,7 +29,6 @@ public class MemberController {
      * @return
      */
     @RequestMapping(value = "/member/list",method = RequestMethod.GET)
-    @ResponseBody
     @ApiOperation(value = "分页搜索获取会员列表")
     public DataTablesResult getMemberList(int draw, int start, int length, @RequestParam("search[value]") String search){
         DataTablesResult result=memberService.getMemberList(draw,start,length,search);
@@ -41,7 +40,6 @@ public class MemberController {
      * @return
      */
     @RequestMapping(value = "/member/count",method = RequestMethod.GET)
-    @ResponseBody
     @ApiOperation(value = "获得总会员数目")
     public DataTablesResult getMemberCount(){
         return memberService.getMemberCount();
@@ -53,9 +51,8 @@ public class MemberController {
      * @return
      */
     @RequestMapping(value = "/member/add",method = RequestMethod.POST)
-    @ResponseBody
     @ApiOperation(value = "添加会员")
-    public XMallResult createMember(@RequestBody TbMember tbMember){
+    public Result createMember(@RequestBody TbMember tbMember){
         System.out.println("收到请求");
 
         return null;
