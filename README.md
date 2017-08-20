@@ -24,7 +24,7 @@
 - MyBatis
 - Dubbo
 - ZooKeeper
-- Swagger
+- [Swagger](https://github.com/Exrick/xmall/blob/master/study/Swagger.md)
 - [Nginx](https://github.com/Exrick/xmall/blob/master/study/Nginx.md)
 - Tomcat
 
