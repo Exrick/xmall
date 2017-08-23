@@ -20,7 +20,7 @@
 ### 后端所用技术
 
 - Spring
-- SpringMVC
+- [SpringMVC](https://github.com/Exrick/xmall/blob/master/study/SpringMVC.md)
 - MyBatis
 - Dubbo
 - ZooKeeper
