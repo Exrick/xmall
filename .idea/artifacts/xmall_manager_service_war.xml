@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="xmall-manager-service:war">
     <output-path>$PROJECT_DIR$/xmall-manager/xmall-manager-service/target</output-path>
-    <root id="archive" name="xmall-manager-service.war">
+    <root id="archive" name="xmall-manager-service-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="xmall-manager-service:war exploded" />
     </root>
   </artifact>

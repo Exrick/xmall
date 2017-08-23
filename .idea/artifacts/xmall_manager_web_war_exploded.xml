@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="xmall-manager-web:war exploded">
-    <output-path>$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web</output-path>
+    <output-path>$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web-1.0-SNAPSHOT</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -72,7 +72,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="xmall-manager-web/web/Web" />
     </root>

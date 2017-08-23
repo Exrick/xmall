@@ -1,4 +1,4 @@
-### Swagger使用
+### Swagger安装使用
 1. Maven依赖安装
 ```
 <!-- swagger2 -->
@@ -135,3 +135,16 @@ url = "http://localhost:8888/v2/api-docs";
 然后访问http://localhost:8888/static/swagger/index.html
 
 ![](http://otabkoy17.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20170819202037.png)
+
+5. 使用总结
+
+```
+@ApiOperation(value = "获取图片资源",response = byte[].class,produces = "application/json;charset=UTF-8")
+    @ApiResponses({
+            @ApiResponse(code=404,message="没有找到该图片")
+    })
+    @GetMapping(value = "/files/images/{id}",produces = "image/jpeg;image/png;image/gif")
+    public ResponseEntity<String> getImg(@PathVariable("id") long id) {
+        return new ResponseEntity<String>(fileService.getFileBydId(id), HttpStatus.OK);
+    }
+```

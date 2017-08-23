@@ -2,142 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4f3498c-c7a8-433e-85bb-4c00387d3dab" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_4_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_4_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_2_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_4_2_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_2_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_2_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_2_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_2_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_2_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_2_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jms_4_2_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_4_2_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_2_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_2_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_2_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/aopalliance-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/aspectjweaver-1.8.7.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/spring-aop-4.2.4.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/spring-aspects-4.2.4.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/spring-beans-4.2.4.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/spring-context-4.2.4.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/spring-context-support-4.2.4.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/spring-core-4.2.4.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/spring-expression-4.2.4.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/spring-jdbc-4.2.4.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/spring-jms-4.2.4.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/spring-messaging-4.2.4.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/spring-tx-4.2.4.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/spring-web-4.2.4.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/spring-webmvc-4.2.4.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbUserMapper.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-common/target/xmall-common.jar" afterPath="$PROJECT_DIR$/xmall-common/target/xmall-common.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/target/classes/cn/exrick/controller/ItemController.class" afterPath="$PROJECT_DIR$/xmall-manager-web/target/classes/cn/exrick/controller/ItemController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web.war" afterPath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/classes/cn/exrick/controller/ItemController.class" afterPath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/classes/cn/exrick/controller/ItemController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/xmall-common-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/xmall-common-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/xmall-manager-interface-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/xmall-manager-interface-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/xmall-manager-pojo-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/lib/xmall-manager-pojo-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbContentCategoryMapper.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbContentCategoryMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbContentMapper.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbContentMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbItemCatMapper.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbItemCatMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbItemDescMapper.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbItemDescMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbItemMapper.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbItemMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbItemParamItemMapper.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbItemParamItemMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbItemParamMapper.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbItemParamMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbOrderItemMapper.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbOrderItemMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbOrderMapper.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbOrderMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbOrderShippingMapper.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/classes/cn/exrick/mapper/TbOrderShippingMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/xmall-manager-dao.jar" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/xmall-manager-dao.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/target/classes/cn/exrick/service/ItemService.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/target/classes/cn/exrick/service/ItemService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/target/xmall-manager-interface.jar" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/target/xmall-manager-interface.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContent.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContentCategory.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContentCategory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContentCategoryExample$Criteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContentCategoryExample$Criteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContentCategoryExample$Criterion.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContentCategoryExample$Criterion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContentCategoryExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContentCategoryExample$GeneratedCriteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContentCategoryExample.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContentCategoryExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContentExample$Criteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContentExample$Criteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContentExample$Criterion.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContentExample$Criterion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContentExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContentExample$GeneratedCriteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContentExample.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbContentExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItem.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItem.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemCat.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemCat.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemCatExample$Criteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemCatExample$Criteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemCatExample$Criterion.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemCatExample$Criterion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemCatExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemCatExample$GeneratedCriteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemCatExample.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemCatExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemDesc.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemDesc.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemDescExample$Criteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemDescExample$Criteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemDescExample$Criterion.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemDescExample$Criterion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemDescExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemDescExample$GeneratedCriteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemDescExample.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemDescExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemExample$Criteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemExample$Criteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemExample$Criterion.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemExample$Criterion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemExample$GeneratedCriteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemExample.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParam.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParam.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParamExample$Criteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParamExample$Criteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParamExample$Criterion.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParamExample$Criterion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParamExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParamExample$GeneratedCriteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParamExample.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParamExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParamItem.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParamItem.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParamItemExample$Criteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParamItemExample$Criteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParamItemExample$Criterion.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParamItemExample$Criterion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParamItemExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParamItemExample$GeneratedCriteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParamItemExample.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbItemParamItemExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrder.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderExample$Criteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderExample$Criteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderExample$Criterion.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderExample$Criterion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderExample$GeneratedCriteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderExample.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderItem.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderItem.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderItemExample$Criteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderItemExample$Criteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderItemExample$Criterion.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderItemExample$Criterion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderItemExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderItemExample$GeneratedCriteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderItemExample.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderItemExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderShipping.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderShipping.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderShippingExample$Criteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderShippingExample$Criteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderShippingExample$Criterion.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderShippingExample$Criterion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderShippingExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderShippingExample$GeneratedCriteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderShippingExample.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/classes/cn/exrick/pojo/TbOrderShippingExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/xmall-manager-pojo.jar" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/xmall-manager-pojo.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/target/classes/cn/exrick/service/impl/ItemServiceImpl.class" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/target/classes/cn/exrick/service/impl/ItemServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_service_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_service_war.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_service_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_service_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_web_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_web_war.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_web_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_web_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/generatorSqlmapCustom.iml" afterPath="$PROJECT_DIR$/generatorSqlmapCustom/generatorSqlmapCustom.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-common/xmall-common.iml" afterPath="$PROJECT_DIR$/xmall-common/xmall-common.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/pom.xml" afterPath="$PROJECT_DIR$/xmall-manager-web/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/ItemCatController.java" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/ItemCatController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/ItemController.java" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/ItemController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/MemberController.java" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/MemberController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-add.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-add.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-add.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-add.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/xmall-manager-web/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/xmall-manager-web/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/xmall-manager-web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/classes/log4j.properties" afterPath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/classes/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/classes/spring/springmvc.xml" afterPath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/classes/spring/springmvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/xmall-manager-web.iml" afterPath="$PROJECT_DIR$/xmall-manager-web/xmall-manager-web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/xmall-manager-dao.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/xmall-manager-dao.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/xmall-manager-interface.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/xmall-manager-interface.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/xmall-manager-pojo.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/xmall-manager-pojo.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/xmall-manager-service.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/xmall-manager-service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-parent/pom.xml" afterPath="$PROJECT_DIR$/xmall-parent/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-parent/xmall-parent.iml" afterPath="$PROJECT_DIR$/xmall-parent/xmall-parent.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/xmall-parent/target/" />
     <ignored path="$PROJECT_DIR$/xmall-common/target/" />
@@ -162,24 +32,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MemberController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MemberController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/MemberController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="55" column="35" lean-forward="true" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
+            <state relative-caret-position="287">
+              <caret line="49" column="22" lean-forward="true" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="member-add.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xmall-parent/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="155">
+              <caret line="262" column="17" lean-forward="false" selection-start-line="262" selection-start-column="17" selection-end-line="262" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="member-add.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-add.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="174">
               <caret line="153" column="43" lean-forward="false" selection-start-line="153" selection-start-column="43" selection-end-line="153" selection-end-column="43" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#span#0;n#div#0;n#div#4;n#form#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -187,8 +65,8 @@
       <file leaf-file-name="product-list.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-124">
-              <caret line="125" column="9" lean-forward="true" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
+            <state relative-caret-position="2625">
+              <caret line="125" column="9" lean-forward="false" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
               <folding>
                 <marker date="1502686494818" expanded="true" signature="8037:8057" ph="..." />
                 <marker date="1502686494818" expanded="true" signature="8160:8168" ph="&amp;##xe6de;" />
@@ -219,10 +97,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>数据</find>
-      <find>searchItem</find>
-      <find>add</find>
-      <find>zNodes</find>
       <find>showCode</find>
       <find>code</find>
       <find>180</find>
@@ -249,6 +123,10 @@
       <find>spring.version</find>
       <find>jackson.version</find>
       <find>Huitextarealength</find>
+      <find>final</find>
+      <find>artifactId</find>
+      <find>swagger-ui.version</find>
+      <find>project.artifactId</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -308,11 +186,11 @@
         <option value="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/Result.java" />
         <option value="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/ResultUtil.java" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/exception/RestCtrlExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/xmall-parent/pom.xml" />
         <option value="$PROJECT_DIR$/xmall-manager-web/pom.xml" />
-        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/MemberController.java" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-add.jsp" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-add.jsp" />
+        <option value="$PROJECT_DIR$/xmall-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/MemberController.java" />
       </list>
     </option>
   </component>
@@ -784,8 +662,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -921,6 +797,8 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1525,6 +1403,7 @@
       <workItem from="1502758576303" duration="4714000" />
       <workItem from="1503123000259" duration="11575000" />
       <workItem from="1503223058154" duration="14607000" />
+      <workItem from="1503475667415" duration="2181000" />
     </task>
     <servers />
   </component>
@@ -1540,10 +1419,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230138000" />
+    <option name="totallyTimeSpent" value="232319000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1568,7 +1447,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4340278" sideWeight="0.4969651" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3767361" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26555386" sideWeight="0.49305555" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27010623" sideWeight="0.49305555" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26100153" sideWeight="0.5069444" order="8" side_tool="true" content_ui="tabs" />
@@ -1669,7 +1548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="74" lean-forward="false" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1844,7 +1722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1870,7 +1747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1878,7 +1754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1886,7 +1761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1894,9 +1768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
           <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-          <folding>
-            <element signature="e#357#358#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1904,7 +1775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
           <caret line="84" column="13" lean-forward="false" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1920,17 +1790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-parent/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1938,7 +1797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1966,15 +1824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-597">
           <caret line="4669" column="27" lean-forward="false" selection-start-line="4669" selection-start-column="10" selection-end-line="4669" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/MemberController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="55" column="35" lean-forward="true" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2011,8 +1860,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-124">
-          <caret line="125" column="9" lean-forward="true" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
+        <state relative-caret-position="2625">
+          <caret line="125" column="9" lean-forward="false" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
           <folding>
             <marker date="1502686494818" expanded="true" signature="8037:8057" ph="..." />
             <marker date="1502686494818" expanded="true" signature="8160:8168" ph="&amp;##xe6de;" />
@@ -2032,9 +1881,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="153" column="43" lean-forward="false" selection-start-line="153" selection-start-column="43" selection-end-line="153" selection-end-column="43" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#span#0;n#div#0;n#div#4;n#form#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-parent/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="262" column="17" lean-forward="false" selection-start-line="262" selection-start-column="17" selection-end-line="262" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/MemberController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="49" column="22" lean-forward="true" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
