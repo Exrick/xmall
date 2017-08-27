@@ -28,6 +28,7 @@ cn\exrick\pojo\TbContentCategoryExample$Criteria.class
 cn\exrick\pojo\TbItemCatExample$Criterion.class
 cn\exrick\pojo\TbItemParamItemExample$GeneratedCriteria.class
 cn\exrick\pojo\TbOrderExample$Criterion.class
+cn\exrick\dto\DtoUtil.class
 cn\exrick\pojo\TbMemberExample$Criterion.class
 cn\exrick\pojo\TbItemDesc.class
 cn\exrick\pojo\TbItemParamExample$Criterion.class
@@ -47,6 +48,7 @@ cn\exrick\pojo\TbItemDescExample$Criterion.class
 cn\exrick\pojo\TbOrderItemExample$GeneratedCriteria.class
 cn\exrick\pojo\TbContentExample.class
 cn\exrick\pojo\TbItemParamExample$Criteria.class
+cn\exrick\dto\MemberDto.class
 cn\exrick\pojo\TbItemCatExample$Criteria.class
 cn\exrick\pojo\TbOrderExample.class
 cn\exrick\pojo\TbContentExample$GeneratedCriteria.class

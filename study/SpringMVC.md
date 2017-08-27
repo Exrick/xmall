@@ -47,6 +47,17 @@
 
 ```
 
+**@DeleteMapping**
+
+映射HTTP的delete请求，等同于`@RequestMapping(value = "/member/add",method = RequestMethod.DELETE)`，以下同理
+
+**@GetMapping**
+
+**@PostMapping**
+
+**@PutMapping**
+
+
 **@RequestParam**
 
 - **value** 对应表单name空间的值
@@ -65,9 +76,9 @@
 获得地址栏中传的参数 例如：
 
 ```
-@RequestMapping(value="/{groupId}.do")  
-public void detail(@PathVariable long groupId){  
-    groupRepository.selectOne(groupId);  
+@RequestMapping(value="/{groupId}.do")
+public void detail(@PathVariable long groupId){
+    groupRepository.selectOne(groupId);
 }
 ```
 
@@ -77,9 +88,9 @@ public void detail(@PathVariable long groupId){
 
 
 ```
-@RequestMapping(value = "/xxxxx.do")  
-public void create(@RequestBody() String host){  
-    System.out.println("-----------" + host);  
+@RequestMapping(value = "/xxxxx.do")
+public void create(@RequestBody() String host){
+    System.out.println("-----------" + host);
 }
 ```
 
@@ -88,9 +99,9 @@ public void create(@RequestBody() String host){
 
 
 ```
-@ResponseStatus(reason="no reason",value=HttpStatus.BAD_REQUEST)  
-@RequestMapping("/responsestatus")  
-public void responseStatusTest(){  
+@ResponseStatus(reason="no reason",value=HttpStatus.BAD_REQUEST)
+@RequestMapping("/responsestatus")
+public void responseStatusTest(){
     
 }
 ```
@@ -113,11 +124,11 @@ public void responseStatusTest(){
 
 
 ```
-@RequestMapping("/exception")  
- public void ExceptionTest() throws Exception{  
-    throw new Exception("i don't know");  
+@RequestMapping("/exception")
+ public void ExceptionTest() throws Exception{
+    throw new Exception("i don't know");
  }    
- @ExceptionHandler  
+ @ExceptionHandler
  public String handleException(Exception e,HttpServletRequest request){  
     System.out.println(e.getMessage());  
     return "helloworld";  

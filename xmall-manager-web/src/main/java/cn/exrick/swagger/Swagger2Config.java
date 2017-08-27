@@ -25,7 +25,7 @@ public class Swagger2Config {
     static final Logger log= LoggerFactory.getLogger(Swagger2Config.class);
     @Bean
     public Docket createRestApi() {
-        log.info("加载Swagger2");
+        log.info("开始加载Swagger2...");
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo()).select()
                 //扫描指定包中的swagger注解

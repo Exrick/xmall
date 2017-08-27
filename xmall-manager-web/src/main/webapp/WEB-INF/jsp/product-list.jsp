@@ -114,17 +114,53 @@
     $(document).ready(function () {
         $('#example').DataTable({
             serverSide: true,//开启服务器模式
-            "processing": false,//加载显示提示
+            "processing": true,//加载显示提示
             "ajax": {
-                url:"item/list",
-                type: 'GET'
+                url:"/item/list",
+                type: 'GET',
+                error:function(XMLHttpRequest){
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                }
             },
             "columns": [
                 { "data": null,"defaultContent": "<input name=\"\" type=\"checkbox\" value=\"\">"},
                 { "data": "id"},
-                { "data": "image"},
-                { "data": "title"},
-                { "data": "sellPoint"},
+                { "data": "image",
+                    render: function(data, type, row, meta) {
+                        if (type === 'display') {
+                            if (data.length > 10) {
+                                return '<span title=' + data + '>' + data.substr(0, 9) + '...</span>';
+                            } else {
+                                return '<span title=' + data + '>' + data + '</span>';
+                            }
+                        }
+                        return data;
+                    }
+                },
+                { "data": "title",
+                    render: function(data, type, row, meta) {
+                        if (type === 'display') {
+                            if (data.length > 20) {
+                                return '<span title=' + data + '>' + data.substr(0, 19) + '...</span>';
+                            } else {
+                                return '<span title=' + data + '>' + data + '</span>';
+                            }
+                        }
+                        return data;
+                    }
+                },
+                { "data": "sellPoint",
+                    render: function(data, type, row, meta) {
+                        if (type === 'display') {
+                            if (data.length > 25) {
+                                return '<span title=' + data + '>' + data.substr(0, 24) + '...</span>';
+                            } else {
+                                return '<span title=' + data + '>' + data + '</span>';
+                            }
+                        }
+                        return data;
+                    }
+                },
                 { "data": "price"},
                 { "data": "status"},
                 { "data": "created"},
@@ -139,10 +175,15 @@
         });
 
         $.ajax({
-            url:"item/count",
+            url:"/item/count",
             type: 'GET',
             success:function (result) {
                 $("#itemListCount").html(result.recordsTotal);
+            },
+            error:function(XMLHttpRequest){
+                if(XMLHttpRequest.status!=200){
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
+                }
             }
         });
     });
@@ -150,10 +191,15 @@
     function searchItem() {
         var itemName= $('#itemName').val();
         $.ajax({
-            url:"item/list?draw=1&start=0&length=10&search[value]="+itemName,
+            url:"/item/list?draw=1&start=0&length=10&search[value]="+itemName,
             type: 'POST',
             success:function (result) {
                 alert(result.recordsFiltered);
+            },
+            error:function(XMLHttpRequest){
+                if(XMLHttpRequest.status!=200){
+                    layer.alert('数据加载失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
+                }
             }
         });
     };
@@ -174,10 +220,10 @@
         },
         async: {
             enable: true,
-            url: "item/cat/list",
+            url: "/item/cat/list",
             type: "GET",
             contentType: "application/json",
-            autoParam: ["id"]
+            autoParam: ["id"],
         },
         callback: {
             beforeClick: function(treeId, treeNode) {

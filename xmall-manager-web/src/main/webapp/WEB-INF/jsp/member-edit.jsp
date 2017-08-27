@@ -37,18 +37,6 @@
             </div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>设置密码：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="password" class="input-text" autocomplete="off" value="" placeholder="" id="password" name="password">
-            </div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>确认密码：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="password" class="input-text" autocomplete="off"  placeholder="" id="password2" name="password2">
-            </div>
-        </div>
-        <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>性别：</label>
             <div class="formControls col-xs-8 col-sm-9 skin-minimal">
                 <div class="radio-box">

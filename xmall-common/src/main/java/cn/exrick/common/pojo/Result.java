@@ -1,4 +1,4 @@
-package cn.exrick.common.utils;
+package cn.exrick.common.pojo;
 
 
 /**

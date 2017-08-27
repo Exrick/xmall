@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <link rel="Bookmark" href="favicon.ico" >
-    <link rel="Shortcut Icon" href="favicon.ico" />
+    <link rel="Shortcut Icon" href="icon/all.png" />
     <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/html5shiv.js"></script>
     <script type="text/javascript" src="lib/respond.min.js"></script>
@@ -95,7 +95,7 @@
                 <ul>
                     <li><a data-href="product-brand" data-title="品牌管理" href="javascript:void(0)">品牌管理</a></li>
                     <li><a data-href="product-category" data-title="分类管理" href="javascript:void(0)">分类管理</a></li>
-                    <li><a data-href="product-list" data-title="商品管理" href="javascript:void(0)">商品管理</a></li>
+                    <li><a data-href="product-list" data-title="商品列表" href="javascript:void(0)">商品列表</a></li>
                 </ul>
             </dd>
         </dl>

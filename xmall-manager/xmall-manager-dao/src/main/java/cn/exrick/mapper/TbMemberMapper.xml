@@ -313,5 +313,21 @@
     (sex LIKE #{search})
     OR
     (address LIKE #{search})
+    AND
+    state != 2
+  </select>
+  <select id="selectByDelMemberInformation" parameterType="string" resultMap="BaseResultMap">
+    SELECT * FROM tb_member
+    WHERE (username LIKE #{search})
+    OR
+    (phone LIKE #{search})
+    OR
+    (email LIKE #{search})
+    OR
+    (sex LIKE #{search})
+    OR
+    (address LIKE #{search})
+    AND
+    state = 2
   </select>
 </mapper>

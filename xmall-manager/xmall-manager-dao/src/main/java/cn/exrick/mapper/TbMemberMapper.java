@@ -29,4 +29,6 @@ public interface TbMemberMapper {
     int updateByPrimaryKey(TbMember record);
 
     List<TbMember> selectByMemberInformation(@Param("search") String search);
+
+    List<TbMember> selectByDelMemberInformation(@Param("search") String search);
 }

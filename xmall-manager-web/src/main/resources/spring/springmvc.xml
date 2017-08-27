@@ -10,16 +10,19 @@
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
     <context:component-scan base-package="cn.exrick.controller" />
-    <mvc:annotation-driven />
+    <context:component-scan base-package="cn.exrick.swagger" />
+    <!--<bean name="applicationSwaggerConfig" class="cn.exrick.swagger.Swagger2Config"/>-->
+
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
     </bean>
-    <bean name="applicationSwaggerConfig" class="cn.exrick.swagger.Swagger2Config"/>
+
     <!--配置资源映射-->
     <mvc:resources mapping="/lib/**" location="/lib/"/>
     <mvc:resources mapping="/static/**" location="/static/"/>
     <mvc:resources mapping="/temp/**" location="/temp/"/>
+    <mvc:resources mapping="/icon/**" location="/icon/"/>
     <!-- 引用dubbo服务 -->
     <dubbo:application name="xmall-manager-web"/>
     <dubbo:registry protocol="zookeeper" address="123.207.121.135:2181"/>

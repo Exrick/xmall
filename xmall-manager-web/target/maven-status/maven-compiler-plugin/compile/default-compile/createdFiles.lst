@@ -2,5 +2,5 @@ cn\exrick\controller\PageController.class
 cn\exrick\controller\ItemCatController.class
 cn\exrick\swagger\Swagger2Config.class
 cn\exrick\controller\MemberController.class
-cn\exrick\exception\RestCtrlExceptionHandler.class
+cn\exrick\controller\RestCtrlExceptionHandler.class
 cn\exrick\controller\ItemController.class

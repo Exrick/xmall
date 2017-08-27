@@ -41,7 +41,7 @@
                 <div class="wthree-pro">
                     <h2>Login Here</h2>
                 </div>
-                <form action="/index" method="post">
+                <form action="/" method="post">
                     <input placeholder="用户名或邮箱" name="Name" class="user" type="email" required="">
                     <span class="icon1"><i class="fa fa-user" aria-hidden="true"></i></span><br><br>
                     <input  placeholder="密码" name="Password" class="pass" type="password" required="">

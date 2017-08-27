@@ -56,7 +56,7 @@
         },
         async: {
             enable: true,
-            url: "item/cat/list",
+            url: "/item/cat/list",
             type: "GET",
             contentType: "application/json",
             autoParam: ["id"]
