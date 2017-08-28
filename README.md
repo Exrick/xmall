@@ -15,6 +15,8 @@
     - 感谢HUI提供静态页面支持
     - Ztree：jQuery树插件
     - DataTables：jQuery表格插件
+    - Layer：web弹层组件
+    - [Distpicker](https://github.com/fengyuanchen/distpicker)：中国省市区地址三级联动插件
 - 前台页面
 
 ### 后端所用技术

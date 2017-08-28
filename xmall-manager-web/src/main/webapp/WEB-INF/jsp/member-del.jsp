@@ -22,6 +22,11 @@
     <![endif]-->
     <title>删除的用户</title>
 </head>
+<style>
+    .table>tbody>tr>td{
+        text-align:center;
+    }
+</style>
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 用户中心 <span class="c-gray en">&gt;</span> 删除的用户<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
@@ -32,37 +37,23 @@
         <input type="text" class="input-text" style="width:250px" placeholder="输入会员名称、电话、邮箱" id="" name="">
         <button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
     </div>
-    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> </span> <span class="r">共有数据：<strong>88</strong> 条</span> </div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> </span> <span class="r">共有数据：<strong id="memberRemoveListCount">0</strong> 条</span> </div>
     <div class="mt-20">
-        <table class="table table-border table-bordered table-hover table-bg table-sort">
+        <table class="table table-border table-bordered table-hover table-bg table-sort" width="100%">
             <thead>
             <tr class="text-c">
-                <th width="25"><input type="checkbox" name="" value=""></th>
-                <th width="80">ID</th>
-                <th width="100">用户名</th>
+                <th width="30"><input type="checkbox" name="" value=""></th>
+                <th width="40">ID</th>
+                <th width="80">用户名</th>
                 <th width="40">性别</th>
                 <th width="90">手机</th>
-                <th width="150">邮箱</th>
-                <th width="">地址</th>
-                <th width="130">加入时间</th>
-                <th width="70">状态</th>
+                <th width="110">邮箱</th>
+                <th width="130">地址</th>
+                <th width="100">创建时间</th>
+                <th width="50">状态</th>
                 <th width="100">操作</th>
             </tr>
             </thead>
-            <tbody>
-            <tr class="text-c">
-                <td><input type="checkbox" value="1" name=""></td>
-                <td>1</td>
-                <td><u style="cursor:pointer" class="text-primary" onclick="member_show('张三','member-show.html','10001','360','400')">张三</u></td>
-                <td>男</td>
-                <td>13000000000</td>
-                <td>admin@mail.com</td>
-                <td class="text-l">北京市 海淀区</td>
-                <td>2014-6-11 11:11:42</td>
-                <td class="td-status"><span class="label label-danger radius">已删除</span></td>
-                <td class="td-manage"><a style="text-decoration:none" href="javascript:;" onClick="member_huanyuan(this,'1')" title="还原"><i class="Hui-iconfont">&#xe66b;</i></a> <a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-            </tr>
-            </tbody>
         </table>
     </div>
 </div>
@@ -77,40 +68,119 @@
 <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
+    /*时间转换*/
+    function date(data){
+        var time = new Date(data);
+        var y = time.getFullYear();//年
+        var m = time.getMonth() + 1;//月
+        var d = time.getDate();//日
+        var h = time.getHours();//时
+        var mm = time.getMinutes();//分
+        var s = time.getSeconds();//秒
+        return (y+"-"+m+"-"+d+" "+h+":"+mm+":"+s);
+    }
+
     $(function(){
         $('.table-sort').dataTable({
+            serverSide: true,//开启服务器模式
+            "processing": true,//加载显示提示
+            "ajax": {
+                url:"member/list/remove",
+                type: 'GET',
+                error:function(XMLHttpRequest){
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                }
+            },
+            "columns": [
+                { "data": null,"defaultContent": "<input name=\"\" type=\"checkbox\" value=\"\">"},
+                { "data": "id"},
+                { "data": "username"},
+                { "data": "sex"},
+                { "data": "phone"},
+                { "data": "email"},
+                { "data": "address"},
+                { "data": "created",
+                    render : function(data,type, row, meta) {
+                        return date(data);
+                    }
+                },
+                { "data": "state",
+                    render : function(data,type, row, meta) {
+                        if(data==2){
+                            return "<span class=\"label label-danger radius td-status\">已删除</span>";
+                        }else{
+                            return "<span class=\"label label-warning radius td-status\">其它态</span>";
+                        }
+                    }
+                },
+                { "data": null,
+                    render : function(data,type, row, meta) {
+                        return "<a style=\"text-decoration:none\" href=\"javascript:;\" onClick=\"member_restore(this,"+row.id+")\" title=\"还原\"><i class=\"Hui-iconfont\">&#xe66b;</i></a> <a title=\"彻底删除\" href=\"javascript:;\" onclick=\"member_del(this,"+row.id+")\" class=\"ml-5\" style=\"text-decoration:none\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>";
+                    }
+                }
+            ],
             "aaSorting": [[ 1, "desc" ]],//默认第几个排序
-            "bStateSave": true,//状态保存
+            "bStateSave": false,//状态保存
             "aoColumnDefs": [
                 //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
                 {"orderable":false,"aTargets":[0,8,9]}// 制定列不参与排序
+            ],
+            buttons: [
+                'copy', 'excel', 'pdf'
             ]
         });
+
+        memberRemove_count();
     });
 
-    /*用户-还原*/
-    function member_huanyuan(obj,id){
-        layer.confirm('确认要还原吗？',function(index){
+    /*统计移除用户数*/
+    function memberRemove_count(){
+        $.ajax({
+            url:"/member/count/remove",
+            type:"GET",
+            success:function (data) {
+                $("#memberRemoveListCount").html(data.recordsTotal);
+            },
+            error:function(XMLHttpRequest){
+                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+            }
+        });
+    }
 
-            $(obj).remove();
-            layer.msg('已还原!',{icon: 6,time:1000});
+    /*用户-还原*/
+    function member_restore(obj,id){
+        layer.confirm('确认要还原吗？',{icon:3},function(index){
+            $.ajax({
+                type: 'PUT',
+                url: '/member/start/'+id,
+                dataType: 'json',
+                success: function(data){
+                    $(obj).parents("tr").remove();
+                    memberRemove_count();
+                    layer.msg('已还原!',{icon: 6,time:1000});
+                },
+                error:function(XMLHttpRequest){
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                }
+            });
         });
     }
 
     /*用户-删除*/
     function member_del(obj,id){
-        layer.confirm('确认要删除吗？',function(index){
+        layer.confirm('确认要彻底删除ID为\''+id+'\'的数据吗？',{icon:0},function(index){
             $.ajax({
-                type: 'POST',
-                url: '',
+                type: 'DELETE',
+                url: '/member/del/'+id,
                 dataType: 'json',
                 success: function(data){
                     $(obj).parents("tr").remove();
+                    memberRemove_count();
                     layer.msg('已删除!',{icon:1,time:1000});
                 },
-                error:function(data) {
-                    console.log(data.msg);
-                },
+                error:function(XMLHttpRequest){
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                }
             });
         });
     }

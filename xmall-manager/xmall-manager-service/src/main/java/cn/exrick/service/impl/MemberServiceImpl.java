@@ -105,7 +105,7 @@ public class MemberServiceImpl implements MemberService {
             //搜索
             if(search!=null&&!search.isEmpty()){
                 PageHelper.startPage(start/length+1,length);
-                list = tbMemberMapper.selectByDelMemberInformation("%"+search+"%");
+                list = tbMemberMapper.selectByRemoveMemberInformation("%"+search+"%");
                 pageInfo=new PageInfo<>(list);
                 result.setRecordsFiltered((int)pageInfo.getTotal());
             }
@@ -210,7 +210,7 @@ public class MemberServiceImpl implements MemberService {
 
         TbMember tbMember= DtoUtil.MemberDto2Member(memberDto);
 
-        tbMember.setState(0);
+        tbMember.setState(1);
         tbMember.setCreated(new Date());
         tbMember.setUpdated(new Date());
 
@@ -229,9 +229,10 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public TbMember updateMember(Long id,MemberDto memberDto) {
-
-        TbMember tbMember = DtoUtil.MemberDto2Member(memberDto);
-        tbMember.setId(id);
+        //TODO
+        TbMember tbMember=getMemberById(id);
+        TbMember newTbMember = DtoUtil.MemberDto2Member(memberDto);
+        tbMember.setSex(newTbMember.getSex());
         tbMember.setUpdated(new Date());
 
         if (tbMemberMapper.updateByPrimaryKey(tbMember) != 1){
@@ -241,7 +242,20 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    public TbMember changeMemberPassword(Long id, MemberDto memberDto) {
+
+        TbMember tbMember=getMemberById(id);
+        tbMember.setPassword(memberDto.getPassword());
+
+        if (tbMemberMapper.updateByPrimaryKey(tbMember) != 1){
+            throw new XmallException("修改会员密码失败");
+        }
+        return getMemberById(id);
+    }
+
+    @Override
     public TbMember alertMemberState(Long id,Integer state) {
+
         TbMember tbMember = getMemberById(id);
         tbMember.setState(state);
         tbMember.setUpdated(new Date());
@@ -254,6 +268,7 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public int deleteMember(Long id) {
+
         if(tbMemberMapper.deleteByPrimaryKey(id)!=1){
             throw new XmallException("删除会员失败");
         }

@@ -54,20 +54,6 @@
                 <th width="130">操作</th>
             </tr>
             </thead>
-            <%--<tbody>
-            <tr class="text-c">
-                <td><input type="checkbox" value="1" name=""></td>
-                <td>1</td>
-                <td><u style="cursor:pointer" class="text-primary" onclick="member_show('张三','member-show.html','10001','360','400')">张三</u></td>
-                <td>男</td>
-                <td>13000000000</td>
-                <td>admin@mail.com</td>
-                <td class="text-l">北京市 海淀区</td>
-                <td>2014-6-11 11:11:42</td>
-                <td class="td-status"><span class="label label-success radius">已启用</span></td>
-                <td class="td-manage"><a style="text-decoration:none" onClick="member_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a> <a title="编辑" href="javascript:;" onclick="member_edit('编辑','member-add.html','4','','510')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="change_password('修改密码','change-password.html','10001','600','270')" href="javascript:;" title="修改密码"><i class="Hui-iconfont">&#xe63f;</i></a> <a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-            </tr>
-            </tbody>--%>
         </table>
     </div>
 </div>
@@ -87,6 +73,18 @@
         location.reload();
     }
 
+    /*时间转换*/
+    function date(data){
+        var time = new Date(data);
+        var y = time.getFullYear();//年
+        var m = time.getMonth() + 1;//月
+        var d = time.getDate();//日
+        var h = time.getHours();//时
+        var mm = time.getMinutes();//分
+        var s = time.getSeconds();//秒
+        return (y+"-"+m+"-"+d+" "+h+":"+mm+":"+s);
+    }
+
     $(function(){
         $('.table-sort').dataTable({
             serverSide: true,//开启服务器模式
@@ -95,7 +93,7 @@
                 url:"member/list",
                 type: 'GET',
                 error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 }
             },
             "columns": [
@@ -106,7 +104,11 @@
                 { "data": "phone"},
                 { "data": "email"},
                 { "data": "address"},
-                { "data": "created"},
+                { "data": "created",
+                    render : function(data,type, row, meta) {
+                        return date(data);
+                    }
+                },
                 { "data": "state",
                     render : function(data,type, row, meta) {
                         if(data==0){
@@ -127,16 +129,12 @@
                         }
                     }
                 }
-                //{ "data": null,"defaultContent": "<a style=\"text-decoration:none\" onClick=\"member_stop(this,'10001')\" href=\"javascript:;\" title=\"停用\"><i class=\"Hui-iconfont\">&#xe631;</i></a> <a title=\"编辑\" href=\"javascript:;\" onclick=\"member_edit('编辑','member-add','4','','510')\" class=\"ml-5\" style=\"text-decoration:none\"><i class=\"Hui-iconfont\">&#xe6df;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"change_password('修改密码','change-password','10001','600','270')\" href=\"javascript:;\" title=\"修改密码\"><i class=\"Hui-iconfont\">&#xe63f;</i></a> <a title=\"删除\" href=\"javascript:;\" onclick=\"member_del(this,'1')\" class=\"ml-5\" style=\"text-decoration:none\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>"}
             ],
             "aaSorting": [[ 1, "desc" ]],//默认第几个排序
             "bStateSave": false,//状态保存
             "aoColumnDefs": [
                 //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
                 {"orderable":false,"aTargets":[0,8,9]}// 制定列不参与排序
-            ],
-            buttons: [
-                'copy', 'excel', 'pdf'
             ]
         });
 
@@ -148,11 +146,11 @@
         $.ajax({
             url:"/member/count",
             type:"GET",
-            success:function (result) {
-                $("#memberListCount").html(result.recordsTotal);
+            success:function (data) {
+                $("#memberListCount").html(data.recordsTotal);
             },
             error:function(XMLHttpRequest){
-                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
             }
         });
     }
@@ -181,11 +179,8 @@
                     layer.msg('已停用!',{icon: 5,time:1000});
                 },
                 error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 }
-                /*error:function(data) {
-                    console.log(data.msg);
-                },*/
             });
         });
     }
@@ -206,18 +201,18 @@
                     layer.msg('已启用!',{icon: 6,time:1000});
                 },
                 error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 }
             });
         });
     }
     /*用户-编辑*/
     function member_edit(title,url,id,w,h){
-        layer_show(title,url,w,h);
+        layer_show(title,url+'?'+id,w,h);
     }
     /*密码-修改*/
     function change_password(title,url,id,w,h){
-        layer_show(title,url,w,h);
+        layer_show(title,url+'?'+id,w,h);
     }
     /*用户-删除*/
     function member_del(obj,id){
@@ -232,10 +227,14 @@
                     layer.msg('已删除!',{icon:1,time:1000});
                 },
                 error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 }
             });
         });
+    }
+
+    function alert_success(){
+        layer.msg('修改成功!', {icon: 1,time:3000});
     }
 </script>
 </body>

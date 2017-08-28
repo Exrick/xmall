@@ -30,5 +30,5 @@ public interface TbMemberMapper {
 
     List<TbMember> selectByMemberInformation(@Param("search") String search);
 
-    List<TbMember> selectByDelMemberInformation(@Param("search") String search);
+    List<TbMember> selectByRemoveMemberInformation(@Param("search") String search);
 }

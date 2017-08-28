@@ -304,7 +304,10 @@
   </update>
   <select id="selectByMemberInformation" parameterType="string" resultMap="BaseResultMap">
     SELECT * FROM tb_member
-    WHERE (username LIKE #{search})
+    WHERE
+    (state != 2)
+    AND
+    ((username LIKE #{search})
     OR
     (phone LIKE #{search})
     OR
@@ -312,13 +315,14 @@
     OR
     (sex LIKE #{search})
     OR
-    (address LIKE #{search})
-    AND
-    state != 2
+    (address LIKE #{search}))
   </select>
-  <select id="selectByDelMemberInformation" parameterType="string" resultMap="BaseResultMap">
+  <select id="selectByRemoveMemberInformation" parameterType="string" resultMap="BaseResultMap">
     SELECT * FROM tb_member
-    WHERE (username LIKE #{search})
+    WHERE
+    (state = 2)
+    AND
+    ((username LIKE #{search})
     OR
     (phone LIKE #{search})
     OR
@@ -326,8 +330,6 @@
     OR
     (sex LIKE #{search})
     OR
-    (address LIKE #{search})
-    AND
-    state = 2
+    (address LIKE #{search}))
   </select>
 </mapper>

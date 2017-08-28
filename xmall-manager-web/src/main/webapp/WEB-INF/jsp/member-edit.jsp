@@ -77,18 +77,10 @@
             <label class="form-label col-xs-4 col-sm-3">所在城市：</label>
             <div class="formControls col-xs-8 col-sm-9">
                 <div id="distpicker1">
-                    <select name="province" class="select" style="width:180px;height:31px;"></select>
-                    <select name="city" class="select" style="width:180px;height:31px;"></select>
-                    <select name="district" class="select" style="width:180px;height:31px;"></select>
+                    <select id="province" name="province" class="select" style="width:180px;height:31px;"></select>
+                    <select id="city" name="city" class="select" style="width:180px;height:31px;"></select>
+                    <select id="district" name="district" class="select" style="width:180px;height:31px;"></select>
                 </div>
-                <%--<span class="select-box">
-                    <select class="select" size="1" name="address">
-                        <option value="" selected>请选择城市</option>
-                        <option value="1">北京</option>
-                        <option value="2">上海</option>
-                        <option value="3">广州</option>
-                    </select>
-				</span>--%>
             </div>
         </div>
         <div class="row cl">
@@ -119,8 +111,27 @@
 <script type="text/javascript" src="lib/province/distpicker.data.js"></script>
 <script type="text/javascript" src="lib/province/distpicker.js"></script>
 <script type="text/javascript">
-    /*城市选择控件*/
-    $("#distpicker1").distpicker();
+    var getId=window.location.search.slice(window.location.search.lastIndexOf("?")+1);
+
+    $.ajax({
+        url:"/member/"+getId,
+        type:"GET",
+        success:function (data) {
+            document.getElementById("username").value = data.result.username;
+            document.getElementById("phone").value = data.result.phone;
+            document.getElementById("email").value = data.result.email;
+            var arr = data.result.address.split(" ");
+            /*城市选择控件*/
+            $("#distpicker1").distpicker({
+                province: arr[0],
+                city: arr[1],
+                district: arr[2],
+            });
+        },
+        error:function(XMLHttpRequest){
+            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+        }
+    });
 
     /*文本输入限制*/
     $(".textarea").Huitextarealength({
@@ -175,10 +186,6 @@
                         if(data.success==true){
                             parent.refresh();
                             layer.msg(content, {icon: 1,time:3000});
-                            //parent.location.replace(parent.location.href);
-                            //console.log($(".btn-refresh",parent));
-                            //var index = parent.layer.getFrameIndex(window.name);
-                            //parent.layer.close(index);
                         }else{
                             layer.alert('添加失败! '+data.message, {title: '错误信息',icon: 2});
                         }

@@ -14,9 +14,9 @@ public class DtoUtil {
         TbMember tbMember =new TbMember();
 
         tbMember.setUsername(memberDto.getUsername());
+        tbMember.setPassword(memberDto.getPassword());
         tbMember.setPhone(memberDto.getPhone());
         tbMember.setEmail(memberDto.getEmail());
-        tbMember.setPassword(memberDto.getPassword());
         tbMember.setSex(memberDto.getSex());
         if(!memberDto.getProvince().isEmpty()){
             tbMember.setAddress(memberDto.getProvince()+" "

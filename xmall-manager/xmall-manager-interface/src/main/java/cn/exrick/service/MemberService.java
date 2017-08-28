@@ -26,7 +26,7 @@ public interface MemberService {
      */
     DataTablesResult getMemberList(int draw, int start, int length, String search);
 
-    //获得删除会员列表
+    //分页获得移除会员列表
     DataTablesResult getRemoveMemberList(int draw, int start, int length, String search);
 
     /**
@@ -51,12 +51,20 @@ public interface MemberService {
     TbMember addMember(MemberDto memberDto);
 
     /**
-     * 更新会员
+     * 更新会员信息
      * @param id
      * @param memberDto
      * @return
      */
     TbMember updateMember(Long id,MemberDto memberDto);
+
+    /**
+     * 修改会员密码
+     * @param id
+     * @param memberDto
+     * @return
+     */
+    TbMember changeMemberPassword(Long id,MemberDto memberDto);
 
     /**
      * 修改会员状态
@@ -65,5 +73,10 @@ public interface MemberService {
      */
     TbMember alertMemberState(Long id,Integer state);
 
+    /**
+     * 彻底删除会员
+     * @param id
+     * @return
+     */
     int deleteMember(Long id);
 }

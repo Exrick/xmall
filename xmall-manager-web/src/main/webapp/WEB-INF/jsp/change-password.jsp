@@ -31,21 +31,21 @@
 </head>
 <body>
 <article class="page-container">
-    <form action="/" method="post" class="form form-horizontal" id="form-change-password">
+    <form action="" method="" class="form form-horizontal" id="form-change-password">
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>账户：</label>
-            <div class="formControls col-xs-8 col-sm-9"> 张三 </div>
+            <div class="formControls col-xs-8 col-sm-9"> <span id="username"></span> </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>新密码：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="password" class="input-text" autocomplete="off" placeholder="不修改请留空" name="newpassword" id="newpassword">
+                <input type="password" class="input-text" autocomplete="off" placeholder="密码长度不得小于6位" name="password" id="password">
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>确认密码：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="password" class="input-text" autocomplete="off" placeholder="不修改请留空" name="newpassword2" id="new-password2">
+                <input type="password" class="input-text" autocomplete="off" placeholder="请再次输入密码" name="password2" id="password2">
             </div>
         </div>
         <div class="row cl">
@@ -68,28 +68,53 @@
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <script type="text/javascript">
     $(function(){
+        var getId=window.location.search.slice(window.location.search.lastIndexOf("?")+1);
+
+        $.ajax({
+            url:"/member/"+getId,
+            type:"GET",
+            success:function (data) {
+                $("#username").html(data.result.username);
+            },
+            error:function(XMLHttpRequest){
+                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+            }
+        });
+
         $("#form-change-password").validate({
             rules:{
-                newpassword:{
+                password:{
                     required:true,
                     minlength:6,
                     maxlength:16
                 },
-                newpassword2:{
+                password2:{
                     required:true,
                     minlength:6,
                     maxlength:16,
-                    equalTo: "#newpassword"
+                    equalTo: "#password"
                 },
             },
             onkeyup:false,
             focusCleanup:true,
             success:"valid",
             submitHandler:function(form){
-                $(form).ajaxSubmit();
-                var index = parent.layer.getFrameIndex(window.name);
-                parent.$('.btn-refresh').click();
-                parent.layer.close(index);
+                $(form).ajaxSubmit({
+                    url: "/member/changePass/"+getId,
+                    type: "POST",
+                    success: function(data) {
+                        if(data.success==true){
+                            var index = parent.layer.getFrameIndex(window.name);
+                            parent.alert_success();
+                            parent.layer.close(index);
+                        }else{
+                            layer.alert('提交失败! '+data.message, {title: '错误信息',icon: 2});
+                        }
+                    },
+                    error:function(XMLHttpRequest) {
+                        layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                    }
+                });
             }
         });
     });
