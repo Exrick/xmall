@@ -48,7 +48,7 @@
                     <label for="sex-2">女</label>
                 </div>
                 <div class="radio-box">
-                    <input type="radio" id="sex-3" name="sex">
+                    <input type="radio" id="sex-3" name="sex" value="保密">
                     <label for="sex-3">保密</label>
                 </div>
             </div>
@@ -120,12 +120,31 @@
             document.getElementById("username").value = data.result.username;
             document.getElementById("phone").value = data.result.phone;
             document.getElementById("email").value = data.result.email;
-            var arr = data.result.address.split(" ");
+            if(data.result.sex=='男'){
+                $("#sex-1").attr('checked', 'checked');
+                radioCheck();
+            }else if(data.result.sex=='女'){
+                $("#sex-2").attr('checked', 'checked');
+                radioCheck();
+            }else if(data.result.sex=='保密'){
+                $("#sex-3").attr('checked', 'checked');
+                radioCheck();
+            }
+            var arr,a,b,c;
+            if(data.result.address!=null){
+                 arr = data.result.address.split(" ");
+                 a=arr[0];
+                 b=arr[1];
+                 c=arr[2];
+            }
+            if(a==null){
+                a='北京市';
+            }
             /*城市选择控件*/
             $("#distpicker1").distpicker({
-                province: arr[0],
-                city: arr[1],
-                district: arr[2],
+                province: a,
+                city: b,
+                district: c,
             });
         },
         error:function(XMLHttpRequest){
@@ -139,13 +158,16 @@
         maxlength:100
     });
 
-    $(function(){
+    function radioCheck(){
         $('.skin-minimal input').iCheck({
             checkboxClass: 'icheckbox-blue',
             radioClass: 'iradio-blue',
             increaseArea: '20%'
         });
+    }
 
+    $(function(){
+        radioCheck();
         $("#form-member-add").validate({
             rules:{
                 username:{

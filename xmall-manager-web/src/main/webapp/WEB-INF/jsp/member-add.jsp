@@ -60,7 +60,7 @@
                     <label for="sex-2">女</label>
                 </div>
                 <div class="radio-box">
-                    <input type="radio" id="sex-3" name="sex">
+                    <input type="radio" id="sex-3" name="sex" value="保密">
                     <label for="sex-3">保密</label>
                 </div>
             </div>
@@ -93,14 +93,6 @@
                     <select name="city" class="select" style="width:180px;height:31px;"></select>
                     <select name="district" class="select" style="width:180px;height:31px;"></select>
                 </div>
-                <%--<span class="select-box">
-                    <select class="select" size="1" name="address">
-                        <option value="" selected>请选择城市</option>
-                        <option value="1">北京</option>
-                        <option value="2">上海</option>
-                        <option value="3">广州</option>
-                    </select>
-				</span>--%>
             </div>
         </div>
         <div class="row cl">

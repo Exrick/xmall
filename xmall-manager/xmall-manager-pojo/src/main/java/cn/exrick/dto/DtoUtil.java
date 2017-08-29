@@ -18,9 +18,11 @@ public class DtoUtil {
         tbMember.setPhone(memberDto.getPhone());
         tbMember.setEmail(memberDto.getEmail());
         tbMember.setSex(memberDto.getSex());
-        if(!memberDto.getProvince().isEmpty()){
+        if(!memberDto.getProvince().isEmpty()&&!memberDto.getProvince().contains("-")){
             tbMember.setAddress(memberDto.getProvince()+" "
                     +memberDto.getCity()+" "+memberDto.getDistrict());
+        }else{
+            tbMember.setAddress(null);
         }
 
         return tbMember;

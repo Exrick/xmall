@@ -3,21 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c4f3498c-c7a8-433e-85bb-4c00387d3dab" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/pom.xml" afterPath="$PROJECT_DIR$/xmall-manager-web/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/MemberController.java" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/MemberController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/change-password.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/change-password.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-del.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-del.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-add.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-add.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-edit.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-edit.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/xmall-manager-web/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/pom.xml" afterPath="$PROJECT_DIR$/xmall-manager/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/mapper/TbMemberMapper.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/mapper/TbMemberMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/mapper/TbMemberMapper.xml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/mapper/TbMemberMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/src/main/java/cn/exrick/service/MemberService.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/src/main/java/cn/exrick/service/MemberService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/dto/DtoUtil.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/dto/DtoUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/service/impl/MemberServiceImpl.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/service/impl/MemberServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/target/maven-archiver/pom.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/xmall-parent/target/" />
     <ignored path="$PROJECT_DIR$/xmall-common/target/" />
@@ -45,83 +35,82 @@
       <file leaf-file-name="member-list.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="149" column="16" lean-forward="false" selection-start-line="149" selection-start-column="16" selection-end-line="149" selection-end-column="62" />
+            <state relative-caret-position="252">
+              <caret line="136" column="48" lean-forward="false" selection-start-line="136" selection-start-column="48" selection-end-line="136" selection-end-column="48" />
               <folding>
-                <marker date="1503928195191" expanded="true" signature="6291:6311" ph="..." />
-                <marker date="1503928195191" expanded="true" signature="6416:6424" ph="&amp;##xe631;" />
-                <marker date="1503928195191" expanded="true" signature="6558:6578" ph="..." />
-                <marker date="1503928195191" expanded="true" signature="6607:6615" ph="&amp;##xe6df;" />
-                <marker date="1503928195191" expanded="true" signature="6635:6655" ph="..." />
-                <marker date="1503928195191" expanded="true" signature="6813:6821" ph="&amp;##xe63f;" />
-                <marker date="1503928195191" expanded="true" signature="6931:6951" ph="..." />
-                <marker date="1503928195191" expanded="true" signature="6980:6988" ph="&amp;##xe6e2;" />
-                <marker date="1503928195191" expanded="true" signature="7095:7115" ph="..." />
-                <marker date="1503928195191" expanded="true" signature="7221:7229" ph="&amp;##xe6e1;" />
-                <marker date="1503928195191" expanded="true" signature="7363:7383" ph="..." />
-                <marker date="1503928195191" expanded="true" signature="7412:7420" ph="&amp;##xe6df;" />
-                <marker date="1503928195191" expanded="true" signature="7440:7460" ph="..." />
-                <marker date="1503928195191" expanded="true" signature="7618:7626" ph="&amp;##xe63f;" />
-                <marker date="1503928195191" expanded="true" signature="7736:7756" ph="..." />
-                <marker date="1503928195191" expanded="true" signature="7785:7793" ph="&amp;##xe6e2;" />
-                <marker date="1503928195191" expanded="true" signature="9199:9219" ph="..." />
-                <marker date="1503928195191" expanded="true" signature="9312:9320" ph="&amp;##xe6e1;" />
-                <marker date="1503928195191" expanded="true" signature="10299:10319" ph="..." />
-                <marker date="1503928195191" expanded="true" signature="10411:10419" ph="&amp;##xe631;" />
+                <marker date="1503977917387" expanded="true" signature="6291:6311" ph="..." />
+                <marker date="1503977917387" expanded="true" signature="6416:6424" ph="&amp;##xe631;" />
+                <marker date="1503977917387" expanded="true" signature="6558:6578" ph="..." />
+                <marker date="1503977917387" expanded="true" signature="6607:6615" ph="&amp;##xe6df;" />
+                <marker date="1503977917387" expanded="true" signature="6635:6655" ph="..." />
+                <marker date="1503977917387" expanded="true" signature="6813:6821" ph="&amp;##xe63f;" />
+                <marker date="1503977917387" expanded="true" signature="6931:6951" ph="..." />
+                <marker date="1503977917387" expanded="true" signature="6980:6988" ph="&amp;##xe6e2;" />
+                <marker date="1503977917387" expanded="true" signature="7095:7115" ph="..." />
+                <marker date="1503977917387" expanded="true" signature="7221:7229" ph="&amp;##xe6e1;" />
+                <marker date="1503977917387" expanded="true" signature="7363:7383" ph="..." />
+                <marker date="1503977917387" expanded="true" signature="7412:7420" ph="&amp;##xe6df;" />
+                <marker date="1503977917387" expanded="true" signature="7440:7460" ph="..." />
+                <marker date="1503977917387" expanded="true" signature="7618:7626" ph="&amp;##xe63f;" />
+                <marker date="1503977917387" expanded="true" signature="7736:7756" ph="..." />
+                <marker date="1503977917387" expanded="true" signature="7785:7793" ph="&amp;##xe6e2;" />
+                <marker date="1503977917387" expanded="true" signature="9197:9217" ph="..." />
+                <marker date="1503977917387" expanded="true" signature="9310:9318" ph="&amp;##xe6e1;" />
+                <marker date="1503977917387" expanded="true" signature="10297:10317" ph="..." />
+                <marker date="1503977917387" expanded="true" signature="10409:10417" ph="&amp;##xe631;" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="member-edit.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="member-edit.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-edit.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="123" column="22" lean-forward="true" selection-start-line="123" selection-start-column="22" selection-end-line="123" selection-end-column="22" />
+            <state relative-caret-position="-244">
+              <caret line="123" column="25" lean-forward="false" selection-start-line="123" selection-start-column="25" selection-end-line="123" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="member-add.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-add.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="179" column="28" lean-forward="false" selection-start-line="179" selection-start-column="28" selection-end-line="179" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product-list.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="182" column="52" lean-forward="false" selection-start-line="182" selection-start-column="52" selection-end-line="182" selection-end-column="52" />
               <folding>
-                <element signature="n#style#0;n#select#1;n#div#0;n#div#0;n#div#5;n#form#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="distpicker.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/province/distpicker.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3113">
-              <caret line="214" column="34" lean-forward="true" selection-start-line="214" selection-start-column="34" selection-end-line="214" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="change-password.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/change-password.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="36" column="75" lean-forward="false" selection-start-line="36" selection-start-column="75" selection-end-line="36" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MemberService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-interface/src/main/java/cn/exrick/service/MemberService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="66" column="33" lean-forward="false" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MemberController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/MemberController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="96" column="30" lean-forward="false" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1503977882853" expanded="true" signature="8804:8824" ph="..." />
+                <marker date="1503977882853" expanded="true" signature="8927:8935" ph="&amp;##xe6de;" />
+                <marker date="1503977882853" expanded="true" signature="8955:8975" ph="..." />
+                <marker date="1503977882853" expanded="true" signature="9109:9117" ph="&amp;##xe6df;" />
+                <marker date="1503977882853" expanded="true" signature="9137:9157" ph="..." />
+                <marker date="1503977882853" expanded="true" signature="9274:9282" ph="&amp;##xe6e2;" />
+                <marker date="1503977882853" expanded="true" signature="9373:9393" ph="..." />
+                <marker date="1503977882853" expanded="true" signature="9497:9505" ph="&amp;##xe6de;" />
+                <marker date="1503977882853" expanded="true" signature="9525:9545" ph="..." />
+                <marker date="1503977882853" expanded="true" signature="9679:9687" ph="&amp;##xe6df;" />
+                <marker date="1503977882853" expanded="true" signature="9707:9727" ph="..." />
+                <marker date="1503977882853" expanded="true" signature="9844:9852" ph="&amp;##xe6e2;" />
+                <marker date="1503977882853" expanded="true" signature="9963:9983" ph="..." />
+                <marker date="1503977882853" expanded="true" signature="10086:10094" ph="&amp;##xe6de;" />
+                <marker date="1503977882853" expanded="true" signature="10114:10134" ph="..." />
+                <marker date="1503977882853" expanded="true" signature="10268:10276" ph="&amp;##xe6df;" />
+                <marker date="1503977882853" expanded="true" signature="10296:10316" ph="..." />
+                <marker date="1503977882853" expanded="true" signature="10433:10441" ph="&amp;##xe6e2;" />
+                <marker date="1503977882853" expanded="true" signature="14538:14558" ph="..." />
+                <marker date="1503977882853" expanded="true" signature="14648:14656" ph="&amp;##xe603;" />
+                <marker date="1503977882853" expanded="true" signature="15239:15259" ph="..." />
+                <marker date="1503977882853" expanded="true" signature="15348:15356" ph="&amp;##xe6de;" />
               </folding>
             </state>
           </provider>
@@ -141,7 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>88</find>
       <find>product-add</find>
       <find>user</find>
       <find>html</find>
@@ -171,6 +159,7 @@
       <find>addMember</find>
       <find>member_count</find>
       <find>city</find>
+      <find>icheck</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -224,17 +213,17 @@
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/mapper/TbMemberMapper.java" />
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/mapper/TbMemberMapper.xml" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-del.jsp" />
-        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp" />
         <option value="$PROJECT_DIR$/xmall-manager-web/pom.xml" />
         <option value="$PROJECT_DIR$/xmall-manager/pom.xml" />
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/src/main/java/cn/exrick/service/MemberService.java" />
-        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-add.jsp" />
-        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/dto/DtoUtil.java" />
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/service/impl/MemberServiceImpl.java" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/MemberController.java" />
-        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/change-password.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/dto/DtoUtil.java" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-edit.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-add.jsp" />
       </list>
     </option>
   </component>
@@ -1410,9 +1399,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2027,6 +2016,7 @@
       <workItem from="1503652642829" duration="39860000" />
       <workItem from="1503900861712" duration="4900000" />
       <workItem from="1503906769053" duration="18380000" />
+      <workItem from="1503968797930" duration="9359000" />
     </task>
     <servers />
   </component>
@@ -2042,7 +2032,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="334727000" />
+    <option name="totallyTimeSpent" value="344086000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -2051,7 +2041,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.375" sideWeight="0.5030349" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24127465" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23292868" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2070,7 +2060,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3732639" sideWeight="0.4969651" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3767361" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31031868" sideWeight="0.49305555" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16691957" sideWeight="0.49305555" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26100153" sideWeight="0.5069444" order="8" side_tool="true" content_ui="tabs" />
@@ -2137,8 +2127,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-interface/src/main/java/cn/exrick/exception/XMallException.java" />
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/exception/XmallException.java" />
     <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/exception/XmallException.java" />
     <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/exceptionservice/XmallException.java" />
     <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/service/impl/ItemCatServiceImpl.java">
@@ -2152,14 +2140,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="43" column="31" lean-forward="false" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2180,13 +2160,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/province/provincesData.js" />
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/static/h-ui/css/H-ui.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="1759" column="0" lean-forward="true" selection-start-line="1759" selection-start-column="0" selection-end-line="1759" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/province/jquery.provincesCity.js" />
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/static/h-ui/css/H-ui.min.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -2250,7 +2223,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
           <caret line="1" column="1420" lean-forward="false" selection-start-line="1" selection-start-column="1420" selection-end-line="1" selection-end-column="1420" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2388,7 +2360,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7">
           <caret line="184" column="9" lean-forward="false" selection-start-line="184" selection-start-column="9" selection-end-line="184" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2396,22 +2367,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-357">
           <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/service/impl/MemberServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="212" column="27" lean-forward="false" selection-start-line="212" selection-start-column="27" selection-end-line="212" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/dto/DtoUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="16" column="53" lean-forward="false" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
           <folding />
         </state>
       </provider>
@@ -2429,103 +2384,173 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-add.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="187" column="41" lean-forward="false" selection-start-line="187" selection-start-column="41" selection-end-line="187" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/MemberController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="96" column="30" lean-forward="false" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp">
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/province/distpicker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
-          <caret line="85" column="38" lean-forward="false" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
-          <folding>
-            <marker date="1503905894265" expanded="true" signature="8112:8132" ph="..." />
-            <marker date="1503905894265" expanded="true" signature="8235:8243" ph="&amp;##xe6de;" />
-            <marker date="1503905894265" expanded="true" signature="8263:8283" ph="..." />
-            <marker date="1503905894265" expanded="true" signature="8417:8425" ph="&amp;##xe6df;" />
-            <marker date="1503905894265" expanded="true" signature="8445:8465" ph="..." />
-            <marker date="1503905894265" expanded="true" signature="8582:8590" ph="&amp;##xe6e2;" />
-            <marker date="1503905894265" expanded="true" signature="13119:13139" ph="..." />
-            <marker date="1503905894265" expanded="true" signature="13229:13237" ph="&amp;##xe603;" />
-            <marker date="1503905894265" expanded="true" signature="13595:13615" ph="..." />
-            <marker date="1503905894265" expanded="true" signature="13704:13712" ph="&amp;##xe6de;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-interface/src/main/java/cn/exrick/service/MemberService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="66" column="33" lean-forward="false" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="33" />
+          <caret line="214" column="34" lean-forward="false" selection-start-line="214" selection-start-column="34" selection-end-line="214" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/change-password.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
+        <state relative-caret-position="21">
           <caret line="36" column="75" lean-forward="false" selection-start-line="36" selection-start-column="75" selection-end-line="36" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/province/distpicker.js">
+    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-interface/src/main/java/cn/exrick/service/MemberService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3113">
-          <caret line="214" column="34" lean-forward="true" selection-start-line="214" selection-start-column="34" selection-end-line="214" selection-end-column="34" />
+        <state relative-caret-position="987">
+          <caret line="66" column="33" lean-forward="false" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp">
+    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/service/impl/MemberServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="149" column="16" lean-forward="false" selection-start-line="149" selection-start-column="16" selection-end-line="149" selection-end-column="62" />
+        <state relative-caret-position="105">
+          <caret line="210" column="42" lean-forward="false" selection-start-line="210" selection-start-column="42" selection-end-line="210" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/dto/DtoUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="19" column="44" lean-forward="true" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1344">
+          <caret line="64" column="10" lean-forward="true" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/web-forms2.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="625" column="16" lean-forward="false" selection-start-line="625" selection-start-column="16" selection-end-line="625" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/static/h-ui/css/H-ui.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="1348" column="37" lean-forward="false" selection-start-line="1348" selection-start-column="37" selection-end-line="1348" selection-end-column="37" />
           <folding>
-            <marker date="1503928195191" expanded="true" signature="6291:6311" ph="..." />
-            <marker date="1503928195191" expanded="true" signature="6416:6424" ph="&amp;##xe631;" />
-            <marker date="1503928195191" expanded="true" signature="6558:6578" ph="..." />
-            <marker date="1503928195191" expanded="true" signature="6607:6615" ph="&amp;##xe6df;" />
-            <marker date="1503928195191" expanded="true" signature="6635:6655" ph="..." />
-            <marker date="1503928195191" expanded="true" signature="6813:6821" ph="&amp;##xe63f;" />
-            <marker date="1503928195191" expanded="true" signature="6931:6951" ph="..." />
-            <marker date="1503928195191" expanded="true" signature="6980:6988" ph="&amp;##xe6e2;" />
-            <marker date="1503928195191" expanded="true" signature="7095:7115" ph="..." />
-            <marker date="1503928195191" expanded="true" signature="7221:7229" ph="&amp;##xe6e1;" />
-            <marker date="1503928195191" expanded="true" signature="7363:7383" ph="..." />
-            <marker date="1503928195191" expanded="true" signature="7412:7420" ph="&amp;##xe6df;" />
-            <marker date="1503928195191" expanded="true" signature="7440:7460" ph="..." />
-            <marker date="1503928195191" expanded="true" signature="7618:7626" ph="&amp;##xe63f;" />
-            <marker date="1503928195191" expanded="true" signature="7736:7756" ph="..." />
-            <marker date="1503928195191" expanded="true" signature="7785:7793" ph="&amp;##xe6e2;" />
-            <marker date="1503928195191" expanded="true" signature="9199:9219" ph="..." />
-            <marker date="1503928195191" expanded="true" signature="9312:9320" ph="&amp;##xe6e1;" />
-            <marker date="1503928195191" expanded="true" signature="10299:10319" ph="..." />
-            <marker date="1503928195191" expanded="true" signature="10411:10419" ph="&amp;##xe631;" />
+            <marker date="1500506893000" expanded="true" signature="8081:8105" ph="{...}" />
+            <marker date="1500506893000" expanded="true" signature="8567:8664" ph="{...}" />
+            <marker date="1500506893000" expanded="true" signature="36950:36989" ph="{...}" />
+            <marker date="1500506893000" expanded="true" signature="37039:37086" ph="{...}" />
+            <marker date="1500506893000" expanded="true" signature="77462:77504" ph="{...}" />
+            <marker date="1500506893000" expanded="true" signature="160128:160203" ph="{...}" />
+            <marker date="1500506893000" expanded="true" signature="160220:160296" ph="{...}" />
+            <marker date="1500506893000" expanded="true" signature="165461:165535" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/static/h-ui/js/H-ui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-448">
+          <caret line="2971" column="4" lean-forward="false" selection-start-line="2971" selection-start-column="4" selection-end-line="2971" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-edit.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="123" column="22" lean-forward="true" selection-start-line="123" selection-start-column="22" selection-end-line="123" selection-end-column="22" />
+        <state relative-caret-position="-244">
+          <caret line="123" column="25" lean-forward="false" selection-start-line="123" selection-start-column="25" selection-end-line="123" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/MemberController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="96" column="30" lean-forward="false" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
           <folding>
-            <element signature="n#style#0;n#select#1;n#div#0;n#div#0;n#div#5;n#form#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#1633#1634#0" expanded="false" />
+            <element signature="e#1686#1687#0" expanded="false" />
+            <element signature="e#1857#1858#0" expanded="false" />
+            <element signature="e#1916#1917#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="182" column="52" lean-forward="false" selection-start-line="182" selection-start-column="52" selection-end-line="182" selection-end-column="52" />
+          <folding>
+            <marker date="1503977882853" expanded="true" signature="8804:8824" ph="..." />
+            <marker date="1503977882853" expanded="true" signature="8927:8935" ph="&amp;##xe6de;" />
+            <marker date="1503977882853" expanded="true" signature="8955:8975" ph="..." />
+            <marker date="1503977882853" expanded="true" signature="9109:9117" ph="&amp;##xe6df;" />
+            <marker date="1503977882853" expanded="true" signature="9137:9157" ph="..." />
+            <marker date="1503977882853" expanded="true" signature="9274:9282" ph="&amp;##xe6e2;" />
+            <marker date="1503977882853" expanded="true" signature="9373:9393" ph="..." />
+            <marker date="1503977882853" expanded="true" signature="9497:9505" ph="&amp;##xe6de;" />
+            <marker date="1503977882853" expanded="true" signature="9525:9545" ph="..." />
+            <marker date="1503977882853" expanded="true" signature="9679:9687" ph="&amp;##xe6df;" />
+            <marker date="1503977882853" expanded="true" signature="9707:9727" ph="..." />
+            <marker date="1503977882853" expanded="true" signature="9844:9852" ph="&amp;##xe6e2;" />
+            <marker date="1503977882853" expanded="true" signature="9963:9983" ph="..." />
+            <marker date="1503977882853" expanded="true" signature="10086:10094" ph="&amp;##xe6de;" />
+            <marker date="1503977882853" expanded="true" signature="10114:10134" ph="..." />
+            <marker date="1503977882853" expanded="true" signature="10268:10276" ph="&amp;##xe6df;" />
+            <marker date="1503977882853" expanded="true" signature="10296:10316" ph="..." />
+            <marker date="1503977882853" expanded="true" signature="10433:10441" ph="&amp;##xe6e2;" />
+            <marker date="1503977882853" expanded="true" signature="14538:14558" ph="..." />
+            <marker date="1503977882853" expanded="true" signature="14648:14656" ph="&amp;##xe603;" />
+            <marker date="1503977882853" expanded="true" signature="15239:15259" ph="..." />
+            <marker date="1503977882853" expanded="true" signature="15348:15356" ph="&amp;##xe6de;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="136" column="48" lean-forward="false" selection-start-line="136" selection-start-column="48" selection-end-line="136" selection-end-column="48" />
+          <folding>
+            <marker date="1503977917387" expanded="true" signature="6291:6311" ph="..." />
+            <marker date="1503977917387" expanded="true" signature="6416:6424" ph="&amp;##xe631;" />
+            <marker date="1503977917387" expanded="true" signature="6558:6578" ph="..." />
+            <marker date="1503977917387" expanded="true" signature="6607:6615" ph="&amp;##xe6df;" />
+            <marker date="1503977917387" expanded="true" signature="6635:6655" ph="..." />
+            <marker date="1503977917387" expanded="true" signature="6813:6821" ph="&amp;##xe63f;" />
+            <marker date="1503977917387" expanded="true" signature="6931:6951" ph="..." />
+            <marker date="1503977917387" expanded="true" signature="6980:6988" ph="&amp;##xe6e2;" />
+            <marker date="1503977917387" expanded="true" signature="7095:7115" ph="..." />
+            <marker date="1503977917387" expanded="true" signature="7221:7229" ph="&amp;##xe6e1;" />
+            <marker date="1503977917387" expanded="true" signature="7363:7383" ph="..." />
+            <marker date="1503977917387" expanded="true" signature="7412:7420" ph="&amp;##xe6df;" />
+            <marker date="1503977917387" expanded="true" signature="7440:7460" ph="..." />
+            <marker date="1503977917387" expanded="true" signature="7618:7626" ph="&amp;##xe63f;" />
+            <marker date="1503977917387" expanded="true" signature="7736:7756" ph="..." />
+            <marker date="1503977917387" expanded="true" signature="7785:7793" ph="&amp;##xe6e2;" />
+            <marker date="1503977917387" expanded="true" signature="9197:9217" ph="..." />
+            <marker date="1503977917387" expanded="true" signature="9310:9318" ph="&amp;##xe6e1;" />
+            <marker date="1503977917387" expanded="true" signature="10297:10317" ph="..." />
+            <marker date="1503977917387" expanded="true" signature="10409:10417" ph="&amp;##xe631;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="179" column="28" lean-forward="false" selection-start-line="179" selection-start-column="28" selection-end-line="179" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>

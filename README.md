@@ -13,9 +13,9 @@
 
 - 后台页面
     - 感谢HUI提供静态页面支持
-    - Ztree：jQuery树插件
-    - DataTables：jQuery表格插件
-    - Layer：web弹层组件
+    - [Ztree](http://www.treejs.cn/v3/main.php#_zTreeInfo)：jQuery树插件
+    - [DataTables](http://www.datatables.club/)：jQuery表格插件
+    - [Layer](http://layer.layui.com/)：web弹层组件
     - [Distpicker](https://github.com/fengyuanchen/distpicker)：中国省市区地址三级联动插件
 - 前台页面
 

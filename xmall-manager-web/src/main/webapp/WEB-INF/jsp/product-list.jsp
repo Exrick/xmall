@@ -144,7 +144,17 @@
                     }
                 },
                 { "data": "price"},
-                { "data": "status"},
+                { "data": "status",
+                    render : function(data,type, row, meta) {
+                        if(data==0){
+                            return "<span class=\"label label-danger radius td-status\">已下线</span>";
+                        }else if(data==1){
+                            return "<span class=\"label label-success radius td-status\">已发布</span>";
+                        }else{
+                            return "<span class=\"label label-warning radius td-status\">其它态</span>";
+                        }
+                    }
+                },
                 { "data": "created",
                     render : function(data,type, row, meta) {
                         return date(data);
@@ -155,12 +165,22 @@
                         return date(data);
                     }
                 },
-                { "data": null,"defaultContent": "<a style=\"text-decoration:none\" onClick=\"product_stop(this,'10001')\" href=\"javascript:;\" title=\"下架\"><i class=\"Hui-iconfont\">&#xe6de;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_edit('商品编辑','product-add','10001')\" href=\"javascript:;\" title=\"编辑\"><i class=\"Hui-iconfont\">&#xe6df;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_del(this,'10001')\" href=\"javascript:;\" title=\"删除\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>"}
+                {
+                    "data": null,
+                    render: function (data, type, row, meta) {
+                        if (row.status == 1) {
+                            return "<a style=\"text-decoration:none\" onClick=\"product_stop(this,'10001')\" href=\"javascript:;\" title=\"下架\"><i class=\"Hui-iconfont\">&#xe6de;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_edit('商品编辑','product-add','10001')\" href=\"javascript:;\" title=\"编辑\"><i class=\"Hui-iconfont\">&#xe6df;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_del(this,'10001')\" href=\"javascript:;\" title=\"删除\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>";
+                        } else {
+                            return "<a style=\"text-decoration:none\" onClick=\"product_start(this,'10001')\" href=\"javascript:;\" title=\"发布\"><i class=\"Hui-iconfont\">&#xe603;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_edit('商品编辑','product-add','10001')\" href=\"javascript:;\" title=\"编辑\"><i class=\"Hui-iconfont\">&#xe6df;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_del(this,'10001')\" href=\"javascript:;\" title=\"删除\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>";
+                        }
+                    }
+                    //"defaultContent": "<a style=\"text-decoration:none\" onClick=\"product_stop(this,'10001')\" href=\"javascript:;\" title=\"下架\"><i class=\"Hui-iconfont\">&#xe6de;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_edit('商品编辑','product-add','10001')\" href=\"javascript:;\" title=\"编辑\"><i class=\"Hui-iconfont\">&#xe6df;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_del(this,'10001')\" href=\"javascript:;\" title=\"删除\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>"}
+                }
             ],
             "aaSorting": [[ 1, "desc" ]],//默认第几个排序
             "bStateSave": false,//状态保存
             "aoColumnDefs": [
-                {"orderable":false,"aTargets":[0,2,6,9]}// 制定列不参与排序
+                {"orderable":false,"aTargets":[0,2,4,9]}// 制定列不参与排序
             ]
         });
 
@@ -233,19 +253,6 @@
         }
     };
 
-    /*var zNodes =[
-        { id:1, pId:0, name:"一级分类", open:true},
-        { id:11, pId:1, name:"二级分类"},
-        { id:111, pId:11, name:"三级分类"},
-        { id:112, pId:11, name:"三级分类"},
-        { id:113, pId:11, name:"三级分类"},
-        { id:114, pId:11, name:"三级分类"},
-        { id:115, pId:11, name:"三级分类"},
-        { id:12, pId:1, name:"二级分类 1-2"},
-        { id:121, pId:12, name:"三级分类 1-2-1"},
-        { id:122, pId:12, name:"三级分类 1-2-2"},
-    ];*/
-
     $(document).ready(function(){
         var t = $("#treeDemo");
         t = $.fn.zTree.init(t, setting);
@@ -296,6 +303,9 @@
     function product_stop(obj,id){
         layer.confirm('确认要下架吗？',function(index){
             $(obj).parents("td").prepend('<a style="text-decoration:none" onClick="product_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
+            var thisTd = $(obj).parents("tr").find(".td-status").parent();
+            $(obj).parents("tr").find(".td-status").empty();
+            thisTd.html('<span class="label label-danger radius td-status">已下线</span>');
             //$(obj).parents("td").html('<span class="label label-defaunt radius">已下架</span>');
             $(obj).remove();
             layer.msg('已下架!',{icon: 5,time:1000});
@@ -306,6 +316,9 @@
     function product_start(obj,id){
         layer.confirm('确认要发布吗？',function(index){
             $(obj).parents("td").prepend('<a style="text-decoration:none" onClick="product_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>');
+            var thisTd = $(obj).parents("tr").find(".td-status").parent();
+            $(obj).parents("tr").find(".td-status").empty();
+            thisTd.html('<span class="label label-success radius td-status">已发布</span>');
             //$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
             $(obj).remove();
             layer.msg('已发布!',{icon: 6,time:1000});
