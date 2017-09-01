@@ -2,7 +2,7 @@ package cn.exrick.pojo;
 
 import java.util.Date;
 
-public class TbMember {
+public class TbUser {
     private Long id;
 
     private String username;
@@ -23,9 +23,7 @@ public class TbMember {
 
     private Integer state;
 
-    private String file;
-
-    private String description;
+    private String member;
 
     public Long getId() {
         return id;
@@ -107,19 +105,11 @@ public class TbMember {
         this.state = state;
     }
 
-    public String getFile() {
-        return file;
+    public String getMember() {
+        return member;
     }
 
-    public void setFile(String file) {
-        this.file = file == null ? null : file.trim();
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description == null ? null : description.trim();
+    public void setMember(String member) {
+        this.member = member == null ? null : member.trim();
     }
 }

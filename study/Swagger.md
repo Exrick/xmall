@@ -124,7 +124,7 @@ public class MemberController {
 }
 ```
 
-4. 按常规, 现在访问http://localhost:8090/swagger-ui.html 应该能看到效果了, 但出现404
+4. 按常规, 现在访问 http://localhost:8090/swagger-ui.html 应该能看到效果了, 但出现404
 
 - 处理方法：在 GitHub 上[下载 SwaggerUI 项目](https://github.com/swagger-api/swagger-ui
 )，建议[下载2.0分支版本](https://github.com/swagger-api/swagger-ui/tree/2.x)，界面清爽点，将dist下所有内容拷贝到本地项目resource/static/swagger下面, 并修改 index.html
@@ -132,7 +132,7 @@ public class MemberController {
 //url = "http://petstore.swagger.io/v2/swagger.json";        
 url = "http://localhost:8888/v2/api-docs";
 ```
-然后访问http://localhost:8888/static/swagger/index.html
+然后访问 http://localhost:8888/static/swagger/index.html
 
 ![](http://otabkoy17.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20170819202037.png)
 

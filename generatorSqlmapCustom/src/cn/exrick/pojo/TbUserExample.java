@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class TbMemberExample {
+public class TbUserExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public TbMemberExample() {
+    public TbUserExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -765,143 +765,73 @@ public class TbMemberExample {
             return (Criteria) this;
         }
 
-        public Criteria andFileIsNull() {
-            addCriterion("file is null");
+        public Criteria andMemberIsNull() {
+            addCriterion("member is null");
             return (Criteria) this;
         }
 
-        public Criteria andFileIsNotNull() {
-            addCriterion("file is not null");
+        public Criteria andMemberIsNotNull() {
+            addCriterion("member is not null");
             return (Criteria) this;
         }
 
-        public Criteria andFileEqualTo(String value) {
-            addCriterion("file =", value, "file");
+        public Criteria andMemberEqualTo(String value) {
+            addCriterion("member =", value, "member");
             return (Criteria) this;
         }
 
-        public Criteria andFileNotEqualTo(String value) {
-            addCriterion("file <>", value, "file");
+        public Criteria andMemberNotEqualTo(String value) {
+            addCriterion("member <>", value, "member");
             return (Criteria) this;
         }
 
-        public Criteria andFileGreaterThan(String value) {
-            addCriterion("file >", value, "file");
+        public Criteria andMemberGreaterThan(String value) {
+            addCriterion("member >", value, "member");
             return (Criteria) this;
         }
 
-        public Criteria andFileGreaterThanOrEqualTo(String value) {
-            addCriterion("file >=", value, "file");
+        public Criteria andMemberGreaterThanOrEqualTo(String value) {
+            addCriterion("member >=", value, "member");
             return (Criteria) this;
         }
 
-        public Criteria andFileLessThan(String value) {
-            addCriterion("file <", value, "file");
+        public Criteria andMemberLessThan(String value) {
+            addCriterion("member <", value, "member");
             return (Criteria) this;
         }
 
-        public Criteria andFileLessThanOrEqualTo(String value) {
-            addCriterion("file <=", value, "file");
+        public Criteria andMemberLessThanOrEqualTo(String value) {
+            addCriterion("member <=", value, "member");
             return (Criteria) this;
         }
 
-        public Criteria andFileLike(String value) {
-            addCriterion("file like", value, "file");
+        public Criteria andMemberLike(String value) {
+            addCriterion("member like", value, "member");
             return (Criteria) this;
         }
 
-        public Criteria andFileNotLike(String value) {
-            addCriterion("file not like", value, "file");
+        public Criteria andMemberNotLike(String value) {
+            addCriterion("member not like", value, "member");
             return (Criteria) this;
         }
 
-        public Criteria andFileIn(List<String> values) {
-            addCriterion("file in", values, "file");
+        public Criteria andMemberIn(List<String> values) {
+            addCriterion("member in", values, "member");
             return (Criteria) this;
         }
 
-        public Criteria andFileNotIn(List<String> values) {
-            addCriterion("file not in", values, "file");
+        public Criteria andMemberNotIn(List<String> values) {
+            addCriterion("member not in", values, "member");
             return (Criteria) this;
         }
 
-        public Criteria andFileBetween(String value1, String value2) {
-            addCriterion("file between", value1, value2, "file");
+        public Criteria andMemberBetween(String value1, String value2) {
+            addCriterion("member between", value1, value2, "member");
             return (Criteria) this;
         }
 
-        public Criteria andFileNotBetween(String value1, String value2) {
-            addCriterion("file not between", value1, value2, "file");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionIsNull() {
-            addCriterion("description is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionIsNotNull() {
-            addCriterion("description is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionEqualTo(String value) {
-            addCriterion("description =", value, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionNotEqualTo(String value) {
-            addCriterion("description <>", value, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionGreaterThan(String value) {
-            addCriterion("description >", value, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionGreaterThanOrEqualTo(String value) {
-            addCriterion("description >=", value, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionLessThan(String value) {
-            addCriterion("description <", value, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionLessThanOrEqualTo(String value) {
-            addCriterion("description <=", value, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionLike(String value) {
-            addCriterion("description like", value, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionNotLike(String value) {
-            addCriterion("description not like", value, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionIn(List<String> values) {
-            addCriterion("description in", values, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionNotIn(List<String> values) {
-            addCriterion("description not in", values, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionBetween(String value1, String value2) {
-            addCriterion("description between", value1, value2, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionNotBetween(String value1, String value2) {
-            addCriterion("description not between", value1, value2, "description");
+        public Criteria andMemberNotBetween(String value1, String value2) {
+            addCriterion("member not between", value1, value2, "member");
             return (Criteria) this;
         }
     }

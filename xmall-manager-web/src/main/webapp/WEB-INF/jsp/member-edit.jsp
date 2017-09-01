@@ -29,7 +29,8 @@
 </head>
 <body>
 <article class="page-container">
-    <form action="/member/add" method="POST" class="form form-horizontal" id="form-member-add">
+    <form action="" method="" class="form form-horizontal" id="form-member-add">
+        <input type="password" name="password" hidden>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户名：</label>
             <div class="formControls col-xs-8 col-sm-9">
@@ -86,7 +87,7 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3">备注：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <textarea name="description" cols="" rows="" class="textarea"  placeholder="说点什么...最多输入100个字符"></textarea>
+                <textarea name="description" id="description" cols="" rows="" class="textarea"  placeholder="说点什么...最多输入100个字符"></textarea>
             </div>
         </div>
         <div class="row cl">
@@ -120,6 +121,7 @@
             document.getElementById("username").value = data.result.username;
             document.getElementById("phone").value = data.result.phone;
             document.getElementById("email").value = data.result.email;
+            document.getElementById("description").value = data.result.description;
             if(data.result.sex=='男'){
                 $("#sex-1").attr('checked', 'checked');
                 radioCheck();
@@ -204,12 +206,14 @@
             success:"valid",
             submitHandler:function(form){
                 $(form).ajaxSubmit({
+                    url: "/member/update/"+getId,
+                    type: "POST",
                     success: function(data) {
                         if(data.success==true){
                             parent.refresh();
                             layer.msg(content, {icon: 1,time:3000});
                         }else{
-                            layer.alert('添加失败! '+data.message, {title: '错误信息',icon: 2});
+                            layer.alert('修改失败! '+data.message, {title: '错误信息',icon: 2});
                         }
                     },
                     error:function(XMLHttpRequest) {
@@ -220,7 +224,7 @@
                         }else if(XMLHttpRequest.responseText.indexOf('username') > 0){
                             layer.alert('添加失败，用户名已存在!',{title: '错误信息',icon: 2});
                         }else{
-                            layer.alert('抱歉，出错了! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                         }
                     }
                 });

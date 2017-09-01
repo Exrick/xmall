@@ -97,7 +97,11 @@
                 }
             },
             "columns": [
-                { "data": null,"defaultContent": "<input name=\"\" type=\"checkbox\" value=\"\">"},
+                { "data": null,
+                    render : function(data,type, row, meta) {
+                        return "<input name=\"checkbox\" value=\""+row.id+"\" type=\"checkbox\" value=\"\">";
+                    }
+                },
                 { "data": "id"},
                 { "data": "username"},
                 { "data": "sex"},
@@ -112,7 +116,7 @@
                 { "data": "state",
                     render : function(data,type, row, meta) {
                         if(data==0){
-                            return "<span class=\"label label-danger radius td-status\">已停用</span>";
+                            return "<span class=\"label label-defant radius td-status\">已停用</span>";
                         }else if(data==1){
                             return "<span class=\"label label-success radius td-status\">已启用</span>";
                         }else{
@@ -174,7 +178,7 @@
                     $(obj).parents("td").prepend('<a style="text-decoration:none" onClick="member_start(this,'+id+')" href="javascript:;" title="启用"><i class="Hui-iconfont">&#xe6e1;</i></a>');
                     var thisTd = $(obj).parents("tr").find(".td-status").parent();
                     $(obj).parents("tr").find(".td-status").empty();
-                    thisTd.html('<span class="label label-danger radius td-status">已停用</span>');
+                    thisTd.html('<span class="label label-defant radius td-status">已停用</span>');
                     $(obj).remove();
                     layer.msg('已停用!',{icon: 5,time:1000});
                 },
@@ -227,14 +231,41 @@
                     layer.msg('已删除!',{icon:1,time:1000});
                 },
                 error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
                 }
             });
         });
     }
-
-    function alert_success(){
-        layer.msg('修改成功!', {icon: 1,time:3000});
+    /*批量删除*/
+    function datadel() {
+        var cks=document.getElementsByName("checkbox");
+        var count=0;
+        for(var i=0;i<cks.length;i++){
+            if(cks[i].checked){
+                count++;
+            }
+        }
+        if(count==0){
+            layer.msg('您还未勾选要删除的数据!',{icon:5,time:3000});
+            return;
+        }
+        layer.confirm('确认要删除所选'+count+'条数据吗？',{icon:0},function(index){
+            for(var i=0;i<cks.length;i++){
+                if(cks[i].checked){
+                    $.ajax({
+                        type: 'PUT',
+                        url: '/member/remove/'+cks[i].value,
+                        dataType: 'json',
+                        error:function(XMLHttpRequest){
+                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                        }
+                    });
+                }
+            }
+            refresh();
+            member_count();
+            layer.msg('已删除!',{icon:1,time:1000});
+        });
     }
 </script>
 </body>

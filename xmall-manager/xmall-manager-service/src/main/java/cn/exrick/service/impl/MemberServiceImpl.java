@@ -229,26 +229,16 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public TbMember updateMember(Long id,MemberDto memberDto) {
-        //TODO
-        TbMember tbMember=getMemberById(id);
-        TbMember newTbMember = DtoUtil.MemberDto2Member(memberDto);
-        tbMember.setSex(newTbMember.getSex());
+
+        TbMember tbMember = DtoUtil.MemberDto2Member(memberDto);
+        tbMember.setId(id);
         tbMember.setUpdated(new Date());
+        TbMember oldMember=getMemberById(id);
+        tbMember.setState(oldMember.getState());
+        tbMember.setCreated(oldMember.getCreated());
 
         if (tbMemberMapper.updateByPrimaryKey(tbMember) != 1){
             throw new XmallException("更新会员信息失败");
-        }
-        return getMemberById(id);
-    }
-
-    @Override
-    public TbMember changeMemberPassword(Long id, MemberDto memberDto) {
-
-        TbMember tbMember=getMemberById(id);
-        tbMember.setPassword(memberDto.getPassword());
-
-        if (tbMemberMapper.updateByPrimaryKey(tbMember) != 1){
-            throw new XmallException("修改会员密码失败");
         }
         return getMemberById(id);
     }

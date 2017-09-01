@@ -92,7 +92,11 @@
                 }
             },
             "columns": [
-                { "data": null,"defaultContent": "<input name=\"\" type=\"checkbox\" value=\"\">"},
+                { "data": null,
+                    render : function(data,type, row, meta) {
+                        return "<input name=\"checkbox\" value=\""+row.id+"\" type=\"checkbox\" value=\"\">";
+                    }
+                },
                 { "data": "id"},
                 { "data": "username"},
                 { "data": "sex"},

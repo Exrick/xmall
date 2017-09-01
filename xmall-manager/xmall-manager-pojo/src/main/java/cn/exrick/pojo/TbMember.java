@@ -26,6 +26,8 @@ public class TbMember implements Serializable{
 
     private String file;
 
+    private String description;
+
     public Long getId() {
         return id;
     }
@@ -112,5 +114,13 @@ public class TbMember implements Serializable{
 
     public void setFile(String file) {
         this.file = file == null ? null : file.trim();
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
     }
 }

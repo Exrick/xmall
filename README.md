@@ -12,7 +12,7 @@
 ### 前端所用技术
 
 - 后台页面
-    - 感谢[H-UI](http://www.h-ui.net/)提供静态页面支持
+    - 感谢[H-ui](http://www.h-ui.net/)提供静态页面支持
     - [Ztree](http://www.treejs.cn/v3/main.php#_zTreeInfo)：jQuery树插件
     - [DataTables](http://www.datatables.club/)：jQuery表格插件
     - [Layer](http://layer.layui.com/)：web弹层组件
@@ -31,6 +31,7 @@
 - [Nginx](https://github.com/Exrick/xmall/blob/master/study/Nginx.md)
 - Tomcat
 - Maven
+- JRebel：热部署，开发修改避免重启服务器
 
 ### dependency文件夹提供部分安装文件与sql文件
 - sql文件
@@ -39,12 +40,12 @@
 - nginx
 
 ### 本地开发运行部署
-- 下载git或zip直接解压, git安装后执行克隆命令 `git clone https://github.com/Exrick/xmall.git`
+- 下载git或zip直接解压，git安装后执行克隆命令 `git clone https://github.com/Exrick/xmall.git`
 - 使用IDEA([破解/免费注册](http://idea.lanyus.com/)) `File-Open` 直接打开xmall项目点击右下角 `Import Changes` 等待安装完依赖即可
 - Maven安装和IDEA配置
 
     ![](http://otabkoy17.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170901140327.png)
-- MySQL数据库新建xmall数据库, 运行sql文件, 注意在 `xmall-manager-service/resources/conf/db.properties` 中修改你的数据库连接配置
+- MySQL数据库新建xmall数据库，运行sql文件，注意在 `xmall-manager-service/resources/conf/db.properties` 中修改你的数据库连接配置
 - 按照以下顺序分别在每个模块文件夹根目录执行 `mvn install` 命令: xmall-parent、xmall-common、xmall-manager、xmall-manager-web
-- 项目使用Tomcat插件, 需运行 `xmall-manager` 和 `xmall-manager-web` 两个服务, 执行命令 `mvn tomcat7:run` 或在IDEA中使用插件(`View - Tool Buttons - 右侧菜单Maven Projects - tomcat7 - tomcat7:run`)运行即可
+- 项目使用Tomcat插件, 需运行 `xmall-manager` 和 `xmall-manager-web` 两个服务，执行命令 `mvn tomcat7:run` 或在IDEA中使用插件(`View - Tool Buttons - 右侧菜单Maven Projects - tomcat7 - tomcat7:run`)运行即可
 

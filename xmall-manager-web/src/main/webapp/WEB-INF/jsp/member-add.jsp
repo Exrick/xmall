@@ -177,7 +177,12 @@
                 $(form).ajaxSubmit({
                     success: function(data) {
                         if(data.success==true){
-                            parent.refresh();
+                            if(parent.location.pathname!='/'){
+                                parent.refresh();
+                            }else{
+                                var index = parent.layer.getFrameIndex(window.name);
+                                parent.layer.close(index);
+                            }
                             layer.msg(content, {icon: 1,time:3000});
                             //parent.location.replace(parent.location.href);
                             //console.log($(".btn-refresh",parent));

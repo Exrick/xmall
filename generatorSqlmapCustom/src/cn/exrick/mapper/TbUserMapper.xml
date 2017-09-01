@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.exrick.mapper.TbMemberMapper">
-  <resultMap id="BaseResultMap" type="cn.exrick.pojo.TbMember">
+<mapper namespace="cn.exrick.mapper.TbUserMapper">
+  <resultMap id="BaseResultMap" type="cn.exrick.pojo.TbUser">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
@@ -12,8 +12,7 @@
     <result column="sex" jdbcType="VARCHAR" property="sex" />
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="state" jdbcType="INTEGER" property="state" />
-    <result column="file" jdbcType="VARCHAR" property="file" />
-    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="member" jdbcType="VARCHAR" property="member" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -74,16 +73,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, username, password, phone, email, created, updated, sex, address, state, file, 
-    description
+    id, username, password, phone, email, created, updated, sex, address, state, member
   </sql>
-  <select id="selectByExample" parameterType="cn.exrick.pojo.TbMemberExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="cn.exrick.pojo.TbUserExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from tb_member
+    from tb_user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -94,33 +92,31 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from tb_member
+    from tb_user
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from tb_member
+    delete from tb_user
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="cn.exrick.pojo.TbMemberExample">
-    delete from tb_member
+  <delete id="deleteByExample" parameterType="cn.exrick.pojo.TbUserExample">
+    delete from tb_user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.exrick.pojo.TbMember">
-    insert into tb_member (id, username, password, 
+  <insert id="insert" parameterType="cn.exrick.pojo.TbUser">
+    insert into tb_user (id, username, password, 
       phone, email, created, 
       updated, sex, address, 
-      state, file, description
-      )
+      state, member)
     values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, 
       #{updated,jdbcType=TIMESTAMP}, #{sex,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
-      #{state,jdbcType=INTEGER}, #{file,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}
-      )
+      #{state,jdbcType=INTEGER}, #{member,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="cn.exrick.pojo.TbMember">
-    insert into tb_member
+  <insert id="insertSelective" parameterType="cn.exrick.pojo.TbUser">
+    insert into tb_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -152,11 +148,8 @@
       <if test="state != null">
         state,
       </if>
-      <if test="file != null">
-        file,
-      </if>
-      <if test="description != null">
-        description,
+      <if test="member != null">
+        member,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -190,22 +183,19 @@
       <if test="state != null">
         #{state,jdbcType=INTEGER},
       </if>
-      <if test="file != null">
-        #{file,jdbcType=VARCHAR},
-      </if>
-      <if test="description != null">
-        #{description,jdbcType=VARCHAR},
+      <if test="member != null">
+        #{member,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cn.exrick.pojo.TbMemberExample" resultType="java.lang.Long">
-    select count(*) from tb_member
+  <select id="countByExample" parameterType="cn.exrick.pojo.TbUserExample" resultType="java.lang.Long">
+    select count(*) from tb_user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update tb_member
+    update tb_user
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=BIGINT},
@@ -237,11 +227,8 @@
       <if test="record.state != null">
         state = #{record.state,jdbcType=INTEGER},
       </if>
-      <if test="record.file != null">
-        file = #{record.file,jdbcType=VARCHAR},
-      </if>
-      <if test="record.description != null">
-        description = #{record.description,jdbcType=VARCHAR},
+      <if test="record.member != null">
+        member = #{record.member,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -249,7 +236,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update tb_member
+    update tb_user
     set id = #{record.id,jdbcType=BIGINT},
       username = #{record.username,jdbcType=VARCHAR},
       password = #{record.password,jdbcType=VARCHAR},
@@ -260,14 +247,13 @@
       sex = #{record.sex,jdbcType=VARCHAR},
       address = #{record.address,jdbcType=VARCHAR},
       state = #{record.state,jdbcType=INTEGER},
-      file = #{record.file,jdbcType=VARCHAR},
-      description = #{record.description,jdbcType=VARCHAR}
+      member = #{record.member,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.exrick.pojo.TbMember">
-    update tb_member
+  <update id="updateByPrimaryKeySelective" parameterType="cn.exrick.pojo.TbUser">
+    update tb_user
     <set>
       <if test="username != null">
         username = #{username,jdbcType=VARCHAR},
@@ -296,17 +282,14 @@
       <if test="state != null">
         state = #{state,jdbcType=INTEGER},
       </if>
-      <if test="file != null">
-        file = #{file,jdbcType=VARCHAR},
-      </if>
-      <if test="description != null">
-        description = #{description,jdbcType=VARCHAR},
+      <if test="member != null">
+        member = #{member,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.exrick.pojo.TbMember">
-    update tb_member
+  <update id="updateByPrimaryKey" parameterType="cn.exrick.pojo.TbUser">
+    update tb_user
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
@@ -316,38 +299,7 @@
       sex = #{sex,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
       state = #{state,jdbcType=INTEGER},
-      file = #{file,jdbcType=VARCHAR},
-      description = #{description,jdbcType=VARCHAR}
+      member = #{member,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <select id="selectByMemberInformation" parameterType="string" resultMap="BaseResultMap">
-    SELECT * FROM tb_member
-    WHERE
-    (state != 2)
-    AND
-    ((username LIKE #{search})
-    OR
-    (phone LIKE #{search})
-    OR
-    (email LIKE #{search})
-    OR
-    (sex LIKE #{search})
-    OR
-    (address LIKE #{search}))
-  </select>
-  <select id="selectByRemoveMemberInformation" parameterType="string" resultMap="BaseResultMap">
-    SELECT * FROM tb_member
-    WHERE
-    (state = 2)
-    AND
-    ((username LIKE #{search})
-    OR
-    (phone LIKE #{search})
-    OR
-    (email LIKE #{search})
-    OR
-    (sex LIKE #{search})
-    OR
-    (address LIKE #{search}))
-  </select>
 </mapper>

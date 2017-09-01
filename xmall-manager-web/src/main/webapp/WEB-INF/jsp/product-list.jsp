@@ -105,7 +105,11 @@
                 }
             },
             "columns": [
-                { "data": null,"defaultContent": "<input name=\"\" type=\"checkbox\" value=\"\">"},
+                { "data": null,
+                    render : function(data,type, row, meta) {
+                        return "<input name=\"checkbox\" value=\""+row.id+"\" type=\"checkbox\" value=\"\">";
+                    }
+                },
                 { "data": "id"},
                 { "data": "image",
                     render: function(data, type, row, meta) {
@@ -147,7 +151,7 @@
                 { "data": "status",
                     render : function(data,type, row, meta) {
                         if(data==0){
-                            return "<span class=\"label label-danger radius td-status\">已下线</span>";
+                            return "<span class=\"label label-defant radius td-status\">已下架</span>";
                         }else if(data==1){
                             return "<span class=\"label label-success radius td-status\">已发布</span>";
                         }else{
@@ -305,7 +309,7 @@
             $(obj).parents("td").prepend('<a style="text-decoration:none" onClick="product_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
             var thisTd = $(obj).parents("tr").find(".td-status").parent();
             $(obj).parents("tr").find(".td-status").empty();
-            thisTd.html('<span class="label label-danger radius td-status">已下线</span>');
+            thisTd.html('<span class="label label-defant radius td-status">已下架</span>');
             //$(obj).parents("td").html('<span class="label label-defaunt radius">已下架</span>');
             $(obj).remove();
             layer.msg('已下架!',{icon: 5,time:1000});

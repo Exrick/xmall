@@ -90,7 +90,14 @@ public class MemberController {
     @RequestMapping(value = "/member/changePass/{id}",method = RequestMethod.POST)
     @ApiOperation(value = "修改会员密码")
     public Result<TbMember> changeMemberPassword(@PathVariable Long id,@ModelAttribute MemberDto memberDto){
-        TbMember tbMember = memberService.changeMemberPassword(id,memberDto);
+        TbMember tbMember = memberService.updateMember(id,memberDto);
+        return new ResultUtil<TbMember>().setData(tbMember);
+    }
+
+    @RequestMapping(value = "/member/update/{id}",method = RequestMethod.POST)
+    @ApiOperation(value = "修改会员信息")
+    public Result<TbMember> updateMember(@PathVariable Long id,@ModelAttribute MemberDto memberDto){
+        TbMember tbMember = memberService.updateMember(id,memberDto);
         return new ResultUtil<TbMember>().setData(tbMember);
     }
 

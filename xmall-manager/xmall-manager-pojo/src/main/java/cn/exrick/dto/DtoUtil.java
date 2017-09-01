@@ -13,11 +13,24 @@ public class DtoUtil {
 
         TbMember tbMember =new TbMember();
 
-        tbMember.setUsername(memberDto.getUsername());
-        tbMember.setPassword(memberDto.getPassword());
-        tbMember.setPhone(memberDto.getPhone());
-        tbMember.setEmail(memberDto.getEmail());
-        tbMember.setSex(memberDto.getSex());
+        if(!memberDto.getUsername().isEmpty()){
+            tbMember.setUsername(memberDto.getUsername());
+        }
+        if(!memberDto.getPassword().isEmpty()){
+            tbMember.setPassword(memberDto.getPassword());
+        }
+        if(!memberDto.getPhone().isEmpty()){
+            tbMember.setPhone(memberDto.getPhone());
+        }
+        if(!memberDto.getEmail().isEmpty()){
+            tbMember.setEmail(memberDto.getEmail());
+        }
+        if(!memberDto.getSex().isEmpty()){
+            tbMember.setSex(memberDto.getSex());
+        }
+        if(!memberDto.getDescription().isEmpty()){
+            tbMember.setDescription(memberDto.getDescription());
+        }
         if(!memberDto.getProvince().isEmpty()&&!memberDto.getProvince().contains("-")){
             tbMember.setAddress(memberDto.getProvince()+" "
                     +memberDto.getCity()+" "+memberDto.getDistrict());

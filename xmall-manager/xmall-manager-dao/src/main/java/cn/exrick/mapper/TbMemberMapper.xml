@@ -13,6 +13,7 @@
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="state" jdbcType="INTEGER" property="state" />
     <result column="file" jdbcType="VARCHAR" property="file" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -73,7 +74,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, username, password, phone, email, created, updated, sex, address, state, file
+    id, username, password, phone, email, created, updated, sex, address, state, file, 
+    description
   </sql>
   <select id="selectByExample" parameterType="cn.exrick.pojo.TbMemberExample" resultMap="BaseResultMap">
     select
@@ -109,11 +111,13 @@
     insert into tb_member (id, username, password, 
       phone, email, created, 
       updated, sex, address, 
-      state, file)
+      state, file, description
+      )
     values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, 
       #{updated,jdbcType=TIMESTAMP}, #{sex,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
-      #{state,jdbcType=INTEGER}, #{file,jdbcType=VARCHAR})
+      #{state,jdbcType=INTEGER}, #{file,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="cn.exrick.pojo.TbMember">
     insert into tb_member
@@ -151,6 +155,9 @@
       <if test="file != null">
         file,
       </if>
+      <if test="description != null">
+        description,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -185,6 +192,9 @@
       </if>
       <if test="file != null">
         #{file,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -230,6 +240,9 @@
       <if test="record.file != null">
         file = #{record.file,jdbcType=VARCHAR},
       </if>
+      <if test="record.description != null">
+        description = #{record.description,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -247,7 +260,8 @@
       sex = #{record.sex,jdbcType=VARCHAR},
       address = #{record.address,jdbcType=VARCHAR},
       state = #{record.state,jdbcType=INTEGER},
-      file = #{record.file,jdbcType=VARCHAR}
+      file = #{record.file,jdbcType=VARCHAR},
+      description = #{record.description,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -285,6 +299,9 @@
       <if test="file != null">
         file = #{file,jdbcType=VARCHAR},
       </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -299,7 +316,8 @@
       sex = #{sex,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
       state = #{state,jdbcType=INTEGER},
-      file = #{file,jdbcType=VARCHAR}
+      file = #{file,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
   <select id="selectByMemberInformation" parameterType="string" resultMap="BaseResultMap">

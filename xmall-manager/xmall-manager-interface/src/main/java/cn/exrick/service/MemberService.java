@@ -59,14 +59,6 @@ public interface MemberService {
     TbMember updateMember(Long id,MemberDto memberDto);
 
     /**
-     * 修改会员密码
-     * @param id
-     * @param memberDto
-     * @return
-     */
-    TbMember changeMemberPassword(Long id,MemberDto memberDto);
-
-    /**
      * 修改会员状态
      * @param id
      * @return
