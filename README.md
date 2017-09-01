@@ -12,7 +12,7 @@
 ### 前端所用技术
 
 - 后台页面
-    - 感谢HUI提供静态页面支持
+    - 感谢[HUI](http://www.h-ui.net/)提供静态页面支持
     - [Ztree](http://www.treejs.cn/v3/main.php#_zTreeInfo)：jQuery树插件
     - [DataTables](http://www.datatables.club/)：jQuery表格插件
     - [Layer](http://layer.layui.com/)：web弹层组件
@@ -27,10 +27,12 @@
 - Dubbo
 - ZooKeeper
 - [Swagger](https://github.com/Exrick/xmall/blob/master/study/Swagger.md)
+- Docker
 - [Nginx](https://github.com/Exrick/xmall/blob/master/study/Nginx.md)
 - Tomcat
+- Maven
 
-### dependency_files文件夹提供部分安装文件
+### dependency_files文件夹提供部分安装文件与sql文件
 - sql文件
 - dubbo.xsd 需手动配置避免报错
 - zookeeper 
