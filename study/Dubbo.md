@@ -1,6 +1,6 @@
 ## Dubbo架构
 
-    ![](http://otabkoy17.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170902124944.png)
+![](http://otabkoy17.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170902124944.png)
  
 - 节点角色说明：
     - Provider: 暴露服务的服务提供方。

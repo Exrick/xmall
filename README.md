@@ -24,8 +24,8 @@
 - Spring
 - [SpringMVC](https://github.com/Exrick/xmall/blob/master/study/SpringMVC.md)
 - MyBatis
-- Dubbo
-- ZooKeeper
+- [Dubbo](https://github.com/Exrick/xmall/blob/master/study/Dubbo.md)
+- [ZooKeeper](https://github.com/Exrick/xmall/blob/master/study/Zookeeper.md)
 - MySQL
 - Redis：缓存
 - [Swagger](https://github.com/Exrick/xmall/blob/master/study/Swagger.md)
