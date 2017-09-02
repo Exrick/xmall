@@ -246,10 +246,10 @@
             }
         }
         if(count==0){
-            layer.msg('您还未勾选要删除的数据!',{icon:5,time:3000});
+            layer.msg('您还未勾选任何数据!',{icon:5,time:3000});
             return;
         }
-        layer.confirm('确认要删除所选'+count+'条数据吗？',{icon:0},function(index){
+        layer.confirm('确认要删除所选的'+count+'条数据吗？',{icon:0},function(index){
             for(var i=0;i<cks.length;i++){
                 if(cks[i].checked){
                     $.ajax({
@@ -263,8 +263,6 @@
                 }
             }
             refresh();
-            member_count();
-            layer.msg('已删除!',{icon:1,time:1000});
         });
     }
 </script>

@@ -43,6 +43,8 @@
         <javassist.version>3.21.0-GA</javassist.version>
         <swagger2.version>2.6.1</swagger2.version>
         <swagger-ui.version>2.6.1</swagger-ui.version>
+        <!--指定了版本范围，每次会尝试去下载最新版本-->
+        <qiniu.version>[7.2.0, 7.2.99]</qiniu.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -255,6 +257,12 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger-ui.version}</version>
+            </dependency>
+            <!--七牛云图片上传SDK-->
+            <dependency>
+                <groupId>com.qiniu</groupId>
+                <artifactId>qiniu-java-sdk</artifactId>
+                <version>${qiniu.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

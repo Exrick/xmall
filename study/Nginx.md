@@ -28,7 +28,7 @@
 `nginx/conf/nginx.conf`
 5. 重新加载配置文件 避免重启
 `sbin/nginx -s reload`
-6. 配置虚拟主机
+6. 配置虚拟主机与反向代理
 ```
 worker_processes  1;
 
@@ -125,8 +125,8 @@ http {
 http {
     ...
     upstream resume{
-	server 123.207.121.135:8080;
-    server 123.207.121.135:8081;
+        server 123.207.121.135:8080;
+        server 123.207.121.135:8081;
     } 
     ...
 }
@@ -137,8 +137,8 @@ http {
 http {
     ...
     upstream resume{
-	server 123.207.121.135:8080;
-    server 123.207.121.135:8081 weight=2;
+        server 123.207.121.135:8080;
+        server 123.207.121.135:8081 weight=2;
     } 
     ...
 }

@@ -31,11 +31,9 @@ public class DtoUtil {
         if(!memberDto.getDescription().isEmpty()){
             tbMember.setDescription(memberDto.getDescription());
         }
-        if(!memberDto.getProvince().isEmpty()&&!memberDto.getProvince().contains("-")){
+        if(!memberDto.getProvince().isEmpty()){
             tbMember.setAddress(memberDto.getProvince()+" "
                     +memberDto.getCity()+" "+memberDto.getDistrict());
-        }else{
-            tbMember.setAddress(null);
         }
 
         return tbMember;

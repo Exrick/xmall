@@ -82,5 +82,10 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
+        <!--七牛云图片上传SDK-->
+        <dependency>
+            <groupId>com.qiniu</groupId>
+            <artifactId>qiniu-java-sdk</artifactId>
+        </dependency>
     </dependencies>
 </project>

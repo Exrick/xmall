@@ -37,7 +37,7 @@
         <input type="text" class="input-text" style="width:250px" placeholder="输入会员名称、电话、邮箱" id="" name="">
         <button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
     </div>
-    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> </span> <span class="r">共有数据：<strong id="memberRemoveListCount">0</strong> 条</span> </div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a href="javascript:;" onclick="restoreAll()" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe66b;</i> 批量还原</a></span> <span class="r">共有数据：<strong id="memberRemoveListCount">0</strong> 条</span> </div>
     <div class="mt-20">
         <table class="table table-border table-bordered table-hover table-bg table-sort" width="100%">
             <thead>
@@ -68,6 +68,10 @@
 <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
+    /*刷新页面*/
+    function refresh(){
+        location.reload();
+    }
     /*时间转换*/
     function date(data){
         var time = new Date(data);
@@ -186,6 +190,64 @@
                     layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
                 }
             });
+        });
+    }
+    /*批量删除*/
+    function datadel() {
+        var cks=document.getElementsByName("checkbox");
+        var count=0;
+        for(var i=0;i<cks.length;i++){
+            if(cks[i].checked){
+                count++;
+            }
+        }
+        if(count==0){
+            layer.msg('您还未勾选任何数据!',{icon:5,time:3000});
+            return;
+        }
+        layer.confirm('确认要彻底删除所选的'+count+'条数据吗？',{icon:0},function(index){
+            for(var i=0;i<cks.length;i++){
+                if(cks[i].checked){
+                    $.ajax({
+                        type: 'DELETE',
+                        url: '/member/del/'+cks[i].value,
+                        dataType: 'json',
+                        error:function(XMLHttpRequest){
+                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                        }
+                    });
+                }
+            }
+            refresh();
+        });
+    }
+    /*批量还原*/
+    function restoreAll(obj,id){
+        var cks=document.getElementsByName("checkbox");
+        var count=0;
+        for(var i=0;i<cks.length;i++){
+            if(cks[i].checked){
+                count++;
+            }
+        }
+        if(count==0){
+            layer.msg('您还未勾选任何数据!',{icon:5,time:3000});
+            return;
+        }
+        layer.confirm('确认要还原所选的'+count+'条数据吗？',{icon:0},function(index){
+            for(var i=0;i<cks.length;i++){
+                if(cks[i].checked){
+                    $.ajax({
+                        type: 'PUT',
+                        url: '/member/start/'+cks[i].value,
+                        dataType: 'json',
+                        error:function(XMLHttpRequest){
+                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                        }
+                    });
+                }
+            }
+            refresh();
         });
     }
 </script>

@@ -2,69 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4f3498c-c7a8-433e-85bb-4c00387d3dab" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbContentCategoryMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbContentCategoryMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbContentMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbContentMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemCatMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemCatMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemDescMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemDescMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemParamItemMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemParamItemMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemParamMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemParamMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbMemberMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbMemberMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbOrderItemMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbOrderItemMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbOrderMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbOrderMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbOrderShippingMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbOrderShippingMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbContent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbContentCategory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbContentCategoryExample.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbContentExample.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItem.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItemCat.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItemCatExample.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItemDesc.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItemDescExample.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItemExample.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItemParam.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItemParamExample.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItemParamItem.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItemParamItemExample.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbMember.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbMemberExample.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbOrder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbOrderExample.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbOrderItem.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbOrderItemExample.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbOrderShipping.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbOrderShippingExample.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_service_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_service_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/generatorSqlmapCustom/src/main/resources/generatorConfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/study/Swagger.md" afterPath="$PROJECT_DIR$/study/Swagger.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/MemberController.java" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/MemberController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-add.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-add.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/study/Nginx.md" afterPath="$PROJECT_DIR$/study/Nginx.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-del.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-del.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-edit.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-edit.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/xmall-manager-web/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/mapper/TbMemberMapper.xml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/mapper/TbMemberMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/src/main/java/cn/exrick/service/MemberService.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/src/main/java/cn/exrick/service/MemberService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/dto/DtoUtil.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/dto/DtoUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/pojo/TbMember.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/pojo/TbMember.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/pojo/TbMemberExample.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/pojo/TbMemberExample.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/service/impl/MemberServiceImpl.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/service/impl/MemberServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/pom.xml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/xmall-manager-service.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/xmall-manager-service.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-parent/pom.xml" afterPath="$PROJECT_DIR$/xmall-parent/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/xmall-parent/target/" />
     <ignored path="$PROJECT_DIR$/xmall-common/target/" />
@@ -91,69 +38,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="member-list.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp">
+      <file leaf-file-name="ItemCatController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/ItemCatController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-142">
-              <caret line="233" column="78" lean-forward="false" selection-start-line="233" selection-start-column="78" selection-end-line="233" selection-end-column="78" />
-              <folding>
-                <marker date="1504277229772" expanded="true" signature="6436:6456" ph="..." />
-                <marker date="1504277229772" expanded="true" signature="6561:6569" ph="&amp;##xe631;" />
-                <marker date="1504277229772" expanded="true" signature="6703:6723" ph="..." />
-                <marker date="1504277229772" expanded="true" signature="6752:6760" ph="&amp;##xe6df;" />
-                <marker date="1504277229772" expanded="true" signature="6780:6800" ph="..." />
-                <marker date="1504277229772" expanded="true" signature="6958:6966" ph="&amp;##xe63f;" />
-                <marker date="1504277229772" expanded="true" signature="7076:7096" ph="..." />
-                <marker date="1504277229772" expanded="true" signature="7125:7133" ph="&amp;##xe6e2;" />
-                <marker date="1504277229772" expanded="true" signature="7240:7260" ph="..." />
-                <marker date="1504277229772" expanded="true" signature="7366:7374" ph="&amp;##xe6e1;" />
-                <marker date="1504277229772" expanded="true" signature="7508:7528" ph="..." />
-                <marker date="1504277229772" expanded="true" signature="7557:7565" ph="&amp;##xe6df;" />
-                <marker date="1504277229772" expanded="true" signature="7585:7605" ph="..." />
-                <marker date="1504277229772" expanded="true" signature="7763:7771" ph="&amp;##xe63f;" />
-                <marker date="1504277229772" expanded="true" signature="7881:7901" ph="..." />
-                <marker date="1504277229772" expanded="true" signature="7930:7938" ph="&amp;##xe6e2;" />
-                <marker date="1504277229772" expanded="true" signature="9342:9362" ph="..." />
-                <marker date="1504277229772" expanded="true" signature="9455:9463" ph="&amp;##xe6e1;" />
-                <marker date="1504277229772" expanded="true" signature="10442:10462" ph="..." />
-                <marker date="1504277229772" expanded="true" signature="10554:10562" ph="&amp;##xe631;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DtoUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/dto/DtoUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+            <state relative-caret-position="96">
+              <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product-list.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp">
+      <file leaf-file-name="ItemController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/ItemController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="305" column="11" lean-forward="false" selection-start-line="305" selection-start-column="9" selection-end-line="305" selection-end-column="11" />
+            <state relative-caret-position="72">
+              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="member-list.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="70" column="4" lean-forward="true" selection-start-line="70" selection-start-column="4" selection-end-line="73" selection-end-column="5" />
               <folding>
-                <marker date="1504276196558" expanded="true" signature="8949:8969" ph="..." />
-                <marker date="1504276196558" expanded="true" signature="9072:9080" ph="&amp;##xe6de;" />
-                <marker date="1504276196558" expanded="true" signature="9100:9120" ph="..." />
-                <marker date="1504276196558" expanded="true" signature="9254:9262" ph="&amp;##xe6df;" />
-                <marker date="1504276196558" expanded="true" signature="9282:9302" ph="..." />
-                <marker date="1504276196558" expanded="true" signature="9419:9427" ph="&amp;##xe6e2;" />
-                <marker date="1504276196558" expanded="true" signature="9518:9538" ph="..." />
-                <marker date="1504276196558" expanded="true" signature="9642:9650" ph="&amp;##xe603;" />
-                <marker date="1504276196558" expanded="true" signature="9670:9690" ph="..." />
-                <marker date="1504276196558" expanded="true" signature="9824:9832" ph="&amp;##xe6df;" />
-                <marker date="1504276196558" expanded="true" signature="9852:9872" ph="..." />
-                <marker date="1504276196558" expanded="true" signature="9989:9997" ph="&amp;##xe6e2;" />
-                <marker date="1504276196558" expanded="true" signature="14683:14703" ph="..." />
-                <marker date="1504276196558" expanded="true" signature="14793:14801" ph="&amp;##xe603;" />
-                <marker date="1504276196558" expanded="true" signature="15384:15404" ph="..." />
-                <marker date="1504276196558" expanded="true" signature="15493:15501" ph="&amp;##xe6de;" />
+                <marker date="1504369027511" expanded="true" signature="6436:6456" ph="..." />
+                <marker date="1504369027511" expanded="true" signature="6561:6569" ph="&amp;##xe631;" />
+                <marker date="1504369027511" expanded="true" signature="6703:6723" ph="..." />
+                <marker date="1504369027511" expanded="true" signature="6752:6760" ph="&amp;##xe6df;" />
+                <marker date="1504369027511" expanded="true" signature="6780:6800" ph="..." />
+                <marker date="1504369027511" expanded="true" signature="6958:6966" ph="&amp;##xe63f;" />
+                <marker date="1504369027511" expanded="true" signature="7076:7096" ph="..." />
+                <marker date="1504369027511" expanded="true" signature="7125:7133" ph="&amp;##xe6e2;" />
+                <marker date="1504369027511" expanded="true" signature="7240:7260" ph="..." />
+                <marker date="1504369027511" expanded="true" signature="7366:7374" ph="&amp;##xe6e1;" />
+                <marker date="1504369027511" expanded="true" signature="7508:7528" ph="..." />
+                <marker date="1504369027511" expanded="true" signature="7557:7565" ph="&amp;##xe6df;" />
+                <marker date="1504369027511" expanded="true" signature="7585:7605" ph="..." />
+                <marker date="1504369027511" expanded="true" signature="7763:7771" ph="&amp;##xe63f;" />
+                <marker date="1504369027511" expanded="true" signature="7881:7901" ph="..." />
+                <marker date="1504369027511" expanded="true" signature="7930:7938" ph="&amp;##xe6e2;" />
+                <marker date="1504369027511" expanded="true" signature="9342:9362" ph="..." />
+                <marker date="1504369027511" expanded="true" signature="9455:9463" ph="&amp;##xe6e1;" />
+                <marker date="1504369027511" expanded="true" signature="10442:10462" ph="..." />
+                <marker date="1504369027511" expanded="true" signature="10554:10562" ph="&amp;##xe631;" />
               </folding>
             </state>
           </provider>
@@ -162,13 +92,13 @@
       <file leaf-file-name="member-del.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-del.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1586">
-              <caret line="98" column="18" lean-forward="false" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
+            <state relative-caret-position="688">
+              <caret line="73" column="5" lean-forward="false" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
               <folding>
-                <marker date="1504276196060" expanded="true" signature="5984:6004" ph="..." />
-                <marker date="1504276196060" expanded="true" signature="6112:6120" ph="&amp;##xe66b;" />
-                <marker date="1504276196060" expanded="true" signature="6232:6252" ph="..." />
-                <marker date="1504276196060" expanded="true" signature="6281:6289" ph="&amp;##xe6e2;" />
+                <marker date="1504369101300" expanded="true" signature="6176:6196" ph="..." />
+                <marker date="1504369101300" expanded="true" signature="6304:6312" ph="&amp;##xe66b;" />
+                <marker date="1504369101300" expanded="true" signature="6424:6444" ph="..." />
+                <marker date="1504369101300" expanded="true" signature="6473:6481" ph="&amp;##xe6e2;" />
               </folding>
             </state>
           </provider>
@@ -177,7 +107,7 @@
       <file leaf-file-name="MemberServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/service/impl/MemberServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5352">
+            <state relative-caret-position="24">
               <caret line="237" column="52" lean-forward="false" selection-start-line="237" selection-start-column="52" selection-end-line="237" selection-end-column="52" />
               <folding />
             </state>
@@ -198,7 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>spring.version</find>
       <find>jackson.version</find>
       <find>Huitextarealength</find>
       <find>final</find>
@@ -228,6 +157,7 @@
       <find>defant</find>
       <find>checkbox</find>
       <find>下架</find>
+      <find>批量</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -241,7 +171,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/SwaggerConfig.java" />
         <option value="$MAVEN_REPOSITORY$/io/springfox/springfox-swagger-ui/2.6.1/springfox-swagger-ui-2.6.1.jar!/META-INF/resources/swagger-ui.html" />
         <option value="$MAVEN_REPOSITORY$/io/springfox/springfox-spring-web/2.6.1/springfox-spring-web-2.6.1.jar!/springfox/documentation/spring/web/SpringfoxWebMvcConfiguration.class" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/PageController.java" />
@@ -277,21 +206,22 @@
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/mapper/TbMemberMapper.xml" />
         <option value="$PROJECT_DIR$/xmall-manager/pom.xml" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/change-password.jsp" />
-        <option value="$PROJECT_DIR$/xmall-parent/pom.xml" />
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/conf/db.properties" />
         <option value="$PROJECT_DIR$/xmall-manager-web/pom.xml" />
         <option value="$PROJECT_DIR$/generatorSqlmapCustom/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbMemberMapper.xml" />
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/pojo/TbMember.java" />
-        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/dto/DtoUtil.java" />
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/src/main/java/cn/exrick/service/MemberService.java" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/MemberController.java" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-edit.jsp" />
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/service/impl/MemberServiceImpl.java" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-add.jsp" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp" />
-        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-del.jsp" />
+        <option value="$PROJECT_DIR$/xmall-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/pom.xml" />
+        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/dto/DtoUtil.java" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-del.jsp" />
       </list>
     </option>
   </component>
@@ -712,12 +642,87 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
               <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
@@ -796,7 +801,10 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1430,7 +1438,9 @@
       <workItem from="1504259892903" duration="2177000" />
       <workItem from="1504262343413" duration="7959000" />
       <workItem from="1504270609195" duration="1084000" />
-      <workItem from="1504272971281" duration="4350000" />
+      <workItem from="1504272971281" duration="4424000" />
+      <workItem from="1504321561324" duration="2245000" />
+      <workItem from="1504357374477" duration="4988000" />
     </task>
     <servers />
   </component>
@@ -1446,7 +1456,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="368234000" />
+    <option name="totallyTimeSpent" value="375541000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1466,8 +1476,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3767361" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23551503" sideWeight="0.4852071" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938388" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2387339" sideWeight="0.4852071" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1508,13 +1518,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/province/distpicker.data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-252">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/pojo/ZTreeNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -1650,7 +1653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="625" column="16" lean-forward="false" selection-start-line="625" selection-start-column="16" selection-end-line="625" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1686,29 +1688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1102">
-          <caret line="38" column="52" lean-forward="false" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-parent/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1748,13 +1727,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/ItemCatController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/mapper/TbMemberMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -1780,7 +1752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="41" column="132" lean-forward="true" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="132" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1798,37 +1769,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/service/impl/MemberServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5352">
-          <caret line="237" column="52" lean-forward="false" selection-start-line="237" selection-start-column="52" selection-end-line="237" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/dto/DtoUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/resources/rebel.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/resources/rebel.xml" />
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
           <caret line="176" column="24" lean-forward="true" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1840,23 +1785,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-del.jsp">
+    <entry file="file://$PROJECT_DIR$/xmall-manager/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1586">
-          <caret line="98" column="18" lean-forward="false" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
-          <folding>
-            <marker date="1504276196060" expanded="true" signature="5984:6004" ph="..." />
-            <marker date="1504276196060" expanded="true" signature="6112:6120" ph="&amp;##xe66b;" />
-            <marker date="1504276196060" expanded="true" signature="6232:6252" ph="..." />
-            <marker date="1504276196060" expanded="true" signature="6281:6289" ph="&amp;##xe6e2;" />
-          </folding>
+        <state relative-caret-position="912">
+          <caret line="38" column="52" lean-forward="false" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="73" column="52" lean-forward="true" selection-start-line="73" selection-start-column="52" selection-end-line="73" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/service/impl/MemberServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="237" column="52" lean-forward="false" selection-start-line="237" selection-start-column="52" selection-end-line="237" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/ItemCatController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="305" column="11" lean-forward="false" selection-start-line="305" selection-start-column="9" selection-end-line="305" selection-end-column="11" />
+        <state relative-caret-position="336">
+          <caret line="105" column="14" lean-forward="true" selection-start-line="105" selection-start-column="14" selection-end-line="105" selection-end-column="14" />
           <folding>
             <marker date="1504276196558" expanded="true" signature="8949:8969" ph="..." />
             <marker date="1504276196558" expanded="true" signature="9072:9080" ph="&amp;##xe6de;" />
@@ -1878,32 +1842,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/dto/DtoUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="36" column="9" lean-forward="false" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-parent/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="264" column="40" lean-forward="false" selection-start-line="264" selection-start-column="40" selection-end-line="264" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-142">
-          <caret line="233" column="78" lean-forward="false" selection-start-line="233" selection-start-column="78" selection-end-line="233" selection-end-column="78" />
+        <state relative-caret-position="146">
+          <caret line="70" column="4" lean-forward="true" selection-start-line="70" selection-start-column="4" selection-end-line="73" selection-end-column="5" />
           <folding>
-            <marker date="1504277229772" expanded="true" signature="6436:6456" ph="..." />
-            <marker date="1504277229772" expanded="true" signature="6561:6569" ph="&amp;##xe631;" />
-            <marker date="1504277229772" expanded="true" signature="6703:6723" ph="..." />
-            <marker date="1504277229772" expanded="true" signature="6752:6760" ph="&amp;##xe6df;" />
-            <marker date="1504277229772" expanded="true" signature="6780:6800" ph="..." />
-            <marker date="1504277229772" expanded="true" signature="6958:6966" ph="&amp;##xe63f;" />
-            <marker date="1504277229772" expanded="true" signature="7076:7096" ph="..." />
-            <marker date="1504277229772" expanded="true" signature="7125:7133" ph="&amp;##xe6e2;" />
-            <marker date="1504277229772" expanded="true" signature="7240:7260" ph="..." />
-            <marker date="1504277229772" expanded="true" signature="7366:7374" ph="&amp;##xe6e1;" />
-            <marker date="1504277229772" expanded="true" signature="7508:7528" ph="..." />
-            <marker date="1504277229772" expanded="true" signature="7557:7565" ph="&amp;##xe6df;" />
-            <marker date="1504277229772" expanded="true" signature="7585:7605" ph="..." />
-            <marker date="1504277229772" expanded="true" signature="7763:7771" ph="&amp;##xe63f;" />
-            <marker date="1504277229772" expanded="true" signature="7881:7901" ph="..." />
-            <marker date="1504277229772" expanded="true" signature="7930:7938" ph="&amp;##xe6e2;" />
-            <marker date="1504277229772" expanded="true" signature="9342:9362" ph="..." />
-            <marker date="1504277229772" expanded="true" signature="9455:9463" ph="&amp;##xe6e1;" />
-            <marker date="1504277229772" expanded="true" signature="10442:10462" ph="..." />
-            <marker date="1504277229772" expanded="true" signature="10554:10562" ph="&amp;##xe631;" />
+            <marker date="1504369027511" expanded="true" signature="6436:6456" ph="..." />
+            <marker date="1504369027511" expanded="true" signature="6561:6569" ph="&amp;##xe631;" />
+            <marker date="1504369027511" expanded="true" signature="6703:6723" ph="..." />
+            <marker date="1504369027511" expanded="true" signature="6752:6760" ph="&amp;##xe6df;" />
+            <marker date="1504369027511" expanded="true" signature="6780:6800" ph="..." />
+            <marker date="1504369027511" expanded="true" signature="6958:6966" ph="&amp;##xe63f;" />
+            <marker date="1504369027511" expanded="true" signature="7076:7096" ph="..." />
+            <marker date="1504369027511" expanded="true" signature="7125:7133" ph="&amp;##xe6e2;" />
+            <marker date="1504369027511" expanded="true" signature="7240:7260" ph="..." />
+            <marker date="1504369027511" expanded="true" signature="7366:7374" ph="&amp;##xe6e1;" />
+            <marker date="1504369027511" expanded="true" signature="7508:7528" ph="..." />
+            <marker date="1504369027511" expanded="true" signature="7557:7565" ph="&amp;##xe6df;" />
+            <marker date="1504369027511" expanded="true" signature="7585:7605" ph="..." />
+            <marker date="1504369027511" expanded="true" signature="7763:7771" ph="&amp;##xe63f;" />
+            <marker date="1504369027511" expanded="true" signature="7881:7901" ph="..." />
+            <marker date="1504369027511" expanded="true" signature="7930:7938" ph="&amp;##xe6e2;" />
+            <marker date="1504369027511" expanded="true" signature="9342:9362" ph="..." />
+            <marker date="1504369027511" expanded="true" signature="9455:9463" ph="&amp;##xe6e1;" />
+            <marker date="1504369027511" expanded="true" signature="10442:10462" ph="..." />
+            <marker date="1504369027511" expanded="true" signature="10554:10562" ph="&amp;##xe631;" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-del.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="688">
+          <caret line="73" column="5" lean-forward="false" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+          <folding>
+            <marker date="1504369101300" expanded="true" signature="6176:6196" ph="..." />
+            <marker date="1504369101300" expanded="true" signature="6304:6312" ph="&amp;##xe66b;" />
+            <marker date="1504369101300" expanded="true" signature="6424:6444" ph="..." />
+            <marker date="1504369101300" expanded="true" signature="6473:6481" ph="&amp;##xe6e2;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/ItemController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
