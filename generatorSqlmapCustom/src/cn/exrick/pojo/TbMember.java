@@ -27,6 +27,10 @@ public class TbMember {
 
     private String description;
 
+    private Integer points;
+
+    private Long balance;
+
     public Long getId() {
         return id;
     }
@@ -121,5 +125,21 @@ public class TbMember {
 
     public void setDescription(String description) {
         this.description = description == null ? null : description.trim();
+    }
+
+    public Integer getPoints() {
+        return points;
+    }
+
+    public void setPoints(Integer points) {
+        this.points = points;
+    }
+
+    public Long getBalance() {
+        return balance;
+    }
+
+    public void setBalance(Long balance) {
+        this.balance = balance;
     }
 }

@@ -34,8 +34,8 @@
         <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate" style="width:120px;">
         -
         <input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d' })" id="datemax" class="input-text Wdate" style="width:120px;">
-        <input type="text" class="input-text" style="width:250px" placeholder="输入会员名称、电话、邮箱" id="" name="">
-        <button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
+        <input type="text" class="input-text" style="width:250px" placeholder="输入会员名称、电话、邮箱" id="memberName" name="">
+        <button id="searchButton" onclick="searchMember()" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
     </div>
     <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a href="javascript:;" onclick="member_add('添加用户','member-add','','510')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加用户</a></span> <span class="r">共有数据：<strong id="memberListCount">0</strong> 条</span> </div>
     <div class="mt-20">
@@ -49,9 +49,10 @@
                 <th width="90">手机</th>
                 <th width="100">邮箱</th>
                 <th width="120">地址</th>
-                <th width="100">创建时间</th>
+                <th width="90">创建时间</th>
+                <th width="90">更新时间</th>
                 <th width="50">状态</th>
-                <th width="130">操作</th>
+                <th width="110">操作</th>
             </tr>
             </thead>
         </table>
@@ -68,9 +69,10 @@
 <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
-    /*刷新页面*/
+    /*刷新表格*/
     function refresh(){
-        location.reload();
+        var table = $('.table').DataTable();
+        table.ajax.reload(null,false);// 刷新表格数据，分页信息不会重置
     }
 
     /*时间转换*/
@@ -80,13 +82,18 @@
         var m = time.getMonth() + 1;//月
         var d = time.getDate();//日
         var h = time.getHours();//时
+        if (h >= 0 && h <= 9) {
+            h = "0" + h;
+        }
         var mm = time.getMinutes();//分
-        var s = time.getSeconds();//秒
-        return (y+"-"+m+"-"+d+" "+h+":"+mm+":"+s);
+        if (mm >= 0 && mm <= 9) {
+            mm = "0" + mm;
+        }
+        return (y+"-"+m+"-"+d+" "+h+":"+mm);
     }
 
-    $(function(){
-        $('.table-sort').dataTable({
+    $(function() {
+        $('.table').dataTable({
             serverSide: true,//开启服务器模式
             "processing": true,//加载显示提示
             "ajax": {
@@ -103,12 +110,21 @@
                     }
                 },
                 { "data": "id"},
-                { "data": "username"},
+                { "data": "username",
+                    render: function(data,type, row, meta){
+                        return "<u style=\"cursor:pointer\" class=\"text-primary\" onclick=\"member_show('用户详情','member-show',"+row.id+",'360','400')\">"+data+"</a>";
+                    }
+                },
                 { "data": "sex"},
                 { "data": "phone"},
                 { "data": "email"},
                 { "data": "address"},
                 { "data": "created",
+                    render : function(data,type, row, meta) {
+                        return date(data);
+                    }
+                },
+                { "data": "updated",
                     render : function(data,type, row, meta) {
                         return date(data);
                     }
@@ -143,7 +159,7 @@
         });
 
         member_count();
-    });
+    })
 
     /*统计用户数*/
     function member_count(){
@@ -165,11 +181,11 @@
     }
     /*用户-查看*/
     function member_show(title,url,id,w,h){
-        layer_show(title,url,w,h);
+        layer_show(title,url+'?'+id,w,h);
     }
     /*用户-停用*/
     function member_stop(obj,id){
-        layer.confirm('确认要停用ID为\''+id+'\'的数据吗？',{icon:0},function(index){
+        layer.confirm('确认要停用ID为\''+id+'\'的会员吗？',{icon:0},function(index){
             $.ajax({
                 type: 'PUT',
                 url: '/member/stop/'+id,
@@ -191,7 +207,7 @@
 
     /*用户-启用*/
     function member_start(obj,id){
-        layer.confirm('确认要启用ID为\''+id+'\'的数据吗？',{icon:0},function(index){
+        layer.confirm('确认要启用ID为\''+id+'\'的会员吗？',{icon:3},function(index){
             $.ajax({
                 type: 'PUT',
                 url: '/member/start/'+id,
@@ -220,18 +236,18 @@
     }
     /*用户-删除*/
     function member_del(obj,id){
-        layer.confirm('确认要删除ID为\''+id+'\'的数据吗？',{icon:0},function(index){
+        layer.confirm('确认要删除ID为\''+id+'\'的会员吗？',{icon:0},function(index){
             $.ajax({
                 type: 'PUT',
                 url: '/member/remove/'+id,
                 dataType: 'json',
                 success: function(data){
-                    $(obj).parents("tr").remove();
                     member_count();
+                    refresh();
                     layer.msg('已删除!',{icon:1,time:1000});
                 },
                 error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 }
             });
         });
@@ -257,14 +273,36 @@
                         url: '/member/remove/'+cks[i].value,
                         dataType: 'json',
                         error:function(XMLHttpRequest){
-                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                         }
                     });
                 }
             }
+            layer.msg('已删除!',{icon:1,time:1000});
+            member_count();
             refresh();
         });
     }
+
+    function addSuccess(){
+        layer.msg('添加成功!', {icon: 1,time:3000});
+    }
+    /*多条件查询*/
+    function searchMember() {
+        var memberName= $('#memberName').val();
+        $.ajax({
+            url:"/member/list?draw=1&start=0&length=10&search[value]="+memberName,
+            type: 'GET',
+            success:function (result) {
+                alert(result.recordsFiltered);
+            },
+            error:function(XMLHttpRequest){
+                if(XMLHttpRequest.status!=200){
+                    layer.alert('数据加载失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
+                }
+            }
+        });
+    };
 </script>
 </body>
 </html>

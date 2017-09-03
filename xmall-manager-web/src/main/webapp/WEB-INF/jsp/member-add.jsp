@@ -179,15 +179,17 @@
                         if(data.success==true){
                             if(parent.location.pathname!='/'){
                                 parent.refresh();
-                            }else{
+                                parent.addSuccess();
                                 var index = parent.layer.getFrameIndex(window.name);
                                 parent.layer.close(index);
+                            }else{
+                                layer.confirm('添加成功!', {
+                                    btn: ['确认'],icon: 1
+                                }, function(){
+                                    var index = parent.layer.getFrameIndex(window.name);
+                                    parent.layer.close(index);
+                                });
                             }
-                            layer.msg(content, {icon: 1,time:3000});
-                            //parent.location.replace(parent.location.href);
-                            //console.log($(".btn-refresh",parent));
-                            //var index = parent.layer.getFrameIndex(window.name);
-                            //parent.layer.close(index);
                         }else{
                             layer.alert('添加失败! '+data.message, {title: '错误信息',icon: 2});
                         }

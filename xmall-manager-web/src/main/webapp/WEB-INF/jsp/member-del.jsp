@@ -68,9 +68,10 @@
 <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
-    /*刷新页面*/
+    /*刷新表格*/
     function refresh(){
-        location.reload();
+        var table = $('.table').DataTable();
+        table.ajax.reload(null,false);// 刷新表格数据，分页信息不会重置
     }
     /*时间转换*/
     function date(data){
@@ -85,7 +86,7 @@
     }
 
     $(function(){
-        $('.table-sort').dataTable({
+        $('.table').dataTable({
             serverSide: true,//开启服务器模式
             "processing": true,//加载显示提示
             "ajax": {
@@ -157,14 +158,14 @@
 
     /*用户-还原*/
     function member_restore(obj,id){
-        layer.confirm('确认要还原吗？',{icon:3},function(index){
+        layer.confirm('确认要还原ID为\''+id+'\'的会员吗？',{icon:3},function(index){
             $.ajax({
                 type: 'PUT',
                 url: '/member/start/'+id,
                 dataType: 'json',
                 success: function(data){
-                    $(obj).parents("tr").remove();
                     memberRemove_count();
+                    refresh();
                     layer.msg('已还原!',{icon: 6,time:1000});
                 },
                 error:function(XMLHttpRequest){
@@ -176,14 +177,14 @@
 
     /*用户-删除*/
     function member_del(obj,id){
-        layer.confirm('确认要彻底删除ID为\''+id+'\'的数据吗？',{icon:0},function(index){
+        layer.confirm('确认要彻底删除ID为\''+id+'\'的会员吗？',{icon:0},function(index){
             $.ajax({
                 type: 'DELETE',
                 url: '/member/del/'+id,
                 dataType: 'json',
                 success: function(data){
-                    $(obj).parents("tr").remove();
                     memberRemove_count();
+                    refresh();
                     layer.msg('已删除!',{icon:1,time:1000});
                 },
                 error:function(XMLHttpRequest){
@@ -218,7 +219,9 @@
                     });
                 }
             }
+            memberRemove_count();
             refresh();
+            layer.msg('已删除!',{icon:1,time:1000});
         });
     }
     /*批量还原*/
@@ -247,7 +250,9 @@
                     });
                 }
             }
+            memberRemove_count();
             refresh();
+            layer.msg('已还原!',{icon:1,time:1000});
         });
     }
 </script>

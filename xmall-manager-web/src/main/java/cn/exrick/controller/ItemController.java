@@ -1,5 +1,7 @@
 package cn.exrick.controller;
 
+import cn.exrick.common.pojo.Result;
+import cn.exrick.common.utils.ResultUtil;
 import cn.exrick.pojo.DataTablesResult;
 import cn.exrick.pojo.TbItem;
 import cn.exrick.service.ItemService;
@@ -37,5 +39,26 @@ public class ItemController {
     public DataTablesResult getAllItemCount(){
         DataTablesResult result=itemService.getAllItemCount();
         return result;
+    }
+
+    @RequestMapping(value = "/item/stop/{id}",method = RequestMethod.PUT)
+    @ApiOperation(value = "下架商品")
+    public Result<TbItem> stopMember(@PathVariable Long id){
+        TbItem tbItem = itemService.alertItemState(id,0);
+        return new ResultUtil<TbItem>().setData(tbItem);
+    }
+
+    @RequestMapping(value = "/item/start/{id}",method = RequestMethod.PUT)
+    @ApiOperation(value = "发布商品")
+    public Result<TbItem> startMember(@PathVariable Long id){
+        TbItem tbItem = itemService.alertItemState(id,1);
+        return new ResultUtil<TbItem>().setData(tbItem);
+    }
+
+    @RequestMapping(value = "/item/del/{id}",method = RequestMethod.DELETE)
+    @ApiOperation(value = "删除商品")
+    public Result<TbItem> deleteMember(@PathVariable Long id){
+        itemService.deleteItem(id);
+        return new ResultUtil<TbItem>().setData(null);
     }
 }

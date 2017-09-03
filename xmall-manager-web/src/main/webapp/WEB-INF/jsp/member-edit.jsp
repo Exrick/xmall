@@ -211,21 +211,12 @@
                     success: function(data) {
                         if(data.success==true){
                             parent.refresh();
-                            layer.msg(content, {icon: 1,time:3000});
                         }else{
                             layer.alert('修改失败! '+data.message, {title: '错误信息',icon: 2});
                         }
                     },
                     error:function(XMLHttpRequest) {
-                        if(XMLHttpRequest.responseText.indexOf('手机号已被注册') > 0){
-                            layer.alert('添加失败，手机号已被注册!',{title: '错误信息',icon: 2});
-                        }else if(XMLHttpRequest.responseText.indexOf('邮箱已被注册') > 0){
-                            layer.alert('添加失败，邮箱已被注册!',{title: '错误信息',icon: 2});
-                        }else if(XMLHttpRequest.responseText.indexOf('username') > 0){
-                            layer.alert('添加失败，用户名已存在!',{title: '错误信息',icon: 2});
-                        }else{
-                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
-                        }
+                        layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                     }
                 });
             }

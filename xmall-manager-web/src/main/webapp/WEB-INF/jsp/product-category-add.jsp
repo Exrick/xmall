@@ -44,8 +44,7 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">备注：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <textarea name="" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" onKeyUp="$.Huitextarealength(this,100)"></textarea>
-                <p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
+                <textarea name="" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符"></textarea>
             </div>
         </div>
         <div class="row cl">
@@ -66,8 +65,10 @@
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <script type="text/javascript">
-    $(function(){
-
+    /*文本输入限制*/
+    $(".textarea").Huitextarealength({
+        minlength:0,
+        maxlength:100
     });
 </script>
 </body>

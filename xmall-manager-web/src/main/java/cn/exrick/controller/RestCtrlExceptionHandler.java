@@ -41,7 +41,8 @@ public class RestCtrlExceptionHandler {
         String errorMsg="Xmall exception: ";
         if (e!=null){
             errorMsg=e.getLocalizedMessage();
-            log.warn(e.getLocalizedMessage());
+            log.warn(e.getMessage()+"======xmall getMessage");
+            log.warn(e.getLocalizedMessage()+"======xmall getLocalizedMessage");
         }
         return new ResultUtil<>().setErrorMsg(errorMsg);
     }
@@ -53,7 +54,8 @@ public class RestCtrlExceptionHandler {
         String errorMsg="exception: ";
         if (e!=null){
             errorMsg=e.getLocalizedMessage();
-            log.warn(e.getLocalizedMessage());
+            log.warn(e.getMessage()+"======exception getMessage");
+            log.warn(e.getLocalizedMessage()+"======exception getLocalizedMessage");
         }
         return new ResultUtil<>().setErrorMsg(errorMsg);
     }

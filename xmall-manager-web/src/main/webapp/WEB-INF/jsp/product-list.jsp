@@ -47,7 +47,7 @@
         <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="product_add('添加商品','product-add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加商品</a></span> <span class="r">共有数据：<strong id="itemListCount">0</strong> 条</span> </div>
         <div class="mt-20">
             <div class="mt-20" style="margin-bottom: 70px">
-                <table id="example" class="table table-border table-bordered table-bg table-hover table-sort" width="100%">
+                <table class="table table-border table-bordered table-bg table-hover table-sort" width="100%">
                     <thead>
                     <tr class="text-c">
                         <th width="30"><input name="" type="checkbox" value=""></th>
@@ -80,6 +80,11 @@
 <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
+    /*刷新表格*/
+    function refresh(){
+        var table = $('.table').DataTable();
+        table.ajax.reload(null,false);// 刷新表格数据，分页信息不会重置
+    }
     /*时间转换*/
     function date(data){
         var time = new Date(data);
@@ -87,14 +92,19 @@
         var m = time.getMonth() + 1;//月
         var d = time.getDate();//日
         var h = time.getHours();//时
+        if (h >= 0 && h <= 9) {
+            h = "0" + h;
+        }
         var mm = time.getMinutes();//分
-        var s = time.getSeconds();//秒
-        return (y+"-"+m+"-"+d+" "+h+":"+mm+":"+s);
+        if (mm >= 0 && mm <= 9) {
+            mm = "0" + mm;
+        }
+        return (y+"-"+m+"-"+d+" "+h+":"+mm);
     }
 
     /*datatables配置*/
     $(document).ready(function () {
-        $('#example').DataTable({
+        $('.table').DataTable({
             serverSide: true,//开启服务器模式
             "processing": true,//加载显示提示
             "ajax": {
@@ -173,12 +183,11 @@
                     "data": null,
                     render: function (data, type, row, meta) {
                         if (row.status == 1) {
-                            return "<a style=\"text-decoration:none\" onClick=\"product_stop(this,'10001')\" href=\"javascript:;\" title=\"下架\"><i class=\"Hui-iconfont\">&#xe6de;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_edit('商品编辑','product-add','10001')\" href=\"javascript:;\" title=\"编辑\"><i class=\"Hui-iconfont\">&#xe6df;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_del(this,'10001')\" href=\"javascript:;\" title=\"删除\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>";
+                            return "<a style=\"text-decoration:none\" onClick=\"product_stop(this,"+row.id+")\" href=\"javascript:;\" title=\"下架\"><i class=\"Hui-iconfont\">&#xe6de;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_edit('商品编辑','product-add',"+row.id+")\" href=\"javascript:;\" title=\"编辑\"><i class=\"Hui-iconfont\">&#xe6df;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_del(this,"+row.id+")\" href=\"javascript:;\" title=\"删除\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>";
                         } else {
-                            return "<a style=\"text-decoration:none\" onClick=\"product_start(this,'10001')\" href=\"javascript:;\" title=\"发布\"><i class=\"Hui-iconfont\">&#xe603;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_edit('商品编辑','product-add','10001')\" href=\"javascript:;\" title=\"编辑\"><i class=\"Hui-iconfont\">&#xe6df;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_del(this,'10001')\" href=\"javascript:;\" title=\"删除\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>";
+                            return "<a style=\"text-decoration:none\" onClick=\"product_start(this,"+row.id+")\" href=\"javascript:;\" title=\"发布\"><i class=\"Hui-iconfont\">&#xe603;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_edit('商品编辑','product-add',"+row.id+")\" href=\"javascript:;\" title=\"编辑\"><i class=\"Hui-iconfont\">&#xe6df;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_del(this,"+row.id+")\" href=\"javascript:;\" title=\"删除\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>";
                         }
                     }
-                    //"defaultContent": "<a style=\"text-decoration:none\" onClick=\"product_stop(this,'10001')\" href=\"javascript:;\" title=\"下架\"><i class=\"Hui-iconfont\">&#xe6de;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_edit('商品编辑','product-add','10001')\" href=\"javascript:;\" title=\"编辑\"><i class=\"Hui-iconfont\">&#xe6df;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_del(this,'10001')\" href=\"javascript:;\" title=\"删除\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>"}
                 }
             ],
             "aaSorting": [[ 1, "desc" ]],//默认第几个排序
@@ -210,7 +219,7 @@
         var itemName= $('#itemName').val();
         $.ajax({
             url:"/item/list?draw=1&start=0&length=10&search[value]="+itemName,
-            type: 'POST',
+            type: 'GET',
             success:function (result) {
                 alert(result.recordsFiltered);
             },
@@ -305,27 +314,38 @@
     }
     /*产品-下架*/
     function product_stop(obj,id){
-        layer.confirm('确认要下架吗？',function(index){
-            $(obj).parents("td").prepend('<a style="text-decoration:none" onClick="product_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
-            var thisTd = $(obj).parents("tr").find(".td-status").parent();
-            $(obj).parents("tr").find(".td-status").empty();
-            thisTd.html('<span class="label label-defant radius td-status">已下架</span>');
-            //$(obj).parents("td").html('<span class="label label-defaunt radius">已下架</span>');
-            $(obj).remove();
-            layer.msg('已下架!',{icon: 5,time:1000});
+        layer.confirm('确认要下架ID为\''+id+'\'的商品吗？',{icon:0},function(index){
+            $.ajax({
+                type: 'PUT',
+                url: '/item/stop/'+id,
+                dataType: 'json',
+                success: function(data){
+                    refresh();
+                    layer.msg('已下架!',{icon: 5,time:1000});
+                },
+                error:function(XMLHttpRequest){
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                }
+            });
+
         });
     }
 
     /*产品-发布*/
     function product_start(obj,id){
-        layer.confirm('确认要发布吗？',function(index){
-            $(obj).parents("td").prepend('<a style="text-decoration:none" onClick="product_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>');
-            var thisTd = $(obj).parents("tr").find(".td-status").parent();
-            $(obj).parents("tr").find(".td-status").empty();
-            thisTd.html('<span class="label label-success radius td-status">已发布</span>');
-            //$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
-            $(obj).remove();
-            layer.msg('已发布!',{icon: 6,time:1000});
+        layer.confirm('确认要发布ID为\''+id+'\'的商品吗？',{icon:3},function(index){
+            $.ajax({
+                type: 'PUT',
+                url: '/item/start/'+id,
+                dataType: 'json',
+                success: function(data){
+                    refresh();
+                    layer.msg('已发布!',{icon: 6,time:1000});
+                },
+                error:function(XMLHttpRequest){
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                }
+            });
         });
     }
 
@@ -348,17 +368,18 @@
 
     /*产品-删除*/
     function product_del(obj,id){
-        layer.confirm('确认要删除吗？',function(index){
+        layer.confirm('确认要删除ID为\''+id+'\'的商品吗？',{icon:0},function(index){
             $.ajax({
-                type: 'POST',
-                url: '',
+                type: 'DELETE',
+                url: '/item/del/'+id,
                 dataType: 'json',
                 success: function(data){
-                    $(obj).parents("tr").remove();
+                    product_count();
+                    refresh();
                     layer.msg('已删除!',{icon:1,time:1000});
                 },
-                error:function(data) {
-                    console.log(data.msg);
+                error:function(XMLHttpRequest) {
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 },
             });
         });

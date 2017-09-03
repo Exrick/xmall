@@ -1,5 +1,6 @@
 package cn.exrick.service.impl;
 
+import cn.exrick.common.exception.XmallException;
 import cn.exrick.mapper.TbItemMapper;
 import cn.exrick.pojo.DataTablesResult;
 import cn.exrick.pojo.TbItem;
@@ -10,6 +11,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -67,6 +69,28 @@ public class ItemServiceImpl implements ItemService {
         DataTablesResult result=new DataTablesResult();
         result.setRecordsTotal(list.size());
         return result;
+    }
+
+    @Override
+    public TbItem alertItemState(Long id, Integer state) {
+
+        TbItem tbMember = getItemById(id);
+        tbMember.setStatus(state.byteValue());
+        tbMember.setUpdated(new Date());
+
+        if (tbItemMapper.updateByPrimaryKey(tbMember) != 1){
+            throw new XmallException("修改商品状态失败");
+        }
+        return getItemById(id);
+    }
+
+    @Override
+    public int deleteItem(Long id) {
+
+        if(tbItemMapper.deleteByPrimaryKey(id)!=1){
+            throw new XmallException("删除商品失败");
+        }
+        return 0;
     }
 
 }

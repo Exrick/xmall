@@ -14,6 +14,8 @@
     <result column="state" jdbcType="INTEGER" property="state" />
     <result column="file" jdbcType="VARCHAR" property="file" />
     <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="points" jdbcType="INTEGER" property="points" />
+    <result column="balance" jdbcType="DECIMAL" property="balance" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -75,7 +77,7 @@
   </sql>
   <sql id="Base_Column_List">
     id, username, password, phone, email, created, updated, sex, address, state, file, 
-    description
+    description, points, balance
   </sql>
   <select id="selectByExample" parameterType="cn.exrick.pojo.TbMemberExample" resultMap="BaseResultMap">
     select
@@ -111,13 +113,13 @@
     insert into tb_member (id, username, password, 
       phone, email, created, 
       updated, sex, address, 
-      state, file, description
-      )
+      state, file, description, 
+      points, balance)
     values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, 
       #{updated,jdbcType=TIMESTAMP}, #{sex,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
-      #{state,jdbcType=INTEGER}, #{file,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}
-      )
+      #{state,jdbcType=INTEGER}, #{file,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{points,jdbcType=INTEGER}, #{balance,jdbcType=DECIMAL})
   </insert>
   <insert id="insertSelective" parameterType="cn.exrick.pojo.TbMember">
     insert into tb_member
@@ -158,6 +160,12 @@
       <if test="description != null">
         description,
       </if>
+      <if test="points != null">
+        points,
+      </if>
+      <if test="balance != null">
+        balance,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -195,6 +203,12 @@
       </if>
       <if test="description != null">
         #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="points != null">
+        #{points,jdbcType=INTEGER},
+      </if>
+      <if test="balance != null">
+        #{balance,jdbcType=DECIMAL},
       </if>
     </trim>
   </insert>
@@ -243,6 +257,12 @@
       <if test="record.description != null">
         description = #{record.description,jdbcType=VARCHAR},
       </if>
+      <if test="record.points != null">
+        points = #{record.points,jdbcType=INTEGER},
+      </if>
+      <if test="record.balance != null">
+        balance = #{record.balance,jdbcType=DECIMAL},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -261,7 +281,9 @@
       address = #{record.address,jdbcType=VARCHAR},
       state = #{record.state,jdbcType=INTEGER},
       file = #{record.file,jdbcType=VARCHAR},
-      description = #{record.description,jdbcType=VARCHAR}
+      description = #{record.description,jdbcType=VARCHAR},
+      points = #{record.points,jdbcType=INTEGER},
+      balance = #{record.balance,jdbcType=DECIMAL}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -302,6 +324,12 @@
       <if test="description != null">
         description = #{description,jdbcType=VARCHAR},
       </if>
+      <if test="points != null">
+        points = #{points,jdbcType=INTEGER},
+      </if>
+      <if test="balance != null">
+        balance = #{balance,jdbcType=DECIMAL},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -317,7 +345,9 @@
       address = #{address,jdbcType=VARCHAR},
       state = #{state,jdbcType=INTEGER},
       file = #{file,jdbcType=VARCHAR},
-      description = #{description,jdbcType=VARCHAR}
+      description = #{description,jdbcType=VARCHAR},
+      points = #{points,jdbcType=INTEGER},
+      balance = #{balance,jdbcType=DECIMAL}
     where id = #{id,jdbcType=BIGINT}
   </update>
   <select id="selectByMemberInformation" parameterType="string" resultMap="BaseResultMap">
