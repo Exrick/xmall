@@ -56,9 +56,9 @@
                         <th width="100">商品名称</th>
                         <th width="150">描述</th>
                         <th width="60">单价</th>
-                        <th width="60">发布状态</th>
                         <th width="95">创建日期</th>
                         <th width="95">更新日期</th>
+                        <th width="60">发布状态</th>
                         <th width="90">操作</th>
                     </tr>
                     </thead>
@@ -79,7 +79,11 @@
 <script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script>
 <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="lib/datatables/dataTables.colReorder.min.js"></script>
 <script type="text/javascript">
+    $(".table").colResizable({
+        liveDrag:true,
+        resizeMode:'fit'});
     /*刷新表格*/
     function refresh(){
         var table = $('.table').DataTable();
@@ -158,6 +162,16 @@
                     }
                 },
                 { "data": "price"},
+                { "data": "created",
+                    render : function(data,type, row, meta) {
+                        return date(data);
+                    }
+                },
+                { "data": "updated",
+                    render : function(data,type, row, meta) {
+                        return date(data);
+                    }
+                },
                 { "data": "status",
                     render : function(data,type, row, meta) {
                         if(data==0){
@@ -167,16 +181,6 @@
                         }else{
                             return "<span class=\"label label-warning radius td-status\">其它态</span>";
                         }
-                    }
-                },
-                { "data": "created",
-                    render : function(data,type, row, meta) {
-                        return date(data);
-                    }
-                },
-                { "data": "updated",
-                    render : function(data,type, row, meta) {
-                        return date(data);
                     }
                 },
                 {
@@ -194,7 +198,11 @@
             "bStateSave": false,//状态保存
             "aoColumnDefs": [
                 {"orderable":false,"aTargets":[0,2,4,9]}// 制定列不参与排序
-            ]
+            ],
+            language: {
+                url: '/lib/datatables/Chinese.json'
+            },
+            colReorder: true
         });
 
         product_count();
@@ -382,6 +390,37 @@
                     layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 },
             });
+        });
+    }
+    /*批量删除*/
+    function datadel() {
+        var cks=document.getElementsByName("checkbox");
+        var count=0;
+        for(var i=0;i<cks.length;i++){
+            if(cks[i].checked){
+                count++;
+            }
+        }
+        if(count==0){
+            layer.msg('您还未勾选任何数据!',{icon:5,time:3000});
+            return;
+        }
+        layer.confirm('确认要删除所选的'+count+'条数据吗？',{icon:0},function(index){
+            for(var i=0;i<cks.length;i++){
+                if(cks[i].checked){
+                    $.ajax({
+                        type: 'DELETE',
+                        url: '/item/del/'+cks[i].value,
+                        dataType: 'json',
+                        error:function(XMLHttpRequest){
+                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                        }
+                    });
+                }
+            }
+            layer.msg('已删除!',{icon:1,time:1000});
+            product_count();
+            refresh();
         });
     }
 </script>

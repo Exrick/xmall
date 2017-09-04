@@ -38,7 +38,7 @@
         <button id="searchButton" onclick="searchMember()" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
     </div>
     <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a href="javascript:;" onclick="member_add('添加用户','member-add','','510')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加用户</a></span> <span class="r">共有数据：<strong id="memberListCount">0</strong> 条</span> </div>
-    <div class="mt-20">
+    <div class="mt-20" style="margin-bottom: 70px">
         <table class="table table-border table-bordered table-hover table-bg table-sort" width="100%">
             <thead>
             <tr class="text-c">
@@ -68,6 +68,7 @@
 <script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script>
 <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="lib/datatables/dataTables.colReorder.min.js"></script>
 <script type="text/javascript">
     /*刷新表格*/
     function refresh(){
@@ -155,7 +156,11 @@
             "aoColumnDefs": [
                 //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
                 {"orderable":false,"aTargets":[0,9]}// 制定列不参与排序
-            ]
+            ],
+            language: {
+                url: '/lib/datatables/Chinese.json'
+            },
+            colReorder: true
         });
 
         member_count();
