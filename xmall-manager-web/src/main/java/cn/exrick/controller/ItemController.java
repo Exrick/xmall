@@ -28,9 +28,44 @@ public class ItemController {
     }
 
     @RequestMapping(value = "/item/list",method = RequestMethod.GET)
-    @ApiOperation(value = "分页搜索查询获取商品列表")
-    public DataTablesResult getItemList(int draw, int start, int length,@RequestParam("search[value]") String search){
-        DataTablesResult result=itemService.getItemList(draw,start,length,search);
+    @ApiOperation(value = "分页搜索排序获取商品列表")
+    public DataTablesResult getItemList(int draw, int start, int length,int cid,@RequestParam("search[value]") String search,
+                                        @RequestParam("order[0][column]") int orderCol,@RequestParam("order[0][dir]") String orderDir,
+                                        String searchItem,String minDate,String maxDate){
+        //获取客户端需要排序的列
+        String[] cols = {"checkbox","id", "image", "title", "sell_point", "price", "created", "updated", "status"};
+        String orderColumn = cols[orderCol];
+        if(orderColumn == null) {
+            orderColumn = "created";
+        }
+        //获取排序方式 默认为desc(asc)
+        if(orderDir == null) {
+            orderDir = "desc";
+        }
+        DataTablesResult result=itemService.getItemList(draw,start,length,cid,search,orderColumn,orderDir);
+        return result;
+    }
+
+    @RequestMapping(value = "/item/listSearch",method = RequestMethod.GET)
+    @ApiOperation(value = "多条件分页搜索排序获取商品列表")
+    public DataTablesResult getItemSearchList(int draw, int start, int length,int cid,String searchKey,String minDate,String maxDate,
+                                              @RequestParam("search[value]") String search, @RequestParam("order[0][column]") int orderCol,
+                                              @RequestParam("order[0][dir]") String orderDir){
+        //获取客户端需要排序的列
+        String[] cols = {"checkbox","id", "image", "title", "sell_point", "price", "created", "updated", "status"};
+        //默认排序列
+        String orderColumn = cols[orderCol];
+        if(orderColumn == null) {
+            orderColumn = "created";
+        }
+        //获取排序方式 默认为desc(asc)
+        if(orderDir == null) {
+            orderDir = "desc";
+        }
+        if(!search.isEmpty()){
+            searchKey=search;
+        }
+        DataTablesResult result=itemService.getItemSearchList(draw,start,length,cid,searchKey,minDate,maxDate,orderColumn,orderDir);
         return result;
     }
 

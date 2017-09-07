@@ -7,12 +7,12 @@
 - 搜索系统：提供商品的搜索功能。
 - 单点登录系统：为多个系统之间提供用户登录凭证以及查询登录用户的信息。
 
-![](http://otabkoy17.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170901155605.png)
+![](http://otabkoy17.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170907130105.png)
 
 ### 前端所用技术
 
 - 后台页面
-    - 感谢[H-ui](http://www.h-ui.net/)提供静态页面支持
+    - 感谢 [H-ui](http://www.h-ui.net/) 提供静态页面支持
     - [Ztree](http://www.treejs.cn/v3/main.php#_zTreeInfo)：jQuery树插件
     - [DataTables](http://www.datatables.club/)：jQuery表格插件
     - [Layer](http://layer.layui.com/)：web弹层组件
@@ -33,7 +33,7 @@
 - [Nginx](https://github.com/Exrick/xmall/blob/master/study/Nginx.md)
 - Tomcat
 - Maven
-- JRebel：开发热部署
+- [JRebel](https://github.com/Exrick/xmall/blob/master/study/JRebel.md)：开发热部署
 - 第三方SDK：[七牛云图片存储服务器](https://developer.qiniu.com/kodo/sdk/1239/java)
 
 ### dependency文件夹提供部分安装文件与sql文件
@@ -44,7 +44,7 @@
 
 ### 本地开发运行部署
 - 下载git或zip直接解压，git安装后执行克隆命令 `git clone https://github.com/Exrick/xmall.git`
-- 使用IDEA([破解/免费注册](http://idea.lanyus.com/)) `File-Open` 直接打开xmall项目点击右下角 `Import Changes` 等待安装完依赖即可
+- 使用IDEA([破解/免费注册](http://idea.lanyus.com/)) `File-Open` 直接打开xmall项目，点击右下角 `Import Changes` 等待安装完依赖即可
 - Maven安装和IDEA配置
 
     ![](http://otabkoy17.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170901140327.png)

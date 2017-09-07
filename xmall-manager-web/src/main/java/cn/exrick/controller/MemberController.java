@@ -27,16 +27,48 @@ public class MemberController {
     private MemberService memberService;
 
     @RequestMapping(value = "/member/list",method = RequestMethod.GET)
-    @ApiOperation(value = "分页搜索获取会员列表")
-    public DataTablesResult getMemberList(int draw, int start, int length, @RequestParam("search[value]") String search){
-        DataTablesResult result=memberService.getMemberList(draw,start,length,search);
+    @ApiOperation(value = "分页多条件搜索获取会员列表")
+    public DataTablesResult getMemberList(int draw, int start, int length,String searchKey,@RequestParam("search[value]") String search,
+                                          String minDate, String maxDate,
+                                          @RequestParam("order[0][column]") int orderCol, @RequestParam("order[0][dir]") String orderDir){
+        //获取客户端需要排序的列
+        String[] cols = {"checkbox","id", "username","sex", "phone", "email", "address", "created", "updated", "state"};
+        String orderColumn = cols[orderCol];
+        //默认排序列
+        if(orderColumn == null) {
+            orderColumn = "created";
+        }
+        //获取排序方式 默认为desc(asc)
+        if(orderDir == null) {
+            orderDir = "desc";
+        }
+        if(!search.isEmpty()){
+            searchKey=search;
+        }
+        DataTablesResult result=memberService.getMemberList(draw,start,length,searchKey,minDate,maxDate,orderColumn,orderDir);
         return result;
     }
 
     @RequestMapping(value = "/member/list/remove",method = RequestMethod.GET)
-    @ApiOperation(value = "分页搜索获取已删除会员列表")
-    public DataTablesResult getDelMemberList(int draw, int start, int length, @RequestParam("search[value]") String search){
-        DataTablesResult result=memberService.getRemoveMemberList(draw,start,length,search);
+    @ApiOperation(value = "分页多条件搜索已删除会员列表")
+    public DataTablesResult getDelMemberList(int draw, int start, int length,String searchKey,@RequestParam("search[value]") String search,
+                                             String minDate, String maxDate,
+                                             @RequestParam("order[0][column]") int orderCol, @RequestParam("order[0][dir]") String orderDir){
+        //获取客户端需要排序的列
+        String[] cols = {"checkbox","id", "username","sex", "phone", "email", "address", "created", "updated", "state"};
+        String orderColumn = cols[orderCol];
+        //默认排序列
+        if(orderColumn == null) {
+            orderColumn = "created";
+        }
+        //获取排序方式 默认为desc(asc)
+        if(orderDir == null) {
+            orderDir = "desc";
+        }
+        if(!search.isEmpty()){
+            searchKey=search;
+        }
+        DataTablesResult result=memberService.getRemoveMemberList(draw,start,length,searchKey,minDate,maxDate,orderColumn,orderDir);
         return result;
     }
 
@@ -106,5 +138,32 @@ public class MemberController {
     public Result<TbMember> getMemberById(@PathVariable Long id){
         TbMember tbMember = memberService.getMemberById(id);
         return new ResultUtil<TbMember>().setData(tbMember);
+    }
+
+    @RequestMapping(value = "/username",method = RequestMethod.GET)
+    @ApiOperation(value = "验证注册名是否存在")
+    public Boolean validateUsername(String username){
+        if(memberService.getMemberByUsername(username)!=null){
+            return false;
+        }
+        return true;
+    }
+
+    @RequestMapping(value = "/phone",method = RequestMethod.GET)
+    @ApiOperation(value = "验证注册手机是否存在")
+    public Boolean validatePhone(String phone){
+        if(memberService.getMemberByPhone(phone)!=null){
+            return false;
+        }
+        return true;
+    }
+
+    @RequestMapping(value = "/email",method = RequestMethod.GET)
+    @ApiOperation(value = "验证注册邮箱是否存在")
+    public Boolean validateEmail(String email){
+        if(memberService.getMemberByEmail(email)!=null){
+            return false;
+        }
+        return true;
     }
 }

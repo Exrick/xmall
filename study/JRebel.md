@@ -15,14 +15,26 @@ JRebel是一款热部署插件。当你的Java-Web项目在Tomcat中run/debug的
 
 1. JRebel注册
 
-    https://my.jrebel.com/register
-    
-    https://zeroturnaround.com/software/jrebel/download/#!/free-trial
+    [myJRebel注册地址](https://my.jrebel.com/register) 免费永久注册后获得激活码，注册过程需绑定Twitter或Facebook账号
 
-    注册后获得激活码
+    免费在线翻墙浏览器[UZER.ME云应用](https://uzer.me/)，注册登录后打开火狐浏览器即可
+
+    注册成功后获得激活码
+
+    ![](http://otabkoy17.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170906101339.png)
 
 2. 插件安装
 
     IDEA中 `File-Settings-Plugin` 中搜索JRebel下载安装后重启IDEA
 
 3. 激活
+
+    在IDEA里中 `Help-JRebel-Activate` 复制粘贴激活码点击Active激活即可。
+
+### JRebel使用
+
+1. 添加Tomcat配置时，`VM option` 下方都勾选Update classes and resources
+
+2. 在IDEA上方菜单栏中找到JRebel按钮选择以JRebel启动项目
+
+    ![](http://otabkoy17.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170906101532.png)

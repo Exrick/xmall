@@ -30,13 +30,13 @@
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 用户中心 <span class="c-gray en">&gt;</span> 删除的用户<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
-    <div class="text-c"> 日期范围：
-        <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate" style="width:120px;">
+    <form id="form-search" class="text-c"> 日期范围：
+        <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'maxDate\')||\'%y-%M-%d\'}' })" id="minDate" name="minDate" class="input-text Wdate" style="width:120px;">
         -
-        <input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d' })" id="datemax" class="input-text Wdate" style="width:120px;">
-        <input type="text" class="input-text" style="width:250px" placeholder="输入会员名称、电话、邮箱" id="" name="">
+        <input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'minDate\')}',maxDate:'%y-%M-%d' })" id="maxDate" name="maxDate" class="input-text Wdate" style="width:120px;">
+        <input type="text" class="input-text" style="width:250px" placeholder="输入会员名称、电话、邮箱等信息" id="searchKey" name="searchKey">
         <button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
-    </div>
+    </form>
     <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a href="javascript:;" onclick="restoreAll()" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe66b;</i> 批量还原</a></span> <span class="r">共有数据：<strong id="memberRemoveListCount">0</strong> 条</span> </div>
     <div class="mt-20" style="margin-bottom: 70px">
         <table class="table table-border table-bordered table-hover table-bg table-sort" width="100%">
@@ -68,6 +68,8 @@
 <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript" src="lib/datatables/dataTables.colReorder.min.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
 <script type="text/javascript">
     /*刷新表格*/
     function refresh(){
@@ -93,8 +95,13 @@
             "ajax": {
                 url:"member/list/remove",
                 type: 'GET',
+                data:{
+                    "searchKey": "",
+                    "minDate": "",
+                    "maxDate": "",
+                },
                 error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 }
             },
             "columns": [
@@ -193,7 +200,7 @@
                     layer.msg('已删除!',{icon:1,time:1000});
                 },
                 error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 }
             });
         });
@@ -219,7 +226,7 @@
                         url: '/member/del/'+cks[i].value,
                         dataType: 'json',
                         error:function(XMLHttpRequest){
-                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                         }
                     });
                 }
@@ -250,7 +257,7 @@
                         url: '/member/start/'+cks[i].value,
                         dataType: 'json',
                         error:function(XMLHttpRequest){
-                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                         }
                     });
                 }
@@ -260,6 +267,36 @@
             layer.msg('已还原!',{icon:1,time:1000});
         });
     }
+    /*多条件查询*/
+    $("#form-search").validate({
+        rules:{
+            minDate:{
+                required:true,
+            },
+            maxDate:{
+                required:true,
+            },
+            searchKey:{
+                required:false,
+            },
+        },
+        onkeyup:false,
+        focusCleanup:false,
+        success:"valid",
+        submitHandler:function(form){
+            var searchKey= $('#searchKey').val();
+            var minDate= $('#minDate').val();
+            var maxDate= $('#maxDate').val();
+            var param = {
+                "searchKey": searchKey,
+                "minDate": minDate,
+                "maxDate":maxDate
+            };
+            var table = $('.table').DataTable();
+            table.settings()[0].ajax.data = param;
+            table.ajax.reload();
+        }
+    });
 </script>
 </body>
 </html>

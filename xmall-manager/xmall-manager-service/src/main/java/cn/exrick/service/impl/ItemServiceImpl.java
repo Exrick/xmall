@@ -8,6 +8,8 @@ import cn.exrick.pojo.TbItemExample;
 import cn.exrick.service.ItemService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,8 @@ import java.util.List;
 @Service
 public class ItemServiceImpl implements ItemService {
 
+    private final static Logger log= LoggerFactory.getLogger(ItemServiceImpl.class);
+
     @Autowired
     private TbItemMapper tbItemMapper;
 
@@ -30,31 +34,36 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public DataTablesResult getItemList(int draw,int start,int length,String search) {
+    public DataTablesResult getItemList(int draw,int start,int length,int cid,String search,
+                                        String orderCol,String orderDir) {
 
         DataTablesResult result=new DataTablesResult();
 
-        //分页
+        //分页执行查询返回结果
         PageHelper.startPage(start/length+1,length);
-
-        //执行查询返回结果
-        TbItemExample example=new TbItemExample();
-        List<TbItem> list;
-        PageInfo<TbItem> pageInfo;
-
-        //无过滤搜索
-        list = tbItemMapper.selectByExample(example);
-        pageInfo=new PageInfo<>(list);
-        result.setRecordsTotal((int)pageInfo.getTotal());
+        List<TbItem> list = tbItemMapper.selectItemByCondition(cid,"%"+search+"%",orderCol,orderDir);
+        PageInfo<TbItem> pageInfo=new PageInfo<>(list);
         result.setRecordsFiltered((int)pageInfo.getTotal());
+        result.setRecordsTotal(getAllItemCount().getRecordsTotal());
 
-        //搜索
-        if(search!=null&&!search.isEmpty()){
-            PageHelper.startPage(start/length+1,length);
-            list = tbItemMapper.selectByItemTitleAndDescription("%"+search+"%");
-            pageInfo=new PageInfo<>(list);
-            result.setRecordsFiltered((int)pageInfo.getTotal());
-        }
+        result.setDraw(draw);
+        result.setData(list);
+
+        return result;
+    }
+
+    @Override
+    public DataTablesResult getItemSearchList(int draw, int start, int length,int cid, String search,
+                                              String minDate, String maxDate, String orderCol, String orderDir) {
+
+        DataTablesResult result=new DataTablesResult();
+
+        //分页执行查询返回结果
+        PageHelper.startPage(start/length+1,length);
+        List<TbItem> list = tbItemMapper.selectItemByMultiCondition(cid,"%"+search+"%",minDate,maxDate,orderCol,orderDir);
+        PageInfo<TbItem> pageInfo=new PageInfo<>(list);
+        result.setRecordsFiltered((int)pageInfo.getTotal());
+        result.setRecordsTotal(getAllItemCount().getRecordsTotal());
 
         result.setDraw(draw);
         result.setData(list);

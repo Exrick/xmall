@@ -24,10 +24,12 @@ public interface MemberService {
      * @param search
      * @return
      */
-    DataTablesResult getMemberList(int draw, int start, int length, String search);
+    DataTablesResult getMemberList(int draw, int start, int length, String search,
+                                   String minDate, String maxDate, String orderCol, String orderDir);
 
     //分页获得移除会员列表
-    DataTablesResult getRemoveMemberList(int draw, int start, int length, String search);
+    DataTablesResult getRemoveMemberList(int draw, int start, int length, String search,
+                                         String minDate, String maxDate, String orderCol, String orderDir);
 
     /**
      * 获得所有会员总数

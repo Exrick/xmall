@@ -302,12 +302,35 @@
       updated = #{updated,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <select id="selectByItemTitleAndDescription" parameterType="string" resultMap="BaseResultMap">
+  <select id="selectItemByCondition" resultMap="BaseResultMap">
     SELECT * FROM tb_item
-    WHERE (title LIKE #{search})
+    WHERE (title LIKE #{search}
     OR
-    (sell_point LIKE #{search})
+    sell_point LIKE #{search}
     OR
-    (price LIKE #{search})
+    price LIKE #{search})
+    <if test="cid != -1">
+      AND cid = #{cid}
+    </if>
+    ORDER BY
+    ${orderCol}
+    ${orderDir}
+  </select>
+  <select id="selectItemByMultiCondition" resultMap="BaseResultMap">
+    SELECT * FROM tb_item
+    WHERE (title LIKE #{search}
+    OR
+    sell_point LIKE #{search}
+    OR
+    price LIKE #{search})
+    <if test="cid != -1">
+      AND cid = #{cid}
+    </if>
+    <if test="minDate != null and minDate != '' and maxDate != null and maxDate != ''">
+      AND created BETWEEN #{minDate} AND #{maxDate}
+    </if>
+    ORDER BY
+    ${orderCol}
+    ${orderDir}
   </select>
 </mapper>

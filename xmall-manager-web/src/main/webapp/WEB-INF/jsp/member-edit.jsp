@@ -175,7 +175,7 @@
                 username:{
                     required:true,
                     minlength:2,
-                    maxlength:16
+                    maxlength:16,
                 },
                 password:{
                     required:true,
@@ -200,9 +200,12 @@
                 file:{
                     required:false,
                 },
+                province:{
+                    required:true,
+                },
             },
             onkeyup:false,
-            focusCleanup:true,
+            focusCleanup:false,
             success:"valid",
             submitHandler:function(form){
                 $(form).ajaxSubmit({
@@ -211,12 +214,23 @@
                     success: function(data) {
                         if(data.success==true){
                             parent.refresh();
+                            parent.msgSuccess("编辑成功!");
+                            var index = parent.layer.getFrameIndex(window.name);
+                            parent.layer.close(index);
                         }else{
                             layer.alert('修改失败! '+data.message, {title: '错误信息',icon: 2});
                         }
                     },
                     error:function(XMLHttpRequest) {
-                        layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                        if(XMLHttpRequest.responseText.indexOf('for key \'phone\'') > 0){
+                            layer.alert('编辑失败，手机号已被注册!',{title: '错误信息',icon: 2});
+                        }else if(XMLHttpRequest.responseText.indexOf('for key \'email\'') > 0){
+                            layer.alert('编辑失败，邮箱已被注册!',{title: '错误信息',icon: 2});
+                        }else if(XMLHttpRequest.responseText.indexOf('for key \'username\'') > 0){
+                            layer.alert('编辑失败，用户名已存在!',{title: '错误信息',icon: 2});
+                        }else {
+                            layer.alert('数据处理失败! 错误码:' + XMLHttpRequest.status + ' 错误信息:' + JSON.parse(XMLHttpRequest.responseText).message, {title: '错误信息', icon: 2});
+                        }
                     }
                 });
             }

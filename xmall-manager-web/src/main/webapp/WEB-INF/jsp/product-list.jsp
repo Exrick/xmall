@@ -35,14 +35,14 @@
     <ul id="treeDemo" style="margin-left: 10px" class="ztree"></ul>
 </div>
 <div style="margin-left:200px;">
-    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品管理 <span class="c-gray en">&gt;</span> 商品列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
-    <div class="page-container">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品管理 <span class="c-gray en">&gt;</span> 商品列表 <span class="c-gray en">&gt;</span><span id="category">所有商品</span> <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <form id="form-search" class="page-container">
         <div class="text-c"> 日期范围：
-            <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}' })" id="logmin" class="input-text Wdate" style="width:120px;">
+            <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'maxDate\')||\'%y-%M-%d\'}' })" id="minDate" name="minDate" class="input-text Wdate" style="width:120px;">
             -
-            <input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d' })" id="logmax" class="input-text Wdate" style="width:120px;">
-            <input type="text" name="" id="itemName" placeholder=" 商品名称" style="width:250px" class="input-text">
-            <button name="" id="searchButton" onclick="searchItem()" class="btn btn-success"><i class="Hui-iconfont">&#xe665;</i> 搜商品</button>
+            <input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'minDate\')}',maxDate:'%y-%M-%d' })" id="maxDate" name="maxDate" class="input-text Wdate" style="width:120px;">
+            <input type="text" name="searchKey" id="searchKey" placeholder=" 商品名称、商品描述、价格" style="width:250px" class="input-text">
+            <button name="" id="searchButton" type="submit" class="btn btn-success"><i class="Hui-iconfont">&#xe665;</i> 搜商品</button>
         </div>
         <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="product_add('添加商品','product-add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加商品</a></span> <span class="r">共有数据：<strong id="itemListCount">0</strong> 条</span> </div>
         <div class="mt-20">
@@ -65,7 +65,7 @@
                 </table>
             </div>
         </div>
-    </div>
+    </form>
 </div>
 
 <!--_footer 作为公共模版分离出去-->
@@ -80,10 +80,9 @@
 <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript" src="lib/datatables/dataTables.colReorder.min.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
 <script type="text/javascript">
-    $(".table").colResizable({
-        liveDrag:true,
-        resizeMode:'fit'});
     /*刷新表格*/
     function refresh(){
         var table = $('.table').DataTable();
@@ -114,8 +113,11 @@
             "ajax": {
                 url:"/item/list",
                 type: 'GET',
+                data:{
+                    "cid":-1
+                },
                 error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 }
             },
             "columns": [
@@ -194,7 +196,7 @@
                     }
                 }
             ],
-            "aaSorting": [[ 1, "desc" ]],//默认第几个排序
+            "aaSorting": [[ 6, "desc" ]],//默认第几个排序
             "bStateSave": false,//状态保存
             "aoColumnDefs": [
                 {"orderable":false,"aTargets":[0,2,4,9]}// 制定列不参与排序
@@ -222,22 +224,39 @@
             }
         });
     }
-
-    function searchItem() {
-        var itemName= $('#itemName').val();
-        $.ajax({
-            url:"/item/list?draw=1&start=0&length=10&search[value]="+itemName,
-            type: 'GET',
-            success:function (result) {
-                alert(result.recordsFiltered);
+    /*初始化类别数据*/
+    var cid=-1;
+    /*多条件查询*/
+    $("#form-search").validate({
+        rules:{
+            minDate:{
+                required:true,
             },
-            error:function(XMLHttpRequest){
-                if(XMLHttpRequest.status!=200){
-                    layer.alert('数据加载失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
-                }
-            }
-        });
-    };
+            maxDate:{
+                required:true,
+            },
+            searchKey:{
+                required:false,
+            },
+        },
+        onkeyup:false,
+        focusCleanup:false,
+        success:"valid",
+        submitHandler:function(form){
+            var searchKey= $('#searchKey').val();
+            var minDate= $('#minDate').val();
+            var maxDate= $('#maxDate').val();
+            var param = {
+                "searchKey": searchKey,
+                "minDate": minDate,
+                "maxDate":maxDate,
+                "cid":cid
+            };
+            var table = $('.table').DataTable();
+            table.settings()[0].ajax.data = param;
+            table.ajax.url( '/item/listSearch' ).load();
+        }
+    });
 
     var setting = {
         view: {
@@ -262,12 +281,17 @@
         },
         callback: {
             beforeClick: function(treeId, treeNode) {
-                var zTree = $.fn.zTree.getZTreeObj("tree");
                 if (treeNode.isParent) {
-                    //zTree.expandNode(treeNode);
                     return false;
                 } else {
-                    //demoIframe.attr("src",treeNode.file + ".html");
+                    cid=treeNode.id;
+                    $("#category").html(treeNode.name);
+                    var param = {
+                        "cid": treeNode.id,
+                    };
+                    var table = $('.table').DataTable();
+                    table.settings()[0].ajax.data = param;
+                    table.ajax.reload();
                     return true;
                 }
             }

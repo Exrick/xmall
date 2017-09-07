@@ -124,7 +124,9 @@
 <script type="text/javascript" src="lib/province/distpicker.js"></script>
 <script type="text/javascript">
     /*城市选择控件*/
-    $("#distpicker1").distpicker();
+    $("#distpicker1").distpicker({
+        autoSelect:false
+    });
 
     /*文本输入限制*/
     $(".textarea").Huitextarealength({
@@ -144,7 +146,8 @@
                 username:{
                     required:true,
                     minlength:2,
-                    maxlength:16
+                    maxlength:16,
+                    remote: "/username"+$("#username").val()
                 },
                 password:{
                     required:true,
@@ -158,10 +161,12 @@
                 phone:{
                     required:true,
                     isMobile:true,
+                    remote:"/phone"+$("#phone").val()
                 },
                 email:{
                     required:true,
                     email:true,
+                    remote:"/email"+$("#email").val()
                 },
                 sex:{
                     required:true,
@@ -169,9 +174,23 @@
                 file:{
                     required:false,
                 },
+                province:{
+                    required:true,
+                }
+            },
+            messages: {
+                username: {
+                    remote: "该用户名已被注册"
+                },
+                phone: {
+                    remote: "该手机号已被注册"
+                },
+                email: {
+                    remote: "该邮箱已被注册"
+                }
             },
             onkeyup:false,
-            focusCleanup:true,
+            focusCleanup:false,
             success:"valid",
             submitHandler:function(form){
                 $(form).ajaxSubmit({
@@ -179,7 +198,7 @@
                         if(data.success==true){
                             if(parent.location.pathname!='/'){
                                 parent.refresh();
-                                parent.addSuccess();
+                                parent.msgSuccess("添加成功!");
                                 var index = parent.layer.getFrameIndex(window.name);
                                 parent.layer.close(index);
                             }else{
@@ -195,15 +214,7 @@
                         }
                     },
                     error:function(XMLHttpRequest) {
-                        if(XMLHttpRequest.responseText.indexOf('手机号已被注册') > 0){
-                            layer.alert('添加失败，手机号已被注册!',{title: '错误信息',icon: 2});
-                        }else if(XMLHttpRequest.responseText.indexOf('邮箱已被注册') > 0){
-                            layer.alert('添加失败，邮箱已被注册!',{title: '错误信息',icon: 2});
-                        }else if(XMLHttpRequest.responseText.indexOf('username') > 0){
-                            layer.alert('添加失败，用户名已存在!',{title: '错误信息',icon: 2});
-                        }else{
-                            layer.alert('抱歉，出错了! 错误码:'+XMLHttpRequest.status+' 错误信息:'+XMLHttpRequest.responseText,{title: '错误信息',icon: 2});
-                        }
+                        layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                     }
                 });
             }

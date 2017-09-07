@@ -30,13 +30,13 @@
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 用户中心 <span class="c-gray en">&gt;</span> 用户管理 <a id="btn-refresh" class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
-    <div class="text-c"> 日期范围：
-        <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate" style="width:120px;">
+    <form id="form-search" class="text-c"> 日期范围：
+        <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'maxDate\')||\'%y-%M-%d\'}' })" id="minDate" name="minDate" class="input-text Wdate" style="width:120px;">
         -
-        <input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d' })" id="datemax" class="input-text Wdate" style="width:120px;">
-        <input type="text" class="input-text" style="width:250px" placeholder="输入会员名称、电话、邮箱" id="memberName" name="">
-        <button id="searchButton" onclick="searchMember()" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
-    </div>
+        <input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'minDate\')}',maxDate:'%y-%M-%d' })" id="maxDate" name="maxDate" class="input-text Wdate" style="width:120px;">
+        <input type="text" class="input-text" style="width:250px" placeholder="输入会员名称、电话、邮箱等信息" id="searchKey" name="searchKey">
+        <button id="searchButton" type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
+    </form>
     <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a href="javascript:;" onclick="member_add('添加用户','member-add','','510')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加用户</a></span> <span class="r">共有数据：<strong id="memberListCount">0</strong> 条</span> </div>
     <div class="mt-20" style="margin-bottom: 70px">
         <table class="table table-border table-bordered table-hover table-bg table-sort" width="100%">
@@ -69,6 +69,8 @@
 <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript" src="lib/datatables/dataTables.colReorder.min.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
 <script type="text/javascript">
     /*刷新表格*/
     function refresh(){
@@ -100,6 +102,11 @@
             "ajax": {
                 url:"member/list",
                 type: 'GET',
+                data:{
+                    "searchKey": "",
+                    "minDate": "",
+                    "maxDate": "",
+                },
                 error:function(XMLHttpRequest){
                     layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 }
@@ -151,11 +158,11 @@
                     }
                 }
             ],
-            "aaSorting": [[ 1, "desc" ]],//默认第几个排序
+            "aaSorting": [[ 7, "desc" ]],//默认第几个排序
             "bStateSave": false,//状态保存
             "aoColumnDefs": [
                 //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
-                {"orderable":false,"aTargets":[0,9]}// 制定列不参与排序
+                {"orderable":false,"aTargets":[0,10]}// 制定列不参与排序
             ],
             language: {
                 url: '/lib/datatables/Chinese.json'
@@ -289,25 +296,39 @@
         });
     }
 
-    function addSuccess(){
-        layer.msg('添加成功!', {icon: 1,time:3000});
+    function msgSuccess(content){
+        layer.msg(content, {icon: 1,time:3000});
     }
     /*多条件查询*/
-    function searchMember() {
-        var memberName= $('#memberName').val();
-        $.ajax({
-            url:"/member/list?draw=1&start=0&length=10&search[value]="+memberName,
-            type: 'GET',
-            success:function (result) {
-                alert(result.recordsFiltered);
+    $("#form-search").validate({
+        rules:{
+            minDate:{
+                required:true,
             },
-            error:function(XMLHttpRequest){
-                if(XMLHttpRequest.status!=200){
-                    layer.alert('数据加载失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
-                }
-            }
-        });
-    };
+            maxDate:{
+                required:true,
+            },
+            searchKey:{
+                required:false,
+            },
+        },
+        onkeyup:false,
+        focusCleanup:false,
+        success:"valid",
+        submitHandler:function(form){
+            var searchKey= $('#searchKey').val();
+            var minDate= $('#minDate').val();
+            var maxDate= $('#maxDate').val();
+            var param = {
+                "searchKey": searchKey,
+                "minDate": minDate,
+                "maxDate":maxDate
+            };
+            var table = $('.table').DataTable();
+            table.settings()[0].ajax.data = param;
+            table.ajax.reload();
+        }
+    });
 </script>
 </body>
 </html>

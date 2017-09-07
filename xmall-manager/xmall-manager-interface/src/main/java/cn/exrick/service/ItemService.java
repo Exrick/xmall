@@ -10,10 +10,45 @@ import cn.exrick.pojo.TbItem;
  */
 public interface ItemService {
 
+    /**
+     * 通过ID获取商品
+     * @param itemId
+     * @return
+     */
     TbItem getItemById(long itemId);
 
-    DataTablesResult getItemList(int draw,int start,int length,String search);
+    /**
+     * 分页搜索排序获取商品列表
+     * @param draw
+     * @param start
+     * @param length
+     * @param search
+     * @param orderCol
+     * @return
+     */
+    DataTablesResult getItemList(int draw,int start,int length,int cid,
+                                 String search,String orderCol,String orderDir);
 
+    /**
+     * 多条件查询获取商品列表
+     * @param draw
+     * @param start
+     * @param length
+     * @param search
+     * @param minDate
+     * @param maxDate
+     * @param orderCol
+     * @param orderDir
+     * @return
+     */
+    DataTablesResult getItemSearchList(int draw,int start,int length,int cid,
+                                       String search,String minDate,String maxDate,
+                                       String orderCol,String orderDir);
+
+    /**
+     * 获取商品总数
+     * @return
+     */
     DataTablesResult getAllItemCount();
 
     /**

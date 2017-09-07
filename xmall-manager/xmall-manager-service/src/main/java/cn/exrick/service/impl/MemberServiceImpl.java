@@ -40,35 +40,18 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public DataTablesResult getMemberList(int draw, int start, int length, String search) {
+    public DataTablesResult getMemberList(int draw, int start, int length, String search,
+                                          String minDate, String maxDate, String orderCol, String orderDir) {
 
         DataTablesResult result=new DataTablesResult();
 
         try{
             //分页
             PageHelper.startPage(start/length+1,length);
-
-            List<TbMember> list;
-            PageInfo<TbMember> pageInfo;
-
-            //执行查询返回结果
-            TbMemberExample example=new TbMemberExample();
-            TbMemberExample.Criteria criteria=example.createCriteria();
-            criteria.andStateNotEqualTo(2);
-
-            //无过滤搜索
-            list = tbMemberMapper.selectByExample(example);
-            pageInfo=new PageInfo<>(list);
-            result.setRecordsTotal((int)pageInfo.getTotal());
+            List<TbMember> list = tbMemberMapper.selectByMemberInfo("%"+search+"%",minDate,maxDate,orderCol,orderDir);
+            PageInfo<TbMember> pageInfo=new PageInfo<>(list);
             result.setRecordsFiltered((int)pageInfo.getTotal());
-
-            //搜索
-            if(search!=null&&!search.isEmpty()){
-                PageHelper.startPage(start/length+1,length);
-                list = tbMemberMapper.selectByMemberInformation("%"+search+"%");
-                pageInfo=new PageInfo<>(list);
-                result.setRecordsFiltered((int)pageInfo.getTotal());
-            }
+            result.setRecordsTotal(getMemberCount().getRecordsTotal());
 
             result.setDraw(draw);
             result.setData(list);
@@ -80,35 +63,18 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public DataTablesResult getRemoveMemberList(int draw, int start, int length, String search) {
+    public DataTablesResult getRemoveMemberList(int draw, int start, int length, String search,
+                                                String minDate, String maxDate, String orderCol, String orderDir) {
 
         DataTablesResult result=new DataTablesResult();
 
         try{
-            //分页
+            //分页执行查询返回结果
             PageHelper.startPage(start/length+1,length);
-
-            List<TbMember> list;
-            PageInfo<TbMember> pageInfo;
-
-            //执行查询返回结果
-            TbMemberExample example=new TbMemberExample();
-            TbMemberExample.Criteria criteria=example.createCriteria();
-            criteria.andStateEqualTo(2);
-
-            //无过滤搜索
-            list = tbMemberMapper.selectByExample(example);
-            pageInfo=new PageInfo<>(list);
-            result.setRecordsTotal((int)pageInfo.getTotal());
+            List<TbMember> list = tbMemberMapper.selectByRemoveMemberInfo("%"+search+"%",minDate,maxDate,orderCol,orderDir);
+            PageInfo<TbMember> pageInfo=new PageInfo<>(list);
             result.setRecordsFiltered((int)pageInfo.getTotal());
-
-            //搜索
-            if(search!=null&&!search.isEmpty()){
-                PageHelper.startPage(start/length+1,length);
-                list = tbMemberMapper.selectByRemoveMemberInformation("%"+search+"%");
-                pageInfo=new PageInfo<>(list);
-                result.setRecordsFiltered((int)pageInfo.getTotal());
-            }
+            result.setRecordsTotal(getRemoveMemberCount().getRecordsTotal());
 
             result.setDraw(draw);
             result.setData(list);
@@ -236,6 +202,9 @@ public class MemberServiceImpl implements MemberService {
         TbMember oldMember=getMemberById(id);
         tbMember.setState(oldMember.getState());
         tbMember.setCreated(oldMember.getCreated());
+        if(tbMember.getPassword()==null||tbMember.getPassword()==""){
+            tbMember.setPassword(oldMember.getPassword());
+        }
 
         if (tbMemberMapper.updateByPrimaryKey(tbMember) != 1){
             throw new XmallException("更新会员信息失败");
