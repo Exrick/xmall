@@ -213,6 +213,20 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    public TbMember changePassMember(Long id, MemberDto memberDto) {
+
+        TbMember tbMember=getMemberById(id);
+        if(tbMember.getPassword()==null||tbMember.getPassword()==""){
+            tbMember.setPassword(tbMember.getPassword());
+        }
+
+        if (tbMemberMapper.updateByPrimaryKey(tbMember) != 1){
+            throw new XmallException("修改会员密码失败");
+        }
+        return getMemberById(id);
+    }
+
+    @Override
     public TbMember alertMemberState(Long id,Integer state) {
 
         TbMember tbMember = getMemberById(id);
@@ -232,5 +246,35 @@ public class MemberServiceImpl implements MemberService {
             throw new XmallException("删除会员失败");
         }
         return 0;
+    }
+
+    @Override
+    public TbMember getMemberByEditEmail(Long id,String email) {
+        TbMember tbMember=getMemberById(id);
+        TbMember newTbMember=null;
+        if(!tbMember.getEmail().equals(email)){
+            newTbMember=getMemberByEmail(email);
+        }
+        return newTbMember;
+    }
+
+    @Override
+    public TbMember getMemberByEditPhone(Long id,String phone) {
+        TbMember tbMember=getMemberById(id);
+        TbMember newTbMember=null;
+        if(!tbMember.getPhone().equals(phone)){
+            newTbMember=getMemberByPhone(phone);
+        }
+        return newTbMember;
+    }
+
+    @Override
+    public TbMember getMemberByEditUsername(Long id,String username) {
+        TbMember tbMember=getMemberById(id);
+        TbMember newTbMember=null;
+        if(!tbMember.getUsername().equals(username)){
+            newTbMember=getMemberByUsername(username);
+        }
+        return newTbMember;
     }
 }

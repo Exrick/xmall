@@ -9,9 +9,7 @@
     http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
-    <context:component-scan base-package="cn.exrick.controller" />
-    <context:component-scan base-package="cn.exrick.swagger" />
-    <!--<bean name="applicationSwaggerConfig" class="cn.exrick.swagger.Swagger2Config"/>-->
+    <context:component-scan base-package="cn.exrick" />
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />

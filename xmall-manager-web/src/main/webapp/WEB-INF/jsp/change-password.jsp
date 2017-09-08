@@ -104,8 +104,8 @@
                     type: "POST",
                     success: function(data) {
                         if(data.success==true){
+                            parent.msgSuccess("修改成功!");
                             var index = parent.layer.getFrameIndex(window.name);
-                            parent.alert_success();
                             parent.layer.close(index);
                         }else{
                             layer.alert('提交失败! '+data.message, {title: '错误信息',icon: 2});

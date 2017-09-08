@@ -35,6 +35,6 @@ JRebel是一款热部署插件。当你的Java-Web项目在Tomcat中run/debug的
 
 1. 添加Tomcat配置时，`VM option` 下方都勾选Update classes and resources
 
-2. 在IDEA上方菜单栏中找到JRebel按钮选择以JRebel启动项目
+2. 左下角勾选要使用热部署的项目模块，在IDEA上方菜单栏中找到JRebel按钮选择以JRebel启动项目
 
     ![](http://otabkoy17.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170906101532.png)

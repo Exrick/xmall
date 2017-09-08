@@ -122,7 +122,7 @@ public class MemberController {
     @RequestMapping(value = "/member/changePass/{id}",method = RequestMethod.POST)
     @ApiOperation(value = "修改会员密码")
     public Result<TbMember> changeMemberPassword(@PathVariable Long id,@ModelAttribute MemberDto memberDto){
-        TbMember tbMember = memberService.updateMember(id,memberDto);
+        TbMember tbMember = memberService.changePassMember(id,memberDto);
         return new ResultUtil<TbMember>().setData(tbMember);
     }
 
@@ -140,7 +140,7 @@ public class MemberController {
         return new ResultUtil<TbMember>().setData(tbMember);
     }
 
-    @RequestMapping(value = "/username",method = RequestMethod.GET)
+    @RequestMapping(value = "/member/username",method = RequestMethod.GET)
     @ApiOperation(value = "验证注册名是否存在")
     public Boolean validateUsername(String username){
         if(memberService.getMemberByUsername(username)!=null){
@@ -149,7 +149,7 @@ public class MemberController {
         return true;
     }
 
-    @RequestMapping(value = "/phone",method = RequestMethod.GET)
+    @RequestMapping(value = "/member/phone",method = RequestMethod.GET)
     @ApiOperation(value = "验证注册手机是否存在")
     public Boolean validatePhone(String phone){
         if(memberService.getMemberByPhone(phone)!=null){
@@ -158,10 +158,37 @@ public class MemberController {
         return true;
     }
 
-    @RequestMapping(value = "/email",method = RequestMethod.GET)
+    @RequestMapping(value = "/member/email",method = RequestMethod.GET)
     @ApiOperation(value = "验证注册邮箱是否存在")
     public Boolean validateEmail(String email){
         if(memberService.getMemberByEmail(email)!=null){
+            return false;
+        }
+        return true;
+    }
+
+    @RequestMapping(value = "/member/edit/{id}/username",method = RequestMethod.GET)
+    @ApiOperation(value = "验证编辑用户名是否存在")
+    public Boolean validateEditUsername(@PathVariable Long id,String username){
+        if(memberService.getMemberByEditUsername(id,username)!=null){
+            return false;
+        }
+        return true;
+    }
+
+    @RequestMapping(value = "/member/edit/{id}/phone",method = RequestMethod.GET)
+    @ApiOperation(value = "验证编辑手机是否存在")
+    public Boolean validateEditPhone(@PathVariable Long id,String phone){
+        if(memberService.getMemberByEditPhone(id,phone)!=null){
+            return false;
+        }
+        return true;
+    }
+
+    @RequestMapping(value = "/member/edit/{id}/email",method = RequestMethod.GET)
+    @ApiOperation(value = "验证编辑邮箱是否存在")
+    public Boolean validateEditEmail(@PathVariable Long id,String email){
+        if(memberService.getMemberByEditEmail(id,email)!=null){
             return false;
         }
         return true;

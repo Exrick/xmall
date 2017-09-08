@@ -176,6 +176,7 @@
                     required:true,
                     minlength:2,
                     maxlength:16,
+                    remote: "/member/edit/"+getId+"/username"+$("#username").val()
                 },
                 password:{
                     required:true,
@@ -189,10 +190,12 @@
                 phone:{
                     required:true,
                     isMobile:true,
+                    remote: "/member/edit/"+getId+"/phone"+$("#phone").val()
                 },
                 email:{
                     required:true,
                     email:true,
+                    remote: "/member/edit/"+getId+"/email"+$("#email").val()
                 },
                 sex:{
                     required:true,
@@ -203,6 +206,17 @@
                 province:{
                     required:true,
                 },
+            },
+            messages: {
+                username: {
+                    remote: "该用户名已被注册"
+                },
+                phone: {
+                    remote: "该手机号已被注册"
+                },
+                email: {
+                    remote: "该邮箱已被注册"
+                }
             },
             onkeyup:false,
             focusCleanup:false,
@@ -222,15 +236,7 @@
                         }
                     },
                     error:function(XMLHttpRequest) {
-                        if(XMLHttpRequest.responseText.indexOf('for key \'phone\'') > 0){
-                            layer.alert('编辑失败，手机号已被注册!',{title: '错误信息',icon: 2});
-                        }else if(XMLHttpRequest.responseText.indexOf('for key \'email\'') > 0){
-                            layer.alert('编辑失败，邮箱已被注册!',{title: '错误信息',icon: 2});
-                        }else if(XMLHttpRequest.responseText.indexOf('for key \'username\'') > 0){
-                            layer.alert('编辑失败，用户名已存在!',{title: '错误信息',icon: 2});
-                        }else {
-                            layer.alert('数据处理失败! 错误码:' + XMLHttpRequest.status + ' 错误信息:' + JSON.parse(XMLHttpRequest.responseText).message, {title: '错误信息', icon: 2});
-                        }
+                        layer.alert('数据处理失败! 错误码:' + XMLHttpRequest.status + ' 错误信息:' + JSON.parse(XMLHttpRequest.responseText).message, {title: '错误信息', icon: 2});
                     }
                 });
             }

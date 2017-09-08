@@ -61,6 +61,14 @@ public interface MemberService {
     TbMember updateMember(Long id,MemberDto memberDto);
 
     /**
+     * 修改会员密码
+     * @param id
+     * @param memberDto
+     * @return
+     */
+    TbMember changePassMember(Long id,MemberDto memberDto);
+
+    /**
      * 修改会员状态
      * @param id
      * @return
@@ -73,4 +81,13 @@ public interface MemberService {
      * @return
      */
     int deleteMember(Long id);
+
+    //验证编辑邮箱是否存在
+    TbMember getMemberByEditEmail(Long id,String email);
+
+    //验证编辑手机是否存在
+    TbMember getMemberByEditPhone(Long id,String phone);
+
+    //验证编辑用户名是否存在
+    TbMember getMemberByEditUsername(Long id,String username);
 }

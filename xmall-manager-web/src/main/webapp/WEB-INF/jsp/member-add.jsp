@@ -124,9 +124,7 @@
 <script type="text/javascript" src="lib/province/distpicker.js"></script>
 <script type="text/javascript">
     /*城市选择控件*/
-    $("#distpicker1").distpicker({
-        autoSelect:false
-    });
+    $("#distpicker1").distpicker();
 
     /*文本输入限制*/
     $(".textarea").Huitextarealength({
@@ -147,7 +145,7 @@
                     required:true,
                     minlength:2,
                     maxlength:16,
-                    remote: "/username"+$("#username").val()
+                    remote: "/member/username"+$("#username").val()
                 },
                 password:{
                     required:true,
@@ -161,12 +159,12 @@
                 phone:{
                     required:true,
                     isMobile:true,
-                    remote:"/phone"+$("#phone").val()
+                    remote:"/member/phone"+$("#phone").val()
                 },
                 email:{
                     required:true,
                     email:true,
-                    remote:"/email"+$("#email").val()
+                    remote:"/member/email"+$("#email").val()
                 },
                 sex:{
                     required:true,

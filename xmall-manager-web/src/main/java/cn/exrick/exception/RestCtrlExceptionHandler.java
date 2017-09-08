@@ -1,9 +1,9 @@
-package cn.exrick.controller;
+package cn.exrick.exception;
 
+import cn.exrick.common.exception.NotFoundException;
 import cn.exrick.common.exception.XmallException;
 import cn.exrick.common.pojo.Result;
 import cn.exrick.common.utils.ResultUtil;
-import javassist.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +27,18 @@ public class RestCtrlExceptionHandler {
     @ResponseBody
     public Result<Object> bindExceptionHandler(BindException e){
         String errorMsg="请求数据校验不合法: ";
+        if(e!=null){
+            errorMsg=e.getMessage();
+            log.warn(errorMsg);
+        }
+        return new ResultUtil<>().setErrorMsg(errorMsg);
+    }
+
+    @ExceptionHandler(NotFoundException.class)
+    @ResponseStatus(value = HttpStatus.NOT_FOUND)
+    @ResponseBody
+    public Result<Object> notFoundExceptionHandler(NotFoundException e){
+        String errorMsg="访问资源不存在: ";
         if(e!=null){
             errorMsg=e.getMessage();
             log.warn(errorMsg);
