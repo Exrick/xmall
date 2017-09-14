@@ -228,7 +228,8 @@
   <update id="updateByPrimaryKey" parameterType="cn.exrick.pojo.TbItemDesc">
     update tb_item_desc
     set created = #{created,jdbcType=TIMESTAMP},
-      updated = #{updated,jdbcType=TIMESTAMP}
+      updated = #{updated,jdbcType=TIMESTAMP},
+      item_desc = #{itemDesc,jdbcType=LONGVARCHAR}
     where item_id = #{itemId,jdbcType=BIGINT}
   </update>
 </mapper>

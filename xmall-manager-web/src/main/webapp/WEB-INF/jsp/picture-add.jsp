@@ -180,7 +180,7 @@
             swf: 'lib/webuploader/0.1.5/Uploader.swf',
 
             // 文件接收服务端。
-            server: 'lib/webuploader/0.1.5/server/fileupload.php',
+            server: '/item/fileupload',
 
             // 选择文件的按钮。可选。
             // 内部根据当前运行是创建，可能是input元素，也可能是flash.
@@ -424,7 +424,7 @@
                 swf: 'lib/webuploader/0.1.5/Uploader.swf',
                 chunked: false,
                 chunkSize: 512 * 1024,
-                server: 'lib/webuploader/0.1.5/server/fileupload.php',
+                server: '/item/fileupload',
                 // runtimeOrder: 'flash',
 
                 // accept: {

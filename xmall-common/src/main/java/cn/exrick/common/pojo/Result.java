@@ -1,11 +1,13 @@
 package cn.exrick.common.pojo;
 
 
+import java.io.Serializable;
+
 /**
  * Created by Exrick on 2017/8/20.
  * 前后端交互数据标准
  */
-public class Result<T> {
+public class Result<T> implements Serializable{
 
     //成功标志
     private boolean success;

@@ -12,6 +12,16 @@ public class TbItemDesc implements Serializable {
 
     private String itemDesc;
 
+    @Override
+    public String toString() {
+        return "TbItemDesc{" +
+                "itemId=" + itemId +
+                ", created=" + created +
+                ", updated=" + updated +
+                ", itemDesc='" + itemDesc + '\'' +
+                '}';
+    }
+
     public Long getItemId() {
         return itemId;
     }

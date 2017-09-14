@@ -105,6 +105,16 @@
         return (y+"-"+m+"-"+d+" "+h+":"+mm);
     }
 
+    function imageShow(data){
+        var images= new Array(); //定义一数组
+        images=data.split(","); //字符分割
+        if(images.length>0){
+            return images[0];
+        }else{
+            return data;
+        }
+    }
+
     /*datatables配置*/
     $(document).ready(function () {
         $('.table').DataTable({
@@ -129,14 +139,7 @@
                 { "data": "id"},
                 { "data": "image",
                     render: function(data, type, row, meta) {
-                        if (type === 'display') {
-                            if (data.length > 10) {
-                                return '<span title=' + data + '>' + data.substr(0, 9) + '...</span>';
-                            } else {
-                                return '<span title=' + data + '>' + data + '</span>';
-                            }
-                        }
-                        return data;
+                        return '<img src="'+imageShow(data)+'" style="width: 80px;height: 50px" alt="" />';
                     }
                 },
                 { "data": "title",
@@ -189,9 +192,9 @@
                     "data": null,
                     render: function (data, type, row, meta) {
                         if (row.status == 1) {
-                            return "<a style=\"text-decoration:none\" onClick=\"product_stop(this,"+row.id+")\" href=\"javascript:;\" title=\"下架\"><i class=\"Hui-iconfont\">&#xe6de;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_edit('商品编辑','product-add',"+row.id+")\" href=\"javascript:;\" title=\"编辑\"><i class=\"Hui-iconfont\">&#xe6df;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_del(this,"+row.id+")\" href=\"javascript:;\" title=\"删除\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>";
+                            return "<a style=\"text-decoration:none\" onClick=\"product_stop(this,"+row.id+")\" href=\"javascript:;\" title=\"下架\"><i class=\"Hui-iconfont\">&#xe6de;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_edit('商品编辑','product-edit',"+row.id+")\" href=\"javascript:;\" title=\"编辑\"><i class=\"Hui-iconfont\">&#xe6df;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_del(this,"+row.id+")\" href=\"javascript:;\" title=\"删除\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>";
                         } else {
-                            return "<a style=\"text-decoration:none\" onClick=\"product_start(this,"+row.id+")\" href=\"javascript:;\" title=\"发布\"><i class=\"Hui-iconfont\">&#xe603;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_edit('商品编辑','product-add',"+row.id+")\" href=\"javascript:;\" title=\"编辑\"><i class=\"Hui-iconfont\">&#xe6df;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_del(this,"+row.id+")\" href=\"javascript:;\" title=\"删除\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>";
+                            return "<a style=\"text-decoration:none\" onClick=\"product_start(this,"+row.id+")\" href=\"javascript:;\" title=\"发布\"><i class=\"Hui-iconfont\">&#xe603;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_edit('商品编辑','product-edit',"+row.id+")\" href=\"javascript:;\" title=\"编辑\"><i class=\"Hui-iconfont\">&#xe6df;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_del(this,"+row.id+")\" href=\"javascript:;\" title=\"删除\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>";
                         }
                     }
                 }
@@ -390,12 +393,21 @@
 
     /*产品-编辑*/
     function product_edit(title,url,id){
+        setId(id);
         var index = layer.open({
             type: 2,
             title: title,
             content: url
         });
         layer.full(index);
+    }
+    var ID=0;
+    function setId(id){
+        ID=id;
+    }
+
+    function getId(){
+        return ID;
     }
 
     /*产品-删除*/
@@ -446,6 +458,10 @@
             product_count();
             refresh();
         });
+    }
+
+    function msgSuccess(content){
+        layer.msg(content, {icon: 1,time:3000});
     }
 </script>
 </body>

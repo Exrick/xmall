@@ -1,30 +1,42 @@
 package cn.exrick.controller;
 
+import cn.exrick.common.pojo.KindEditorResult;
 import cn.exrick.common.pojo.Result;
+import cn.exrick.common.utils.QiniuUtil;
 import cn.exrick.common.utils.ResultUtil;
+import cn.exrick.dto.ItemDto;
 import cn.exrick.pojo.DataTablesResult;
 import cn.exrick.pojo.TbItem;
 import cn.exrick.service.ItemService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by Exrick on 2017/7/29.
  */
 @RestController
 @Api(description = "商品列表信息")
-public class ItemController {
+public class ItemController{
+
+    private final static Logger log= LoggerFactory.getLogger(ItemController.class);
 
     @Autowired
     private ItemService itemService;
 
     @RequestMapping(value = "/item/{itemId}",method = RequestMethod.GET)
     @ApiOperation(value = "通过ID获取商品")
-    public TbItem getItemById(@PathVariable Long itemId){
-        TbItem tbItem=itemService.getItemById(itemId);
-        return tbItem;
+    public Result<ItemDto> getItemById(@PathVariable Long itemId){
+        ItemDto itemDto=itemService.getItemById(itemId);
+        return new ResultUtil<ItemDto>().setData(itemDto);
     }
 
     @RequestMapping(value = "/item/list",method = RequestMethod.GET)
@@ -78,22 +90,101 @@ public class ItemController {
 
     @RequestMapping(value = "/item/stop/{id}",method = RequestMethod.PUT)
     @ApiOperation(value = "下架商品")
-    public Result<TbItem> stopMember(@PathVariable Long id){
+    public Result<TbItem> stopItem(@PathVariable Long id){
         TbItem tbItem = itemService.alertItemState(id,0);
         return new ResultUtil<TbItem>().setData(tbItem);
     }
 
     @RequestMapping(value = "/item/start/{id}",method = RequestMethod.PUT)
     @ApiOperation(value = "发布商品")
-    public Result<TbItem> startMember(@PathVariable Long id){
+    public Result<TbItem> startItem(@PathVariable Long id){
         TbItem tbItem = itemService.alertItemState(id,1);
         return new ResultUtil<TbItem>().setData(tbItem);
     }
 
     @RequestMapping(value = "/item/del/{id}",method = RequestMethod.DELETE)
     @ApiOperation(value = "删除商品")
-    public Result<TbItem> deleteMember(@PathVariable Long id){
+    public Result<TbItem> deleteItem(@PathVariable Long id){
         itemService.deleteItem(id);
         return new ResultUtil<TbItem>().setData(null);
+    }
+
+    @RequestMapping(value = "/item/imageUpload",method = RequestMethod.POST)
+    @ApiOperation(value = "图片上传")
+    public Result<Object> uploadFile(@RequestParam("file") MultipartFile files,
+                                     HttpServletRequest request){
+
+        String imagePath=null;
+        // 文件保存路径
+        String filePath = request.getSession().getServletContext().getRealPath("/upload")+"\\"
+                + QiniuUtil.renamePic(files.getOriginalFilename());
+        // 转存文件
+        try {
+            //保存至服务器
+            File file=new File((filePath));
+            files.transferTo(file);
+            //上传七牛云服务器
+            imagePath= QiniuUtil.QiniuUpload(filePath);
+            // 路径为文件且不为空则进行删除
+            if (file.isFile() && file.exists()) {
+                file.delete();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return new ResultUtil<Object>().setData(imagePath);
+    }
+
+    @RequestMapping(value = "/kindeditor/imageUpload",method = RequestMethod.POST)
+    @ApiOperation(value = "kindeditor图片上传")
+    public KindEditorResult kindeditor(@RequestParam("imgFile") MultipartFile files, HttpServletRequest request){
+
+        KindEditorResult kindEditorResult=new KindEditorResult();
+        // 文件保存路径
+        String filePath = request.getSession().getServletContext().getRealPath("/upload")+"\\"
+                + QiniuUtil.renamePic(files.getOriginalFilename());
+        //检查文件
+        String message=QiniuUtil.isValidImage(request,files);
+        if(!message.equals("valid")){
+            kindEditorResult.setError(1);
+            kindEditorResult.setMessage(message);
+            return kindEditorResult;
+        }
+        // 转存文件
+        try {
+            //保存至服务器
+            File file=new File((filePath));
+            files.transferTo(file);
+            //上传七牛云服务器
+            String imagePath=QiniuUtil.QiniuUpload(filePath);
+            // 路径为文件且不为空则进行删除
+            if (file.isFile() && file.exists()) {
+                file.delete();
+            }
+            kindEditorResult.setError(0);
+            kindEditorResult.setUrl(imagePath);
+            return kindEditorResult;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        kindEditorResult.setError(1);
+        kindEditorResult.setMessage("上传失败");
+        return kindEditorResult;
+    }
+
+    @RequestMapping(value = "/item/add",method = RequestMethod.POST)
+    @ApiOperation(value = "添加商品")
+    public Result<TbItem> addItem(ItemDto itemDto){
+
+        TbItem tbItem=itemService.addItem(itemDto);
+        return new ResultUtil<TbItem>().setData(tbItem);
+    }
+
+    @RequestMapping(value = "/item/update/{id}",method = RequestMethod.POST)
+    @ApiOperation(value = "编辑商品")
+    public Result<TbItem> updateItem(@PathVariable Long id, ItemDto itemDto){
+
+        TbItem tbItem=itemService.updateItem(id,itemDto);
+        return new ResultUtil<TbItem>().setData(tbItem);
     }
 }

@@ -13,7 +13,11 @@
 
 - 第三步：配置maven的环境变量MAVEN_HOME
 
+    ![](https://github.com/Exrick/Exrick/blob/master/pics/Maven/QQ%E6%88%AA%E5%9B%BE20170907135302.png)
+
 - 第四步：配置maven的环境变量PATH
+
+    ![](https://github.com/Exrick/Exrick/blob/master/pics/Maven/QQ%E6%88%AA%E5%9B%BE20170907135330.png)
 
 - 第五步：测试maven是否安装成功，在系统命令行中执行命令：mvn –v
 
@@ -25,6 +29,8 @@
     在maven安装目录的conf里面有一个settings.xml文件，这个文件就是maven的全局配置文件。
 
     该文件中配置来maven本地仓库的地址
+
+    ![](https://github.com/Exrick/Exrick/blob/master/pics/Maven/QQ%E6%88%AA%E5%9B%BE20170907135455.png)
 
     默认在系统的用户目录下的m2/repository中，该目录是本地仓库的目录。
 

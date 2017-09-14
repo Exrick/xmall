@@ -4333,7 +4333,7 @@
     
                 // 已经重复了
                 if ( mapping[ hash ] ) {
-                    this.trigger( 'error', 'F_DUPLICATE', file );
+                    this.trigger( 'error', '文件已选择，请勿重复选中', file );
                     return false;
                 }
             });

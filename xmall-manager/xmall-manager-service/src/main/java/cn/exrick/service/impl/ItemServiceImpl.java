@@ -1,10 +1,13 @@
 package cn.exrick.service.impl;
 
 import cn.exrick.common.exception.XmallException;
+import cn.exrick.common.utils.IDUtil;
+import cn.exrick.dto.DtoUtil;
+import cn.exrick.dto.ItemDto;
+import cn.exrick.mapper.TbItemCatMapper;
+import cn.exrick.mapper.TbItemDescMapper;
 import cn.exrick.mapper.TbItemMapper;
-import cn.exrick.pojo.DataTablesResult;
-import cn.exrick.pojo.TbItem;
-import cn.exrick.pojo.TbItemExample;
+import cn.exrick.pojo.*;
 import cn.exrick.service.ItemService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -26,11 +29,31 @@ public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private TbItemMapper tbItemMapper;
+    @Autowired
+    private TbItemDescMapper tbItemDescMapper;
+    @Autowired
+    private TbItemCatMapper tbItemCatMapper;
 
     @Override
-    public TbItem getItemById(long itemId) {
-        //根据主键查询
-        return tbItemMapper.selectByPrimaryKey(itemId);
+    public ItemDto getItemById(Long id) {
+        ItemDto itemDto=new ItemDto();
+
+        TbItem tbItem=tbItemMapper.selectByPrimaryKey(id);
+        itemDto=DtoUtil.TbItem2ItemDto(tbItem);
+
+        TbItemCat tbItemCat=tbItemCatMapper.selectByPrimaryKey(itemDto.getCid());
+        itemDto.setCname(tbItemCat.getName());
+
+        TbItemDesc tbItemDesc=tbItemDescMapper.selectByPrimaryKey(id);
+        itemDto.setDetail(tbItemDesc.getItemDesc());
+
+        return itemDto;
+    }
+
+    @Override
+    public TbItem getNormalItemById(Long id) {
+
+        return tbItemMapper.selectByPrimaryKey(id);
     }
 
     @Override
@@ -83,14 +106,14 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public TbItem alertItemState(Long id, Integer state) {
 
-        TbItem tbMember = getItemById(id);
+        TbItem tbMember = getNormalItemById(id);
         tbMember.setStatus(state.byteValue());
         tbMember.setUpdated(new Date());
 
         if (tbItemMapper.updateByPrimaryKey(tbMember) != 1){
             throw new XmallException("修改商品状态失败");
         }
-        return getItemById(id);
+        return getNormalItemById(id);
     }
 
     @Override
@@ -99,7 +122,65 @@ public class ItemServiceImpl implements ItemService {
         if(tbItemMapper.deleteByPrimaryKey(id)!=1){
             throw new XmallException("删除商品失败");
         }
+        if(tbItemDescMapper.deleteByPrimaryKey(id)!=1){
+            throw new XmallException("删除商品详情失败");
+        }
         return 0;
+    }
+
+    @Override
+    public TbItem addItem(ItemDto itemDto) {
+        long id= IDUtil.genItemId();
+        TbItem tbItem= DtoUtil.ItemDto2TbItem(itemDto);
+        tbItem.setId(id);
+        tbItem.setStatus((byte) 1);
+        tbItem.setCreated(new Date());
+        tbItem.setUpdated(new Date());
+        if(tbItemMapper.insert(tbItem)!=1){
+            throw new XmallException("添加商品失败");
+        }
+
+        TbItemDesc tbItemDesc=new TbItemDesc();
+        tbItemDesc.setItemId(id);
+        tbItemDesc.setItemDesc(itemDto.getDetail());
+        tbItemDesc.setCreated(new Date());
+        tbItemDesc.setUpdated(new Date());
+
+        if(tbItemDescMapper.insert(tbItemDesc)!=1){
+            throw new XmallException("添加商品详情失败");
+        }
+        return getNormalItemById(id);
+    }
+
+    @Override
+    public TbItem updateItem(Long id,ItemDto itemDto) {
+
+        TbItem oldTbItem=getNormalItemById(id);
+
+        TbItem tbItem= DtoUtil.ItemDto2TbItem(itemDto);
+
+        if(tbItem.getImage().isEmpty()){
+            tbItem.setImage(oldTbItem.getImage());
+        }
+        tbItem.setId(id);
+        tbItem.setStatus(oldTbItem.getStatus());
+        tbItem.setCreated(oldTbItem.getCreated());
+        tbItem.setUpdated(new Date());
+        if(tbItemMapper.updateByPrimaryKey(tbItem)!=1){
+            throw new XmallException("更新商品失败");
+        }
+
+        TbItemDesc tbItemDesc=new TbItemDesc();
+
+        tbItemDesc.setItemId(id);
+        tbItemDesc.setItemDesc(itemDto.getDetail());
+        tbItemDesc.setUpdated(new Date());
+        tbItemDesc.setCreated(oldTbItem.getCreated());
+
+        if(tbItemDescMapper.updateByPrimaryKey(tbItemDesc)!=1){
+            throw new XmallException("更新商品详情失败");
+        }
+        return getNormalItemById(id);
     }
 
 }

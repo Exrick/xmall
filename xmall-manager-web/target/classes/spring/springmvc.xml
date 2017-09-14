@@ -16,11 +16,22 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
+    <!-- 配置多媒体解析器 -->
+    <!-- 定义文件上传解析器 -->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 设定默认编码 -->
+        <property name="defaultEncoding" value="UTF-8"></property>
+        <!-- 设定文件上传的最大值5MB，5*1024*1024 -->
+        <property name="maxUploadSize" value="5242880"></property>
+    </bean>
+
     <!--配置资源映射-->
     <mvc:resources mapping="/lib/**" location="/lib/"/>
     <mvc:resources mapping="/static/**" location="/static/"/>
     <mvc:resources mapping="/temp/**" location="/temp/"/>
     <mvc:resources mapping="/icon/**" location="/icon/"/>
+    <mvc:resources mapping="/upload/**" location="/upload/"/>
     <!-- 引用dubbo服务 -->
     <dubbo:application name="xmall-manager-web"/>
     <dubbo:registry protocol="zookeeper" address="123.207.121.135:2181"/>

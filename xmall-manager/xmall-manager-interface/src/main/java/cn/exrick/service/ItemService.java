@@ -1,9 +1,9 @@
 package cn.exrick.service;
 
-import cn.exrick.common.pojo.Result;
-import cn.exrick.common.pojo.ZtreeNodeResult;
+import cn.exrick.dto.ItemDto;
 import cn.exrick.pojo.DataTablesResult;
 import cn.exrick.pojo.TbItem;
+
 
 /**
  * Created by Exrick on 2017/7/29.
@@ -15,7 +15,14 @@ public interface ItemService {
      * @param itemId
      * @return
      */
-    TbItem getItemById(long itemId);
+    ItemDto getItemById(Long itemId);
+
+    /**
+     * 
+     * @param id
+     * @return
+     */
+    TbItem getNormalItemById(Long id);
 
     /**
      * 分页搜索排序获取商品列表
@@ -65,4 +72,18 @@ public interface ItemService {
      * @return
      */
     int deleteItem(Long id);
+
+    /**
+     * 添加商品
+     * @param itemDto
+     * @return
+     */
+    TbItem addItem(ItemDto itemDto);
+
+    /**
+     * 更新商品
+     * @param itemDto
+     * @return
+     */
+    TbItem updateItem(Long id,ItemDto itemDto);
 }
