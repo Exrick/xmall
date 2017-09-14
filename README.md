@@ -11,7 +11,7 @@
 
 ![](https://github.com/Exrick/Exrick/blob/master/pics/XMall-Front/QQ%E6%88%AA%E5%9B%BE20170914200940.png)
 
-### 前台页面独立项目 请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库
+### 前台页面为基于Vue的独立项目 请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库查看
 
 ### 前端所用技术
 
