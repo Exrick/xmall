@@ -9,6 +9,8 @@
 
 ![](https://github.com/Exrick/Exrick/blob/master/pics/XMall/QQ%E6%88%AA%E5%9B%BE20170914124206.png)
 
+![](https://github.com/Exrick/Exrick/blob/master/pics/XMall-Front/QQ%E6%88%AA%E5%9B%BE20170914140120.png)
+
 ### 前端所用技术
 
 - 后台页面
@@ -20,6 +22,9 @@
     - [KindEditor](https://github.com/kindsoft/kindeditor)：富文本编辑器 简洁方便 没UEditor那么多坑
     - [WebUploader](http://fex.baidu.com/webuploader/getting-started.html)：百度文件上传插件
 - 前台页面
+    - 感谢[yucccc](https://github.com/yucccc)的开源[vue-mall](https://github.com/yucccc/vue-mall)项目提供前端页面及框架支持
+    - vue2 + vuex + vue-router + webpack + ES6 + axios + node
+    - 请跳转至[xmall-front](https://github.com/Exrick/xmall-front)仓库
 
 ### 后端所用技术
 
@@ -51,7 +56,7 @@
 - Maven安装和IDEA配置
 
     ![](https://github.com/Exrick/Exrick/blob/master/pics/XMall/QQ%E6%88%AA%E5%9B%BE20170901140327.png)
-- MySQL数据库新建xmall数据库，运行sql文件，注意在 `xmall-manager-service/resources/conf/db.properties` 中修改你的数据库连接配置
+- MySQL数据库新建`xmall`数据库，运行sql文件，注意在 `xmall-manager-service/resources/conf/db.properties` 中修改你的数据库连接配置
 - 按照以下顺序分别在每个模块文件夹根目录执行 `mvn install` 命令: xmall-parent、xmall-common、xmall-manager、xmall-manager-web
 - 项目使用Tomcat插件, 需运行 `xmall-manager` 和 `xmall-manager-web` 两个服务，执行命令 `mvn tomcat7:run` 或在IDEA中使用插件(`View - Tool Buttons - 右侧菜单Maven Projects - tomcat7 - tomcat7:run`)运行即可
 - 访问 http://localhost:8888
