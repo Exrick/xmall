@@ -6,7 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4f3498c-c7a8-433e-85bb-4c00387d3dab" name="Default" comment="" />
+    <list default="true" id="c4f3498c-c7a8-433e-85bb-4c00387d3dab" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+    </list>
     <ignored path="$PROJECT_DIR$/xmall-parent/target/" />
     <ignored path="$PROJECT_DIR$/xmall-common/target/" />
     <ignored path="$PROJECT_DIR$/xmall-manager/target/" />
@@ -1889,7 +1891,7 @@
       <workItem from="1505185733121" duration="33061000" />
       <workItem from="1505267899789" duration="28353000" />
       <workItem from="1505313453306" duration="6445000" />
-      <workItem from="1505355593053" duration="8998000" />
+      <workItem from="1505355593053" duration="10434000" />
     </task>
     <servers />
   </component>
@@ -1917,7 +1919,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="583955000" />
+    <option name="totallyTimeSpent" value="585391000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />

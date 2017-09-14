@@ -9,7 +9,9 @@
 
 ![](https://github.com/Exrick/Exrick/blob/master/pics/XMall/QQ%E6%88%AA%E5%9B%BE20170914124206.png)
 
-![](https://github.com/Exrick/Exrick/blob/master/pics/XMall-Front/QQ%E6%88%AA%E5%9B%BE20170914182008.png)
+![](https://github.com/Exrick/Exrick/blob/master/pics/XMall-Front/QQ%E6%88%AA%E5%9B%BE20170914200940.png)
+
+### 前台页面独立项目 请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库
 
 ### 前端所用技术
 
@@ -22,9 +24,10 @@
     - [KindEditor](https://github.com/kindsoft/kindeditor)：富文本编辑器 简洁方便 没UEditor那么多坑
     - [WebUploader](http://fex.baidu.com/webuploader/getting-started.html)：百度文件上传插件
 - 前台页面
-    - 感谢[yucccc](https://github.com/yucccc)的开源[vue-mall](https://github.com/yucccc/vue-mall)项目提供前端页面及框架支持
-    - vue2 + vuex + vue-router + webpack + ES6 + axios + node
-    - 请跳转至[xmall-front](https://github.com/Exrick/xmall-front)仓库
+    - 详情请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库
+    - 感谢 [yucccc](https://github.com/yucccc) 的开源 [vue-mall](https://github.com/yucccc/vue-mall) 项目提供前端页面及框架支持
+    - Vue2 + Vuex + Vue Router + webpack + ES6 + axios + Node.js
+    
 
 ### 后端所用技术
 
