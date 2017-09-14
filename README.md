@@ -9,7 +9,7 @@
 
 ![](https://github.com/Exrick/Exrick/blob/master/pics/XMall/QQ%E6%88%AA%E5%9B%BE20170914124206.png)
 
-![](https://github.com/Exrick/Exrick/blob/master/pics/XMall-Front/QQ%E6%88%AA%E5%9B%BE20170914140120.png)
+![](https://github.com/Exrick/Exrick/blob/master/pics/XMall-Front/QQ%E6%88%AA%E5%9B%BE20170914182008.png)
 
 ### 前端所用技术
 
