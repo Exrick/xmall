@@ -9,7 +9,7 @@
 
 ![](https://github.com/Exrick/Exrick/blob/master/pics/XMall/QQ%E6%88%AA%E5%9B%BE20170914124206.png)
 
-![](https://github.com/Exrick/Exrick/blob/master/pics/XMall-Front/QQ%E6%88%AA%E5%9B%BE20170914200940.png)
+![](https://github.com/Exrick/Exrick/blob/master/pics/XMall-Front/QQ%E6%88%AA%E5%9B%BE20170915134720.png)
 
 ### 前台页面为基于Vue的独立项目 请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库查看
 
@@ -26,7 +26,7 @@
 - 前台页面
     - 详情请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库
     - 感谢 [yucccc](https://github.com/yucccc) 的开源 [vue-mall](https://github.com/yucccc/vue-mall) 项目提供前端页面及框架支持
-    - Vue2 + Vuex + Vue Router + webpack + ES6 + axios + Node.js
+    - Vue2 + Vuex + Vue Router + Element UI + ES6 + webpack + axios + Node.js
     
 
 ### 后端所用技术
@@ -45,7 +45,7 @@
 - [Maven](https://github.com/Exrick/xmall/blob/master/study/Maven.md)
 - [JRebel](https://github.com/Exrick/xmall/blob/master/study/JRebel.md)：开发热部署
 - 第三方SDK
-    - [七牛云图片存储服务器](https://developer.qiniu.com/kodo/sdk/1239/java)
+    - [七牛云文件存储服务器](https://developer.qiniu.com/kodo/sdk/1239/java)
 
 ### dependency文件夹提供部分安装文件与sql文件
 - sql文件
