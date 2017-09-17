@@ -7,9 +7,9 @@
 - 搜索系统：提供商品的搜索功能。
 - 单点登录系统：为多个系统之间提供用户登录凭证以及查询登录用户的信息。
 
-![](https://github.com/Exrick/Exrick/blob/master/pics/XMall/QQ%E6%88%AA%E5%9B%BE20170914124206.png)
+![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170914124206.png)
 
-![](https://github.com/Exrick/Exrick/blob/master/pics/XMall-Front/QQ%E6%88%AA%E5%9B%BE20170915134720.png)
+![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170915134720.png)
 
 ### 前台页面为基于Vue的独立项目 请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库查看
 
@@ -58,7 +58,7 @@
 - 使用IDEA([破解/免费注册](http://idea.lanyus.com/)) `File-Open` 直接打开xmall项目，点击右下角 `Import Changes` 等待安装完依赖即可
 - Maven安装和IDEA配置
 
-    ![](https://github.com/Exrick/Exrick/blob/master/pics/XMall/QQ%E6%88%AA%E5%9B%BE20170901140327.png)
+    ![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170901140327.png)
 - MySQL数据库新建`xmall`数据库，运行sql文件，注意在 `xmall-manager-service/resources/conf/db.properties` 中修改你的数据库连接配置
 - 按照以下顺序分别在每个模块文件夹根目录执行 `mvn install` 命令: xmall-parent、xmall-common、xmall-manager、xmall-manager-web
 - 项目使用Tomcat插件, 需运行 `xmall-manager` 和 `xmall-manager-web` 两个服务，执行命令 `mvn tomcat7:run` 或在IDEA中使用插件(`View - Tool Buttons - 右侧菜单Maven Projects - tomcat7 - tomcat7:run`)运行即可
