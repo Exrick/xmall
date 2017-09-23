@@ -34,7 +34,7 @@
 
     默认在系统的用户目录下的m2/repository中，该目录是本地仓库的目录。
 
-4 Maven命令的使用 
+4. Maven命令的使用 
 
     Maven的命令要在pom.xml所在目录中去执行，可在pom.xml所在文件夹中按住shift右键，点击“在此处启动命令窗口” 
 
@@ -89,3 +89,7 @@
     打包————将编译的非测试类打包 
 
     部署————将打好的包发布到资源仓库中
+
+5. IDEA中Maven配置
+
+![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170901140327.png)

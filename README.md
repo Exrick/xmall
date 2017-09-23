@@ -60,9 +60,7 @@
 ### 本地开发运行部署
 - 下载git或zip直接解压，git安装后执行克隆命令 `git clone https://github.com/Exrick/xmall.git`
 - 使用IDEA([破解/免费注册](http://idea.lanyus.com/)) `File-Open` 直接打开xmall项目，点击右下角 `Import Changes` 等待安装完依赖即可
-- Maven安装和IDEA配置
-
-    ![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170901140327.png)
+- [Maven安装和在IDEA中配置](https://github.com/Exrick/xmall/blob/master/study/Maven.md)
 - MySQL数据库新建`xmall`数据库，运行sql文件，注意在 `xmall-manager-service/resources/conf/db.properties` 中修改你的数据库连接配置
 - 按照依赖顺序分别在每个模块文件夹根目录执行 `mvn install` 命令: xmall-parent、xmall-common、xmall-manager、xmall-manager-web等服务
 - 项目可使用Tomcat插件, 需运行 `xmall-manager` `xmall-content` `xmall-manager-web` 服务，执行命令 `mvn tomcat7:run` 或在IDEA中使用插件(`View - Tool Buttons - 右侧菜单Maven Projects - tomcat7 - tomcat7:run`)运行即可
