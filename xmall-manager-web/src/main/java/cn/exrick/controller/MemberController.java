@@ -3,7 +3,7 @@ package cn.exrick.controller;
 import cn.exrick.common.pojo.Result;
 import cn.exrick.common.utils.ResultUtil;
 import cn.exrick.dto.MemberDto;
-import cn.exrick.pojo.DataTablesResult;
+import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.pojo.TbMember;
 import cn.exrick.service.MemberService;
 import io.swagger.annotations.Api;

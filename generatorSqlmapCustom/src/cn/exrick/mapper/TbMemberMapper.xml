@@ -350,34 +350,4 @@
       balance = #{balance,jdbcType=DECIMAL}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <select id="selectByMemberInformation" parameterType="string" resultMap="BaseResultMap">
-    SELECT * FROM tb_member
-    WHERE
-    (state != 2)
-    AND
-    ((username LIKE #{search})
-    OR
-    (phone LIKE #{search})
-    OR
-    (email LIKE #{search})
-    OR
-    (sex LIKE #{search})
-    OR
-    (address LIKE #{search}))
-  </select>
-  <select id="selectByRemoveMemberInformation" parameterType="string" resultMap="BaseResultMap">
-    SELECT * FROM tb_member
-    WHERE
-    (state = 2)
-    AND
-    ((username LIKE #{search})
-    OR
-    (phone LIKE #{search})
-    OR
-    (email LIKE #{search})
-    OR
-    (sex LIKE #{search})
-    OR
-    (address LIKE #{search}))
-  </select>
 </mapper>

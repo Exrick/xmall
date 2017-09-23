@@ -7,7 +7,7 @@
     <result column="sell_point" jdbcType="VARCHAR" property="sellPoint" />
     <result column="price" jdbcType="BIGINT" property="price" />
     <result column="num" jdbcType="INTEGER" property="num" />
-    <result column="barcode" jdbcType="VARCHAR" property="barcode" />
+    <result column="limit_num" jdbcType="INTEGER" property="limitNum" />
     <result column="image" jdbcType="VARCHAR" property="image" />
     <result column="cid" jdbcType="BIGINT" property="cid" />
     <result column="status" jdbcType="TINYINT" property="status" />
@@ -73,7 +73,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, title, sell_point, price, num, barcode, image, cid, status, created, updated
+    id, title, sell_point, price, num, limit_num, image, cid, status, created, updated
   </sql>
   <select id="selectByExample" parameterType="cn.exrick.pojo.TbItemExample" resultMap="BaseResultMap">
     select
@@ -107,11 +107,11 @@
   </delete>
   <insert id="insert" parameterType="cn.exrick.pojo.TbItem">
     insert into tb_item (id, title, sell_point, 
-      price, num, barcode, 
+      price, num, limit_num, 
       image, cid, status, 
       created, updated)
     values (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{sellPoint,jdbcType=VARCHAR}, 
-      #{price,jdbcType=BIGINT}, #{num,jdbcType=INTEGER}, #{barcode,jdbcType=VARCHAR}, 
+      #{price,jdbcType=BIGINT}, #{num,jdbcType=INTEGER}, #{limitNum,jdbcType=INTEGER}, 
       #{image,jdbcType=VARCHAR}, #{cid,jdbcType=BIGINT}, #{status,jdbcType=TINYINT}, 
       #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP})
   </insert>
@@ -133,8 +133,8 @@
       <if test="num != null">
         num,
       </if>
-      <if test="barcode != null">
-        barcode,
+      <if test="limitNum != null">
+        limit_num,
       </if>
       <if test="image != null">
         image,
@@ -168,8 +168,8 @@
       <if test="num != null">
         #{num,jdbcType=INTEGER},
       </if>
-      <if test="barcode != null">
-        #{barcode,jdbcType=VARCHAR},
+      <if test="limitNum != null">
+        #{limitNum,jdbcType=INTEGER},
       </if>
       <if test="image != null">
         #{image,jdbcType=VARCHAR},
@@ -212,8 +212,8 @@
       <if test="record.num != null">
         num = #{record.num,jdbcType=INTEGER},
       </if>
-      <if test="record.barcode != null">
-        barcode = #{record.barcode,jdbcType=VARCHAR},
+      <if test="record.limitNum != null">
+        limit_num = #{record.limitNum,jdbcType=INTEGER},
       </if>
       <if test="record.image != null">
         image = #{record.image,jdbcType=VARCHAR},
@@ -242,7 +242,7 @@
       sell_point = #{record.sellPoint,jdbcType=VARCHAR},
       price = #{record.price,jdbcType=BIGINT},
       num = #{record.num,jdbcType=INTEGER},
-      barcode = #{record.barcode,jdbcType=VARCHAR},
+      limit_num = #{record.limitNum,jdbcType=INTEGER},
       image = #{record.image,jdbcType=VARCHAR},
       cid = #{record.cid,jdbcType=BIGINT},
       status = #{record.status,jdbcType=TINYINT},
@@ -267,8 +267,8 @@
       <if test="num != null">
         num = #{num,jdbcType=INTEGER},
       </if>
-      <if test="barcode != null">
-        barcode = #{barcode,jdbcType=VARCHAR},
+      <if test="limitNum != null">
+        limit_num = #{limitNum,jdbcType=INTEGER},
       </if>
       <if test="image != null">
         image = #{image,jdbcType=VARCHAR},
@@ -294,7 +294,7 @@
       sell_point = #{sellPoint,jdbcType=VARCHAR},
       price = #{price,jdbcType=BIGINT},
       num = #{num,jdbcType=INTEGER},
-      barcode = #{barcode,jdbcType=VARCHAR},
+      limit_num = #{limitNum,jdbcType=INTEGER},
       image = #{image,jdbcType=VARCHAR},
       cid = #{cid,jdbcType=BIGINT},
       status = #{status,jdbcType=TINYINT},

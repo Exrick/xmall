@@ -1,12 +1,13 @@
 package cn.exrick.dto;
 
+import cn.exrick.common.pojo.ZTreeNode;
+import cn.exrick.pojo.TbContent;
+import cn.exrick.pojo.TbContentCategory;
 import cn.exrick.pojo.TbItem;
 import cn.exrick.pojo.TbMember;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.Serializable;
-import java.util.Date;
 
 /**
  * Created by Exrick on 2017/8/25.
@@ -55,6 +56,7 @@ public class DtoUtil{
         tbItem.setImage(itemDto.getImage());
         tbItem.setSellPoint(itemDto.getSellPoint());
         tbItem.setNum(itemDto.getNum());
+        tbItem.setLimitNum(itemDto.getLimitNum());
 
         return tbItem;
     }
@@ -69,7 +71,53 @@ public class DtoUtil{
         itemDto.setImage(tbItem.getImage());
         itemDto.setSellPoint(tbItem.getSellPoint());
         itemDto.setNum(tbItem.getNum());
+        itemDto.setLimitNum(tbItem.getLimitNum());
 
         return itemDto;
+    }
+
+    public static ContentDto TbContent2ContentDto(TbContent tbContent){
+
+        ContentDto contentDto =new ContentDto();
+
+        contentDto.setId(tbContent.getId());
+        contentDto.setProductId(tbContent.getProductId());
+        contentDto.setImage(tbContent.getImage());
+        contentDto.setCreated(tbContent.getCreated());
+        contentDto.setUpdated(tbContent.getUpdated());
+
+        return contentDto;
+    }
+
+    public static ZTreeNode TbContentCategory2ZTreeNode(TbContentCategory tbContentCategory){
+
+        ZTreeNode zTreeNode =new ZTreeNode();
+
+        zTreeNode.setId(Math.toIntExact(tbContentCategory.getId()));
+        zTreeNode.setIsParent(tbContentCategory.getIsParent());
+        zTreeNode.setpId(Math.toIntExact(tbContentCategory.getParentId()));
+        zTreeNode.setName(tbContentCategory.getName());
+        zTreeNode.setIcon(tbContentCategory.getIcon());
+        zTreeNode.setSortOrder(tbContentCategory.getSortOrder());
+        zTreeNode.setStatus(tbContentCategory.getStatus());
+        zTreeNode.setRemark(tbContentCategory.getRemark());
+        zTreeNode.setNum(tbContentCategory.getNum());
+
+        return zTreeNode;
+    }
+
+    public static TbContentCategory ContentCatDto2TbContentCategory(ContentCatDto contentCatDto){
+
+        TbContentCategory tbContentCategory =new TbContentCategory();
+
+        tbContentCategory.setId(contentCatDto.getId());
+        tbContentCategory.setName(contentCatDto.getName());
+        tbContentCategory.setIsParent(contentCatDto.getIsParent());
+        tbContentCategory.setSortOrder(contentCatDto.getSortOrder());
+        tbContentCategory.setNum(contentCatDto.getNum());
+        tbContentCategory.setRemark(contentCatDto.getRemark());
+        tbContentCategory.setStatus(contentCatDto.getStatus());
+
+        return tbContentCategory;
     }
 }

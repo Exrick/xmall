@@ -66,7 +66,13 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>库存数量：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" name="num" id="" placeholder="0~99999" value="" class="input-text" style="width:50%">
+                <input type="text" name="num" id="num" placeholder="0~99999" value="" class="input-text" style="width:50%">
+                件</div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>购买限制数量：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" name="limitNum" id="limitNum" placeholder="0~9999" value="" class="input-text" style="width:50%">
                 件</div>
         </div>
         <input type="text" name="image" id="image" hidden/>
@@ -166,11 +172,20 @@
                 required:true,
                 maxlength:5,
             },
+            limitNum:{
+                digits:true,
+                required:true,
+                maxlength:4,
+            },
         },
         onkeyup:false,
         focusCleanup:false,
         success:"valid",
         submitHandler:function(form){
+            if(images==null){
+                layer.alert('请上传商品展示缩略图! ', {title: '错误信息',icon: 0});
+                return;
+            }
             editor.sync();
             $(form).ajaxSubmit({
                 url: "/item/add/",

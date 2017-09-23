@@ -1,4 +1,4 @@
-package cn.exrick.pojo;
+package cn.exrick.common.pojo;
 
 import java.io.Serializable;
 import java.util.List;

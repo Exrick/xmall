@@ -13,7 +13,7 @@ public class TbItem {
 
     private Integer num;
 
-    private String barcode;
+    private Integer limitNum;
 
     private String image;
 
@@ -65,12 +65,12 @@ public class TbItem {
         this.num = num;
     }
 
-    public String getBarcode() {
-        return barcode;
+    public Integer getLimitNum() {
+        return limitNum;
     }
 
-    public void setBarcode(String barcode) {
-        this.barcode = barcode == null ? null : barcode.trim();
+    public void setLimitNum(Integer limitNum) {
+        this.limitNum = limitNum;
     }
 
     public String getImage() {

@@ -1,6 +1,7 @@
 package cn.exrick.service.impl;
 
 import cn.exrick.common.exception.XmallException;
+import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.common.utils.IDUtil;
 import cn.exrick.dto.DtoUtil;
 import cn.exrick.dto.ItemDto;
@@ -57,8 +58,8 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public DataTablesResult getItemList(int draw,int start,int length,int cid,String search,
-                                        String orderCol,String orderDir) {
+    public DataTablesResult getItemList(int draw, int start, int length, int cid, String search,
+                                        String orderCol, String orderDir) {
 
         DataTablesResult result=new DataTablesResult();
 

@@ -21,8 +21,8 @@ public class ItemCatController {
 
     @RequestMapping(value = "item/cat/list",method = RequestMethod.GET)
     @ApiOperation(value = "通过父ID获取分类列表")
-    public List<ZTreeNode> getItemCatList
-            (@RequestParam(name="id",defaultValue = "0") int parentId){
+    public List<ZTreeNode> getItemCatList(@RequestParam(name="id",defaultValue = "0") int parentId){
+
         List<ZTreeNode> list=itemCatService.getItemCatList(parentId);
         return list;
     }

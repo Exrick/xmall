@@ -38,4 +38,6 @@
     <dubbo:reference interface="cn.exrick.service.ItemService" id="itemService" />
     <dubbo:reference interface="cn.exrick.service.MemberService" id="memberService" />
     <dubbo:reference interface="cn.exrick.service.ItemCatService" id="itemCatService" />
+    <dubbo:reference interface="cn.exrick.content.service.ContentService" id="contentService" />
+    <dubbo:reference interface="cn.exrick.content.service.ContentCatService" id="contentCatService" />
 </beans>

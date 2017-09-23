@@ -7,7 +7,9 @@
 - 搜索系统：提供商品的搜索功能。
 - 单点登录系统：为多个系统之间提供用户登录凭证以及查询登录用户的信息。
 
-![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170914124206.png)
+![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170923225945.png)
+
+![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170923225916.png)
 
 ![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170915134720.png)
 

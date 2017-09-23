@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/generatorSqlmapCustom/generatorSqlmapCustom.iml" filepath="$PROJECT_DIR$/generatorSqlmapCustom/generatorSqlmapCustom.iml" />
       <module fileurl="file://$PROJECT_DIR$/xmall-common/xmall-common.iml" filepath="$PROJECT_DIR$/xmall-common/xmall-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xmall-content/xmall-content.iml" filepath="$PROJECT_DIR$/xmall-content/xmall-content.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xmall-content/xmall-content-interface/xmall-content-interface.iml" filepath="$PROJECT_DIR$/xmall-content/xmall-content-interface/xmall-content-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xmall-content/xmall-content-service/xmall-content-service.iml" filepath="$PROJECT_DIR$/xmall-content/xmall-content-service/xmall-content-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/xmall-manager/xmall-manager.iml" filepath="$PROJECT_DIR$/xmall-manager/xmall-manager.iml" />
       <module fileurl="file://$PROJECT_DIR$/xmall-manager/xmall-manager-dao/xmall-manager-dao.iml" filepath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/xmall-manager-dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/xmall-manager/xmall-manager-interface/xmall-manager-interface.iml" filepath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/xmall-manager-interface.iml" />

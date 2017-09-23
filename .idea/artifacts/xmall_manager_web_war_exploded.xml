@@ -29,6 +29,9 @@
           <element id="library" level="project" name="Maven: com.squareup.okio:okio:1.8.0" />
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.6.2" />
           <element id="library" level="project" name="Maven: com.qiniu:happy-dns-java:0.1.4" />
+          <element id="archive" name="xmall-content-interface-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="xmall-content-interface" />
+          </element>
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.10.RELEASE" />

@@ -15,6 +15,8 @@ public class ItemDto implements Serializable{
 
     private Integer num;
 
+    private Integer limitNum;
+
     private String detail;
 
     private String image;
@@ -28,6 +30,14 @@ public class ItemDto implements Serializable{
     private Date created;
 
     private Date updated;
+
+    public Integer getLimitNum() {
+        return limitNum;
+    }
+
+    public void setLimitNum(Integer limitNum) {
+        this.limitNum = limitNum;
+    }
 
     public String getCname() {
         return cname;

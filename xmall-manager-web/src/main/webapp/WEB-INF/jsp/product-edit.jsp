@@ -64,6 +64,12 @@
                 <input type="text" name="num" id="num" placeholder="0~99999" value="" class="input-text" style="width:50%">
                 件</div>
         </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>购买限制数量：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" name="limitNum" id="limitNum" placeholder="0~9999" value="" class="input-text" style="width:50%">
+                件</div>
+        </div>
         <input type="text" name="image" id="image" hidden/>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">展示缩略图片上传：</label>
@@ -163,6 +169,11 @@
                 required:true,
                 maxlength:5,
             },
+            limitNum:{
+                digits:true,
+                required:true,
+                maxlength:4,
+            },
         },
         onkeyup:false,
         focusCleanup:false,
@@ -221,6 +232,7 @@
                 $("#num").val(data.result.num);
                 $("#cname").val(data.result.cname);
                 $("#cid").val(data.result.cid);
+                $("#limitNum").val(data.result.limitNum);
                 htmlData=data.result.detail;
                 KindEditor.html('#detail', htmlData);
             },
@@ -429,16 +441,6 @@
             uploader.on('dialogOpen', function () {
                 console.log('here');
             });
-
-            // uploader.on('filesQueued', function() {
-            //     uploader.sort(function( a, b ) {
-            //         if ( a.name < b.name )
-            //           return -1;
-            //         if ( a.name > b.name )
-            //           return 1;
-            //         return 0;
-            //     });
-            // });
 
             // 添加“添加文件”的按钮，
             uploader.addButton({

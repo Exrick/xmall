@@ -1,7 +1,7 @@
 package cn.exrick.service;
 
 import cn.exrick.dto.ItemDto;
-import cn.exrick.pojo.DataTablesResult;
+import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.pojo.TbItem;
 
 

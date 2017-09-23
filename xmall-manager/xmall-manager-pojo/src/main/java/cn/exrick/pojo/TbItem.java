@@ -14,7 +14,7 @@ public class TbItem implements Serializable{
 
     private Integer num;
 
-    private String barcode;
+    private Integer limitNum;
 
     private String image;
 
@@ -25,23 +25,6 @@ public class TbItem implements Serializable{
     private Date created;
 
     private Date updated;
-
-    @Override
-    public String toString() {
-        return "TbItem{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", sellPoint='" + sellPoint + '\'' +
-                ", price=" + price +
-                ", num=" + num +
-                ", barcode='" + barcode + '\'' +
-                ", image='" + image + '\'' +
-                ", cid=" + cid +
-                ", status=" + status +
-                ", created=" + created +
-                ", updated=" + updated +
-                '}';
-    }
 
     public Long getId() {
         return id;
@@ -83,12 +66,12 @@ public class TbItem implements Serializable{
         this.num = num;
     }
 
-    public String getBarcode() {
-        return barcode;
+    public Integer getLimitNum() {
+        return limitNum;
     }
 
-    public void setBarcode(String barcode) {
-        this.barcode = barcode == null ? null : barcode.trim();
+    public void setLimitNum(Integer limitNum) {
+        this.limitNum = limitNum;
     }
 
     public String getImage() {

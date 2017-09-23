@@ -2,6 +2,6 @@
 
 target/
 
-*.iml
+#*.iml
 
 tomcat/

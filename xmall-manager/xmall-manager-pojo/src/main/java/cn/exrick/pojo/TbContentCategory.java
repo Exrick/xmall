@@ -3,7 +3,7 @@ package cn.exrick.pojo;
 import java.io.Serializable;
 import java.util.Date;
 
-public class TbContentCategory implements Serializable {
+public class TbContentCategory implements Serializable{
     private Long id;
 
     private Long parentId;
@@ -19,6 +19,29 @@ public class TbContentCategory implements Serializable {
     private Date created;
 
     private Date updated;
+
+    private Integer num;
+
+    private String icon;
+
+    private String remark;
+
+    @Override
+    public String toString() {
+        return "TbContentCategory{" +
+                "id=" + id +
+                ", parentId=" + parentId +
+                ", name='" + name + '\'' +
+                ", status=" + status +
+                ", sortOrder=" + sortOrder +
+                ", isParent=" + isParent +
+                ", created=" + created +
+                ", updated=" + updated +
+                ", num=" + num +
+                ", icon='" + icon + '\'' +
+                ", remark='" + remark + '\'' +
+                '}';
+    }
 
     public Long getId() {
         return id;
@@ -82,5 +105,29 @@ public class TbContentCategory implements Serializable {
 
     public void setUpdated(Date updated) {
         this.updated = updated;
+    }
+
+    public Integer getNum() {
+        return num;
+    }
+
+    public void setNum(Integer num) {
+        this.num = num;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon == null ? null : icon.trim();
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
     }
 }

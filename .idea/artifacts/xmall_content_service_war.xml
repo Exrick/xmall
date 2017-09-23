@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="xmall-content-service:war">
+    <output-path>$PROJECT_DIR$/xmall-content/xmall-content-service/target</output-path>
+    <root id="archive" name="xmall-content-service-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="xmall-content-service:war exploded" />
+    </root>
+  </artifact>
+</component>

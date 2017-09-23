@@ -5,7 +5,7 @@ import cn.exrick.common.pojo.Result;
 import cn.exrick.common.utils.QiniuUtil;
 import cn.exrick.common.utils.ResultUtil;
 import cn.exrick.dto.ItemDto;
-import cn.exrick.pojo.DataTablesResult;
+import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.pojo.TbItem;
 import cn.exrick.service.ItemService;
 import io.swagger.annotations.Api;
@@ -110,7 +110,7 @@ public class ItemController{
     }
 
     @RequestMapping(value = "/item/imageUpload",method = RequestMethod.POST)
-    @ApiOperation(value = "图片上传")
+    @ApiOperation(value = "WebUploader图片上传")
     public Result<Object> uploadFile(@RequestParam("file") MultipartFile files,
                                      HttpServletRequest request){
 
@@ -136,7 +136,7 @@ public class ItemController{
     }
 
     @RequestMapping(value = "/kindeditor/imageUpload",method = RequestMethod.POST)
-    @ApiOperation(value = "kindeditor图片上传")
+    @ApiOperation(value = "KindEditor图片上传")
     public KindEditorResult kindeditor(@RequestParam("imgFile") MultipartFile files, HttpServletRequest request){
 
         KindEditorResult kindEditorResult=new KindEditorResult();

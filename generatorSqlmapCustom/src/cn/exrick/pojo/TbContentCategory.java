@@ -19,6 +19,12 @@ public class TbContentCategory {
 
     private Date updated;
 
+    private Integer num;
+
+    private String icon;
+
+    private String remark;
+
     public Long getId() {
         return id;
     }
@@ -81,5 +87,29 @@ public class TbContentCategory {
 
     public void setUpdated(Date updated) {
         this.updated = updated;
+    }
+
+    public Integer getNum() {
+        return num;
+    }
+
+    public void setNum(Integer num) {
+        this.num = num;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon == null ? null : icon.trim();
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
     }
 }

@@ -21,13 +21,14 @@
     <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
-    <title>产品分类</title>
+    <title>商品分类</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 产品管理 <span class="c-gray en">&gt;</span> 产品分类 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品管理 <span class="c-gray en">&gt;</span> 商品分类 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div style="margin-left: 1vw;margin-right: 1vw" class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 删除所选分类</a> <a class="btn btn-primary radius" onclick="product_add('添加分类','product-add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加分类</a></span> </div>
 <table class="table">
     <tr>
-        <td width="200" class="va-t"><ul id="treeDemo" class="ztree"></ul></td>
+        <td style="padding-left: 4vw" width="200" class="va-t"><ul id="treeDemo" class="ztree"></ul></td>
         <td class="va-t"><iframe ID="testIframe" Name="testIframe" FRAMEBORDER=0 SCROLLING=AUTO width=100%  height=390px SRC="product-category-add"></iframe></td>
     </tr>
 </table>
@@ -74,19 +75,6 @@
             }
         }
     };
-
-    /*var zNodes =[
-        { id:1, pId:0, name:"一级分类", open:true},
-        { id:11, pId:1, name:"二级分类"},
-        { id:111, pId:11, name:"三级分类"},
-        { id:112, pId:11, name:"三级分类"},
-        { id:113, pId:11, name:"三级分类"},
-        { id:114, pId:11, name:"三级分类"},
-        { id:115, pId:11, name:"三级分类"},
-        { id:12, pId:1, name:"二级分类 1-2"},
-        { id:121, pId:12, name:"三级分类 1-2-1"},
-        { id:122, pId:12, name:"三级分类 1-2-2"}
-    ];*/
 
     var code;
 

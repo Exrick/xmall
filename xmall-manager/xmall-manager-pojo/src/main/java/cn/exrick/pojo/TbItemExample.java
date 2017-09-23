@@ -425,73 +425,63 @@ public class TbItemExample {
             return (Criteria) this;
         }
 
-        public Criteria andBarcodeIsNull() {
-            addCriterion("barcode is null");
+        public Criteria andLimitNumIsNull() {
+            addCriterion("limit_num is null");
             return (Criteria) this;
         }
 
-        public Criteria andBarcodeIsNotNull() {
-            addCriterion("barcode is not null");
+        public Criteria andLimitNumIsNotNull() {
+            addCriterion("limit_num is not null");
             return (Criteria) this;
         }
 
-        public Criteria andBarcodeEqualTo(String value) {
-            addCriterion("barcode =", value, "barcode");
+        public Criteria andLimitNumEqualTo(Integer value) {
+            addCriterion("limit_num =", value, "limitNum");
             return (Criteria) this;
         }
 
-        public Criteria andBarcodeNotEqualTo(String value) {
-            addCriterion("barcode <>", value, "barcode");
+        public Criteria andLimitNumNotEqualTo(Integer value) {
+            addCriterion("limit_num <>", value, "limitNum");
             return (Criteria) this;
         }
 
-        public Criteria andBarcodeGreaterThan(String value) {
-            addCriterion("barcode >", value, "barcode");
+        public Criteria andLimitNumGreaterThan(Integer value) {
+            addCriterion("limit_num >", value, "limitNum");
             return (Criteria) this;
         }
 
-        public Criteria andBarcodeGreaterThanOrEqualTo(String value) {
-            addCriterion("barcode >=", value, "barcode");
+        public Criteria andLimitNumGreaterThanOrEqualTo(Integer value) {
+            addCriterion("limit_num >=", value, "limitNum");
             return (Criteria) this;
         }
 
-        public Criteria andBarcodeLessThan(String value) {
-            addCriterion("barcode <", value, "barcode");
+        public Criteria andLimitNumLessThan(Integer value) {
+            addCriterion("limit_num <", value, "limitNum");
             return (Criteria) this;
         }
 
-        public Criteria andBarcodeLessThanOrEqualTo(String value) {
-            addCriterion("barcode <=", value, "barcode");
+        public Criteria andLimitNumLessThanOrEqualTo(Integer value) {
+            addCriterion("limit_num <=", value, "limitNum");
             return (Criteria) this;
         }
 
-        public Criteria andBarcodeLike(String value) {
-            addCriterion("barcode like", value, "barcode");
+        public Criteria andLimitNumIn(List<Integer> values) {
+            addCriterion("limit_num in", values, "limitNum");
             return (Criteria) this;
         }
 
-        public Criteria andBarcodeNotLike(String value) {
-            addCriterion("barcode not like", value, "barcode");
+        public Criteria andLimitNumNotIn(List<Integer> values) {
+            addCriterion("limit_num not in", values, "limitNum");
             return (Criteria) this;
         }
 
-        public Criteria andBarcodeIn(List<String> values) {
-            addCriterion("barcode in", values, "barcode");
+        public Criteria andLimitNumBetween(Integer value1, Integer value2) {
+            addCriterion("limit_num between", value1, value2, "limitNum");
             return (Criteria) this;
         }
 
-        public Criteria andBarcodeNotIn(List<String> values) {
-            addCriterion("barcode not in", values, "barcode");
-            return (Criteria) this;
-        }
-
-        public Criteria andBarcodeBetween(String value1, String value2) {
-            addCriterion("barcode between", value1, value2, "barcode");
-            return (Criteria) this;
-        }
-
-        public Criteria andBarcodeNotBetween(String value1, String value2) {
-            addCriterion("barcode not between", value1, value2, "barcode");
+        public Criteria andLimitNumNotBetween(Integer value1, Integer value2) {
+            addCriterion("limit_num not between", value1, value2, "limitNum");
             return (Criteria) this;
         }
 

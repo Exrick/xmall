@@ -4,17 +4,10 @@
   <resultMap id="BaseResultMap" type="cn.exrick.pojo.TbContent">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="category_id" jdbcType="BIGINT" property="categoryId" />
-    <result column="title" jdbcType="VARCHAR" property="title" />
-    <result column="sub_title" jdbcType="VARCHAR" property="subTitle" />
-    <result column="title_desc" jdbcType="VARCHAR" property="titleDesc" />
-    <result column="url" jdbcType="VARCHAR" property="url" />
-    <result column="pic" jdbcType="VARCHAR" property="pic" />
-    <result column="pic2" jdbcType="VARCHAR" property="pic2" />
+    <result column="product_id" jdbcType="VARCHAR" property="productId" />
     <result column="created" jdbcType="TIMESTAMP" property="created" />
     <result column="updated" jdbcType="TIMESTAMP" property="updated" />
-  </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.exrick.pojo.TbContent">
-    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="image" jdbcType="VARCHAR" property="image" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -75,27 +68,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, category_id, title, sub_title, title_desc, url, pic, pic2, created, updated
+    id, category_id, product_id, created, updated, image
   </sql>
-  <sql id="Blob_Column_List">
-    content
-  </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="cn.exrick.pojo.TbContentExample" resultMap="ResultMapWithBLOBs">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
-    from tb_content
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-  </select>
   <select id="selectByExample" parameterType="cn.exrick.pojo.TbContentExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -110,11 +84,9 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
     from tb_content
     where id = #{id,jdbcType=BIGINT}
   </select>
@@ -129,14 +101,12 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.exrick.pojo.TbContent">
-    insert into tb_content (id, category_id, title, 
-      sub_title, title_desc, url, 
-      pic, pic2, created, 
-      updated, content)
-    values (#{id,jdbcType=BIGINT}, #{categoryId,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, 
-      #{subTitle,jdbcType=VARCHAR}, #{titleDesc,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
-      #{pic,jdbcType=VARCHAR}, #{pic2,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, 
-      #{updated,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARCHAR})
+    insert into tb_content (id, category_id, product_id, 
+      created, updated, image
+      )
+    values (#{id,jdbcType=BIGINT}, #{categoryId,jdbcType=BIGINT}, #{productId,jdbcType=VARCHAR}, 
+      #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}, #{image,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="cn.exrick.pojo.TbContent">
     insert into tb_content
@@ -147,23 +117,8 @@
       <if test="categoryId != null">
         category_id,
       </if>
-      <if test="title != null">
-        title,
-      </if>
-      <if test="subTitle != null">
-        sub_title,
-      </if>
-      <if test="titleDesc != null">
-        title_desc,
-      </if>
-      <if test="url != null">
-        url,
-      </if>
-      <if test="pic != null">
-        pic,
-      </if>
-      <if test="pic2 != null">
-        pic2,
+      <if test="productId != null">
+        product_id,
       </if>
       <if test="created != null">
         created,
@@ -171,8 +126,8 @@
       <if test="updated != null">
         updated,
       </if>
-      <if test="content != null">
-        content,
+      <if test="image != null">
+        image,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -182,23 +137,8 @@
       <if test="categoryId != null">
         #{categoryId,jdbcType=BIGINT},
       </if>
-      <if test="title != null">
-        #{title,jdbcType=VARCHAR},
-      </if>
-      <if test="subTitle != null">
-        #{subTitle,jdbcType=VARCHAR},
-      </if>
-      <if test="titleDesc != null">
-        #{titleDesc,jdbcType=VARCHAR},
-      </if>
-      <if test="url != null">
-        #{url,jdbcType=VARCHAR},
-      </if>
-      <if test="pic != null">
-        #{pic,jdbcType=VARCHAR},
-      </if>
-      <if test="pic2 != null">
-        #{pic2,jdbcType=VARCHAR},
+      <if test="productId != null">
+        #{productId,jdbcType=VARCHAR},
       </if>
       <if test="created != null">
         #{created,jdbcType=TIMESTAMP},
@@ -206,8 +146,8 @@
       <if test="updated != null">
         #{updated,jdbcType=TIMESTAMP},
       </if>
-      <if test="content != null">
-        #{content,jdbcType=LONGVARCHAR},
+      <if test="image != null">
+        #{image,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -226,23 +166,8 @@
       <if test="record.categoryId != null">
         category_id = #{record.categoryId,jdbcType=BIGINT},
       </if>
-      <if test="record.title != null">
-        title = #{record.title,jdbcType=VARCHAR},
-      </if>
-      <if test="record.subTitle != null">
-        sub_title = #{record.subTitle,jdbcType=VARCHAR},
-      </if>
-      <if test="record.titleDesc != null">
-        title_desc = #{record.titleDesc,jdbcType=VARCHAR},
-      </if>
-      <if test="record.url != null">
-        url = #{record.url,jdbcType=VARCHAR},
-      </if>
-      <if test="record.pic != null">
-        pic = #{record.pic,jdbcType=VARCHAR},
-      </if>
-      <if test="record.pic2 != null">
-        pic2 = #{record.pic2,jdbcType=VARCHAR},
+      <if test="record.productId != null">
+        product_id = #{record.productId,jdbcType=VARCHAR},
       </if>
       <if test="record.created != null">
         created = #{record.created,jdbcType=TIMESTAMP},
@@ -250,27 +175,10 @@
       <if test="record.updated != null">
         updated = #{record.updated,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.content != null">
-        content = #{record.content,jdbcType=LONGVARCHAR},
+      <if test="record.image != null">
+        image = #{record.image,jdbcType=VARCHAR},
       </if>
     </set>
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExampleWithBLOBs" parameterType="map">
-    update tb_content
-    set id = #{record.id,jdbcType=BIGINT},
-      category_id = #{record.categoryId,jdbcType=BIGINT},
-      title = #{record.title,jdbcType=VARCHAR},
-      sub_title = #{record.subTitle,jdbcType=VARCHAR},
-      title_desc = #{record.titleDesc,jdbcType=VARCHAR},
-      url = #{record.url,jdbcType=VARCHAR},
-      pic = #{record.pic,jdbcType=VARCHAR},
-      pic2 = #{record.pic2,jdbcType=VARCHAR},
-      created = #{record.created,jdbcType=TIMESTAMP},
-      updated = #{record.updated,jdbcType=TIMESTAMP},
-      content = #{record.content,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -279,14 +187,10 @@
     update tb_content
     set id = #{record.id,jdbcType=BIGINT},
       category_id = #{record.categoryId,jdbcType=BIGINT},
-      title = #{record.title,jdbcType=VARCHAR},
-      sub_title = #{record.subTitle,jdbcType=VARCHAR},
-      title_desc = #{record.titleDesc,jdbcType=VARCHAR},
-      url = #{record.url,jdbcType=VARCHAR},
-      pic = #{record.pic,jdbcType=VARCHAR},
-      pic2 = #{record.pic2,jdbcType=VARCHAR},
+      product_id = #{record.productId,jdbcType=VARCHAR},
       created = #{record.created,jdbcType=TIMESTAMP},
-      updated = #{record.updated,jdbcType=TIMESTAMP}
+      updated = #{record.updated,jdbcType=TIMESTAMP},
+      image = #{record.image,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -297,23 +201,8 @@
       <if test="categoryId != null">
         category_id = #{categoryId,jdbcType=BIGINT},
       </if>
-      <if test="title != null">
-        title = #{title,jdbcType=VARCHAR},
-      </if>
-      <if test="subTitle != null">
-        sub_title = #{subTitle,jdbcType=VARCHAR},
-      </if>
-      <if test="titleDesc != null">
-        title_desc = #{titleDesc,jdbcType=VARCHAR},
-      </if>
-      <if test="url != null">
-        url = #{url,jdbcType=VARCHAR},
-      </if>
-      <if test="pic != null">
-        pic = #{pic,jdbcType=VARCHAR},
-      </if>
-      <if test="pic2 != null">
-        pic2 = #{pic2,jdbcType=VARCHAR},
+      <if test="productId != null">
+        product_id = #{productId,jdbcType=VARCHAR},
       </if>
       <if test="created != null">
         created = #{created,jdbcType=TIMESTAMP},
@@ -321,37 +210,19 @@
       <if test="updated != null">
         updated = #{updated,jdbcType=TIMESTAMP},
       </if>
-      <if test="content != null">
-        content = #{content,jdbcType=LONGVARCHAR},
+      <if test="image != null">
+        image = #{image,jdbcType=VARCHAR},
       </if>
     </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.exrick.pojo.TbContent">
-    update tb_content
-    set category_id = #{categoryId,jdbcType=BIGINT},
-      title = #{title,jdbcType=VARCHAR},
-      sub_title = #{subTitle,jdbcType=VARCHAR},
-      title_desc = #{titleDesc,jdbcType=VARCHAR},
-      url = #{url,jdbcType=VARCHAR},
-      pic = #{pic,jdbcType=VARCHAR},
-      pic2 = #{pic2,jdbcType=VARCHAR},
-      created = #{created,jdbcType=TIMESTAMP},
-      updated = #{updated,jdbcType=TIMESTAMP},
-      content = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.exrick.pojo.TbContent">
     update tb_content
     set category_id = #{categoryId,jdbcType=BIGINT},
-      title = #{title,jdbcType=VARCHAR},
-      sub_title = #{subTitle,jdbcType=VARCHAR},
-      title_desc = #{titleDesc,jdbcType=VARCHAR},
-      url = #{url,jdbcType=VARCHAR},
-      pic = #{pic,jdbcType=VARCHAR},
-      pic2 = #{pic2,jdbcType=VARCHAR},
+      product_id = #{productId,jdbcType=VARCHAR},
       created = #{created,jdbcType=TIMESTAMP},
-      updated = #{updated,jdbcType=TIMESTAMP}
+      updated = #{updated,jdbcType=TIMESTAMP},
+      image = #{image,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

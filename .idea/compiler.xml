@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="generatorSqlmapCustom" />
         <module name="xmall-common" />
+        <module name="xmall-content-interface" />
+        <module name="xmall-content-service" />
         <module name="xmall-manager-dao" />
         <module name="xmall-manager-interface" />
         <module name="xmall-manager-pojo" />
@@ -18,6 +20,9 @@
     <bytecodeTargetLevel>
       <module name="generatorSqlmapCustom" target="1.8" />
       <module name="xmall-common" target="1.8" />
+      <module name="xmall-content" target="1.8" />
+      <module name="xmall-content-interface" target="1.8" />
+      <module name="xmall-content-service" target="1.8" />
       <module name="xmall-manager" target="1.8" />
       <module name="xmall-manager-dao" target="1.8" />
       <module name="xmall-manager-interface" target="1.8" />

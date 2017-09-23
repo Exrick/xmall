@@ -36,11 +36,13 @@
                 <ul class="cl">
                     <li class="dropDown dropDown_hover"><a href="javascript:;" class="dropDown_A"><i class="Hui-iconfont">&#xe600;</i> 新增 <i class="Hui-iconfont">&#xe6d5;</i></a>
                         <ul class="dropDown-menu menu radius box-shadow">
-                            <li><a href="javascript:;" onclick="article_add('添加资讯','article-add')"><i class="Hui-iconfont">&#xe616;</i> 资讯</a></li>
+                            <li><a href="javascript:;" onclick="article_add('添加商品','article-add')"><i class="Hui-iconfont">&#xe616;</i> 资讯</a></li>
                             <li><a href="javascript:;" onclick="picture_add('添加资讯','picture-add')"><i class="Hui-iconfont">&#xe613;</i> 图片</a></li>
-                            <li><a href="javascript:;" onclick="product_add('添加资讯','product-add')"><i class="Hui-iconfont">&#xe620;</i> 产品</a></li>
+                            <li><a href="javascript:;" onclick="product_add('添加资讯','product-add')"><i class="Hui-iconfont">&#xe620;</i> 商品</a></li>
                             <li><a href="javascript:;" onclick="member_add('添加用户','member-add','','510')"><i class="Hui-iconfont">&#xe60d;</i> 用户</a></li>
                         </ul>
+                        <li class="navbar-levelone current"><a href="javascript:;">平台</a></li>
+                        <li class="navbar-levelone"><a href="javascript:;">财务</a></li>
                     </li>
                 </ul>
             </nav>
@@ -74,10 +76,11 @@
 <aside class="Hui-aside">
     <div class="menu_dropdown bk_2">
         <dl id="menu-article">
-            <dt><i class="Hui-iconfont">&#xe616;</i> 资讯管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dt><i class="Hui-iconfont">&#xe616;</i> 商城管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="article-list" data-title="资讯管理" href="javascript:void(0)">资讯管理</a></li>
+                    <li><a data-href="content-category" data-title="内容分类管理" href="javascript:void(0)">内容分类管理</a></li>
+                    <li><a data-href="content-list" data-title="内容管理" href="javascript:void(0)">内容管理</a></li>
                 </ul>
             </dd>
         </dl>
@@ -93,7 +96,6 @@
             <dt><i class="Hui-iconfont">&#xe620;</i> 商品管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="product-brand" data-title="品牌管理" href="javascript:void(0)">品牌管理</a></li>
                     <li><a data-href="product-category" data-title="分类管理" href="javascript:void(0)">分类管理</a></li>
                     <li><a data-href="product-list" data-title="商品列表" href="javascript:void(0)">商品列表</a></li>
                 </ul>
@@ -103,8 +105,7 @@
             <dt><i class="Hui-iconfont">&#xe622;</i> 评论管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="feedback-list" data-title="评论列表" href="javascript:;">评论列表</a></li>
-                    <li><a data-href="feedback-list" data-title="意见反馈" href="javascript:void(0)">意见反馈</a></li>
+                    <li><a data-href="http://changyan.kuaizhan.com/" data-title="畅言评论管理" href="javascript:void(0)">畅言评论管理</a></li>
                 </ul>
             </dd>
         </dl>
@@ -159,6 +160,17 @@
             </dd>
         </dl>
     </div>
+
+    <div class="menu_dropdown bk_2" style="display:none">
+        <dl id="menu-aaaaa">
+            <dt><i class="Hui-iconfont">&#xe616;</i> 二级导航1<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a data-href="article-list.html" data-title="资讯管理" href="javascript:void(0)">三级导航</a></li>
+                </ul>
+            </dd>
+        </dl>
+    </div>
 </aside>
 <div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
 <section class="Hui-article-box">
@@ -209,6 +221,12 @@
          },
          }
          });*/
+        $("body").Huitab({
+            tabBar:".navbar-wrapper .navbar-levelone",
+            tabCon:".Hui-aside .menu_dropdown",
+            className:"current",
+            index:0,
+        });
     });
     /*个人信息*/
     function myselfinfo(){
