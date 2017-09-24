@@ -3,7 +3,7 @@ package cn.exrick.pojo;
 import java.io.Serializable;
 import java.util.Date;
 
-public class TbItemCat implements Serializable{
+public class TbItemCat implements Serializable {
     private Long id;
 
     private Long parentId;
@@ -21,6 +21,8 @@ public class TbItemCat implements Serializable{
     private Date updated;
 
     private String icon;
+
+    private String remark;
 
     public Long getId() {
         return id;
@@ -92,5 +94,13 @@ public class TbItemCat implements Serializable{
 
     public void setIcon(String icon) {
         this.icon = icon == null ? null : icon.trim();
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
     }
 }

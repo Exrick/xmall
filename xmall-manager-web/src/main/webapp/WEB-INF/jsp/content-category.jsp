@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="row cl">
-                        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>是否为根节点：</label>
+                        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>是否为父节点：</label>
                         <div class="formControls col-xs-6 col-sm-6 skin-minimal">
                             <div class="radio-box">
                                 <input name="isParent" value="true" type="radio" id="yes" disabled>
@@ -264,7 +264,7 @@
         //zTree.selectNode(zTree.getNodeByParam("id",'11'));
     });
 
-    /*产品-添加*/
+    /*分类-添加*/
     function content_category_add(title,url){
         var index = layer.open({
             type: 2,
@@ -274,7 +274,7 @@
         layer.full(index);
     }
 
-    /*批量删除*/
+    /*分类-删除*/
     function content_category_del() {
         if(id==-1){
             layer.alert('请点击选择要删除的分类! ', {title: '错误信息',icon: 0});

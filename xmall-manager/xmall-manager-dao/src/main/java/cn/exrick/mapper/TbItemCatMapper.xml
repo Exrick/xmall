@@ -11,6 +11,7 @@
     <result column="created" jdbcType="TIMESTAMP" property="created" />
     <result column="updated" jdbcType="TIMESTAMP" property="updated" />
     <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -71,7 +72,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, parent_id, name, status, sort_order, is_parent, created, updated, icon
+    id, parent_id, name, status, sort_order, is_parent, created, updated, icon, remark
   </sql>
   <select id="selectByExample" parameterType="cn.exrick.pojo.TbItemCatExample" resultMap="BaseResultMap">
     select
@@ -106,12 +107,12 @@
   <insert id="insert" parameterType="cn.exrick.pojo.TbItemCat">
     insert into tb_item_cat (id, parent_id, name, 
       status, sort_order, is_parent, 
-      created, updated, icon
-      )
+      created, updated, icon, 
+      remark)
     values (#{id,jdbcType=BIGINT}, #{parentId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, 
       #{status,jdbcType=INTEGER}, #{sortOrder,jdbcType=INTEGER}, #{isParent,jdbcType=BIT}, 
-      #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}, #{icon,jdbcType=VARCHAR}
-      )
+      #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}, #{icon,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.exrick.pojo.TbItemCat">
     insert into tb_item_cat
@@ -143,6 +144,9 @@
       <if test="icon != null">
         icon,
       </if>
+      <if test="remark != null">
+        remark,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -171,6 +175,9 @@
       </if>
       <if test="icon != null">
         #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -210,6 +217,9 @@
       <if test="record.icon != null">
         icon = #{record.icon,jdbcType=VARCHAR},
       </if>
+      <if test="record.remark != null">
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -225,7 +235,8 @@
       is_parent = #{record.isParent,jdbcType=BIT},
       created = #{record.created,jdbcType=TIMESTAMP},
       updated = #{record.updated,jdbcType=TIMESTAMP},
-      icon = #{record.icon,jdbcType=VARCHAR}
+      icon = #{record.icon,jdbcType=VARCHAR},
+      remark = #{record.remark,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -257,6 +268,9 @@
       <if test="icon != null">
         icon = #{icon,jdbcType=VARCHAR},
       </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -269,7 +283,8 @@
       is_parent = #{isParent,jdbcType=BIT},
       created = #{created,jdbcType=TIMESTAMP},
       updated = #{updated,jdbcType=TIMESTAMP},
-      icon = #{icon,jdbcType=VARCHAR}
+      icon = #{icon,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

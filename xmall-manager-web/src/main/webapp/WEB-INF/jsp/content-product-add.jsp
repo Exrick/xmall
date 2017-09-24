@@ -50,7 +50,7 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">所选商品ID：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" readonly class="input-text" id="productId" name="productId" style="width:50%">
+                <input type="text" onclick="chooseProduct()" readonly placeholder="请点击选择按钮选择关联商品" class="input-text" id="productId" name="productId" style="width:50%">
             </div>
         </div>
         <input type="text" name="image" id="image" hidden/>
@@ -102,7 +102,7 @@
     $("#categoryId").val(parent.cid);
 
     function chooseProduct(){
-        layer_show("选择展示商品","choose-product",1000,600);
+        layer_show("选择展示商品","choose-product",900,600);
     }
 
     function setIdAndTitle(id,title){

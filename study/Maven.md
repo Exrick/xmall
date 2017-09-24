@@ -92,4 +92,4 @@
 
 5. IDEA中Maven配置
 
-![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170901140327.png)
+    ![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170901140327.png)

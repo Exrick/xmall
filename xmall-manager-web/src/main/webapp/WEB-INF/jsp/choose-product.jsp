@@ -35,13 +35,13 @@
         <tr class="text-c">
             <th width="70">ID</th>
             <th width="70">缩略图</th>
-            <th width="100">商品名称</th>
-            <th width="150">描述</th>
+            <th width="90">商品名称</th>
+            <th width="130">描述</th>
             <th width="60">单价</th>
             <th width="95">创建日期</th>
             <th width="95">更新日期</th>
-            <th width="60">发布状态</th>
-            <th width="90">操作</th>
+            <th width="50">状态</th>
+            <th width="80">操作</th>
         </tr>
         </thead>
     </table>
@@ -157,7 +157,7 @@
                     }
                 }
             ],
-           "aaSorting": [[ 5, "desc" ]],//默认第几个排序
+           "aaSorting": [[ 5, "asc" ]],//默认第几个排序
             "bStateSave": false,//状态保存
             "aoColumnDefs": [
                 {"orderable":false,"aTargets":[1,3,8]}// 制定列不参与排序

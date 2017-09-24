@@ -1,6 +1,7 @@
 package cn.exrick.service;
 
 import cn.exrick.common.pojo.ZTreeNode;
+import cn.exrick.pojo.TbItemCat;
 
 import java.util.List;
 
@@ -9,5 +10,15 @@ import java.util.List;
  */
 public interface ItemCatService {
 
+    TbItemCat getItemCatById(Long id);
+
     List<ZTreeNode> getItemCatList(int parentId);
+
+    int addItemCat(TbItemCat tbItemCat);
+
+    int updateItemCat(TbItemCat tbItemCat);
+
+    void deleteItemCat(Long id);
+
+    void deleteZTree(Long id);
 }

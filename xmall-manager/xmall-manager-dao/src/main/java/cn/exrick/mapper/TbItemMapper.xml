@@ -308,7 +308,9 @@
     OR
     sell_point LIKE #{search}
     OR
-    price LIKE #{search})
+    price LIKE #{search}
+    OR
+    id LIKE #{search})
     <if test="cid != -1">
       AND cid = #{cid}
     </if>

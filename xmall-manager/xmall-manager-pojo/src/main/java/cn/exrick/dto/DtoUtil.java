@@ -1,10 +1,7 @@
 package cn.exrick.dto;
 
 import cn.exrick.common.pojo.ZTreeNode;
-import cn.exrick.pojo.TbContent;
-import cn.exrick.pojo.TbContentCategory;
-import cn.exrick.pojo.TbItem;
-import cn.exrick.pojo.TbMember;
+import cn.exrick.pojo.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -119,5 +116,21 @@ public class DtoUtil{
         tbContentCategory.setStatus(contentCatDto.getStatus());
 
         return tbContentCategory;
+    }
+
+
+    public static ZTreeNode TbItemCat2ZTreeNode(TbItemCat tbItemCat){
+
+        ZTreeNode zTreeNode =new ZTreeNode();
+
+        zTreeNode.setId(Math.toIntExact(tbItemCat.getId()));
+        zTreeNode.setStatus(tbItemCat.getStatus());
+        zTreeNode.setSortOrder(tbItemCat.getSortOrder());
+        zTreeNode.setName(tbItemCat.getName());
+        zTreeNode.setpId(Math.toIntExact(tbItemCat.getParentId()));
+        zTreeNode.setIsParent(tbItemCat.getIsParent());
+        zTreeNode.setRemark(tbItemCat.getRemark());
+
+        return zTreeNode;
     }
 }

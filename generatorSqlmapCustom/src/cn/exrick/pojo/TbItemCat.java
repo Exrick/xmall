@@ -21,6 +21,8 @@ public class TbItemCat {
 
     private String icon;
 
+    private String remark;
+
     public Long getId() {
         return id;
     }
@@ -91,5 +93,13 @@ public class TbItemCat {
 
     public void setIcon(String icon) {
         this.icon = icon == null ? null : icon.trim();
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
     }
 }
