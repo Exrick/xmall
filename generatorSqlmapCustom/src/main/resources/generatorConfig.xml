@@ -54,6 +54,7 @@
 		<table schema="" tableName="tb_order_shipping"></table>
 		<table schema="" tableName="tb_user"></table>
 		<table schema="" tableName="tb_member"></table>
+		<table schema="" tableName="tb_image"></table>
 
 	</context>
 </generatorConfiguration>

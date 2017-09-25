@@ -21,11 +21,11 @@
     <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
-    <title>产品分类</title>
+    <title>商品栏目</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商城管理 <span class="c-gray en">&gt;</span> 商城内容分类 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
-<div style="margin-left: 1vw;margin-right: 1vw" class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="content_category_del()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 删除所选分类</a> <a class="btn btn-primary radius" onclick="content_category_add('添加分类','content-category-add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加分类</a></span> </div>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商城管理 <span class="c-gray en">&gt;</span> 栏目管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div style="margin-left: 1vw;margin-right: 1vw" class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="content_category_del()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 删除所选栏目</a> <a class="btn btn-primary radius" onclick="content_category_add('添加栏目','content-category-add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加栏目</a></span> </div>
 <table class="table">
     <tr>
         <td style="padding-left: 4vw" width="200" class="va-t"><ul id="treeDemo" class="ztree"></ul></td>
@@ -37,7 +37,7 @@
                     <div class="row cl">
                         <label class="form-label col-xs-4 col-sm-2">
                             <span class="c-red">*</span>
-                            分类名称：</label>
+                            栏目名称：</label>
                         <div class="formControls col-xs-6 col-sm-6">
                             <input type="text" class="input-text" value="" placeholder="" id="name" name="name"> <span id="hot" style="color: red"></span>
                         </div>

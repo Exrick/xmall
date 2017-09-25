@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class TbItem implements Serializable{
+
     private Long id;
 
     private String title;
@@ -112,5 +113,22 @@ public class TbItem implements Serializable{
 
     public void setUpdated(Date updated) {
         this.updated = updated;
+    }
+
+    @Override
+    public String toString() {
+        return "TbItem{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", sellPoint='" + sellPoint + '\'' +
+                ", price=" + price +
+                ", num=" + num +
+                ", limitNum=" + limitNum +
+                ", image='" + image + '\'' +
+                ", cid=" + cid +
+                ", status=" + status +
+                ", created=" + created +
+                ", updated=" + updated +
+                '}';
     }
 }

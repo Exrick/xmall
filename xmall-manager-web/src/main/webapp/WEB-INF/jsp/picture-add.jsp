@@ -180,7 +180,7 @@
             swf: 'lib/webuploader/0.1.5/Uploader.swf',
 
             // 文件接收服务端。
-            server: '/item/fileupload',
+            server: 'lib/webuploader/0.1.5/server/fileupload.php',
 
             // 选择文件的按钮。可选。
             // 内部根据当前运行是创建，可能是input元素，也可能是flash.
@@ -197,11 +197,11 @@
         });
         uploader.on( 'fileQueued', function( file ) {
             var $li = $(
-                    '<div id="' + file.id + '" class="item">' +
-                    '<div class="pic-box"><img></div>'+
-                    '<div class="info">' + file.name + '</div>' +
-                    '<p class="state">等待上传...</p>'+
-                    '</div>'
+                '<div id="' + file.id + '" class="item">' +
+                '<div class="pic-box"><img></div>'+
+                '<div class="info">' + file.name + '</div>' +
+                '<p class="state">等待上传...</p>'+
+                '</div>'
                 ),
                 $img = $li.find('img');
             $list.append( $li );
@@ -424,7 +424,7 @@
                 swf: 'lib/webuploader/0.1.5/Uploader.swf',
                 chunked: false,
                 chunkSize: 512 * 1024,
-                server: '/item/fileupload',
+                server: 'lib/webuploader/0.1.5/server/fileupload.php',
                 // runtimeOrder: 'flash',
 
                 // accept: {
@@ -486,10 +486,10 @@
             // 当有文件添加进来时执行，负责view的创建
             function addFile( file ) {
                 var $li = $( '<li id="' + file.id + '">' +
-                        '<p class="title">' + file.name + '</p>' +
-                        '<p class="imgWrap"></p>'+
-                        '<p class="progress"><span></span></p>' +
-                        '</li>' ),
+                    '<p class="title">' + file.name + '</p>' +
+                    '<p class="imgWrap"></p>'+
+                    '<p class="progress"><span></span></p>' +
+                    '</li>' ),
 
                     $btns = $('<div class="file-panel">' +
                         '<span class="cancel">删除</span>' +

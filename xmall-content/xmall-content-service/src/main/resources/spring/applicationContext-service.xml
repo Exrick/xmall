@@ -22,4 +22,5 @@
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service interface="cn.exrick.content.service.ContentCatService" ref="contentCatServiceImpl" timeout="5000"/>
     <dubbo:service interface="cn.exrick.content.service.ContentService" ref="contentServiceImpl" timeout="5000"/>
+    <dubbo:service interface="cn.exrick.content.service.ContentImageService" ref="contentImageServiceImpl" timeout="5000"/>
 </beans>

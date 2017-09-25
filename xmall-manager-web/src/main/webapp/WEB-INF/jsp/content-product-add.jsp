@@ -35,7 +35,7 @@
     <form name="product-add" action="" method="post" class="form form-horizontal" id="product-add">
         <input type="text" hidden class="input-text" id="categoryId" name="categoryId">
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">所属分类：</label>
+            <label class="form-label col-xs-4 col-sm-2">所属栏目：</label>
             <div class="formControls col-xs-8 col-sm-9">
                 <span id="category" name="category"></span>
             </div>

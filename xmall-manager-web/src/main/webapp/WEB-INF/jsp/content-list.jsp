@@ -31,7 +31,7 @@
 
 <body class="pos-r">
 <div class="pos-a" style="width:200px;left:0;top:0; bottom:0; height:100%; border-right:1px solid #e5e5e5; background-color:#f5f5f5; overflow:auto;">
-    <ul style="margin-top: 15px;margin-left: 20px"><i class="Hui-iconfont Hui-iconfont-fenlei"></i> 内容分类</ul>
+    <ul style="margin-top: 15px;margin-left: 20px"><i class="Hui-iconfont Hui-iconfont-fenlei"></i> 栏目分类</ul>
     <ul id="treeDemo" style="margin-left: 10px" class="ztree"></ul>
 </div>
 <div style="margin-left:200px;">
@@ -46,7 +46,7 @@
                         <th width="30"><input name="" type="checkbox" value=""></th>
                         <th width="40">ID</th>
                         <th width="70">缩略图</th>
-                        <th width="100">所属类别</th>
+                        <th width="100">所属栏目</th>
                         <th width="150">展示商品ID</th>
                         <th width="95">创建日期</th>
                         <th width="95">更新日期</th>
@@ -73,6 +73,7 @@
 <script type="text/javascript" src="lib/datatables/dataTables.colReorder.min.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <script type="text/javascript">
     /*刷新表格*/
     function refresh(){

@@ -137,6 +137,9 @@ public class ItemServiceImpl implements ItemService {
         tbItem.setStatus((byte) 1);
         tbItem.setCreated(new Date());
         tbItem.setUpdated(new Date());
+        if(tbItem.getImage().isEmpty()){
+            tbItem.setImage("http://ow2h3ee9w.bkt.clouddn.com/nopic.jpg");
+        }
         if(tbItemMapper.insert(tbItem)!=1){
             throw new XmallException("添加商品失败");
         }

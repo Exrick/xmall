@@ -3,8 +3,6 @@ package cn.exrick.controller;
 import cn.exrick.common.pojo.Result;
 import cn.exrick.common.pojo.ZTreeNode;
 import cn.exrick.common.utils.ResultUtil;
-import cn.exrick.dto.ContentCatDto;
-import cn.exrick.pojo.TbContentCategory;
 import cn.exrick.pojo.TbItemCat;
 import cn.exrick.service.ItemCatService;
 import io.swagger.annotations.Api;

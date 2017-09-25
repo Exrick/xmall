@@ -133,4 +133,18 @@ public class DtoUtil{
 
         return zTreeNode;
     }
+
+    public static ImageDto TbImage2ImageDto(TbImage tbImage){
+
+        ImageDto imageDto =new ImageDto();
+
+        imageDto.setId(tbImage.getId());
+        imageDto.setImage(tbImage.getImage());
+        imageDto.setImageMobile(tbImage.getImageMobile());
+        imageDto.setLink(tbImage.getLink());
+        imageDto.setCreated(tbImage.getCreated());
+        imageDto.setUpdated(tbImage.getUpdated());
+
+        return imageDto;
+    }
 }

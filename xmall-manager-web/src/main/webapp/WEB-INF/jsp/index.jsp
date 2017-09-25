@@ -79,7 +79,7 @@
             <dt><i class="Hui-iconfont">&#xe616;</i> 商城管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="content-category" data-title="内容分类管理" href="javascript:void(0)">内容分类管理</a></li>
+                    <li><a data-href="content-category" data-title="栏目管理" href="javascript:void(0)">栏目管理</a></li>
                     <li><a data-href="content-list" data-title="内容管理" href="javascript:void(0)">内容管理</a></li>
                 </ul>
             </dd>
@@ -88,7 +88,7 @@
             <dt><i class="Hui-iconfont">&#xe613;</i> 图片管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="picture-list" data-title="图片管理" href="javascript:void(0)">图片管理</a></li>
+                    <li><a data-href="picture-list.html" data-title="图片管理" href="javascript:void(0)">图片管理</a></li>
                 </ul>
             </dd>
         </dl>
