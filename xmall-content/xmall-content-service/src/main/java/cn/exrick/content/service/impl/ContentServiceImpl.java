@@ -1,6 +1,7 @@
 package cn.exrick.content.service.impl;
 
 import cn.exrick.common.exception.XmallException;
+import cn.exrick.common.jedis.JedisClient;
 import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.content.service.ContentService;
 import cn.exrick.dto.front.*;
@@ -8,9 +9,11 @@ import cn.exrick.dto.ContentDto;
 import cn.exrick.dto.DtoUtil;
 import cn.exrick.mapper.*;
 import cn.exrick.pojo.*;
+import com.google.gson.Gson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -32,6 +35,26 @@ public class ContentServiceImpl implements ContentService {
     private TbItemDescMapper tbItemDescMapper;
     @Autowired
     private TbImageMapper tbImageMapper;
+    @Autowired
+    private JedisClient jedisClient;
+
+    @Value("${PRODUCT_HOME}")
+    private String PRODUCT_HOME;
+
+    @Value("${HOT_ID}")
+    private Long HOT_ID;
+
+    @Value("${OFFICIAL_ID}")
+    private Long OFFICIAL_ID;
+
+    @Value("${BRAND_ID}")
+    private Long BRAND_ID;
+
+    @Value("${OFFICIAL_IMAGE_ID}")
+    private int OFFICIAL_IMAGE_ID;
+
+    @Value("${BRAND_IMAGE_ID}")
+    private int BRAND_IMAGE_ID;
 
     @Override
     public int addContent(TbContent tbContent) {
@@ -41,6 +64,8 @@ public class ContentServiceImpl implements ContentService {
         if(tbContentMapper.insert(tbContent)!=1){
             throw new XmallException("添加内容失败");
         }
+        //同步缓存
+        jedisClient.hdel(PRODUCT_HOME,PRODUCT_HOME);
         return 1;
     }
 
@@ -74,6 +99,8 @@ public class ContentServiceImpl implements ContentService {
         if(tbContentMapper.deleteByPrimaryKey(id)!=1){
             throw new XmallException("删除内容失败");
         }
+        //同步缓存
+        jedisClient.hdel(PRODUCT_HOME,PRODUCT_HOME);
         return 1;
     }
 
@@ -87,8 +114,10 @@ public class ContentServiceImpl implements ContentService {
         tbContent.setCreated(old.getCreated());
         tbContent.setUpdated(new Date());
         if(tbContentMapper.updateByPrimaryKey(tbContent)!=1){
-            throw new XmallException("删除内容失败");
+            throw new XmallException("更新内容失败");
         }
+        //同步缓存
+        jedisClient.hdel(PRODUCT_HOME,PRODUCT_HOME);
         return 1;
     }
 
@@ -105,11 +134,32 @@ public class ContentServiceImpl implements ContentService {
     @Override
     public ProductHome getProductHome() {
 
+        //查询缓存
+        try{
+            //有缓存则读取
+            String json=jedisClient.hget(PRODUCT_HOME,PRODUCT_HOME);
+            if(json!=null){
+                ProductHome productHome= new Gson().fromJson(json,ProductHome.class);
+                log.info("读取了首页缓存");
+                return productHome;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        //没有缓存
         ProductHome productHome =new ProductHome();
 
         productHome.setHome_hot(getHotProduct());
         productHome.setHome_floors(getFloorProduct());
 
+        //把结果添加至缓存
+        try{
+            jedisClient.hset(PRODUCT_HOME,PRODUCT_HOME,new Gson().toJson(productHome));
+            log.info("添加了首页缓存");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return productHome;
     }
 
@@ -118,7 +168,7 @@ public class ContentServiceImpl implements ContentService {
         //热门商品
         TbContentExample example=new TbContentExample();
         TbContentExample.Criteria criteria=example.createCriteria();
-        criteria.andCategoryIdEqualTo((long) 1);
+        criteria.andCategoryIdEqualTo(HOT_ID);
         List<TbContent> listHot=tbContentMapper.selectByExample(example);
 
         List<Product> productHotList=new ArrayList<>();
@@ -149,7 +199,7 @@ public class ContentServiceImpl implements ContentService {
 
         TbContentExample example1=new TbContentExample();
         TbContentExample.Criteria criteria1=example1.createCriteria();
-        criteria1.andCategoryIdEqualTo((long) 2);
+        criteria1.andCategoryIdEqualTo(OFFICIAL_ID);
         List<TbContent> listFloor1=tbContentMapper.selectByExample(example1);
 
         List<Product> productFloorList1=new ArrayList<>();
@@ -169,9 +219,9 @@ public class ContentServiceImpl implements ContentService {
         }
 
         homeFloors1.setTabs(productFloorList1);
-        TbImage image1=tbImageMapper.selectByPrimaryKey(1);
+        TbImage image1=tbImageMapper.selectByPrimaryKey(OFFICIAL_IMAGE_ID);
         homeFloors1.setImage(image1);
-        TbContentCategory tbContentCategory1=tbContentCategoryMapper.selectByPrimaryKey((long) 2);
+        TbContentCategory tbContentCategory1=tbContentCategoryMapper.selectByPrimaryKey(OFFICIAL_ID);
         homeFloors1.setTitle(tbContentCategory1.getName());
 
         list.add(homeFloors1);
@@ -181,7 +231,7 @@ public class ContentServiceImpl implements ContentService {
 
         TbContentExample example2=new TbContentExample();
         TbContentExample.Criteria criteria2=example2.createCriteria();
-        criteria2.andCategoryIdEqualTo((long) 3);
+        criteria2.andCategoryIdEqualTo(BRAND_ID);
         List<TbContent> listFloor2=tbContentMapper.selectByExample(example2);
 
         List<Product> productFloorList2=new ArrayList<>();
@@ -201,9 +251,9 @@ public class ContentServiceImpl implements ContentService {
         }
 
         homeFloors2.setTabs(productFloorList2);
-        TbImage image2=tbImageMapper.selectByPrimaryKey(2);
+        TbImage image2=tbImageMapper.selectByPrimaryKey(BRAND_IMAGE_ID);
         homeFloors2.setImage(image2);
-        TbContentCategory tbContentCategory2=tbContentCategoryMapper.selectByPrimaryKey((long) 3);
+        TbContentCategory tbContentCategory2=tbContentCategoryMapper.selectByPrimaryKey(BRAND_ID);
         homeFloors2.setTitle(tbContentCategory2.getName());
 
         list.add(homeFloors2);

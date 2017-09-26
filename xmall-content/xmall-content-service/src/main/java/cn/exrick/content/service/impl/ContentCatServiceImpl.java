@@ -1,6 +1,7 @@
 package cn.exrick.content.service.impl;
 
 import cn.exrick.common.exception.XmallException;
+import cn.exrick.common.jedis.JedisClient;
 import cn.exrick.common.pojo.ZTreeNode;
 import cn.exrick.content.service.ContentCatService;
 import cn.exrick.dto.ContentCatDto;
@@ -11,6 +12,7 @@ import cn.exrick.pojo.TbContentCategoryExample;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -24,6 +26,11 @@ public class ContentCatServiceImpl implements ContentCatService {
 
     @Autowired
     private TbContentCategoryMapper tbContentCategoryMapper;
+    @Autowired
+    private JedisClient jedisClient;
+
+    @Value("${PRODUCT_HOME}")
+    private String PRODUCT_HOME;
 
     @Override
     public TbContentCategory getContentCatById(Long id) {
@@ -65,6 +72,8 @@ public class ContentCatServiceImpl implements ContentCatService {
         if(tbContentCategoryMapper.insert(tbContentCategory)!=1){
             throw new XmallException("添加内容分类失败");
         }
+        //同步缓存
+        jedisClient.hdel(PRODUCT_HOME,PRODUCT_HOME);
         return 1;
     }
 
@@ -82,6 +91,8 @@ public class ContentCatServiceImpl implements ContentCatService {
         if(tbContentCategoryMapper.updateByPrimaryKey(tbContentCategory)!=1){
             throw new XmallException("更新内容分类失败");
         }
+        //同步缓存
+        jedisClient.hdel(PRODUCT_HOME,PRODUCT_HOME);
         return 1;
     }
 
@@ -91,6 +102,8 @@ public class ContentCatServiceImpl implements ContentCatService {
         if(tbContentCategoryMapper.deleteByPrimaryKey(id)!=1){
             throw new XmallException("删除内容分类失败");
         }
+        //同步缓存
+        jedisClient.hdel(PRODUCT_HOME,PRODUCT_HOME);
         return 1;
     }
 }

@@ -1,6 +1,7 @@
 package cn.exrick.content.service.impl;
 
 import cn.exrick.common.exception.XmallException;
+import cn.exrick.common.jedis.JedisClient;
 import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.content.service.ContentImageService;
 import cn.exrick.dto.DtoUtil;
@@ -11,6 +12,7 @@ import cn.exrick.pojo.TbContentCategory;
 import cn.exrick.pojo.TbImage;
 import cn.exrick.pojo.TbImageExample;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -24,6 +26,11 @@ public class ContentImageServiceImpl implements ContentImageService {
     private TbImageMapper tbImageMapper;
     @Autowired
     private TbContentCategoryMapper tbContentCategoryMapper;
+    @Autowired
+    private JedisClient jedisClient;
+
+    @Value("${PRODUCT_HOME}")
+    private String PRODUCT_HOME;
 
     @Override
     public TbImage getContentImageById(Long id) {
@@ -70,6 +77,8 @@ public class ContentImageServiceImpl implements ContentImageService {
         if(tbImageMapper.updateByPrimaryKey(tbImage)!=1){
             throw new XmallException("更新图片失败");
         }
+        //同步缓存
+        jedisClient.hdel(PRODUCT_HOME,PRODUCT_HOME);
         return 1;
     }
 }

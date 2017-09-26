@@ -24,4 +24,5 @@ public class ProductHome implements Serializable {
     public void setHome_floors(List<?> home_floors) {
         this.home_floors = home_floors;
     }
+
 }

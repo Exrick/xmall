@@ -84,7 +84,6 @@
                         <div id="dndArea" class="placeholder">
                             <div name="filePicker" id="filePicker-2"></div>
                             <p>或将照片拖到这里，最多可选5张</p>
-                            <p style="color: tomato">默认最后一张为主展示图片</p>
                         </div>
                     </div>
                     <div class="statusBar" style="display:none;">

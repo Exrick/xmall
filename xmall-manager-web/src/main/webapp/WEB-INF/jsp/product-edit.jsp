@@ -79,7 +79,6 @@
                         <div id="dndArea" class="placeholder">
                             <div name="filePicker" id="filePicker-2"></div>
                             <p>或将照片拖到这里，最多可选5张</p>
-                            <p>默认以最后一为主展示图片</p>
                             <p style="color: tomato">不上传则代表不更改原缩略图</p>
                         </div>
                     </div>
