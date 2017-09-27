@@ -17,7 +17,7 @@ import java.io.File;
 
 @RestController
 @Api(description = "图片列表信息")
-public class ImageController {
+public class ContentImageController {
 
     @Autowired
     private ContentImageService contentImageService;

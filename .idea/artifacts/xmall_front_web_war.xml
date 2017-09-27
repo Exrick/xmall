@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="xmall-front-web:war">
+    <output-path>$PROJECT_DIR$/xmall-front-web/target</output-path>
+    <root id="archive" name="xmall-front-web-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="xmall-front-web:war exploded" />
+    </root>
+  </artifact>
+</component>

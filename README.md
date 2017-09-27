@@ -39,24 +39,27 @@
 - [Dubbo](https://github.com/Exrick/xmall/blob/master/study/Dubbo.md)
 - [ZooKeeper](https://github.com/Exrick/xmall/blob/master/study/Zookeeper.md)
 - MySQL
-- Redis：缓存
+- [Redis(集群搭建)](https://github.com/Exrick/xmall/blob/master/study/Redis.md)：缓存
 - Druid：阿里高性能数据库连接池
 - [Swagger](https://github.com/Exrick/xmall/blob/master/study/Swagger.md)
+- ElasticSearch：基于Lucene开源分布式搜索引擎
 - Docker
 - [Nginx](https://github.com/Exrick/xmall/blob/master/study/Nginx.md)
 - Tomcat
 - [Maven](https://github.com/Exrick/xmall/blob/master/study/Maven.md)
-- 其他开发工具
+- 其它开发工具
     - [JRebel](https://github.com/Exrick/xmall/blob/master/study/JRebel.md)：开发热部署
 - 第三方SDK
     - [七牛云文件存储服务器](https://developer.qiniu.com/kodo/sdk/1239/java)
+- 第三方插件
     - [搜狐畅言评论插件](http://changyan.kuaizhan.com/)
 
 ### dependency文件夹提供部分安装文件与sql文件
-- sql文件
-- dubbo.xsd 需手动配置避免报错
+- xmall.sql：数据库文件
+- dubbo.xsd：需手动配置避免报错
 - zookeeper 
 - nginx
+- redis-3.0.0.gem：Redis集群搭建所需Ruby库
 
 ### 本地开发运行部署
 - 下载git或zip直接解压，git安装后执行克隆命令 `git clone https://github.com/Exrick/xmall.git`

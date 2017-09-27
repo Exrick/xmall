@@ -2,6 +2,7 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/xmall-content/xmall-content-service" />
+    <file type="web" url="file://$PROJECT_DIR$/xmall-front-web" />
     <file type="web" url="file://$PROJECT_DIR$/xmall-manager-web" />
     <file type="web" url="file://$PROJECT_DIR$/xmall-manager-web/xmall-manager-web" />
     <file type="web" url="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service" />

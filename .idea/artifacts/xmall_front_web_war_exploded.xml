@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="xmall-manager-web:war exploded">
-    <output-path>$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web-1.0-SNAPSHOT</output-path>
+  <artifact type="exploded-war" name="xmall-front-web:war exploded">
+    <output-path>$PROJECT_DIR$/xmall-front-web/target/xmall-front-web-1.0-SNAPSHOT</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="xmall-manager-web" />
+          <element id="module-output" name="xmall-front-web" />
         </element>
         <element id="directory" name="lib">
           <element id="archive" name="xmall-manager-interface-1.0-SNAPSHOT.jar">
@@ -83,9 +83,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/xmall-manager-web/target/xmall-manager-web-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/xmall-front-web/target/xmall-front-web-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="xmall-manager-web/web/Web" />
+      <element id="javaee-facet-resources" facet="xmall-front-web/web/Web" />
     </root>
   </artifact>
 </component>

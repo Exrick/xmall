@@ -7,31 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4f3498c-c7a8-433e-85bb-4c00387d3dab" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_content_service_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_content_service_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_service_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_service_war_exploded.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20170516.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_web_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_web_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-common/pom.xml" afterPath="$PROJECT_DIR$/xmall-common/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-common/xmall-common.iml" afterPath="$PROJECT_DIR$/xmall-common/xmall-common.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-interface/xmall-content-interface.iml" afterPath="$PROJECT_DIR$/xmall-content/xmall-content-interface/xmall-content-interface.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-service/pom.xml" afterPath="$PROJECT_DIR$/xmall-content/xmall-content-service/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/java/cn/exrick/content/service/impl/ContentCatServiceImpl.java" afterPath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/java/cn/exrick/content/service/impl/ContentCatServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/java/cn/exrick/content/service/impl/ContentImageServiceImpl.java" afterPath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/java/cn/exrick/content/service/impl/ContentImageServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/java/cn/exrick/content/service/impl/ContentServiceImpl.java" afterPath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/java/cn/exrick/content/service/impl/ContentServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-dao.xml" afterPath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-dao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-service/xmall-content-service.iml" afterPath="$PROJECT_DIR$/xmall-content/xmall-content-service/xmall-content-service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content.iml" afterPath="$PROJECT_DIR$/xmall-content/xmall-content.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/content-product-add.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/content-product-add.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/content-product-edit.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/content-product-edit.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-add.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-add.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-edit.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-edit.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/pom.xml" afterPath="$PROJECT_DIR$/xmall-manager-web/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/xmall-manager-web.iml" afterPath="$PROJECT_DIR$/xmall-manager-web/xmall-manager-web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/xmall-manager-dao.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/xmall-manager-dao.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/xmall-manager-interface.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/xmall-manager-interface.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/dto/front/ProductHome.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/dto/front/ProductHome.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/xmall-manager-pojo.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/xmall-manager-pojo.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/xmall-manager-service.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/xmall-manager-service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/ImageController.java" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/ContentImageController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/xmall-parent/target/" />
     <ignored path="$PROJECT_DIR$/xmall-common/target/" />
@@ -46,6 +31,7 @@
     <ignored path="$PROJECT_DIR$/xmall-content/target/" />
     <ignored path="$PROJECT_DIR$/xmall-content/xmall-content-service/target/" />
     <ignored path="$PROJECT_DIR$/xmall-content/xmall-content-interface/target/" />
+    <ignored path="$PROJECT_DIR$/xmall-front-web/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,31 +47,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ContentServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/java/cn/exrick/content/service/impl/ContentServiceImpl.java">
+      <file leaf-file-name="GoodsController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/GoodsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="158" column="24" lean-forward="false" selection-start-line="158" selection-start-column="24" selection-end-line="158" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ContentImageServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/java/cn/exrick/content/service/impl/ContentImageServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="79" column="8" lean-forward="true" selection-start-line="79" selection-start-column="8" selection-end-line="80" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="resource.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/conf/resource.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+            <state relative-caret-position="405">
+              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -148,9 +114,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/ItemCatController.java" />
-        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-category-add.jsp" />
-        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-category.jsp" />
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/src/main/java/cn/exrick/service/ItemCatService.java" />
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/service/impl/ItemCatServiceImpl.java" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/ContentController.java" />
@@ -199,6 +162,9 @@
         <option value="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/java/cn/exrick/content/service/impl/ContentImageServiceImpl.java" />
         <option value="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/java/cn/exrick/content/service/impl/ContentCatServiceImpl.java" />
         <option value="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/java/cn/exrick/content/service/impl/ContentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/pom.xml" />
+        <option value="$PROJECT_DIR$/xmall-front-web/pom.xml" />
+        <option value="$PROJECT_DIR$/xmall-front-web/src/main/resources/spring/springmvc.xml" />
       </list>
     </option>
   </component>
@@ -604,246 +570,21 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-content" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-content" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-content-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-content" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-content-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-content" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-content-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-content" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-content-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-content" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-content-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
               <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-interface" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-interface" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-interface" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-interface" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="exrick" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="exrick" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-parent" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -857,12 +598,12 @@
     <property name="SearchEverywhereHistoryKey" value="{&#9;null&#9;null&#10;C&#9;FILE&#9;file://D:/桌面/xmall/xmall-manager-web/src/main/java/cn/exrick/controller/ItemController.java" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\桌面\xmall\xmall-content\xmall-content-service\src\main\resources\spring" />
-      <recent name="D:\桌面\xmall\xmall-manager-web\src\main\webapp\lib" />
-      <recent name="D:\桌面\xmall\xmall-manager-web\src\main\webapp\lib\ueditor\1.4.3" />
-      <recent name="D:\xmall\xmall-manager-web\src\main\webapp\icon" />
-      <recent name="D:\xmall\xmall-manager-web\src\main\webapp\static\swagger" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\桌面\xmall\xmall-front-web\src\main\resources" />
+      <recent name="D:\桌面\xmall\xmall-content\xmall-content-service\src\main\resources\conf" />
+      <recent name="D:\桌面\xmall\xmall-manager\xmall-manager-service\src\main\resources\spring" />
+      <recent name="D:\桌面\xmall\xmall-common\src\main\java\cn\exrick\common\jedis" />
+      <recent name="D:\桌面\xmall\xmall-manager-web\src\main\webapp\WEB-INF\jsp" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="cn.exrick.common.exception" />
@@ -870,12 +611,12 @@
       <recent name="cn.exrick.service.exception" />
       <recent name="cn.exrick.service" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\桌面\xmall\xmall-content\xmall-content-service\src\main\resources\conf" />
-      <recent name="D:\桌面\xmall\xmall-manager\xmall-manager-service\src\main\resources\spring" />
-      <recent name="D:\桌面\xmall\xmall-common\src\main\java\cn\exrick\common\jedis" />
-      <recent name="D:\桌面\xmall\xmall-manager-web\src\main\webapp\WEB-INF\jsp" />
-      <recent name="D:\桌面\xmall\xmall-manager\xmall-manager-pojo\src\main\java\cn\exrick\pojo" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\桌面\xmall\xmall-content\xmall-content-service\src\main\resources\spring" />
+      <recent name="D:\桌面\xmall\xmall-manager-web\src\main\webapp\lib" />
+      <recent name="D:\桌面\xmall\xmall-manager-web\src\main\webapp\lib\ueditor\1.4.3" />
+      <recent name="D:\xmall\xmall-manager-web\src\main\webapp\icon" />
+      <recent name="D:\xmall\xmall-manager-web\src\main\webapp\static\swagger" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1971,6 +1712,7 @@
       <workItem from="1506264888981" duration="4866000" />
       <workItem from="1506307847309" duration="25107000" />
       <workItem from="1506406551752" duration="10164000" />
+      <workItem from="1506517720865" duration="2913000" />
     </task>
     <servers />
   </component>
@@ -2001,7 +1743,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="700825000" />
+    <option name="totallyTimeSpent" value="703738000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2029,20 +1771,18 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39881656" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32426035" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.356213" sideWeight="0.4969651" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.356213" sideWeight="0.4969651" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37633136" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21995708" sideWeight="0.44339624" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22317597" sideWeight="0.43905327" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21351932" sideWeight="0.5566038" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32781065" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22317597" sideWeight="0.56094676" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26100153" sideWeight="0.5069444" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2052,8 +1792,10 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32426035" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32781065" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2112,75 +1854,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="166" column="12" lean-forward="false" selection-start-line="166" selection-start-column="12" selection-end-line="168" selection-end-column="14" />
-          <folding>
-            <marker date="1504753183711" expanded="true" signature="6183:6197" ph="..." />
-            <marker date="1504753183711" expanded="true" signature="7638:7658" ph="..." />
-            <marker date="1504753183711" expanded="true" signature="7763:7771" ph="&amp;##xe631;" />
-            <marker date="1504753183711" expanded="true" signature="7905:7925" ph="..." />
-            <marker date="1504753183711" expanded="true" signature="7954:7962" ph="&amp;##xe6df;" />
-            <marker date="1504753183711" expanded="true" signature="7982:8002" ph="..." />
-            <marker date="1504753183711" expanded="true" signature="8160:8168" ph="&amp;##xe63f;" />
-            <marker date="1504753183711" expanded="true" signature="8278:8298" ph="..." />
-            <marker date="1504753183711" expanded="true" signature="8327:8335" ph="&amp;##xe6e2;" />
-            <marker date="1504753183711" expanded="true" signature="8442:8462" ph="..." />
-            <marker date="1504753183711" expanded="true" signature="8568:8576" ph="&amp;##xe6e1;" />
-            <marker date="1504753183711" expanded="true" signature="8710:8730" ph="..." />
-            <marker date="1504753183711" expanded="true" signature="8759:8767" ph="&amp;##xe6df;" />
-            <marker date="1504753183711" expanded="true" signature="8787:8807" ph="..." />
-            <marker date="1504753183711" expanded="true" signature="8965:8973" ph="&amp;##xe63f;" />
-            <marker date="1504753183711" expanded="true" signature="9083:9103" ph="..." />
-            <marker date="1504753183711" expanded="true" signature="9132:9140" ph="&amp;##xe6e2;" />
-            <marker date="1504753183711" expanded="true" signature="10672:10692" ph="..." />
-            <marker date="1504753183711" expanded="true" signature="10785:10793" ph="&amp;##xe6e1;" />
-            <marker date="1504753183711" expanded="true" signature="11772:11792" ph="..." />
-            <marker date="1504753183711" expanded="true" signature="11884:11892" ph="&amp;##xe631;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="81" column="68" lean-forward="true" selection-start-line="81" selection-start-column="68" selection-end-line="81" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/content-category.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="39" column="30" lean-forward="false" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-content/xmall-content-interface/src/main/java/cn/exrick/content/service/ContentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="22" column="38" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/GoodsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/dto/DtoUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/dto/MemberDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -2206,7 +1879,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2221,7 +1893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2229,22 +1900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="177" column="52" lean-forward="false" selection-start-line="177" selection-start-column="52" selection-end-line="177" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-service.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="24" column="105" lean-forward="false" selection-start-line="24" selection-start-column="105" selection-end-line="24" selection-end-column="105" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/resources/spring/springmvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="41" column="4" lean-forward="false" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2259,13 +1914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="461">
           <caret line="308" column="4" lean-forward="true" selection-start-line="308" selection-start-column="4" selection-end-line="310" selection-end-column="5" />
-          <folding>
-            <marker date="1506346157299" expanded="true" signature="6523:6547" ph="..." />
-            <marker date="1506346157299" expanded="true" signature="7205:7225" ph="..." />
-            <marker date="1506346157299" expanded="true" signature="7371:7379" ph="&amp;##xe6df;" />
-            <marker date="1506346157299" expanded="true" signature="7399:7419" ph="..." />
-            <marker date="1506346157299" expanded="true" signature="7539:7547" ph="&amp;##xe6e2;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2273,11 +1921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="169" column="13" lean-forward="true" selection-start-line="169" selection-start-column="13" selection-end-line="169" selection-end-column="13" />
-          <folding>
-            <marker date="1506348042498" expanded="true" signature="4771:4795" ph="..." />
-            <marker date="1506348042498" expanded="true" signature="5409:5429" ph="..." />
-            <marker date="1506348042498" expanded="true" signature="5567:5575" ph="&amp;##xe6df;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2285,7 +1928,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-268">
           <caret line="41" column="74" lean-forward="true" selection-start-line="41" selection-start-column="74" selection-end-line="41" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2300,11 +1942,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="534">
           <caret line="91" column="21" lean-forward="false" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/ImageController.java">
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/ContentImageController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="36" column="56" lean-forward="false" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
@@ -2314,29 +1955,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/jedis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-redis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
-          <caret line="11" column="49" lean-forward="true" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/jedis.java" />
     <entry file="file://$PROJECT_DIR$/xmall-content/xmall-content-service/src/test/java/cn/exirck/jedis/JedisClientTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2344,7 +1967,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
           <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2352,7 +1974,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2360,7 +1981,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2368,7 +1988,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
           <caret line="320" column="54" lean-forward="false" selection-start-line="320" selection-start-column="54" selection-end-line="320" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2376,7 +1995,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="323" column="54" lean-forward="false" selection-start-line="323" selection-start-column="54" selection-end-line="323" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2384,7 +2002,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
           <caret line="45" column="70" lean-forward="false" selection-start-line="45" selection-start-column="70" selection-end-line="45" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2392,7 +2009,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="80" column="50" lean-forward="false" selection-start-line="80" selection-start-column="50" selection-end-line="80" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2400,7 +2016,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="765" column="30" lean-forward="false" selection-start-line="765" selection-start-column="24" selection-end-line="765" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2408,15 +2023,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
           <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="126" column="8" lean-forward="false" selection-start-line="126" selection-start-column="8" selection-end-line="129" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2424,7 +2030,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2079">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2440,9 +2045,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
           <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2450,7 +2052,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2458,9 +2059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="596">
           <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2468,7 +2066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2476,7 +2073,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="542">
           <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2484,7 +2080,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2492,7 +2087,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2500,9 +2094,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-270">
           <caret line="20" column="49" lean-forward="true" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
-          <folding>
-            <element signature="e#461#462#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2540,16 +2131,96 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/java/cn/exrick/content/service/impl/ContentImageServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="79" column="8" lean-forward="true" selection-start-line="79" selection-start-column="8" selection-end-line="80" selection-end-column="52" />
+        <state relative-caret-position="785">
+          <caret line="69" column="41" lean-forward="true" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-redis.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-529">
+          <caret line="11" column="49" lean-forward="true" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="20" lean-forward="true" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/java/cn/exrick/content/service/impl/ContentServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
+        <state relative-caret-position="3722">
           <caret line="158" column="24" lean-forward="false" selection-start-line="158" selection-start-column="24" selection-end-line="158" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/resources/spring/springmvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="41" column="4" lean-forward="false" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-service.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="12" column="70" lean-forward="false" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/exception/RestCtrlExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-front-web/src/main/resources/spring/springmvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-front-web/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/swagger/Swagger2Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="126" column="21" lean-forward="false" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/controller/GoodsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>

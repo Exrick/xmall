@@ -12,6 +12,7 @@
 
     <artifactId>xmall-manager-web</artifactId>
     <packaging>war</packaging>
+
     <dependencies>
         <dependency>
             <groupId>cn.exrick</groupId>
@@ -123,10 +124,6 @@
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
         </dependency>
 
     </dependencies>

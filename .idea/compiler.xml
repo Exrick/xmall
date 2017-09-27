@@ -23,6 +23,7 @@
       <module name="xmall-content" target="1.8" />
       <module name="xmall-content-interface" target="1.8" />
       <module name="xmall-content-service" target="1.8" />
+      <module name="xmall-front-web" target="1.8" />
       <module name="xmall-manager" target="1.8" />
       <module name="xmall-manager-dao" target="1.8" />
       <module name="xmall-manager-interface" target="1.8" />
