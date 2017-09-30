@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.exrick.mapper.TbItemCatMapper">
-  <resultMap id="BaseResultMap" type="cn.exrick.pojo.TbItemCat">
+<mapper namespace="TbItemCatMapper">
+  <resultMap id="BaseResultMap" type="TbItemCat">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="parent_id" jdbcType="BIGINT" property="parentId" />
     <result column="name" jdbcType="VARCHAR" property="name" />
@@ -74,7 +74,7 @@
   <sql id="Base_Column_List">
     id, parent_id, name, status, sort_order, is_parent, created, updated, icon, remark
   </sql>
-  <select id="selectByExample" parameterType="cn.exrick.pojo.TbItemCatExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="TbItemCatExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -98,13 +98,13 @@
     delete from tb_item_cat
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="cn.exrick.pojo.TbItemCatExample">
+  <delete id="deleteByExample" parameterType="TbItemCatExample">
     delete from tb_item_cat
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.exrick.pojo.TbItemCat">
+  <insert id="insert" parameterType="TbItemCat">
     insert into tb_item_cat (id, parent_id, name, 
       status, sort_order, is_parent, 
       created, updated, icon, 
@@ -114,7 +114,7 @@
       #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}, #{icon,jdbcType=VARCHAR}, 
       #{remark,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="cn.exrick.pojo.TbItemCat">
+  <insert id="insertSelective" parameterType="TbItemCat">
     insert into tb_item_cat
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -181,7 +181,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cn.exrick.pojo.TbItemCatExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="TbItemCatExample" resultType="java.lang.Long">
     select count(*) from tb_item_cat
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -241,7 +241,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.exrick.pojo.TbItemCat">
+  <update id="updateByPrimaryKeySelective" parameterType="TbItemCat">
     update tb_item_cat
     <set>
       <if test="parentId != null">
@@ -274,7 +274,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.exrick.pojo.TbItemCat">
+  <update id="updateByPrimaryKey" parameterType="TbItemCat">
     update tb_item_cat
     set parent_id = #{parentId,jdbcType=BIGINT},
       name = #{name,jdbcType=VARCHAR},

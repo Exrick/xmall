@@ -6,6 +6,7 @@
     <file type="web" url="file://$PROJECT_DIR$/xmall-manager-web" />
     <file type="web" url="file://$PROJECT_DIR$/xmall-manager-web/xmall-manager-web" />
     <file type="web" url="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service" />
+    <file type="web" url="file://$PROJECT_DIR$/xmall-search/xmall-search-service" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -16,6 +17,9 @@
         <option value="$PROJECT_DIR$/generatorSqlmapCustom/pom.xml" />
         <option value="$PROJECT_DIR$/xmall-manager-web/pom.xml" />
         <option value="$PROJECT_DIR$/xmall-content/pom.xml" />
+        <option value="$PROJECT_DIR$/xmall-search/pom.xml" />
+        <option value="$PROJECT_DIR$/xmall-front-web/pom.xml" />
+        <option value="$PROJECT_DIR$/xmall-search/xmall-search-service/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

@@ -1,4 +1,4 @@
-### SpringMVC总结
+# SpringMVC总结
 **@Controller**
 
 通过@controller标注即可将class定义为一个controller类

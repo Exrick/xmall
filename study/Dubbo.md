@@ -1,4 +1,4 @@
-## Dubbo架构
+# Dubbo架构
 
 ![](http://otabkoy17.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170902124944.png)
  

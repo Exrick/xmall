@@ -1,4 +1,4 @@
-## IntelliJ IDEA - JRebel 安装使用
+# IntelliJ IDEA - JRebel 安装使用
 
 ### JRebel能做什么
 

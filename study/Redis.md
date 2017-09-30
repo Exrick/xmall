@@ -1,5 +1,5 @@
-### Redis的安装及集群配置
-#### Redis的安装
+# Redis的安装及集群配置
+### Redis的安装
 
 Redis是c语言开发的，安装需要c语言的编译环境,如果没有gcc需要在线安装: `yum install gcc-c++`
 
@@ -10,13 +10,13 @@ Redis是c语言开发的，安装需要c语言的编译环境,如果没有gcc需
 - 第四步：安装: `make install PREFIX=/usr/local/redis`
 
     PREFIX参数指定redis的安装目录,一般软件安装到/usr目录下
-#### Redis的启动：
+### Redis的启动：
 - 前端启动：在redis的安装目录下直接启动redis-server
 `[root@localhost bin]# ./redis-server`
 
 - 后台启动：把 `/root/redis-3.0.0/redis.conf` 复制到 `/usr/local/redis/bin `目录下启动时添加配置文件 `[root@localhost redis-3.0.0]# cp redis.conf /usr/local/redis/bin/`
 
-#### Redis-cli连接
+### Redis-cli连接
 - 默认连接localhost运行在6379端口的redis服务
 `[root@localhost bin]# ./redis-cli`
 - 自定义连接端口
@@ -25,7 +25,7 @@ Redis是c语言开发的，安装需要c语言的编译环境,如果没有gcc需
     -h：连接的服务器的地址
     -p：服务的端口号
 
-#### Redis-cluster集群搭建
+### Redis-cluster集群搭建
 由于容错机制，Redis集群中至少应该有三个节点。要保证集群的高可用，需要每个节点有一个备份机，因此，Redis集群至少需要6台服务器。
 
 ![](http://oweupqzdv.bkt.clouddn.com/redis-cluster%E5%AE%B9%E9%94%99.jpg)
@@ -83,7 +83,6 @@ cd ..
 5. 连接集群
 
     `[root@localhost redis-cluster]# redis01/redis-cli -p 7002 -c`
-`
 
 
 

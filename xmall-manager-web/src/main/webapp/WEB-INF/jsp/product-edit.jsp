@@ -402,7 +402,7 @@
                 swf: 'lib/webuploader/0.1.5/Uploader.swf',
                 chunked: false,
                 chunkSize: 512 * 1024,
-                server: '/item/imageUpload',
+                server: '/image/imageUpload',
                 // runtimeOrder: 'flash',
 
                 accept: {

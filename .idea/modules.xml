@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/xmall-content/xmall-content.iml" filepath="$PROJECT_DIR$/xmall-content/xmall-content.iml" />
       <module fileurl="file://$PROJECT_DIR$/xmall-content/xmall-content-interface/xmall-content-interface.iml" filepath="$PROJECT_DIR$/xmall-content/xmall-content-interface/xmall-content-interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/xmall-content/xmall-content-service/xmall-content-service.iml" filepath="$PROJECT_DIR$/xmall-content/xmall-content-service/xmall-content-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xmall-front-web/xmall-front-web.iml" filepath="$PROJECT_DIR$/xmall-front-web/xmall-front-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/xmall-manager/xmall-manager.iml" filepath="$PROJECT_DIR$/xmall-manager/xmall-manager.iml" />
       <module fileurl="file://$PROJECT_DIR$/xmall-manager/xmall-manager-dao/xmall-manager-dao.iml" filepath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/xmall-manager-dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/xmall-manager/xmall-manager-interface/xmall-manager-interface.iml" filepath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/xmall-manager-interface.iml" />
@@ -14,6 +15,9 @@
       <module fileurl="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/xmall-manager-service.iml" filepath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/xmall-manager-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/xmall-manager-web/xmall-manager-web.iml" filepath="$PROJECT_DIR$/xmall-manager-web/xmall-manager-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/xmall-parent/xmall-parent.iml" filepath="$PROJECT_DIR$/xmall-parent/xmall-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xmall-search/xmall-search.iml" filepath="$PROJECT_DIR$/xmall-search/xmall-search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xmall-search/xmall-search-interface/xmall-search-interface.iml" filepath="$PROJECT_DIR$/xmall-search/xmall-search-interface/xmall-search-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xmall-search/xmall-search-service/xmall-search-service.iml" filepath="$PROJECT_DIR$/xmall-search/xmall-search-service/xmall-search-service.iml" />
     </modules>
   </component>
 </project>

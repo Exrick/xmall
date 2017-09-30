@@ -39,20 +39,20 @@
 - [Dubbo](https://github.com/Exrick/xmall/blob/master/study/Dubbo.md)
 - [ZooKeeper](https://github.com/Exrick/xmall/blob/master/study/Zookeeper.md)
 - MySQL
-- [Redis(集群搭建)](https://github.com/Exrick/xmall/blob/master/study/Redis.md)：缓存
+- [Redis](https://github.com/Exrick/xmall/blob/master/study/Redis.md)：缓存
 - Druid：阿里高性能数据库连接池
+- [Elasticsearch](https://github.com/Exrick/xmall/blob/master/study/Elasticsearch.md)：基于Lucene开源分布式搜索引擎
 - [Swagger](https://github.com/Exrick/xmall/blob/master/study/Swagger.md)
-- ElasticSearch：基于Lucene开源分布式搜索引擎
 - Docker
 - [Nginx](https://github.com/Exrick/xmall/blob/master/study/Nginx.md)
 - Tomcat
 - [Maven](https://github.com/Exrick/xmall/blob/master/study/Maven.md)
-- 其它开发工具
-    - [JRebel](https://github.com/Exrick/xmall/blob/master/study/JRebel.md)：开发热部署
 - 第三方SDK
     - [七牛云文件存储服务器](https://developer.qiniu.com/kodo/sdk/1239/java)
 - 第三方插件
     - [搜狐畅言评论插件](http://changyan.kuaizhan.com/)
+- 其它开发工具
+    - [JRebel](https://github.com/Exrick/xmall/blob/master/study/JRebel.md)：开发热部署
 
 ### dependency文件夹提供部分安装文件与sql文件
 - xmall.sql：数据库文件

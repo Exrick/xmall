@@ -1,8 +1,8 @@
 package cn.exrick.content.service;
 
 import cn.exrick.common.pojo.ZTreeNode;
-import cn.exrick.dto.ContentCatDto;
-import cn.exrick.pojo.TbContentCategory;
+import cn.exrick.manager.dto.ContentCatDto;
+import cn.exrick.manager.pojo.TbContentCategory;
 
 import java.util.List;
 

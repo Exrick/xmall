@@ -1,9 +1,9 @@
 package cn.exrick.content.service;
 
 import cn.exrick.common.pojo.DataTablesResult;
-import cn.exrick.dto.front.ProductDet;
-import cn.exrick.dto.front.ProductHome;
-import cn.exrick.pojo.TbContent;
+import cn.exrick.manager.dto.front.ProductDet;
+import cn.exrick.manager.dto.front.ProductHome;
+import cn.exrick.manager.pojo.TbContent;
 
 
 public interface ContentService {

@@ -1,7 +1,7 @@
 package cn.exrick.content.service;
 
 import cn.exrick.common.pojo.DataTablesResult;
-import cn.exrick.pojo.TbImage;
+import cn.exrick.manager.pojo.TbImage;
 
 public interface ContentImageService {
 

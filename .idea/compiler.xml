@@ -10,11 +10,15 @@
         <module name="xmall-common" />
         <module name="xmall-content-interface" />
         <module name="xmall-content-service" />
+        <module name="xmall-front-web" />
         <module name="xmall-manager-dao" />
         <module name="xmall-manager-interface" />
         <module name="xmall-manager-pojo" />
         <module name="xmall-manager-service" />
         <module name="xmall-manager-web" />
+        <module name="xmall-search-interface" />
+        <module name="xmall-search-service" />
+        <module name="xmallsearch" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -31,6 +35,10 @@
       <module name="xmall-manager-service" target="1.8" />
       <module name="xmall-manager-web" target="1.8" />
       <module name="xmall-parent" target="1.8" />
+      <module name="xmall-search" target="1.8" />
+      <module name="xmall-search-interface" target="1.8" />
+      <module name="xmall-search-service" target="1.8" />
+      <module name="xmallsearch" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

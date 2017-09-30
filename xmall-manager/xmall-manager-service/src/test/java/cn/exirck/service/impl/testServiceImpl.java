@@ -1,9 +1,8 @@
 package cn.exirck.service.impl;
 
-import cn.exrick.mapper.TbItemDescMapper;
-import cn.exrick.mapper.TbItemMapper;
-import cn.exrick.mapper.TbMemberMapper;
-import cn.exrick.pojo.TbItemDesc;
+import cn.exrick.manager.mapper.TbItemDescMapper;
+import cn.exrick.manager.mapper.TbItemMapper;
+import cn.exrick.manager.pojo.TbItemDesc;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
