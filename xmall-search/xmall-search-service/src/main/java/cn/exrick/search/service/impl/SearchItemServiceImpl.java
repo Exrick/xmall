@@ -4,6 +4,10 @@ import cn.exrick.common.exception.XmallException;
 import cn.exrick.common.pojo.SearchItem;
 import cn.exrick.search.service.SearchItemService;
 import cn.exrick.search.mapper.ItemMapper;
+import org.elasticsearch.action.bulk.BulkRequestBuilder;
+import org.elasticsearch.action.bulk.BulkResponse;
+import org.elasticsearch.action.delete.DeleteResponse;
+import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
@@ -32,11 +36,18 @@ public class SearchItemServiceImpl implements SearchItemService {
 			TransportClient client = new PreBuiltTransportClient(settings)
 					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("123.207.121.135"), 9300));
 
+			//Boolean isExists = client.prepareGet("twitter", "tweet", "1").get().isExists();
+			//DeleteResponse deleteResponse = client.prepareDelete("twitter", "tweet", "1").get();
+
+			//批量添加
+			BulkRequestBuilder bulkRequest = client.prepareBulk();
+
 			//查询商品列表
 			List<SearchItem> itemList = itemMapper.getItemList();
+
 			//遍历商品列表
 			for (SearchItem searchItem : itemList) {
-				IndexResponse response = client.prepareIndex("item", "itemList")
+				bulkRequest.add(client.prepareIndex("item", "itemList", String.valueOf(searchItem.getProductId()))
 						.setSource(jsonBuilder()
 								.startObject()
 								.field("productId", searchItem.getProductId())
@@ -46,8 +57,11 @@ public class SearchItemServiceImpl implements SearchItemService {
 								.field("productImageBig", searchItem.getProductImageBig())
 								.field("category_name", searchItem.getCategory_name())
 								.endObject()
-						).get();
+						)
+				);
 			}
+
+			BulkResponse bulkResponse = bulkRequest.get();
 
 			client.close();
 		}catch (Exception e){

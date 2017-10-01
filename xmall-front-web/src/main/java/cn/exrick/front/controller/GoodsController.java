@@ -1,6 +1,7 @@
 package cn.exrick.front.controller;
 
 import cn.exrick.common.pojo.Result;
+import cn.exrick.common.pojo.SearchResult;
 import cn.exrick.common.utils.ResultUtil;
 import cn.exrick.content.service.ContentService;
 import cn.exrick.manager.dto.front.ProductDet;
@@ -44,14 +45,14 @@ public class GoodsController {
 
     @RequestMapping(value = "/goods/search/{key}",method = RequestMethod.GET)
     @ApiOperation(value = "搜索商品")
-    public Result<Object> searchProduct(@PathVariable String key){
+    public Result<SearchResult> searchProduct(@PathVariable String key,int page,int size){
 
-        searchService.search(key,1,10);
-        return new ResultUtil<Object>().setData(null);
+        SearchResult searchResult=searchService.search(key,page,size);
+        return new ResultUtil<SearchResult>().setData(searchResult);
     }
 
     @RequestMapping(value = "/goods/importIndex",method = RequestMethod.GET)
-    @ApiOperation(value = "搜索商品")
+    @ApiOperation(value = "导入商品索引至ES")
     public Result<Object> searchProduct(){
 
         searchItemService.importAllItems();

@@ -7,6 +7,8 @@ Zookeeper是Apacahe Hadoop的子项目，是一个树型的目录服务，支持
 
 注册中心负责服务地址的注册与查找，相当于目录服务，服务提供者和消费者只在启动时与注册中心交互，注册中心不转发请求，压力较小。
 
+[官方下载地址](http://zookeeper.apache.org/releases.html#download)
+
 ### Zookeeper的安装
 - 安装环境：
     - Linux：CentOS

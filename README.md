@@ -1,4 +1,4 @@
-## XMall
+# XMall
 ### 基于SOA架构的SSM分布式购物商城
 - 后台管理系统：管理商品、订单、类目、商品规格属性、用户管理以及内容发布等功能。
 - 前台系统：用户可以在前台系统中进行注册、登录、浏览商品、首页、下单等操作。
@@ -40,8 +40,9 @@
 - [ZooKeeper](https://github.com/Exrick/xmall/blob/master/study/Zookeeper.md)
 - MySQL
 - [Redis](https://github.com/Exrick/xmall/blob/master/study/Redis.md)：缓存
+- [Elasticsearch](https://github.com/Exrick/xmall/blob/master/study/Elasticsearch.md)：基于Lucene分布式搜索引擎
+- ActiveMQ
 - Druid：阿里高性能数据库连接池
-- [Elasticsearch](https://github.com/Exrick/xmall/blob/master/study/Elasticsearch.md)：基于Lucene开源分布式搜索引擎
 - [Swagger](https://github.com/Exrick/xmall/blob/master/study/Swagger.md)
 - Docker
 - [Nginx](https://github.com/Exrick/xmall/blob/master/study/Nginx.md)
@@ -54,11 +55,9 @@
 - 其它开发工具
     - [JRebel](https://github.com/Exrick/xmall/blob/master/study/JRebel.md)：开发热部署
 
-### dependency文件夹提供部分安装文件与sql文件
+### dependency文件夹提供部分依赖与sql文件
 - xmall.sql：数据库文件
 - dubbo.xsd：需手动配置避免报错
-- zookeeper 
-- nginx
 - redis-3.0.0.gem：Redis集群搭建所需Ruby库
 
 ### 本地开发运行部署
@@ -66,7 +65,8 @@
 - 使用IDEA([破解/免费注册](http://idea.lanyus.com/)) `File-Open` 直接打开xmall项目，点击右下角 `Import Changes` 等待安装完依赖即可
 - [Maven安装和在IDEA中配置](https://github.com/Exrick/xmall/blob/master/study/Maven.md)
 - MySQL数据库新建`xmall`数据库，运行sql文件，注意在 `xmall-manager-service/resources/conf/db.properties` 中修改你的数据库连接配置
-- 按照依赖顺序分别在每个模块文件夹根目录执行 `mvn install` 命令: xmall-parent、xmall-common、xmall-manager、xmall-manager-web等服务
-- 项目需运行 `xmall-manager` `xmall-content` `xmall-manager-web` 服务，已配置好Tomcat插件, 执行命令 `mvn tomcat7:run` 或在IDEA中使用插件(`View - Tool Buttons - 右侧菜单Maven Projects - tomcat7 - tomcat7:run`)运行即可
-- 访问 http://localhost:8888
+- 按照依赖顺序分别在每个模块文件夹根目录执行 `mvn install` 命令
+- 项目需按照依赖顺序运行除 `xmall-parent` `xmall-common` 以外其它所有服务，且都已配置好Tomcat插件, 执行命令 `mvn tomcat7:run` 或在IDEA中使用插件(`View - Tool Buttons - 右侧菜单Maven Projects - tomcat7 - tomcat7:run`)运行即可
+- 访问 http://localhost:8888 即可打开后端管理系统
+- 前端项目接口 http://localhost:6666
 

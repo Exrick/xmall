@@ -63,4 +63,16 @@ public class SearchItem implements Serializable {
     public void setProductImageBig(String productImageBig) {
         this.productImageBig = productImageBig;
     }
+
+    @Override
+    public String toString() {
+        return "SearchItem{" +
+                "productId=" + productId +
+                ", salePrice=" + salePrice +
+                ", productName='" + productName + '\'' +
+                ", sub_title='" + sub_title + '\'' +
+                ", productImageBig='" + productImageBig + '\'' +
+                ", category_name='" + category_name + '\'' +
+                '}';
+    }
 }

@@ -1,4 +1,7 @@
 # Ngix安装(Linux) 
+
+[官方下载地址](http://nginx.org/en/download.html)
+
 1. gcc环境 `yum install gcc-c++`
 2. 第三方的开发包
     - PCRE `yum install -y pcre pcre-devel`
