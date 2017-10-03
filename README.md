@@ -1,5 +1,5 @@
 # XMall
-### 基于SOA架构的SSM分布式购物商城
+### 基于SOA架构的分布式购物电商商城
 - 后台管理系统：管理商品、订单、类目、商品规格属性、用户管理以及内容发布等功能。
 - 前台系统：用户可以在前台系统中进行注册、登录、浏览商品、首页、下单等操作。
 - 会员系统：用户可以在该系统中查询已下的订单、收藏的商品、我的优惠券、团购等信息。
@@ -41,7 +41,7 @@
 - MySQL
 - [Redis](https://github.com/Exrick/xmall/blob/master/study/Redis.md)：缓存
 - [Elasticsearch](https://github.com/Exrick/xmall/blob/master/study/Elasticsearch.md)：基于Lucene分布式搜索引擎
-- ActiveMQ
+- [ActiveMQ]((https://github.com/Exrick/xmall/blob/master/study/ActiveMQ.md))
 - Druid：阿里高性能数据库连接池
 - [Swagger](https://github.com/Exrick/xmall/blob/master/study/Swagger.md)
 - Docker

@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.exrick.search.mapper.ItemMapper">
-  <select id="getItemList" resultType="cn.exrick.common.pojo.SearchItem">
-    SELECT
-      a.id productId,
-	  a.title productName,
-	  a.sell_point sub_title,
-	  a.price salePrice,
-	  a.image productImageBig,
-	  b.name category_name
-	FROM
-	  tb_item a
-	LEFT JOIN tb_item_cat b ON a.cid = b.id
-	WHERE
-	  a.`status` = 1
-  </select>
+	<select id="getItemList" resultType="cn.exrick.common.pojo.SearchItem">
+		SELECT
+		a.id productId,
+		a.title productName,
+		a.sell_point sub_title,
+		a.price salePrice,
+		a.image productImageBig,
+		b.name category_name
+		FROM
+		tb_item a
+		LEFT JOIN tb_item_cat b ON a.cid = b.id
+		WHERE
+		a.`status` = 1
+	</select>
+	<select id="getItemById" resultType="cn.exrick.common.pojo.SearchItem">
+		SELECT
+		a.id productId,
+		a.title productName,
+		a.sell_point sub_title,
+		a.price salePrice,
+		a.image productImageBig,
+		b.name category_name
+		FROM
+		tb_item a
+		LEFT JOIN tb_item_cat b ON a.cid = b.id
+		WHERE
+		a.`status` = 1 AND a.id=#{id}
+	</select>
 </mapper>

@@ -121,3 +121,24 @@ http.port: 9200
 ### 测试成功
 
 ![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170928164116.png)
+
+### 插件Elasticsearch-head安装
+
+[Head-GitHub官网](https://github.com/mobz/elasticsearch-head)
+
+- 依赖：Git Node.js
+- 官网安装教程
+```
+git clone git://github.com/mobz/elasticsearch-head.git
+cd elasticsearch-head
+npm install
+npm run start
+```
+
+- 打开浏览器输入：IP:9100
+
+- 正常的话可以看到已经连接了ES，但是看不到连接信息，这时候需要在在 es 的 elasticsearch.ym 里添加如下配置：
+
+    `http.cors.enabled: true`
+
+    `http.cors.allow-origin: "*"`

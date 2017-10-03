@@ -10,3 +10,4 @@
 - 解压tar.xz：`tar xvJf file.tar.xz`
 - 解压rar：`unrar e file.rar`
 - 解压zip：`unzip file.zip`
+- 下载网络文件 `wget http://file.zip`

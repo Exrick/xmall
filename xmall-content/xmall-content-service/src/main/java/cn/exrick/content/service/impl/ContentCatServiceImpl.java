@@ -73,7 +73,7 @@ public class ContentCatServiceImpl implements ContentCatService {
             throw new XmallException("添加内容分类失败");
         }
         //同步缓存
-        jedisClient.hdel(PRODUCT_HOME,PRODUCT_HOME);
+        deleteHomeRedis();
         return 1;
     }
 
@@ -92,7 +92,7 @@ public class ContentCatServiceImpl implements ContentCatService {
             throw new XmallException("更新内容分类失败");
         }
         //同步缓存
-        jedisClient.hdel(PRODUCT_HOME,PRODUCT_HOME);
+        deleteHomeRedis();
         return 1;
     }
 
@@ -103,7 +103,16 @@ public class ContentCatServiceImpl implements ContentCatService {
             throw new XmallException("删除内容分类失败");
         }
         //同步缓存
-        jedisClient.hdel(PRODUCT_HOME,PRODUCT_HOME);
+        deleteHomeRedis();
         return 1;
+    }
+
+    //同步首页缓存
+    public void deleteHomeRedis(){
+        try {
+            jedisClient.hdel(PRODUCT_HOME,PRODUCT_HOME);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

@@ -1,8 +1,6 @@
 package cn.exrick.search.service;
 
 
-import cn.exrick.search.service.impl.SearchServiceImpl;
-import cn.exrick.search.service.impl.SearchItemServiceImpl;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.client.transport.TransportClient;
@@ -26,16 +24,19 @@ public class ElasticsearchTest {
             TransportClient client = new PreBuiltTransportClient(settings)
                     .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("123.207.121.135"), 9300));
 
-            IndexResponse response = client.prepareIndex("twitter", "tweet", "1")
+            IndexResponse response = client.prepareIndex("item", "itemList", "830972")
                     .setSource(jsonBuilder()
                             .startObject()
-                            .field("user", "kimchy")
-                            .field("postDate", new Date())
-                            .field("message", "trying out Elasticsearch")
+                            .field("productId", "830972")
+                            .field("salePrice", "254")
+                            .field("productName", "254")
+                            .field("sub_title", "524")
+                            .field("productImageBig", "252")
+                            .field("category_name", "2542")
                             .endObject()
                     ).get();
 
-            GetResponse getResponse = client.prepareGet("twitter", "tweet", "1").get();
+            GetResponse getResponse = client.prepareGet("item", "itemList", "830972").get();
 
             String json = getResponse.getSourceAsString();
 
@@ -45,14 +46,5 @@ public class ElasticsearchTest {
         }catch (Exception e){
             e.printStackTrace();
         }
-    }
-
-    @Test
-    public void test2() {
-        SearchItemServiceImpl searchItemService=new SearchItemServiceImpl();
-        System.out.println(searchItemService.importAllItems());
-
-        SearchServiceImpl searchService=new SearchServiceImpl();
-        searchService.search("1",1,100);
     }
 }

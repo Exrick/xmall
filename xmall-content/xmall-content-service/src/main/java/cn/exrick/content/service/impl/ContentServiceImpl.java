@@ -3,6 +3,7 @@ package cn.exrick.content.service.impl;
 import cn.exrick.common.exception.XmallException;
 import cn.exrick.common.jedis.JedisClient;
 import cn.exrick.common.pojo.DataTablesResult;
+import cn.exrick.common.pojo.Result;
 import cn.exrick.content.service.ContentService;
 import cn.exrick.manager.dto.ContentDto;
 import cn.exrick.manager.dto.DtoUtil;
@@ -12,6 +13,8 @@ import cn.exrick.manager.dto.front.ProductDet;
 import cn.exrick.manager.dto.front.ProductHome;
 import cn.exrick.manager.mapper.*;
 import cn.exrick.manager.pojo.*;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.google.gson.Gson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -59,6 +62,12 @@ public class ContentServiceImpl implements ContentService {
     @Value("${BRAND_IMAGE_ID}")
     private int BRAND_IMAGE_ID;
 
+    @Value("${RDEIS_ITEM}")
+    private String RDEIS_ITEM;
+
+    @Value("${ITEM_EXPIRE}")
+    private int ITEM_EXPIRE;
+
     @Override
     public int addContent(TbContent tbContent) {
 
@@ -68,7 +77,7 @@ public class ContentServiceImpl implements ContentService {
             throw new XmallException("添加内容失败");
         }
         //同步缓存
-        jedisClient.hdel(PRODUCT_HOME,PRODUCT_HOME);
+        deleteHomeRedis();
         return 1;
     }
 
@@ -103,7 +112,7 @@ public class ContentServiceImpl implements ContentService {
             throw new XmallException("删除内容失败");
         }
         //同步缓存
-        jedisClient.hdel(PRODUCT_HOME,PRODUCT_HOME);
+        deleteHomeRedis();
         return 1;
     }
 
@@ -120,7 +129,7 @@ public class ContentServiceImpl implements ContentService {
             throw new XmallException("更新内容失败");
         }
         //同步缓存
-        jedisClient.hdel(PRODUCT_HOME,PRODUCT_HOME);
+        deleteHomeRedis();
         return 1;
     }
 
@@ -268,6 +277,19 @@ public class ContentServiceImpl implements ContentService {
     @Override
     public ProductDet getProductDet(Long id) {
 
+        //查询缓存
+        try{
+            //有缓存则读取
+            String json=jedisClient.get(RDEIS_ITEM+":"+id);
+            if(json!=null){
+                ProductDet productDet= new Gson().fromJson(json,ProductDet.class);
+                log.info("读取了商品详情"+id+"缓存");
+                return productDet;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         TbItem tbItem=tbItemMapper.selectByPrimaryKey(id);
         ProductDet productDet=new ProductDet();
         productDet.setProductId(id);
@@ -292,6 +314,57 @@ public class ContentServiceImpl implements ContentService {
             }
             productDet.setProductImageSmall(list);
         }
+        //无缓存 把结果添加至缓存
+        try{
+            jedisClient.set(RDEIS_ITEM+":"+id,new Gson().toJson(productDet));
+            //设置过期时间
+            jedisClient.expire(RDEIS_ITEM+":"+id,ITEM_EXPIRE);
+            log.info("添加了商品详情"+id+"缓存");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return productDet;
+    }
+
+    @Override
+    public List<Product> getAllProduct(int page,int size,String sort,int priceGt,int priceLte) {
+
+        List<Product> list=new ArrayList<>();
+        //分页执行查询返回结果
+        if(page<=0) page=1;
+        PageHelper.startPage(page,size);
+
+        //判断条件
+        String orderCol="created";
+        String orderDir="desc";
+        if(sort.isEmpty()||sort==null){
+            orderCol="created";
+            orderDir="desc";
+        }else if(sort.equals("1")){
+            orderCol="price";
+            orderDir="asc";
+        }else if(sort.equals("-1")){
+            orderCol="price";
+            orderDir="desc";
+        }
+
+        List<TbItem> tbItemList = tbItemMapper.selectItemFront(orderCol,orderDir,priceGt,priceLte);
+        PageInfo<TbItem> pageInfo=new PageInfo<>(tbItemList);
+
+        for(TbItem tbItem:tbItemList){
+            Product product=DtoUtil.TbItem2Product(tbItem);
+            list.add(product);
+        }
+
+        return list;
+    }
+
+    //同步首页缓存
+    public void deleteHomeRedis(){
+        try {
+            jedisClient.hdel(PRODUCT_HOME,PRODUCT_HOME);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

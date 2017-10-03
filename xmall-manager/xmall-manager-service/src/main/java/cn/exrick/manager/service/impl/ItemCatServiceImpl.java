@@ -1,6 +1,7 @@
 package cn.exrick.manager.service.impl;
 
 import cn.exrick.common.exception.XmallException;
+import cn.exrick.common.jedis.JedisClient;
 import cn.exrick.common.pojo.ZTreeNode;
 import cn.exrick.manager.dto.DtoUtil;
 import cn.exrick.manager.mapper.TbItemCatMapper;
@@ -8,6 +9,7 @@ import cn.exrick.manager.pojo.TbItemCat;
 import cn.exrick.manager.pojo.TbItemCatExample;
 import cn.exrick.manager.service.ItemCatService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -22,6 +24,9 @@ public class ItemCatServiceImpl implements ItemCatService {
 
     @Autowired
     private TbItemCatMapper tbItemCatMapper;
+
+    @Value("${RDEIS_ITEM}")
+    private String RDEIS_ITEM;
 
     @Override
     public TbItemCat getItemCatById(Long id) {
@@ -103,4 +108,5 @@ public class ItemCatServiceImpl implements ItemCatService {
             throw new XmallException("删除商品分类失败");
         }
     }
+
 }

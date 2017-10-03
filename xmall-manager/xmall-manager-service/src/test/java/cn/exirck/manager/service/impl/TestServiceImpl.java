@@ -1,4 +1,4 @@
-package cn.exirck.service.impl;
+package cn.exirck.manager.service.impl;
 
 import cn.exrick.manager.mapper.TbItemDescMapper;
 import cn.exrick.manager.mapper.TbItemMapper;
@@ -10,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Date;
 
-public class testServiceImpl {
+public class TestServiceImpl {
     private ApplicationContext applicationContext;
     @Before
     public void init(){

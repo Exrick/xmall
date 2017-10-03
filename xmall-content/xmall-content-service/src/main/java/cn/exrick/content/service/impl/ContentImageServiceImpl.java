@@ -78,7 +78,16 @@ public class ContentImageServiceImpl implements ContentImageService {
             throw new XmallException("更新图片失败");
         }
         //同步缓存
-        jedisClient.hdel(PRODUCT_HOME,PRODUCT_HOME);
+        deleteHomeRedis();
         return 1;
+    }
+
+    //同步首页缓存
+    public void deleteHomeRedis(){
+        try {
+            jedisClient.hdel(PRODUCT_HOME,PRODUCT_HOME);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

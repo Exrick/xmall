@@ -88,6 +88,10 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-all</artifactId>
+        </dependency>
     </dependencies>
     <!-- 如果不添加此节点mybatis的mapper.xml文件都会被漏掉。 -->
     <build>

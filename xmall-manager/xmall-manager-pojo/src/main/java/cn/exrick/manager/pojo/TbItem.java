@@ -115,6 +115,14 @@ public class TbItem implements Serializable{
         this.updated = updated;
     }
 
+    public String[] getImages() {
+        if (image != null && !"".equals(image)) {
+            String[] strings = image.split(",");
+            return strings;
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
         return "TbItem{" +

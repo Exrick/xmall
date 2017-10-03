@@ -1,6 +1,7 @@
 package cn.exrick.manager.service.impl;
 
 import cn.exrick.common.exception.XmallException;
+import cn.exrick.common.jedis.JedisClient;
 import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.common.utils.IDUtil;
 import cn.exrick.manager.dto.DtoUtil;
@@ -18,8 +19,13 @@ import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+import javax.jms.*;
 import java.util.Date;
 import java.util.List;
 
@@ -37,6 +43,15 @@ public class ItemServiceImpl implements ItemService {
     private TbItemDescMapper tbItemDescMapper;
     @Autowired
     private TbItemCatMapper tbItemCatMapper;
+    @Autowired
+    private JmsTemplate jmsTemplate;
+    @Resource
+    private Destination topicDestination;
+    @Autowired
+    private JedisClient jedisClient;
+
+    @Value("${RDEIS_ITEM}")
+    private String RDEIS_ITEM;
 
     @Override
     public ItemDto getItemById(Long id) {
@@ -101,9 +116,9 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public DataTablesResult getAllItemCount() {
         TbItemExample example=new TbItemExample();
-        List<TbItem> list = tbItemMapper.selectByExample(example);
+        Long count=tbItemMapper.countByExample(example);
         DataTablesResult result=new DataTablesResult();
-        result.setRecordsTotal(list.size());
+        result.setRecordsTotal(Math.toIntExact(count));
         return result;
     }
 
@@ -129,6 +144,8 @@ public class ItemServiceImpl implements ItemService {
         if(tbItemDescMapper.deleteByPrimaryKey(id)!=1){
             throw new XmallException("删除商品详情失败");
         }
+        //发送消息同步索引库
+        sendRefreshESMessage("delete",id);
         return 0;
     }
 
@@ -156,6 +173,8 @@ public class ItemServiceImpl implements ItemService {
         if(tbItemDescMapper.insert(tbItemDesc)!=1){
             throw new XmallException("添加商品详情失败");
         }
+        //发送消息同步索引库
+        sendRefreshESMessage("add",id);
         return getNormalItemById(id);
     }
 
@@ -187,7 +206,30 @@ public class ItemServiceImpl implements ItemService {
         if(tbItemDescMapper.updateByPrimaryKey(tbItemDesc)!=1){
             throw new XmallException("更新商品详情失败");
         }
+        //同步缓存
+        deleteProductDetRedis(id);
+        //发送消息同步索引库
+        sendRefreshESMessage("add",id);
         return getNormalItemById(id);
     }
 
+    //同步商品详情缓存
+    public void deleteProductDetRedis(Long id){
+        try {
+            jedisClient.del(RDEIS_ITEM+":"+id);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    //发送消息同步索引库
+    public void sendRefreshESMessage(String type,Long id) {
+        jmsTemplate.send(topicDestination, new MessageCreator() {
+            @Override
+            public Message createMessage(Session session) throws JMSException {
+                TextMessage textMessage = session.createTextMessage(type+","+String.valueOf(id));
+                return textMessage;
+            }
+        });
+    }
 }

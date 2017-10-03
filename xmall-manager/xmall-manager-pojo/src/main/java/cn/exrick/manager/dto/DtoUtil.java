@@ -1,6 +1,7 @@
 package cn.exrick.manager.dto;
 
 import cn.exrick.common.pojo.ZTreeNode;
+import cn.exrick.manager.dto.front.Product;
 import cn.exrick.manager.pojo.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -146,5 +147,18 @@ public class DtoUtil{
         imageDto.setUpdated(tbImage.getUpdated());
 
         return imageDto;
+    }
+
+    public static Product TbItem2Product(TbItem tbItem){
+
+        Product product =new Product();
+
+        product.setProductId(tbItem.getId());
+        product.setProductName(tbItem.getTitle());
+        product.setSalePrice(tbItem.getPrice());
+        product.setSub_title(tbItem.getSellPoint());
+        product.setProductImageBig(tbItem.getImages()[0]);
+
+        return product;
     }
 }
