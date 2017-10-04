@@ -46,7 +46,7 @@ public class SearchServiceImpl implements SearchService {
 
 			//设置高亮显示
 			HighlightBuilder hiBuilder=new HighlightBuilder();
-			hiBuilder.preTags("<a style=\"color: red\">");
+			hiBuilder.preTags("<a style=\"color: #e4393c\">");
 			hiBuilder.postTags("</a>");
 			hiBuilder.field("productName");
 			//执行搜索

@@ -2,6 +2,7 @@ package cn.exrick.content.service.impl;
 
 import cn.exrick.common.exception.XmallException;
 import cn.exrick.common.jedis.JedisClient;
+import cn.exrick.common.pojo.AllGoodsResult;
 import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.common.pojo.Result;
 import cn.exrick.content.service.ContentService;
@@ -327,8 +328,9 @@ public class ContentServiceImpl implements ContentService {
     }
 
     @Override
-    public List<Product> getAllProduct(int page,int size,String sort,int priceGt,int priceLte) {
+    public AllGoodsResult getAllProduct(int page, int size, String sort, int priceGt, int priceLte) {
 
+        AllGoodsResult allGoodsResult=new AllGoodsResult();
         List<Product> list=new ArrayList<>();
         //分页执行查询返回结果
         if(page<=0) page=1;
@@ -356,7 +358,10 @@ public class ContentServiceImpl implements ContentService {
             list.add(product);
         }
 
-        return list;
+        allGoodsResult.setData(list);
+        allGoodsResult.setTotal((int) pageInfo.getTotal());
+
+        return allGoodsResult;
     }
 
     //同步首页缓存

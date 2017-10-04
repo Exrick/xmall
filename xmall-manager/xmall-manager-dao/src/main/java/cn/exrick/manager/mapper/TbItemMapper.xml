@@ -338,7 +338,7 @@
   <select id="selectItemFront" resultMap="BaseResultMap">
     SELECT * FROM tb_item
     WHERE status = 1
-    <if test="priceGt != null and priceGt != -1 and priceLte != null and priceLte != -1">
+    <if test="priceGt != null and priceGt >= 0 and priceLte != null and priceLte >= 0">
       AND price BETWEEN #{priceGt} AND #{priceLte}
     </if>
     ORDER BY

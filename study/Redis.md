@@ -1,4 +1,5 @@
 # Redis的安装及集群配置
+[官方下载地址](https://redis.io/)
 ### Redis的安装
 
 Redis是c语言开发的，安装需要c语言的编译环境,如果没有gcc需要在线安装: `yum install gcc-c++`
@@ -15,6 +16,8 @@ Redis是c语言开发的，安装需要c语言的编译环境,如果没有gcc需
 `[root@localhost bin]# ./redis-server`
 
 - 后台启动：把 `/root/redis-3.0.0/redis.conf` 复制到 `/usr/local/redis/bin `目录下启动时添加配置文件 `[root@localhost redis-3.0.0]# cp redis.conf /usr/local/redis/bin/`
+    `[root@localhost bin]# ./redis-server redis.conf`
+- 关闭：`[root@localhost bin]# ./redis-cli shutdown`
 
 ### Redis-cli连接
 - 默认连接localhost运行在6379端口的redis服务
@@ -83,6 +86,12 @@ cd ..
 5. 连接集群
 
     `[root@localhost redis-cluster]# redis01/redis-cli -p 7002 -c`
+
+### 踩坑解决问题
+- 重新启动ruby脚本报错
+```
+[ERR] Node 123.207.121.135:7001 is not empty. Either the node already knows other nodes (check with CLUSTER NODES) or contains some key in database 0.
+```
 
 
 

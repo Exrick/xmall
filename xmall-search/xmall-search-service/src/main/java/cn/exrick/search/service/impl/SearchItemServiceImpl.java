@@ -36,9 +36,6 @@ public class SearchItemServiceImpl implements SearchItemService {
 			TransportClient client = new PreBuiltTransportClient(settings)
 					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("123.207.121.135"), 9300));
 
-			//Boolean isExists = client.prepareGet("twitter", "tweet", "1").get().isExists();
-			//DeleteResponse deleteResponse = client.prepareDelete("twitter", "tweet", "1").get();
-
 			//批量添加
 			BulkRequestBuilder bulkRequest = client.prepareBulk();
 
@@ -47,6 +44,14 @@ public class SearchItemServiceImpl implements SearchItemService {
 
 			//遍历商品列表
 			for (SearchItem searchItem : itemList) {
+				String image=searchItem.getProductImageBig();
+				if (image != null && !"".equals(image)) {
+					String[] strings = image.split(",");
+					image=strings[0];
+				}else{
+					image="";
+				}
+				searchItem.setProductImageBig(image);
 				bulkRequest.add(client.prepareIndex("item", "itemList", String.valueOf(searchItem.getProductId()))
 						.setSource(jsonBuilder()
 								.startObject()

@@ -1,13 +1,10 @@
 package cn.exrick.content.service;
 
+import cn.exrick.common.pojo.AllGoodsResult;
 import cn.exrick.common.pojo.DataTablesResult;
-import cn.exrick.common.pojo.Result;
-import cn.exrick.manager.dto.front.Product;
 import cn.exrick.manager.dto.front.ProductDet;
 import cn.exrick.manager.dto.front.ProductHome;
 import cn.exrick.manager.pojo.TbContent;
-
-import java.util.List;
 
 
 public interface ContentService {
@@ -26,5 +23,5 @@ public interface ContentService {
 
     ProductDet getProductDet(Long id);
 
-    List<Product> getAllProduct(int page,int size,String sort,int priceGt,int priceLte);
+    AllGoodsResult getAllProduct(int page, int size, String sort, int priceGt, int priceLte);
 }

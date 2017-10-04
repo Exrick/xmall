@@ -2,6 +2,8 @@
 
 [官方下载地址](http://nginx.org/en/download.html)
 
+### 安装与启动
+
 1. gcc环境 `yum install gcc-c++`
 2. 第三方的开发包
     - PCRE `yum install -y pcre pcre-devel`
@@ -31,7 +33,10 @@
 `nginx/conf/nginx.conf`
 5. 重新加载配置文件 避免重启
 `sbin/nginx -s reload`
-6. 配置虚拟主机与反向代理
+
+### 配置
+
+- 配置虚拟主机与反向代理
 ```
 worker_processes  1;
 
@@ -122,7 +127,7 @@ http {
 }
 ``` 
 
-7. 负载均衡（直接添加server即可）
+- 负载均衡（直接添加server即可）
 ```
 ...
 http {
@@ -146,3 +151,9 @@ http {
     ...
 }
 ``` 
+### 踩坑解决问题
+- 重启服务器后启动提示/var/run/nginx找不到
+```
+nginx: [error] open() "/var/run/nginx.pid" failed (2: No such file or directory)
+```
+进入`/var/run`新建`nginx`文件夹：`mkdir nginx`

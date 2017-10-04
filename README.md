@@ -41,7 +41,7 @@
 - MySQL
 - [Redis](https://github.com/Exrick/xmall/blob/master/study/Redis.md)：缓存
 - [Elasticsearch](https://github.com/Exrick/xmall/blob/master/study/Elasticsearch.md)：基于Lucene分布式搜索引擎
-- [ActiveMQ]((https://github.com/Exrick/xmall/blob/master/study/ActiveMQ.md))
+- [ActiveMQ](https://github.com/Exrick/xmall/blob/master/study/ActiveMQ.md)
 - Druid：阿里高性能数据库连接池
 - [Swagger](https://github.com/Exrick/xmall/blob/master/study/Swagger.md)
 - Docker
