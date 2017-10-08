@@ -18,6 +18,9 @@
       <module fileurl="file://$PROJECT_DIR$/xmall-search/xmall-search.iml" filepath="$PROJECT_DIR$/xmall-search/xmall-search.iml" />
       <module fileurl="file://$PROJECT_DIR$/xmall-search/xmall-search-interface/xmall-search-interface.iml" filepath="$PROJECT_DIR$/xmall-search/xmall-search-interface/xmall-search-interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/xmall-search/xmall-search-service/xmall-search-service.iml" filepath="$PROJECT_DIR$/xmall-search/xmall-search-service/xmall-search-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xmall-sso/xmall-sso.iml" filepath="$PROJECT_DIR$/xmall-sso/xmall-sso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xmall-sso/xmall-sso-interface/xmall-sso-interface.iml" filepath="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/xmall-sso-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xmall-sso/xmall-sso-service/xmall-sso-service.iml" filepath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/xmall-sso-service.iml" />
     </modules>
   </component>
 </project>

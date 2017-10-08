@@ -9,12 +9,13 @@ import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
-import org.elasticsearch.common.text.Text;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.elasticsearch.index.query.QueryBuilder;
+import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
+import org.elasticsearch.search.sort.SortOrder;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +29,7 @@ import static org.elasticsearch.index.query.QueryBuilders.termQuery;
 public class SearchServiceImpl implements SearchService {
 
 	@Override
-	public SearchResult search(String keyword, int page, int size) {
+	public SearchResult search(String key, int page, int size,String sort,int priceGt,int priceLte) {
 
 		try{
 			Settings settings = Settings.builder()
@@ -39,7 +40,7 @@ public class SearchServiceImpl implements SearchService {
 			SearchResult searchResult=new SearchResult();
 
 			//设置查询条件
-			QueryBuilder qb = termQuery("productName",keyword);
+			QueryBuilder qb = termQuery("productName",key);
 			//设置分页
 			if (page <=0 ) page =1;
 			int start=(page - 1) * size;
@@ -50,13 +51,65 @@ public class SearchServiceImpl implements SearchService {
 			hiBuilder.postTags("</a>");
 			hiBuilder.field("productName");
 			//执行搜索
-			SearchResponse searchResponse = client.prepareSearch("item")
-					.setTypes("itemList")
-					.setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
-					.setQuery(qb)	// Query
-					.setFrom(start).setSize(size).setExplain(true)	//从第几个开始，显示size个数据
-					.highlighter(hiBuilder)		//设置高亮显示
-					.get();
+			SearchResponse searchResponse = null;
+
+			if(priceGt>=0&&priceLte>=0&&sort.isEmpty()){
+				searchResponse=client.prepareSearch("item")
+						.setTypes("itemList")
+						.setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
+						.setQuery(qb)	// Query
+						.setFrom(start).setSize(size).setExplain(true)	//从第几个开始，显示size个数据
+						.highlighter(hiBuilder)		//设置高亮显示
+						.setPostFilter(QueryBuilders.rangeQuery("salePrice").gt(priceGt).lt(priceLte))	//过滤条件
+						.get();
+			}else if(priceGt>=0&&priceLte>=0&&sort.equals("1")){
+				searchResponse=client.prepareSearch("item")
+						.setTypes("itemList")
+						.setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
+						.setQuery(qb)	// Query
+						.setFrom(start).setSize(size).setExplain(true)	//从第几个开始，显示size个数据
+						.highlighter(hiBuilder)		//设置高亮显示
+						.setPostFilter(QueryBuilders.rangeQuery("salePrice").gt(priceGt).lt(priceLte))	//过滤条件
+						.addSort("salePrice", SortOrder.ASC)
+						.get();
+			}else if(priceGt>=0&&priceLte>=0&&sort.equals("-1")){
+				searchResponse=client.prepareSearch("item")
+						.setTypes("itemList")
+						.setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
+						.setQuery(qb)	// Query
+						.setFrom(start).setSize(size).setExplain(true)	//从第几个开始，显示size个数据
+						.highlighter(hiBuilder)		//设置高亮显示
+						.setPostFilter(QueryBuilders.rangeQuery("salePrice").gt(priceGt).lt(priceLte))	//过滤条件
+						.addSort("salePrice", SortOrder.DESC)
+						.get();
+			}else if((priceGt<0||priceLte<0)&&sort.isEmpty()){
+				searchResponse=client.prepareSearch("item")
+						.setTypes("itemList")
+						.setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
+						.setQuery(qb)	// Query
+						.setFrom(start).setSize(size).setExplain(true)	//从第几个开始，显示size个数据
+						.highlighter(hiBuilder)		//设置高亮显示
+						.get();
+			}else if((priceGt<0||priceLte<0)&&sort.equals("1")){
+				searchResponse=client.prepareSearch("item")
+						.setTypes("itemList")
+						.setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
+						.setQuery(qb)	// Query
+						.setFrom(start).setSize(size).setExplain(true)	//从第几个开始，显示size个数据
+						.highlighter(hiBuilder)		//设置高亮显示
+						.addSort("salePrice", SortOrder.ASC)
+						.get();
+			}else if((priceGt<0||priceLte<0)&&sort.equals("-1")){
+				searchResponse=client.prepareSearch("item")
+						.setTypes("itemList")
+						.setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
+						.setQuery(qb)	// Query
+						.setFrom(start).setSize(size).setExplain(true)	//从第几个开始，显示size个数据
+						.highlighter(hiBuilder)		//设置高亮显示
+						.addSort("salePrice", SortOrder.DESC)
+						.get();
+			}
+
 
 			SearchHits hits = searchResponse.getHits();
 			//返回总结果数

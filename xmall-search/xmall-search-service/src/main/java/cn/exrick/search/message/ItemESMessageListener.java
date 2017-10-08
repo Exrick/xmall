@@ -7,12 +7,13 @@ import javax.jms.TextMessage;
 import cn.exrick.common.pojo.SearchItem;
 import cn.exrick.search.mapper.ItemMapper;
 import org.elasticsearch.action.delete.DeleteResponse;
-import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -25,6 +26,8 @@ import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
  * 监听商品添加消息，接收消息后，将对应的商品信息同步到索引库
  */
 public class ItemESMessageListener implements MessageListener {
+
+	private final static Logger log= LoggerFactory.getLogger(ItemESMessageListener.class);
 	
 	@Autowired
 	private ItemMapper itemMapper;
@@ -40,12 +43,14 @@ public class ItemESMessageListener implements MessageListener {
 		try {
 			//从消息中取商品id
 			TextMessage textMessage = (TextMessage) message;
+
+			log.info("得到消息："+textMessage.getText());
+
 			String[] text = textMessage.getText().split(",");
 			Long itemId = new Long(text[1]);
 			//等待事务提交
 			Thread.sleep(1000);
-			//根据商品id查询商品信息
-			SearchItem searchItem = itemMapper.getItemById(itemId);
+
 			//更新索引
 			Settings settings = Settings.builder()
 					.put("cluster.name", "xmall").build();
@@ -53,6 +58,8 @@ public class ItemESMessageListener implements MessageListener {
 					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("123.207.121.135"), 9300));
 
 			if(text[0].equals("add")){
+				//根据商品id查询商品信息
+				SearchItem searchItem = itemMapper.getItemById(itemId);
 				IndexResponse indexResponse = client.prepareIndex(ITEM_INDEX, ITEM_TYPE, String.valueOf(searchItem.getProductId()))
 						.setSource(jsonBuilder()
 								.startObject()
@@ -65,8 +72,10 @@ public class ItemESMessageListener implements MessageListener {
 								.endObject()
 						).get();
 			}else if(text[0].equals("delete")){
-				DeleteResponse deleteResponse = client.prepareDelete(ITEM_INDEX, ITEM_TYPE, String.valueOf(searchItem.getProductId())).get();
+				DeleteResponse deleteResponse = client.prepareDelete(ITEM_INDEX, ITEM_TYPE, String.valueOf(itemId)).get();
 			}
+
+			log.info("处理消息成功");
 
 			client.close();
 

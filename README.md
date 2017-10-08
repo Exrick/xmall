@@ -41,8 +41,8 @@
 - MySQL
 - [Redis](https://github.com/Exrick/xmall/blob/master/study/Redis.md)：缓存
 - [Elasticsearch](https://github.com/Exrick/xmall/blob/master/study/Elasticsearch.md)：基于Lucene分布式搜索引擎
-- [ActiveMQ](https://github.com/Exrick/xmall/blob/master/study/ActiveMQ.md)
-- Druid：阿里高性能数据库连接池
+- [ActiveMQ](https://github.com/Exrick/xmall/blob/master/study/ActiveMQ.md)：消息队列
+- [Druid](http://druid.io/)：阿里高性能数据库连接池
 - [Swagger](https://github.com/Exrick/xmall/blob/master/study/Swagger.md)
 - Docker
 - [Nginx](https://github.com/Exrick/xmall/blob/master/study/Nginx.md)
@@ -67,6 +67,6 @@
 - MySQL数据库新建`xmall`数据库，运行sql文件，注意在 `xmall-manager-service/resources/conf/db.properties` 中修改你的数据库连接配置
 - 按照依赖顺序分别在每个模块文件夹根目录执行 `mvn install` 命令
 - 项目需按照依赖顺序运行除 `xmall-parent` `xmall-common` 以外其它所有服务，且都已配置好Tomcat插件, 执行命令 `mvn tomcat7:run` 或在IDEA中使用插件(`View - Tool Buttons - 右侧菜单Maven Projects - tomcat7 - tomcat7:run`)运行即可
-- 访问 http://localhost:8888 即可打开后端管理系统
-- 前端项目接口 http://localhost:6666
+- 后端管理系统端口8888 http://localhost:8888
+- 前端项目接口端口6666 http://localhost:6666
 

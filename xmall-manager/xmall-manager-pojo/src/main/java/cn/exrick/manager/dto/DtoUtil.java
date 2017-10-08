@@ -1,6 +1,7 @@
 package cn.exrick.manager.dto;
 
 import cn.exrick.common.pojo.ZTreeNode;
+import cn.exrick.manager.dto.front.Member;
 import cn.exrick.manager.dto.front.Product;
 import cn.exrick.manager.pojo.*;
 import org.slf4j.Logger;
@@ -160,5 +161,23 @@ public class DtoUtil{
         product.setProductImageBig(tbItem.getImages()[0]);
 
         return product;
+    }
+
+    public static Member TbMemer2Member(TbMember tbMemer){
+
+        Member member =new Member();
+
+        member.setId(tbMemer.getId());
+        member.setUsername(tbMemer.getUsername());
+        member.setEmail(tbMemer.getEmail());
+        member.setPhone(tbMemer.getPhone());
+        member.setAddress(tbMemer.getAddress());
+        member.setBalance(tbMemer.getBalance());
+        member.setFile(tbMemer.getFile());
+        member.setPoints(tbMemer.getPoints());
+        member.setSex(tbMemer.getSex());
+        member.setDescription(tbMemer.getDescription());
+
+        return member;
     }
 }

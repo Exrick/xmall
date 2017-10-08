@@ -93,6 +93,8 @@ cd ..
 [ERR] Node 123.207.121.135:7001 is not empty. Either the node already knows other nodes (check with CLUSTER NODES) or contains some key in database 0.
 ```
 
+由于非正常关闭集群，需删除每个节点中的数据文件aof、rdb、nodes.conf，实在不行就只有重装一遍...
+
 
 
 

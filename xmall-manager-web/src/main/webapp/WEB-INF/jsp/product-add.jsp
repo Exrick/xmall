@@ -77,7 +77,7 @@
         </div>
         <input type="text" name="image" id="image" hidden/>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">展示缩略图片上传：</label>
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>展示缩略图片上传：</label>
             <div class="formControls col-xs-8 col-sm-9">
                 <div class="uploader-list-container">
                     <div class="queueList">

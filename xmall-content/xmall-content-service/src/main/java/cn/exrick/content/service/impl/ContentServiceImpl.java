@@ -284,7 +284,7 @@ public class ContentServiceImpl implements ContentService {
             String json=jedisClient.get(RDEIS_ITEM+":"+id);
             if(json!=null){
                 ProductDet productDet= new Gson().fromJson(json,ProductDet.class);
-                log.info("读取了商品详情"+id+"缓存");
+                log.info("读取了商品"+id+"详情缓存");
                 return productDet;
             }
         }catch (Exception e){
@@ -320,7 +320,7 @@ public class ContentServiceImpl implements ContentService {
             jedisClient.set(RDEIS_ITEM+":"+id,new Gson().toJson(productDet));
             //设置过期时间
             jedisClient.expire(RDEIS_ITEM+":"+id,ITEM_EXPIRE);
-            log.info("添加了商品详情"+id+"缓存");
+            log.info("添加了商品"+id+"详情缓存");
         }catch (Exception e){
             e.printStackTrace();
         }

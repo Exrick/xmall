@@ -13,6 +13,8 @@ import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +25,8 @@ import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 
 @Service
 public class SearchItemServiceImpl implements SearchItemService {
+
+	private final static Logger log= LoggerFactory.getLogger(SearchItemServiceImpl.class);
 
 	@Autowired
 	private ItemMapper itemMapper;
@@ -67,6 +71,8 @@ public class SearchItemServiceImpl implements SearchItemService {
 			}
 
 			BulkResponse bulkResponse = bulkRequest.get();
+
+			log.info("更新索引成功");
 
 			client.close();
 		}catch (Exception e){

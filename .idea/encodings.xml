@@ -17,6 +17,8 @@
     <file url="file://$PROJECT_DIR$/xmall-search" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xmall-search/xmall-search-interface" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xmall-search/xmall-search-service" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xmall-search/xmall-search-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xmall-sso" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xmall-sso/xmall-sso-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xmall-sso/xmall-sso-service" charset="UTF-8" />
   </component>
 </project>

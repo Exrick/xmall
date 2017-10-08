@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.DigestUtils;
 
 import java.util.Date;
 import java.util.List;
@@ -178,16 +179,18 @@ public class MemberServiceImpl implements MemberService {
 
         TbMember tbMember= DtoUtil.MemberDto2Member(memberDto);
 
-        tbMember.setState(1);
-        tbMember.setCreated(new Date());
-        tbMember.setUpdated(new Date());
-
         if(getMemberByPhone(tbMember.getPhone())!=null){
             throw new XmallException("手机号已被注册");
         }
         if(getMemberByEmail(tbMember.getEmail())!=null){
             throw new XmallException("邮箱已被注册");
         }
+
+        tbMember.setState(1);
+        tbMember.setCreated(new Date());
+        tbMember.setUpdated(new Date());
+        String md5Pass = DigestUtils.md5DigestAsHex(tbMember.getPassword().getBytes());
+        tbMember.setPassword(md5Pass);
 
         if(tbMemberMapper.insert(tbMember)!=1){
             throw new XmallException("添加用户失败");
@@ -206,6 +209,9 @@ public class MemberServiceImpl implements MemberService {
         tbMember.setCreated(oldMember.getCreated());
         if(tbMember.getPassword()==null||tbMember.getPassword()==""){
             tbMember.setPassword(oldMember.getPassword());
+        }else{
+            String md5Pass = DigestUtils.md5DigestAsHex(tbMember.getPassword().getBytes());
+            tbMember.setPassword(md5Pass);
         }
 
         if (tbMemberMapper.updateByPrimaryKey(tbMember) != 1){
@@ -220,6 +226,9 @@ public class MemberServiceImpl implements MemberService {
         TbMember tbMember=getMemberById(id);
         if(tbMember.getPassword()==null||tbMember.getPassword()==""){
             tbMember.setPassword(tbMember.getPassword());
+        }else{
+            String md5Pass = DigestUtils.md5DigestAsHex(tbMember.getPassword().getBytes());
+            tbMember.setPassword(md5Pass);
         }
 
         if (tbMemberMapper.updateByPrimaryKey(tbMember) != 1){

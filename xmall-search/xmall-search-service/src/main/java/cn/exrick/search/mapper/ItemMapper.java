@@ -9,6 +9,6 @@ public interface ItemMapper {
 
     List<SearchItem> getItemList();
 
-    SearchItem getItemById(@Param("cid") Long id);
+    SearchItem getItemById(@Param("id") Long id);
 
 }

@@ -18,6 +18,8 @@
         <module name="xmall-manager-web" />
         <module name="xmall-search-interface" />
         <module name="xmall-search-service" />
+        <module name="xmall-sso-interface" />
+        <module name="xmall-sso-service" />
         <module name="xmallsearch" />
       </profile>
     </annotationProcessing>
@@ -38,6 +40,9 @@
       <module name="xmall-search" target="1.8" />
       <module name="xmall-search-interface" target="1.8" />
       <module name="xmall-search-service" target="1.8" />
+      <module name="xmall-sso" target="1.8" />
+      <module name="xmall-sso-interface" target="1.8" />
+      <module name="xmall-sso-service" target="1.8" />
       <module name="xmallsearch" target="1.8" />
     </bytecodeTargetLevel>
   </component>
