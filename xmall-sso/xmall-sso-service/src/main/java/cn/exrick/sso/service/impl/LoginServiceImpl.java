@@ -1,7 +1,6 @@
 package cn.exrick.sso.service.impl;
 
 
-import cn.exrick.common.exception.XmallException;
 import cn.exrick.common.jedis.JedisClient;
 import cn.exrick.manager.dto.DtoUtil;
 import cn.exrick.manager.dto.front.Member;

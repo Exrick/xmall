@@ -5,7 +5,6 @@ import cn.exrick.common.pojo.Result;
 import cn.exrick.common.pojo.SearchResult;
 import cn.exrick.common.utils.ResultUtil;
 import cn.exrick.content.service.ContentService;
-import cn.exrick.manager.dto.front.Product;
 import cn.exrick.manager.dto.front.ProductDet;
 import cn.exrick.manager.dto.front.ProductHome;
 import cn.exrick.search.service.SearchItemService;
@@ -14,8 +13,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @Api(description = "商品页面展示")

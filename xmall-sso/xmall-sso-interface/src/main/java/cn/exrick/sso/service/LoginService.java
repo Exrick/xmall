@@ -1,5 +1,6 @@
 package cn.exrick.sso.service;
 
+
 import cn.exrick.manager.dto.front.Member;
 
 public interface LoginService {

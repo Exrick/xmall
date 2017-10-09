@@ -7,6 +7,9 @@
           <element id="module-output" name="xmall-front-web" />
         </element>
         <element id="directory" name="lib">
+          <element id="archive" name="xmall-front-web-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="xmall-front-web" />
+          </element>
           <element id="archive" name="xmall-manager-interface-1.0-SNAPSHOT.jar">
             <element id="module-output" name="xmall-manager-interface" />
           </element>

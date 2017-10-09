@@ -1,6 +1,6 @@
 package cn.exrick.front.controller;
 
-import cn.exrick.common.pojo.MemberLogin;
+import cn.exrick.manager.dto.front.MemberLoginRegist;
 import cn.exrick.common.pojo.Result;
 import cn.exrick.common.utils.ResultUtil;
 import cn.exrick.manager.dto.front.Member;
@@ -26,9 +26,9 @@ public class MemberController {
 
     @RequestMapping(value = "/member/login",method = RequestMethod.POST)
     @ApiOperation(value = "用户登录")
-    public Result<Member> login(@RequestBody MemberLogin memberLogin){
+    public Result<Member> login(@RequestBody MemberLoginRegist memberLoginRegist){
 
-        Member member=loginService.userLogin(memberLogin.getUserName(),memberLogin.getUserPwd());
+        Member member=loginService.userLogin(memberLoginRegist.getUserName(), memberLoginRegist.getUserPwd());
         return new ResultUtil<Member>().setData(member);
     }
 
@@ -50,9 +50,9 @@ public class MemberController {
 
     @RequestMapping(value = "/member/register",method = RequestMethod.POST)
     @ApiOperation(value = "用户注册")
-    public Result<Object> register(@RequestBody MemberLogin memberLogin){
+    public Result<Object> register(@RequestBody MemberLoginRegist memberLoginRegist){
 
-        int result=registerService.register(memberLogin.getUserName(),memberLogin.getUserPwd());
+        int result=registerService.register(memberLoginRegist.getUserName(), memberLoginRegist.getUserPwd());
         return new ResultUtil<Object>().setData(result);
     }
 }

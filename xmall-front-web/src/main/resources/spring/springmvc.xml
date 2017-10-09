@@ -28,5 +28,6 @@
     <dubbo:reference interface="cn.exrick.search.service.SearchItemService" id="searchItemService" />
     <dubbo:reference interface="cn.exrick.sso.service.RegisterService" id="registerService" />
     <dubbo:reference interface="cn.exrick.sso.service.LoginService" id="loginService" />
+    <dubbo:reference interface="cn.exrick.sso.service.CartService" id="cartService" />
 
 </beans>

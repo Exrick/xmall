@@ -1,8 +1,8 @@
-package cn.exrick.common.pojo;
+package cn.exrick.manager.dto.front;
 
 import java.io.Serializable;
 
-public class MemberLogin implements Serializable {
+public class MemberLoginRegist implements Serializable {
 
     private String userName;
 

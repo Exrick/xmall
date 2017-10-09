@@ -4,7 +4,6 @@ import cn.exrick.common.exception.XmallException;
 import cn.exrick.common.jedis.JedisClient;
 import cn.exrick.common.pojo.AllGoodsResult;
 import cn.exrick.common.pojo.DataTablesResult;
-import cn.exrick.common.pojo.Result;
 import cn.exrick.content.service.ContentService;
 import cn.exrick.manager.dto.ContentDto;
 import cn.exrick.manager.dto.DtoUtil;

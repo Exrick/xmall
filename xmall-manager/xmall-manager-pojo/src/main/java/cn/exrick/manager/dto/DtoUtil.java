@@ -1,6 +1,7 @@
 package cn.exrick.manager.dto;
 
 import cn.exrick.common.pojo.ZTreeNode;
+import cn.exrick.manager.dto.front.CartProduct;
 import cn.exrick.manager.dto.front.Member;
 import cn.exrick.manager.dto.front.Product;
 import cn.exrick.manager.pojo.*;
@@ -179,5 +180,17 @@ public class DtoUtil{
         member.setDescription(tbMemer.getDescription());
 
         return member;
+    }
+
+    public static CartProduct TbItem2CartProduct(TbItem tbItem){
+
+        CartProduct cartProduct =new CartProduct();
+
+        cartProduct.setProductId(tbItem.getId());
+        cartProduct.setProductName(tbItem.getTitle());
+        cartProduct.setSalePrice(tbItem.getPrice());
+        cartProduct.setProductImg(tbItem.getImages()[0]);
+
+        return cartProduct;
     }
 }

@@ -21,6 +21,35 @@
           <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:0.9.5" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.32" />
           <element id="library" level="project" name="Maven: com.alibaba:druid:1.0.9" />
+          <element id="archive" name="xmall-front-web-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="xmall-front-web" />
+          </element>
+          <element id="archive" name="xmall-manager-interface-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="xmall-manager-interface" />
+          </element>
+          <element id="archive" name="xmall-search-interface-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="xmall-search-interface" />
+          </element>
+          <element id="archive" name="xmall-sso-interface-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="xmall-sso-interface" />
+          </element>
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: io.springfox:springfox-swagger2:2.6.1" />
+          <element id="library" level="project" name="Maven: io.swagger:swagger-models:1.5.10" />
+          <element id="library" level="project" name="Maven: io.springfox:springfox-spi:2.6.1" />
+          <element id="library" level="project" name="Maven: io.springfox:springfox-core:2.6.1" />
+          <element id="library" level="project" name="Maven: io.springfox:springfox-schema:2.6.1" />
+          <element id="library" level="project" name="Maven: io.springfox:springfox-swagger-common:2.6.1" />
+          <element id="library" level="project" name="Maven: io.springfox:springfox-spring-web:2.6.1" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:18.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml:classmate:1.3.1" />
+          <element id="library" level="project" name="Maven: org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.plugin:spring-plugin-metadata:1.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.mapstruct:mapstruct:1.0.0.Final" />
+          <element id="library" level="project" name="Maven: io.springfox:springfox-swagger-ui:2.6.1" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.6.5" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.6.5" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.6.5" />
           <element id="archive" name="xmall-content-interface-1.0-SNAPSHOT.jar">
             <element id="module-output" name="xmall-content-interface" />
           </element>
@@ -62,9 +91,6 @@
           <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.3.2" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:1.3.2" />
           <element id="library" level="project" name="Maven: commons-net:commons-net:3.3" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.6.5" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.6.5" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.6.5" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.3.5" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.3.2" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.6" />

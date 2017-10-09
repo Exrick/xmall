@@ -1,7 +1,6 @@
 package cn.exrick.manager.service.impl;
 
 import cn.exrick.common.exception.XmallException;
-import cn.exrick.common.jedis.JedisClient;
 import cn.exrick.common.pojo.ZTreeNode;
 import cn.exrick.manager.dto.DtoUtil;
 import cn.exrick.manager.mapper.TbItemCatMapper;
