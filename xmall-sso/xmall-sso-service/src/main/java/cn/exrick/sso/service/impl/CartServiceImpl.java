@@ -81,6 +81,26 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
+    public int checkAll(long userId,String checked) {
+
+        List<String> jsonList = jedisClient.hvals(CART_PRE + ":" + userId);
+
+        for (String json : jsonList) {
+            CartProduct cartProduct = new Gson().fromJson(json,CartProduct.class);
+            if("true".equals(checked)) {
+                cartProduct.setChecked("1");
+            }else if("false".equals(checked)) {
+                cartProduct.setChecked("0");
+            }else {
+                return 0;
+            }
+            jedisClient.hset(CART_PRE + ":" + userId, cartProduct.getProductId() + "", new Gson().toJson(cartProduct));
+        }
+
+        return 1;
+    }
+
+    @Override
     public int deleteCartItem(long userId, long itemId) {
 
         jedisClient.hdel(CART_PRE + ":" + userId, itemId + "");

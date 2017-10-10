@@ -43,6 +43,14 @@ public class CartController {
         return new ResultUtil<Object>().setData(result);
     }
 
+    @RequestMapping(value = "/member/editCheckAll",method = RequestMethod.POST)
+    @ApiOperation(value = "是否全选购物车商品")
+    public Result<Object> editCheckAll(@RequestBody Cart cart){
+
+        int result=cartService.checkAll(cart.getUserId(),cart.getChecked());
+        return new ResultUtil<Object>().setData(result);
+    }
+
     @RequestMapping(value = "/member/cartDel",method = RequestMethod.POST)
     @ApiOperation(value = "删除购物车商品")
     public Result<Object> deleteCartItem(@RequestBody Cart cart){

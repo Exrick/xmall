@@ -55,6 +55,7 @@
 		<table schema="" tableName="tb_user"></table>
 		<table schema="" tableName="tb_member"></table>
 		<table schema="" tableName="tb_image"></table>
+		<table schema="" tableName="tb_address"></table>
 
 	</context>
 </generatorConfiguration>

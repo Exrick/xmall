@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="TbOrderShippingMapper">
-  <resultMap id="BaseResultMap" type="TbOrderShipping">
+<mapper namespace="cn.exrick.mapper.TbOrderShippingMapper">
+  <resultMap id="BaseResultMap" type="cn.exrick.pojo.TbOrderShipping">
     <id column="order_id" jdbcType="VARCHAR" property="orderId" />
     <result column="receiver_name" jdbcType="VARCHAR" property="receiverName" />
     <result column="receiver_phone" jdbcType="VARCHAR" property="receiverPhone" />
@@ -76,7 +76,7 @@
     order_id, receiver_name, receiver_phone, receiver_mobile, receiver_state, receiver_city, 
     receiver_district, receiver_address, receiver_zip, created, updated
   </sql>
-  <select id="selectByExample" parameterType="TbOrderShippingExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="cn.exrick.pojo.TbOrderShippingExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -100,13 +100,13 @@
     delete from tb_order_shipping
     where order_id = #{orderId,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="TbOrderShippingExample">
+  <delete id="deleteByExample" parameterType="cn.exrick.pojo.TbOrderShippingExample">
     delete from tb_order_shipping
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="TbOrderShipping">
+  <insert id="insert" parameterType="cn.exrick.pojo.TbOrderShipping">
     insert into tb_order_shipping (order_id, receiver_name, receiver_phone, 
       receiver_mobile, receiver_state, receiver_city, 
       receiver_district, receiver_address, receiver_zip, 
@@ -116,7 +116,7 @@
       #{receiverDistrict,jdbcType=VARCHAR}, #{receiverAddress,jdbcType=VARCHAR}, #{receiverZip,jdbcType=VARCHAR}, 
       #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="TbOrderShipping">
+  <insert id="insertSelective" parameterType="cn.exrick.pojo.TbOrderShipping">
     insert into tb_order_shipping
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="orderId != null">
@@ -189,7 +189,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="TbOrderShippingExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="cn.exrick.pojo.TbOrderShippingExample" resultType="java.lang.Long">
     select count(*) from tb_order_shipping
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -253,7 +253,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="TbOrderShipping">
+  <update id="updateByPrimaryKeySelective" parameterType="cn.exrick.pojo.TbOrderShipping">
     update tb_order_shipping
     <set>
       <if test="receiverName != null">
@@ -289,7 +289,7 @@
     </set>
     where order_id = #{orderId,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="TbOrderShipping">
+  <update id="updateByPrimaryKey" parameterType="cn.exrick.pojo.TbOrderShipping">
     update tb_order_shipping
     set receiver_name = #{receiverName,jdbcType=VARCHAR},
       receiver_phone = #{receiverPhone,jdbcType=VARCHAR},

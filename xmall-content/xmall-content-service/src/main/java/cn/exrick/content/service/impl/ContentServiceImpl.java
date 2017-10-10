@@ -7,10 +7,7 @@ import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.content.service.ContentService;
 import cn.exrick.manager.dto.ContentDto;
 import cn.exrick.manager.dto.DtoUtil;
-import cn.exrick.manager.dto.front.HomeFloors;
-import cn.exrick.manager.dto.front.Product;
-import cn.exrick.manager.dto.front.ProductDet;
-import cn.exrick.manager.dto.front.ProductHome;
+import cn.exrick.manager.dto.front.*;
 import cn.exrick.manager.mapper.*;
 import cn.exrick.manager.pojo.*;
 import com.github.pagehelper.PageHelper;
@@ -353,7 +350,7 @@ public class ContentServiceImpl implements ContentService {
         PageInfo<TbItem> pageInfo=new PageInfo<>(tbItemList);
 
         for(TbItem tbItem:tbItemList){
-            Product product=DtoUtil.TbItem2Product(tbItem);
+            Product product= DtoUtil.TbItem2Product(tbItem);
             list.add(product);
         }
 

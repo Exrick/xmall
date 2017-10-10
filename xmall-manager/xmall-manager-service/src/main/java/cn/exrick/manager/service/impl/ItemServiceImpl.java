@@ -151,7 +151,7 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public TbItem addItem(ItemDto itemDto) {
-        long id= IDUtil.genItemId();
+        long id= IDUtil.getRandomId();
         TbItem tbItem= DtoUtil.ItemDto2TbItem(itemDto);
         tbItem.setId(id);
         tbItem.setStatus((byte) 1);

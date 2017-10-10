@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="TbItemDescMapper">
-  <resultMap id="BaseResultMap" type="TbItemDesc">
+<mapper namespace="cn.exrick.mapper.TbItemDescMapper">
+  <resultMap id="BaseResultMap" type="cn.exrick.pojo.TbItemDesc">
     <id column="item_id" jdbcType="BIGINT" property="itemId" />
     <result column="created" jdbcType="TIMESTAMP" property="created" />
     <result column="updated" jdbcType="TIMESTAMP" property="updated" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="TbItemDesc">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.exrick.pojo.TbItemDesc">
     <result column="item_desc" jdbcType="LONGVARCHAR" property="itemDesc" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -73,7 +73,7 @@
   <sql id="Blob_Column_List">
     item_desc
   </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="TbItemDescExample" resultMap="ResultMapWithBLOBs">
+  <select id="selectByExampleWithBLOBs" parameterType="cn.exrick.pojo.TbItemDescExample" resultMap="ResultMapWithBLOBs">
     select
     <if test="distinct">
       distinct
@@ -89,7 +89,7 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" parameterType="TbItemDescExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="cn.exrick.pojo.TbItemDescExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -115,19 +115,19 @@
     delete from tb_item_desc
     where item_id = #{itemId,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="TbItemDescExample">
+  <delete id="deleteByExample" parameterType="cn.exrick.pojo.TbItemDescExample">
     delete from tb_item_desc
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="TbItemDesc">
+  <insert id="insert" parameterType="cn.exrick.pojo.TbItemDesc">
     insert into tb_item_desc (item_id, created, updated, 
       item_desc)
     values (#{itemId,jdbcType=BIGINT}, #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}, 
       #{itemDesc,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="TbItemDesc">
+  <insert id="insertSelective" parameterType="cn.exrick.pojo.TbItemDesc">
     insert into tb_item_desc
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="itemId != null">
@@ -158,7 +158,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="TbItemDescExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="cn.exrick.pojo.TbItemDescExample" resultType="java.lang.Long">
     select count(*) from tb_item_desc
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -203,7 +203,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="TbItemDesc">
+  <update id="updateByPrimaryKeySelective" parameterType="cn.exrick.pojo.TbItemDesc">
     update tb_item_desc
     <set>
       <if test="created != null">
@@ -218,14 +218,14 @@
     </set>
     where item_id = #{itemId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="TbItemDesc">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.exrick.pojo.TbItemDesc">
     update tb_item_desc
     set created = #{created,jdbcType=TIMESTAMP},
       updated = #{updated,jdbcType=TIMESTAMP},
       item_desc = #{itemDesc,jdbcType=LONGVARCHAR}
     where item_id = #{itemId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="TbItemDesc">
+  <update id="updateByPrimaryKey" parameterType="cn.exrick.pojo.TbItemDesc">
     update tb_item_desc
     set created = #{created,jdbcType=TIMESTAMP},
       updated = #{updated,jdbcType=TIMESTAMP}
