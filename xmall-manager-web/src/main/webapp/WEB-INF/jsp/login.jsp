@@ -59,7 +59,7 @@
 
         <!--footer-->
         <div class="footer">
-            <p>&copy; 2017 XMall. All rights reserved | Design by <a href="http://www.exrick.cn">Exrick</a></p>
+            <p>&copy; 2017 XMall. All rights reserved | Design by <a href="http://blog.exrick.cn">Exrick</a></p>
         </div>
         <!--//footer-->
     </div>

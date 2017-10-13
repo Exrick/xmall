@@ -1,10 +1,12 @@
 package cn.exrick.front.controller;
 
+import cn.exrick.manager.dto.front.CommonDto;
 import cn.exrick.manager.dto.front.MemberLoginRegist;
 import cn.exrick.common.pojo.Result;
 import cn.exrick.common.utils.ResultUtil;
 import cn.exrick.manager.dto.front.Member;
 import cn.exrick.sso.service.LoginService;
+import cn.exrick.sso.service.MemberService;
 import cn.exrick.sso.service.RegisterService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -23,6 +25,8 @@ public class MemberController {
     private LoginService loginService;
     @Autowired
     private RegisterService registerService;
+    @Autowired
+    private MemberService memberService;
 
     @RequestMapping(value = "/member/login",method = RequestMethod.POST)
     @ApiOperation(value = "用户登录")
@@ -54,5 +58,13 @@ public class MemberController {
 
         int result=registerService.register(memberLoginRegist.getUserName(), memberLoginRegist.getUserPwd());
         return new ResultUtil<Object>().setData(result);
+    }
+
+    @RequestMapping(value = "/member/imgaeUpload",method = RequestMethod.POST)
+    @ApiOperation(value = "用户头像上传")
+    public Result<Object> imgaeUpload(@RequestBody CommonDto common){
+
+        String imgPath = memberService.imageUpload(common.getUserId(),common.getToken(),common.getImgData());
+        return new ResultUtil<Object>().setData(imgPath);
     }
 }

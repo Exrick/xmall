@@ -41,6 +41,16 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
+    public TbAddress getAddress(Long addressId) {
+
+        TbAddress tbAddress=tbAddressMapper.selectByPrimaryKey(addressId);
+        if(tbAddress==null){
+            throw new XmallException("通过id获取地址失败");
+        }
+        return tbAddress;
+    }
+
+    @Override
     public int addAddress(TbAddress tbAddress) {
 
         //设置唯一默认

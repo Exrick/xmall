@@ -1,7 +1,9 @@
-#.idea
+#.idea/
 
 target/
 
-#*.iml
+*.iml
+
+*.bak
 
 tomcat/

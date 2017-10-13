@@ -281,6 +281,8 @@ public class ContentServiceImpl implements ContentService {
             if(json!=null){
                 ProductDet productDet= new Gson().fromJson(json,ProductDet.class);
                 log.info("读取了商品"+id+"详情缓存");
+                //重置商品缓存时间
+                jedisClient.expire(RDEIS_ITEM+":"+id,ITEM_EXPIRE);
                 return productDet;
             }
         }catch (Exception e){

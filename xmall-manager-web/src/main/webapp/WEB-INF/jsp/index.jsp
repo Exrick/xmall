@@ -121,11 +121,6 @@
                 <ul>
                     <li><a data-href="member-list" data-title="会员列表" href="javascript:;">会员列表</a></li>
                     <li><a data-href="member-del" data-title="删除的会员" href="javascript:;">删除的会员</a></li>
-                    <li><a data-href="member-level" data-title="等级管理" href="javascript:;">等级管理</a></li>
-                    <li><a data-href="member-scoreoperation" data-title="积分管理" href="javascript:;">积分管理</a></li>
-                    <li><a data-href="member-record-browse" data-title="浏览记录" href="javascript:void(0)">浏览记录</a></li>
-                    <li><a data-href="member-record-download" data-title="下载记录" href="javascript:void(0)">下载记录</a></li>
-                    <li><a data-href="member-record-share" data-title="分享记录" href="javascript:void(0)">分享记录</a></li>
                 </ul>
             </dd>
         </dl>

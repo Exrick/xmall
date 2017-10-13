@@ -5,6 +5,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 import org.junit.Test;
 
 import javax.jms.*;
+import java.util.Date;
 
 public class TestPublish {
 
@@ -147,6 +148,16 @@ public class TestPublish {
         consumer.close();
         session.close();
         connection.close();
+    }
+
+    @Test
+    public void testTime(){
+        System.out.println(new Date().getTime());
+        long diff=new Date().getTime()-new Date().getTime();
+        System.out.println(diff);
+        long days = diff / (1000 * 60 * 60 * 24);
+        long hours = (diff-days*(1000 * 60 * 60 * 24))/(1000* 60 * 60);
+        System.out.println(hours);
     }
 
 }

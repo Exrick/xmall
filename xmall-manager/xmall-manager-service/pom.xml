@@ -86,10 +86,10 @@
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-all</artifactId>
         </dependency>
-        <!--七牛云图片上传SDK-->
+        <!--shiro-->
         <dependency>
-            <groupId>com.qiniu</groupId>
-            <artifactId>qiniu-java-sdk</artifactId>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-all</artifactId>
         </dependency>
     </dependencies>
 </project>

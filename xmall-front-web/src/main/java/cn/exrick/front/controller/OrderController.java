@@ -22,19 +22,35 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @RequestMapping(value = "/member/cartList",method = RequestMethod.GET)
+    @RequestMapping(value = "/member/orderList",method = RequestMethod.GET)
     @ApiOperation(value = "获得用户所有订单")
-    public Result<List<Order>> getAddressList(String userId){
+    public Result<List<Order>> getOrderList(String userId){
 
         List<Order> list=orderService.getOrderList(Long.valueOf(userId));
         return new ResultUtil<List<Order>>().setData(list);
+    }
+
+    @RequestMapping(value = "/member/orderDetail",method = RequestMethod.GET)
+    @ApiOperation(value = "通过id获取订单")
+    public Result<Order> getOrder(String orderId){
+
+        Order order=orderService.getOrder(Long.valueOf(orderId));
+        return new ResultUtil<Order>().setData(order);
     }
 
     @RequestMapping(value = "/member/addOrder",method = RequestMethod.POST)
     @ApiOperation(value = "创建订单")
     public Result<Object> addOrder(@RequestBody OrderInfo orderInfo){
 
-        int result=orderService.createOrder(orderInfo);
+        Long orderId=orderService.createOrder(orderInfo);
+        return new ResultUtil<Object>().setData(orderId.toString());
+    }
+
+    @RequestMapping(value = "/member/cancelOrder",method = RequestMethod.POST)
+    @ApiOperation(value = "取消订单")
+    public Result<Object> cancelOrder(@RequestBody Order order){
+
+        int result=orderService.cancelOrder(order.getOrderId());
         return new ResultUtil<Object>().setData(result);
     }
 

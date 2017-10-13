@@ -10,11 +10,21 @@ public class CartProduct implements Serializable{
 
     private Long productNum;
 
+    private Long limitNum;
+
     private String checked;
 
     private String productName;
 
     private String productImg;
+
+    public Long getLimitNum() {
+        return limitNum;
+    }
+
+    public void setLimitNum(Long limitNum) {
+        this.limitNum = limitNum;
+    }
 
     public Long getProductId() {
         return productId;

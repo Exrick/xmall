@@ -24,7 +24,7 @@
 </head>
 <body>
 <div class="cl pd-20" style=" background-color:#5bacb6">
-    <img class="avatar size-XL l" src="static/h-ui/images/ucnter/avatar-default.jpg">
+    <img id="avatar" class="avatar size-XL l" src="static/h-ui/images/ucnter/avatar-default.jpg">
     <dl style="margin-left:80px; color:#fff">
         <dt>
             <span id="username" class="f-18"></span>
@@ -111,7 +111,9 @@
             }
             document.getElementById("balance").innerHTML = data.result.balance;
             document.getElementById("points").innerHTML = data.result.points;
-
+            if(data.result.file!=null&&data.result.file!=""){
+                $("#avatar").attr("src", data.result.file);
+            }
         },
         error:function(XMLHttpRequest){
             layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});

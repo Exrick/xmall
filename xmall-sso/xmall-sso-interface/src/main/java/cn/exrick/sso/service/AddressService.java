@@ -8,6 +8,8 @@ public interface AddressService {
 
     List<TbAddress> getAddressList(Long userId);
 
+    TbAddress getAddress(Long addressId);
+
     int addAddress(TbAddress tbAddress);
 
     int updateAddress(TbAddress tbAddress);

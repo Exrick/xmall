@@ -7,6 +7,8 @@ import cn.exrick.manager.mapper.TbItemMapper;
 import cn.exrick.manager.pojo.TbItem;
 import cn.exrick.sso.service.CartService;
 import com.google.gson.Gson;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,8 @@ import java.util.List;
 
 @Service
 public class CartServiceImpl implements CartService {
+
+    private final static Logger log= LoggerFactory.getLogger(CartServiceImpl.class);
 
     @Autowired
     private JedisClient jedisClient;
@@ -106,4 +110,5 @@ public class CartServiceImpl implements CartService {
         jedisClient.hdel(CART_PRE + ":" + userId, itemId + "");
         return 1;
     }
+
 }

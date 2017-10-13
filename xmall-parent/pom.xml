@@ -9,44 +9,44 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <!-- 集中定义依赖版本号 -->
-    <!--<spring.version>4.2.4.RELEASE</spring.version>-->
+    <!-- 集中定义管理依赖版本号 -->
     <properties>
         <junit.version>4.12</junit.version>
-        <spring.version>4.3.10.RELEASE</spring.version>
-        <mybatis.version>3.2.8</mybatis.version>
-        <mybatis.spring.version>1.2.2</mybatis.spring.version>
+        <spring.version>4.3.12.RELEASE</spring.version>
+        <mybatis.version>3.4.5</mybatis.version>
+        <mybatis.spring.version>1.3.1</mybatis.spring.version>
         <mybatis.paginator.version>1.2.15</mybatis.paginator.version>
-        <mysql.version>5.1.32</mysql.version>
-        <slf4j.version>1.6.4</slf4j.version>
-        <jackson.version>2.6.5</jackson.version>
-        <druid.version>1.0.9</druid.version>
-        <httpclient.version>4.3.5</httpclient.version>
+        <mysql.version>5.1.44</mysql.version>
+        <slf4j.version>1.8.0-alpha2</slf4j.version>
+        <jackson.version>2.9.1</jackson.version>
+        <druid.version>1.1.4</druid.version>
+        <httpclient.version>4.5.3</httpclient.version>
         <jstl.version>1.2</jstl.version>
         <servlet-api.version>2.5</servlet-api.version>
         <jsp-api.version>2.0</jsp-api.version>
-        <joda-time.version>2.5</joda-time.version>
+        <joda-time.version>2.9.9</joda-time.version>
         <commons-lang3.version>3.3.2</commons-lang3.version>
         <commons-io.version>1.3.2</commons-io.version>
         <commons-net.version>3.3</commons-net.version>
         <pagehelper.version>4.1.6</pagehelper.version>
         <jsqlparser.version>0.9.1</jsqlparser.version>
         <commons-fileupload.version>1.3.3</commons-fileupload.version>
-        <jedis.version>2.7.2</jedis.version>
+        <jedis.version>2.9.0</jedis.version>
         <solrj.version>4.10.3</solrj.version>
-        <dubbo.version>2.5.3</dubbo.version>
+        <dubbo.version>2.5.6</dubbo.version>
         <zookeeper.version>3.4.10</zookeeper.version>
         <zkclient.version>0.1</zkclient.version>
         <activemq.version>5.11.2</activemq.version>
         <freemarker.version>2.3.23</freemarker.version>
         <quartz.version>2.2.2</quartz.version>
         <javassist.version>3.21.0-GA</javassist.version>
-        <swagger2.version>2.6.1</swagger2.version>
-        <swagger-ui.version>2.6.1</swagger-ui.version>
+        <swagger2.version>2.7.0</swagger2.version>
+        <swagger-ui.version>2.7.0</swagger-ui.version>
         <!--指定了版本范围，每次会尝试去下载最新版本-->
         <qiniu.version>[7.2.0, 7.2.99]</qiniu.version>
         <elasticsearch.version>5.6.2</elasticsearch.version>
         <log4j.version>2.9.1</log4j.version>
+        <shiro.version>1.4.0</shiro.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -277,6 +277,12 @@
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-core</artifactId>
                 <version>${log4j.version}</version>
+            </dependency>
+            <!--shiro-->
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-all</artifactId>
+                <version>${shiro.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

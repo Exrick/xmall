@@ -31,5 +31,6 @@
     <dubbo:reference interface="cn.exrick.sso.service.CartService" id="cartService" />
     <dubbo:reference interface="cn.exrick.sso.service.OrderService" id="orderService" />
     <dubbo:reference interface="cn.exrick.sso.service.AddressService" id="addressService" />
+    <dubbo:reference interface="cn.exrick.sso.service.MemberService" id="memberService" />
 
 </beans>

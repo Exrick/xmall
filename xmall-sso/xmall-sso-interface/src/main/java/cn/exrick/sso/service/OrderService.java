@@ -9,7 +9,11 @@ public interface OrderService {
 
     List<Order> getOrderList(Long userId);
 
-    int createOrder(OrderInfo orderInfo);
+    Order getOrder(Long orderId);
+
+    int cancelOrder(Long orderId);
+
+    Long createOrder(OrderInfo orderInfo);
 
     int delOrder(Long orderId);
 }

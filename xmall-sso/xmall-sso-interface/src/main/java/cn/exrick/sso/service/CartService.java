@@ -17,4 +17,5 @@ public interface CartService {
     int deleteCartItem(long userId, long itemId);
 
     int checkAll(long userId,String checked);
+
 }

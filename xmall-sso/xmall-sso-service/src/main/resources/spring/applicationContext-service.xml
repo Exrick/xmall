@@ -25,4 +25,5 @@
     <dubbo:service interface="cn.exrick.sso.service.CartService" ref="cartServiceImpl" timeout="5000"/>
     <dubbo:service interface="cn.exrick.sso.service.OrderService" ref="orderServiceImpl" timeout="5000"/>
     <dubbo:service interface="cn.exrick.sso.service.AddressService" ref="addressServiceImpl" timeout="5000"/>
+    <dubbo:service interface="cn.exrick.sso.service.MemberService" ref="memberServiceImpl" timeout="5000"/>
 </beans>

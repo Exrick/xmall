@@ -1,8 +1,9 @@
 package cn.exrick.manager.dto.front;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class OrderInfo {
+public class OrderInfo implements Serializable{
 
     private String userId;
 
@@ -13,6 +14,16 @@ public class OrderInfo {
     private String userName;
 
     private String streetName;
+
+    private Long orderTotal;
+
+    public Long getOrderTotal() {
+        return orderTotal;
+    }
+
+    public void setOrderTotal(Long orderTotal) {
+        this.orderTotal = orderTotal;
+    }
 
     private List<CartProduct> goodsList;
 

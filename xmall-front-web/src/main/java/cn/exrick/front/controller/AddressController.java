@@ -28,6 +28,14 @@ public class AddressController {
         return new ResultUtil<List<TbAddress>>().setData(list);
     }
 
+    @RequestMapping(value = "/member/address",method = RequestMethod.POST)
+    @ApiOperation(value = "通过id获得收货地址")
+    public Result<TbAddress> address(@RequestBody TbAddress tbAddress){
+
+        TbAddress address=addressService.getAddress(tbAddress.getAddressId());
+        return new ResultUtil<TbAddress>().setData(address);
+    }
+
     @RequestMapping(value = "/member/addAddress",method = RequestMethod.POST)
     @ApiOperation(value = "添加收货地址")
     public Result<Object> addAddress(@RequestBody TbAddress tbAddress){

@@ -9,6 +9,8 @@ public class Order implements Serializable{
 
     private Long orderId;
 
+    private Long orderTotal;
+
     private TbAddress addressInfo;
 
     private List<CartProduct> goodsList;
@@ -16,6 +18,34 @@ public class Order implements Serializable{
     private String orderStatus;
 
     private String createDate;
+
+    private String closeDate;
+
+    private String finishDate;
+
+    public String getCloseDate() {
+        return closeDate;
+    }
+
+    public void setCloseDate(String closeDate) {
+        this.closeDate = closeDate;
+    }
+
+    public String getFinishDate() {
+        return finishDate;
+    }
+
+    public void setFinishDate(String finishDate) {
+        this.finishDate = finishDate;
+    }
+
+    public Long getOrderTotal() {
+        return orderTotal;
+    }
+
+    public void setOrderTotal(Long orderTotal) {
+        this.orderTotal = orderTotal;
+    }
 
     public Long getOrderId() {
         return orderId;
