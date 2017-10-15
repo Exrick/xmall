@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
-	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
-	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <!--配置包扫描器-->
     <context:component-scan base-package="cn.exrick.manager.service"/>
@@ -23,4 +21,5 @@
     <dubbo:service interface="cn.exrick.manager.service.ItemService" ref="itemServiceImpl" timeout="5000"/>
     <dubbo:service interface="cn.exrick.manager.service.MemberService" ref="memberServiceImpl" timeout="5000"/>
     <dubbo:service interface="cn.exrick.manager.service.ItemCatService" ref="itemCatServiceImpl" timeout="5000"/>
+    <dubbo:service interface="cn.exrick.manager.service.UserService" ref="userServiceImpl" timeout="5000"/>
 </beans>

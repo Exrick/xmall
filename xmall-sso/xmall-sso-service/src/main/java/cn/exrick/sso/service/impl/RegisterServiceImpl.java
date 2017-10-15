@@ -58,7 +58,7 @@ public class RegisterServiceImpl implements RegisterService {
 			return 0; //该用户名已被注册
 		}
 
-		//md5加密
+		//MD5加密
 		String md5Pass = DigestUtils.md5DigestAsHex(userPwd.getBytes());
 		tbMember.setPassword(md5Pass);
 		tbMember.setState(1);

@@ -12,22 +12,35 @@
     <!-- Meta tag Keywords -->
 
     <!-- css files -->
-    <link rel="stylesheet" href="lib/login-css/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
-    <link rel="stylesheet" href="lib/login-css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
-    <!-- //css files -->
+    <link rel="stylesheet" href="lib/login/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
+    <link rel="stylesheet" href="lib/login/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+    <link rel="stylesheet" href="lib/layer/2.4/skin/layer.css"> <!-- Font-Awesome-Icons-CSS -->
 
     <!-- js -->
     <script type="text/javascript" src="lib/jquery/jquery-2.1.4.min.js"></script>
-    <!-- //js -->
+    <script src="lib/login/jquery.vide.min.js"></script>
+    <script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
+    <script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
 
     <style>
         .title,h6{
             font-family: "黑体";
         }
+        .layui-layer-title {
+            padding-right: 220px;
+            font-family:"Microsoft Yahei"
+        }
+        .layui-layer-dialog .layui-layer-content{
+            font-family:"Microsoft Yahei"
+        }
+        .layui-layer-btn{
+            font-family:"Microsoft Yahei"
+        }
     </style>
 </head>
 <body>
-<script src="lib/jquery/jquery.vide.min.js"></script>
+
 <!-- main -->
 <div data-vide-bg="lib/video/Ipad">
     <div class="center-container">
@@ -41,15 +54,15 @@
                 <div class="wthree-pro">
                     <h2>Login Here</h2>
                 </div>
-                <form action="/" method="post">
-                    <input placeholder="用户名或邮箱" name="Name" class="user" type="email" required="">
+                <form id="login" action="" method="post">
+                    <input placeholder="用户名" name="username" id="username" class="user" type="text" required="">
                     <span class="icon1"><i class="fa fa-user" aria-hidden="true"></i></span><br><br>
-                    <input  placeholder="密码" name="Password" class="pass" type="password" required="">
+                    <input  placeholder="密码" name="password" id="password" class="pass" type="password" required="">
                     <span class="icon2"><i class="fa fa-unlock" aria-hidden="true"></i></span><br>
                     <div class="sub-w3l">
-                        <h6><a href="#">忘记密码?</a></h6>
+                        <h6 onclick="forgetPass()" style="cursor: pointer"><a>忘记密码?</a></h6>
                         <div class="right-w3l">
-                            <input type="submit" class="login" value="登录">
+                            <input type="button" onclick="login()" class="login" value="登录">
                         </div>
                     </div>
                 </form>
@@ -59,11 +72,56 @@
 
         <!--footer-->
         <div class="footer">
-            <p>&copy; 2017 XMall. All rights reserved | Design by <a href="http://blog.exrick.cn">Exrick</a></p>
+            <p>&copy; 2017 XMall. All rights reserved | Design by <a href="http://blog.exrick.cn" target="_blank">Exrick</a></p>
         </div>
         <!--//footer-->
     </div>
 </div>
+<script type="text/javascript">
 
+    function forgetPass(){
+        layer.alert('体验测试账号密码：test | test', {
+            icon: 4,
+            title: "提示"
+        })
+    }
+    
+    function msg(m) {
+        layer.msg(m);
+    }
+    
+    function login() {
+        var name=$("#username").val();
+        var pass=$("#password").val();
+        if(name==""||pass==""){
+            msg("用户名或密码不能为空");
+            return;
+        }
+        var reg = /^[0-9A-Za-z]+$/;
+        if(!reg.exec(name))
+        {
+            msg("用户名格式有误");
+            return;
+        }
+        $.ajax({
+            type: 'POST',
+            url: '/user/login',
+            data: {
+                username: name,
+                password: pass
+            },
+            success:function (data) {
+                if(data.success==true){
+                    window.location.href="/";
+                }else{
+                    msg(data.message);
+                }
+            },
+            error:function(XMLHttpRequest){
+                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+            }
+        });
+    }
+</script>
 </body>
 </html>

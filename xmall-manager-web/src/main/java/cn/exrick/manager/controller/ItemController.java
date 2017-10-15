@@ -28,6 +28,7 @@ public class ItemController{
     @RequestMapping(value = "/item/{itemId}",method = RequestMethod.GET)
     @ApiOperation(value = "通过ID获取商品")
     public Result<ItemDto> getItemById(@PathVariable Long itemId){
+
         ItemDto itemDto=itemService.getItemById(itemId);
         return new ResultUtil<ItemDto>().setData(itemDto);
     }
@@ -37,6 +38,8 @@ public class ItemController{
     public DataTablesResult getItemList(int draw, int start, int length, int cid, @RequestParam("search[value]") String search,
                                         @RequestParam("order[0][column]") int orderCol, @RequestParam("order[0][dir]") String orderDir,
                                         String searchItem, String minDate, String maxDate){
+
+
         //获取客户端需要排序的列
         String[] cols = {"checkbox","id", "image", "title", "sell_point", "price", "created", "updated", "status"};
         String orderColumn = cols[orderCol];
@@ -56,6 +59,7 @@ public class ItemController{
     public DataTablesResult getItemSearchList(int draw, int start, int length,int cid,String searchKey,String minDate,String maxDate,
                                               @RequestParam("search[value]") String search, @RequestParam("order[0][column]") int orderCol,
                                               @RequestParam("order[0][dir]") String orderDir){
+
         //获取客户端需要排序的列
         String[] cols = {"checkbox","id", "image", "title", "sell_point", "price", "created", "updated", "status"};
         //默认排序列
@@ -77,6 +81,7 @@ public class ItemController{
     @RequestMapping(value = "/item/count",method = RequestMethod.GET)
     @ApiOperation(value = "获得商品总数目")
     public DataTablesResult getAllItemCount(){
+
         DataTablesResult result=itemService.getAllItemCount();
         return result;
     }
@@ -84,6 +89,7 @@ public class ItemController{
     @RequestMapping(value = "/item/stop/{id}",method = RequestMethod.PUT)
     @ApiOperation(value = "下架商品")
     public Result<TbItem> stopItem(@PathVariable Long id){
+
         TbItem tbItem = itemService.alertItemState(id,0);
         return new ResultUtil<TbItem>().setData(tbItem);
     }
@@ -91,6 +97,7 @@ public class ItemController{
     @RequestMapping(value = "/item/start/{id}",method = RequestMethod.PUT)
     @ApiOperation(value = "发布商品")
     public Result<TbItem> startItem(@PathVariable Long id){
+
         TbItem tbItem = itemService.alertItemState(id,1);
         return new ResultUtil<TbItem>().setData(tbItem);
     }
@@ -98,6 +105,7 @@ public class ItemController{
     @RequestMapping(value = "/item/del/{id}",method = RequestMethod.DELETE)
     @ApiOperation(value = "删除商品")
     public Result<TbItem> deleteItem(@PathVariable Long id){
+
         itemService.deleteItem(id);
         return new ResultUtil<TbItem>().setData(null);
     }

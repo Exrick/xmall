@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
-	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
-	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
-	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
 	
 	<!-- 真正可以产生Connection的ConnectionFactory，由对应的 JMS服务厂商提供 -->
 	<bean id="targetConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
@@ -19,18 +14,18 @@
 		<property name="targetConnectionFactory" ref="targetConnectionFactory" />
 	</bean>
 	<!-- 配置生产者 -->
-	<!-- Spring提供的JMS工具类，它可以进行消息发送、接收等 -->
+	<!-- Spring提供的JMS工具类，可以进行消息发送、接收等 -->
 	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
 		<!-- 这个connectionFactory对应的是我们定义的Spring提供的那个ConnectionFactory对象 -->
 		<property name="connectionFactory" ref="connectionFactory" />
 	</bean>
-	<!--这个是队列目的地，点对点的 -->
+	<!--队列目的地，点对点 -->
 	<bean id="queueDestination" class="org.apache.activemq.command.ActiveMQQueue">
 		<constructor-arg>
 			<value>spring-queue</value>
 		</constructor-arg>
 	</bean>
-	<!--这个是主题目的地，一对多的 -->
+	<!--主题目的地，一对多 -->
 	<bean id="topicDestination" class="org.apache.activemq.command.ActiveMQTopic">
 		<constructor-arg value="itemAddTopic" />
 	</bean>

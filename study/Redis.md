@@ -88,12 +88,17 @@ cd ..
     `[root@localhost redis-cluster]# redis01/redis-cli -p 7002 -c`
 
 ### 踩坑解决问题
-- 重新启动ruby脚本报错
+- 重启服务器后重新启动ruby脚本报错
 ```
 [ERR] Node 123.207.121.135:7001 is not empty. Either the node already knows other nodes (check with CLUSTER NODES) or contains some key in database 0.
 ```
 
 由于非正常关闭集群，需删除每个节点中的数据文件aof、rdb、nodes.conf，实在不行就只有重装一遍...
+- 强制停止redis快照导致，redis运行用户没有权限写rdb文件或者磁盘空间满了
+```
+MISCONF Redis is configured to save RDB snapshots, but is currently not able to persist on disk. Commands that may modify the data set are disabled. Please check Redis logs for details about the error.
+```
+解决办法：修改配置文件 stop-writes-on-bgsave-error no
 
 
 

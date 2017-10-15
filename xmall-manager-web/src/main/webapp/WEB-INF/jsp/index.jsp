@@ -46,13 +46,13 @@
             </nav>
             <nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
                 <ul class="cl">
-                    <li>超级管理员</li>
+                    <li id="role"></li>
                     <li class="dropDown dropDown_hover">
-                        <a href="#" class="dropDown_A">admin <i class="Hui-iconfont">&#xe6d5;</i></a>
+                        <a href="#" class="dropDown_A"><sapn id="username"></sapn> <i class="Hui-iconfont">&#xe6d5;</i></a>
                         <ul class="dropDown-menu menu radius box-shadow">
                             <li><a href="javascript:;" onClick="myselfinfo()">个人信息</a></li>
-                            <li><a href="#">切换账户</a></li>
-                            <li><a href="#">退出</a></li>
+                            <li><a onclick="logout()">切换账户</a></li>
+                            <li><a onclick="logout()">退出</a></li>
                         </ul>
                     </li>
                     <li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">3</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
@@ -153,7 +153,6 @@
             <dd>
                 <ul>
                     <li><a data-href="system-base" data-title="系统设置" href="javascript:void(0)">系统设置</a></li>
-                    <li><a data-href="system-category" data-title="栏目管理" href="javascript:void(0)">栏目管理</a></li>
                     <li><a data-href="system-data" data-title="数据字典" href="javascript:void(0)">数据字典</a></li>
                     <li><a data-href="system-shielding" data-title="屏蔽词" href="javascript:void(0)">屏蔽词</a></li>
                     <li><a data-href="system-log" data-title="系统日志" href="javascript:void(0)">系统日志</a></li>
@@ -208,6 +207,7 @@
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript" src="lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
 <script type="text/javascript">
+
     $(function(){
         $("body").Huitab({
             tabBar:".navbar-wrapper .navbar-levelone",
@@ -216,6 +216,11 @@
             index:0,
         });
     });
+
+    function msg(m) {
+        layer.msg(m);
+    }
+
     /*个人信息*/
     function myselfinfo(){
         layer.open({
@@ -228,25 +233,7 @@
             content: '<div>管理员信息</div>'
         });
     }
-
-    /*资讯-添加*/
-    function article_add(title,url){
-        var index = layer.open({
-            type: 2,
-            title: title,
-            content: url
-        });
-        layer.full(index);
-    }
-    /*图片-添加*/
-    function picture_add(title,url){
-        var index = layer.open({
-            type: 2,
-            title: title,
-            content: url
-        });
-        layer.full(index);
-    }
+    
     /*产品-添加*/
     function product_add(title,url){
         var index = layer.open({
@@ -261,8 +248,39 @@
         layer_show(title,url,w,h);
     }
 
+    $.ajax({
+        type: 'GET',
+        url: '/user/userInfo',
+        success:function (data) {
+            if(data.success==true){
+                $("#role").html(data.result.description);
+                $("#username").html(data.result.username);
+            }else {
+                msg("获取管理员信息失败");
+            }
+        },
+        error:function(XMLHttpRequest){
+            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+        }
+    });
+    
+    function logout() {
+        $.ajax({
+            type: 'GET',
+            url: '/user/logout',
+            success:function (data) {
+                if(data.success==true){
+                    window.location.href="/login";
+                }else{
+                    msg(data.message);
+                }
+            },
+            error:function(XMLHttpRequest){
+                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+            }
+        });
+    }
 
 </script>
-
 </body>
 </html>

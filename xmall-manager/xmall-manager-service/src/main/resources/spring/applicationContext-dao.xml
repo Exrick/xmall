@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
-	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
-	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
-	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
-	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
     <!-- 数据库连接池 -->
     <!-- 加载配置文件 -->
@@ -22,11 +18,11 @@
         <property name="maxActive" value="10" />
         <property name="minIdle" value="5" />
     </bean>
-    <!-- 让spring管理sqlsessionfactory 使用mybatis和spring整合包中的 -->
+    <!-- 让Spring管理sqlSessionFactory 使用Mybatis和Spring整合包中的 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <!-- 数据库连接池 -->
         <property name="dataSource" ref="dataSource" />
-        <!-- 加载mybatis的全局配置文件 -->
+        <!-- 加载Mybatis全局配置文件 -->
         <property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml" />
     </bean>
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">

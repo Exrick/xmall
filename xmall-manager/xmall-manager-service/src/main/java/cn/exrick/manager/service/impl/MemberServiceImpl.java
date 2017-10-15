@@ -261,6 +261,7 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public TbMember getMemberByEditEmail(Long id,String email) {
+
         TbMember tbMember=getMemberById(id);
         TbMember newTbMember=null;
         if(!tbMember.getEmail().equals(email)){
@@ -271,6 +272,7 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public TbMember getMemberByEditPhone(Long id,String phone) {
+
         TbMember tbMember=getMemberById(id);
         TbMember newTbMember=null;
         if(!tbMember.getPhone().equals(phone)){
@@ -281,6 +283,7 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public TbMember getMemberByEditUsername(Long id,String username) {
+
         TbMember tbMember=getMemberById(id);
         TbMember newTbMember=null;
         if(!tbMember.getUsername().equals(username)){

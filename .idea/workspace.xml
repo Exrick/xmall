@@ -2,107 +2,93 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="xmall-front-web:war exploded" />
+      <artifact name="xmall-content-service:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4f3498c-c7a8-433e-85bb-4c00387d3dab" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_0_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_dubbo_2_5_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_6_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_6_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_6_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_core_2_6_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_schema_2_6_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spi_2_6_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_web_2_6_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger2_2_6_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_common_2_6_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_ui_2_6_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_models_1_5_10.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__joda_time_joda_time_2_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_32.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_3_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_10.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_0_0_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_2_8.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_6_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_10_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_4_3_10_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_10_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_10_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_3_10_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_10_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_10_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_10_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jms_4_3_10_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_4_3_10_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_10_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_10_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_10_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_7_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/study/Swagger.md" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_content_service_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_content_service_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_front_web_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_front_web_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_service_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_service_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_web_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_web_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_search_service_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_search_service_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_sso_service_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_sso_service_war_exploded.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbAddressMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbAddressMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbContentCategoryMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbContentCategoryMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbContentMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbContentMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbImageMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbImageMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemCatMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemCatMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemDescMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemDescMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemParamItemMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemParamItemMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemParamMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbItemParamMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbMemberMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbMemberMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbOrderItemMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbOrderItemMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbOrderMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbOrderMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbOrderShippingMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbOrderShippingMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbUserMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbUserMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbAddress.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbAddressExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbContent.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbContentCategory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbContentCategoryExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbContentExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbImage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbImageExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItemCat.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItemCatExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItemDesc.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItemDescExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItemExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItemParam.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItemParamExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItemParamItem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbItemParamItemExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbMember.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbMemberExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbOrder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbOrderExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbOrderItem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbOrderItemExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbOrderShipping.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbOrderShippingExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbUser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/pojo/TbUserExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/video/Ipad.mp4" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/QiniuUtil.java" afterPath="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/QiniuUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-common/xmall-common.iml" afterPath="$PROJECT_DIR$/xmall-common/xmall-common.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-interface/xmall-content-interface.iml" afterPath="$PROJECT_DIR$/xmall-content/xmall-content-interface/xmall-content-interface.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/java/cn/exrick/content/service/impl/ContentServiceImpl.java" afterPath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/java/cn/exrick/content/service/impl/ContentServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/generatorSqlmapCustom/src/main/resources/generatorConfig.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-dao.xml" afterPath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-dao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-redis.xml" afterPath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-redis.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-service.xml" afterPath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-service.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-service/xmall-content-service.iml" afterPath="$PROJECT_DIR$/xmall-content/xmall-content-service/xmall-content-service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content.iml" afterPath="$PROJECT_DIR$/xmall-content/xmall-content.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/AddressController.java" afterPath="$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/AddressController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/MemberController.java" afterPath="$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/MemberController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/OrderController.java" afterPath="$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/OrderController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-front-web/src/main/resources/spring/springmvc.xml" afterPath="$PROJECT_DIR$/xmall-front-web/src/main/resources/spring/springmvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-front-web/xmall-front-web.iml" afterPath="$PROJECT_DIR$/xmall-front-web/xmall-front-web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/pom.xml" afterPath="$PROJECT_DIR$/xmall-manager-web/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-trans.xml" afterPath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-trans.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/ItemController.java" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/ItemController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/MemberController.java" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/MemberController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/exception/RestCtrlExceptionHandler.java" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/exception/RestCtrlExceptionHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/resources/spring/springmvc.xml" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/resources/spring/springmvc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/index.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/login.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-edit.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-edit.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-show.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-show.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/xmall-manager-web.iml" afterPath="$PROJECT_DIR$/xmall-manager-web/xmall-manager-web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/xmall-manager-dao.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/xmall-manager-dao.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/xmall-manager-interface.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/xmall-manager-interface.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/DtoUtil.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/DtoUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/front/CartProduct.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/front/CartProduct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/front/Order.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/front/Order.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/front/OrderInfo.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/front/OrderInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/xmall-manager-pojo.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/xmall-manager-pojo.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/pom.xml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/test/java/cn/exirck/manager/service/impl/TestPublish.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/test/java/cn/exirck/manager/service/impl/TestPublish.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/xmall-manager-service.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/xmall-manager-service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-parent/pom.xml" afterPath="$PROJECT_DIR$/xmall-parent/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-search/xmall-search-interface/xmall-search-interface.iml" afterPath="$PROJECT_DIR$/xmall-search/xmall-search-interface/xmall-search-interface.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/resources/spring/applicationContext-service.xml" afterPath="$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/resources/spring/applicationContext-service.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-search/xmall-search-service/xmall-search-service.iml" afterPath="$PROJECT_DIR$/xmall-search/xmall-search-service/xmall-search-service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-search/xmall-search.iml" afterPath="$PROJECT_DIR$/xmall-search/xmall-search.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/src/main/java/cn/exrick/sso/service/AddressService.java" afterPath="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/src/main/java/cn/exrick/sso/service/AddressService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/src/main/java/cn/exrick/sso/service/CartService.java" afterPath="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/src/main/java/cn/exrick/sso/service/CartService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/src/main/java/cn/exrick/sso/service/OrderService.java" afterPath="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/src/main/java/cn/exrick/sso/service/OrderService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/xmall-sso-interface.iml" afterPath="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/xmall-sso-interface.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/AddressServiceImpl.java" afterPath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/AddressServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/CartServiceImpl.java" afterPath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/CartServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/OrderServiceImpl.java" afterPath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/OrderServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/resources/spring/applicationContext-service.xml" afterPath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/resources/spring/applicationContext-service.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/xmall-sso-service.iml" afterPath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/xmall-sso-service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-sso/xmall-sso.iml" afterPath="$PROJECT_DIR$/xmall-sso/xmall-sso.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/layer/2.4/layer.js" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/layer/2.4/layer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/layer/2.4/skin/layer.css" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/layer/2.4/skin/layer.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/service/impl/MemberServiceImpl.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/service/impl/MemberServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-activemq.xml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-activemq.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-dao.xml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-dao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-redis.xml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-redis.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-service.xml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-service.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-trans.xml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-trans.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/RegisterServiceImpl.java" afterPath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/RegisterServiceImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/jquery/jquery.vide.min.js" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/login/jquery.vide.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/login-css/font-awesome.css" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/login/font-awesome.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/login-css/style.css" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/login/style.css" />
     </list>
     <ignored path="$PROJECT_DIR$/xmall-parent/target/" />
     <ignored path="$PROJECT_DIR$/xmall-common/target/" />
@@ -149,12 +135,58 @@
     <favorites_list name="xmall" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="applicationContext-service.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-service.xml">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="MyRealm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/shiro/MyRealm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="23" column="108" lean-forward="false" selection-start-line="23" selection-start-column="108" selection-end-line="23" selection-end-column="108" />
+            <state relative-caret-position="189">
+              <caret line="37" column="16" lean-forward="true" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="springmvc.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/resources/spring/springmvc.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/service/impl/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="461">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="273" column="17" lean-forward="true" selection-start-line="273" selection-start-column="17" selection-end-line="275" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -166,28 +198,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="jsf" />
-        <option value="Jsp File" />
         <option value="JavaScript File" />
         <option value="Interface" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>parentId</find>
-      <find>TbItem2ItemDto</find>
-      <find>5</find>
-      <find>Upload</find>
-      <find>不</find>
-      <find>最多</find>
-      <find>images</find>
-      <find>最后</find>
-      <find>json</find>
-      <find>Jackson</find>
-      <find>imageUpload</find>
-      <find>log</find>
-      <find>Joda</find>
       <find>activemq</find>
       <find>DtoUtil</find>
       <find>cn.exrick</find>
@@ -205,6 +224,19 @@
       <find>swagger2</find>
       <find>shiro</find>
       <find>quartz</find>
+      <find>user</find>
+      <find>sub-main-w3</find>
+      <find>email</find>
+      <find>1.2</find>
+      <find>2.4</find>
+      <find>gif</find>
+      <find>font</find>
+      <find>button</find>
+      <find>text</find>
+      <find>submit</find>
+      <find>login</find>
+      <find>username</find>
+      <find>admin</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -218,57 +250,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/front/Product.java" />
-        <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/pom.xml" />
-        <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/src/main/java/cn/exrick/sso/service/LoginService.java" />
-        <option value="$PROJECT_DIR$/xmall-content/xmall-content-interface/pom.xml" />
-        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/front/OrderCreate.java" />
-        <option value="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/IDUtil.java" />
-        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/service/impl/ItemServiceImpl.java" />
-        <option value="$PROJECT_DIR$/generatorSqlmapCustom/src/main/resources/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/front/Address.java" />
-        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/manager/mapper/TbAddressMapper.java" />
-        <option value="$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/CartController.java" />
-        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/pojo/TbAddress.java" />
-        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/manager/mapper/TbAddressMapper.xml" />
-        <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/LoginServiceImpl.java" />
-        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/front/CartProduct.java" />
-        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/DtoUtil.java" />
-        <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/src/main/java/cn/exrick/sso/service/AddressService.java" />
-        <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/AddressServiceImpl.java" />
-        <option value="$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/AddressController.java" />
-        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/front/OrderInfo.java" />
-        <option value="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/java/cn/exrick/content/service/impl/ContentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/CartServiceImpl.java" />
-        <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/src/main/java/cn/exrick/sso/service/CartService.java" />
-        <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/resources/spring/applicationContext-service.xml" />
-        <option value="$PROJECT_DIR$/xmall-front-web/src/main/resources/spring/springmvc.xml" />
-        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/front/Member.java" />
-        <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/src/main/java/cn/exrick/sso/service/OrderService.java" />
-        <option value="$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/OrderController.java" />
-        <option value="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/QiniuUtil.java" />
-        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/test/java/cn/exirck/manager/service/impl/TestPublish.java" />
-        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/front/Order.java" />
-        <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/src/main/java/cn/exrick/sso/service/MemberService.java" />
-        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/front/CommonDto.java" />
-        <option value="$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/MemberController.java" />
-        <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/MemberServiceImpl.java" />
-        <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/OrderServiceImpl.java" />
-        <option value="$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/resources/spring/applicationContext-service.xml" />
-        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/index.jsp" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-show.jsp" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-edit.jsp" />
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-service.xml" />
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/shiro/MyReam.java" />
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/pom.xml" />
-        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/login.jsp" />
         <option value="$PROJECT_DIR$/xmall-parent/pom.xml" />
         <option value="$PROJECT_DIR$/xmall-manager-web/pom.xml" />
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/shiro/MyRealm.java" />
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-shiro.xml" />
-        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/exception/RestCtrlExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-activemq.xml" />
+        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-dao.xml" />
+        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-redis.xml" />
+        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-trans.xml" />
+        <option value="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-dao.xml" />
+        <option value="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-redis.xml" />
         <option value="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-service.xml" />
+        <option value="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-trans.xml" />
+        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/manager/mapper/TbPermissionMapper.java" />
+        <option value="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/mapper/TbPermissionMapper.java" />
+        <option value="$PROJECT_DIR$/generatorSqlmapCustom/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/pojo/TbPermission.java" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/login-css/style.css" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/user-list.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-role.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-permission.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-service.xml" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/MemberController.java" />
+        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/service/impl/MemberServiceImpl.java" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/ItemController.java" />
+        <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/RegisterServiceImpl.java" />
+        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/pojo/TbRole.java" />
+        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/manager/mapper/TbUserMapper.xml" />
+        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/manager/mapper/TbUserMapper.java" />
+        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/manager/mapper/TbRoleMapper.java" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-add.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/login/jquery.vide.min.js" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/resources/spring/shiro.xml" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/login/style.css" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/shiro/MyRealm.java" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/permission.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/401.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/resources/spring/springmvc.xml" />
+        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/UserInfoDto.java" />
+        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/src/main/java/cn/exrick/manager/service/UserService.java" />
+        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/pojo/TbUser.java" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/index.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/login.jsp" />
       </list>
     </option>
   </component>
@@ -296,13 +328,29 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand />
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="generatorSqlmapCustom" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="generatorSqlmapCustom" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="generatorSqlmapCustom" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="mybatis-generator" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+      </expand>
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-14" />
-    <option name="y" value="4" />
+    <option name="x" value="389" />
+    <option name="y" value="43" />
     <option name="width" value="1938" />
     <option name="height" value="1048" />
   </component>
@@ -658,60 +706,234 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-content" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-content" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-content-service" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-pojo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-content" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-content-service" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-pojo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-content" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-content-service" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-pojo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-content" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-content-service" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-pojo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-pojo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-pojo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-content" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-content-service" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="spring" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+              <item name="shiro" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="spring" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -722,11 +944,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\桌面\xmall\xmall-manager-web\src\main\webapp\lib\video" />
+      <recent name="D:\桌面\xmall\xmall-manager-web\src\main\webapp\lib\login" />
+      <recent name="D:\桌面\xmall\xmall-manager-web\src\main\webapp\lib\layer\3.1\skin" />
+      <recent name="D:\桌面\xmall\xmall-manager\xmall-manager-dao\src\main\java\cn\exrick\manager\mapper" />
       <recent name="D:\桌面\xmall\xmall-search\xmall-search-service\src\main\java\cn\exrick\search\mapper" />
-      <recent name="D:\桌面\xmall\xmall-search\xmall-search-service\src\main\resources\webapp\WEB-INF" />
-      <recent name="D:\桌面\xmall\xmall-search\xmall-search-service\src\main\resources" />
-      <recent name="D:\桌面\xmall\xmall-search\xmall-search-service\src\main\resources\conf" />
-      <recent name="D:\桌面\xmall\xmall-front-web\src\main\resources\spring" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="cn.exrick.search" />
@@ -740,11 +962,11 @@
       <recent name="cn.exrick.exceptionservice" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\桌面\xmall\xmall-manager\xmall-manager-service\src\main\resources\spring" />
-      <recent name="D:\桌面\xmall\xmall-manager\xmall-manager-pojo\src\main\java\cn\exrick\manager\pojo" />
-      <recent name="D:\桌面\xmall\xmall-manager\xmall-manager-dao\src\main\java\cn\exrick\manager\mapper" />
-      <recent name="D:\桌面\xmall\xmall-common\src\main\java\cn\exrick\common\utils" />
-      <recent name="D:\桌面\xmall\xmall-sso\xmall-sso-service\src\main\resources\conf" />
+      <recent name="D:\桌面\xmall\xmall-manager-web\src\main\webapp\icon" />
+      <recent name="D:\桌面\xmall\xmall-manager-web\src\main\webapp\WEB-INF\jsp" />
+      <recent name="D:\桌面\xmall\xmall-manager-web\src\main\webapp\lib\video" />
+      <recent name="D:\桌面\xmall\xmall-manager-web\src\main\webapp\lib\layer\2.4\skin\default" />
+      <recent name="D:\桌面\xmall\xmall-manager-web\src\main\webapp\lib\layer\2.4\skin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -759,7 +981,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.tomcat-front-web">
+  <component name="RunManager" selected="Tomcat Server.tomcat-manager-web">
     <configuration name="ElasticsearchTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -2189,7 +2411,10 @@
       <workItem from="1507774984084" duration="10283000" />
       <workItem from="1507803932194" duration="5872000" />
       <workItem from="1507862328898" duration="28216000" />
-      <workItem from="1507907846035" duration="1834000" />
+      <workItem from="1507907846035" duration="2423000" />
+      <workItem from="1507948391620" duration="15267000" />
+      <workItem from="1508035382416" duration="22368000" />
+      <workItem from="1508068300423" duration="7833000" />
     </task>
     <servers />
   </component>
@@ -2226,7 +2451,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="958905000" />
+    <option name="totallyTimeSpent" value="1004962000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2239,7 +2464,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49822485" sideWeight="0.5059013" order="7" side_tool="true" content_ui="tabs" />
@@ -2264,8 +2488,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37633136" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27145922" sideWeight="0.4189349" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28272533" sideWeight="0.4189349" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26770386" sideWeight="0.5810651" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -2338,357 +2562,411 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/AddressController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-sso/xmall-sso-interface/src/main/java/cn/exrick/sso/service/AddressService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/AddressServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="39" column="20" lean-forward="true" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/conf/resource.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/java/cn/exrick/content/service/impl/ContentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="284" column="66" lean-forward="false" selection-start-line="284" selection-start-column="66" selection-end-line="284" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-sso/xmall-sso-interface/src/main/java/cn/exrick/sso/service/CartService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/jedis/JedisClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-front-web/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3321">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/resources/spring/applicationContext-service.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="16" column="42" lean-forward="true" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-common/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/front/Member.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/CartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-160">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-sso/xmall-sso-interface/src/main/java/cn/exrick/sso/service/OrderService.java">
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/PageController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/QiniuUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="98" column="39" lean-forward="true" selection-start-line="98" selection-start-column="39" selection-end-line="98" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/pojo/TbOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/test/java/cn/exirck/manager/service/impl/TestPublish.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="155" column="38" lean-forward="false" selection-start-line="155" selection-start-column="38" selection-end-line="155" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/front/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/front/CommonDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-sso/xmall-sso-interface/src/main/java/cn/exrick/sso/service/MemberService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="62" lean-forward="false" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/MemberServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/OrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/front/CartProduct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/GoodsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/CartServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="78" column="9" lean-forward="true" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/MemberController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="66" column="88" lean-forward="false" selection-start-line="66" selection-start-column="88" selection-end-line="66" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/LoginServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="62" column="13" lean-forward="true" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/front/OrderInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-front-web/src/main/resources/spring/springmvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/resources/spring/applicationContext-service.xml">
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/ContentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="22" column="105" lean-forward="false" selection-start-line="22" selection-start-column="105" selection-end-line="22" selection-end-column="105" />
+        <state relative-caret-position="-52">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/OrderServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-interface/src/main/java/cn/exrick/manager/service/MemberService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="181" column="35" lean-forward="false" selection-start-line="181" selection-start-column="35" selection-end-line="181" selection-end-column="35" />
+        <state relative-caret-position="-567">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-edit.jsp">
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/MemberController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1863">
-          <caret line="69" column="58" lean-forward="false" selection-start-line="69" selection-start-column="58" selection-end-line="69" selection-end-column="58" />
+        <state relative-caret-position="308">
+          <caret line="194" column="4" lean-forward="false" selection-start-line="194" selection-start-column="4" selection-end-line="202" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-all/1.4.0/shiro-all-1.4.0.jar!/org/apache/shiro/subject/Subject.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-891">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="271">
+          <caret line="58" column="9" lean-forward="false" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-show.jsp">
+    <entry file="file://$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/pojo/Result.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="110" column="13" lean-forward="true" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
+        <state relative-caret-position="243">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/index.jsp">
+    <entry file="file://$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/ResultUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+        <state relative-caret-position="351">
+          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-dao.xml">
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/ImageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="34" column="8" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+        <state relative-caret-position="-1053">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/ItemController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2592">
+          <caret line="107" column="8" lean-forward="false" selection-start-line="107" selection-start-column="8" selection-end-line="107" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/service/impl/MemberServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="96" column="46" lean-forward="false" selection-start-line="93" selection-start-column="8" selection-end-line="96" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/service/impl/ItemCatServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/service/impl/ItemServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27">
-          <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="61" column="86" lean-forward="false" selection-start-line="61" selection-start-column="86" selection-end-line="61" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/PageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-parent/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        <state relative-caret-position="4828">
+          <caret line="263" column="0" lean-forward="true" selection-start-line="263" selection-start-column="0" selection-end-line="263" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/pom.xml">
+    <entry file="file://$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/MemberServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-106">
+        <state relative-caret-position="-214">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/LoginServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/MemberController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-268">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/RegisterServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="839">
+          <caret line="60" column="13" lean-forward="false" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/pojo/TbRole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="4" column="43" lean-forward="false" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/manager/mapper/TbItemMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="23" column="49" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/manager/mapper/TbRoleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-25">
+          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/manager/mapper/TbUserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="337" column="44" lean-forward="false" selection-start-line="337" selection-start-column="44" selection-end-line="337" selection-end-column="44" />
+          <folding>
+            <marker date="1508037334012" expanded="true" signature="4133:4235" ph="select from tb_user" />
+            <marker date="1508037334012" expanded="true" signature="4318:4374" ph="delete from " />
+            <marker date="1508037334012" expanded="true" signature="4476:4495" ph="delete from " />
+            <marker date="1508037334012" expanded="true" signature="4673:5233" ph="insert into tb_user... " />
+            <marker date="1508037334012" expanded="true" signature="7463:7491" ph="select count... tb_user" />
+            <marker date="1508037334012" expanded="true" signature="9223:9892" ph="update tb_us... " />
+            <marker date="1508037334012" expanded="true" signature="10101:11270" ph="update tb_us... " />
+            <marker date="1508037334012" expanded="true" signature="11368:11949" ph="update tb_us... " />
+            <marker date="1508037334012" expanded="true" signature="12011:12121" ph="SELECT r. NA... tb_user" />
+            <marker date="1508037334012" expanded="true" signature="12189:12349" ph="SELECT p.per... tb_user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/picture-list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1296">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1506348042498" expanded="true" signature="4771:4795" ph="..." />
+            <marker date="1506348042498" expanded="true" signature="5409:5429" ph="..." />
+            <marker date="1506348042498" expanded="true" signature="5567:5575" ph="&amp;##xe6df;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/layer/实际版本已升级为3.1" />
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="100" column="49" lean-forward="false" selection-start-line="100" selection-start-column="49" selection-end-line="100" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/laypage/1.2/laypage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/pom.xml">
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/laypage/1.2/skin/laypage.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="81" column="36" lean-forward="true" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
+        <state relative-caret-position="81">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/404.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="30" column="25" lean-forward="false" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/shiro/MyRealm.java" />
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-service.xml">
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/layer/2.4/layer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="67" lean-forward="false" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-shiro.xml" />
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/pom.xml">
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/layer/2.4/skin/layer.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="131" column="21" lean-forward="false" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/login/jquery.vide.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="841" lean-forward="false" selection-start-line="8" selection-start-column="841" selection-end-line="8" selection-end-column="982" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/video/Ipad.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/static/h-ui/css/H-ui.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="266" column="69" lean-forward="true" selection-start-line="266" selection-start-column="40" selection-end-line="266" selection-end-column="69" />
+          <folding>
+            <marker date="1505911087072" expanded="true" signature="8081:8105" ph="{...}" />
+            <marker date="1505911087072" expanded="true" signature="8567:8664" ph="{...}" />
+            <marker date="1505911087072" expanded="true" signature="36950:36989" ph="{...}" />
+            <marker date="1505911087072" expanded="true" signature="37039:37086" ph="{...}" />
+            <marker date="1505911087072" expanded="true" signature="77462:77504" ph="{...}" />
+            <marker date="1505911087072" expanded="true" signature="160128:160203" ph="{...}" />
+            <marker date="1505911087072" expanded="true" signature="160220:160296" ph="{...}" />
+            <marker date="1505911087072" expanded="true" signature="165461:165535" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5416">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="186" column="11" lean-forward="true" selection-start-line="177" selection-start-column="8" selection-end-line="186" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="31" column="27" lean-forward="true" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/video/Ipad.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/manager/mapper/TbUserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="758">
+          <caret line="34" column="67" lean-forward="false" selection-start-line="34" selection-start-column="67" selection-end-line="34" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-service.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="23" column="75" lean-forward="false" selection-start-line="23" selection-start-column="75" selection-end-line="23" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/resources/spring/shiro.xml" />
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-del.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="185" column="15" lean-forward="true" selection-start-line="173" selection-start-column="12" selection-end-line="185" selection-end-column="15" />
+          <folding>
+            <marker date="1504753187699" expanded="true" signature="6795:6815" ph="..." />
+            <marker date="1504753187699" expanded="true" signature="6923:6931" ph="&amp;##xe66b;" />
+            <marker date="1504753187699" expanded="true" signature="7043:7063" ph="..." />
+            <marker date="1504753187699" expanded="true" signature="7092:7100" ph="&amp;##xe6e2;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/lib/login/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6664">
+          <caret line="445" column="35" lean-forward="false" selection-start-line="445" selection-start-column="35" selection-end-line="445" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/401.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="85" lean-forward="false" selection-start-line="27" selection-start-column="85" selection-end-line="27" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-redis.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/resources/spring/springmvc.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="33" column="38" lean-forward="true" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="38" />
+        <state relative-caret-position="297">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/shiro/MyRealm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="22" column="21" lean-forward="false" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        <state relative-caret-position="189">
+          <caret line="37" column="16" lean-forward="true" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/dto/UserInfoDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-service.xml">
+    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-interface/src/main/java/cn/exrick/manager/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="23" column="108" lean-forward="false" selection-start-line="23" selection-start-column="108" selection-end-line="23" selection-end-column="108" />
+        <state relative-caret-position="324">
+          <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/pojo/TbUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="30" column="24" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="117" column="17" lean-forward="false" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="273" column="17" lean-forward="true" selection-start-line="273" selection-start-column="17" selection-end-line="275" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

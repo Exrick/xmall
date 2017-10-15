@@ -21,7 +21,7 @@
 		</javaTypeResolver>
 
 		<!-- targetProject:生成PO类的位置 -->
-		<javaModelGenerator targetPackage="cn.exrick.pojo"
+		<javaModelGenerator targetPackage="cn.exrick.manager.pojo"
 			targetProject=".\src">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="false" />
@@ -29,14 +29,14 @@
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
         <!-- targetProject:mapper映射文件生成的位置 -->
-		<sqlMapGenerator targetPackage="cn.exrick.mapper"
+		<sqlMapGenerator targetPackage="cn.exrick.manager.mapper"
 			targetProject=".\src">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="false" />
 		</sqlMapGenerator>
 		<!-- targetPackage：mapper接口生成的位置 -->
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="cn.exrick.mapper"
+			targetPackage="cn.exrick.manager.mapper"
 			targetProject=".\src">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="false" />
@@ -56,6 +56,8 @@
 		<table schema="" tableName="tb_member"></table>
 		<table schema="" tableName="tb_image"></table>
 		<table schema="" tableName="tb_address"></table>
+		<table schema="" tableName="tb_role"></table>
+		<table schema="" tableName="tb_permission"></table>
 
 	</context>
 </generatorConfiguration>

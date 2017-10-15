@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
@@ -15,6 +15,57 @@
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
     </bean>
+
+    <!-- 配置自定义Realm -->
+    <bean id="myRealm" class="cn.exrick.manager.shiro.MyRealm"/>
+
+    <!-- 安全管理器 -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="myRealm"/>
+    </bean>
+
+    <!-- Shiro过滤器 核心-->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <!-- Shiro的核心安全接口,这个属性是必须的 -->
+        <property name="securityManager" ref="securityManager"/>
+        <!-- 身份认证失败，则跳转到登录页面的配置 -->
+        <property name="loginUrl" value="/login"/>
+        <!-- 登录成功之后的 跳转页面 -->
+        <property name="successUrl" value="/"/>
+        <!-- 权限认证失败，则跳转到指定页面 -->
+        <property name="unauthorizedUrl" value="/401"/>
+        <!-- Shiro连接约束配置,即过滤链的定义 -->
+        <property name="filterChainDefinitions">
+            <value>
+                <!--anon 表示匿名访问，不需要认证以及授权-->
+                /user/login = anon
+                /user/logout = authc
+                <!-- perms 表示需要该权限才能访问的页面 -->
+                /user/* = perms[/*]
+                /item/* = roles[管理员]
+                <!--authc 表示需要认证 没有进行身份认证是不能进行访问的-->
+                /* = authc
+
+            </value>
+        </property>
+    </bean>
+
+    <!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+    <!-- 开启Shiro注解 -->
+    <!--<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+          depends-on="lifecycleBeanPostProcessor"/>
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>-->
+
+    <!-- AOP式方法级权限检查 -->
+    <!--<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor">
+        <property name="proxyTargetClass" value="true" />
+    </bean>
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager" />
+    </bean>-->
 
     <!-- 配置多媒体解析器 -->
     <!-- 定义文件上传解析器 -->
@@ -32,12 +83,14 @@
     <mvc:resources mapping="/temp/**" location="/temp/"/>
     <mvc:resources mapping="/icon/**" location="/icon/"/>
     <mvc:resources mapping="/upload/**" location="/upload/"/>
+
     <!-- 引用dubbo服务 -->
     <dubbo:application name="xmall-manager-web"/>
     <dubbo:registry protocol="zookeeper" address="123.207.121.135:2181"/>
     <dubbo:reference interface="cn.exrick.manager.service.ItemService" id="itemService" />
     <dubbo:reference interface="cn.exrick.manager.service.MemberService" id="memberService" />
     <dubbo:reference interface="cn.exrick.manager.service.ItemCatService" id="itemCatService" />
+    <dubbo:reference interface="cn.exrick.manager.service.UserService" id="userService" />
     <dubbo:reference interface="cn.exrick.content.service.ContentService" id="contentService" />
     <dubbo:reference interface="cn.exrick.content.service.ContentCatService" id="contentCatService" />
     <dubbo:reference interface="cn.exrick.content.service.ContentImageService" id="contentImageService" />

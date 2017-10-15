@@ -49,7 +49,7 @@ public class RestCtrlExceptionHandler {
     @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseBody
     public Result<Object> handleException(Exception e) {
-        String errorMsg="exception: ";
+        String errorMsg="Exception: ";
         if (e!=null){
             log.warn(e.getMessage()+" exception getMessage");
             log.warn(e.getLocalizedMessage()+" exception getMessage");
