@@ -33,7 +33,7 @@
 <article class="page-container">
     <form action="" method="" class="form form-horizontal" id="form-change-password">
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>账户：</label>
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>账号：</label>
             <div class="formControls col-xs-8 col-sm-9"> <span id="username"></span> </div>
         </div>
         <div class="row cl">
@@ -96,7 +96,7 @@
                 },
             },
             onkeyup:false,
-            focusCleanup:true,
+            focusCleanup:false,
             success:"valid",
             submitHandler:function(form){
                 $(form).ajaxSubmit({

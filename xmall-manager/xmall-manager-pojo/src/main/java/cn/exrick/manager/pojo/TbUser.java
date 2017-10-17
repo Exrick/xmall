@@ -30,6 +30,16 @@ public class TbUser implements Serializable{
 
     private String file;
 
+    private String roleNames;
+
+    public String getRoleNames() {
+        return roleNames;
+    }
+
+    public void setRoleNames(String roleNames) {
+        this.roleNames = roleNames;
+    }
+
     public Long getId() {
         return id;
     }

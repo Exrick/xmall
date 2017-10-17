@@ -83,11 +83,13 @@
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
 <script type="text/javascript">
+
     /*刷新表格*/
     function refresh(){
         var table = $('.table').DataTable();
         table.ajax.reload(null,false);// 刷新表格数据，分页信息不会重置
     }
+
     /*时间转换*/
     function date(data){
         var time = new Date(data);
@@ -125,6 +127,11 @@
                 type: 'GET',
                 data:{
                     "cid":-1
+                },
+                success:function (data) {
+                    if(data.success==false){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                    }
                 },
                 error:function(XMLHttpRequest){
                     layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
@@ -428,6 +435,7 @@
             });
         });
     }
+
     /*批量删除*/
     function datadel() {
         var cks=document.getElementsByName("checkbox");

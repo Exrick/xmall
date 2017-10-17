@@ -179,6 +179,9 @@ public class MemberServiceImpl implements MemberService {
 
         TbMember tbMember= DtoUtil.MemberDto2Member(memberDto);
 
+        if(getMemberByUsername(tbMember.getUsername())!=null){
+            throw new XmallException("用户名已被注册");
+        }
         if(getMemberByPhone(tbMember.getPhone())!=null){
             throw new XmallException("手机号已被注册");
         }
@@ -264,7 +267,7 @@ public class MemberServiceImpl implements MemberService {
 
         TbMember tbMember=getMemberById(id);
         TbMember newTbMember=null;
-        if(!tbMember.getEmail().equals(email)){
+        if(tbMember.getEmail()==null||!tbMember.getEmail().equals(email)){
             newTbMember=getMemberByEmail(email);
         }
         return newTbMember;
@@ -275,7 +278,7 @@ public class MemberServiceImpl implements MemberService {
 
         TbMember tbMember=getMemberById(id);
         TbMember newTbMember=null;
-        if(!tbMember.getPhone().equals(phone)){
+        if(tbMember.getPhone()==null||!tbMember.getPhone().equals(phone)){
             newTbMember=getMemberByPhone(phone);
         }
         return newTbMember;
@@ -286,7 +289,7 @@ public class MemberServiceImpl implements MemberService {
 
         TbMember tbMember=getMemberById(id);
         TbMember newTbMember=null;
-        if(!tbMember.getUsername().equals(username)){
+        if(tbMember.getUsername()==null||!tbMember.getUsername().equals(username)){
             newTbMember=getMemberByUsername(username);
         }
         return newTbMember;

@@ -30,7 +30,7 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>管理员：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="" placeholder="" id="adminName" name="adminName">
+                <input type="text" class="input-text" value="" placeholder="" id="username" name="username">
             </div>
         </div>
         <div class="row cl">
@@ -49,11 +49,11 @@
             <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>性别：</label>
             <div class="formControls col-xs-8 col-sm-9 skin-minimal">
                 <div class="radio-box">
-                    <input name="sex" type="radio" id="sex-1" checked>
+                    <input name="sex" value="男" type="radio" id="sex-1" checked>
                     <label for="sex-1">男</label>
                 </div>
                 <div class="radio-box">
-                    <input type="radio" id="sex-2" name="sex">
+                    <input type="radio" value="女" id="sex-2" name="sex">
                     <label for="sex-2">女</label>
                 </div>
             </div>
@@ -72,25 +72,22 @@
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3">角色：</label>
-            <div class="formControls col-xs-8 col-sm-9"> <span class="select-box" style="width:150px;">
-			<select class="select" name="adminRole" size="1">
-				<option value="0">超级管理员</option>
-				<option value="1">总编</option>
-				<option value="2">栏目主辑</option>
-				<option value="3">栏目编辑</option>
-			</select>
-			</span> </div>
+            <div class="formControls col-xs-8 col-sm-9">
+                <span class="select-box" style="width:150px;">
+                    <select id="select" class="select" name="roleId" size="1"></select>
+			    </span>
+            </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3">备注：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <textarea name="" cols="" rows="" class="textarea"  placeholder="说点什么...100个字符以内" dragonfly="true" onKeyUp="$.Huitextarealength(this,100)"></textarea>
+                <textarea name="description" cols="" rows="" class="textarea" placeholder="说点什么...100个字符以内" dragonfly="true"></textarea>
                 <p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
             </div>
         </div>
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
-                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                <input id="saveButton" class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
             </div>
         </div>
     </form>
@@ -107,6 +104,31 @@
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <script type="text/javascript">
+
+    $.ajax({
+        url:"/user/getAllRoles",
+        type: 'GET',
+        success:function (data) {
+            if(data.success==true){
+                var size=data.result.length;
+                for(var i=0;i<size;i++){
+                    $("#select").append("<option value="+data.result[i].id+">"+data.result[i].name+"</option>");
+                }
+            }
+        },
+        error:function(XMLHttpRequest){
+            if(XMLHttpRequest.status!=200){
+                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
+            }
+        }
+    });
+
+    /*文本输入限制*/
+    $(".textarea").Huitextarealength({
+        minlength:0,
+        maxlength:100
+    });
+
     $(function(){
         $('.skin-minimal input').iCheck({
             checkboxClass: 'icheckbox-blue',
@@ -116,12 +138,15 @@
 
         $("#form-admin-add").validate({
             rules:{
-                adminName:{
+                username:{
                     required:true,
-                    minlength:4,
-                    maxlength:16
+                    minlength:1,
+                    maxlength:16,
+                    remote: "/user/username"
                 },
                 password:{
+                    minlength:6,
+                    maxlength:16,
                     required:true,
                 },
                 password2:{
@@ -134,32 +159,53 @@
                 phone:{
                     required:true,
                     isPhone:true,
+                    remote:"/user/phone"
                 },
                 email:{
                     required:true,
                     email:true,
+                    remote:"/user/email"
                 },
-                adminRole:{
+                roleId:{
                     required:true,
                 },
             },
+            messages: {
+                username: {
+                    remote: "该用户名已被注册"
+                }
+            },
             onkeyup:false,
-            focusCleanup:true,
+            focusCleanup:false,
             success:"valid",
             submitHandler:function(form){
+                $("#saveButton").val("保存中...");
+                $("#saveButton").attr("disabled","disabled");
                 $(form).ajaxSubmit({
-                    type: 'post',
-                    url: "xxxxxxx" ,
-                    success: function(data){
-                        layer.msg('添加成功!',{icon:1,time:1000});
+                    url: "/user/addUser",
+                    type: "POST",
+                    success: function (data) {
+                        if (data.success == true) {
+                            parent.userCount();
+                            parent.refresh();
+                            parent.msgSuccess("添加成功!");
+                            var index = parent.layer.getFrameIndex(window.name);
+                            parent.layer.close(index);
+                        } else {
+                            $("#saveButton").val("提交");
+                            $("#saveButton").removeAttr("disabled");
+                            layer.alert(data.message, {title: '错误信息', icon: 2});
+                        }
                     },
-                    error: function(XmlHttpRequest, textStatus, errorThrown){
-                        layer.msg('error!',{icon:1,time:1000});
+                    error: function (XMLHttpRequest) {
+                        $("#saveButton").val("提交");
+                        $("#saveButton").removeAttr("disabled");
+                        layer.alert('数据处理失败! 错误码:' + XMLHttpRequest.status + ' 错误信息:' + JSON.parse(XMLHttpRequest.responseText).message, {
+                            title: '错误信息',
+                            icon: 2
+                        });
                     }
                 });
-                var index = parent.layer.getFrameIndex(window.name);
-                parent.$('.btn-refresh').click();
-                parent.layer.close(index);
             }
         });
     });

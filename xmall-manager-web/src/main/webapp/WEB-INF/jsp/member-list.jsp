@@ -195,6 +195,7 @@
     function member_show(title,url,id,w,h){
         layer_show(title,url+'?'+id,w,h);
     }
+
     /*用户-停用*/
     function member_stop(obj,id){
         layer.confirm('确认要停用ID为\''+id+'\'的会员吗？',{icon:0},function(index){
@@ -203,11 +204,11 @@
                 url: '/member/stop/'+id,
                 dataType: 'json',
                 success: function(data){
-                    $(obj).parents("td").prepend('<a style="text-decoration:none" onClick="member_start(this,'+id+')" href="javascript:;" title="启用"><i class="Hui-iconfont">&#xe6e1;</i></a>');
-                    var thisTd = $(obj).parents("tr").find(".td-status").parent();
-                    $(obj).parents("tr").find(".td-status").empty();
-                    thisTd.html('<span class="label label-defant radius td-status">已停用</span>');
-                    $(obj).remove();
+                    if(data.success!=true){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
+                    }
+                    refresh();
                     layer.msg('已停用!',{icon: 5,time:1000});
                 },
                 error:function(XMLHttpRequest){
@@ -225,11 +226,11 @@
                 url: '/member/start/'+id,
                 dataType: 'json',
                 success: function(data){
-                    $(obj).parents("td").prepend('<a style="text-decoration:none" onClick="member_stop(this,'+id+')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a>');
-                    var thisTd = $(obj).parents("tr").find(".td-status").parent();
-                    $(obj).parents("tr").find(".td-status").empty();
-                    thisTd.html('<span class="label label-success radius td-status">已启用</span>');
-                    $(obj).remove();
+                    if(data.success!=true){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
+                    }
+                    refresh();
                     layer.msg('已启用!',{icon: 6,time:1000});
                 },
                 error:function(XMLHttpRequest){
@@ -254,6 +255,10 @@
                 url: '/member/remove/'+id,
                 dataType: 'json',
                 success: function(data){
+                    if(data.success!=true){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
+                    }
                     member_count();
                     refresh();
                     layer.msg('已删除!',{icon:1,time:1000});
@@ -264,6 +269,7 @@
             });
         });
     }
+
     /*批量删除*/
     function datadel() {
         var cks=document.getElementsByName("checkbox");
@@ -284,6 +290,12 @@
                         type: 'PUT',
                         url: '/member/remove/'+cks[i].value,
                         dataType: 'json',
+                        success:function(data){
+                            if(data.success!=true){
+                                layer.alert(data.message,{title: '错误信息',icon: 2});
+                                return;
+                            }
+                        },
                         error:function(XMLHttpRequest){
                             layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                         }

@@ -3,18 +3,13 @@
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
     http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
     http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
-    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
     <context:component-scan base-package="cn.exrick.manager" />
-
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/jsp/" />
-        <property name="suffix" value=".jsp" />
-    </bean>
 
     <!-- 配置自定义Realm -->
     <bean id="myRealm" class="cn.exrick.manager.shiro.MyRealm"/>
@@ -23,6 +18,8 @@
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realm" ref="myRealm"/>
     </bean>
+
+    <bean id="perms" class="cn.exrick.manager.shiro.MyPermissionFilter"/>
 
     <!-- Shiro过滤器 核心-->
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
@@ -34,23 +31,33 @@
         <property name="successUrl" value="/"/>
         <!-- 权限认证失败，则跳转到指定页面 -->
         <property name="unauthorizedUrl" value="/401"/>
+        <!--自定义过滤器-->
+        <property name="filters">
+            <util:map>
+                <entry key="perms" value-ref="perms"></entry>
+                <entry key="roles" value-ref="perms"></entry>
+            </util:map>
+        </property>
         <!-- Shiro连接约束配置,即过滤链的定义 -->
         <property name="filterChainDefinitions">
             <value>
-                <!--anon 表示匿名访问，不需要认证以及授权-->
+                <!--anon 表示不需要认证以及授权-->
+                <!--authc 表示需要认证 没有登录是不能进行访问的-->
+                <!--perms 表示需要该权限才能访问的页面 /user/* = perms[/*] -->
+                <!--roles 表示需要角色才能访问的页面 /* = roles[管理员]-->
                 /user/login = anon
+                /401 = anon
                 /user/logout = authc
-                <!-- perms 表示需要该权限才能访问的页面 -->
-                /user/* = perms[/*]
+                /user/userInfo = authc
                 /item/* = roles[管理员]
-                <!--authc 表示需要认证 没有进行身份认证是不能进行访问的-->
+                /member/* = perms[/member/*]
+                <!--/* = roles[管理员]-->
                 /* = authc
-
             </value>
         </property>
     </bean>
 
-    <!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
+    <!-- Shiro生命周期处理器 -->
     <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
     <!-- 开启Shiro注解 -->
     <!--<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
@@ -66,6 +73,12 @@
     <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
         <property name="securityManager" ref="securityManager" />
     </bean>-->
+
+    <!--SpringMVC视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
 
     <!-- 配置多媒体解析器 -->
     <!-- 定义文件上传解析器 -->

@@ -248,7 +248,7 @@
         setId(id);
         var table = $('.table').DataTable();
         $('.table tbody').on( 'click', 'tr', function () {
-            productId = table.row( this ).data().productId;
+            productId = table.row(this).data().productId;
         });
         var index = layer.open({
             type: 2,

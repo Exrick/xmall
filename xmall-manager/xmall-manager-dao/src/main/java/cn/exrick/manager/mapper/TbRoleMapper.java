@@ -28,4 +28,6 @@ public interface TbRoleMapper {
     int updateByPrimaryKeySelective(TbRole record);
 
     int updateByPrimaryKey(TbRole record);
+
+    List<String> getUsedRoles(@Param("id") int id);
 }

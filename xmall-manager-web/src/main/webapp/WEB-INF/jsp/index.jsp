@@ -46,7 +46,7 @@
             </nav>
             <nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
                 <ul class="cl">
-                    <li id="role"></li>
+                    <li style="right:5px" id="role"></li>
                     <li class="dropDown dropDown_hover">
                         <a href="#" class="dropDown_A"><sapn id="username"></sapn> <i class="Hui-iconfont">&#xe6d5;</i></a>
                         <ul class="dropDown-menu menu radius box-shadow">
@@ -217,10 +217,6 @@
         });
     });
 
-    function msg(m) {
-        layer.msg(m);
-    }
-
     /*个人信息*/
     function myselfinfo(){
         layer.open({
@@ -256,7 +252,7 @@
                 $("#role").html(data.result.description);
                 $("#username").html(data.result.username);
             }else {
-                msg("获取管理员信息失败");
+                layer.msg("获取管理员信息失败");
             }
         },
         error:function(XMLHttpRequest){
@@ -272,7 +268,7 @@
                 if(data.success==true){
                     window.location.href="/login";
                 }else{
-                    msg(data.message);
+                    layer.msg(data.message);
                 }
             },
             error:function(XMLHttpRequest){

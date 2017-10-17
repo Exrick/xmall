@@ -62,7 +62,7 @@
                     <div class="sub-w3l">
                         <h6 onclick="forgetPass()" style="cursor: pointer"><a>忘记密码?</a></h6>
                         <div class="right-w3l">
-                            <input type="button" onclick="login()" class="login" value="登录">
+                            <input id="loginButton" type="button" onclick="login()" class="login" value="登录">
                         </div>
                     </div>
                 </form>
@@ -86,21 +86,23 @@
         })
     }
     
-    function msg(m) {
-        layer.msg(m);
-    }
-    
     function login() {
+        $("#loginButton").val("登录中...");
+        $("#loginButton").attr("disabled","disabled");
         var name=$("#username").val();
         var pass=$("#password").val();
         if(name==""||pass==""){
-            msg("用户名或密码不能为空");
+            layer.msg("用户名或密码不能为空");
+            $("#loginButton").val("登录");
+            $("#loginButton").removeAttr("disabled");
             return;
         }
         var reg = /^[0-9A-Za-z]+$/;
         if(!reg.exec(name))
         {
-            msg("用户名格式有误");
+            layer.msg("用户名格式有误");
+            $("#loginButton").val("登录");
+            $("#loginButton").removeAttr("disabled");
             return;
         }
         $.ajax({
@@ -114,11 +116,15 @@
                 if(data.success==true){
                     window.location.href="/";
                 }else{
-                    msg(data.message);
+                    layer.msg(data.message);
+                    $("#loginButton").val("登录");
+                    $("#loginButton").removeAttr("disabled");
                 }
             },
             error:function(XMLHttpRequest){
                 layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                $("#loginButton").val("登录");
+                $("#loginButton").removeAttr("disabled");
             }
         });
     }

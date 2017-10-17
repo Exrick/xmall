@@ -78,7 +78,7 @@
             </div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3">附件：</label>
+            <label class="form-label col-xs-4 col-sm-3">头像：</label>
             <div class="formControls col-xs-8 col-sm-9"> <span class="btn-upload form-group">
 				<input class="input-text upload-url" type="text" name="uploadfile" id="uploadfile" readonly nullmsg="请添加附件！" style="width:200px">
 				<a href="javascript:void();" class="btn btn-primary radius upload-btn"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
@@ -103,7 +103,7 @@
         </div>
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
-                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                <input id="saveButton" class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
             </div>
         </div>
     </form>
@@ -145,7 +145,7 @@
                     required:true,
                     minlength:2,
                     maxlength:16,
-                    remote: "/member/username"+$("#username").val()
+                    remote: "/member/username"
                 },
                 password:{
                     required:true,
@@ -159,12 +159,12 @@
                 phone:{
                     required:true,
                     isMobile:true,
-                    remote:"/member/phone"+$("#phone").val()
+                    remote:"/member/phone"
                 },
                 email:{
                     required:true,
                     email:true,
-                    remote:"/member/email"+$("#email").val()
+                    remote:"/member/email"
                 },
                 sex:{
                     required:true,
@@ -191,10 +191,13 @@
             focusCleanup:false,
             success:"valid",
             submitHandler:function(form){
+                $("#saveButton").val("保存中...");
+                $("#saveButton").attr("disabled","disabled");
                 $(form).ajaxSubmit({
                     success: function(data) {
                         if(data.success==true){
                             if(parent.location.pathname!='/'){
+                                parent.member_count();
                                 parent.refresh();
                                 parent.msgSuccess("添加成功!");
                                 var index = parent.layer.getFrameIndex(window.name);
@@ -208,10 +211,14 @@
                                 });
                             }
                         }else{
+                            $("#saveButton").val("提交");
+                            $("#saveButton").removeAttr("disabled");
                             layer.alert('添加失败! '+data.message, {title: '错误信息',icon: 2});
                         }
                     },
                     error:function(XMLHttpRequest) {
+                        $("#saveButton").val("提交");
+                        $("#saveButton").removeAttr("disabled");
                         layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                     }
                 });

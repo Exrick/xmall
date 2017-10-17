@@ -105,7 +105,7 @@
         </div>
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-                <button class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存并发布</button>
+                <button id="saveButton" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存并发布</button>
                 <button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
             </div>
         </div>
@@ -181,8 +181,12 @@
         focusCleanup:false,
         success:"valid",
         submitHandler:function(form){
+            $("#saveButton").html("保存中...");
+            $("#saveButton").attr("disabled","disabled");
             if(images==null){
                 layer.alert('请上传商品展示缩略图! ', {title: '错误信息',icon: 0});
+                $("#saveButton").val("保存并发布");
+                $("#saveButton").removeAttr("disabled");
                 return;
             }
             editor.sync();
@@ -191,15 +195,29 @@
                 type: "POST",
                 success: function(data) {
                     if(data.success==true){
-                        parent.refresh();
-                        parent.msgSuccess("添加成功!");
-                        var index = parent.layer.getFrameIndex(window.name);
-                        parent.layer.close(index);
+                        if(parent.location.pathname!='/'){
+                            parent.product_count();
+                            parent.refresh();
+                            parent.msgSuccess("添加成功!");
+                            var index = parent.layer.getFrameIndex(window.name);
+                            parent.layer.close(index);
+                        }else{
+                            layer.confirm('添加成功!', {
+                                btn: ['确认'],icon: 1
+                            }, function(){
+                                var index = parent.layer.getFrameIndex(window.name);
+                                parent.layer.close(index);
+                            });
+                        }
                     }else{
-                        layer.alert('添加失败! '+data.message, {title: '错误信息',icon: 2});
+                        layer.alert(data.message, {title: '错误信息',icon: 2});
+                        $("#saveButton").val("保存并发布");
+                        $("#saveButton").removeAttr("disabled");
                     }
                 },
                 error:function(XMLHttpRequest) {
+                    $("#saveButton").val("保存并发布");
+                    $("#saveButton").removeAttr("disabled");
                     layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 }
             });

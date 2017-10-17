@@ -24,4 +24,5 @@
 　　-aux 显示所有状态
 
 - 终止进程 `kill -9 [PID]`
+- Tomcat查看日志 `cd logs   tail -f catalina.out`
 

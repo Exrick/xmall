@@ -40,8 +40,8 @@ public class Swagger2Config {
         return new ApiInfoBuilder()
                 .title("XMall Api Documentation")
                 .description("XMall商城前台API接口文档")
-                .termsOfServiceUrl("http://www.exrick.cn")
-                .contact(new Contact("Exrick", "http://www.exrick.cn", "1012139570@qq.com"))
+                .termsOfServiceUrl("http://blog.exrick.cn")
+                .contact(new Contact("Exrick", "http://blog.exrick.cn", "1012139570@qq.com"))
                 .version("1.0.0")
                 .build();
     }

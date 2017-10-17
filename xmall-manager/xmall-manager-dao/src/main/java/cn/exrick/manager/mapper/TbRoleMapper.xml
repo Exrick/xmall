@@ -178,4 +178,13 @@
       description = #{description,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="getUsedRoles" resultType="String">
+    SELECT
+	r.`name`
+    FROM
+	tb_user u
+    JOIN tb_role r ON u.role_id = r.id
+    WHERE
+	r.id = #{id}
+  </select>
 </mapper>

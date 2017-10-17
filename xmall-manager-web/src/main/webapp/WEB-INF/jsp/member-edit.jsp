@@ -176,7 +176,7 @@
                     required:true,
                     minlength:2,
                     maxlength:16,
-                    remote: "/member/edit/"+getId+"/username"+$("#username").val()
+                    remote: "/member/edit/"+getId+"/username"
                 },
                 password:{
                     required:true,
@@ -190,12 +190,12 @@
                 phone:{
                     required:true,
                     isMobile:true,
-                    remote: "/member/edit/"+getId+"/phone"+$("#phone").val()
+                    remote: "/member/edit/"+getId+"/phone"
                 },
                 email:{
                     required:true,
                     email:true,
-                    remote: "/member/edit/"+getId+"/email"+$("#email").val()
+                    remote: "/member/edit/"+getId+"/email"
                 },
                 sex:{
                     required:true,
