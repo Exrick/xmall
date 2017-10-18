@@ -45,14 +45,15 @@
                 <!--authc 表示需要认证 没有登录是不能进行访问的-->
                 <!--perms 表示需要该权限才能访问的页面 /user/* = perms[/*] -->
                 <!--roles 表示需要角色才能访问的页面 /* = roles[管理员]-->
-                /user/login = anon
+                /login = anon
                 /401 = anon
+                / = authc
+                /index = authc
+                /welcome = authc
+                /lock-screen = authc
                 /user/logout = authc
                 /user/userInfo = authc
-                /item/* = roles[管理员]
-                /member/* = perms[/member/*]
-                <!--/* = roles[管理员]-->
-                /* = authc
+                * = roles[超级管理员]
             </value>
         </property>
     </bean>

@@ -3,7 +3,6 @@
 <mapper namespace="cn.exrick.manager.mapper.TbPermissionMapper">
   <resultMap id="BaseResultMap" type="cn.exrick.manager.pojo.TbPermission">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="role_id" jdbcType="INTEGER" property="roleId" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="permission" jdbcType="VARCHAR" property="permission" />
   </resultMap>
@@ -66,7 +65,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, role_id, name, permission
+    id, name, permission
   </sql>
   <select id="selectByExample" parameterType="cn.exrick.manager.pojo.TbPermissionExample" resultMap="BaseResultMap">
     select
@@ -99,19 +98,16 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.exrick.manager.pojo.TbPermission">
-    insert into tb_permission (id, role_id, name, 
-      permission)
-    values (#{id,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
-      #{permission,jdbcType=VARCHAR})
+    insert into tb_permission (id, name, permission
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{permission,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="cn.exrick.manager.pojo.TbPermission">
     insert into tb_permission
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
-      </if>
-      <if test="roleId != null">
-        role_id,
       </if>
       <if test="name != null">
         name,
@@ -123,9 +119,6 @@
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
         #{id,jdbcType=INTEGER},
-      </if>
-      <if test="roleId != null">
-        #{roleId,jdbcType=INTEGER},
       </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
@@ -147,9 +140,6 @@
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.roleId != null">
-        role_id = #{record.roleId,jdbcType=INTEGER},
-      </if>
       <if test="record.name != null">
         name = #{record.name,jdbcType=VARCHAR},
       </if>
@@ -164,7 +154,6 @@
   <update id="updateByExample" parameterType="map">
     update tb_permission
     set id = #{record.id,jdbcType=INTEGER},
-      role_id = #{record.roleId,jdbcType=INTEGER},
       name = #{record.name,jdbcType=VARCHAR},
       permission = #{record.permission,jdbcType=VARCHAR}
     <if test="_parameter != null">
@@ -174,9 +163,6 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.exrick.manager.pojo.TbPermission">
     update tb_permission
     <set>
-      <if test="roleId != null">
-        role_id = #{roleId,jdbcType=INTEGER},
-      </if>
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
@@ -188,8 +174,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.exrick.manager.pojo.TbPermission">
     update tb_permission
-    set role_id = #{roleId,jdbcType=INTEGER},
-      name = #{name,jdbcType=VARCHAR},
+    set name = #{name,jdbcType=VARCHAR},
       permission = #{permission,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>

@@ -70,7 +70,7 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3">备注：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <textarea name="description" cols="" rows="" class="textarea" placeholder="说点什么...100个字符以内" dragonfly="true"></textarea>
+                <textarea id="description" name="description" cols="" rows="" class="textarea" placeholder="说点什么...100个字符以内" dragonfly="true"></textarea>
                 <p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
             </div>
         </div>
@@ -98,6 +98,7 @@
     $("#username").val(parent.username);
     $("#phone").val(parent.phone);
     $("#email").val(parent.email);
+    $("#description").val(parent.description);
     var roleNames=parent.roleNames;
     var sex=$("#sex").val(parent.sex);
     if(sex=='女'){

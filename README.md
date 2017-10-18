@@ -60,6 +60,7 @@
     - [搜狐畅言评论插件](http://changyan.kuaizhan.com/)
 - 其它开发工具
     - [JRebel](https://github.com/Exrick/xmall/blob/master/study/JRebel.md)：开发热部署
+    - [阿里巴巴JAVA开发规约插件](https://github.com/alibaba/p3c)
 
 ### dependency文件夹提供部分依赖与sql文件
 - xmall.sql：数据库文件

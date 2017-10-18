@@ -114,6 +114,8 @@
                 for(var i=0;i<size;i++){
                     $("#select").append("<option value="+data.result[i].id+">"+data.result[i].name+"</option>");
                 }
+            }else{
+                layer.alert(data.message, {title: '错误信息',icon: 2});
             }
         },
         error:function(XMLHttpRequest){

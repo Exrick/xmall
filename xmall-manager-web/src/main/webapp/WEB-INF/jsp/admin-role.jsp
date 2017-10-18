@@ -90,11 +90,11 @@
                 { "data": "id"},
                 { "data": "name"},
                 { "data": "permissions"},
-                { "data": "desciption"},
+                { "data": "description"},
                 {
                     "data": null,
                     render: function (data, type, row, meta) {
-                        return "<a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"admin_role_edit('角色编辑','admin-role-add',"+row.id+")\" href=\"javascript:;\" title=\"编辑\"><i class=\"Hui-iconfont\">&#xe6df;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"product_del(this,"+row.id+")\" href=\"javascript:;\" title=\"删除\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>";
+                        return "<a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"admin_role_edit('角色编辑','admin-role-edit',"+row.id+")\" href=\"javascript:;\" title=\"编辑\"><i class=\"Hui-iconfont\">&#xe6df;</i></a> <a style=\"text-decoration:none\" class=\"ml-5\" onClick=\"admin_role_del(this,"+row.id+")\" href=\"javascript:;\" title=\"删除\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>";
                     }
                 }
             ],
@@ -108,44 +108,100 @@
             },
             colReorder: true
         });
+
+        roleCount();
     });
 
-    $.ajax({
-        url:"/user/roleCount",
-        type: 'GET',
-        success:function (data) {
-            $("#num").html(data.result);
-        },
-        error:function(XMLHttpRequest){
-            if(XMLHttpRequest.status!=200){
-                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
+    function roleCount() {
+        $.ajax({
+            url:"/user/roleCount",
+            type: 'GET',
+            success:function (data) {
+                $("#num").html(data.result);
+            },
+            error:function(XMLHttpRequest){
+                if(XMLHttpRequest.status!=200){
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
+                }
             }
-        }
-    });
+        });
+    }
 
     /*管理员-角色-添加*/
     function admin_role_add(title,url,w,h){
         layer_show(title,url,w,h);
     }
+
+    var roleId=-1,name="",description="",permissions="";
     /*管理员-角色-编辑*/
     function admin_role_edit(title,url,id,w,h){
+        roleId=id;
+        var table = $('.table').DataTable();
+        $('.table tbody').on( 'click', 'tr', function () {
+            name = table.row(this).data().name;
+            description = table.row(this).data().description;
+            permissions = table.row(this).data().permissions;
+        });
         layer_show(title,url,w,h);
     }
+
     /*管理员-角色-删除*/
     function admin_role_del(obj,id){
-        layer.confirm('角色删除须谨慎，确认要删除吗？',function(index){
+        layer.confirm('确认要删除ID为\''+id+'\'的角色吗？',{icon:0},function(index){
             $.ajax({
-                type: 'POST',
-                url: '',
+                type: 'DELETE',
+                url: '/user/delRole/'+id,
                 dataType: 'json',
                 success: function(data){
-                    $(obj).parents("tr").remove();
+                    if(data.success!=true){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
+                    }
+                    roleCount();
+                    refresh();
                     layer.msg('已删除!',{icon:1,time:1000});
                 },
-                error:function(data) {
-                    console.log(data.msg);
-                },
+                error:function(XMLHttpRequest){
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                }
             });
+        });
+    }
+
+    /*批量删除*/
+    function datadel() {
+        var cks=document.getElementsByName("checkbox");
+        var count=0;
+        for(var i=0;i<cks.length;i++){
+            if(cks[i].checked){
+                count++;
+            }
+        }
+        if(count==0){
+            layer.msg('您还未勾选任何数据!',{icon:5,time:3000});
+            return;
+        }
+        layer.confirm('确认要删除所选的'+count+'条数据吗？',{icon:0},function(index){
+            for(var i=0;i<cks.length;i++){
+                if(cks[i].checked){
+                    $.ajax({
+                        type: 'DELETE',
+                        url: '/user/delRole/'+cks[i].value,
+                        dataType: 'json',
+                        success:function(data){
+                            if(data.success!=true){
+                                layer.alert(data.message,{title: '错误信息',icon: 2});
+                            }
+                        },
+                        error:function(XMLHttpRequest){
+                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                        }
+                    });
+                }
+            }
+            layer.msg('已删除!',{icon:1,time:1000});
+            roleCount();
+            refresh();
         });
     }
 

@@ -33,4 +33,6 @@ public interface TbUserMapper {
     Set<String> getRoles(@Param("username") String username);
 
     Set<String> getPermissions(@Param("username") String username);
+
+    List<String> getPermsByRoleId(@Param("id") int id);
 }

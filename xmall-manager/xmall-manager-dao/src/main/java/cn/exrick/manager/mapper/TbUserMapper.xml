@@ -350,8 +350,19 @@
     FROM
 	tb_user u
     JOIN tb_role r ON u.role_id = r.id
-    JOIN tb_permission p ON r.id = p.role_id
+    JOIN tb_role_perm rp ON rp.role_id = u.role_id
+	JOIN tb_permission p ON rp.permission_id = p.id
     WHERE
 	u.username = #{username}
+  </select>
+  <select id="getPermsByRoleId" resultType="String">
+    SELECT
+    p.name
+    FROM
+	tb_role r
+    JOIN tb_role_perm rp ON rp.role_id = r.id
+    JOIN tb_permission p ON rp.permission_id = p.id
+    WHERE
+    r.id = #{id}
   </select>
 </mapper>

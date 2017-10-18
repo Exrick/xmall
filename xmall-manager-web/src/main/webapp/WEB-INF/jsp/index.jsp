@@ -24,7 +24,7 @@
     <![endif]-->
     <title>XMall后台管理系统 v1.0</title>
     <meta name="keywords" content="XMall后台管理系统 v1.0,XMall,XMall购物商城后台管理系统">
-    <meta name="description" content="XMall后台管理系统 v1.0，是一款基于HUI的电商后台管理系统，适合中小型CMS后台系统。">
+    <meta name="description" content="XMall后台管理系统 v1.0，是一款电商后台管理系统，适合中小型CMS后台系统。">
 </head>
 <body>
 <header class="navbar-wrapper">
@@ -41,6 +41,7 @@
                         </ul>
                         <li class="navbar-levelone current"><a href="javascript:;">平台</a></li>
                         <li class="navbar-levelone"><a href="javascript:;">财务</a></li>
+                        <li class="navbar-levelone"><a href="http://blog.exrick.cn" target="_blank">前台商城</a></li>
                     </li>
                 </ul>
             </nav>
@@ -55,6 +56,8 @@
                             <li><a onclick="logout()">退出</a></li>
                         </ul>
                     </li>
+                    <li id="thanks"> <a href="" title="捐赠"><i class="Hui-iconfont" style="font-size:18px">&#xe6bb;</i></a> </li>
+                    <li id="LockScreen"> <a href="lock-screen" title="锁屏"><i class="Hui-iconfont" style="font-size:18px">&#xe60e;</i></a> </li>
                     <li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">3</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
                     <li id="Hui-skin" class="dropDown right dropDown_hover"> <a href="javascript:;" class="dropDown_A" title="换肤"><i class="Hui-iconfont" style="font-size:18px">&#xe62a;</i></a>
                         <ul class="dropDown-menu menu radius box-shadow">
@@ -134,27 +137,11 @@
                 </ul>
             </dd>
         </dl>
-        <dl id="menu-tongji">
-            <dt><i class="Hui-iconfont">&#xe61a;</i> 系统统计<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-            <dd>
-                <ul>
-                    <li><a data-href="charts-1" data-title="折线图" href="javascript:void(0)">折线图</a></li>
-                    <li><a data-href="charts-2" data-title="时间轴折线图" href="javascript:void(0)">时间轴折线图</a></li>
-                    <li><a data-href="charts-3" data-title="区域图" href="javascript:void(0)">区域图</a></li>
-                    <li><a data-href="charts-4" data-title="柱状图" href="javascript:void(0)">柱状图</a></li>
-                    <li><a data-href="charts-5" data-title="饼状图" href="javascript:void(0)">饼状图</a></li>
-                    <li><a data-href="charts-6" data-title="3D柱状图" href="javascript:void(0)">3D柱状图</a></li>
-                    <li><a data-href="charts-7" data-title="3D饼状图" href="javascript:void(0)">3D饼状图</a></li>
-                </ul>
-            </dd>
-        </dl>
         <dl id="menu-system">
             <dt><i class="Hui-iconfont">&#xe62e;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
                     <li><a data-href="system-base" data-title="系统设置" href="javascript:void(0)">系统设置</a></li>
-                    <li><a data-href="system-data" data-title="数据字典" href="javascript:void(0)">数据字典</a></li>
-                    <li><a data-href="system-shielding" data-title="屏蔽词" href="javascript:void(0)">屏蔽词</a></li>
                     <li><a data-href="system-log" data-title="系统日志" href="javascript:void(0)">系统日志</a></li>
                 </ul>
             </dd>
@@ -162,11 +149,19 @@
     </div>
 
     <div class="menu_dropdown bk_2" style="display:none">
-        <dl id="menu-aaaaa">
-            <dt><i class="Hui-iconfont">&#xe616;</i> 二级导航1<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+        <dl id="menu-a">
+            <dt><i class="Hui-iconfont">&#xe627;</i> 订单管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="article-list.html" data-title="资讯管理" href="javascript:void(0)">三级导航</a></li>
+                    <li><a data-href="order-list" data-title="订单列表" href="javascript:void(0)">订单列表</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl id="menu-b">
+            <dt><i class="Hui-iconfont">&#xe6b7;</i> 捐赠管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a data-href="thanks-list" data-title="捐赠列表" href="javascript:void(0)">捐赠列表</a></li>
                 </ul>
             </dd>
         </dl>
@@ -219,15 +214,7 @@
 
     /*个人信息*/
     function myselfinfo(){
-        layer.open({
-            type: 1,
-            area: ['300px','200px'],
-            fix: false, //不固定
-            maxmin: true,
-            shade:0.4,
-            title: '查看信息',
-            content: '<div>管理员信息</div>'
-        });
+        layer_show('管理员信息','admin-show',360,400);
     }
     
     /*产品-添加*/
@@ -244,6 +231,7 @@
         layer_show(title,url,w,h);
     }
 
+    var username="",description="",sex="",phone="",email="",address="",created="",file="";
     $.ajax({
         type: 'GET',
         url: '/user/userInfo',
@@ -251,8 +239,16 @@
             if(data.success==true){
                 $("#role").html(data.result.description);
                 $("#username").html(data.result.username);
+                username=data.result.username;
+                description=data.result.description;
+                sex=data.result.sex;
+                phone=data.result.phone;
+                email=data.result.email;
+                address=data.result.address;
+                created=data.result.created;
+                file=data.result.file;
             }else {
-                layer.msg("获取管理员信息失败");
+                layer.alert(data.message,{title: '错误信息',icon: 2});
             }
         },
         error:function(XMLHttpRequest){

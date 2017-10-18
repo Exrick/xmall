@@ -5,6 +5,7 @@ import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.manager.dto.RoleDto;
 import cn.exrick.manager.mapper.TbPermissionMapper;
 import cn.exrick.manager.mapper.TbRoleMapper;
+import cn.exrick.manager.mapper.TbRolePermMapper;
 import cn.exrick.manager.mapper.TbUserMapper;
 import cn.exrick.manager.pojo.*;
 import cn.exrick.manager.service.UserService;
@@ -16,6 +17,9 @@ import org.springframework.util.DigestUtils;
 
 import java.util.*;
 
+/**
+ * @author Exrickx
+ */
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -27,6 +31,8 @@ public class UserServiceImpl implements UserService {
     private TbRoleMapper tbRoleMapper;
     @Autowired
     private TbPermissionMapper tbPermissionMapper;
+    @Autowired
+    private TbRolePermMapper tbRolePermMapper;
 
     @Override
     public TbUser getUserByUsername(String username) {
@@ -65,28 +71,25 @@ public class UserServiceImpl implements UserService {
         DataTablesResult result=new DataTablesResult();
         List<RoleDto> list=new ArrayList<>();
         TbRoleExample example=new TbRoleExample();
-        List<TbRole> listRole=tbRoleMapper.selectByExample(example);
-        if(listRole==null){
+        List<TbRole> list1=tbRoleMapper.selectByExample(example);
+        if(list1==null){
             throw new XmallException("获取角色列表失败");
         }
-        for(TbRole tbRole:listRole){
+        for(TbRole tbRole:list1){
             RoleDto roleDto=new RoleDto();
             roleDto.setId(tbRole.getId());
             roleDto.setName(tbRole.getName());
-            roleDto.setDesciption(tbRole.getDescription());
+            roleDto.setDescription(tbRole.getDescription());
 
-            TbPermissionExample example1=new TbPermissionExample();
-            TbPermissionExample.Criteria criteria=example1.createCriteria();
-            criteria.andRoleIdEqualTo(tbRole.getId());
-            List<TbPermission> listPermission=tbPermissionMapper.selectByExample(example1);
+            List<String> permissions=tbUserMapper.getPermsByRoleId(tbRole.getId());
             String names="";
-            if(listPermission.size()>1){
-                names+=listPermission.get(0).getName();
-                for(int i=1;i<listPermission.size();i++){
-                    names+="|"+listPermission.get(i).getName();
+            if(permissions.size()>1){
+                names+=permissions.get(0);
+                for(int i=1;i<permissions.size();i++){
+                    names+="|"+permissions.get(i);
                 }
-            }else if(listPermission.size()==1){
-                names+=listPermission.get(0).getName();
+            }else if(permissions.size()==1){
+                names+=permissions.get(0);
             }
             roleDto.setPermissions(names);
 
@@ -109,23 +112,134 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int addRole(TbRole tbRole) {
-        return 0;
+
+        if(getRoleByRoleName(tbRole.getName())!=null){
+            throw new XmallException("该角色名已存在");
+        }
+        if(tbRoleMapper.insert(tbRole)!=1){
+            throw new XmallException("添加角色失败");
+        }
+        if(tbRole.getRoles()!=null){
+            TbRole newRole=getRoleByRoleName(tbRole.getName());
+            for(int i=0;i<tbRole.getRoles().length;i++){
+                TbRolePerm tbRolePerm=new TbRolePerm();
+                tbRolePerm.setRoleId(newRole.getId());
+                tbRolePerm.setPermissionId(tbRole.getRoles()[i]);
+                if(tbRolePermMapper.insert(tbRolePerm)!=1){
+                    throw new XmallException("添加角色-权限失败");
+                }
+            }
+        }
+        return 1;
+    }
+
+    @Override
+    public TbRole getRoleByRoleName(String roleName) {
+
+        TbRoleExample example=new TbRoleExample();
+        TbRoleExample.Criteria criteria=example.createCriteria();
+        criteria.andNameEqualTo(roleName);
+        List<TbRole> list=new ArrayList<>();
+        try {
+            list=tbRoleMapper.selectByExample(example);
+        }catch (Exception e){
+            throw new XmallException("通过角色名获取角色失败");
+        }
+        if(!list.isEmpty()){
+            return list.get(0);
+        }
+        return null;
+    }
+
+    @Override
+    public boolean getRoleByEditName(int id,String roleName) {
+
+        TbRole tbRole=tbRoleMapper.selectByPrimaryKey(id);
+        TbRole newRole=null;
+        if(tbRole==null){
+            throw new XmallException("通过ID获取角色失败");
+        }
+        if(!tbRole.getName().equals(roleName)){
+            newRole=getRoleByRoleName(roleName);
+        }
+        if(newRole==null){
+            return true;
+        }
+        return false;
     }
 
     @Override
     public int updateRole(TbRole tbRole) {
-        return 0;
+
+        if(!getRoleByEditName(tbRole.getId(),tbRole.getName())){
+            throw new XmallException("该角色名已存在");
+        }
+        if(tbRoleMapper.updateByPrimaryKey(tbRole)!=1){
+            throw new XmallException("更新角色失败");
+        }
+        if(tbRole.getRoles()!=null){
+            //删除已有角色-权限
+            TbRolePermExample example=new TbRolePermExample();
+            TbRolePermExample.Criteria criteria=example.createCriteria();
+            criteria.andRoleIdEqualTo(tbRole.getId());
+            List<TbRolePerm> list=tbRolePermMapper.selectByExample(example);
+            if(list!=null) {
+                for (TbRolePerm tbRolePerm : list) {
+                    if (tbRolePermMapper.deleteByPrimaryKey(tbRolePerm.getId()) != 1) {
+                        throw new XmallException("删除角色权限失败");
+                    }
+                }
+            }
+            //新增
+            for(int i=0;i<tbRole.getRoles().length;i++){
+                TbRolePerm tbRolePerm=new TbRolePerm();
+                tbRolePerm.setRoleId(tbRole.getId());
+                tbRolePerm.setPermissionId(tbRole.getRoles()[i]);
+
+                if(tbRolePermMapper.insert(tbRolePerm)!=1){
+                    throw new XmallException("编辑角色-权限失败");
+                }
+            }
+        }else{
+            TbRolePermExample example=new TbRolePermExample();
+            TbRolePermExample.Criteria criteria=example.createCriteria();
+            criteria.andRoleIdEqualTo(tbRole.getId());
+            List<TbRolePerm> list=tbRolePermMapper.selectByExample(example);
+            if(list!=null) {
+                for (TbRolePerm tbRolePerm : list) {
+                    if (tbRolePermMapper.deleteByPrimaryKey(tbRolePerm.getId()) != 1) {
+                        throw new XmallException("删除角色权限失败");
+                    }
+                }
+            }
+        }
+        return 1;
     }
 
     @Override
     public int deleteRole(int id) {
 
         List<String> list=tbRoleMapper.getUsedRoles(id);
-        if(list!=null){
+        if(list==null){
+            throw new XmallException("查询用户角色失败");
+        }
+        if(list.size()!=0){
             return 0;
         }
         if(tbRoleMapper.deleteByPrimaryKey(id)!=1){
             throw new XmallException("删除角色失败");
+        }
+        TbRolePermExample example=new TbRolePermExample();
+        TbRolePermExample.Criteria criteria=example.createCriteria();
+        criteria.andRoleIdEqualTo(id);
+        List<TbRolePerm> list1=tbRolePermMapper.selectByExample(example);
+        if(list1==null){
+            throw new XmallException("查询角色权限失败");
+        }
+        for(TbRolePerm tbRolePerm:list1){
+            if(tbRolePermMapper.deleteByPrimaryKey(tbRolePerm.getId())!=1){
+                throw new XmallException("删除角色权限失败");
+            }
         }
         return 1;
     }
@@ -147,6 +261,7 @@ public class UserServiceImpl implements UserService {
         if(list==null){
             throw new XmallException("获取权限列表失败");
         }
+        result.setSuccess(true);
         result.setData(list);
         return result;
     }
@@ -175,6 +290,10 @@ public class UserServiceImpl implements UserService {
         if(tbPermissionMapper.deleteByPrimaryKey(id)!=1){
             throw new XmallException("删除权限失败");
         }
+        TbRolePermExample example=new TbRolePermExample();
+        TbRolePermExample.Criteria criteria=example.createCriteria();
+        criteria.andPermissionIdEqualTo(id);
+        tbRolePermMapper.deleteByExample(example);
         return 1;
     }
 
@@ -283,7 +402,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public int updateUser(TbUser user) {
 
-        TbUser old=getUserByUsername(user.getUsername());
+        TbUser old=tbUserMapper.selectByPrimaryKey(user.getId());
         user.setPassword(old.getPassword());
         user.setState(old.getState());
         user.setCreated(old.getCreated());

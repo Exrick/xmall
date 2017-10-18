@@ -58,6 +58,7 @@
 		<table schema="" tableName="tb_address"></table>
 		<table schema="" tableName="tb_role"></table>
 		<table schema="" tableName="tb_permission"></table>
+		<table schema="" tableName="tb_role_perm"></table>
 
 	</context>
 </generatorConfiguration>

@@ -11,7 +11,7 @@ public class RoleDto implements Serializable{
 
     private String permissions;
 
-    private String desciption;
+    private String description;
 
     public int getId() {
         return id;
@@ -37,11 +37,11 @@ public class RoleDto implements Serializable{
         this.permissions = permissions;
     }
 
-    public String getDesciption() {
-        return desciption;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesciption(String desciption) {
-        this.desciption = desciption;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

@@ -456,6 +456,11 @@
                         type: 'DELETE',
                         url: '/item/del/'+cks[i].value,
                         dataType: 'json',
+                        success:function(data){
+                            if(data.success!=true){
+                                layer.alert(data.message,{title: '错误信息',icon: 2});
+                            }
+                        },
                         error:function(XMLHttpRequest){
                             layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                         }

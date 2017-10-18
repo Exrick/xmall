@@ -3,8 +3,6 @@ package cn.exrick.manager.pojo;
 public class TbPermission {
     private Integer id;
 
-    private Integer roleId;
-
     private String name;
 
     private String permission;
@@ -15,14 +13,6 @@ public class TbPermission {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
     }
 
     public String getName() {

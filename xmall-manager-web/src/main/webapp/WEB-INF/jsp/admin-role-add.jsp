@@ -40,13 +40,13 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>角色名称：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="" placeholder="" id="roleName" name="roleName">
+                <input type="text" class="input-text" value="" placeholder="" id="name" name="name">
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3">描述：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="" placeholder="" id="" name="">
+                <input type="text" class="input-text" value="" placeholder="" id="description" name="description">
             </div>
         </div>
         <div class="row cl">
@@ -55,29 +55,12 @@
                 <dl class="permission-list">
                     <dt>
                         <label>
-                            <input type="checkbox" value="" name="user-Character-0" id="user-Character-0"> 全选
+                            <input type="checkbox" value="" name="checkAll" id="checkAll"> 全选
                         </label>
                     </dt>
                     <dd>
-                        <dl class="cl permission-list2">
-                            <dd>
-                                <label class="">
-                                    <input type="checkbox" value="" name="user-Character-0-0-0" id="user-Character-0-0-0">
-                                    添加</label>
-                                <label class="">
-                                    <input type="checkbox" value="" name="user-Character-0-0-0" id="user-Character-0-0-1">
-                                    修改</label>
-                                <label class="">
-                                    <input type="checkbox" value="" name="user-Character-0-0-0" id="user-Character-0-0-2">
-                                    删除</label>
-                                <label class="">
-                                    <input type="checkbox" value="" name="user-Character-0-0-0" id="user-Character-0-0-3">
-                                    查看</label>
-                                <label class="">
-                                    <input type="checkbox" value="" name="user-Character-0-0-0" id="user-Character-0-0-4">
-                                    审核</label>
-                                <label class=""><input type="checkbox" value="" name="user-Character-0-0-0" id="user-Character-0-0-5"> 只能操作自己发布的</label>
-                            </dd>
+                        <dl class="cl permission-list1">
+                            <dd id="permissions"></dd>
                         </dl>
                     </dd>
                 </dl>
@@ -85,7 +68,7 @@
         </div>
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
-                <button type="submit" class="btn btn-success radius" id="admin-role-save" name="admin-role-save"><i class="icon-ok"></i> 确定</button>
+                <button id="saveButton" type="submit" class="btn btn-success radius" id="admin-role-save" name="admin-role-save"><i class="icon-ok"></i> 确定</button>
             </div>
         </div>
     </form>
@@ -102,42 +85,88 @@
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <script type="text/javascript">
-    $(function(){
-        $(".permission-list dt input:checkbox").click(function(){
-            $(this).closest("dl").find("dd input:checkbox").prop("checked",$(this).prop("checked"));
-        });
-        $(".permission-list2 dd input:checkbox").click(function(){
-            var l =$(this).parent().parent().find("input:checked").length;
-            var l2=$(this).parents(".permission-list").find(".permission-list2 dd").find("input:checked").length;
-            if($(this).prop("checked")){
-                $(this).closest("dl").find("dt input:checkbox").prop("checked",true);
-                $(this).parents(".permission-list").find("dt").first().find("input:checkbox").prop("checked",true);
-            }
-            else{
-                if(l==0){
-                    $(this).closest("dl").find("dt input:checkbox").prop("checked",false);
-                }
-                if(l2==0){
-                    $(this).parents(".permission-list").find("dt").first().find("input:checkbox").prop("checked",false);
-                }
-            }
-        });
 
-        $("#form-admin-role-add").validate({
-            rules:{
-                roleName:{
-                    required:true,
-                },
-            },
-            onkeyup:false,
-            focusCleanup:false,
-            success:"valid",
-            submitHandler:function(form){
-                $(form).ajaxSubmit();
-                var index = parent.layer.getFrameIndex(window.name);
-                parent.layer.close(index);
+    $.ajax({
+        url:"/user/permissionList",
+        type: 'GET',
+        success:function (data) {
+            if(data.success==true){
+                var size=data.data.length;
+                for(var i=0;i<size;i++){
+                    $("#permissions").append("<label><input type='checkbox' value="+data.data[i].id+" name='roles' id='roles'> "+data.data[i].name+"</label>");
+                }
+            }else{
+                layer.alert(data.message, {title: '错误信息',icon: 2});
+            }
+        },
+        error:function(XMLHttpRequest){
+            if(XMLHttpRequest.status!=200){
+                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
+            }
+        }
+    });
+
+    $(function () {
+        $("#checkAll").click(function () {         //全选/取消全选
+            $(":checkbox").prop("checked", this.checked);
+        });
+        $(":checkbox").click(function () {          //当选中某个子复选框时，checkAll取消选中
+            if (!this.checked) {
+                $("#checkAll").prop("checked", false);
             }
         });
+        $(":checkbox").click(function () {
+            var chsub = $("input[name='roles']").length;
+            var checkedsub = $("input[name='roles']:checked").length;
+            if (checkedsub == chsub) {
+                $("#checkAll").prop("checked", true);
+            }
+        });
+    });
+
+    $("#form-admin-role-add").validate({
+        rules:{
+            name:{
+                required:true,
+                minlength:1,
+                maxlength:20,
+                remote: "/user/roleName"
+            },
+        },
+        messages: {
+            name: {
+                remote: "该角色名已被使用"
+            }
+        },
+        onkeyup:false,
+        focusCleanup:false,
+        success:"valid",
+        submitHandler:function(form){
+            $("#saveButton").html("保存中...");
+            $("#saveButton").attr("disabled","disabled");
+            $(form).ajaxSubmit({
+                url: "/user/addRole",
+                type: "POST",
+                success: function(data) {
+                    if(data.success==true){
+                        parent.roleCount();
+                        parent.refresh();
+                        parent.msgSuccess("添加成功!");
+                        var index = parent.layer.getFrameIndex(window.name);
+                        parent.layer.close(index);
+                    }else{
+                        $("#saveButton").html("提交");
+                        $("#saveButton").removeAttr("disabled");
+                        layer.alert(data.message, {title: '错误信息',icon: 2});
+                    }
+                },
+                error:function(XMLHttpRequest) {
+                    $("#saveButton").html("提交");
+                    $("#saveButton").removeAttr("disabled");
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                }
+            });
+        }
     });
 </script>
 <!--/请在上方写此页面业务相关的脚本-->

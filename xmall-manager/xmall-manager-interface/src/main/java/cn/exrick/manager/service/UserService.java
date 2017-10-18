@@ -5,11 +5,20 @@ import cn.exrick.manager.pojo.TbPermission;
 import cn.exrick.manager.pojo.TbRole;
 import cn.exrick.manager.pojo.TbUser;
 
+import java.security.Permission;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * @author Exrickx
+ */
 public interface UserService {
 
+    /**
+     * 通过用户名获取用户
+     * @param username
+     * @return
+     */
     TbUser getUserByUsername(String username);
 
     Set<String> getRoles(String userName);
@@ -22,12 +31,30 @@ public interface UserService {
 
     int addRole(TbRole tbRole);
 
+    /**
+     * 通过角色名获取角色
+     * @param roleName
+     * @return
+     */
+    TbRole getRoleByRoleName(String roleName);
+
+    /**
+     * 判断角色编辑名是否已存在
+     * @param roleName
+     * @return
+     */
+    boolean getRoleByEditName(int id,String roleName);
+
     int updateRole(TbRole tbRole);
 
     int deleteRole(int id);
 
     Long countRole();
 
+    /**
+     * 获得所有权限列表
+     * @return
+     */
     DataTablesResult getPermissionList();
 
     int addPermission(TbPermission tbPermission);

@@ -47,6 +47,7 @@
                         <th width="90">手机</th>
                         <th width="150">邮箱</th>
                         <th width="130">角色</th>
+                        <th width="100">备注</th>
                         <th width="130">创建时间</th>
                         <th width="130">更新时间</th>
                         <th width="100">是否已启用</th>
@@ -118,6 +119,7 @@
                 { "data": "phone"},
                 { "data": "email"},
                 { "data": "roleNames"},
+                { "data": "description"},
                 { "data": "created",
                     render : function(data,type, row, meta) {
                         return date(data);
@@ -150,10 +152,10 @@
                     }
                 }
             ],
-            "aaSorting": [[ 7, "desc" ]],//默认第几个排序
+            "aaSorting": [[ 8, "desc" ]],//默认第几个排序
             "bStateSave": false,//状态保存
             "aoColumnDefs": [
-                {"orderable":false,"aTargets":[0,10]}// 制定列不参与排序
+                {"orderable":false,"aTargets":[0,11]}// 制定列不参与排序
             ],
             language: {
                 url: '/lib/datatables/Chinese.json'
@@ -231,10 +233,9 @@
                         type: 'DELETE',
                         url: '/user/delUser/'+cks[i].value,
                         dataType: 'json',
-                        sucess:function(data){
+                        success:function(data){
                             if(data.success!=true){
                                 layer.alert(data.message,{title: '错误信息',icon: 2});
-                                return;
                             }
                         },
                         error:function(XMLHttpRequest){
@@ -249,7 +250,7 @@
         });
     }
 
-    var username="",userId=-1,phone="",email="",roleNames="",sex="";
+    var username="",userId=-1,phone="",email="",roleNames="",sex="",description="";
 
     /*管理员-编辑*/
     function admin_edit(title,url,id,w,h){
@@ -261,6 +262,7 @@
             email = table.row(this).data().email;
             roleNames = table.row(this).data().roleNames;
             sex = table.row(this).data().sex;
+            description = table.row(this).data().description;
         });
         layer_show(title,url,w,h);
     }

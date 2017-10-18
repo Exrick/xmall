@@ -21,6 +21,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * @author Exrickx
+ */
 @RestController
 @Api(description= "管理员管理")
 public class UserController {
@@ -83,17 +86,36 @@ public class UserController {
         return new ResultUtil<List<TbRole>>().setData(list);
     }
 
+    @RequestMapping(value = "/user/roleName",method = RequestMethod.GET)
+    @ApiOperation(value = "判断角色是否已存在")
+    public boolean roleName(String name){
+
+        if(userService.getRoleByRoleName(name)!=null){
+            return false;
+        }
+        return true;
+    }
+
+    @RequestMapping(value = "/user/edit/roleName/{id}",method = RequestMethod.GET)
+    @ApiOperation(value = "判断编辑角色是否已存在")
+    public boolean roleName(@PathVariable int id,String name){
+
+        return userService.getRoleByEditName(id,name);
+    }
+
     @RequestMapping(value = "/user/addRole",method = RequestMethod.POST)
     @ApiOperation(value = "添加角色")
-    public Result<Object> addRole(){
+    public Result<Object> addRole(@ModelAttribute TbRole tbRole){
 
+        userService.addRole(tbRole);
         return new ResultUtil<Object>().setData(null);
     }
 
     @RequestMapping(value = "/user/updateRole",method = RequestMethod.POST)
     @ApiOperation(value = "更新角色")
-    public Result<Object> updateRole(){
+    public Result<Object> updateRole(@ModelAttribute TbRole tbRole){
 
+        userService.updateRole(tbRole);
         return new ResultUtil<Object>().setData(null);
     }
 
