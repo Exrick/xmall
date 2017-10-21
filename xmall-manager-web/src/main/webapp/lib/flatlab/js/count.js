@@ -19,7 +19,7 @@ function countUp(count)
     }, int_speed);
 }
 
-countUp(495);
+/*countUp(495);*/
 
 function countUp2(count)
 {
@@ -42,7 +42,7 @@ function countUp2(count)
     }, int_speed);
 }
 
-countUp2(947);
+/*countUp2(947);*/
 
 function countUp3(count)
 {
@@ -65,7 +65,7 @@ function countUp3(count)
     }, int_speed);
 }
 
-countUp3(328);
+/*countUp3(328);*/
 
 function countUp4(count)
 {
@@ -88,4 +88,5 @@ function countUp4(count)
     }, int_speed);
 }
 
-countUp4(10328);
+/*
+countUp4(10328);*/

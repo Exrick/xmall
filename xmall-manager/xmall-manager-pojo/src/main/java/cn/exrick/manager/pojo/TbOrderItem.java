@@ -19,6 +19,16 @@ public class TbOrderItem implements Serializable {
 
     private String picPath;
 
+    private int total;
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
     public String getId() {
         return id;
     }

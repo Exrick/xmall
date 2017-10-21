@@ -36,13 +36,14 @@
     <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
 </nav>
 <div class="page-container">
-    <form class="form form-horizontal" id="form-article-add">
+    <form class="form form-horizontal" id="base-add">
+        <input type="text" id="id" name="id" hidden value="" class="input-text">
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">
                 <span class="c-red">*</span>
                 网站名称：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" id="website-title" placeholder="控制在25个字、50个字节以内" value="" class="input-text">
+                <input type="text" id="webName" name="webName" placeholder="控制在25个字、50个字节以内" value="" class="input-text">
             </div>
         </div>
         <div class="row cl">
@@ -50,7 +51,7 @@
                 <span class="c-red">*</span>
                 关键词：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" id="website-Keywords" placeholder="5个左右,8汉字以内,用英文,隔开" value="" class="input-text">
+                <input type="text" id="keyWord" name="keyWord" placeholder="5个左右,每个8汉字以内,用英文,隔开" value="" class="input-text">
             </div>
         </div>
         <div class="row cl">
@@ -58,49 +59,57 @@
                 <span class="c-red">*</span>
                 描述：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" id="website-description" placeholder="空制在80个汉字，160个字符以内" value="" class="input-text">
+                <input type="text" id="description" name="description" placeholder="控制在160个字符以内" value="" class="input-text">
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">
-                <span class="c-red">*</span>
-                css、js、images路径配置：</label>
+                css/js/images路径：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" id="website-static" placeholder="默认为空，为相对路径" value="" class="input-text">
+                <input type="text" id="sourcePath" name="sourcePath" placeholder="默认为空，为相对路径" value="" class="input-text">
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">
-                <span class="c-red">*</span>
                 上传目录配置：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" id="website-uploadfile" placeholder="默认为uploadfile" value="" class="input-text">
+                <input type="text" id="uploadPath" name="uploadPath" placeholder="默认为upload" value="" class="input-text">
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">
-                <span class="c-red">*</span>
                 底部版权信息：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" id="website-copyright" placeholder="&copy; 2016 H-ui.net" value="" class="input-text">
+                <input type="text" id="copyright" name="copyright" placeholder="&copy; 2017 exrick.cn" value="" class="input-text">
             </div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">备案号：</label>
+            <label class="form-label col-xs-4 col-sm-2">前台URL：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" id="website-icp" placeholder="京ICP备00000000号" value="" class="input-text">
+                <input type="text" id="frontUrl" name="frontUrl" placeholder="http://blog.exrick.cn" value="" class="input-text">
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">统计代码：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <textarea class="textarea"></textarea>
+                <textarea id="countCode" name="countCode" class="textarea"></textarea>
             </div>
         </div>
-
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">公告：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <textarea id="notice" name="notice" style="width:100%;visibility:hidden;"></textarea>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">更新日志：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <textarea id="updateLog" name="updateLog" style="width:100%;visibility:hidden;"></textarea>
+            </div>
+        </div>
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-                <button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
+                <button id="saveButton" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
                 <button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
             </div>
         </div>
@@ -114,10 +123,14 @@
 <script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<link rel="stylesheet" href="lib/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="lib/kindeditor/plugins/code/prettify.css" />
+<script charset="utf-8" src="lib/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="lib/kindeditor/lang/zh-CN.js"></script>
+<script charset="utf-8" src="lib/kindeditor/plugins/code/prettify.js"></script>
 <script type="text/javascript">
     $(function(){
         $('.skin-minimal input').iCheck({
@@ -129,7 +142,154 @@
             index:0
         });
     });
+
+    var htmlData1,htmlData2,editor1,editor2;
+
+    KindEditor.ready(function(K) {
+        editor1 = K.create('textarea[name="notice"]', {
+            cssPath : 'lib/kindeditor/plugins/code/prettify.css',
+            uploadJson : '/kindeditor/imageUpload',
+            fileManagerJson : '/kindeditor/imageUpload',
+            allowFileManager : false,
+            height : '400px',
+            afterCreate : function() {
+                var self = this;
+                K.ctrl(document, 13, function() {
+                    self.sync();
+                    document.forms['base-add'].submit();
+                });
+                K.ctrl(self.edit.doc, 13, function() {
+                    self.sync();
+                    document.forms['base-add'].submit();
+                });
+            }
+        });
+        prettyPrint();
+
+        $.ajax({
+            url:"/sys/base",
+            type: 'GET',
+            success:function (data) {
+                if(data.success!=true){
+                    layer.alert(data.message,{title: '错误信息',icon: 2});
+                    return;
+                }
+                $("#id").val(data.result.id)
+                $("#webName").val(data.result.webName);
+                $("#keyWord").val(data.result.keyWord);
+                $("#description").val(data.result.description);
+                $("#sourcePath").val(data.result.sourcePath);
+                $("#uploadPath").val(data.result.uploadPath);
+                $("#copyright").val(data.result.copyright);
+                $("#countCode").val(data.result.countCode);
+                $("#frontUrl").val(data.result.frontUrl);
+                htmlData1=data.result.notice;
+                KindEditor.html('#notice', htmlData1);
+            },
+            error:function(XMLHttpRequest){
+                if(XMLHttpRequest.status!=200){
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
+                }
+            }
+        });
+    });
+
+    KindEditor.ready(function(K) {
+        editor2 = K.create('textarea[name="updateLog"]', {
+            cssPath : 'lib/kindeditor/plugins/code/prettify.css',
+            uploadJson : '/kindeditor/imageUpload',
+            fileManagerJson : '/kindeditor/imageUpload',
+            allowFileManager : false,
+            height : '400px',
+            afterCreate : function() {
+                var self = this;
+                K.ctrl(document, 13, function() {
+                    self.sync();
+                    document.forms['base-add'].submit();
+                });
+                K.ctrl(self.edit.doc, 13, function() {
+                    self.sync();
+                    document.forms['base-add'].submit();
+                });
+            }
+        });
+        prettyPrint();
+
+        $.ajax({
+            url:"/sys/base",
+            type: 'GET',
+            success:function (data) {
+                if(data.success!=true){
+                    layer.alert(data.message,{title: '错误信息',icon: 2});
+                    return;
+                }
+                htmlData2=data.result.updateLog;
+                KindEditor.html('#updateLog', htmlData2);
+            },
+            error:function(XMLHttpRequest){
+                if(XMLHttpRequest.status!=200){
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
+                }
+            }
+        });
+    });
+
+    $(function(){
+        $("#base-add").validate({
+            rules:{
+                webName:{
+                    maxlength:100,
+                    required:true
+                },
+                keyWord:{
+                    maxlength:100,
+                    required:true,
+                },
+                description:{
+                    maxlength:100,
+                    required:true
+                },
+            },
+            onkeyup:false,
+            focusCleanup:false,
+            success:"valid",
+            submitHandler:function(form){
+                editor1.sync();
+                editor2.sync();
+                $("#saveButton").html("保存中...");
+                $("#saveButton").attr("disabled","disabled");
+                $(form).ajaxSubmit({
+                    url: "/sys/base/update",
+                    type: "POST",
+                    success: function (data) {
+                        if (data.success == true) {
+                            msgSuccess("编辑成功!");
+                            $("#saveButton").html("提交");
+                            $("#saveButton").removeAttr("disabled");
+                        } else {
+                            $("#saveButton").html("提交");
+                            $("#saveButton").removeAttr("disabled");
+                            layer.alert(data.message, {title: '错误信息', icon: 2});
+                        }
+                    },
+                    error: function (XMLHttpRequest) {
+                        $("#saveButton").html("提交");
+                        $("#saveButton").removeAttr("disabled");
+                        layer.alert('数据处理失败! 错误码:' + XMLHttpRequest.status + ' 错误信息:' + JSON.parse(XMLHttpRequest.responseText).message, {
+                            title: '错误信息',
+                            icon: 2
+                        });
+                    }
+                });
+            }
+        });
+    });
+
+    function msgSuccess(content){
+        layer.msg(content, {icon: 1,time:3000});
+    }
 </script>
 <!--/请在上方写此页面业务相关的脚本-->
 </body>
 </html>
+

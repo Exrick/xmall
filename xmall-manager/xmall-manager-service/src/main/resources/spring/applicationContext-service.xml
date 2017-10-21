@@ -22,4 +22,7 @@
     <dubbo:service interface="cn.exrick.manager.service.MemberService" ref="memberServiceImpl" timeout="10000"/>
     <dubbo:service interface="cn.exrick.manager.service.ItemCatService" ref="itemCatServiceImpl" timeout="10000"/>
     <dubbo:service interface="cn.exrick.manager.service.UserService" ref="userServiceImpl" timeout="10000"/>
+    <dubbo:service interface="cn.exrick.manager.service.OrderService" ref="orderServiceImpl" timeout="10000"/>
+    <dubbo:service interface="cn.exrick.manager.service.ThanksService" ref="thanksServiceImpl" timeout="10000"/>
+    <dubbo:service interface="cn.exrick.manager.service.SystemService" ref="systemServiceImpl" timeout="10000"/>
 </beans>

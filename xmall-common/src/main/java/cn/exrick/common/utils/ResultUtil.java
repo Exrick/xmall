@@ -4,7 +4,8 @@ package cn.exrick.common.utils;
 import cn.exrick.common.pojo.Result;
 
 /**
- * Created by Exrick on 2017/8/20.
+ * @author Exrick
+ * @date 2017/8/20
  */
 public class ResultUtil<T> {
 

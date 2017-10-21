@@ -23,18 +23,23 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 
+/**
+ * @author Exrickx
+ */
 public class QiniuUtil {
 
     private final static Logger log= LoggerFactory.getLogger(QiniuUtil.class);
 
-    //生成上传凭证，然后准备上传
+    /**
+     * 生成上传凭证，然后准备上传
+     */
     private static String accessKey = "foqF1A__-aTEg_8EWj5yb5oi4CFrcWnQluwEN1qV";
     private static String secretKey = "pnm8kAw-kjdaRYPuwpuBOU-5eXc6KXNc4clHIoZg";
     private static String bucket = "xmall";
     private static String origin="http://ow2h3ee9w.bkt.clouddn.com/";
     private static  Auth auth = Auth.create(accessKey, secretKey);
 
-    public static String QiniuUpload(String filePath){
+    public static String qiniuUpload(String filePath){
 
         //构造一个带指定Zone对象的配置类 zone2华南
         Configuration cfg = new Configuration(Zone.zone2());
@@ -69,7 +74,7 @@ public class QiniuUtil {
         return auth.uploadToken(bucket, null, 3600, new StringMap().put("insertOnly", 1));
     }
 
-    public static String QiniuBase64Upload(String data64){
+    public static String qiniuBase64Upload(String data64){
 
         String key = renamePic(".png");
         Auth auth = Auth.create(accessKey, secretKey);

@@ -100,7 +100,7 @@
     $("#email").val(parent.email);
     $("#description").val(parent.description);
     var roleNames=parent.roleNames;
-    var sex=$("#sex").val(parent.sex);
+    var sex=parent.sex;
     if(sex=='女'){
         $("#sex-2").attr('checked', 'checked');
         radioCheck();

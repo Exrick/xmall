@@ -30,7 +30,7 @@ public class MemberServiceImpl implements MemberService {
 
         //过滤data:URL
         String base64=QiniuUtil.base64Data(imgData);
-        String imgPath= QiniuUtil.QiniuBase64Upload(base64);
+        String imgPath= QiniuUtil.qiniuBase64Upload(base64);
 
         TbMember tbMember=tbMemberMapper.selectByPrimaryKey(userId);
         if(tbMember==null){

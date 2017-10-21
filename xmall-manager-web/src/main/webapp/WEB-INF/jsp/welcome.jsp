@@ -33,7 +33,7 @@
         margin-left: 20px;
         margin-top: -50px;
     }
-    .text-center a{
+    .site-footer .text-center a{
         color: #53bee6;
     }
 </style>
@@ -51,7 +51,7 @@
                         </div>
                         <div class="value">
                             <h1 class="count">
-                                0
+                                ...
                             </h1>
                             <p>用户总数</p>
                         </div>
@@ -64,7 +64,7 @@
                         </div>
                         <div class="value">
                             <h1 class=" count2">
-                                0
+                                ...
                             </h1>
                             <p>商品总数</p>
                         </div>
@@ -77,7 +77,7 @@
                         </div>
                         <div class="value">
                             <h1 class=" count3">
-                                0
+                                ...
                             </h1>
                             <p>订单总数</p>
                         </div>
@@ -90,7 +90,7 @@
                         </div>
                         <div class="value">
                             <h1 class=" count4">
-                                0
+                                ...
                             </h1>
                             <p>浏览量</p>
                         </div>
@@ -100,7 +100,7 @@
             <!--state overview end-->
 
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-7">
                     <!--custom chart start-->
                     <div class="border-head">
                         <h3>系统统计</h3>
@@ -165,48 +165,74 @@
                     </div>
                     <!--custom chart end-->
                 </div>
-                <div class="col-lg-4">
-                    <!--new earning start-->
-                    <div class="panel terques-chart">
-                        <div class="panel-body chart-texture">
-                            <div class="chart">
-                                <div class="heading">
-                                    <span>Friday</span>
-                                    <strong>$ 57,00 | 15%</strong>
-                                </div>
-                                <div class="sparkline" data-type="line" data-resize="true" data-height="75" data-width="90%" data-line-width="1" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="4" data-data="[200,135,667,333,526,996,564,123,890,564,455]"></div>
-                            </div>
-                        </div>
-                        <div class="chart-tittle">
-                            <span class="title">New Earning</span>
-                            <span class="value">
-                                  <a href="#" class="active">Market</a>
-                                  |
-                                  <a href="#">Referal</a>
-                                  |
-                                  <a href="#">Online</a>
-                              </span>
-                        </div>
-                    </div>
-                    <!--new earning end-->
 
-                    <!--total earning start-->
-                    <div class="panel green-chart">
+                <div class="col-lg-5">
+                    <!--widget start-->
+                    <section class="panel">
+                        <header class="panel-heading tab-bg-dark-navy-blue">
+                            <ul class="nav nav-tabs nav-justified ">
+                                <li class="active">
+                                    <a href="#popular" data-toggle="tab">
+                                        公告
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#comments" data-toggle="tab">
+                                        评论
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="#recent" data-toggle="tab">
+                                        最新通知
+                                    </a>
+                                </li>
+                            </ul>
+                        </header>
                         <div class="panel-body">
-                            <div class="chart">
-                                <div class="heading">
-                                    <span>June</span>
-                                    <strong>23 Days | 65%</strong>
+                            <div class="tab-content tasi-tab">
+                                <div class="tab-pane active" id="popular">
+                                    <article class="media">
+                                        <a class="pull-left thumb p-thumb">
+                                            <img src="lib/flatlab/img/product1.jpg">
+                                        </a>
+                                        <div class="media-body">
+                                            <a class="p-head" href="http://blog.exrick.cn" target="_blank">
+                                                尊敬的 <span id="username"></span>，
+                                                <span id="hello"></span>
+                                                现在时间是：<span id="currentTime"></span></a>
+                                            <p><br>XMall是基于SOA架构的大型开源分布式电商B2C购物商城，前后端开发分离，前台
+                                                基于Vue全家桶开发，前台商城演示地址：<a href="http://blog.exrick.cn" target="_blank">点我查看</a><br><br>
+                                                后台几乎完成所有功能开发，你所看到的几乎皆为真实后台数据，为避免数据遭恶意修改，测试体验账号只具备查看权限。
+                                                后台主要使用技术有Dubbo/SSM/Elasticsearch/Redis/MySQL/ActiveMQ/Shiro/Zookeeper等<br><br>
+                                                Github后台源码：<a href="https://github.com/Exrick/xmall" target="_blank">
+                                                    <img src="https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Stars">
+                                                    <img src="https://img.shields.io/github/forks/badges/shields.svg?style=social&label=Fork"></a>
+                                                前台：<a href="https://github.com/Exrick/xmall-front" target="_blank">
+                                                    <img src="https://img.shields.io/github/stars/badges/shields.svg?style=social"></a><br>
+                                                Fork或下载前请动动手指Star一下~<br><br>
+                                                技术疑问交流群：475743731（限Star或捐赠好心人加入，可免费获取最新源码及
+                                                <a href="https://themeforest.net/item/flatlab-bootstrap-3-responsive-admin-template/5902687" target="_blank">UI框架 </a>等资源）
+                                                <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=7b60cec12ba93ebed7568b0a63f22e6e034c0d1df33125ac43ed753342ec6ce7">
+                                                    <img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="Exrick的技术交流群" title="Exrick的技术交流群">
+                                                </a><br><br>
+                                                作者目前大四，项目还有许多不足与更多需要学习的地方，期待您的指点与赞赏支持！
+                                                <a href="http://blog.exrick.cn" target="_blank">个人博客</a>
+                                            </p>
+                                        </div>
+                                    </article>
                                 </div>
-                                <div id="barchart"></div>
+                                <div style="overflow-y: scroll;height: 320px;margin: -15px -15px 0 0" class="tab-pane" id="comments">
+                                    <article class="media">
+                                        <div id="SOHUCS" sid="12345678"></div>
+                                    </article>
+                                </div>
+                                <div class="tab-pane " id="recent">
+                                    暂无通知
+                                </div>
                             </div>
                         </div>
-                        <div class="chart-tittle">
-                            <span class="title">Total Earning</span>
-                            <span class="value">$, 76,54,678</span>
-                        </div>
-                    </div>
-                    <!--total earning end-->
+                    </section>
+                    <!--widget end-->
                 </div>
             </div>
             <div class="row">
@@ -228,7 +254,11 @@
                                 <td>
                                     <i class=" icon-tasks"></i>
                                 </td>
-                                <td>New Task Issued</td>
+                                <td>New Task Issued
+                                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1012139570&site=qq&menu=yes">
+                                        <img border="0" src="http://wpa.qq.com/pa?p=2:1012139570:52" alt="点击这里给我发消息" title="点击这里给我发消息"/>
+                                    </a>
+                                </td>
                                 <td> 02</td>
                             </tr>
                             <tr>
@@ -444,128 +474,56 @@
                     <!--timeline end-->
                 </div>
                 <div class="col-lg-4">
-                    <!--revenue start-->
+
+                    <!--weather statement start-->
                     <section class="panel">
-                        <div class="revenue-head">
-                              <span>
-                                  <i class="icon-bar-chart"></i>
-                              </span>
-                            <h3>Revenue</h3>
-                            <span class="rev-combo pull-right">
-                                 June 2013
-                              </span>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-6 col-sm-6 text-center">
-                                    <div class="easy-pie-chart">
-                                        <div class="percentage" data-percent="35"><span>35</span>%</div>
+                        <div class="weather-bg">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <i id="weather" class="icon-cloud"></i>
+                                        <span id="city">...</span>
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="chart-info chart-position">
-                                        <span class="increase"></span>
-                                        <span>Revenue Increase</span>
-                                    </div>
-                                    <div class="chart-info">
-                                        <span class="decrease"></span>
-                                        <span>Revenue Decrease</span>
+                                    <div class="col-xs-6">
+                                        <div class="degree">
+                                            <span id="degree">...</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-footer revenue-foot">
+
+                        <footer class="weather-category">
                             <ul>
-                                <li class="first active">
-                                    <a href="javascript:;">
-                                        <i class="icon-bullseye"></i>
-                                        Graphical
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class=" icon-th-large"></i>
-                                        Tabular
-                                    </a>
-                                </li>
-                                <li class="last">
-                                    <a href="javascript:;">
-                                        <i class=" icon-align-justify"></i>
-                                        Listing
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
-                    <!--revenue end-->
-                    <!--features carousel start-->
-                    <section class="panel">
-                        <div class="flat-carousal">
-                            <div id="owl-demo" class="owl-carousel owl-theme">
-                                <div class="item">
-                                    <h1>Flatlab is new model of admin dashboard for happy use</h1>
-                                    <div class="text-center">
-                                        <a href="javascript:;" class="view-all">View All</a>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <h1>Fully responsive and build with Bootstrap 3.0</h1>
-                                    <div class="text-center">
-                                        <a href="javascript:;" class="view-all">View All</a>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <h1>Responsive Frontend is free if you get this.</h1>
-                                    <div class="text-center">
-                                        <a href="javascript:;" class="view-all">View All</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <ul class="ft-link">
                                 <li class="active">
-                                    <a href="javascript:;">
-                                        <i class="icon-reorder"></i>
-                                        Sales
-                                    </a>
+                                    <h5>湿度</h5>
+                                    <span id="humidity">...</span>
                                 </li>
                                 <li>
-                                    <a href="javascript:;">
-                                        <i class=" icon-calendar-empty"></i>
-                                        promo
-                                    </a>
+                                    <h5>空气质量</h5>
+                                    <span id="airCondition">...</span>
                                 </li>
                                 <li>
-                                    <a href="javascript:;">
-                                        <i class=" icon-camera"></i>
-                                        photo
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class=" icon-circle"></i>
-                                        other
-                                    </a>
+                                    <h5>风力</h5>
+                                    <span id="wind">...</span>
                                 </li>
                             </ul>
-                        </div>
+                        </footer>
                     </section>
-                    <!--features carousel end-->
+                    <!--weather statement end-->
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8">
+
+                <div class="col-lg-4">
                     <!--latest product info start-->
                     <section class="panel post-wrap pro-box">
                         <aside>
                             <div class="post-info">
                                 <span class="arrow-pro right"></span>
                                 <div class="panel-body">
-                                    <h1><strong>popular</strong> <br> Brand of this week</h1>
+                                    <h1><strong>popular</strong> <br> 本周热门商品</h1>
                                     <div class="desk yellow">
-                                        <h3>Dimond Ring</h3>
-                                        <p>Lorem ipsum dolor set amet lorem ipsum dolor set amet ipsum dolor set amet</p>
+                                        <h3 id="hot-title">商品名称</h3>
+                                        <p>共卖出 <span id="hot-num"></span> 件</p>
                                     </div>
                                     <div class="post-btn">
                                         <a href="javascript:;">
@@ -581,7 +539,7 @@
                         <aside class="post-highlight yellow v-align">
                             <div class="panel-body text-center">
                                 <div class="pro-thumb">
-                                    <img src="lib/flatlab/img/ring.jpg" alt="">
+                                    <img id="hot-img" width="112px" height="112px" src="icon/none.png" alt="">
                                 </div>
                             </div>
                         </aside>
@@ -589,29 +547,24 @@
                     <!--latest product info end-->
                     <!--twitter feedback start-->
                     <section class="panel post-wrap pro-box">
-                        <aside class="post-highlight terques v-align">
-                            <div class="panel-body">
-                                <h2>Flatlab is new model of admin dashboard <a href="javascript:;"> http://demo.com/</a> 4 days ago  by jonathan smith</h2>
-                            </div>
-                        </aside>
                         <aside>
                             <div class="post-info">
                                 <span class="arrow-pro left"></span>
                                 <div class="panel-body">
                                     <div class="text-center twite">
-                                        <h1>Twitter Feed</h1>
+                                        <h1>Follow Me</h1>
                                     </div>
 
                                     <footer class="social-footer">
                                         <ul>
                                             <li>
-                                                <a href="#">
-                                                    <i class="icon-facebook"></i>
+                                                <a href="https://github.com/Exrick" target="_blank">
+                                                    <i class="icon-github"></i>
                                                 </a>
                                             </li>
                                             <li class="active">
                                                 <a href="#">
-                                                    <i class="icon-twitter"></i>
+                                                    <i class="icon-qq"></i>
                                                 </a>
                                             </li>
                                             <li>
@@ -632,90 +585,7 @@
                     </section>
                     <!--twitter feedback end-->
                 </div>
-                <div class="col-lg-4">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <!--pie chart start-->
-                            <section class="panel">
-                                <div class="panel-body">
-                                    <div class="chart">
-                                        <div id="pie-chart" ></div>
-                                    </div>
-                                </div>
-                                <footer class="pie-foot">
-                                    Free: 260GB
-                                </footer>
-                            </section>
-                            <!--pie chart start-->
-                        </div>
-                        <div class="col-xs-6">
-                            <!--follower start-->
-                            <section class="panel">
-                                <div class="follower">
-                                    <div class="panel-body">
-                                        <h4>Jonathan Smith</h4>
-                                        <div class="follow-ava">
-                                            <img src="lib/flatlab/img/follower-avatar.jpg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <footer class="follower-foot">
-                                    <ul>
-                                        <li>
-                                            <h5>2789</h5>
-                                            <p>Follower</p>
-                                        </li>
-                                        <li>
-                                            <h5>270</h5>
-                                            <p>Following</p>
-                                        </li>
-                                    </ul>
-                                </footer>
-                            </section>
-                            <!--follower end-->
-                        </div>
-                    </div>
-                    <!--weather statement start-->
-                    <section class="panel">
-                        <div class="weather-bg">
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-xs-6">
-                                        <i class="icon-cloud"></i>
-                                        California
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <div class="degree">
-                                            24°
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <footer class="weather-category">
-                            <ul>
-                                <li class="active">
-                                    <h5>humidity</h5>
-                                    56%
-                                </li>
-                                <li>
-                                    <h5>precip</h5>
-                                    1.50 in
-                                </li>
-                                <li>
-                                    <h5>winds</h5>
-                                    10 mph
-                                </li>
-                            </ul>
-                        </footer>
-
-                    </section>
-                    <!--weather statement end-->
-                </div>
             </div>
-
         </section>
     </section>
     <!--main content end-->
@@ -736,7 +606,6 @@
 <script src="lib/flatlab/js/jquery.js"></script>
 <script src="lib/flatlab/js/jquery-1.8.3.min.js"></script>
 <script src="lib/flatlab/js/bootstrap.min.js"></script>
-<script class="include" type="text/javascript" src="lib/flatlab/js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="lib/flatlab/js/jquery.scrollTo.min.js"></script>
 <script src="lib/flatlab/js/jquery.nicescroll.js" type="text/javascript"></script>
 <script src="lib/flatlab/js/jquery.sparkline.js" type="text/javascript"></script>
@@ -750,12 +619,44 @@
 <!--common script for all pages-->
 <script src="lib/flatlab/js/common-scripts.js"></script>
 
+<script charset="utf-8" type="text/javascript" src="lib/changyan.js" ></script>
+<script async src="lib/busuanzi.pure.mini.js"></script>
+<script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
+
 <!--script for this page-->
 <script src="lib/flatlab/js/sparkline-chart.js"></script>
 <script src="lib/flatlab/js/easy-pie-chart.js"></script>
 <script src="lib/flatlab/js/count.js"></script>
 
+<span id="busuanzi_container_site_uv">
+  <span style="display: none" id="busuanzi_value_site_uv"></span>
+</span>
+
 <script>
+
+    $("#username").html(parent.username);
+
+    var now = new Date(),hour = now.getHours();
+    if(hour < 6){ $("#hello").html("凌晨好！");}
+    else if (hour < 9){$("#hello").html("早上好！");}
+    else if (hour < 12){$("#hello").html("上午好！");}
+    else if (hour < 14){$("#hello").html("中午好！");}
+    else if (hour < 17){$("#hello").html("下午好！");}
+    else if (hour < 19){$("#hello").html("傍晚好！");}
+    else if (hour < 22){$("#hello").html("晚上好！");}
+    else {$("#hello").html("深夜好！");}
+
+    $(function(){
+        setInterval(function(){
+            $("#currentTime").text(new Date().toLocaleString());
+        },1000);
+    });
+
+
+    window.changyan.api.config({
+        appid: 'cyrV7vlR4',
+        conf: 'prod_3163726f95fdac5ad0531c2344fc86ea'
+    });
 
     //owl carousel
     $(document).ready(function() {
@@ -772,6 +673,95 @@
     //custom select box
     $(function(){
         $('select.styled').customSelect();
+    });
+
+    /*统计用户数*/
+    $.ajax({
+        url:"/member/count",
+        type:"GET",
+        success:function (data) {
+            countUp(data.recordsTotal);
+        },
+        error:function(XMLHttpRequest){
+            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+        }
+    });
+
+    $.ajax({
+        url:"/item/count",
+        type: 'GET',
+        success:function (result) {
+            countUp2(result.recordsTotal);
+        },
+        error:function(XMLHttpRequest){
+            if(XMLHttpRequest.status!=200){
+                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+            }
+        }
+    });
+
+    $.ajax({
+        url:"/order/count",
+        type: 'GET',
+        success:function (data) {
+            countUp3(data.result);
+        },
+        error:function(XMLHttpRequest){
+            if(XMLHttpRequest.status!=200){
+                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+            }
+        }
+    });
+
+    setTimeout('count()',1500);
+    function count(){
+        countUp4($("#busuanzi_value_site_uv").html());
+    }
+
+    //天气
+    $.ajax({
+        url:"/sys/weather",
+        type: 'GET',
+        success:function (data) {
+            var json=JSON.parse(data.result);
+            var param=json.result[0];
+            var weather=param.weather;
+            if(weather.indexOf("雨")>=0){
+                $("#weather").removeAttr("class");
+                $("#weather").attr("class","icon-umbrella");
+            }else if(weather.indexOf("晴")>=0){
+                $("#weather").removeAttr("class");
+                $("#weather").attr("class","icon-sun");
+            }
+            $("#city").html(param.city);
+            $("#degree").html(param.temperature);
+            $("#humidity").html(param.humidity);
+            $("#airCondition").html(param.airCondition);
+            $("#wind").html(param.wind);
+        },
+        error:function(XMLHttpRequest){
+            if(XMLHttpRequest.status!=200){
+                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+            }
+        }
+    });
+
+    //本周热门商品
+    $.ajax({
+        url:"/sys/weekHot",
+        type: 'GET',
+        success:function (data) {
+            $("#hot-title").html(data.result.title);
+            $("#hot-num").html(data.result.total);
+            if(data.result.picPath!=""){
+                $("#hot-img").attr("src", data.result.picPath);
+            }
+        },
+        error:function(XMLHttpRequest){
+            if(XMLHttpRequest.status!=200){
+                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+            }
+        }
     });
 
 </script>

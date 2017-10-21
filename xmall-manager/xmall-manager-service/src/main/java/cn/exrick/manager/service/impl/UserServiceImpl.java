@@ -3,10 +3,7 @@ package cn.exrick.manager.service.impl;
 import cn.exrick.common.exception.XmallException;
 import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.manager.dto.RoleDto;
-import cn.exrick.manager.mapper.TbPermissionMapper;
-import cn.exrick.manager.mapper.TbRoleMapper;
-import cn.exrick.manager.mapper.TbRolePermMapper;
-import cn.exrick.manager.mapper.TbUserMapper;
+import cn.exrick.manager.mapper.*;
 import cn.exrick.manager.pojo.*;
 import cn.exrick.manager.service.UserService;
 import org.slf4j.Logger;
@@ -485,6 +482,9 @@ public class UserServiceImpl implements UserService {
 
         TbUserExample example=new TbUserExample();
         Long result=tbUserMapper.countByExample(example);
+        if(result==null){
+            throw new XmallException("统计用户数失败");
+        }
         return result;
     }
 }

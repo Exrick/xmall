@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.exrick.manager.mapper.TbBaseMapper">
+  <resultMap id="BaseResultMap" type="cn.exrick.manager.pojo.TbBase">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="web_name" jdbcType="VARCHAR" property="webName" />
+    <result column="key_word" jdbcType="VARCHAR" property="keyWord" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="source_path" jdbcType="VARCHAR" property="sourcePath" />
+    <result column="upload_path" jdbcType="VARCHAR" property="uploadPath" />
+    <result column="copyright" jdbcType="VARCHAR" property="copyright" />
+    <result column="count_code" jdbcType="VARCHAR" property="countCode" />
+    <result column="has_log_notice" jdbcType="INTEGER" property="hasLogNotice" />
+    <result column="log_notice" jdbcType="VARCHAR" property="logNotice" />
+    <result column="has_all_notice" jdbcType="INTEGER" property="hasAllNotice" />
+    <result column="all_notice" jdbcType="VARCHAR" property="allNotice" />
+    <result column="notice" jdbcType="VARCHAR" property="notice" />
+    <result column="update_log" jdbcType="VARCHAR" property="updateLog" />
+    <result column="front_url" jdbcType="VARCHAR" property="frontUrl" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, web_name, key_word, description, source_path, upload_path, copyright, count_code, 
+    has_log_notice, log_notice, has_all_notice, all_notice, notice, update_log, front_url
+  </sql>
+  <select id="selectByExample" parameterType="cn.exrick.manager.pojo.TbBaseExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_base
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_base
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_base
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.exrick.manager.pojo.TbBaseExample">
+    delete from tb_base
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.exrick.manager.pojo.TbBase">
+    insert into tb_base (id, web_name, key_word, 
+      description, source_path, upload_path, 
+      copyright, count_code, has_log_notice, 
+      log_notice, has_all_notice, all_notice, 
+      notice, update_log, front_url
+      )
+    values (#{id,jdbcType=INTEGER}, #{webName,jdbcType=VARCHAR}, #{keyWord,jdbcType=VARCHAR}, 
+      #{description,jdbcType=VARCHAR}, #{sourcePath,jdbcType=VARCHAR}, #{uploadPath,jdbcType=VARCHAR}, 
+      #{copyright,jdbcType=VARCHAR}, #{countCode,jdbcType=VARCHAR}, #{hasLogNotice,jdbcType=INTEGER}, 
+      #{logNotice,jdbcType=VARCHAR}, #{hasAllNotice,jdbcType=INTEGER}, #{allNotice,jdbcType=VARCHAR}, 
+      #{notice,jdbcType=VARCHAR}, #{updateLog,jdbcType=VARCHAR}, #{frontUrl,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.exrick.manager.pojo.TbBase">
+    insert into tb_base
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="webName != null">
+        web_name,
+      </if>
+      <if test="keyWord != null">
+        key_word,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="sourcePath != null">
+        source_path,
+      </if>
+      <if test="uploadPath != null">
+        upload_path,
+      </if>
+      <if test="copyright != null">
+        copyright,
+      </if>
+      <if test="countCode != null">
+        count_code,
+      </if>
+      <if test="hasLogNotice != null">
+        has_log_notice,
+      </if>
+      <if test="logNotice != null">
+        log_notice,
+      </if>
+      <if test="hasAllNotice != null">
+        has_all_notice,
+      </if>
+      <if test="allNotice != null">
+        all_notice,
+      </if>
+      <if test="notice != null">
+        notice,
+      </if>
+      <if test="updateLog != null">
+        update_log,
+      </if>
+      <if test="frontUrl != null">
+        front_url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="webName != null">
+        #{webName,jdbcType=VARCHAR},
+      </if>
+      <if test="keyWord != null">
+        #{keyWord,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="sourcePath != null">
+        #{sourcePath,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadPath != null">
+        #{uploadPath,jdbcType=VARCHAR},
+      </if>
+      <if test="copyright != null">
+        #{copyright,jdbcType=VARCHAR},
+      </if>
+      <if test="countCode != null">
+        #{countCode,jdbcType=VARCHAR},
+      </if>
+      <if test="hasLogNotice != null">
+        #{hasLogNotice,jdbcType=INTEGER},
+      </if>
+      <if test="logNotice != null">
+        #{logNotice,jdbcType=VARCHAR},
+      </if>
+      <if test="hasAllNotice != null">
+        #{hasAllNotice,jdbcType=INTEGER},
+      </if>
+      <if test="allNotice != null">
+        #{allNotice,jdbcType=VARCHAR},
+      </if>
+      <if test="notice != null">
+        #{notice,jdbcType=VARCHAR},
+      </if>
+      <if test="updateLog != null">
+        #{updateLog,jdbcType=VARCHAR},
+      </if>
+      <if test="frontUrl != null">
+        #{frontUrl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.exrick.manager.pojo.TbBaseExample" resultType="java.lang.Long">
+    select count(*) from tb_base
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tb_base
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.webName != null">
+        web_name = #{record.webName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.keyWord != null">
+        key_word = #{record.keyWord,jdbcType=VARCHAR},
+      </if>
+      <if test="record.description != null">
+        description = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sourcePath != null">
+        source_path = #{record.sourcePath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.uploadPath != null">
+        upload_path = #{record.uploadPath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.copyright != null">
+        copyright = #{record.copyright,jdbcType=VARCHAR},
+      </if>
+      <if test="record.countCode != null">
+        count_code = #{record.countCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hasLogNotice != null">
+        has_log_notice = #{record.hasLogNotice,jdbcType=INTEGER},
+      </if>
+      <if test="record.logNotice != null">
+        log_notice = #{record.logNotice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hasAllNotice != null">
+        has_all_notice = #{record.hasAllNotice,jdbcType=INTEGER},
+      </if>
+      <if test="record.allNotice != null">
+        all_notice = #{record.allNotice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.notice != null">
+        notice = #{record.notice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateLog != null">
+        update_log = #{record.updateLog,jdbcType=VARCHAR},
+      </if>
+      <if test="record.frontUrl != null">
+        front_url = #{record.frontUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tb_base
+    set id = #{record.id,jdbcType=INTEGER},
+      web_name = #{record.webName,jdbcType=VARCHAR},
+      key_word = #{record.keyWord,jdbcType=VARCHAR},
+      description = #{record.description,jdbcType=VARCHAR},
+      source_path = #{record.sourcePath,jdbcType=VARCHAR},
+      upload_path = #{record.uploadPath,jdbcType=VARCHAR},
+      copyright = #{record.copyright,jdbcType=VARCHAR},
+      count_code = #{record.countCode,jdbcType=VARCHAR},
+      has_log_notice = #{record.hasLogNotice,jdbcType=INTEGER},
+      log_notice = #{record.logNotice,jdbcType=VARCHAR},
+      has_all_notice = #{record.hasAllNotice,jdbcType=INTEGER},
+      all_notice = #{record.allNotice,jdbcType=VARCHAR},
+      notice = #{record.notice,jdbcType=VARCHAR},
+      update_log = #{record.updateLog,jdbcType=VARCHAR},
+      front_url = #{record.frontUrl,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.exrick.manager.pojo.TbBase">
+    update tb_base
+    <set>
+      <if test="webName != null">
+        web_name = #{webName,jdbcType=VARCHAR},
+      </if>
+      <if test="keyWord != null">
+        key_word = #{keyWord,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="sourcePath != null">
+        source_path = #{sourcePath,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadPath != null">
+        upload_path = #{uploadPath,jdbcType=VARCHAR},
+      </if>
+      <if test="copyright != null">
+        copyright = #{copyright,jdbcType=VARCHAR},
+      </if>
+      <if test="countCode != null">
+        count_code = #{countCode,jdbcType=VARCHAR},
+      </if>
+      <if test="hasLogNotice != null">
+        has_log_notice = #{hasLogNotice,jdbcType=INTEGER},
+      </if>
+      <if test="logNotice != null">
+        log_notice = #{logNotice,jdbcType=VARCHAR},
+      </if>
+      <if test="hasAllNotice != null">
+        has_all_notice = #{hasAllNotice,jdbcType=INTEGER},
+      </if>
+      <if test="allNotice != null">
+        all_notice = #{allNotice,jdbcType=VARCHAR},
+      </if>
+      <if test="notice != null">
+        notice = #{notice,jdbcType=VARCHAR},
+      </if>
+      <if test="updateLog != null">
+        update_log = #{updateLog,jdbcType=VARCHAR},
+      </if>
+      <if test="frontUrl != null">
+        front_url = #{frontUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.exrick.manager.pojo.TbBase">
+    update tb_base
+    set web_name = #{webName,jdbcType=VARCHAR},
+      key_word = #{keyWord,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      source_path = #{sourcePath,jdbcType=VARCHAR},
+      upload_path = #{uploadPath,jdbcType=VARCHAR},
+      copyright = #{copyright,jdbcType=VARCHAR},
+      count_code = #{countCode,jdbcType=VARCHAR},
+      has_log_notice = #{hasLogNotice,jdbcType=INTEGER},
+      log_notice = #{logNotice,jdbcType=VARCHAR},
+      has_all_notice = #{hasAllNotice,jdbcType=INTEGER},
+      all_notice = #{allNotice,jdbcType=VARCHAR},
+      notice = #{notice,jdbcType=VARCHAR},
+      update_log = #{updateLog,jdbcType=VARCHAR},
+      front_url = #{frontUrl,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

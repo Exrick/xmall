@@ -255,4 +255,19 @@
       pic_path = #{picPath,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+  <select id="getWeekHot" resultType="cn.exrick.manager.pojo.TbOrderItem">
+    SELECT
+    i.title,
+    i.pic_path,
+    count(*) total
+    FROM
+    tb_order_item i
+    LEFT JOIN tb_order o ON i.order_id = o.order_id
+    WHERE
+    DATE_SUB(CURDATE(), INTERVAL 7 DAY) &lt;= date(o.create_time)
+    GROUP BY
+    i.item_id
+    ORDER BY
+    COUNT(*) DESC
+  </select>
 </mapper>

@@ -3,6 +3,7 @@ package cn.exrick.manager.service;
 import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.manager.pojo.TbPermission;
 import cn.exrick.manager.pojo.TbRole;
+import cn.exrick.manager.pojo.TbShiroFilter;
 import cn.exrick.manager.pojo.TbUser;
 
 import java.security.Permission;

@@ -2,6 +2,9 @@ package cn.exrick.common.utils;
 
 import java.util.Random;
 
+/**
+ * @author Exrickx
+ */
 public class IDUtil {
 
     /**

@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.*;
 
 
 /**
- * Created by Exrick on 2017/8/11.
+ *
+ * @author Exrick
+ * @date 2017/8/11
  */
 @RestController
 @Api(description= "会员管理")

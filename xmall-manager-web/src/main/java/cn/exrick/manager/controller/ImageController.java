@@ -35,7 +35,7 @@ public class ImageController {
             File file=new File((filePath));
             files.transferTo(file);
             //上传七牛云服务器
-            imagePath= QiniuUtil.QiniuUpload(filePath);
+            imagePath= QiniuUtil.qiniuUpload(filePath);
             // 路径为文件且不为空则进行删除
             if (file.isFile() && file.exists()) {
                 file.delete();
@@ -67,7 +67,7 @@ public class ImageController {
             File file=new File((filePath));
             files.transferTo(file);
             //上传七牛云服务器
-            String imagePath=QiniuUtil.QiniuUpload(filePath);
+            String imagePath=QiniuUtil.qiniuUpload(filePath);
             // 路径为文件且不为空则进行删除
             if (file.isFile() && file.exists()) {
                 file.delete();

@@ -6,6 +6,7 @@ import cn.exrick.common.utils.ResultUtil;
 import cn.exrick.manager.dto.RoleDto;
 import cn.exrick.manager.pojo.TbPermission;
 import cn.exrick.manager.pojo.TbRole;
+import cn.exrick.manager.pojo.TbShiroFilter;
 import cn.exrick.manager.pojo.TbUser;
 import cn.exrick.manager.service.UserService;
 import io.swagger.annotations.Api;
@@ -43,6 +44,8 @@ public class UserController {
         UsernamePasswordToken token = new UsernamePasswordToken(username,md5Pass);
         try {
             subject.login(token);
+            log.info(userService.getRoles(username).toString());
+            log.info(userService.getPermissions(username).toString());
             log.info("验证成功");
             return new ResultUtil<Object>().setData(null);
         }catch (Exception e){

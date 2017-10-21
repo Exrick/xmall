@@ -1,5 +1,6 @@
 package cn.exrick.manager.mapper;
 
+import cn.exrick.manager.pojo.TbItem;
 import cn.exrick.manager.pojo.TbOrderItem;
 import cn.exrick.manager.pojo.TbOrderItemExample;
 import org.apache.ibatis.annotations.Param;
@@ -28,4 +29,6 @@ public interface TbOrderItemMapper {
     int updateByPrimaryKeySelective(TbOrderItem record);
 
     int updateByPrimaryKey(TbOrderItem record);
+
+    List<TbOrderItem> getWeekHot();
 }

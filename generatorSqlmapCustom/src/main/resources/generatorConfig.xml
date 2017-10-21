@@ -59,6 +59,10 @@
 		<table schema="" tableName="tb_role"></table>
 		<table schema="" tableName="tb_permission"></table>
 		<table schema="" tableName="tb_role_perm"></table>
+		<table schema="" tableName="tb_thanks"></table>
+		<table schema="" tableName="tb_shiro_filter"></table>
+		<table schema="" tableName="tb_base"></table>
+		<table schema="" tableName="tb_log"></table>
 
 	</context>
 </generatorConfiguration>

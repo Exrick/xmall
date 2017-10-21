@@ -41,7 +41,7 @@
                         </ul>
                         <li class="navbar-levelone current"><a href="javascript:;">平台</a></li>
                         <li class="navbar-levelone"><a href="javascript:;">财务</a></li>
-                        <li class="navbar-levelone"><a href="http://blog.exrick.cn" target="_blank">前台商城</a></li>
+                        <li ><a href="http://blog.exrick.cn" target="_blank">商城前台</a></li>
                     </li>
                 </ul>
             </nav>
@@ -56,7 +56,7 @@
                             <li><a onclick="logout()">退出</a></li>
                         </ul>
                     </li>
-                    <li id="thanks"> <a href="" title="捐赠"><i class="Hui-iconfont" style="font-size:18px">&#xe6bb;</i></a> </li>
+                    <li id="thanks"> <a onclick="thanks()" title="捐赠"><i class="Hui-iconfont" style="font-size:18px">&#xe6bb;</i></a> </li>
                     <li id="LockScreen"> <a href="lock-screen" title="锁屏"><i class="Hui-iconfont" style="font-size:18px">&#xe60e;</i></a> </li>
                     <li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">3</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
                     <li id="Hui-skin" class="dropDown right dropDown_hover"> <a href="javascript:;" class="dropDown_A" title="换肤"><i class="Hui-iconfont" style="font-size:18px">&#xe62a;</i></a>
@@ -141,7 +141,8 @@
             <dt><i class="Hui-iconfont">&#xe62e;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="system-base" data-title="系统设置" href="javascript:void(0)">系统设置</a></li>
+                    <li><a data-href="system-shiro" data-title="权限配置" href="javascript:void(0)">权限配置</a></li>
+                    <li><a data-href="system-base" data-title="基本设置" href="javascript:void(0)">基本设置</a></li>
                     <li><a data-href="system-log" data-title="系统日志" href="javascript:void(0)">系统日志</a></li>
                 </ul>
             </dd>
@@ -273,6 +274,15 @@
         });
     }
 
+    function thanks(){
+        layer.open({
+            title: '捐赠',
+            type: 2,
+            skin: 'layui-layer-rim', //加上边框
+            area: ['525px', '300px'], //宽高
+            content: ['thanks-pic','no']
+        });
+    }
 </script>
 </body>
 </html>

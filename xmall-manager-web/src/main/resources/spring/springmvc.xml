@@ -22,7 +22,7 @@
     <bean id="perms" class="cn.exrick.manager.shiro.MyPermissionFilter"/>
 
     <!-- Shiro过滤器 核心-->
-    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+    <bean id="shiroFilter" class="cn.exrick.manager.shiro.MyShiroFilterFactoryBean">
         <!-- Shiro的核心安全接口,这个属性是必须的 -->
         <property name="securityManager" ref="securityManager"/>
         <!-- 身份认证失败，则跳转到登录页面的配置 -->
@@ -45,15 +45,15 @@
                 <!--authc 表示需要认证 没有登录是不能进行访问的-->
                 <!--perms 表示需要该权限才能访问的页面 /user/* = perms[/*] -->
                 <!--roles 表示需要角色才能访问的页面 /* = roles[管理员]-->
-                /login = anon
+                <!--/login = anon
                 /401 = anon
                 / = authc
                 /index = authc
                 /welcome = authc
+                /thanks-pic = authc
                 /lock-screen = authc
                 /user/logout = authc
-                /user/userInfo = authc
-                * = roles[超级管理员]
+                /user/userInfo = authc-->
             </value>
         </property>
     </bean>
@@ -105,6 +105,9 @@
     <dubbo:reference interface="cn.exrick.manager.service.MemberService" id="memberService" />
     <dubbo:reference interface="cn.exrick.manager.service.ItemCatService" id="itemCatService" />
     <dubbo:reference interface="cn.exrick.manager.service.UserService" id="userService" />
+    <dubbo:reference interface="cn.exrick.manager.service.OrderService" id="orderService" />
+    <dubbo:reference interface="cn.exrick.manager.service.ThanksService" id="thanksService" />
+    <dubbo:reference interface="cn.exrick.manager.service.SystemService" id="systemService" />
     <dubbo:reference interface="cn.exrick.content.service.ContentService" id="contentService" />
     <dubbo:reference interface="cn.exrick.content.service.ContentCatService" id="contentCatService" />
     <dubbo:reference interface="cn.exrick.content.service.ContentImageService" id="contentImageService" />

@@ -34,10 +34,8 @@ public class MyRealm extends AuthorizingRealm{
         SimpleAuthorizationInfo authorizationInfo=new SimpleAuthorizationInfo();
         //获得授权角色
         authorizationInfo.setRoles(userService.getRoles(username));
-        log.info(authorizationInfo.getRoles().toString());
         //获得授权权限
         authorizationInfo.setStringPermissions(userService.getPermissions(username));
-        log.info(authorizationInfo.getStringPermissions().toString());
         return authorizationInfo;
     }
 

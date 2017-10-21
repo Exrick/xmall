@@ -1,6 +1,10 @@
 # XMall
+[![AUR](https://img.shields.io/aur/license/yaourt.svg)](http://oweupqzdv.bkt.clouddn.com/license)
+[![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Stars)](https://github.com/Exrick/xmall)
+[![GitHub forks](https://img.shields.io/github/forks/badges/shields.svg?style=social&label=Fork)](https://github.com/Exrick/xmall)
+[![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)](https://github.com/Exrick/xmall)
 ### 基于SOA架构的分布式购物电商商城
-- [x] 后台管理系统：管理商品、订单、类目、商品规格属性、用户管理、权限管理以及内容管理等功能 //TODO 系统统计
+- [x] 后台管理系统：管理商品、订单、类目、商品规格属性、用户管理、权限管理、系统统计以及内容管理等功能 //TODO 日志管理
 - [x] 前台系统：用户可以在前台系统中进行注册、登录、浏览商品、首页、下单等操作
 - [x] 会员系统：用户可以在该系统中查询已下的订单、管理订单、我的优惠券等信息
 - [x] 订单系统：提供下单、查询订单、修改订单状态、定时处理订单
@@ -20,7 +24,7 @@
 ### 前端所用技术
 
 - 后台页面
-    - 感谢 [H-ui](http://www.h-ui.net/) 提供静态页面支持
+    - 感谢 [H-ui](http://www.h-ui.net/)、[FlatLab]((https://github.com/Exrick/xmall/blob/master/study/FlatLab.md)) 提供静态页面支持
     - [Ztree](http://www.treejs.cn/v3/main.php#_zTreeInfo)：jQuery树插件
     - [DataTables](http://www.datatables.club/)：jQuery表格插件
     - [Layer](http://layer.layui.com/)：web弹层组件
@@ -28,14 +32,14 @@
     - [KindEditor](https://github.com/kindsoft/kindeditor)：富文本编辑器 简洁方便 没UEditor那么多坑
     - [WebUploader](http://fex.baidu.com/webuploader/getting-started.html)：百度文件上传插件
     - [HighCharts](http://www.hcharts.cn/)：图表库
+    - [不蒜子](http://busuanzi.ibruce.info/)：极简网页计数器
 - 前台页面
     - 详情请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库
     - 感谢 [yucccc](https://github.com/yucccc) 的开源 [vue-mall](https://github.com/yucccc/vue-mall) 项目提供前端页面及框架支持
     - Vue2 + Vuex + Vue Router + Element UI + ES6 + webpack + axios + Node.js
     
-
 ### 后端所用技术
-
+##### 各框架依赖版本皆使用目前最新版本 可进入xmall-parent中 [pom.xml](https://github.com/Exrick/xmall/blob/master/xmall-parent/pom.xml) 查看
 - Spring
 - SpringBoot(待重构)
 - [SpringMVC](https://github.com/Exrick/xmall/blob/master/study/SpringMVC.md)
@@ -43,13 +47,15 @@
 - [Dubbo](https://github.com/Exrick/xmall/blob/master/study/Dubbo.md)
 - [ZooKeeper](https://github.com/Exrick/xmall/blob/master/study/Zookeeper.md)
 - MySQL
+- Mycat：数据库分库分表中间件
 - [Redis](https://github.com/Exrick/xmall/blob/master/study/Redis.md)：缓存
 - [Elasticsearch](https://github.com/Exrick/xmall/blob/master/study/Elasticsearch.md)：基于Lucene分布式搜索引擎
 - [ActiveMQ](https://github.com/Exrick/xmall/blob/master/study/ActiveMQ.md)：消息队列
 - [Druid](http://druid.io/)：阿里高性能数据库连接池
 - Shiro：安全框架
 - Quartz：任务调度框架
-- [Swagger2](https://github.com/Exrick/xmall/blob/master/study/Swagger2.md)
+- Log4j：日志记录
+- [Swagger2](https://github.com/Exrick/xmall/blob/master/study/Swagger2.md)：Api文档生成
 - Docker
 - [Nginx](https://github.com/Exrick/xmall/blob/master/study/Nginx.md)
 - Tomcat
@@ -58,15 +64,18 @@
     - [七牛云文件存储服务](https://developer.qiniu.com/kodo/sdk/1239/java)
 - 第三方插件
     - [搜狐畅言评论插件](http://changyan.kuaizhan.com/)
+- 第三方接口
+    - [Mob全国天气预报接口](http://api.mob.com/#/apiwiki/weather)
 - 其它开发工具
     - [JRebel](https://github.com/Exrick/xmall/blob/master/study/JRebel.md)：开发热部署
-    - [阿里巴巴JAVA开发规约插件](https://github.com/alibaba/p3c)
+    - [阿里JAVA开发规约插件](https://github.com/alibaba/p3c)
 
-### dependency文件夹提供部分依赖与sql文件
-- xmall.sql：数据库文件
-- dubbo.xsd：需手动配置避免报错
-- redis-3.0.0.gem：Redis集群搭建所需Ruby库
-
+### 文件说明
+- `dependency` 文件夹提供部分依赖与sql文件
+    - xmall.sql：数据库文件
+    - dubbo.xsd：需手动配置避免报错
+    - redis-3.0.0.gem：Redis集群搭建所需Ruby库
+- `generatorSqlmapCustom` 文件夹为 [Mybatis Generator](http://www.mybatis.org/generator/) 逆向生成工具，且已配置好maven插件
 ### 本地开发运行部署
 - 依赖：[ZooKeeper](https://github.com/Exrick/xmall/blob/master/study/Zookeeper.md)、[Redis](https://github.com/Exrick/xmall/blob/master/study/Redis.md)、[ActiveMQ](https://github.com/Exrick/xmall/blob/master/study/ActiveMQ.md)、[Elasticsearch](https://github.com/Exrick/xmall/blob/master/study/Elasticsearch.md)
 - 下载zip直接解压或安装git后执行克隆命令 `git clone https://github.com/Exrick/xmall.git`
