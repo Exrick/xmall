@@ -205,18 +205,17 @@
                                                 后台几乎完成所有功能开发，你所看到的几乎皆为真实后台数据，为避免数据遭恶意修改，测试体验账号只具备查看权限。
                                                 后台主要使用技术有Dubbo/SSM/Elasticsearch/Redis/MySQL/ActiveMQ/Shiro/Zookeeper等<br><br>
                                                 Github后台源码：<a href="https://github.com/Exrick/xmall" target="_blank">
-                                                    <img src="https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Stars">
-                                                    <img src="https://img.shields.io/github/forks/badges/shields.svg?style=social&label=Fork"></a>
+                                                    <img src="https://img.shields.io/github/stars/Exrick/xmall.svg?style=social&label=Stars">
+                                                    <img src="https://img.shields.io/github/forks/Exrick/xmall.svg?style=social&label=Fork"></a>
                                                 前台：<a href="https://github.com/Exrick/xmall-front" target="_blank">
-                                                    <img src="https://img.shields.io/github/stars/badges/shields.svg?style=social"></a><br>
+                                                    <img src="https://img.shields.io/github/stars/Exrick/xmall-front.svg?style=social"></a><br>
                                                 Fork或下载前请动动手指Star一下~<br><br>
                                                 技术疑问交流群：475743731（限Star或捐赠好心人加入，可免费获取最新源码及
                                                 <a href="https://themeforest.net/item/flatlab-bootstrap-3-responsive-admin-template/5902687" target="_blank">UI框架 </a>等资源）
                                                 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=7b60cec12ba93ebed7568b0a63f22e6e034c0d1df33125ac43ed753342ec6ce7">
                                                     <img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="Exrick的技术交流群" title="Exrick的技术交流群">
                                                 </a><br><br>
-                                                作者目前大四，项目还有许多不足与更多需要学习的地方，期待您的指点与赞赏支持！
-                                                <a href="http://blog.exrick.cn" target="_blank">个人博客</a>
+                                                作者目前大四，项目还有许多不足与更多需要学习的地方，期待您的指点与赞赏捐赠支持！
                                             </p>
                                         </div>
                                     </article>
@@ -227,7 +226,11 @@
                                     </article>
                                 </div>
                                 <div class="tab-pane " id="recent">
-                                    暂无通知
+                                    <div style="text-align: center">你捐赠不起！！！</div>
+                                    <div style="text-align: center">
+                                        <img width="230px" height="230px" src="icon/alipay.png">
+                                        <img width="230px" height="230px" src="icon/wechat.png">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -254,33 +257,49 @@
                                 <td>
                                     <i class=" icon-tasks"></i>
                                 </td>
-                                <td>New Task Issued
-                                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1012139570&site=qq&menu=yes">
-                                        <img border="0" src="http://wpa.qq.com/pa?p=2:1012139570:52" alt="点击这里给我发消息" title="点击这里给我发消息"/>
+                                <td>
+                                    <a target="_blank" href="http://blog.exrick.cn/intro/">
+                                        个人简介
+                                    </a>
+                                    <a target="_blank" href="http://blog.exrick.cn/">
+                                        个人博客
                                     </a>
                                 </td>
-                                <td> 02</td>
+                                <td> <span style="margin-top: -1px" class="label label-primary pull-right r-activity">02</span></td>
                             </tr>
                             <tr>
                                 <td>
-                                    <i class="icon-warning-sign"></i>
+                                    <i class=" icon-music"></i>
                                 </td>
-                                <td>Task Pending</td>
-                                <td> 14</td>
+                                <td>
+                                    <a target="_blank" href="http://music.163.com/#/user/home?id=51835343">
+                                        网易云音乐
+                                    </a>
+                                </td>
+                                <td> <span style="margin-top: -1px" class="label label-info pull-right r-activity">01</span></td>
                             </tr>
                             <tr>
                                 <td>
                                     <i class="icon-envelope"></i>
                                 </td>
-                                <td>Inbox</td>
-                                <td> 45</td>
+                                <td>
+                                    <a href="mailto:1012139570@qq.com" target="_blank">1012139570@qq.com</a>
+                                </td>
+                                <td> <span style="margin-top: -1px" class="label label-warning pull-right r-activity">01</span></td>
                             </tr>
                             <tr>
                                 <td>
                                     <i class=" icon-bell-alt"></i>
                                 </td>
-                                <td>New Notification</td>
-                                <td> 09</td>
+                                <td>
+                                    <a target="_blank" href="https://github.com/Exrick">
+                                        Github
+                                    </a>
+                                    <a target="_blank" href="https://space.bilibili.com/22701144/#!/">
+                                        Bilibili
+                                    </a>
+                                </td>
+                                <td> <span style="margin-top: -1px" class="label label-success pull-right r-activity">02</span></td>
                             </tr>
                             </tbody>
                         </table>
@@ -307,10 +326,10 @@
                             <tr>
                                 <td>1</td>
                                 <td>
-                                    Target Sell
+                                    后台管理系统
                                 </td>
                                 <td>
-                                    <span class="badge bg-important">75%</span>
+                                    <span class="badge bg-important">90%</span>
                                 </td>
                                 <td>
                                     <div id="work-progress1"></div>
@@ -319,10 +338,10 @@
                             <tr>
                                 <td>2</td>
                                 <td>
-                                    Product Delivery
+                                    前台商城系统
                                 </td>
                                 <td>
-                                    <span class="badge bg-success">43%</span>
+                                    <span class="badge bg-success">85%</span>
                                 </td>
                                 <td>
                                     <div id="work-progress2"></div>
@@ -331,7 +350,7 @@
                             <tr>
                                 <td>3</td>
                                 <td>
-                                    Payment Collection
+                                    支付系统
                                 </td>
                                 <td>
                                     <span class="badge bg-info">67%</span>
@@ -343,7 +362,7 @@
                             <tr>
                                 <td>4</td>
                                 <td>
-                                    Work Progress
+                                    Spring-Cloud重构
                                 </td>
                                 <td>
                                     <span class="badge bg-warning">30%</span>
@@ -355,7 +374,7 @@
                             <tr>
                                 <td>5</td>
                                 <td>
-                                    Delivery Pending
+                                    宣传视频
                                 </td>
                                 <td>
                                     <span class="badge bg-primary">15%</span>
@@ -387,9 +406,9 @@
                                             <div class="panel-body">
                                                 <span class="arrow"></span>
                                                 <span class="timeline-icon red"></span>
-                                                <span class="timeline-date">08:25 am</span>
-                                                <h1 class="red">12 July | Sunday</h1>
-                                                <p>Lorem ipsum dolor sit amet consiquest dio</p>
+                                                <span class="timeline-date">11:25 am</span>
+                                                <h1 class="red">22 Oct | Sunday</h1>
+                                                <p>待更新</p>
                                             </div>
                                         </div>
                                     </div>
@@ -400,9 +419,9 @@
                                             <div class="panel-body">
                                                 <span class="arrow-alt"></span>
                                                 <span class="timeline-icon green"></span>
-                                                <span class="timeline-date">10:00 am</span>
-                                                <h1 class="green">10 July | Wednesday</h1>
-                                                <p><a href="#">Jonathan Smith</a> added new milestone <span><a href="#" class="green">ERP</a></span></p>
+                                                <span class="timeline-date">17:00 pm</span>
+                                                <h1 class="green">22 Oct | Sunday</h1>
+                                                <p><a href="http://blog.exrick.cn" target="_blank">Exrick</a> 完成目前所有功能开发 <span><a href="https://github.com/Exrick/xmall" class="green" target="_blank">v1.0发布</a></span></p>
                                             </div>
                                         </div>
                                     </div>
@@ -413,24 +432,24 @@
                                             <div class="panel-body">
                                                 <span class="arrow"></span>
                                                 <span class="timeline-icon blue"></span>
-                                                <span class="timeline-date">11:35 am</span>
-                                                <h1 class="blue">05 July | Monday</h1>
-                                                <p><a href="#">Anjelina Joli</a> added new album <span><a href="#" class="blue">PARTY TIME</a></span></p>
+                                                <span class="timeline-date">11:35 pm</span>
+                                                <h1 class="blue">13 Oct | Friday</h1>
+                                                <p><a href="http://blog.exrick.cn" target="_blank">Exrick</a> 完成后端接口改造二次开发 <span><a class="blue" href="https://github.com/Exrick/xmall-front" target="_blank">XMall-Front</a></span></p>
                                                 <div class="album">
                                                     <a href="#">
-                                                        <img alt="" src="lib/flatlab/img/sm-img-1.jpg">
+                                                        <img alt="" width="48px" height="32px" src="http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170915134720.png">
                                                     </a>
                                                     <a href="#">
-                                                        <img alt="" src="lib/flatlab/img/sm-img-2.jpg">
+                                                        <img alt="" width="48px" height="32px" src="http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170925230559.png">
                                                     </a>
                                                     <a href="#">
-                                                        <img alt="" src="lib/flatlab/img/sm-img-3.jpg">
+                                                        <img alt="" width="48px" height="32px" src="http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170915135622.png">
                                                     </a>
                                                     <a href="#">
-                                                        <img alt="" src="lib/flatlab/img/sm-img-1.jpg">
+                                                        <img alt="" width="48px" height="32px" src="http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171022112023.jpg">
                                                     </a>
                                                     <a href="#">
-                                                        <img alt="" src="lib/flatlab/img/sm-img-2.jpg">
+                                                        <img alt="" width="48px" height="32px" src="http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171022112048.jpg">
                                                     </a>
                                                 </div>
                                             </div>
@@ -443,11 +462,15 @@
                                             <div class="panel-body">
                                                 <span class="arrow-alt"></span>
                                                 <span class="timeline-icon purple"></span>
-                                                <span class="timeline-date">3:20 pm</span>
-                                                <h1 class="purple">29 June | Saturday</h1>
-                                                <p>Lorem ipsum dolor sit amet consiquest dio</p>
+                                                <span class="timeline-date">3:00 pm</span>
+                                                <h1 class="purple">14 Sep | Saturday</h1>
+                                                <p>
+                                                    感谢 <a href="https://github.com/yucccc" target="_blank">yucccc</a> 的开源
+                                                    <a href="https://github.com/yucccc/vue-mall" target="_blank">vue-mall</a> 项目提供前端页面及框架支持
+                                                </p>
                                                 <div class="notification">
-                                                    <i class=" icon-exclamation-sign"></i> New task added for <a href="#">Denial Collins</a>
+                                                    <i class=" icon-exclamation-sign"></i> 启动了前台项目
+                                                    <a href="https://github.com/Exrick/xmall-front" target="_blank">XMall-Front</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -459,9 +482,11 @@
                                             <div class="panel-body">
                                                 <span class="arrow"></span>
                                                 <span class="timeline-icon light-green"></span>
-                                                <span class="timeline-date">07:49 pm</span>
-                                                <h1 class="light-green">10 June | Friday</h1>
-                                                <p><a href="#">Jonatha Smith</a> added new milestone <span><a href="#" class="light-green">prank</a></span> Lorem ipsum dolor sit amet consiquest dio</p>
+                                                <span class="timeline-date">09:00 pm</span>
+                                                <h1 class="light-green">28 July | Friday</h1>
+                                                <p><a href="http://blog.exrick.cn" target="_blank">Exrick</a> 启动了
+                                                    <span><a href="https://github.com/Exrick/xmall" target="_blank" class="light-green">XMall</a></span>
+                                                    项目，并完成第一次提交</p>
                                             </div>
                                         </div>
                                     </div>
@@ -563,17 +588,17 @@
                                                 </a>
                                             </li>
                                             <li class="active">
-                                                <a href="#">
-                                                    <i class="icon-qq"></i>
+                                                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1012139570&site=qq&menu=yes">
+                                                    <img style="margin-bottom: 3px" width="24px" height="24px" src="icon/qq.png"></img>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
-                                                    <i class="icon-google-plus"></i>
+                                                <a target="_blank" href="https://space.bilibili.com/22701144/#!/">
+                                                    <img style="margin-bottom: 5px" width="22px" height="22px" src="icon/bilibili.png"></img>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="http://blog.exrick.cn/" target="_blank">
                                                     <i class="icon-pinterest"></i>
                                                 </a>
                                             </li>
@@ -753,7 +778,7 @@
         success:function (data) {
             $("#hot-title").html(data.result.title);
             $("#hot-num").html(data.result.total);
-            if(data.result.picPath!=""){
+            if(data.result.picPath!=""&&data.result.picPath!=null){
                 $("#hot-img").attr("src", data.result.picPath);
             }
         },
@@ -763,6 +788,11 @@
             }
         }
     });
+
+    if($("#hot-title").text().length > 18){
+        $("#hot-title").text($("#hot-title").text().substring(0,18) +"...");
+
+    }
 
 </script>
 

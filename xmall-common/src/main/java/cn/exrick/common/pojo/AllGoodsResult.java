@@ -3,6 +3,9 @@ package cn.exrick.common.pojo;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * @author Exrickx
+ */
 public class AllGoodsResult implements Serializable {
 
     private int total;

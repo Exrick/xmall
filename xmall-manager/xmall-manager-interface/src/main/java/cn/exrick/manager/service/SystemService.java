@@ -1,6 +1,8 @@
 package cn.exrick.manager.service;
 
+import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.manager.pojo.TbBase;
+import cn.exrick.manager.pojo.TbLog;
 import cn.exrick.manager.pojo.TbOrderItem;
 import cn.exrick.manager.pojo.TbShiroFilter;
 
@@ -62,4 +64,30 @@ public interface SystemService {
      * @return
      */
     TbOrderItem getWeekHot();
+
+    /**
+     * 添加日志
+     * @param tbLog
+     * @return
+     */
+    int addLog(TbLog tbLog);
+
+    /**
+     * 获取日志列表
+     * @return
+     */
+    DataTablesResult getLogList();
+
+    /**
+     * 统计日志数量
+     * @return
+     */
+    Long countLog();
+
+    /**
+     * 删除日志
+     * @param id
+     * @return
+     */
+    int deleteLog(int id);
 }

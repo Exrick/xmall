@@ -57,6 +57,11 @@ public class MemberController {
     public Result<Object> register(@RequestBody MemberLoginRegist memberLoginRegist){
 
         int result=registerService.register(memberLoginRegist.getUserName(), memberLoginRegist.getUserPwd());
+        if(result==0){
+            return new ResultUtil<Object>().setErrorMsg("该用户名已被注册");
+        }else if(result==-1){
+            return new ResultUtil<Object>().setErrorMsg("用户名密码不能为空");
+        }
         return new ResultUtil<Object>().setData(result);
     }
 

@@ -41,17 +41,17 @@
                     <thead>
                     <tr class="text-c">
                         <th width="25"><input type="checkbox" name="" value=""></th>
-                        <th width="80">ID</th>
-                        <th width="50">支付金额</th>
-                        <th width="80">物流号</th>
-                        <th width="50">用户ID</th>
-                        <th width="80">用户账号</th>
+                        <th width="30">ID</th>
+                        <th width="60">日志名称</th>
+                        <th width="60">类型</th>
+                        <th width="80">请求路径</th>
+                        <th width="70">请求类型</th>
+                        <th width="150">请求参数</th>
+                        <th width="80">登录用户</th>
+                        <th width="100">IP</th>
+                        <th width="100">IP位置</th>
+                        <th width="70">耗时(毫秒)</th>
                         <th width="100">创建时间</th>
-                        <th width="100">更新时间</th>
-                        <th width="100">支付时间</th>
-                        <th width="100">关闭时间</th>
-                        <th width="100">完成时间</th>
-                        <th width="100">订单状态</th>
                         <th width="50">操作</th>
                     </tr>
                     </thead>
@@ -104,7 +104,7 @@
         $('.table').DataTable({
             "processing": true,//加载显示提示
             "ajax": {
-                url:"/order/list",
+                url:"/sys/log",
                 type: 'GET',
                 error:function(XMLHttpRequest){
                     layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
@@ -113,64 +113,43 @@
             "columns": [
                 { "data": null,
                     render : function(data,type, row, meta) {
-                        return "<input name=\"checkbox\" value=\""+row.orderId+"\" type=\"checkbox\" value=\"\">";
+                        return "<input name=\"checkbox\" value=\""+row.id+"\" type=\"checkbox\" value=\"\">";
                     }
                 },
-                { "data": "orderId"},
-                { "data": "payment"},
-                { "data": "shippingCode"},
-                { "data": "userId"},
-                { "data": "buyerNick"},
-                { "data": "createTime",
-                    render : function(data,type, row, meta) {
-                        return date(data);
-                    }
-                },
-                { "data": "updateTime",
-                    render : function(data,type, row, meta) {
-                        return date(data);
-                    }
-                },
-                { "data": "paymentTime",
-                    render : function(data,type, row, meta) {
-                        return date(data);
-                    }
-                },
-                { "data": "closeTime",
-                    render : function(data,type, row, meta) {
-                        return date(data);
-                    }
-                },
-                { "data": "endTime",
-                    render : function(data,type, row, meta) {
-                        return date(data);
-                    }
-                },
-                { "data": "status",
-                    render : function(data,type, row, meta) {
-                        if(data==0){
-                            return "<span class=\"label label-defant radius td-status\">待支付</span>";
-                        }else if(data==2){
-                            return "<span class=\"label label-primary radius td-status\">待发货</span>";
-                        }else if(data==3){
-                            return "<span class=\"label label-secondary radius td-status\">已发货</span>";
-                        }else if(data==4){
-                            return "<span class=\"label label-success radius td-status\">交易成功</span>";
-                        }else if(data==5){
-                            return "<span class=\"label label-danger radius td-status\">交易关闭</span>";
-                        }else{
-                            return "<span class=\"label label-warning radius td-status\">其它态</span>";
+                { "data": "id"},
+                { "data": "name"},
+                {
+                    "data": "type",
+                    render: function (data, type, row, meta) {
+                        if (data == 1) {
+                            return "<span class=\"label label-success radius td-status\">业务日志</span>";
+                        } else if (data == 0) {
+                            return "<span class=\"label label-danger radius td-status\">错误日志</span>";
+                        } else {
+                            return "<span class=\"label label-warning radius td-status\">其它日志</span>";
                         }
+                    }
+                },
+                { "data": "url"},
+                { "data": "requestType"},
+                { "data": "requestParam"},
+                { "data": "user"},
+                { "data": "ip"},
+                { "data": "ipInfo"},
+                { "data": "time"},
+                { "data": "createDate",
+                    render : function(data,type, row, meta) {
+                        return date(data);
                     }
                 },
                 {
                     "data": null,
                     render : function(data,type, row, meta) {
-                        return "<a title=\"删除\" href=\"javascript:;\" onclick=\"order_del(this,"+row.orderId+")\" class=\"ml-5\" style=\"text-decoration:none\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>";
+                        return "<a title=\"删除\" href=\"javascript:;\" onclick=\"log_del(this,"+row.id+")\" class=\"ml-5\" style=\"text-decoration:none\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>";
                     }
                 }
             ],
-            "aaSorting": [[ 6, "desc" ]],//默认第几个排序
+            "aaSorting": [[ 11, "desc" ]],//默认第几个排序
             "bStateSave": false,//状态保存
             "aoColumnDefs": [
                 {"orderable":false,"aTargets":[0,12]}// 制定列不参与排序
@@ -181,12 +160,12 @@
             colReorder: true
         });
 
-        orderCount();
+        logCount();
     });
 
-    function orderCount() {
+    function logCount() {
         $.ajax({
-            url:"/order/count",
+            url:"/sys/log/count",
             type: 'GET',
             success:function (data) {
                 if(data.success!=true){
@@ -204,18 +183,18 @@
     }
 
     /*订单-删除*/
-    function order_del(obj,id){
-        layer.confirm('确认要删除ID为\''+id+'\'的订单吗？',{icon:0},function(index){
+    function log_del(obj,id){
+        layer.confirm('确认要删除ID为\''+id+'\'的日志吗？',{icon:0},function(index){
             $.ajax({
                 type: 'DELETE',
-                url: '/order/del/'+id,
+                url: '/sys/log/del/'+id,
                 dataType: 'json',
                 success: function(data){
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
                         return;
                     }
-                    orderCount();
+                    logCount();
                     refresh();
                     layer.msg('已删除!',{icon:1,time:1000});
                 },
@@ -244,7 +223,7 @@
                 if(cks[i].checked){
                     $.ajax({
                         type: 'DELETE',
-                        url: '/order/del/'+cks[i].value,
+                        url: '/sys/log/del/'+cks[i].value,
                         dataType: 'json',
                         success:function(data){
                             if(data.success!=true){
@@ -258,7 +237,7 @@
                 }
             }
             layer.msg('已删除!',{icon:1,time:1000});
-            orderCount();
+            logCount();
             refresh();
         });
     }

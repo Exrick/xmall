@@ -22,7 +22,9 @@ public class TbLog implements Serializable{
 
     private String ipInfo;
 
-    private Date time;
+    private Integer time;
+
+    private Date createDate;
 
     public Integer getId() {
         return id;
@@ -96,11 +98,19 @@ public class TbLog implements Serializable{
         this.ipInfo = ipInfo == null ? null : ipInfo.trim();
     }
 
-    public Date getTime() {
+    public Integer getTime() {
         return time;
     }
 
-    public void setTime(Date time) {
+    public void setTime(Integer time) {
         this.time = time;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 }

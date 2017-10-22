@@ -3,6 +3,8 @@ package cn.exrick.manager.service;
 import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.manager.pojo.TbThanks;
 
+import java.util.List;
+
 /**
  * @author Exrickx
  */
@@ -13,6 +15,8 @@ public interface ThanksService {
      * @return
      */
     DataTablesResult getThanksList();
+
+    DataTablesResult getThanksListByPage(int page, int size);
 
     /**
      * 统计捐赠表数目

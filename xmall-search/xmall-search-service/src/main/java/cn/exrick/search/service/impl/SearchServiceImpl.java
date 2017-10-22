@@ -23,8 +23,12 @@ import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.elasticsearch.index.query.QueryBuilders.matchPhraseQuery;
 import static org.elasticsearch.index.query.QueryBuilders.termQuery;
 
+/**
+ * @author Exrickx
+ */
 @Service
 public class SearchServiceImpl implements SearchService {
 
@@ -40,7 +44,7 @@ public class SearchServiceImpl implements SearchService {
 			SearchResult searchResult=new SearchResult();
 
 			//设置查询条件
-			QueryBuilder qb = termQuery("productName",key);
+			QueryBuilder qb = matchPhraseQuery("productName",key);
 			//设置分页
 			if (page <=0 ) page =1;
 			int start=(page - 1) * size;
@@ -50,6 +54,7 @@ public class SearchServiceImpl implements SearchService {
 			hiBuilder.preTags("<a style=\"color: #e4393c\">");
 			hiBuilder.postTags("</a>");
 			hiBuilder.field("productName");
+
 			//执行搜索
 			SearchResponse searchResponse = null;
 

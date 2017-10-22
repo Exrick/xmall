@@ -11,7 +11,8 @@
     <result column="user" jdbcType="VARCHAR" property="user" />
     <result column="ip" jdbcType="VARCHAR" property="ip" />
     <result column="ip_info" jdbcType="VARCHAR" property="ipInfo" />
-    <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="time" jdbcType="INTEGER" property="time" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -72,7 +73,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, type, url, request_type, request_param, user, ip, ip_info, time
+    id, name, type, url, request_type, request_param, user, ip, ip_info, time, create_date
   </sql>
   <select id="selectByExample" parameterType="cn.exrick.manager.pojo.TbLogExample" resultMap="BaseResultMap">
     select
@@ -107,12 +108,12 @@
   <insert id="insert" parameterType="cn.exrick.manager.pojo.TbLog">
     insert into tb_log (id, name, type, 
       url, request_type, request_param, 
-      user, ip, ip_info, time
-      )
+      user, ip, ip_info, time, 
+      create_date)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, 
       #{url,jdbcType=VARCHAR}, #{requestType,jdbcType=VARCHAR}, #{requestParam,jdbcType=VARCHAR}, 
-      #{user,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, #{ipInfo,jdbcType=VARCHAR}, #{time,jdbcType=TIMESTAMP}
-      )
+      #{user,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, #{ipInfo,jdbcType=VARCHAR}, #{time,jdbcType=INTEGER}, 
+      #{createDate,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="cn.exrick.manager.pojo.TbLog">
     insert into tb_log
@@ -147,6 +148,9 @@
       <if test="time != null">
         time,
       </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -177,7 +181,10 @@
         #{ipInfo,jdbcType=VARCHAR},
       </if>
       <if test="time != null">
-        #{time,jdbcType=TIMESTAMP},
+        #{time,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -218,7 +225,10 @@
         ip_info = #{record.ipInfo,jdbcType=VARCHAR},
       </if>
       <if test="record.time != null">
-        time = #{record.time,jdbcType=TIMESTAMP},
+        time = #{record.time,jdbcType=INTEGER},
+      </if>
+      <if test="record.createDate != null">
+        create_date = #{record.createDate,jdbcType=TIMESTAMP},
       </if>
     </set>
     <if test="_parameter != null">
@@ -236,7 +246,8 @@
       user = #{record.user,jdbcType=VARCHAR},
       ip = #{record.ip,jdbcType=VARCHAR},
       ip_info = #{record.ipInfo,jdbcType=VARCHAR},
-      time = #{record.time,jdbcType=TIMESTAMP}
+      time = #{record.time,jdbcType=INTEGER},
+      create_date = #{record.createDate,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -269,7 +280,10 @@
         ip_info = #{ipInfo,jdbcType=VARCHAR},
       </if>
       <if test="time != null">
-        time = #{time,jdbcType=TIMESTAMP},
+        time = #{time,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -284,7 +298,8 @@
       user = #{user,jdbcType=VARCHAR},
       ip = #{ip,jdbcType=VARCHAR},
       ip_info = #{ipInfo,jdbcType=VARCHAR},
-      time = #{time,jdbcType=TIMESTAMP}
+      time = #{time,jdbcType=INTEGER},
+      create_date = #{createDate,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

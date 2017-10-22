@@ -1,13 +1,13 @@
 package cn.exrick.common.utils;
 
+import cn.exrick.common.pojo.IpWeatherResult;
+import com.google.gson.Gson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.HashMap;
-import java.util.Map;
 
 
 /**
@@ -65,6 +65,22 @@ public class IPInfoUtil {
         if(null != ip){
             String url = GET_WEATHER + ip;
             String result=HttpUtil.sendGet(url);
+            return result;
+        }
+        return null;
+    }
+
+    /**
+     * 获取IP返回地理信息
+     * @param ip ip地址
+     * @return
+     */
+    public static String getIpCity(String ip){
+        if(null != ip){
+            String url = GET_WEATHER + ip;
+            String json=HttpUtil.sendGet(url);
+            IpWeatherResult weather=new Gson().fromJson(json,IpWeatherResult.class);
+            String result=weather.getResult().get(0).getCity()+" "+weather.getResult().get(0).getDistrct();
             return result;
         }
         return null;

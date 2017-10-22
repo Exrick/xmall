@@ -106,11 +106,11 @@
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.9" level="project" />
     <orderEntry type="library" name="Maven: org.quartz-scheduler:quartz:2.2.2" level="project" />
     <orderEntry type="library" name="Maven: c3p0:c3p0:0.9.1.1" level="project" />
-    <orderEntry type="library" name="Maven: com.qiniu:qiniu-java-sdk:7.2.7" level="project" />
+    <orderEntry type="library" name="Maven: com.qiniu:qiniu-java-sdk:7.2.8" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.3.1" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okio:okio:1.8.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.6.2" level="project" />
-    <orderEntry type="library" name="Maven: com.qiniu:happy-dns-java:0.1.4" level="project" />
+    <orderEntry type="library" name="Maven: com.qiniu:happy-dns-java:0.1.6" level="project" />
     <orderEntry type="library" name="Maven: commons-fileupload:commons-fileupload:1.3.3" level="project" />
     <orderEntry type="library" name="Maven: redis.clients:jedis:2.9.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-pool2:2.4.2" level="project" />

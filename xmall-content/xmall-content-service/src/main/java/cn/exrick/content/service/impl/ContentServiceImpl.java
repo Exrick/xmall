@@ -331,7 +331,9 @@ public class ContentServiceImpl implements ContentService {
         AllGoodsResult allGoodsResult=new AllGoodsResult();
         List<Product> list=new ArrayList<>();
         //分页执行查询返回结果
-        if(page<=0) page=1;
+        if(page<=0) {
+            page = 1;
+        }
         PageHelper.startPage(page,size);
 
         //判断条件

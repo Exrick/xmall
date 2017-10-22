@@ -20,9 +20,7 @@
     <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
-    <title>添加管理员 - 管理员管理 - H-ui.admin v3.1</title>
-    <meta name="keywords" content="H-ui.admin v3.1,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
-    <meta name="description" content="H-ui.admin v3.1，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+    <title>编辑管理员</title>
 </head>
 <body>
 <article class="page-container">
@@ -71,7 +69,6 @@
             <label class="form-label col-xs-4 col-sm-3">备注：</label>
             <div class="formControls col-xs-8 col-sm-9">
                 <textarea id="description" name="description" cols="" rows="" class="textarea" placeholder="说点什么...100个字符以内" dragonfly="true"></textarea>
-                <p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
             </div>
         </div>
         <div class="row cl">

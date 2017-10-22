@@ -1,30 +1,31 @@
 # XMall
-[![AUR](https://img.shields.io/aur/license/yaourt.svg)](http://oweupqzdv.bkt.clouddn.com/license)
-[![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Stars)](https://github.com/Exrick/xmall)
-[![GitHub forks](https://img.shields.io/github/forks/badges/shields.svg?style=social&label=Fork)](https://github.com/Exrick/xmall)
-[![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)](https://github.com/Exrick/xmall)
+[![CRAN](https://img.shields.io/cran/l/devtools.svg)](https://github.com/Exrick/xmall/blob/master/License.md)
+[![GitHub stars](https://img.shields.io/github/stars/Exrick/xmall.svg?style=social&label=Stars)](https://github.com/Exrick/xmall)
+[![GitHub forks](https://img.shields.io/github/forks/Exrick/xmall.svg?style=social&label=Fork)](https://github.com/Exrick/xmall)
 ### 基于SOA架构的分布式购物电商商城
-- [x] 后台管理系统：管理商品、订单、类目、商品规格属性、用户管理、权限管理、系统统计以及内容管理等功能 //TODO 日志管理
+- [x] 后台管理系统：管理商品、订单、类目、商品规格属性、用户、权限、系统统计、系统日志以及前台内容等功能
 - [x] 前台系统：用户可以在前台系统中进行注册、登录、浏览商品、首页、下单等操作
 - [x] 会员系统：用户可以在该系统中查询已下的订单、管理订单、我的优惠券等信息
 - [x] 订单系统：提供下单、查询订单、修改订单状态、定时处理订单
 - [x] 搜索系统：提供商品的搜索功能
 - [x] 单点登录系统：为多个系统之间提供用户登录凭证以及查询登录用户的信息
 
-![](http://ow2h3ee9w.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171013230914.png)
+![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171022183452.jpg "登录界面")
 
-![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170923225945.png)
+![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171022174034.jpg "后台首页")
 
-![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170923225916.png)
+![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171022224322.jpg "商品管理")
 
-![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170915134720.png)
+![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171022225418.jpg "管理员编辑")
+
+![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171022183906.jpg "前台首页")
 
 ### 前台页面为基于Vue的独立项目 请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库查看
 
 ### 前端所用技术
 
 - 后台页面
-    - 感谢 [H-ui](http://www.h-ui.net/)、[FlatLab]((https://github.com/Exrick/xmall/blob/master/study/FlatLab.md)) 提供静态页面支持
+    - 感谢 [H-ui](http://www.h-ui.net/)、[FlatLab](https://github.com/Exrick/xmall/blob/master/study/FlatLab.md) 提供静态页面支持
     - [Ztree](http://www.treejs.cn/v3/main.php#_zTreeInfo)：jQuery树插件
     - [DataTables](http://www.datatables.club/)：jQuery表格插件
     - [Layer](http://layer.layui.com/)：web弹层组件
@@ -54,7 +55,6 @@
 - [Druid](http://druid.io/)：阿里高性能数据库连接池
 - Shiro：安全框架
 - Quartz：任务调度框架
-- Log4j：日志记录
 - [Swagger2](https://github.com/Exrick/xmall/blob/master/study/Swagger2.md)：Api文档生成
 - Docker
 - [Nginx](https://github.com/Exrick/xmall/blob/master/study/Nginx.md)
@@ -67,6 +67,7 @@
 - 第三方接口
     - [Mob全国天气预报接口](http://api.mob.com/#/apiwiki/weather)
 - 其它开发工具
+    - Jenkins：持续集成
     - [JRebel](https://github.com/Exrick/xmall/blob/master/study/JRebel.md)：开发热部署
     - [阿里JAVA开发规约插件](https://github.com/alibaba/p3c)
 
@@ -86,4 +87,6 @@
 - 项目需按照依赖顺序运行除 `xmall-parent` `xmall-common` 以外其它所有服务，且都已配置好Tomcat插件, 执行命令 `mvn tomcat7:run` 或在IDEA中使用插件(`View - Tool Buttons - 右侧菜单Maven Projects - tomcat7 - tomcat7:run`)运行即可
 - 后端管理系统端口8888 http://localhost:8888
 - 前端项目接口端口6666
+### 技术疑问交流
+- 给作者项目Star或捐赠后可加入交流群 `475743731`，还可免费获取最新源码和 [UI框架]((https://github.com/Exrick/xmall/blob/master/study/FlatLab.md)) [![](http://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=7b60cec12ba93ebed7568b0a63f22e6e034c0d1df33125ac43ed753342ec6ce7)
 

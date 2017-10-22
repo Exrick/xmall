@@ -1,14 +1,12 @@
 package cn.exrick.manager.service.impl;
 
 import cn.exrick.common.exception.XmallException;
+import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.manager.mapper.TbBaseMapper;
 import cn.exrick.manager.mapper.TbLogMapper;
 import cn.exrick.manager.mapper.TbOrderItemMapper;
 import cn.exrick.manager.mapper.TbShiroFilterMapper;
-import cn.exrick.manager.pojo.TbBase;
-import cn.exrick.manager.pojo.TbOrderItem;
-import cn.exrick.manager.pojo.TbShiroFilter;
-import cn.exrick.manager.pojo.TbShiroFilterExample;
+import cn.exrick.manager.pojo.*;
 import cn.exrick.manager.service.SystemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -118,5 +116,48 @@ public class SystemServiceImpl implements SystemService {
             return tbOrderItem;
         }
         return list.get(0);
+    }
+
+    @Override
+    public int addLog(TbLog tbLog) {
+
+        if(tbLogMapper.insert(tbLog)!=1){
+            throw new XmallException("保存日志失败");
+        }
+        return 1;
+    }
+
+    @Override
+    public DataTablesResult getLogList() {
+
+        DataTablesResult result=new DataTablesResult();
+        TbLogExample example=new TbLogExample();
+        List<TbLog> list=tbLogMapper.selectByExample(example);
+        if(list==null){
+            throw new XmallException("获取日志列表失败");
+        }
+        result.setSuccess(true);
+        result.setData(list);
+        return result;
+    }
+
+    @Override
+    public Long countLog() {
+
+        TbLogExample example=new TbLogExample();
+        Long result=tbLogMapper.countByExample(example);
+        if(result==null){
+            throw new XmallException("获取日志数量失败");
+        }
+        return result;
+    }
+
+    @Override
+    public int deleteLog(int id) {
+
+        if(tbLogMapper.deleteByPrimaryKey(id)!=1){
+            throw new XmallException("删除日志失败");
+        }
+        return 1;
     }
 }

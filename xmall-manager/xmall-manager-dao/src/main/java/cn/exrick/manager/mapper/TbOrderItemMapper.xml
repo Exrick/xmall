@@ -258,7 +258,7 @@
   <select id="getWeekHot" resultType="cn.exrick.manager.pojo.TbOrderItem">
     SELECT
     i.title,
-    i.pic_path,
+    i.pic_path picPath,
     count(*) total
     FROM
     tb_order_item i

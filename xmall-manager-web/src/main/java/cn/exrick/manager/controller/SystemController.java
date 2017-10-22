@@ -101,4 +101,28 @@ public class SystemController {
         String result= IPInfoUtil.getIpInfo(IPInfoUtil.getIpAddr(request));
         return new ResultUtil<Object>().setData(result);
     }
+
+    @RequestMapping(value = "/sys/log",method = RequestMethod.GET)
+    @ApiOperation(value = "获取系统日志")
+    public DataTablesResult getLog(){
+
+        DataTablesResult result= systemService.getLogList();
+        return result;
+    }
+
+    @RequestMapping(value = "/sys/log/count",method = RequestMethod.GET)
+    @ApiOperation(value = "获取系统日志总数")
+    public Result<Object> countLog(){
+
+        Long result=systemService.countLog();
+        return new ResultUtil<Object>().setData(result);
+    }
+
+    @RequestMapping(value = "/sys/log/del/{id}",method = RequestMethod.DELETE)
+    @ApiOperation(value = "删除系统日志")
+    public Result<Object> delLog(@PathVariable int id){
+
+        systemService.deleteLog(id);
+        return new ResultUtil<Object>().setData(null);
+    }
 }

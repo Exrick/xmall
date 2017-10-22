@@ -3,6 +3,7 @@ package cn.exrick.manager.controller;
 import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.common.pojo.Result;
 import cn.exrick.common.utils.ResultUtil;
+import cn.exrick.manager.annotation.SystemControllerLog;
 import cn.exrick.manager.dto.RoleDto;
 import cn.exrick.manager.pojo.TbPermission;
 import cn.exrick.manager.pojo.TbRole;
@@ -36,6 +37,7 @@ public class UserController {
 
     @RequestMapping(value = "/user/login",method = RequestMethod.POST)
     @ApiOperation(value = "用户登录")
+    @SystemControllerLog(description="登录系统")
     public Result<Object> login(String username, String password){
 
         Subject subject = SecurityUtils.getSubject() ;
@@ -44,12 +46,8 @@ public class UserController {
         UsernamePasswordToken token = new UsernamePasswordToken(username,md5Pass);
         try {
             subject.login(token);
-            log.info(userService.getRoles(username).toString());
-            log.info(userService.getPermissions(username).toString());
-            log.info("验证成功");
             return new ResultUtil<Object>().setData(null);
         }catch (Exception e){
-            log.info("验证失败");
             return new ResultUtil<Object>().setErrorMsg("用户名或密码错误");
         }
     }
