@@ -1,5 +1,7 @@
 # XMall
-[![CRAN](https://img.shields.io/cran/l/devtools.svg)](https://github.com/Exrick/xmall/blob/master/License.md)
+[![AUR](https://img.shields.io/aur/license/yaourt.svg)](https://github.com/Exrick/xmall/blob/master/License.md)
+[![](https://img.shields.io/badge/Author-Exrick-orange.svg)](http://blog.exrick.cn)
+[![](https://img.shields.io/badge/version-1.0-brightgreen.svg)](https://github.com/Exrick/xmall)
 [![GitHub stars](https://img.shields.io/github/stars/Exrick/xmall.svg?style=social&label=Stars)](https://github.com/Exrick/xmall)
 [![GitHub forks](https://img.shields.io/github/forks/Exrick/xmall.svg?style=social&label=Fork)](https://github.com/Exrick/xmall)
 ### 基于SOA架构的分布式购物电商商城
@@ -89,4 +91,5 @@
 - 前端项目接口端口6666
 ### 技术疑问交流
 - 给作者项目Star或捐赠后可加入交流群 `475743731`，还可免费获取最新源码和 [UI框架](https://github.com/Exrick/xmall/blob/master/study/FlatLab.md) [![](http://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=7b60cec12ba93ebed7568b0a63f22e6e034c0d1df33125ac43ed753342ec6ce7)
+- 作者博客：[http://blog.exrick.cn](http://blog.exrick.cn)
 

@@ -5,6 +5,7 @@ import cn.exrick.common.pojo.SearchItem;
 import cn.exrick.common.pojo.SearchResult;
 import cn.exrick.search.service.SearchService;
 import com.google.gson.Gson;
+import org.apache.lucene.queryparser.classic.QueryParser;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.transport.TransportClient;
