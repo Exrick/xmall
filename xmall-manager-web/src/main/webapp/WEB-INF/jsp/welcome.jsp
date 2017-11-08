@@ -738,7 +738,7 @@
         }
     });
 
-    setTimeout('count()',1500);
+    setTimeout('count()',2000);
     function count(){
         countUp4($("#busuanzi_value_site_uv").html());
     }
@@ -748,6 +748,10 @@
         url:"/sys/weather",
         type: 'GET',
         success:function (data) {
+            if(data.result==null||data.result==""||data.result.indexOf('错误')>=0){
+                layer.msg("无法获取您的IP，天气信息获取失败");
+                return ;
+            }
             var json=JSON.parse(data.result);
             var param=json.result[0];
             var weather=param.weather;
@@ -792,6 +796,39 @@
     if($("#hot-title").text().length > 18){
         $("#hot-title").text($("#hot-title").text().substring(0,18) +"...");
 
+    }
+
+    $.ajax({
+        url:"/sys/base",
+        type: 'GET',
+        success:function (data) {
+            if(data.success!=true){
+                layer.alert(data.message,{title: '错误信息',icon: 2});
+                return;
+            }
+            if(data.result.hasAllNotice==1){
+                allNotice(data.result.allNotice);
+            }
+        },
+        error:function(XMLHttpRequest){
+            if(XMLHttpRequest.status!=200){
+                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+            }
+        }
+    });
+
+    function allNotice(data){
+        layer.open({
+            type: 1
+            ,title:'通知'
+            ,area: ['350px', '230px']
+            ,content: '<div style="margin: 10px 20px 10px 20px;">'+data+'</div>'
+            ,btn: ['知道了']
+            ,shade: 0 //不显示遮罩
+            ,yes: function(){
+                layer.closeAll();
+            }
+        });
     }
 
 </script>

@@ -35,7 +35,7 @@
         <!-- 登录成功之后的 跳转页面 -->
         <property name="successUrl" value="/"/>
         <!-- 权限认证失败，则跳转到指定页面 -->
-        <property name="unauthorizedUrl" value="/401"/>
+        <property name="unauthorizedUrl" value="/403"/>
         <!--自定义过滤器-->
         <property name="filters">
             <util:map>

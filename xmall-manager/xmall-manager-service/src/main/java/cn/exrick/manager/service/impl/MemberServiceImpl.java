@@ -41,6 +41,7 @@ public class MemberServiceImpl implements MemberService {
         }catch (Exception e){
             throw new XmallException("ID获取会员信息失败");
         }
+        tbMember.setPassword("");
         return tbMember;
     }
 
@@ -55,6 +56,11 @@ public class MemberServiceImpl implements MemberService {
             PageHelper.startPage(start/length+1,length);
             List<TbMember> list = tbMemberMapper.selectByMemberInfo("%"+search+"%",minDate,maxDate,orderCol,orderDir);
             PageInfo<TbMember> pageInfo=new PageInfo<>(list);
+
+            for(TbMember tbMember:list){
+                tbMember.setPassword("");
+            }
+
             result.setRecordsFiltered((int)pageInfo.getTotal());
             result.setRecordsTotal(getMemberCount().getRecordsTotal());
 
@@ -78,6 +84,11 @@ public class MemberServiceImpl implements MemberService {
             PageHelper.startPage(start/length+1,length);
             List<TbMember> list = tbMemberMapper.selectByRemoveMemberInfo("%"+search+"%",minDate,maxDate,orderCol,orderDir);
             PageInfo<TbMember> pageInfo=new PageInfo<>(list);
+
+            for(TbMember tbMember:list){
+                tbMember.setPassword("");
+            }
+
             result.setRecordsFiltered((int)pageInfo.getTotal());
             result.setRecordsTotal(getRemoveMemberCount().getRecordsTotal());
 
@@ -103,6 +114,7 @@ public class MemberServiceImpl implements MemberService {
             throw new XmallException("ID获取会员信息失败");
         }
         if(!list.isEmpty()){
+            list.get(0).setPassword("");
             return list.get(0);
         }
         return null;
@@ -121,6 +133,7 @@ public class MemberServiceImpl implements MemberService {
             throw new XmallException("Phone获取会员信息失败");
         }
         if(!list.isEmpty()){
+            list.get(0).setPassword("");
             return list.get(0);
         }
         return null;
@@ -139,6 +152,7 @@ public class MemberServiceImpl implements MemberService {
             throw new XmallException("Email获取会员信息失败");
         }
         if(!list.isEmpty()){
+            list.get(0).setPassword("");
             return list.get(0);
         }
         return null;
@@ -272,6 +286,7 @@ public class MemberServiceImpl implements MemberService {
         if(tbMember.getEmail()==null||!tbMember.getEmail().equals(email)){
             newTbMember=getMemberByEmail(email);
         }
+        newTbMember.setPassword("");
         return newTbMember;
     }
 
@@ -283,6 +298,7 @@ public class MemberServiceImpl implements MemberService {
         if(tbMember.getPhone()==null||!tbMember.getPhone().equals(phone)){
             newTbMember=getMemberByPhone(phone);
         }
+        newTbMember.setPassword("");
         return newTbMember;
     }
 
@@ -294,6 +310,7 @@ public class MemberServiceImpl implements MemberService {
         if(tbMember.getUsername()==null||!tbMember.getUsername().equals(username)){
             newTbMember=getMemberByUsername(username);
         }
+        newTbMember.setPassword("");
         return newTbMember;
     }
 }

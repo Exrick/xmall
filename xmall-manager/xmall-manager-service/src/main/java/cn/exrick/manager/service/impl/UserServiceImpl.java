@@ -317,6 +317,7 @@ public class UserServiceImpl implements UserService {
             while (it.hasNext()){
                 names+=it.next()+" ";
             }
+            tbUser.setPassword("");
             tbUser.setRoleNames(names);
         }
         result.setData(list);
@@ -393,6 +394,7 @@ public class UserServiceImpl implements UserService {
         if(tbUser==null){
             throw new XmallException("通过ID获取用户失败");
         }
+        tbUser.setPassword("");
         return tbUser;
     }
 

@@ -76,7 +76,7 @@
         </div>
         <div class="row cl">
             <div class="col-9 col-offset-2">
-                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;保存并提交&nbsp;&nbsp;">
+                <input id="saveButton" class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;保存并提交&nbsp;&nbsp;">
             </div>
         </div>
     </form>
@@ -145,6 +145,8 @@
 //                layer.alert('请点击选择父节点分类! ', {title: '错误信息',icon: 0});
 //                return;
 //            }
+            $("#saveButton").val("保存中...");
+            $("#saveButton").attr("disabled","disabled");
             $(form).ajaxSubmit({
                 url: "/item/cat/add",
                 type: "POST",
@@ -155,10 +157,14 @@
                         var index = parent.layer.getFrameIndex(window.name);
                         parent.layer.close(index);
                     }else{
+                        $("#saveButton").val("保存并发布");
+                        $("#saveButton").removeAttr("disabled");
                         layer.alert('添加失败! '+data.message, {title: '错误信息',icon: 2});
                     }
                 },
                 error:function(XMLHttpRequest) {
+                    $("#saveButton").val("保存并发布");
+                    $("#saveButton").removeAttr("disabled");
                     layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 }
             });

@@ -1,9 +1,10 @@
 # XMall
-[![AUR](https://img.shields.io/aur/license/yaourt.svg)](https://github.com/Exrick/xmall/blob/master/License.md)
+[![AUR](https://img.shields.io/aur/license/yaourt.svg)](https://github.com/Exrick/xmall/blob/master/License)
 [![](https://img.shields.io/badge/Author-Exrick-orange.svg)](http://blog.exrick.cn)
 [![](https://img.shields.io/badge/version-1.0-brightgreen.svg)](https://github.com/Exrick/xmall)
 [![GitHub stars](https://img.shields.io/github/stars/Exrick/xmall.svg?style=social&label=Stars)](https://github.com/Exrick/xmall)
 [![GitHub forks](https://img.shields.io/github/forks/Exrick/xmall.svg?style=social&label=Fork)](https://github.com/Exrick/xmall)
+### 项目即将部署，敬请期待！
 ### 基于SOA架构的分布式购物电商商城
 - [x] 后台管理系统：管理商品、订单、类目、商品规格属性、用户、权限、系统统计、系统日志以及前台内容等功能
 - [x] 前台系统：用户可以在前台系统中进行注册、登录、浏览商品、首页、下单等操作
@@ -25,8 +26,10 @@
 ### 前台页面为基于Vue的独立项目 请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库查看
 
 ### 前端所用技术
-
-- 后台页面
+- 后台页面(新 待开发)
+    - [ANT DESIGN PRO](https://pro.ant.design/index-cn)：蚂蚁金服开箱即用中台前端
+    - React + dva + G2 + ANTD + ES2015+
+- 后台页面(旧)
     - 感谢 [H-ui](http://www.h-ui.net/)、[FlatLab](https://github.com/Exrick/xmall/blob/master/study/FlatLab.md) 提供静态页面支持
     - [Ztree](http://www.treejs.cn/v3/main.php#_zTreeInfo)：jQuery树插件
     - [DataTables](http://www.datatables.club/)：jQuery表格插件

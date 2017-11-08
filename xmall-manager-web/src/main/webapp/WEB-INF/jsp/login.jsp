@@ -85,7 +85,7 @@
         layer.alert('体验测试账号密码：test | test', {
             icon: 4,
             title: "提示"
-        })
+        });
     }
     
     function login() {
@@ -130,6 +130,27 @@
             }
         });
     }
+
+    $.ajax({
+        url:"/sys/base",
+        type: 'GET',
+        success:function (data) {
+            if(data.success!=true){
+                layer.alert(data.message,{title: '错误信息',icon: 2});
+                return;
+            }
+            if(data.result.hasLogNotice==1){
+                layer.alert(data.result.logNotice, {
+                    title: "通知"
+                });
+            }
+        },
+        error:function(XMLHttpRequest){
+            if(XMLHttpRequest.status!=200){
+                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+            }
+        }
+    });
 </script>
 </body>
 </html>

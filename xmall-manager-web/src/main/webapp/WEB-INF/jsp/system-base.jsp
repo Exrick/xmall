@@ -96,6 +96,44 @@
             </div>
         </div>
         <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">登录通知开关：</label>
+            <div class="formControls col-xs-6 col-sm-6 skin-minimal">
+                <div class="radio-box">
+                    <input name="hasLogNotice" value="1" type="radio" id="logYes" >
+                    <label for="logYes">开</label>
+                </div>
+                <div class="radio-box">
+                    <input name="hasLogNotice" type="radio" id="logNo" value="0" >
+                    <label for="logNo">关</label>
+                </div>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">登录通知：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <textarea id="logNotice" name="logNotice" class="textarea"></textarea>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">欢迎通知开关：</label>
+            <div class="formControls col-xs-6 col-sm-6 skin-minimal">
+                <div class="radio-box">
+                    <input name="hasAllNotice" value="1" type="radio" id="allYes" >
+                    <label for="allYes">开</label>
+                </div>
+                <div class="radio-box">
+                    <input name="hasAllNotice" type="radio" id="allNo" value="0" >
+                    <label for="allNo">关</label>
+                </div>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">欢迎页通知：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <textarea id="allNotice" name="allNotice" class="textarea"></textarea>
+            </div>
+        </div>
+        <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">公告：</label>
             <div class="formControls col-xs-8 col-sm-9">
                 <textarea id="notice" name="notice" style="width:100%;visibility:hidden;"></textarea>
@@ -132,12 +170,16 @@
 <script charset="utf-8" src="lib/kindeditor/lang/zh-CN.js"></script>
 <script charset="utf-8" src="lib/kindeditor/plugins/code/prettify.js"></script>
 <script type="text/javascript">
-    $(function(){
+    function radioCheck(){
         $('.skin-minimal input').iCheck({
             checkboxClass: 'icheckbox-blue',
             radioClass: 'iradio-blue',
             increaseArea: '20%'
         });
+    }
+
+    $(function(){
+        radioCheck();
         $("#tab-system").Huitab({
             index:0
         });
@@ -151,7 +193,7 @@
             uploadJson : '/kindeditor/imageUpload',
             fileManagerJson : '/kindeditor/imageUpload',
             allowFileManager : false,
-            height : '400px',
+            height : '250px',
             afterCreate : function() {
                 var self = this;
                 K.ctrl(document, 13, function() {
@@ -183,12 +225,28 @@
                 $("#copyright").val(data.result.copyright);
                 $("#countCode").val(data.result.countCode);
                 $("#frontUrl").val(data.result.frontUrl);
+                $("#logNotice").val(data.result.logNotice);
+                $("#allNotice").val(data.result.allNotice);
+                if(data.result.hasLogNotice==1){
+                    $("#logYes").attr('checked', 'checked');
+                    radioCheck();
+                }else if(data.result.hasLogNotice==0){
+                    $("#logNo").attr('checked', 'checked');
+                    radioCheck();
+                }
+                if(data.result.hasAllNotice==1){
+                    $("#allYes").attr('checked', 'checked');
+                    radioCheck();
+                }else if(data.result.hasAllNotice==0){
+                    $("#allNo").attr('checked', 'checked');
+                    radioCheck();
+                }
                 htmlData1=data.result.notice;
                 KindEditor.html('#notice', htmlData1);
             },
             error:function(XMLHttpRequest){
                 if(XMLHttpRequest.status!=200){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 }
             }
         });
@@ -200,7 +258,7 @@
             uploadJson : '/kindeditor/imageUpload',
             fileManagerJson : '/kindeditor/imageUpload',
             allowFileManager : false,
-            height : '400px',
+            height : '250px',
             afterCreate : function() {
                 var self = this;
                 K.ctrl(document, 13, function() {
@@ -228,7 +286,7 @@
             },
             error:function(XMLHttpRequest){
                 if(XMLHttpRequest.status!=200){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 }
             }
         });

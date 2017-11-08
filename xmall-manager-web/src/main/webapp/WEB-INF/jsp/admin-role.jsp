@@ -41,7 +41,7 @@
                         <th width="25"><input type="checkbox" value="" name=""></th>
                         <th width="40">ID</th>
                         <th width="200">角色名</th>
-                        <th>拥有权限</th>
+                        <th width="600">拥有权限</th>
                         <th width="300">描述</th>
                         <th width="70">操作</th>
                     </tr>

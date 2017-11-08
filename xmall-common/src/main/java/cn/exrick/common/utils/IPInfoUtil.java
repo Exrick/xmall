@@ -79,8 +79,13 @@ public class IPInfoUtil {
         if(null != ip){
             String url = GET_WEATHER + ip;
             String json=HttpUtil.sendGet(url);
-            IpWeatherResult weather=new Gson().fromJson(json,IpWeatherResult.class);
-            String result=weather.getResult().get(0).getCity()+" "+weather.getResult().get(0).getDistrct();
+            String result="未知";
+            try{
+                IpWeatherResult weather=new Gson().fromJson(json,IpWeatherResult.class);
+                result=weather.getResult().get(0).getCity()+" "+weather.getResult().get(0).getDistrct();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
             return result;
         }
         return null;

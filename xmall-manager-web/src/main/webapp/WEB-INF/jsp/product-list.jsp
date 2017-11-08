@@ -330,25 +330,7 @@
         });
         layer.full(index);
     }
-    /*产品-审核*/
-    function product_shenhe(obj,id){
-        layer.confirm('审核文章？', {
-                btn: ['通过','不通过'],
-                shade: false
-            },
-            function(){
-                $(obj).parents("tr").find(".td-manage").prepend('<a class="c-primary" onClick="product_start(this,id)" href="javascript:;" title="申请上线">申请上线</a>');
-                $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
-                $(obj).remove();
-                layer.msg('已发布', {icon:6,time:1000});
-            },
-            function(){
-                $(obj).parents("tr").find(".td-manage").prepend('<a class="c-primary" onClick="product_shenqing(this,id)" href="javascript:;" title="申请上线">申请上线</a>');
-                $(obj).parents("tr").find(".td-status").html('<span class="label label-danger radius">未通过</span>');
-                $(obj).remove();
-                layer.msg('未通过', {icon:5,time:1000});
-            });
-    }
+
     /*产品-下架*/
     function product_stop(obj,id){
         layer.confirm('确认要下架ID为\''+id+'\'的商品吗？',{icon:0},function(index){
@@ -357,6 +339,10 @@
                 url: '/item/stop/'+id,
                 dataType: 'json',
                 success: function(data){
+                    if(data.success!=true){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
+                    }
                     refresh();
                     layer.msg('已下架!',{icon: 5,time:1000});
                 },
@@ -376,6 +362,10 @@
                 url: '/item/start/'+id,
                 dataType: 'json',
                 success: function(data){
+                    if(data.success!=true){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
+                    }
                     refresh();
                     layer.msg('已发布!',{icon: 6,time:1000});
                 },
@@ -384,13 +374,6 @@
                 }
             });
         });
-    }
-
-    /*产品-申请上线*/
-    function product_shenqing(obj,id){
-        $(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">待审核</span>');
-        $(obj).parents("tr").find(".td-manage").html("");
-        layer.msg('已提交申请，耐心等待审核!', {icon: 1,time:2000});
     }
 
     /*产品-编辑*/
@@ -420,6 +403,10 @@
                 url: '/item/del/'+id,
                 dataType: 'json',
                 success: function(data){
+                    if(data.success!=true){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
+                    }
                     product_count();
                     refresh();
                     layer.msg('已删除!',{icon:1,time:1000});

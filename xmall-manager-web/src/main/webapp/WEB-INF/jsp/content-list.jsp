@@ -257,7 +257,7 @@
         });
         layer.full(index);
     }
-    /*产品-删除*/
+    /*内容-删除*/
     function product_del(obj,id){
         layer.confirm('确认要删除ID为\''+id+'\'的商品吗？',{icon:0},function(index){
             $.ajax({
@@ -265,6 +265,10 @@
                 url: '/content/del/'+id,
                 dataType: 'json',
                 success: function(data){
+                    if(data.success!=true){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
+                    }
                     refresh();
                     layer.msg('已删除!',{icon:1,time:1000});
                 },
@@ -295,6 +299,12 @@
                         type: 'DELETE',
                         url: '/content/del/'+cks[i].value,
                         dataType: 'json',
+                        success:function(data){
+                            if(data.success!=true){
+                                layer.alert(data.message,{title: '错误信息',icon: 2});
+                                return ;
+                            }
+                        },
                         error:function(XMLHttpRequest){
                             layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                         }

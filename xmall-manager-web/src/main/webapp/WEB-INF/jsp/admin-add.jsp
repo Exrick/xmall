@@ -175,7 +175,13 @@
             messages: {
                 username: {
                     remote: "该用户名已被注册"
-                }
+                },
+                phone: {
+                    remote: "该手机号已被注册"
+                },
+                email: {
+                    remote: "该邮箱已被注册"
+                },
             },
             onkeyup:false,
             focusCleanup:false,

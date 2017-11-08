@@ -185,13 +185,13 @@
             $("#saveButton").attr("disabled","disabled");
             if(images==null){
                 layer.alert('请上传商品展示缩略图! ', {title: '错误信息',icon: 0});
-                $("#saveButton").val("保存并发布");
+                $("#saveButton").html("保存并发布");
                 $("#saveButton").removeAttr("disabled");
                 return;
             }
             editor.sync();
             $(form).ajaxSubmit({
-                url: "/item/add/",
+                url: "/item/add",
                 type: "POST",
                 success: function(data) {
                     if(data.success==true){
@@ -211,12 +211,12 @@
                         }
                     }else{
                         layer.alert(data.message, {title: '错误信息',icon: 2});
-                        $("#saveButton").val("保存并发布");
+                        $("#saveButton").html("保存并发布");
                         $("#saveButton").removeAttr("disabled");
                     }
                 },
                 error:function(XMLHttpRequest) {
-                    $("#saveButton").val("保存并发布");
+                    $("#saveButton").html("保存并发布");
                     $("#saveButton").removeAttr("disabled");
                     layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 }

@@ -176,6 +176,10 @@
                 url: '/member/start/'+id,
                 dataType: 'json',
                 success: function(data){
+                    if(data.success!=true){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return ;
+                    }
                     memberRemove_count();
                     refresh();
                     layer.msg('已还原!',{icon: 6,time:1000});
@@ -195,6 +199,10 @@
                 url: '/member/del/'+id,
                 dataType: 'json',
                 success: function(data){
+                    if(data.success!=true){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return ;
+                    }
                     memberRemove_count();
                     refresh();
                     layer.msg('已删除!',{icon:1,time:1000});
@@ -225,6 +233,12 @@
                         type: 'DELETE',
                         url: '/member/del/'+cks[i].value,
                         dataType: 'json',
+                        success:function(data){
+                            if(data.success!=true){
+                                layer.alert(data.message,{title: '错误信息',icon: 2});
+                                return;
+                            }
+                        },
                         error:function(XMLHttpRequest){
                             layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                         }
@@ -256,6 +270,12 @@
                         type: 'PUT',
                         url: '/member/start/'+cks[i].value,
                         dataType: 'json',
+                        success:function(data){
+                            if(data.success!=true){
+                                layer.alert(data.message,{title: '错误信息',icon: 2});
+                                return;
+                            }
+                        },
                         error:function(XMLHttpRequest){
                             layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                         }
