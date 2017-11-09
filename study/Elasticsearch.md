@@ -31,11 +31,11 @@ Elasticsearch也使用Java开发并使用Lucene作为其核心来实现所有索
 
 - [官方下载地址](https://www.elastic.co/downloads/elasticsearch)
 
-- 解压安装包 `# tar zxvf elasticsearch-5.2.0.tar.gz`
+- 解压安装包 `# tar zxvf elasticsearch-5.6.2.tar.gz`
 
 - 运行elasticsearch脚本启动
 
-    `# cd /elasticsearch-5.2.0/bin`
+    `# cd /elasticsearch-5.6.2/bin`
 
     `# ./elasticsearch`
 
@@ -137,7 +137,7 @@ npm run start
 
 - 打开浏览器输入：IP:9100
 
-- 正常的话可以看到已经连接了ES，但是看不到连接信息，这时候需要在在 es 的 elasticsearch.ym 里添加如下配置：
+- 正常的话可以看到已经连接了ES，但是看不到连接信息，这时候需要在在 es 的 elasticsearch.yml 里添加如下配置：
 
     `http.cors.enabled: true`
 
