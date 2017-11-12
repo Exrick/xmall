@@ -18,8 +18,8 @@ import java.util.HashMap;
  */
 public class GeetestLib {
 
-	public static final String id = "fe8371f3c7f748bad58c2d1d9b110735";
-	public static final String key = "143c2fbe5d56de0e3f304dcaad56f210";
+	public static final String id = "你的id";
+	public static final String key = "你的key";
 	public static final boolean newfailback = true;
 
 	protected final String verName = "4.0";

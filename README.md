@@ -86,7 +86,7 @@
 ### 本地开发运行部署
 - 下载zip直接解压或安装git后执行克隆命令 `git clone https://github.com/Exrick/xmall.git`
 - 依赖安装：[ZooKeeper](https://github.com/Exrick/xmall/blob/master/study/Zookeeper.md)、[Redis](https://github.com/Exrick/xmall/blob/master/study/Redis.md)、[ActiveMQ](https://github.com/Exrick/xmall/blob/master/study/ActiveMQ.md)、[Elasticsearch](https://github.com/Exrick/xmall/blob/master/study/Elasticsearch.md)
-- 修改各依赖相应IP配置(默认本地127.0.0.1)，以及七牛云、极验配置等
+- 修改各依赖相应IP配置(默认本地127.0.0.1)，以及七牛云、极验配置在 `xmall-common - utils` 中找到修改
 - [Maven安装和在IDEA中配置](https://github.com/Exrick/xmall/blob/master/study/Maven.md)
 - 使用IDEA([破解/免费注册](http://idea.lanyus.com/)) `File-Open` 直接打开xmall项目，点击右下角 `Import Changes` 等待安装完依赖即可
 - MySQL数据库新建 `xmall` 数据库，运行sql文件，注意在 `xmall-manager-service/resources/conf/db.properties` 中修改你的数据库连接配置

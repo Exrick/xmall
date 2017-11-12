@@ -10,57 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4f3498c-c7a8-433e-85bb-4c00387d3dab" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_content_service_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_content_service_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_front_web_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_front_web_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_service_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_service_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_web_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_manager_web_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_search_service_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_search_service_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_sso_service_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_sso_service_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/study/Elasticsearch.md" afterPath="$PROJECT_DIR$/study/Elasticsearch.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-common/pom.xml" afterPath="$PROJECT_DIR$/xmall-common/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-common/xmall-common.iml" afterPath="$PROJECT_DIR$/xmall-common/xmall-common.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-interface/xmall-content-interface.iml" afterPath="$PROJECT_DIR$/xmall-content/xmall-content-interface/xmall-content-interface.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-redis.xml" afterPath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-redis.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-service.xml" afterPath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-service.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-service/xmall-content-service.iml" afterPath="$PROJECT_DIR$/xmall-content/xmall-content-service/xmall-content-service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-content/xmall-content.iml" afterPath="$PROJECT_DIR$/xmall-content/xmall-content.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-front-web/pom.xml" afterPath="$PROJECT_DIR$/xmall-front-web/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/MemberController.java" afterPath="$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/MemberController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-front-web/src/main/resources/spring/springmvc.xml" afterPath="$PROJECT_DIR$/xmall-front-web/src/main/resources/spring/springmvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-front-web/xmall-front-web.iml" afterPath="$PROJECT_DIR$/xmall-front-web/xmall-front-web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/UserController.java" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/resources/spring/springmvc.xml" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/resources/spring/springmvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/login.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/refresh-index.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/refresh-index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/xmall-manager-web.iml" afterPath="$PROJECT_DIR$/xmall-manager-web/xmall-manager-web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/xmall-manager-dao.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/xmall-manager-dao.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/src/main/java/cn/exrick/manager/service/OrderService.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/src/main/java/cn/exrick/manager/service/OrderService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/xmall-manager-interface.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/xmall-manager-interface.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/xmall-manager-pojo.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/xmall-manager-pojo.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/service/impl/OrderServiceImpl.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/service/impl/OrderServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-activemq.xml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-activemq.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-redis.xml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-redis.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-service.xml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/spring/applicationContext-service.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/xmall-manager-service.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/xmall-manager-service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager.iml" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-parent/pom.xml" afterPath="$PROJECT_DIR$/xmall-parent/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-search/xmall-search-interface/xmall-search-interface.iml" afterPath="$PROJECT_DIR$/xmall-search/xmall-search-interface/xmall-search-interface.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/java/cn/exrick/search/service/impl/SearchItemServiceImpl.java" afterPath="$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/java/cn/exrick/search/service/impl/SearchItemServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/java/cn/exrick/search/service/impl/SearchServiceImpl.java" afterPath="$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/java/cn/exrick/search/service/impl/SearchServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/resources/spring/applicationContext-activemq.xml" afterPath="$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/resources/spring/applicationContext-activemq.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/resources/spring/applicationContext-dao.xml" afterPath="$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/resources/spring/applicationContext-dao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/resources/spring/applicationContext-service.xml" afterPath="$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/resources/spring/applicationContext-service.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-search/xmall-search-service/xmall-search-service.iml" afterPath="$PROJECT_DIR$/xmall-search/xmall-search-service/xmall-search-service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-search/xmall-search.iml" afterPath="$PROJECT_DIR$/xmall-search/xmall-search.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/xmall-sso-interface.iml" afterPath="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/xmall-sso-interface.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/resources/spring/applicationContext-dao.xml" afterPath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/resources/spring/applicationContext-dao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/resources/spring/applicationContext-redis.xml" afterPath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/resources/spring/applicationContext-redis.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/resources/spring/applicationContext-service.xml" afterPath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/resources/spring/applicationContext-service.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/resources/spring/applicationContext-trans.xml" afterPath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/resources/spring/applicationContext-trans.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/xmall-sso-service.iml" afterPath="$PROJECT_DIR$/xmall-sso/xmall-sso-service/xmall-sso-service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-sso/xmall-sso.iml" afterPath="$PROJECT_DIR$/xmall-sso/xmall-sso.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/GeetestLib.java" afterPath="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/GeetestLib.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/QiniuUtil.java" afterPath="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/QiniuUtil.java" />
     </list>
     <ignored path="$PROJECT_DIR$/xmall-parent/target/" />
     <ignored path="$PROJECT_DIR$/xmall-common/target/" />
@@ -107,7 +58,28 @@
     <favorites_list name="xmall" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="QiniuUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/QiniuUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="38" column="47" lean-forward="false" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GeetestLib.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/GeetestLib.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="292">
+              <caret line="21" column="45" lean-forward="true" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -168,7 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/annotation/SystemControllerLog.java" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/annotation/SystemServiceLog.java" />
         <option value="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/ThreadPoolUtil.java" />
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/pojo/TbLog.java" />
@@ -196,7 +167,6 @@
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/src/main/java/cn/exrick/manager/service/OrderService.java" />
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/service/impl/OrderServiceImpl.java" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/task/CancelOrderJob.java" />
-        <option value="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/GeetestLib.java" />
         <option value="$PROJECT_DIR$/xmall-parent/pom.xml" />
         <option value="$PROJECT_DIR$/xmall-common/pom.xml" />
         <option value="$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/MemberController.java" />
@@ -219,6 +189,8 @@
         <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/resources/spring/applicationContext-redis.xml" />
         <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/resources/spring/applicationContext-service.xml" />
         <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/resources/spring/applicationContext-trans.xml" />
+        <option value="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/QiniuUtil.java" />
+        <option value="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/GeetestLib.java" />
       </list>
     </option>
   </component>
@@ -630,73 +602,42 @@
           <expand>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-search" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-search" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-search-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-search" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-search-service" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-common" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-search" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-search-service" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-common" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-search" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-search-service" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-common" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-search" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-search-service" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-common" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="search" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-search" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-search-service" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-common" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="search" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-search" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-search-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-search" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-search-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -2216,7 +2157,7 @@
       <workItem from="1510402754302" duration="639000" />
       <workItem from="1510451583899" duration="237000" />
       <workItem from="1510477290306" duration="2029000" />
-      <workItem from="1510488900504" duration="1846000" />
+      <workItem from="1510488900504" duration="2614000" />
     </task>
     <servers />
   </component>
@@ -2253,7 +2194,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1222842000" />
+    <option name="totallyTimeSpent" value="1223610000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2290,7 +2231,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35384616" sideWeight="0.4969651" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37633136" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31008583" sideWeight="0.4189349" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31008583" sideWeight="0.4189349" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26770386" sideWeight="0.5810651" order="2" side_tool="true" content_ui="tabs" />
@@ -2366,14 +2307,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/xmall-front-web/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -2532,6 +2465,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1809">
           <caret line="67" column="24" lean-forward="false" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2539,13 +2473,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="280" column="12" lean-forward="false" selection-start-line="280" selection-start-column="12" selection-end-line="280" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/GeetestLib.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -2746,6 +2673,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/QiniuUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="38" column="47" lean-forward="false" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/GeetestLib.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="21" column="45" lean-forward="true" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
           <folding />
         </state>
       </provider>
