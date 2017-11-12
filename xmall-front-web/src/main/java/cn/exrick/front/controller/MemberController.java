@@ -1,5 +1,6 @@
 package cn.exrick.front.controller;
 
+import cn.exrick.common.utils.GeetestLib;
 import cn.exrick.manager.dto.front.CommonDto;
 import cn.exrick.manager.dto.front.MemberLoginRegist;
 import cn.exrick.common.pojo.Result;
@@ -15,6 +16,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+
 @RestController
 @Api(description = "会员注册登录")
 public class MemberController {
@@ -27,6 +31,28 @@ public class MemberController {
     private RegisterService registerService;
     @Autowired
     private MemberService memberService;
+
+    @RequestMapping(value = "/member/geetestInit",method = RequestMethod.GET)
+    @ApiOperation(value = "极验初始化")
+    public String geetesrInit(HttpServletRequest request){
+
+        GeetestLib gtSdk = new GeetestLib(GeetestLib.id, GeetestLib.key,GeetestLib.newfailback);
+
+        String resStr = "{}";
+
+        //自定义参数,可选择添加
+        HashMap<String, String> param = new HashMap<String, String>();
+
+        //进行验证预处理
+        int gtServerStatus = gtSdk.preProcess(param);
+
+        //将服务器状态设置到session中
+        request.getSession().setAttribute(gtSdk.gtServerStatusSessionKey, gtServerStatus);
+
+        resStr = gtSdk.getResponseStr();
+
+        return resStr;
+    }
 
     @RequestMapping(value = "/member/login",method = RequestMethod.POST)
     @ApiOperation(value = "用户登录")

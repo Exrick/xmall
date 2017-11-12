@@ -31,6 +31,7 @@
           <element id="library" level="project" name="Maven: com.qiniu:happy-dns-java:0.1.6" />
           <element id="library" level="project" name="Maven: redis.clients:jedis:2.9.0" />
           <element id="library" level="project" name="Maven: org.apache.commons:commons-pool2:2.4.2" />
+          <element id="library" level="project" name="Maven: org.json:json:20171018" />
           <element id="archive" name="xmall-content-interface-1.0-SNAPSHOT.jar">
             <element id="module-output" name="xmall-content-interface" />
           </element>

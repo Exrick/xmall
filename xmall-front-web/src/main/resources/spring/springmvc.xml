@@ -21,7 +21,7 @@
 
     <!-- 引用dubbo服务 -->
     <dubbo:application name="xmall-front-web"/>
-    <dubbo:registry protocol="zookeeper" address="123.207.121.135:2181"/>
+    <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>
 
     <dubbo:reference interface="cn.exrick.content.service.ContentService" id="contentService" />
     <dubbo:reference interface="cn.exrick.search.service.SearchService" id="searchService" />

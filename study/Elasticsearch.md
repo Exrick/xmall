@@ -20,6 +20,8 @@ Elasticsearch也使用Java开发并使用Lucene作为其核心来实现所有索
 
 ### 推荐学习资源
 
+- [Elasticsearch Java API 手册](https://es.quanke.name/)
+
 - [Elasticsearch权威指南](http://www.learnes.net/index.html)
 
 ### 安装环境

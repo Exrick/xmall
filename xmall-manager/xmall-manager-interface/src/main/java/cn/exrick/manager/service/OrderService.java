@@ -26,4 +26,9 @@ public interface OrderService {
      * @return
      */
     int deleteOrder(String id);
+
+    /**
+     * 定时取消订单
+     */
+    int cancelOrder();
 }

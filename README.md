@@ -12,6 +12,7 @@
 - [x] 订单系统：提供下单、查询订单、修改订单状态、定时处理订单
 - [x] 搜索系统：提供商品的搜索功能
 - [x] 单点登录系统：为多个系统之间提供用户登录凭证以及查询登录用户的信息
+### 前台页面为基于Vue的独立项目 请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库查看
 
 ![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171022183452.jpg "登录界面")
 
@@ -24,8 +25,6 @@
 ![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171022183906.jpg "前台首页")
 
 ![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171109215656.jpg "ES分词搜索")
-
-### 前台页面为基于Vue的独立项目 请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库查看
 
 ### 前端所用技术
 - 后台页面(新 待开发)
@@ -61,7 +60,6 @@
 - [ActiveMQ](https://github.com/Exrick/xmall/blob/master/study/ActiveMQ.md)：消息队列
 - [Druid](http://druid.io/)：阿里高性能数据库连接池
 - Shiro：安全框架
-- Quartz：任务调度框架
 - [Swagger2](https://github.com/Exrick/xmall/blob/master/study/Swagger2.md)：Api文档生成
 - Docker
 - [Nginx](https://github.com/Exrick/xmall/blob/master/study/Nginx.md)
@@ -69,6 +67,7 @@
 - [Maven](https://github.com/Exrick/xmall/blob/master/study/Maven.md)
 - 第三方SDK
     - [七牛云文件存储服务](https://developer.qiniu.com/kodo/sdk/1239/java)
+    - [极验Test-button人机验证码](http://www.geetest.com/Test-button.html)
 - 第三方插件
     - [搜狐畅言评论插件](http://changyan.kuaizhan.com/)
 - 第三方接口
@@ -85,16 +84,19 @@
     - redis-3.0.0.gem：Redis集群搭建所需Ruby库
 - `generatorSqlmapCustom` 文件夹为 [Mybatis Generator](http://www.mybatis.org/generator/) 逆向生成工具，且已配置好maven插件
 ### 本地开发运行部署
-- 依赖：[ZooKeeper](https://github.com/Exrick/xmall/blob/master/study/Zookeeper.md)、[Redis](https://github.com/Exrick/xmall/blob/master/study/Redis.md)、[ActiveMQ](https://github.com/Exrick/xmall/blob/master/study/ActiveMQ.md)、[Elasticsearch](https://github.com/Exrick/xmall/blob/master/study/Elasticsearch.md)
 - 下载zip直接解压或安装git后执行克隆命令 `git clone https://github.com/Exrick/xmall.git`
+- 依赖安装：[ZooKeeper](https://github.com/Exrick/xmall/blob/master/study/Zookeeper.md)、[Redis](https://github.com/Exrick/xmall/blob/master/study/Redis.md)、[ActiveMQ](https://github.com/Exrick/xmall/blob/master/study/ActiveMQ.md)、[Elasticsearch](https://github.com/Exrick/xmall/blob/master/study/Elasticsearch.md)
+- 修改各依赖相应IP配置(默认本地127.0.0.1)，以及七牛云、极验配置等
 - [Maven安装和在IDEA中配置](https://github.com/Exrick/xmall/blob/master/study/Maven.md)
 - 使用IDEA([破解/免费注册](http://idea.lanyus.com/)) `File-Open` 直接打开xmall项目，点击右下角 `Import Changes` 等待安装完依赖即可
 - MySQL数据库新建 `xmall` 数据库，运行sql文件，注意在 `xmall-manager-service/resources/conf/db.properties` 中修改你的数据库连接配置
 - 按照依赖顺序分别在每个模块文件夹根目录执行 `mvn install` 命令
 - 项目需按照依赖顺序运行除 `xmall-parent` `xmall-common` 以外其它所有服务，且都已配置好Tomcat插件, 执行命令 `mvn tomcat7:run` 或在IDEA中使用插件(`View - Tool Buttons - 右侧菜单Maven Projects - tomcat7 - tomcat7:run`)运行即可
 - 后端管理系统端口8888 http://localhost:8888
-- 前端项目接口端口6666
+- 前端项目接口端口7777
 ### 技术疑问交流
 - 给作者项目Star或捐赠后可加入交流群 `475743731`，还可免费获取最新源码和 [UI框架](https://github.com/Exrick/xmall/blob/master/study/FlatLab.md) [![](http://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=7b60cec12ba93ebed7568b0a63f22e6e034c0d1df33125ac43ed753342ec6ce7)
 - 作者博客：[http://blog.exrick.cn](http://blog.exrick.cn)
+### 捐赠
+![](http://oweupqzdv.bkt.clouddn.com/FgwHSk1Rnd-8FKqNJhFSSdcq2QVB.png)
 

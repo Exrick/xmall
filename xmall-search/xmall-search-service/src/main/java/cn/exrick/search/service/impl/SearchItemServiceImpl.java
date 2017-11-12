@@ -6,9 +6,6 @@ import cn.exrick.search.service.SearchItemService;
 import cn.exrick.search.mapper.ItemMapper;
 import org.elasticsearch.action.bulk.BulkRequestBuilder;
 import org.elasticsearch.action.bulk.BulkResponse;
-import org.elasticsearch.action.delete.DeleteResponse;
-import org.elasticsearch.action.get.GetResponse;
-import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
@@ -23,6 +20,9 @@ import java.util.List;
 
 import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 
+/**
+ * @author Exrickx
+ */
 @Service
 public class SearchItemServiceImpl implements SearchItemService {
 
@@ -38,7 +38,7 @@ public class SearchItemServiceImpl implements SearchItemService {
 			Settings settings = Settings.builder()
 					.put("cluster.name", "xmall").build();
 			TransportClient client = new PreBuiltTransportClient(settings)
-					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("123.207.121.135"), 9300));
+					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("127.0.0.1"), 9300));
 
 			//批量添加
 			BulkRequestBuilder bulkRequest = client.prepareBulk();

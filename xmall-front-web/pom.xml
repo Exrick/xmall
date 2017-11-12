@@ -130,7 +130,7 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
         </dependency>
-        <!--七牛云图片上传SDK-->
+        <!-- 七牛云图片上传SDK -->
         <dependency>
             <groupId>com.qiniu</groupId>
             <artifactId>qiniu-java-sdk</artifactId>
@@ -146,7 +146,7 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <configuration>
                     <path>/</path>
-                    <port>6666</port>
+                    <port>7777</port>
                     <uriEncoding>UTF-8</uriEncoding>
                 </configuration>
             </plugin>

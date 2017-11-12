@@ -5,7 +5,6 @@ import cn.exrick.common.pojo.SearchItem;
 import cn.exrick.common.pojo.SearchResult;
 import cn.exrick.search.service.SearchService;
 import com.google.gson.Gson;
-import org.apache.lucene.queryparser.classic.QueryParser;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.transport.TransportClient;
@@ -24,8 +23,7 @@ import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.elasticsearch.index.query.QueryBuilders.matchPhraseQuery;
-import static org.elasticsearch.index.query.QueryBuilders.termQuery;
+import static org.elasticsearch.index.query.QueryBuilders.matchQuery;
 
 /**
  * @author Exrickx
@@ -40,12 +38,12 @@ public class SearchServiceImpl implements SearchService {
 			Settings settings = Settings.builder()
 					.put("cluster.name", "xmall").build();
 			TransportClient client = new PreBuiltTransportClient(settings)
-					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("123.207.121.135"), 9300));
+					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("127.0.0.1"), 9300));
 
 			SearchResult searchResult=new SearchResult();
 
 			//设置查询条件
-			QueryBuilder qb = matchPhraseQuery("productName",key);
+			QueryBuilder qb = matchQuery("productName",key);
 			//设置分页
 			if (page <=0 ) page =1;
 			int start=(page - 1) * size;
@@ -139,7 +137,7 @@ public class SearchServiceImpl implements SearchService {
 				}
 			}
 			searchResult.setItemList(list);
-			client.close();
+			//client.close();
 
 			return searchResult;
 		}catch (Exception e){

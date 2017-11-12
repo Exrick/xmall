@@ -80,7 +80,7 @@
 
     $.ajax({
         type: 'GET',
-        url: 'http://123.207.121.135:9200',
+        url: 'http://127.0.0.1:9200',
         dataType: 'json',
         success: function(data) {
             $("#cluster_name").val(data.cluster_name);
@@ -94,7 +94,7 @@
 
     $.ajax({
         type: 'GET',
-        url: 'http://123.207.121.135:9200/_search',
+        url: 'http://127.0.0.1:9200/_search',
         dataType: 'json',
         success: function(data) {
             $("#num").val(data.hits.total);
