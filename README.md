@@ -14,7 +14,7 @@
 - [x] 搜索系统：提供商品的搜索功能
 - [x] 单点登录系统：为多个系统之间提供用户登录凭证以及查询登录用户的信息
 
-![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171022183452.jpg "登录界面")
+![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171112203638.jpg "登录界面")
 
 ![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171022174034.jpg "后台首页")
 
