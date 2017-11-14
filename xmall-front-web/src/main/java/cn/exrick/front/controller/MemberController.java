@@ -56,9 +56,45 @@ public class MemberController {
 
     @RequestMapping(value = "/member/login",method = RequestMethod.POST)
     @ApiOperation(value = "用户登录")
-    public Result<Member> login(@RequestBody MemberLoginRegist memberLoginRegist){
+    public Result<Member> login(@RequestBody MemberLoginRegist memberLoginRegist,
+                                HttpServletRequest request){
 
-        Member member=loginService.userLogin(memberLoginRegist.getUserName(), memberLoginRegist.getUserPwd());
+        //极验验证
+        GeetestLib gtSdk = new GeetestLib(GeetestLib.id, GeetestLib.key,GeetestLib.newfailback);
+
+        String challenge=memberLoginRegist.getChallenge();
+        String validate=memberLoginRegist.getValidate();
+        String seccode=memberLoginRegist.getSeccode();
+
+        //从session中获取gt-server状态
+        int gt_server_status_code = (Integer) request.getSession().getAttribute(gtSdk.gtServerStatusSessionKey);
+
+        //自定义参数,可选择添加
+        HashMap<String, String> param = new HashMap<String, String>();
+
+        int gtResult = 0;
+
+        if (gt_server_status_code == 1) {
+            //gt-server正常，向gt-server进行二次验证
+            gtResult = gtSdk.enhencedValidateRequest(challenge, validate, seccode, param);
+            System.out.println(gtResult);
+        } else {
+            // gt-server非正常情况下，进行failback模式验证
+            System.out.println("failback:use your own server captcha validate");
+            gtResult = gtSdk.failbackValidateRequest(challenge, validate, seccode);
+            System.out.println(gtResult);
+        }
+
+        Member member=new Member();
+        if (gtResult == 1) {
+            // 验证成功
+            member=loginService.userLogin(memberLoginRegist.getUserName(), memberLoginRegist.getUserPwd());
+        }
+        else {
+            // 验证失败
+            member.setState(0);
+            member.setMessage("验证失败");
+        }
         return new ResultUtil<Member>().setData(member);
     }
 
@@ -80,15 +116,49 @@ public class MemberController {
 
     @RequestMapping(value = "/member/register",method = RequestMethod.POST)
     @ApiOperation(value = "用户注册")
-    public Result<Object> register(@RequestBody MemberLoginRegist memberLoginRegist){
+    public Result<Object> register(@RequestBody MemberLoginRegist memberLoginRegist,
+                                   HttpServletRequest request){
 
-        int result=registerService.register(memberLoginRegist.getUserName(), memberLoginRegist.getUserPwd());
-        if(result==0){
-            return new ResultUtil<Object>().setErrorMsg("该用户名已被注册");
-        }else if(result==-1){
-            return new ResultUtil<Object>().setErrorMsg("用户名密码不能为空");
+        //极验验证
+        GeetestLib gtSdk = new GeetestLib(GeetestLib.id, GeetestLib.key,GeetestLib.newfailback);
+
+        String challenge=memberLoginRegist.getChallenge();
+        String validate=memberLoginRegist.getValidate();
+        String seccode=memberLoginRegist.getSeccode();
+
+        //从session中获取gt-server状态
+        int gt_server_status_code = (Integer) request.getSession().getAttribute(gtSdk.gtServerStatusSessionKey);
+
+        //自定义参数,可选择添加
+        HashMap<String, String> param = new HashMap<String, String>();
+
+        int gtResult = 0;
+
+        if (gt_server_status_code == 1) {
+            //gt-server正常，向gt-server进行二次验证
+            gtResult = gtSdk.enhencedValidateRequest(challenge, validate, seccode, param);
+            System.out.println(gtResult);
+        } else {
+            // gt-server非正常情况下，进行failback模式验证
+            System.out.println("failback:use your own server captcha validate");
+            gtResult = gtSdk.failbackValidateRequest(challenge, validate, seccode);
+            System.out.println(gtResult);
         }
-        return new ResultUtil<Object>().setData(result);
+
+        if (gtResult == 1) {
+            // 验证成功
+            int result=registerService.register(memberLoginRegist.getUserName(), memberLoginRegist.getUserPwd());
+            if(result==0){
+                return new ResultUtil<Object>().setErrorMsg("该用户名已被注册");
+            }else if(result==-1){
+                return new ResultUtil<Object>().setErrorMsg("用户名密码不能为空");
+            }
+            return new ResultUtil<Object>().setData(result);
+        }
+        else {
+            // 验证失败
+            return new ResultUtil<Object>().setErrorMsg("验证失败");
+        }
     }
 
     @RequestMapping(value = "/member/imgaeUpload",method = RequestMethod.POST)
