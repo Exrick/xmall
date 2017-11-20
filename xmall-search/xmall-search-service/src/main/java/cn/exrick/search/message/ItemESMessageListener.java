@@ -60,6 +60,14 @@ public class ItemESMessageListener implements MessageListener {
 			if(text[0].equals("add")){
 				//根据商品id查询商品信息
 				SearchItem searchItem = itemMapper.getItemById(itemId);
+				String image=searchItem.getProductImageBig();
+				if (image != null && !"".equals(image)) {
+					String[] strings = image.split(",");
+					image=strings[0];
+				}else{
+					image="";
+				}
+				searchItem.setProductImageBig(image);
 				IndexResponse indexResponse = client.prepareIndex(ITEM_INDEX, ITEM_TYPE, String.valueOf(searchItem.getProductId()))
 						.setSource(jsonBuilder()
 								.startObject()

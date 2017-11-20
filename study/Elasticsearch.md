@@ -49,7 +49,7 @@ Elasticsearch也使用Java开发并使用Lucene作为其核心来实现所有索
 
     `Java HotSpot(TM) 64-Bit Server VM warning: INFO: os::commit_memory(0x0000000085330000, 2060255232, 0) failed; error='Cannot allocate memory' (errno=12)`
 
-- 因个人服务器只有1g内存，需配置 `elasticsearch/config/jvm.options`，只有根据服务器改小分配堆空间的最大值了([或者启用Swap交换分区](https://baike.baidu.com/item/Swap%E5%88%86%E5%8C%BA/7613378?fr=aladdin))：
+- 因个人服务器只有1g内存，需配置 `elasticsearch/config/jvm.options`，只有根据服务器改小分配堆空间的最大值了([或者启用Swap交换分区](https://github.com/Exrick/xmall/blob/master/study/Linux.md))：
 
 ```
 ################################################################

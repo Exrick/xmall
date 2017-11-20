@@ -17,6 +17,7 @@ import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 import org.elasticsearch.search.sort.SortOrder;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.net.InetAddress;
@@ -31,6 +32,9 @@ import static org.elasticsearch.index.query.QueryBuilders.matchQuery;
 @Service
 public class SearchServiceImpl implements SearchService {
 
+	@Value("${ES_CONNECT_IP}")
+	private String ES_CONNECT_IP;
+
 	@Override
 	public SearchResult search(String key, int page, int size,String sort,int priceGt,int priceLte) {
 
@@ -38,7 +42,7 @@ public class SearchServiceImpl implements SearchService {
 			Settings settings = Settings.builder()
 					.put("cluster.name", "xmall").build();
 			TransportClient client = new PreBuiltTransportClient(settings)
-					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("127.0.0.1"), 9300));
+					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(ES_CONNECT_IP), 9300));
 
 			SearchResult searchResult=new SearchResult();
 

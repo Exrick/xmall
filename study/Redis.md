@@ -15,8 +15,13 @@ Redis是c语言开发的，安装需要c语言的编译环境,如果没有gcc需
 - 前端启动：在redis的安装目录下直接启动redis-server
 `[root@localhost bin]# ./redis-server`
 
-- 后台启动：把 `/root/redis-3.0.0/redis.conf` 复制到 `/usr/local/redis/bin `目录下启动时添加配置文件 `[root@localhost redis-3.0.0]# cp redis.conf /usr/local/redis/bin/`
-    `[root@localhost bin]# ./redis-server redis.conf`
+- 后台启动：
+
+```
+把 /root/redis-3.0.0/redis.conf 复制到 /usr/local/redis/bin 目录下 cp redis.conf /usr/local/redis/bin/
+修改 redis.conf 文件 设置 daemonize yes
+启动时添加配置文件 ./redis-server redis.conf
+```
 - 关闭：`[root@localhost bin]# ./redis-cli shutdown`
 
 ### Redis-cli连接
@@ -27,6 +32,7 @@ Redis是c语言开发的，安装需要c语言的编译环境,如果没有gcc需
 
     -h：连接的服务器的地址
     -p：服务的端口号
+- 远程连接：注释掉 `redis.conf` 中 `bind 127.0.0.1` 设置 `protected-mode no` 重启redis
 
 ### Redis-cluster集群搭建
 由于容错机制，Redis集群中至少应该有三个节点。要保证集群的高可用，需要每个节点有一个备份机，因此，Redis集群至少需要6台服务器。
@@ -77,7 +83,6 @@ cd ..
 //修改脚本文件可执行权限
 [root@localhost redis-cluster]# chmod u+x start-all.sh
 ```
- 
 3. 执行脚本启动每个redis实例
 4. 使用ruby脚本搭建集群
 
@@ -86,6 +91,8 @@ cd ..
 5. 连接集群
 
     `[root@localhost redis-cluster]# redis01/redis-cli -p 7002 -c`
+6. 关闭集群
+    杀进程：`ps -aux|grep redis` `kill -9 进程ID`
 
 ### 踩坑解决问题
 - 重启服务器后重新启动ruby脚本报错

@@ -13,6 +13,7 @@ import org.elasticsearch.transport.client.PreBuiltTransportClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.net.InetAddress;
@@ -31,6 +32,9 @@ public class SearchItemServiceImpl implements SearchItemService {
 	@Autowired
 	private ItemMapper itemMapper;
 
+	@Value("${ES_CONNECT_IP}")
+	private String ES_CONNECT_IP;
+
 	@Override
 	public int importAllItems() {
 
@@ -38,7 +42,7 @@ public class SearchItemServiceImpl implements SearchItemService {
 			Settings settings = Settings.builder()
 					.put("cluster.name", "xmall").build();
 			TransportClient client = new PreBuiltTransportClient(settings)
-					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("127.0.0.1"), 9300));
+					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(ES_CONNECT_IP), 9300));
 
 			//批量添加
 			BulkRequestBuilder bulkRequest = client.prepareBulk();

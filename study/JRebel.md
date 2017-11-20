@@ -17,7 +17,7 @@ JRebel是一款热部署插件。当你的Java-Web项目在Tomcat中run/debug的
 
     [myJRebel注册地址](https://my.jrebel.com/register) 免费永久注册后获得激活码，注册过程需绑定Twitter或Facebook账号
 
-    免费在线翻墙浏览器[UZER.ME云应用](https://uzer.me/)，注册登录后打开火狐浏览器即可
+    免费在线翻墙浏览器 [UZER.ME云应用](https://uzer.me/) ，注册登录后打开火狐浏览器即可
 
     注册成功后获得激活码
 
@@ -33,8 +33,9 @@ JRebel是一款热部署插件。当你的Java-Web项目在Tomcat中run/debug的
 
 ### JRebel使用
 
-1. 添加Tomcat配置时，`VM option` 下方都勾选Update classes and resources
+1. 普通Spring Web应用添加Tomcat等服务器容器配置时，`VM option` 下方都勾选Update classes and resources，Spring Boot应用忽略此步骤
 
 2. 左下角勾选要使用热部署的项目模块，在IDEA上方菜单栏中找到JRebel按钮选择以JRebel启动项目
 
     ![](http://otabkoy17.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170906101532.png)
+3. 添加热部署的模块可在 `resource` 中看到 `rebel.xml` 配置文件，打开可看到其监听的文件夹，当然可根据自己需求修改
