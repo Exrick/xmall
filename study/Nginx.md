@@ -11,21 +11,10 @@
     - openssl `yum install -y openssl openssl-devel`
 3. 安装
     - 解压 `[root@localhost ~]# tar zxf nginx-1.8.0.tar.gz`
-    - 复制执行以下命令
-    `./configure \
-    --prefix=/usr/local/nginx \
-    --pid-path=/var/run/nginx/nginx.pid \
-    --lock-path=/var/lock/nginx.lock \
-    --error-log-path=/var/log/nginx/error.log \
-    --http-log-path=/var/log/nginx/access.log \
-    --with-http_gzip_static_module \
-    --http-client-body-temp-path=/var/temp/nginx/client \
-    --http-proxy-temp-path=/var/temp/nginx/proxy \
-    --http-fastcgi-temp-path=/var/temp/nginx/fastcgi \
-    --http-uwsgi-temp-path=/var/temp/nginx/uwsgi \
-    --http-scgi-temp-path=/var/temp/nginx/scgi`
-    - `[root@localhost ~]# make`
-    - `[root@localhost ~]# make install`
+    - 进入解压后文件夹复制执行以下命令
+    `./configure  --prefix=/usr/local/nginx  --sbin-path=/usr/local/nginx/sbin/nginx --conf-path=/usr/local/nginx/conf/nginx.conf --error-log-path=/var/log/nginx/error.log  --http-log-path=/var/log/nginx/access.log  --pid-path=/var/run/nginx/nginx.pid --lock-path=/var/lock/nginx.lock  --user=nginx --group=nginx --with-http_ssl_module --with-http_stub_status_module --with-http_gzip_static_module --http-client-body-temp-path=/var/tmp/nginx/client/ --http-proxy-temp-path=/var/tmp/nginx/proxy/ --http-fastcgi-temp-path=/var/tmp/nginx/fcgi/ --http-uwsgi-temp-path=/var/tmp/nginx/uwsgi --http-scgi-temp-path=/var/tmp/nginx/scgi --with-pcre`
+    - `[root@localhost nginx-1.8.0]# make`
+    - `[root@localhost nginx-1.8.0]# make install`
     - `[root@localhost sbin]# mkdir /var/temp/nginx/client -p`
     - 进入目录 `cd /usr/local/nginx/` 
     - 启动 `[root@localhost sbin]# ./nginx`
@@ -152,6 +141,16 @@ http {
 }
 ``` 
 ### 踩坑解决问题
+- [emerg]: getpwnam("nginx") failed
+
+    - 解决方法1：
+      在nginx.conf中 把user nobody的注释去掉既可
+    - 解决方法2：
+      错误的原因是没有创建nginx这个用户，应该在服务器系统中添加nginx用户组和用户nginx，如下命令：
+`/usr/sbin/groupadd -f nginx`
+`/usr/sbin/useradd -g nginx nginx`
+- [emerg] mkdir() "/var/temp/nginx/client" failed (2: No such file or directory)
+root下手动创建即可：`mkdir -p /var/temp/nginx/client`
 - 重启服务器后启动提示/var/run/nginx找不到
 ```
 nginx: [error] open() "/var/run/nginx.pid" failed (2: No such file or directory)

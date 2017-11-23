@@ -86,7 +86,7 @@
                     maxlength:16
                 },
                 money:{
-                    digits:true,
+                    number:true,
                     maxlength:10,
                     required:true,
                 }

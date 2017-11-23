@@ -1,16 +1,17 @@
 package cn.exrick.manager.pojo;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
-public class TbThanks implements Serializable{
+public class TbThanks implements Serializable {
     private Integer id;
 
     private String nickName;
 
     private String username;
 
-    private Long money;
+    private BigDecimal money;
 
     private String info;
 
@@ -50,11 +51,11 @@ public class TbThanks implements Serializable{
         this.username = username == null ? null : username.trim();
     }
 
-    public Long getMoney() {
+    public BigDecimal getMoney() {
         return money;
     }
 
-    public void setMoney(Long money) {
+    public void setMoney(BigDecimal money) {
         this.money = money;
     }
 

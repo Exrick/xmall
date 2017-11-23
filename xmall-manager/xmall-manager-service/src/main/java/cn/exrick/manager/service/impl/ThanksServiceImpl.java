@@ -85,7 +85,6 @@ public class ThanksServiceImpl implements ThanksService {
     @Override
     public int addThanks(TbThanks tbThanks) {
 
-
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         Date date = null;
         try {
