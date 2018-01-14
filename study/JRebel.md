@@ -33,7 +33,7 @@ JRebel是一款热部署插件。当你的Java-Web项目在Tomcat中run/debug的
 
 ### JRebel使用
 
-1. 普通Spring Web应用添加Tomcat等服务器容器配置时，`VM option` 下方都勾选Update classes and resources，Spring Boot应用忽略此步骤
+1. 普通Spring Web应用添加Tomcat等服务器容器配置时，`VM option` 下方都勾选Update classes and resources，Spring Boot项目忽略此步骤，但IDEA编译器需设置自动编译
 
 2. 左下角勾选要使用热部署的项目模块，在IDEA上方菜单栏中找到JRebel按钮选择以JRebel启动项目
 

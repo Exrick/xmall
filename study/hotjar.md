@@ -11,7 +11,7 @@
 
     ![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171119162100.jpg)
 
-- 将安装代码复制至你的html页面中后，访问一下你安装好的页面，然后点击 `I have installed the tracking code` 按钮，接下来就可以自定义使用各功能的(某些需付费接触限制)
+- 将安装代码复制至你的html页面中后，访问一下你安装好的页面，然后点击 `I have installed the tracking code` 按钮，接下来就可以自定义使用各功能的(某些需付费解除限制)
 - 下面以添加使用Incoming反馈为例，按照步骤设置反馈的位置、颜色、语言、提示等即可，很简单的，不认识英文的去先把四级过了，最后记得点击激活 `Active` 保存即可
 
     ![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171119162647.jpg)

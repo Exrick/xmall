@@ -148,10 +148,11 @@ npm run start
 ### 插件Elasticsearch-Analysis-IK安装
 
 [IK Analysis-GitHub官网](https://github.com/medcl/elasticsearch-analysis-ik)
-[预编译安装包下载](https://github.com/medcl/elasticsearch-analysis-ik/releases)(请下载对应Elasticsearch版本的IK插件)
+
+[预编译安装包下载](https://github.com/medcl/elasticsearch-analysis-ik/releases)(注意需下载对应Elasticsearch版本的IK插件)
+
 - 官网安装教程
-```
-解压预编译包 `elasticsearch-analysis-ik-{version}.zip` 后拷贝至elasticsearch安装目录plugins文件夹下重命名文件夹为ik `your-es-root/plugins/ik`
-```
+
+解压预编译包 `elasticsearch-analysis-ik-{version}.zip` 后拷贝至elasticsearch安装目录plugins文件夹下，重命名解压后的文件夹名为`ik`： `your-es-root/plugins/ik`
 
 - 重启Elasticsearch即可（关闭ES：杀进程：`ps -aux|grep elasticsearch`、`kill -9 进程ID号`

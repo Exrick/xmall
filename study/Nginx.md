@@ -140,6 +140,40 @@ http {
     ...
 }
 ``` 
+
+- 压缩文件
+```
+    gzip  on;
+    gzip_min_length 1k;
+    gzip_buffers 4 16k;
+    gzip_comp_level 9;
+    gzip_types text/plain application/x-javascript application/javascript text/css application/xml text/javascript application/x-httpd-php image/jpeg image/gif image/png eventsource script png;
+```
+
+- 解决代理IP地址
+```
+server {
+        listen       80;
+        server_name  xmall.exrick.cn;
+
+        location / {
+            proxy_pass   http://xmall;
+            index  index.html index.htm;
+	        proxy_set_header Host $host;
+	        proxy_set_header X-Real-IP $remote_addr;
+	        proxy_set_header REMOTE-HOST $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+
+        error_page  404              /50x.html;
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+
+    }
+```
 ### 踩坑解决问题
 - [emerg]: getpwnam("nginx") failed
 

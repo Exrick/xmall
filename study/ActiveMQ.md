@@ -18,3 +18,5 @@
 用户名：admin
 密码：admin
 ```
+
+登录用户名密码可在 `conf/jetty-realm.properties` 文件中修改

@@ -6,7 +6,7 @@ Redis是c语言开发的，安装需要c语言的编译环境,如果没有gcc需
 
 安装步骤：
 - 第一步：Redis的源码包上传到Linux
-- 第二步：解压缩: `tar -xvf redis-2.6.16.tar.gz -C /usr/local `
+- 第二步：解压缩: `tar -xvf redis-3.0.0.tar.gz -C /usr/local `
 - 第三步：编译 进入redis源码目录: `make` 
 - 第四步：安装: `make install PREFIX=/usr/local/redis`
 
@@ -33,7 +33,7 @@ Redis是c语言开发的，安装需要c语言的编译环境,如果没有gcc需
     -h：连接的服务器的地址
     -p：服务的端口号
 - 远程连接：注释掉 `redis.conf` 中 `bind 127.0.0.1` 设置 `protected-mode no` 重启redis
-
+- 设置密码：配置文件中添加 `requirepass 你的密码` 重启redis
 ### Redis-cluster集群搭建
 由于容错机制，Redis集群中至少应该有三个节点。要保证集群的高可用，需要每个节点有一个备份机，因此，Redis集群至少需要6台服务器。
 

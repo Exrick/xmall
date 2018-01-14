@@ -54,7 +54,7 @@
 
     Remove anonymous users? [Y/n] <– 是否删除匿名用户，建议y
 
-    Disallow root login remotely? [Y/n] <–是否禁止root远程登录，建议n
+    Disallow root login remotely? [Y/n] <–是否禁止root远程登录，建议y
 
     Remove test database and access to it? [Y/n] <– 是否删除test数据库，建议y
 
@@ -66,15 +66,15 @@
     - 授权
     ```
     //grant 普通 DBA 管理某个 MySQL 数据库的权限
-    grant all privileges on 你的某个db名 to 用户名
+    grant all privileges on 你的某个db名 to 用户名;
     //grant 高级 DBA 管理 MySQL 中所有数据库的权限 建议
-    grant all on *.* to 用户名
+    grant all on *.* to 用户名;
     //刷新权限
     flush privileges;­
     ```
     - 输入exit或Ctrl+c退出，重启MySQL：`service mariadb restart`
     - 设置开机启动：`systemctl enable mariadb`
-- Maven安装
+- Maven安装(可不用安装)
     - [官网](http://maven.apache.org/download.cgi) 找到较新版本下载地址：`wget http://mirror.bit.edu.cn/apache/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz`
     - 解压：`tar -zvxf apache-maven-3.5.2-bin.tar.gz`
     - 打开/etc/profile，配置环境变量，在末尾加入：
@@ -115,10 +115,12 @@
     wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
     ```
     - 生成缓存：`yum makecache`
-- 端口开放
-    - 以防火墙开放3306端口为例 `firewall-cmd --zone=public --add-port=3306/tcp --permanent`
+- 端口开放与关闭
+    - 以防火墙开放3306端口为例 `firewall-cmd --add-port=3306/tcp --permanent`
+    - 关闭3306端口为例 `firewall-cmd --remove-port=3306/udp --permanent`
     - 重启防火墙 `firewall-cmd --reload`
 - 防火墙
+    - 开启firewall：`systemctl start firewalld.service`
     - 停止firewall：`systemctl stop firewalld.service`
     - 禁止firewall开机启动：`systemctl disable firewalld.service`
     - 查看默认防火墙状态：`firewall-cmd --state`

@@ -12,22 +12,6 @@
     <artifactId>springfox-swagger-ui</artifactId>
     <version>2.6.1</version>
 </dependency>
-
-<dependency>  
-     <groupId>com.fasterxml.jackson.core</groupId>  
-     <artifactId>jackson-core</artifactId>  
-     <version>2.6.5</version>  
-</dependency>  
-<dependency>  
-     <groupId>com.fasterxml.jackson.core</groupId>  
-     <artifactId>jackson-databind</artifactId>  
-     <version>2.6.5</version>  
-</dependency>  
-<dependency>  
-     <groupId>com.fasterxml.jackson.core</groupId>  
-     <artifactId>jackson-annotations</artifactId>  
-     <version>2.6.5</version>  
-</dependency>
 ```
 
 2. Swagger的Java配置文件

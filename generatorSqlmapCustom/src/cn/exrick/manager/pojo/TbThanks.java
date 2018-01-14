@@ -1,5 +1,6 @@
 package cn.exrick.manager.pojo;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class TbThanks {
@@ -9,11 +10,19 @@ public class TbThanks {
 
     private String username;
 
-    private Long money;
+    private BigDecimal money;
 
     private String info;
 
     private Date date;
+
+    private String email;
+
+    private Integer state;
+
+    private String payType;
+
+    private String orderId;
 
     public Integer getId() {
         return id;
@@ -39,11 +48,11 @@ public class TbThanks {
         this.username = username == null ? null : username.trim();
     }
 
-    public Long getMoney() {
+    public BigDecimal getMoney() {
         return money;
     }
 
-    public void setMoney(Long money) {
+    public void setMoney(BigDecimal money) {
         this.money = money;
     }
 
@@ -61,5 +70,37 @@ public class TbThanks {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
+    }
+
+    public String getPayType() {
+        return payType;
+    }
+
+    public void setPayType(String payType) {
+        this.payType = payType == null ? null : payType.trim();
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId == null ? null : orderId.trim();
     }
 }

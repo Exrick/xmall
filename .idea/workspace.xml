@@ -10,12 +10,94 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4f3498c-c7a8-433e-85bb-4c00387d3dab" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbAddressMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbAddressMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbBaseMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbBaseMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbContentCategoryMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbContentCategoryMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbContentMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbContentMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbImageMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbImageMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbItemCatMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbItemCatMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbItemDescMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbItemDescMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbItemMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbItemMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbItemParamItemMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbItemParamItemMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbItemParamMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbItemParamMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbLogMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbLogMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbMemberMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbMemberMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbOrderItemMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbOrderItemMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbOrderMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbOrderMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbOrderShippingMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbOrderShippingMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbPermissionMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbPermissionMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbRoleMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbRoleMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbRolePermMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbRolePermMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbShiroFilterMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbShiroFilterMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbThanksMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbThanksMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbUserMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/mapper/TbUserMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbAddress.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbAddressExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbBase.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbBaseExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbContent.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbContentCategory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbContentCategoryExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbContentExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbImage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbImageExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbItem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbItemCat.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbItemCatExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbItemDesc.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbItemDescExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbItemExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbItemParam.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbItemParamExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbItemParamItem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbItemParamItemExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbLog.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbLogExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbMember.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbMemberExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbOrder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbOrderExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbOrderItem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbOrderItemExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbOrderShipping.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbOrderShippingExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbPermission.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbPermissionExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbRole.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbRoleExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbRolePerm.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbRolePermExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbShiroFilter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbShiroFilterExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbThanks.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbThanksExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbUser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbUserExample.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/index.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-add.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-add.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-edit.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-edit.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/pojo/TbThanks.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/pojo/TbThanks.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/service/impl/ThanksServiceImpl.java" afterPath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/service/impl/ThanksServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/study/Linux.md" afterPath="$PROJECT_DIR$/study/Linux.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/study/Swagger2.md" afterPath="$PROJECT_DIR$/study/Swagger2.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/study/hotjar.md" afterPath="$PROJECT_DIR$/study/hotjar.md" />
     </list>
     <ignored path="$PROJECT_DIR$/xmall-parent/target/" />
     <ignored path="$PROJECT_DIR$/xmall-common/target/" />
@@ -62,13 +144,35 @@
     <favorites_list name="xmall" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="ThanksServiceImpl.java" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="ThanksServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/service/impl/ThanksServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-484">
-              <caret line="86" column="8" lean-forward="false" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
+            <state relative-caret-position="1944">
+              <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="generatorConfig.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/generatorSqlmapCustom/src/main/resources/generatorConfig.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TbThanks.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/pojo/TbThanks.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -233,10 +337,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="3" />
-    <option name="width" value="1380" />
-    <option name="height" value="724" />
+    <option name="x" value="90" />
+    <option name="y" value="47" />
+    <option name="width" value="1720" />
+    <option name="height" value="970" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -590,38 +694,84 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="generatorSqlmapCustom" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="generatorSqlmapCustom" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="generatorSqlmapCustom" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="generatorSqlmapCustom" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="exrick" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="generatorSqlmapCustom" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="exrick" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="generatorSqlmapCustom" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="exrick" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="generatorSqlmapCustom" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="exrick" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
               <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
               <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-pojo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
               <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-pojo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
               <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-pojo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
               <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-pojo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -629,17 +779,29 @@
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
               <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="xmall-manager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-pojo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-pojo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2163,6 +2325,9 @@
       <workItem from="1511340357035" duration="631000" />
       <workItem from="1511424007005" duration="99000" />
       <workItem from="1511424115910" duration="370000" />
+      <workItem from="1512882706803" duration="2524000" />
+      <workItem from="1512918880887" duration="16000" />
+      <workItem from="1512955569477" duration="907000" />
     </task>
     <servers />
   </component>
@@ -2199,7 +2364,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1231825000" />
+    <option name="totallyTimeSpent" value="1235272000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2228,16 +2393,17 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39881656" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32426035" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35384616" sideWeight="0.4969651" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37633136" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3138412" sideWeight="0.4189349" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32725322" sideWeight="0.4189349" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26770386" sideWeight="0.5810651" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -2250,7 +2416,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32426035" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32781065" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2312,13 +2477,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/java/cn/exrick/search/message/MyMessageListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/403.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2631,7 +2789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="412">
           <caret line="43" column="50" lean-forward="false" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2639,7 +2796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="767">
           <caret line="88" column="26" lean-forward="false" selection-start-line="88" selection-start-column="26" selection-end-line="88" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2647,53 +2803,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="108" column="26" lean-forward="false" selection-start-line="108" selection-start-column="26" selection-end-line="108" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/service/impl/ThanksServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1944">
+          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generatorSqlmapCustom/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/generatorSqlmapCustom/src/cn/exrick/manager/pojo/TbThanks.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-          <folding />
+        <state relative-caret-position="270">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/java/cn/exrick/manager/pojo/TbThanks.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        <state relative-caret-position="189">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#383#384#0" expanded="true" />
-            <element signature="e#410#411#0" expanded="true" />
-            <element signature="e#450#451#0" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#537#538#0" expanded="true" />
-            <element signature="e#574#575#0" expanded="true" />
-            <element signature="e#602#603#0" expanded="true" />
-            <element signature="e#637#638#0" expanded="true" />
-            <element signature="e#668#669#0" expanded="true" />
-            <element signature="e#716#717#0" expanded="true" />
-            <element signature="e#789#790#0" expanded="true" />
-            <element signature="e#824#825#0" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#903#904#0" expanded="true" />
-            <element signature="e#976#977#0" expanded="true" />
-            <element signature="e#1012#1013#0" expanded="true" />
-            <element signature="e#1040#1041#0" expanded="true" />
-            <element signature="e#1086#1087#0" expanded="true" />
-            <element signature="e#1120#1121#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/service/impl/ThanksServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-484">
-          <caret line="86" column="8" lean-forward="false" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
