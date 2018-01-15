@@ -112,12 +112,10 @@
         $("#loading").removeAttr("hidden");
         $.ajax({
             type: 'GET',
-            url: '/goods/importIndex',
+            url: 'http://localhost:8082/goods/importIndex',
+            dataType: 'JSONP',
+            jsonpCallback: "callback",
             success: function(data) {
-                if(data.success!=true){
-                    layer.alert(data.message,{title: '错误信息',icon: 2});
-                    return;
-                }
                 $("#loading").attr("hidden","hidden");
                 msgSuccess("同步成功");
             },
