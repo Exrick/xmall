@@ -112,7 +112,7 @@
         $("#loading").removeAttr("hidden");
         $.ajax({
             type: 'GET',
-            url: 'http://localhost:8082/goods/importIndex',
+            url: 'http://localhost:7777/goods/importIndex',
             dataType: 'JSONP',
             jsonpCallback: "callback",
             success: function(data) {
