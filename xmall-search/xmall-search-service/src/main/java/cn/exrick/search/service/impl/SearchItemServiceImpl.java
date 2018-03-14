@@ -35,12 +35,21 @@ public class SearchItemServiceImpl implements SearchItemService {
 	@Value("${ES_CONNECT_IP}")
 	private String ES_CONNECT_IP;
 
+	@Value("${ES_CLUSTER_NAME}")
+	private String ES_CLUSTER_NAME;
+
+	@Value("${ITEM_INDEX}")
+	private String ITEM_INDEX;
+
+	@Value("${ITEM_TYPE}")
+	private String ITEM_TYPE;
+
 	@Override
 	public int importAllItems() {
 
 		try{
 			Settings settings = Settings.builder()
-					.put("cluster.name", "xmall").build();
+					.put("cluster.name", ES_CLUSTER_NAME).build();
 			TransportClient client = new PreBuiltTransportClient(settings)
 					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(ES_CONNECT_IP), 9300));
 
@@ -60,7 +69,7 @@ public class SearchItemServiceImpl implements SearchItemService {
 					image="";
 				}
 				searchItem.setProductImageBig(image);
-				bulkRequest.add(client.prepareIndex("item", "itemList", String.valueOf(searchItem.getProductId()))
+				bulkRequest.add(client.prepareIndex(ITEM_INDEX, ITEM_TYPE, String.valueOf(searchItem.getProductId()))
 						.setSource(jsonBuilder()
 								.startObject()
 								.field("productId", searchItem.getProductId())

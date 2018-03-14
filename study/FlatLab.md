@@ -4,4 +4,4 @@
 ### 免费获取
 - 给作者项目Star或捐赠后可加群免费下载获取
 
-![](http://oweupqzdv.bkt.clouddn.com/1508638455467.png "扫码加入交流群")
+![](http://oweupqzdv.bkt.clouddn.com/IMG_0721.JPG "扫码加入交流群")
