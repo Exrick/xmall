@@ -4,7 +4,7 @@ import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.TextMessage;
 
-import cn.exrick.common.pojo.SearchItem;
+import cn.exrick.manager.dto.front.SearchItem;
 import cn.exrick.search.mapper.ItemMapper;
 import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.action.index.IndexResponse;
@@ -77,7 +77,7 @@ public class ItemESMessageListener implements MessageListener {
 								.field("productId", searchItem.getProductId())
 								.field("salePrice", searchItem.getSalePrice())
 								.field("productName", searchItem.getProductName())
-								.field("sub_title", searchItem.getSub_title())
+								.field("sub_title", searchItem.getSubTitle())
 								.field("productImageBig", searchItem.getProductImageBig())
 								.field("category_name", searchItem.getCategory_name())
 								.endObject()

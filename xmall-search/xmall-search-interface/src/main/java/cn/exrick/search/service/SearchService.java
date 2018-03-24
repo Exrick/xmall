@@ -1,7 +1,7 @@
 package cn.exrick.search.service;
 
 
-import cn.exrick.common.pojo.SearchResult;
+import cn.exrick.manager.dto.front.SearchResult;
 
 public interface SearchService {
 

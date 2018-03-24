@@ -1,8 +1,8 @@
 package cn.exrick.front.controller;
 
-import cn.exrick.common.pojo.AllGoodsResult;
+import cn.exrick.manager.dto.front.AllGoodsResult;
 import cn.exrick.common.pojo.Result;
-import cn.exrick.common.pojo.SearchResult;
+import cn.exrick.manager.dto.front.SearchResult;
 import cn.exrick.common.utils.ResultUtil;
 import cn.exrick.content.service.ContentService;
 import cn.exrick.manager.dto.front.ProductDet;
@@ -14,6 +14,9 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * @author Exrickx
+ */
 @RestController
 @Api(description = "商品页面展示")
 public class GoodsController {

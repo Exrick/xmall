@@ -53,7 +53,7 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">捐赠时间：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" onfocus="WdatePicker({ time:'#F{$dp.$D(\'time\')||\'%y-%M-%d\'}' })" id="time" name="time" class="input-text Wdate" style="width:150px;">
+                <input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss' })" id="time" name="time" class="input-text Wdate" style="width:180px;">
             </div>
         </div>
         <div class="row cl">
@@ -75,26 +75,15 @@
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="lib/common.js"></script>
 <script type="text/javascript">
-
-    /*时间转换*/
-    function dateConvert(data){
-        if(data==null||data==""){
-            return "";
-        }
-        var time = new Date(data);
-        var y = time.getFullYear();//年
-        var m = time.getMonth() + 1;//月
-        var d = time.getDate();//日
-        return (y+"-"+m+"-"+d);
-    }
 
     $("#id").val(parent.thanksId);
     $("#username").val(parent.username);
     $("#nickName").val(parent.nickName);
     $("#money").val(parent.money);
     $("#info").val(parent.info);
-    $("#time").val(dateConvert(parent.date));
+    $("#time").val(parent.time);
 
     $(function(){
 
@@ -115,27 +104,24 @@
             focusCleanup:false,
             success:"valid",
             submitHandler:function(form){
-                $("#saveButton").val("保存中...");
-                $("#saveButton").attr("disabled","disabled");
+                var index = layer.load(3);
                 $(form).ajaxSubmit({
                     url: "/thanks/update",
                     type: "POST",
                     success: function (data) {
+                        layer.close(index);
                         if (data.success == true) {
                             parent.refresh();
                             parent.msgSuccess("编辑成功!");
                             var index = parent.layer.getFrameIndex(window.name);
                             parent.layer.close(index);
                         } else {
-                            $("#saveButton").val("提交");
-                            $("#saveButton").removeAttr("disabled");
                             layer.alert(data.message, {title: '错误信息', icon: 2});
                         }
                     },
                     error: function (XMLHttpRequest) {
-                        $("#saveButton").val("提交");
-                        $("#saveButton").removeAttr("disabled");
-                        layer.alert('数据处理失败! 错误码:' + XMLHttpRequest.status + ' 错误信息:' + JSON.parse(XMLHttpRequest.responseText).message, {
+                        layer.close(index);
+                        layer.alert('数据处理失败! 错误码:' + XMLHttpRequest.status, {
                             title: '错误信息',
                             icon: 2
                         });

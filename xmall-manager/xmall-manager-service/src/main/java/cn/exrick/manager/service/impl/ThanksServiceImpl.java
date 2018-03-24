@@ -55,7 +55,7 @@ public class ThanksServiceImpl implements ThanksService {
         PageInfo<TbThanks> pageInfo=new PageInfo<>(list);
 
         for(TbThanks tbThanks:list){
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String date = null;
             try {
                 date = dateFormat.format(tbThanks.getDate());
@@ -63,6 +63,7 @@ public class ThanksServiceImpl implements ThanksService {
                 e.printStackTrace();
             }
             tbThanks.setTime(date);
+            tbThanks.setEmail(null);
         }
 
         result.setSuccess(true);
@@ -85,7 +86,7 @@ public class ThanksServiceImpl implements ThanksService {
     @Override
     public int addThanks(TbThanks tbThanks) {
 
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = null;
         try {
             date = format.parse(tbThanks.getTime());
@@ -102,7 +103,7 @@ public class ThanksServiceImpl implements ThanksService {
     @Override
     public int updateThanks(TbThanks tbThanks) {
 
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = null;
         try {
             date = format.parse(tbThanks.getTime());
@@ -123,5 +124,15 @@ public class ThanksServiceImpl implements ThanksService {
             throw new XmallException("删除捐赠失败");
         }
         return 1;
+    }
+
+    @Override
+    public TbThanks getThankById(int id) {
+
+        TbThanks tbThanks=tbThanksMapper.selectByPrimaryKey(id);
+        if(tbThanks==null){
+            throw new XmallException("获取捐赠数据失败");
+        }
+        return tbThanks;
     }
 }

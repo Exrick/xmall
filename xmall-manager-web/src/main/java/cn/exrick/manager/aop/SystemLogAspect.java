@@ -92,7 +92,7 @@ public class SystemLogAspect {
                 tbLog.setRequestType(request.getMethod());
                 //请求参数
                 Map<String,String[]> logParams=request.getParameterMap();
-                tbLog.setRequestParam(logParams.toString());
+                tbLog.setMapToParams(logParams);
                 //请求用户
                 tbLog.setUser(username);
                 //请求IP
@@ -142,7 +142,7 @@ public class SystemLogAspect {
                 tbLog.setRequestType(request.getMethod());
                 //请求参数
                 Map<String,String[]> logParams=request.getParameterMap();
-                tbLog.setRequestParam(logParams.toString());
+                tbLog.setMapToParams(logParams);
                 //请求用户
                 tbLog.setUser(username);
                 //请求IP

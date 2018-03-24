@@ -1,19 +1,23 @@
 package cn.exrick.manager.dto.front;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * @author Exrickx
+ */
 public class ProductDet implements Serializable {
 
     private Long productId;
 
-    private Long salePrice;
+    private BigDecimal salePrice;
 
     private String productName;
 
-    private String sub_title;
+    private String subTitle;
 
-    private Long limit_num;
+    private Long limitNum;
 
     private String productImageBig;
 
@@ -29,11 +33,11 @@ public class ProductDet implements Serializable {
         this.productId = productId;
     }
 
-    public Long getSalePrice() {
+    public BigDecimal getSalePrice() {
         return salePrice;
     }
 
-    public void setSalePrice(Long salePrice) {
+    public void setSalePrice(BigDecimal salePrice) {
         this.salePrice = salePrice;
     }
 
@@ -45,20 +49,20 @@ public class ProductDet implements Serializable {
         this.productName = productName;
     }
 
-    public String getSub_title() {
-        return sub_title;
+    public String getSubTitle() {
+        return subTitle;
     }
 
-    public void setSub_title(String sub_title) {
-        this.sub_title = sub_title;
+    public void setSubTitle(String subTitle) {
+        this.subTitle = subTitle;
     }
 
-    public Long getLimit_num() {
-        return limit_num;
+    public Long getLimitNum() {
+        return limitNum;
     }
 
-    public void setLimit_num(Long limit_num) {
-        this.limit_num = limit_num;
+    public void setLimitNum(Long limitNum) {
+        this.limitNum = limitNum;
     }
 
     public String getProductImageBig() {

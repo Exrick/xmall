@@ -1,6 +1,6 @@
 package cn.exrick.search.mapper;
 
-import cn.exrick.common.pojo.SearchItem;
+import cn.exrick.manager.dto.front.SearchItem;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

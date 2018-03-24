@@ -59,4 +59,12 @@ public class ThanksController {
         thanksService.deleteThanks(id);
         return new ResultUtil<Object>().setData(null);
     }
+
+    @RequestMapping(value = "/thanks/{id}",method = RequestMethod.GET)
+    @ApiOperation(value = "通过id获取捐赠")
+    public Result<TbThanks> getThanks(@PathVariable int id){
+
+        TbThanks tbThanks=thanksService.getThankById(id);
+        return new ResultUtil<TbThanks>().setData(tbThanks);
+    }
 }

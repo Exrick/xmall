@@ -93,10 +93,12 @@
     var permissions=parent.permissions;
     var array= new Array();
     array=permissions.split("|");
+    var index = layer.load(3);
     $.ajax({
         url:"/user/permissionList",
         type: 'GET',
         success:function (data) {
+            layer.close(index);
             if(data.success==true){
                 var size=data.data.length;
                 for(var i=0;i<size;i++){
@@ -119,9 +121,8 @@
             }
         },
         error:function(XMLHttpRequest){
-            if(XMLHttpRequest.status!=200){
-                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
-            }
+            layer.close(index);
+            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
         }
     });
 
@@ -161,12 +162,12 @@
         focusCleanup:false,
         success:"valid",
         submitHandler:function(form){
-            $("#saveButton").html("保存中...");
-            $("#saveButton").attr("disabled","disabled");
+            var index = layer.load(3);
             $(form).ajaxSubmit({
                 url: "/user/updateRole",
                 type: "POST",
                 success: function(data) {
+                    layer.close(index);
                     if(data.success==true){
                         parent.roleCount();
                         parent.refresh();
@@ -174,14 +175,11 @@
                         var index = parent.layer.getFrameIndex(window.name);
                         parent.layer.close(index);
                     }else{
-                        $("#saveButton").html("提交");
-                        $("#saveButton").removeAttr("disabled");
                         layer.alert(data.message, {title: '错误信息',icon: 2});
                     }
                 },
                 error:function(XMLHttpRequest) {
-                    $("#saveButton").html("提交");
-                    $("#saveButton").removeAttr("disabled");
+                    layer.close(index);
                     layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 }
             });

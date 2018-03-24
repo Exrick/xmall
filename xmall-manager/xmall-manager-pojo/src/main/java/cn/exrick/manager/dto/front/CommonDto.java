@@ -2,6 +2,9 @@ package cn.exrick.manager.dto.front;
 
 import java.io.Serializable;
 
+/**
+ * @author Exrickx
+ */
 public class CommonDto implements Serializable {
 
     private Long userId;

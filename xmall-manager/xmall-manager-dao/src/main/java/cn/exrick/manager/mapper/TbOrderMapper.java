@@ -2,9 +2,8 @@ package cn.exrick.manager.mapper;
 
 import cn.exrick.manager.pojo.TbOrder;
 import cn.exrick.manager.pojo.TbOrderExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface TbOrderMapper {
     long countByExample(TbOrderExample example);

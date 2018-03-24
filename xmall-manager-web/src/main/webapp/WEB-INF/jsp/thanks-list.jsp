@@ -66,25 +66,13 @@
 <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="lib/datatables/dataTables.colReorder.min.js"></script>
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="lib/common.js"></script>
 <script type="text/javascript">
 
     /*刷新表格*/
     function refresh(){
         var table = $('.table').DataTable();
         table.ajax.reload(null,false);// 刷新表格数据，分页信息不会重置
-    }
-
-    /*时间转换*/
-    function dateConvert(data){
-        if(data==null||data==""){
-            return "";
-        }
-        var time = new Date(data);
-        var y = time.getFullYear();//年
-        var m = time.getMonth() + 1;//月
-        var d = time.getDate();//日
-
-        return (y+"-"+m+"-"+d);
     }
 
     /*datatables配置*/
@@ -111,7 +99,7 @@
                 { "data": "info"},
                 { "data": "date",
                     render : function(data,type, row, meta) {
-                        return dateConvert(data);
+                        return dateAll(data);
                     }
                 },
                 {
@@ -219,7 +207,7 @@
         });
     }
 
-    var nickName="",thanksId=-1,username="",money="",info="",date="";
+    var nickName="",thanksId=-1,username="",money="",info="",time="";
 
     /*捐赠-编辑*/
     function thanks_edit(title,url,id,w,h){
@@ -230,7 +218,7 @@
             username = table.row(this).data().username;
             money = table.row(this).data().money;
             info = table.row(this).data().info;
-            date = table.row(this).data().date;
+            time = dateAll(table.row(this).data().date);
         });
         layer_show(title,url,w,h);
     }

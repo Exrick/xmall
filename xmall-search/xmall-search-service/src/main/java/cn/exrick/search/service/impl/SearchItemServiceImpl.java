@@ -1,7 +1,7 @@
 package cn.exrick.search.service.impl;
 
 import cn.exrick.common.exception.XmallException;
-import cn.exrick.common.pojo.SearchItem;
+import cn.exrick.manager.dto.front.SearchItem;
 import cn.exrick.search.service.SearchItemService;
 import cn.exrick.search.mapper.ItemMapper;
 import org.elasticsearch.action.bulk.BulkRequestBuilder;
@@ -75,7 +75,7 @@ public class SearchItemServiceImpl implements SearchItemService {
 								.field("productId", searchItem.getProductId())
 								.field("salePrice", searchItem.getSalePrice())
 								.field("productName", searchItem.getProductName())
-								.field("sub_title", searchItem.getSub_title())
+								.field("sub_title", searchItem.getSubTitle())
 								.field("productImageBig", searchItem.getProductImageBig())
 								.field("category_name", searchItem.getCategory_name())
 								.endObject()

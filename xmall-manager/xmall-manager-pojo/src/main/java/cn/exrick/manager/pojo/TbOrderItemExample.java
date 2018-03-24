@@ -1,5 +1,6 @@
 package cn.exrick.manager.pojo;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -454,52 +455,52 @@ public class TbOrderItemExample {
             return (Criteria) this;
         }
 
-        public Criteria andPriceEqualTo(Long value) {
+        public Criteria andPriceEqualTo(BigDecimal value) {
             addCriterion("price =", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceNotEqualTo(Long value) {
+        public Criteria andPriceNotEqualTo(BigDecimal value) {
             addCriterion("price <>", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceGreaterThan(Long value) {
+        public Criteria andPriceGreaterThan(BigDecimal value) {
             addCriterion("price >", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceGreaterThanOrEqualTo(Long value) {
+        public Criteria andPriceGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("price >=", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceLessThan(Long value) {
+        public Criteria andPriceLessThan(BigDecimal value) {
             addCriterion("price <", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceLessThanOrEqualTo(Long value) {
+        public Criteria andPriceLessThanOrEqualTo(BigDecimal value) {
             addCriterion("price <=", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceIn(List<Long> values) {
+        public Criteria andPriceIn(List<BigDecimal> values) {
             addCriterion("price in", values, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceNotIn(List<Long> values) {
+        public Criteria andPriceNotIn(List<BigDecimal> values) {
             addCriterion("price not in", values, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceBetween(Long value1, Long value2) {
+        public Criteria andPriceBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("price between", value1, value2, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceNotBetween(Long value1, Long value2) {
+        public Criteria andPriceNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("price not between", value1, value2, "price");
             return (Criteria) this;
         }
@@ -514,52 +515,52 @@ public class TbOrderItemExample {
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeEqualTo(Long value) {
+        public Criteria andTotalFeeEqualTo(BigDecimal value) {
             addCriterion("total_fee =", value, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeNotEqualTo(Long value) {
+        public Criteria andTotalFeeNotEqualTo(BigDecimal value) {
             addCriterion("total_fee <>", value, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeGreaterThan(Long value) {
+        public Criteria andTotalFeeGreaterThan(BigDecimal value) {
             addCriterion("total_fee >", value, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeGreaterThanOrEqualTo(Long value) {
+        public Criteria andTotalFeeGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("total_fee >=", value, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeLessThan(Long value) {
+        public Criteria andTotalFeeLessThan(BigDecimal value) {
             addCriterion("total_fee <", value, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeLessThanOrEqualTo(Long value) {
+        public Criteria andTotalFeeLessThanOrEqualTo(BigDecimal value) {
             addCriterion("total_fee <=", value, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeIn(List<Long> values) {
+        public Criteria andTotalFeeIn(List<BigDecimal> values) {
             addCriterion("total_fee in", values, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeNotIn(List<Long> values) {
+        public Criteria andTotalFeeNotIn(List<BigDecimal> values) {
             addCriterion("total_fee not in", values, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeBetween(Long value1, Long value2) {
+        public Criteria andTotalFeeBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("total_fee between", value1, value2, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeNotBetween(Long value1, Long value2) {
+        public Criteria andTotalFeeNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("total_fee not between", value1, value2, "totalFee");
             return (Criteria) this;
         }

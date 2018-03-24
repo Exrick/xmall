@@ -1,5 +1,6 @@
 package cn.exrick.manager.pojo;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -185,62 +186,52 @@ public class TbOrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andPaymentEqualTo(String value) {
+        public Criteria andPaymentEqualTo(BigDecimal value) {
             addCriterion("payment =", value, "payment");
             return (Criteria) this;
         }
 
-        public Criteria andPaymentNotEqualTo(String value) {
+        public Criteria andPaymentNotEqualTo(BigDecimal value) {
             addCriterion("payment <>", value, "payment");
             return (Criteria) this;
         }
 
-        public Criteria andPaymentGreaterThan(String value) {
+        public Criteria andPaymentGreaterThan(BigDecimal value) {
             addCriterion("payment >", value, "payment");
             return (Criteria) this;
         }
 
-        public Criteria andPaymentGreaterThanOrEqualTo(String value) {
+        public Criteria andPaymentGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("payment >=", value, "payment");
             return (Criteria) this;
         }
 
-        public Criteria andPaymentLessThan(String value) {
+        public Criteria andPaymentLessThan(BigDecimal value) {
             addCriterion("payment <", value, "payment");
             return (Criteria) this;
         }
 
-        public Criteria andPaymentLessThanOrEqualTo(String value) {
+        public Criteria andPaymentLessThanOrEqualTo(BigDecimal value) {
             addCriterion("payment <=", value, "payment");
             return (Criteria) this;
         }
 
-        public Criteria andPaymentLike(String value) {
-            addCriterion("payment like", value, "payment");
-            return (Criteria) this;
-        }
-
-        public Criteria andPaymentNotLike(String value) {
-            addCriterion("payment not like", value, "payment");
-            return (Criteria) this;
-        }
-
-        public Criteria andPaymentIn(List<String> values) {
+        public Criteria andPaymentIn(List<BigDecimal> values) {
             addCriterion("payment in", values, "payment");
             return (Criteria) this;
         }
 
-        public Criteria andPaymentNotIn(List<String> values) {
+        public Criteria andPaymentNotIn(List<BigDecimal> values) {
             addCriterion("payment not in", values, "payment");
             return (Criteria) this;
         }
 
-        public Criteria andPaymentBetween(String value1, String value2) {
+        public Criteria andPaymentBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("payment between", value1, value2, "payment");
             return (Criteria) this;
         }
 
-        public Criteria andPaymentNotBetween(String value1, String value2) {
+        public Criteria andPaymentNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("payment not between", value1, value2, "payment");
             return (Criteria) this;
         }
@@ -315,62 +306,52 @@ public class TbOrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andPostFeeEqualTo(String value) {
+        public Criteria andPostFeeEqualTo(BigDecimal value) {
             addCriterion("post_fee =", value, "postFee");
             return (Criteria) this;
         }
 
-        public Criteria andPostFeeNotEqualTo(String value) {
+        public Criteria andPostFeeNotEqualTo(BigDecimal value) {
             addCriterion("post_fee <>", value, "postFee");
             return (Criteria) this;
         }
 
-        public Criteria andPostFeeGreaterThan(String value) {
+        public Criteria andPostFeeGreaterThan(BigDecimal value) {
             addCriterion("post_fee >", value, "postFee");
             return (Criteria) this;
         }
 
-        public Criteria andPostFeeGreaterThanOrEqualTo(String value) {
+        public Criteria andPostFeeGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("post_fee >=", value, "postFee");
             return (Criteria) this;
         }
 
-        public Criteria andPostFeeLessThan(String value) {
+        public Criteria andPostFeeLessThan(BigDecimal value) {
             addCriterion("post_fee <", value, "postFee");
             return (Criteria) this;
         }
 
-        public Criteria andPostFeeLessThanOrEqualTo(String value) {
+        public Criteria andPostFeeLessThanOrEqualTo(BigDecimal value) {
             addCriterion("post_fee <=", value, "postFee");
             return (Criteria) this;
         }
 
-        public Criteria andPostFeeLike(String value) {
-            addCriterion("post_fee like", value, "postFee");
-            return (Criteria) this;
-        }
-
-        public Criteria andPostFeeNotLike(String value) {
-            addCriterion("post_fee not like", value, "postFee");
-            return (Criteria) this;
-        }
-
-        public Criteria andPostFeeIn(List<String> values) {
+        public Criteria andPostFeeIn(List<BigDecimal> values) {
             addCriterion("post_fee in", values, "postFee");
             return (Criteria) this;
         }
 
-        public Criteria andPostFeeNotIn(List<String> values) {
+        public Criteria andPostFeeNotIn(List<BigDecimal> values) {
             addCriterion("post_fee not in", values, "postFee");
             return (Criteria) this;
         }
 
-        public Criteria andPostFeeBetween(String value1, String value2) {
+        public Criteria andPostFeeBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("post_fee between", value1, value2, "postFee");
             return (Criteria) this;
         }
 
-        public Criteria andPostFeeNotBetween(String value1, String value2) {
+        public Criteria andPostFeeNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("post_fee not between", value1, value2, "postFee");
             return (Criteria) this;
         }
@@ -1135,63 +1116,63 @@ public class TbOrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andBuyerRateIsNull() {
-            addCriterion("buyer_rate is null");
+        public Criteria andBuyerCommentIsNull() {
+            addCriterion("buyer_comment is null");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerRateIsNotNull() {
-            addCriterion("buyer_rate is not null");
+        public Criteria andBuyerCommentIsNotNull() {
+            addCriterion("buyer_comment is not null");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerRateEqualTo(Integer value) {
-            addCriterion("buyer_rate =", value, "buyerRate");
+        public Criteria andBuyerCommentEqualTo(Boolean value) {
+            addCriterion("buyer_comment =", value, "buyerComment");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerRateNotEqualTo(Integer value) {
-            addCriterion("buyer_rate <>", value, "buyerRate");
+        public Criteria andBuyerCommentNotEqualTo(Boolean value) {
+            addCriterion("buyer_comment <>", value, "buyerComment");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerRateGreaterThan(Integer value) {
-            addCriterion("buyer_rate >", value, "buyerRate");
+        public Criteria andBuyerCommentGreaterThan(Boolean value) {
+            addCriterion("buyer_comment >", value, "buyerComment");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerRateGreaterThanOrEqualTo(Integer value) {
-            addCriterion("buyer_rate >=", value, "buyerRate");
+        public Criteria andBuyerCommentGreaterThanOrEqualTo(Boolean value) {
+            addCriterion("buyer_comment >=", value, "buyerComment");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerRateLessThan(Integer value) {
-            addCriterion("buyer_rate <", value, "buyerRate");
+        public Criteria andBuyerCommentLessThan(Boolean value) {
+            addCriterion("buyer_comment <", value, "buyerComment");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerRateLessThanOrEqualTo(Integer value) {
-            addCriterion("buyer_rate <=", value, "buyerRate");
+        public Criteria andBuyerCommentLessThanOrEqualTo(Boolean value) {
+            addCriterion("buyer_comment <=", value, "buyerComment");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerRateIn(List<Integer> values) {
-            addCriterion("buyer_rate in", values, "buyerRate");
+        public Criteria andBuyerCommentIn(List<Boolean> values) {
+            addCriterion("buyer_comment in", values, "buyerComment");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerRateNotIn(List<Integer> values) {
-            addCriterion("buyer_rate not in", values, "buyerRate");
+        public Criteria andBuyerCommentNotIn(List<Boolean> values) {
+            addCriterion("buyer_comment not in", values, "buyerComment");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerRateBetween(Integer value1, Integer value2) {
-            addCriterion("buyer_rate between", value1, value2, "buyerRate");
+        public Criteria andBuyerCommentBetween(Boolean value1, Boolean value2) {
+            addCriterion("buyer_comment between", value1, value2, "buyerComment");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerRateNotBetween(Integer value1, Integer value2) {
-            addCriterion("buyer_rate not between", value1, value2, "buyerRate");
+        public Criteria andBuyerCommentNotBetween(Boolean value1, Boolean value2) {
+            addCriterion("buyer_comment not between", value1, value2, "buyerComment");
             return (Criteria) this;
         }
     }

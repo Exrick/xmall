@@ -5,6 +5,9 @@ import cn.exrick.manager.pojo.TbImage;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * @author Exrickx
+ */
 public class HomeFloors implements Serializable {
 
     private List<?> tabs;

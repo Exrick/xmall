@@ -1,16 +1,20 @@
 package cn.exrick.manager.dto.front;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
+/**
+ * @author Exrickx
+ */
 public class Product implements Serializable {
 
     private Long productId;
 
-    private Long salePrice;
+    private BigDecimal salePrice;
 
     private String productName;
 
-    private String sub_title;
+    private String subTitle;
 
     private String productImageBig;
 
@@ -22,11 +26,11 @@ public class Product implements Serializable {
         this.productId = productId;
     }
 
-    public Long getSalePrice() {
+    public BigDecimal getSalePrice() {
         return salePrice;
     }
 
-    public void setSalePrice(Long salePrice) {
+    public void setSalePrice(BigDecimal salePrice) {
         this.salePrice = salePrice;
     }
 
@@ -38,12 +42,12 @@ public class Product implements Serializable {
         this.productName = productName;
     }
 
-    public String getSub_title() {
-        return sub_title;
+    public String getSubTitle() {
+        return subTitle;
     }
 
-    public void setSub_title(String sub_title) {
-        this.sub_title = sub_title;
+    public void setSubTitle(String subTitle) {
+        this.subTitle = subTitle;
     }
 
     public String getProductImageBig() {

@@ -1,8 +1,9 @@
 package cn.exrick.manager.pojo;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
-public class TbOrderItem implements Serializable {
+public class TbOrderItem implements Serializable{
     private String id;
 
     private String itemId;
@@ -13,19 +14,19 @@ public class TbOrderItem implements Serializable {
 
     private String title;
 
-    private Long price;
+    private BigDecimal price;
 
-    private Long totalFee;
+    private BigDecimal totalFee;
 
     private String picPath;
 
-    private int total;
+    private Integer total;
 
-    public int getTotal() {
+    public Integer getTotal() {
         return total;
     }
 
-    public void setTotal(int total) {
+    public void setTotal(Integer total) {
         this.total = total;
     }
 
@@ -69,19 +70,19 @@ public class TbOrderItem implements Serializable {
         this.title = title == null ? null : title.trim();
     }
 
-    public Long getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
-    public Long getTotalFee() {
+    public BigDecimal getTotalFee() {
         return totalFee;
     }
 
-    public void setTotalFee(Long totalFee) {
+    public void setTotalFee(BigDecimal totalFee) {
         this.totalFee = totalFee;
     }
 

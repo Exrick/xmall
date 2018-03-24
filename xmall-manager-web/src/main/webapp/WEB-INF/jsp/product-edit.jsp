@@ -178,11 +178,13 @@
         focusCleanup:false,
         success:"valid",
         submitHandler:function(form){
+            var index = layer.load(3);
             editor.sync();
             $(form).ajaxSubmit({
                 url: "/item/update/"+parent.getId(),
                 type: "POST",
                 success: function(data) {
+                    layer.close(index);
                     if(data.success==true){
                         parent.refresh();
                         parent.msgSuccess("编辑成功!");
@@ -193,12 +195,14 @@
                     }
                 },
                 error:function(XMLHttpRequest) {
+                    layer.close(index);
                     layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 }
             });
         }
     });
 
+    var index = layer.load(3);
     KindEditor.ready(function(K) {
         editor = K.create('textarea[name="detail"]', {
             cssPath : 'lib/kindeditor/plugins/code/prettify.css',
@@ -225,6 +229,7 @@
             url: '/item/'+parent.getId(),
             dataType: 'json',
             success: function(data){
+                layer.close(index);
                 $("#title").val(data.result.title);
                 $("#sellPoint").val(data.result.sellPoint);
                 $("#price").val(data.result.price);
@@ -236,6 +241,7 @@
                 KindEditor.html('#detail', htmlData);
             },
             error:function(XMLHttpRequest) {
+                layer.close(index);
                 layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
             },
         });
@@ -770,8 +776,10 @@
                     }else{
                         images+=","+data.result;
                     }
+                    $("#image").val(images);
+                }else{
+                    alert("上传失败");
                 }
-                $("#image").val(images);
             });
 
             uploader.on('all', function (type) {

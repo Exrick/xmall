@@ -1,13 +1,17 @@
 package cn.exrick.manager.dto.front;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * @author Exrickx
+ */
 public class OrderInfo implements Serializable{
 
     private String userId;
 
-    private Long address_id;
+    private Long addressId;
 
     private String tel;
 
@@ -15,13 +19,13 @@ public class OrderInfo implements Serializable{
 
     private String streetName;
 
-    private Long orderTotal;
+    private BigDecimal orderTotal;
 
-    public Long getOrderTotal() {
+    public BigDecimal getOrderTotal() {
         return orderTotal;
     }
 
-    public void setOrderTotal(Long orderTotal) {
+    public void setOrderTotal(BigDecimal orderTotal) {
         this.orderTotal = orderTotal;
     }
 
@@ -35,12 +39,12 @@ public class OrderInfo implements Serializable{
         this.userId = userId;
     }
 
-    public Long getAddress_id() {
-        return address_id;
+    public Long getAddressId() {
+        return addressId;
     }
 
-    public void setAddress_id(Long address_id) {
-        this.address_id = address_id;
+    public void setAddressId(Long addressId) {
+        this.addressId = addressId;
     }
 
     public String getTel() {

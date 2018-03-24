@@ -7,8 +7,8 @@
     <result column="order_id" jdbcType="VARCHAR" property="orderId" />
     <result column="num" jdbcType="INTEGER" property="num" />
     <result column="title" jdbcType="VARCHAR" property="title" />
-    <result column="price" jdbcType="BIGINT" property="price" />
-    <result column="total_fee" jdbcType="BIGINT" property="totalFee" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="total_fee" jdbcType="DECIMAL" property="totalFee" />
     <result column="pic_path" jdbcType="VARCHAR" property="picPath" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -104,11 +104,11 @@
   </delete>
   <insert id="insert" parameterType="cn.exrick.manager.pojo.TbOrderItem">
     insert into tb_order_item (id, item_id, order_id, 
-      num, title, price, total_fee, 
-      pic_path)
+      num, title, price, 
+      total_fee, pic_path)
     values (#{id,jdbcType=VARCHAR}, #{itemId,jdbcType=VARCHAR}, #{orderId,jdbcType=VARCHAR}, 
-      #{num,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{price,jdbcType=BIGINT}, #{totalFee,jdbcType=BIGINT}, 
-      #{picPath,jdbcType=VARCHAR})
+      #{num,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, 
+      #{totalFee,jdbcType=DECIMAL}, #{picPath,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.exrick.manager.pojo.TbOrderItem">
     insert into tb_order_item
@@ -155,10 +155,10 @@
         #{title,jdbcType=VARCHAR},
       </if>
       <if test="price != null">
-        #{price,jdbcType=BIGINT},
+        #{price,jdbcType=DECIMAL},
       </if>
       <if test="totalFee != null">
-        #{totalFee,jdbcType=BIGINT},
+        #{totalFee,jdbcType=DECIMAL},
       </if>
       <if test="picPath != null">
         #{picPath,jdbcType=VARCHAR},
@@ -190,10 +190,10 @@
         title = #{record.title,jdbcType=VARCHAR},
       </if>
       <if test="record.price != null">
-        price = #{record.price,jdbcType=BIGINT},
+        price = #{record.price,jdbcType=DECIMAL},
       </if>
       <if test="record.totalFee != null">
-        total_fee = #{record.totalFee,jdbcType=BIGINT},
+        total_fee = #{record.totalFee,jdbcType=DECIMAL},
       </if>
       <if test="record.picPath != null">
         pic_path = #{record.picPath,jdbcType=VARCHAR},
@@ -210,8 +210,8 @@
       order_id = #{record.orderId,jdbcType=VARCHAR},
       num = #{record.num,jdbcType=INTEGER},
       title = #{record.title,jdbcType=VARCHAR},
-      price = #{record.price,jdbcType=BIGINT},
-      total_fee = #{record.totalFee,jdbcType=BIGINT},
+      price = #{record.price,jdbcType=DECIMAL},
+      total_fee = #{record.totalFee,jdbcType=DECIMAL},
       pic_path = #{record.picPath,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -233,10 +233,10 @@
         title = #{title,jdbcType=VARCHAR},
       </if>
       <if test="price != null">
-        price = #{price,jdbcType=BIGINT},
+        price = #{price,jdbcType=DECIMAL},
       </if>
       <if test="totalFee != null">
-        total_fee = #{totalFee,jdbcType=BIGINT},
+        total_fee = #{totalFee,jdbcType=DECIMAL},
       </if>
       <if test="picPath != null">
         pic_path = #{picPath,jdbcType=VARCHAR},
@@ -250,8 +250,8 @@
       order_id = #{orderId,jdbcType=VARCHAR},
       num = #{num,jdbcType=INTEGER},
       title = #{title,jdbcType=VARCHAR},
-      price = #{price,jdbcType=BIGINT},
-      total_fee = #{totalFee,jdbcType=BIGINT},
+      price = #{price,jdbcType=DECIMAL},
+      total_fee = #{totalFee,jdbcType=DECIMAL},
       pic_path = #{picPath,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
@@ -264,7 +264,9 @@
     tb_order_item i
     LEFT JOIN tb_order o ON i.order_id = o.order_id
     WHERE
-    DATE_SUB(CURDATE(), INTERVAL 7 DAY) &lt;= date(o.create_time)
+    YEARWEEK(date_format(o.create_time,'%Y-%m-%d')) = YEARWEEK(now())-1
+    AND
+    o.status = 4
     GROUP BY
     i.item_id
     ORDER BY

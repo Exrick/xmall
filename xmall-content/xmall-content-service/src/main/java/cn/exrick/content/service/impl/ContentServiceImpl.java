@@ -2,7 +2,7 @@ package cn.exrick.content.service.impl;
 
 import cn.exrick.common.exception.XmallException;
 import cn.exrick.common.jedis.JedisClient;
-import cn.exrick.common.pojo.AllGoodsResult;
+import cn.exrick.manager.dto.front.AllGoodsResult;
 import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.content.service.ContentService;
 import cn.exrick.manager.dto.ContentDto;
@@ -159,8 +159,8 @@ public class ContentServiceImpl implements ContentService {
         //没有缓存
         ProductHome productHome =new ProductHome();
 
-        productHome.setHome_hot(getHotProduct());
-        productHome.setHome_floors(getFloorProduct());
+        productHome.setHomeHot(getHotProduct());
+        productHome.setHomeFloors(getFloorProduct());
 
         //把结果添加至缓存
         try{
@@ -190,7 +190,7 @@ public class ContentServiceImpl implements ContentService {
             product.setProductId(tbItem.getId());
             product.setProductName(tbItem.getTitle());
             product.setSalePrice(tbItem.getPrice());
-            product.setSub_title(tbItem.getSellPoint());
+            product.setSubTitle(tbItem.getSellPoint());
             product.setProductImageBig(listHot.get(i).getImage());
 
             productHotList.add(product);
@@ -221,7 +221,7 @@ public class ContentServiceImpl implements ContentService {
             product.setProductId(tbItem.getId());
             product.setProductName(tbItem.getTitle());
             product.setSalePrice(tbItem.getPrice());
-            product.setSub_title(tbItem.getSellPoint());
+            product.setSubTitle(tbItem.getSellPoint());
             product.setProductImageBig(listFloor1.get(i).getImage());
 
             productFloorList1.add(product);
@@ -253,7 +253,7 @@ public class ContentServiceImpl implements ContentService {
             product.setProductId(tbItem.getId());
             product.setProductName(tbItem.getTitle());
             product.setSalePrice(tbItem.getPrice());
-            product.setSub_title(tbItem.getSellPoint());
+            product.setSubTitle(tbItem.getSellPoint());
             product.setProductImageBig(listFloor2.get(i).getImage());
 
             productFloorList2.add(product);
@@ -293,11 +293,11 @@ public class ContentServiceImpl implements ContentService {
         ProductDet productDet=new ProductDet();
         productDet.setProductId(id);
         productDet.setProductName(tbItem.getTitle());
-        productDet.setSub_title(tbItem.getSellPoint());
+        productDet.setSubTitle(tbItem.getSellPoint());
         if(tbItem.getLimitNum()!=null&&!tbItem.getLimitNum().toString().isEmpty()){
-            productDet.setLimit_num(Long.valueOf(tbItem.getLimitNum()));
+            productDet.setLimitNum(Long.valueOf(tbItem.getLimitNum()));
         }else{
-            productDet.setLimit_num(Long.valueOf(tbItem.getNum()));
+            productDet.setLimitNum(Long.valueOf(tbItem.getNum()));
         }
         productDet.setSalePrice(tbItem.getPrice());
 

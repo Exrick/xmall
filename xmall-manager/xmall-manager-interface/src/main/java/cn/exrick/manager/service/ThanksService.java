@@ -16,6 +16,12 @@ public interface ThanksService {
      */
     DataTablesResult getThanksList();
 
+    /**
+     * 分页获取捐赠列表
+     * @param page
+     * @param size
+     * @return
+     */
     DataTablesResult getThanksListByPage(int page, int size);
 
     /**
@@ -44,4 +50,11 @@ public interface ThanksService {
      * @return
      */
     int deleteThanks(int id);
+
+    /**
+     * 通过id获取
+     * @param id
+     * @return
+     */
+    TbThanks getThankById(int id);
 }

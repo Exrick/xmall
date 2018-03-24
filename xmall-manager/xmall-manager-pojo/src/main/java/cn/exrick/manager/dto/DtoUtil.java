@@ -168,7 +168,7 @@ public class DtoUtil{
         product.setProductId(tbItem.getId());
         product.setProductName(tbItem.getTitle());
         product.setSalePrice(tbItem.getPrice());
-        product.setSub_title(tbItem.getSellPoint());
+        product.setSubTitle(tbItem.getSellPoint());
         product.setProductImageBig(tbItem.getImages()[0]);
 
         return product;
@@ -207,6 +207,18 @@ public class DtoUtil{
         }else{
             cartProduct.setLimitNum(Long.valueOf(tbItem.getLimitNum()));
         }
+        return cartProduct;
+    }
+
+    public static CartProduct TbOrderItem2CartProduct(TbOrderItem tbOrderItem){
+
+        CartProduct cartProduct=new CartProduct();
+        cartProduct.setProductId(Long.valueOf(tbOrderItem.getItemId()));
+        cartProduct.setProductName(tbOrderItem.getTitle());
+        cartProduct.setSalePrice(tbOrderItem.getPrice());
+        cartProduct.setProductNum(Long.valueOf(tbOrderItem.getNum()));
+        cartProduct.setProductImg(tbOrderItem.getPicPath());
+
         return cartProduct;
     }
 }

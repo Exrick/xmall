@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class TbThanks implements Serializable {
+public class TbThanks implements Serializable{
     private Integer id;
 
     private String nickName;
@@ -15,9 +15,27 @@ public class TbThanks implements Serializable {
 
     private String info;
 
+    private Date date;
+
+    private String email;
+
+    private Integer state;
+
+    private String payType;
+
+    private String orderId;
+
     private String time;
 
-    private Date date;
+    private String userId;
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 
     public String getTime() {
         return time;
@@ -73,5 +91,37 @@ public class TbThanks implements Serializable {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
+    }
+
+    public String getPayType() {
+        return payType;
+    }
+
+    public void setPayType(String payType) {
+        this.payType = payType == null ? null : payType.trim();
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId == null ? null : orderId.trim();
     }
 }

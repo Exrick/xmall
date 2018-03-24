@@ -1,15 +1,16 @@
 package cn.exrick.manager.pojo;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class TbOrder {
     private String orderId;
 
-    private String payment;
+    private BigDecimal payment;
 
     private Integer paymentType;
 
-    private String postFee;
+    private BigDecimal postFee;
 
     private Integer status;
 
@@ -35,7 +36,7 @@ public class TbOrder {
 
     private String buyerNick;
 
-    private Integer buyerRate;
+    private Boolean buyerComment;
 
     public String getOrderId() {
         return orderId;
@@ -45,12 +46,12 @@ public class TbOrder {
         this.orderId = orderId == null ? null : orderId.trim();
     }
 
-    public String getPayment() {
+    public BigDecimal getPayment() {
         return payment;
     }
 
-    public void setPayment(String payment) {
-        this.payment = payment == null ? null : payment.trim();
+    public void setPayment(BigDecimal payment) {
+        this.payment = payment;
     }
 
     public Integer getPaymentType() {
@@ -61,12 +62,12 @@ public class TbOrder {
         this.paymentType = paymentType;
     }
 
-    public String getPostFee() {
+    public BigDecimal getPostFee() {
         return postFee;
     }
 
-    public void setPostFee(String postFee) {
-        this.postFee = postFee == null ? null : postFee.trim();
+    public void setPostFee(BigDecimal postFee) {
+        this.postFee = postFee;
     }
 
     public Integer getStatus() {
@@ -165,11 +166,11 @@ public class TbOrder {
         this.buyerNick = buyerNick == null ? null : buyerNick.trim();
     }
 
-    public Integer getBuyerRate() {
-        return buyerRate;
+    public Boolean getBuyerComment() {
+        return buyerComment;
     }
 
-    public void setBuyerRate(Integer buyerRate) {
-        this.buyerRate = buyerRate;
+    public void setBuyerComment(Boolean buyerComment) {
+        this.buyerComment = buyerComment;
     }
 }

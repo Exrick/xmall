@@ -19,9 +19,9 @@ public class CancelOrderJob {
     private OrderService orderService;
 
     /**
-     * 每12个小时判断订单是否失效
+     * 每1个小时判断订单是否失效
      */
-    @Scheduled(cron = "0 0 */12 * * ?")
+    @Scheduled(cron = "0 0 */1 * * ?")
     public void run() {
 
         log.info("执行了自动取消订单定时任务");

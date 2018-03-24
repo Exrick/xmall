@@ -81,12 +81,12 @@
         focusCleanup:false,
         success:"valid",
         submitHandler:function(form){
-            $("#saveButton").html("保存中...");
-            $("#saveButton").attr("disabled","disabled");
+            var index = layer.load(3);
             $(form).ajaxSubmit({
                 url: "/user/updatePermission",
                 type: "POST",
                 success: function(data) {
+                    layer.close(index);
                     if(data.success==true){
                         parent.refresh();
                         parent.msgSuccess("编辑成功!");
@@ -94,13 +94,10 @@
                         parent.layer.close(index);
                     }else{
                         layer.alert(data.message, {title: '错误信息',icon: 2});
-                        $("#saveButton").val("提交");
-                        $("#saveButton").removeAttr("disabled");
                     }
                 },
                 error:function(XMLHttpRequest) {
-                    $("#saveButton").val("提交");
-                    $("#saveButton").removeAttr("disabled");
+                    layer.close(index);
                     layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 }
             });

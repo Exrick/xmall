@@ -1,5 +1,6 @@
 package cn.exrick.manager.pojo;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class TbMember {
@@ -29,7 +30,7 @@ public class TbMember {
 
     private Integer points;
 
-    private Long balance;
+    private BigDecimal balance;
 
     public Long getId() {
         return id;
@@ -135,11 +136,11 @@ public class TbMember {
         this.points = points;
     }
 
-    public Long getBalance() {
+    public BigDecimal getBalance() {
         return balance;
     }
 
-    public void setBalance(Long balance) {
+    public void setBalance(BigDecimal balance) {
         this.balance = balance;
     }
 }

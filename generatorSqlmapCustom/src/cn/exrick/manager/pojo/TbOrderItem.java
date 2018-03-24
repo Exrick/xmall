@@ -1,5 +1,7 @@
 package cn.exrick.manager.pojo;
 
+import java.math.BigDecimal;
+
 public class TbOrderItem {
     private String id;
 
@@ -11,9 +13,9 @@ public class TbOrderItem {
 
     private String title;
 
-    private Long price;
+    private BigDecimal price;
 
-    private Long totalFee;
+    private BigDecimal totalFee;
 
     private String picPath;
 
@@ -57,19 +59,19 @@ public class TbOrderItem {
         this.title = title == null ? null : title.trim();
     }
 
-    public Long getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
-    public Long getTotalFee() {
+    public BigDecimal getTotalFee() {
         return totalFee;
     }
 
-    public void setTotalFee(Long totalFee) {
+    public void setTotalFee(BigDecimal totalFee) {
         this.totalFee = totalFee;
     }
 

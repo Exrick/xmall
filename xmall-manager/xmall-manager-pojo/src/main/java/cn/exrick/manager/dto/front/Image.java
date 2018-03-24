@@ -2,13 +2,14 @@ package cn.exrick.manager.dto.front;
 
 import java.io.Serializable;
 
+/**
+ * @author Exrickx
+ */
 public class Image implements Serializable{
 
     private String link;
 
     private String image;
-
-    private String image_mobile;
 
     public String getLink() {
         return link;
@@ -24,13 +25,5 @@ public class Image implements Serializable{
 
     public void setImage(String image) {
         this.image = image;
-    }
-
-    public String getImage_mobile() {
-        return image_mobile;
-    }
-
-    public void setImage_mobile(String image_mobile) {
-        this.image_mobile = image_mobile;
     }
 }

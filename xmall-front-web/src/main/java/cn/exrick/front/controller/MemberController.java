@@ -19,6 +19,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 
+/**
+ * @author Exrickx
+ */
 @RestController
 @Api(description = "会员注册登录")
 public class MemberController {

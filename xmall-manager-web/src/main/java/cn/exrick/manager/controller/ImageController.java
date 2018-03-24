@@ -36,6 +36,9 @@ public class ImageController {
             files.transferTo(file);
             //上传七牛云服务器
             imagePath= QiniuUtil.qiniuUpload(filePath);
+            if(imagePath.contains("error")){
+                return new ResultUtil<Object>().setErrorMsg("上传失败");
+            }
             // 路径为文件且不为空则进行删除
             if (file.isFile() && file.exists()) {
                 file.delete();
@@ -68,6 +71,11 @@ public class ImageController {
             files.transferTo(file);
             //上传七牛云服务器
             String imagePath=QiniuUtil.qiniuUpload(filePath);
+            if(imagePath.contains("error")){
+                kindEditorResult.setError(1);
+                kindEditorResult.setMessage("上传失败");
+                return kindEditorResult;
+            }
             // 路径为文件且不为空则进行删除
             if (file.isFile() && file.exists()) {
                 file.delete();

@@ -12,9 +12,11 @@
 ### 前台页面为基于Vue的独立项目 请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库查看
 ### 开发中，敬请期待！
 - Spring Cloud版
-- APP
+    - [X-Cloud](https://github.com/Exrick/x-cloud)框架开发中
+- 微信小程序APP
 
-    ![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171231170920.png)
+    ![](http://oweupqzdv.bkt.clouddn.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A2%84%E8%A7%88.png)
+
 - XMall开放平台(仿微信开放平台)
 
     ![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171231172014.png)
@@ -25,6 +27,21 @@
 - [x] 订单系统：提供下单、查询订单、修改订单状态、定时处理订单
 - [x] 搜索系统：提供商品的搜索功能
 - [x] 单点登录系统：为多个系统之间提供用户登录凭证以及查询登录用户的信息
+
+### v1.1更新日志
+- [x] 接入XPay支付系统
+- [x] 更新Dubbo等依赖版本
+- [x] 修复后台统计热卖商品SQL错误
+- [x] front-web模块支持SpringMVC文件上传
+- [x] ES默认集群名改为原elasticsearch
+- [x] 修改金额字段类型
+- [x] 优化后台页面
+- [ ] 修复用户修改BUG
+- [ ] 优化批量删除
+- [ ] 优化分类管理
+- [ ] 完成订单打印发货等功能
+- [ ] 完成SKU设计
+- [ ] 增添报表
 
 ![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171119130819.jpg "登录界面")
 

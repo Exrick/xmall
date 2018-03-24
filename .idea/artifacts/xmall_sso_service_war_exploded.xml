@@ -39,7 +39,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-jms:4.3.12.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-messaging:4.3.12.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.3.12.RELEASE" />
-          <element id="library" level="project" name="Maven: com.alibaba:dubbo:2.5.6" />
+          <element id="library" level="project" name="Maven: com.alibaba:dubbo:2.6.1" />
           <element id="library" level="project" name="Maven: org.apache.zookeeper:zookeeper:3.4.10" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.1" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.8.0-alpha2" />
@@ -49,6 +49,8 @@
           <element id="library" level="project" name="Maven: com.github.sgroschupf:zkclient:0.1" />
           <element id="library" level="project" name="Maven: org.javassist:javassist:3.21.0-GA" />
           <element id="library" level="project" name="Maven: org.apache.activemq:activemq-all:5.11.2" />
+          <element id="library" level="project" name="Maven: javax.mail:mail:1.5.0-b01" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
           <element id="archive" name="xmall-common-1.0-SNAPSHOT.jar">
             <element id="module-output" name="xmall-common" />
           </element>
@@ -62,12 +64,10 @@
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.5.3" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.4.6" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />
-          <element id="library" level="project" name="Maven: org.quartz-scheduler:quartz:2.2.2" />
-          <element id="library" level="project" name="Maven: c3p0:c3p0:0.9.1.1" />
-          <element id="library" level="project" name="Maven: com.qiniu:qiniu-java-sdk:7.2.8" />
-          <element id="library" level="project" name="Maven: com.squareup.okhttp3:okhttp:3.3.1" />
-          <element id="library" level="project" name="Maven: com.squareup.okio:okio:1.8.0" />
-          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.6.2" />
+          <element id="library" level="project" name="Maven: com.qiniu:qiniu-java-sdk:7.2.11" />
+          <element id="library" level="project" name="Maven: com.squareup.okhttp3:okhttp:3.9.1" />
+          <element id="library" level="project" name="Maven: com.squareup.okio:okio:1.13.0" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.2" />
           <element id="library" level="project" name="Maven: com.qiniu:happy-dns-java:0.1.6" />
           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.3.3" />
           <element id="library" level="project" name="Maven: redis.clients:jedis:2.9.0" />

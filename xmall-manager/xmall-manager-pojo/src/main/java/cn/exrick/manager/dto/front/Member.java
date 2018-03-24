@@ -3,6 +3,9 @@ package cn.exrick.manager.dto.front;
 
 import java.io.Serializable;
 
+/**
+ * @author Exrickx
+ */
 public class Member implements Serializable{
 
     private Long id;

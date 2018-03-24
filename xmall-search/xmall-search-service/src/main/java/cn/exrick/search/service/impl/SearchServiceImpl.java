@@ -1,8 +1,8 @@
 package cn.exrick.search.service.impl;
 
 import cn.exrick.common.exception.XmallException;
-import cn.exrick.common.pojo.SearchItem;
-import cn.exrick.common.pojo.SearchResult;
+import cn.exrick.manager.dto.front.SearchItem;
+import cn.exrick.manager.dto.front.SearchResult;
 import cn.exrick.search.service.SearchService;
 import com.google.gson.Gson;
 import org.elasticsearch.action.search.SearchResponse;

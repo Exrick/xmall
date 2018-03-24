@@ -1,6 +1,6 @@
 package cn.exrick.content.service;
 
-import cn.exrick.common.pojo.AllGoodsResult;
+import cn.exrick.manager.dto.front.AllGoodsResult;
 import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.manager.dto.front.ProductDet;
 import cn.exrick.manager.dto.front.ProductHome;

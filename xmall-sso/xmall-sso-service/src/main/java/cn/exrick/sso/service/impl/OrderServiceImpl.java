@@ -3,12 +3,16 @@ package cn.exrick.sso.service.impl;
 import cn.exrick.common.exception.XmallException;
 import cn.exrick.common.jedis.JedisClient;
 import cn.exrick.common.utils.IDUtil;
+import cn.exrick.manager.dto.DtoUtil;
 import cn.exrick.manager.dto.front.CartProduct;
 import cn.exrick.manager.dto.front.Order;
 import cn.exrick.manager.dto.front.OrderInfo;
+import cn.exrick.manager.dto.front.PageOrder;
 import cn.exrick.manager.mapper.*;
 import cn.exrick.manager.pojo.*;
 import cn.exrick.sso.service.OrderService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.google.gson.Gson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,10 +20,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -35,13 +41,31 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private TbOrderShippingMapper tbOrderShippingMapper;  //订单物流
     @Autowired
+    private TbThanksMapper tbThanksMapper;
+
+    @Autowired
     private JedisClient jedisClient;
+
     @Value("${CART_PRE}")
     private String CART_PRE;
+    @Value("${EMAIL_SENDER}")
+    private String EMAIL_SENDER;
+    @Value("${PAY_EXPIRE}")
+    private int PAY_EXPIRE;
+
+    @Autowired
+    private EmailUtil emailUtil;
 
     @Override
-    public List<Order> getOrderList(Long userId) {
+    public PageOrder getOrderList(Long userId, int page, int size) {
 
+        //分页
+        if(page<=0) {
+            page = 1;
+        }
+        PageHelper.startPage(page,size);
+
+        PageOrder pageOrder=new PageOrder();
         List<Order> list=new ArrayList<>();
 
         TbOrderExample example=new TbOrderExample();
@@ -71,9 +95,9 @@ public class OrderServiceImpl implements OrderService {
             order.setAddressInfo(address);
             //orderTotal
             if(tbOrder.getPayment()==null){
-                order.setOrderTotal((long) 0);
+                order.setOrderTotal(new BigDecimal(0));
             }else{
-                order.setOrderTotal(Long.valueOf(tbOrder.getPayment()));
+                order.setOrderTotal(tbOrder.getPayment());
             }
             //goodsList
             TbOrderItemExample exampleItem=new TbOrderItemExample();
@@ -82,19 +106,18 @@ public class OrderServiceImpl implements OrderService {
             List<TbOrderItem> listItem =tbOrderItemMapper.selectByExample(exampleItem);
             List<CartProduct> listProduct=new ArrayList<>();
             for(TbOrderItem tbOrderItem:listItem){
-                CartProduct cartProduct=new CartProduct();
-                cartProduct.setProductId(Long.valueOf(tbOrderItem.getItemId()));
-                cartProduct.setProductName(tbOrderItem.getTitle());
-                cartProduct.setSalePrice(tbOrderItem.getPrice());
-                cartProduct.setProductNum(Long.valueOf(tbOrderItem.getNum()));
-                cartProduct.setProductImg(tbOrderItem.getPicPath());
+
+                CartProduct cartProduct= DtoUtil.TbOrderItem2CartProduct(tbOrderItem);
 
                 listProduct.add(cartProduct);
             }
             order.setGoodsList(listProduct);
             list.add(order);
         }
-        return list;
+        PageInfo<Order> pageInfo=new PageInfo<>(list);
+        pageOrder.setTotal(getMemberOrderCount(userId));
+        pageOrder.setData(list);
+        return pageOrder;
     }
 
     @Override
@@ -139,9 +162,9 @@ public class OrderServiceImpl implements OrderService {
         order.setAddressInfo(address);
         //orderTotal
         if(tbOrder.getPayment()==null){
-            order.setOrderTotal((long) 0);
+            order.setOrderTotal(new BigDecimal(0));
         }else{
-            order.setOrderTotal(Long.valueOf(tbOrder.getPayment()));
+            order.setOrderTotal(tbOrder.getPayment());
         }
         //goodsList
         TbOrderItemExample exampleItem=new TbOrderItemExample();
@@ -150,12 +173,8 @@ public class OrderServiceImpl implements OrderService {
         List<TbOrderItem> listItem =tbOrderItemMapper.selectByExample(exampleItem);
         List<CartProduct> listProduct=new ArrayList<>();
         for(TbOrderItem tbOrderItem:listItem){
-            CartProduct cartProduct=new CartProduct();
-            cartProduct.setProductId(Long.valueOf(tbOrderItem.getItemId()));
-            cartProduct.setProductName(tbOrderItem.getTitle());
-            cartProduct.setSalePrice(tbOrderItem.getPrice());
-            cartProduct.setProductNum(Long.valueOf(tbOrderItem.getNum()));
-            cartProduct.setProductImg(tbOrderItem.getPicPath());
+
+            CartProduct cartProduct= DtoUtil.TbOrderItem2CartProduct(tbOrderItem);
 
             listProduct.add(cartProduct);
         }
@@ -192,7 +211,7 @@ public class OrderServiceImpl implements OrderService {
         order.setOrderId(String.valueOf(orderId));
         order.setUserId(Long.valueOf(orderInfo.getUserId()));
         order.setBuyerNick(member.getUsername());
-        order.setPayment(String.valueOf(orderInfo.getOrderTotal()));
+        order.setPayment(orderInfo.getOrderTotal());
         order.setCreateTime(new Date());
         order.setUpdateTime(new Date());
         //0、未付款，1、已付款，2、未发货，3、已发货，4、交易成功，5、交易关闭
@@ -214,7 +233,7 @@ public class OrderServiceImpl implements OrderService {
             orderItem.setPrice(cartProduct.getSalePrice());
             orderItem.setTitle(cartProduct.getProductName());
             orderItem.setPicPath(cartProduct.getProductImg());
-            orderItem.setTotalFee(Math.toIntExact(cartProduct.getProductNum())*cartProduct.getSalePrice());
+            orderItem.setTotalFee(cartProduct.getSalePrice().multiply(BigDecimal.valueOf(cartProduct.getProductNum())));
 
             if(tbOrderItemMapper.insert(orderItem)!=1){
                 throw new XmallException("生成订单商品失败");
@@ -272,6 +291,38 @@ public class OrderServiceImpl implements OrderService {
         }
         return 1;
     }
+    @Override
+    public int payOrder(TbThanks tbThanks) {
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String time=sdf.format(new Date());
+        tbThanks.setTime(time);
+        tbThanks.setDate(new Date());
+        TbMember tbMember=tbMemberMapper.selectByPrimaryKey(Long.valueOf(tbThanks.getUserId()));
+        if(tbMember!=null){
+            tbThanks.setUsername(tbMember.getUsername());
+        }
+        if(tbThanksMapper.insert(tbThanks)!=1){
+            throw new XmallException("保存捐赠支付数据失败");
+        }
+
+        //设置订单为已付款
+        TbOrder tbOrder=tbOrderMapper.selectByPrimaryKey(tbThanks.getOrderId());
+        tbOrder.setStatus(1);
+        tbOrder.setUpdateTime(new Date());
+        tbOrder.setPaymentTime(new Date());
+        if(tbOrderMapper.updateByPrimaryKey(tbOrder)!=1){
+            throw new XmallException("更新订单失败");
+        }
+        //发送通知确认邮件
+        String tokenName= UUID.randomUUID().toString();
+        String token= UUID.randomUUID().toString();
+        //设置验证token键值对 tokenName:token
+        jedisClient.set(tokenName,token);
+        jedisClient.expire(tokenName,PAY_EXPIRE);
+        emailUtil.sendEmailDealThank(EMAIL_SENDER,"【XMall商城】支付待审核处理",tokenName,token,tbThanks);
+        return 1;
+    }
 
     /**
      * 判断订单是否超时未支付
@@ -281,7 +332,7 @@ public class OrderServiceImpl implements OrderService {
         String result=null;
         if(tbOrder.getStatus()==0){
             //判断是否已超1天
-            long diff=new Date().getTime()-tbOrder.getCreateTime().getTime();
+            long diff=System.currentTimeMillis()-tbOrder.getCreateTime().getTime();
             long days = diff / (1000 * 60 * 60 * 24);
             if(days>=1){
                 //设置失效
@@ -297,5 +348,17 @@ public class OrderServiceImpl implements OrderService {
             }
         }
         return result;
+    }
+
+    public int getMemberOrderCount(Long userId){
+
+        TbOrderExample example=new TbOrderExample();
+        TbOrderExample.Criteria criteria= example.createCriteria();
+        criteria.andUserIdEqualTo(userId);
+        List<TbOrder> listOrder =tbOrderMapper.selectByExample(example);
+        if(listOrder!=null){
+            return listOrder.size();
+        }
+        return 0;
     }
 }

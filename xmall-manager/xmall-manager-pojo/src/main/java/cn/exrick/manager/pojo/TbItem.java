@@ -1,17 +1,17 @@
 package cn.exrick.manager.pojo;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class TbItem implements Serializable{
-
     private Long id;
 
     private String title;
 
     private String sellPoint;
 
-    private Long price;
+    private BigDecimal price;
 
     private Integer num;
 
@@ -51,11 +51,11 @@ public class TbItem implements Serializable{
         this.sellPoint = sellPoint == null ? null : sellPoint.trim();
     }
 
-    public Long getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
@@ -121,22 +121,5 @@ public class TbItem implements Serializable{
             return strings;
         }
         return null;
-    }
-
-    @Override
-    public String toString() {
-        return "TbItem{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", sellPoint='" + sellPoint + '\'' +
-                ", price=" + price +
-                ", num=" + num +
-                ", limitNum=" + limitNum +
-                ", image='" + image + '\'' +
-                ", cid=" + cid +
-                ", status=" + status +
-                ", created=" + created +
-                ", updated=" + updated +
-                '}';
     }
 }

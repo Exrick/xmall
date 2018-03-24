@@ -3,9 +3,9 @@
 <mapper namespace="cn.exrick.manager.mapper.TbOrderMapper">
   <resultMap id="BaseResultMap" type="cn.exrick.manager.pojo.TbOrder">
     <id column="order_id" jdbcType="VARCHAR" property="orderId" />
-    <result column="payment" jdbcType="VARCHAR" property="payment" />
+    <result column="payment" jdbcType="DECIMAL" property="payment" />
     <result column="payment_type" jdbcType="INTEGER" property="paymentType" />
-    <result column="post_fee" jdbcType="VARCHAR" property="postFee" />
+    <result column="post_fee" jdbcType="DECIMAL" property="postFee" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
@@ -18,7 +18,7 @@
     <result column="user_id" jdbcType="BIGINT" property="userId" />
     <result column="buyer_message" jdbcType="VARCHAR" property="buyerMessage" />
     <result column="buyer_nick" jdbcType="VARCHAR" property="buyerNick" />
-    <result column="buyer_rate" jdbcType="INTEGER" property="buyerRate" />
+    <result column="buyer_comment" jdbcType="BIT" property="buyerComment" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -81,7 +81,7 @@
   <sql id="Base_Column_List">
     order_id, payment, payment_type, post_fee, status, create_time, update_time, payment_time, 
     consign_time, end_time, close_time, shipping_name, shipping_code, user_id, buyer_message, 
-    buyer_nick, buyer_rate
+    buyer_nick, buyer_comment
   </sql>
   <select id="selectByExample" parameterType="cn.exrick.manager.pojo.TbOrderExample" resultMap="BaseResultMap">
     select
@@ -119,13 +119,13 @@
       update_time, payment_time, consign_time, 
       end_time, close_time, shipping_name, 
       shipping_code, user_id, buyer_message, 
-      buyer_nick, buyer_rate)
-    values (#{orderId,jdbcType=VARCHAR}, #{payment,jdbcType=VARCHAR}, #{paymentType,jdbcType=INTEGER}, 
-      #{postFee,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      buyer_nick, buyer_comment)
+    values (#{orderId,jdbcType=VARCHAR}, #{payment,jdbcType=DECIMAL}, #{paymentType,jdbcType=INTEGER}, 
+      #{postFee,jdbcType=DECIMAL}, #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{paymentTime,jdbcType=TIMESTAMP}, #{consignTime,jdbcType=TIMESTAMP}, 
       #{endTime,jdbcType=TIMESTAMP}, #{closeTime,jdbcType=TIMESTAMP}, #{shippingName,jdbcType=VARCHAR}, 
       #{shippingCode,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}, #{buyerMessage,jdbcType=VARCHAR}, 
-      #{buyerNick,jdbcType=VARCHAR}, #{buyerRate,jdbcType=INTEGER})
+      #{buyerNick,jdbcType=VARCHAR}, #{buyerComment,jdbcType=BIT})
   </insert>
   <insert id="insertSelective" parameterType="cn.exrick.manager.pojo.TbOrder">
     insert into tb_order
@@ -178,8 +178,8 @@
       <if test="buyerNick != null">
         buyer_nick,
       </if>
-      <if test="buyerRate != null">
-        buyer_rate,
+      <if test="buyerComment != null">
+        buyer_comment,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -187,13 +187,13 @@
         #{orderId,jdbcType=VARCHAR},
       </if>
       <if test="payment != null">
-        #{payment,jdbcType=VARCHAR},
+        #{payment,jdbcType=DECIMAL},
       </if>
       <if test="paymentType != null">
         #{paymentType,jdbcType=INTEGER},
       </if>
       <if test="postFee != null">
-        #{postFee,jdbcType=VARCHAR},
+        #{postFee,jdbcType=DECIMAL},
       </if>
       <if test="status != null">
         #{status,jdbcType=INTEGER},
@@ -231,8 +231,8 @@
       <if test="buyerNick != null">
         #{buyerNick,jdbcType=VARCHAR},
       </if>
-      <if test="buyerRate != null">
-        #{buyerRate,jdbcType=INTEGER},
+      <if test="buyerComment != null">
+        #{buyerComment,jdbcType=BIT},
       </if>
     </trim>
   </insert>
@@ -249,13 +249,13 @@
         order_id = #{record.orderId,jdbcType=VARCHAR},
       </if>
       <if test="record.payment != null">
-        payment = #{record.payment,jdbcType=VARCHAR},
+        payment = #{record.payment,jdbcType=DECIMAL},
       </if>
       <if test="record.paymentType != null">
         payment_type = #{record.paymentType,jdbcType=INTEGER},
       </if>
       <if test="record.postFee != null">
-        post_fee = #{record.postFee,jdbcType=VARCHAR},
+        post_fee = #{record.postFee,jdbcType=DECIMAL},
       </if>
       <if test="record.status != null">
         status = #{record.status,jdbcType=INTEGER},
@@ -293,8 +293,8 @@
       <if test="record.buyerNick != null">
         buyer_nick = #{record.buyerNick,jdbcType=VARCHAR},
       </if>
-      <if test="record.buyerRate != null">
-        buyer_rate = #{record.buyerRate,jdbcType=INTEGER},
+      <if test="record.buyerComment != null">
+        buyer_comment = #{record.buyerComment,jdbcType=BIT},
       </if>
     </set>
     <if test="_parameter != null">
@@ -304,9 +304,9 @@
   <update id="updateByExample" parameterType="map">
     update tb_order
     set order_id = #{record.orderId,jdbcType=VARCHAR},
-      payment = #{record.payment,jdbcType=VARCHAR},
+      payment = #{record.payment,jdbcType=DECIMAL},
       payment_type = #{record.paymentType,jdbcType=INTEGER},
-      post_fee = #{record.postFee,jdbcType=VARCHAR},
+      post_fee = #{record.postFee,jdbcType=DECIMAL},
       status = #{record.status,jdbcType=INTEGER},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
@@ -319,7 +319,7 @@
       user_id = #{record.userId,jdbcType=BIGINT},
       buyer_message = #{record.buyerMessage,jdbcType=VARCHAR},
       buyer_nick = #{record.buyerNick,jdbcType=VARCHAR},
-      buyer_rate = #{record.buyerRate,jdbcType=INTEGER}
+      buyer_comment = #{record.buyerComment,jdbcType=BIT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -328,13 +328,13 @@
     update tb_order
     <set>
       <if test="payment != null">
-        payment = #{payment,jdbcType=VARCHAR},
+        payment = #{payment,jdbcType=DECIMAL},
       </if>
       <if test="paymentType != null">
         payment_type = #{paymentType,jdbcType=INTEGER},
       </if>
       <if test="postFee != null">
-        post_fee = #{postFee,jdbcType=VARCHAR},
+        post_fee = #{postFee,jdbcType=DECIMAL},
       </if>
       <if test="status != null">
         status = #{status,jdbcType=INTEGER},
@@ -372,17 +372,17 @@
       <if test="buyerNick != null">
         buyer_nick = #{buyerNick,jdbcType=VARCHAR},
       </if>
-      <if test="buyerRate != null">
-        buyer_rate = #{buyerRate,jdbcType=INTEGER},
+      <if test="buyerComment != null">
+        buyer_comment = #{buyerComment,jdbcType=BIT},
       </if>
     </set>
     where order_id = #{orderId,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.exrick.manager.pojo.TbOrder">
     update tb_order
-    set payment = #{payment,jdbcType=VARCHAR},
+    set payment = #{payment,jdbcType=DECIMAL},
       payment_type = #{paymentType,jdbcType=INTEGER},
-      post_fee = #{postFee,jdbcType=VARCHAR},
+      post_fee = #{postFee,jdbcType=DECIMAL},
       status = #{status,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
@@ -395,7 +395,7 @@
       user_id = #{userId,jdbcType=BIGINT},
       buyer_message = #{buyerMessage,jdbcType=VARCHAR},
       buyer_nick = #{buyerNick,jdbcType=VARCHAR},
-      buyer_rate = #{buyerRate,jdbcType=INTEGER}
+      buyer_comment = #{buyerComment,jdbcType=BIT}
     where order_id = #{orderId,jdbcType=VARCHAR}
   </update>
 </mapper>

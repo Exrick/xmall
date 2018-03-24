@@ -3,13 +3,14 @@ package cn.exrick.manager.dto.front;
 import cn.exrick.manager.pojo.TbAddress;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.List;
 
 public class Order implements Serializable{
 
     private Long orderId;
 
-    private Long orderTotal;
+    private BigDecimal orderTotal;
 
     private TbAddress addressInfo;
 
@@ -39,11 +40,11 @@ public class Order implements Serializable{
         this.finishDate = finishDate;
     }
 
-    public Long getOrderTotal() {
+    public BigDecimal getOrderTotal() {
         return orderTotal;
     }
 
-    public void setOrderTotal(Long orderTotal) {
+    public void setOrderTotal(BigDecimal orderTotal) {
         this.orderTotal = orderTotal;
     }
 

@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import java.net.BindException;
 
 /**
- * Created by Exrick on 2017/8/20.
+ *
+ * @author Exrick
+ * @date 2018/03/24
  */
 @ControllerAdvice
 public class RestCtrlExceptionHandler {
@@ -22,7 +24,7 @@ public class RestCtrlExceptionHandler {
     private static Logger log = LoggerFactory.getLogger(RestCtrlExceptionHandler.class);
 
     @ExceptionHandler(BindException.class)
-    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+    @ResponseStatus(value = HttpStatus.OK)
     @ResponseBody
     public Result<Object> bindExceptionHandler(BindException e){
         String errorMsg="请求数据校验不合法: ";
@@ -33,7 +35,7 @@ public class RestCtrlExceptionHandler {
         return new ResultUtil<>().setErrorMsg(errorMsg);
     }
 
-    @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
+    @ResponseStatus(value = HttpStatus.OK)
     @ExceptionHandler(XmallException.class)
     @ResponseBody
     public Result<Object> handleXmallException(XmallException e) {
@@ -46,7 +48,7 @@ public class RestCtrlExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
+    @ResponseStatus(value = HttpStatus.OK)
     @ResponseBody
     public Result<Object> handleException(Exception e) {
         String errorMsg="Exception: ";

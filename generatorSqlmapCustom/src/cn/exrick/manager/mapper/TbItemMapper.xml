@@ -5,7 +5,7 @@
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="sell_point" jdbcType="VARCHAR" property="sellPoint" />
-    <result column="price" jdbcType="BIGINT" property="price" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
     <result column="num" jdbcType="INTEGER" property="num" />
     <result column="limit_num" jdbcType="INTEGER" property="limitNum" />
     <result column="image" jdbcType="VARCHAR" property="image" />
@@ -111,7 +111,7 @@
       image, cid, status, 
       created, updated)
     values (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{sellPoint,jdbcType=VARCHAR}, 
-      #{price,jdbcType=BIGINT}, #{num,jdbcType=INTEGER}, #{limitNum,jdbcType=INTEGER}, 
+      #{price,jdbcType=DECIMAL}, #{num,jdbcType=INTEGER}, #{limitNum,jdbcType=INTEGER}, 
       #{image,jdbcType=VARCHAR}, #{cid,jdbcType=BIGINT}, #{status,jdbcType=TINYINT}, 
       #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP})
   </insert>
@@ -163,7 +163,7 @@
         #{sellPoint,jdbcType=VARCHAR},
       </if>
       <if test="price != null">
-        #{price,jdbcType=BIGINT},
+        #{price,jdbcType=DECIMAL},
       </if>
       <if test="num != null">
         #{num,jdbcType=INTEGER},
@@ -207,7 +207,7 @@
         sell_point = #{record.sellPoint,jdbcType=VARCHAR},
       </if>
       <if test="record.price != null">
-        price = #{record.price,jdbcType=BIGINT},
+        price = #{record.price,jdbcType=DECIMAL},
       </if>
       <if test="record.num != null">
         num = #{record.num,jdbcType=INTEGER},
@@ -240,7 +240,7 @@
     set id = #{record.id,jdbcType=BIGINT},
       title = #{record.title,jdbcType=VARCHAR},
       sell_point = #{record.sellPoint,jdbcType=VARCHAR},
-      price = #{record.price,jdbcType=BIGINT},
+      price = #{record.price,jdbcType=DECIMAL},
       num = #{record.num,jdbcType=INTEGER},
       limit_num = #{record.limitNum,jdbcType=INTEGER},
       image = #{record.image,jdbcType=VARCHAR},
@@ -262,7 +262,7 @@
         sell_point = #{sellPoint,jdbcType=VARCHAR},
       </if>
       <if test="price != null">
-        price = #{price,jdbcType=BIGINT},
+        price = #{price,jdbcType=DECIMAL},
       </if>
       <if test="num != null">
         num = #{num,jdbcType=INTEGER},
@@ -292,7 +292,7 @@
     update tb_item
     set title = #{title,jdbcType=VARCHAR},
       sell_point = #{sellPoint,jdbcType=VARCHAR},
-      price = #{price,jdbcType=BIGINT},
+      price = #{price,jdbcType=DECIMAL},
       num = #{num,jdbcType=INTEGER},
       limit_num = #{limitNum,jdbcType=INTEGER},
       image = #{image,jdbcType=VARCHAR},
@@ -302,4 +302,47 @@
       updated = #{updated,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select id="selectItemByCondition" resultMap="BaseResultMap">
+    SELECT * FROM tb_item
+    WHERE (title LIKE #{search}
+    OR
+    sell_point LIKE #{search}
+    OR
+    price LIKE #{search}
+    OR
+    id LIKE #{search})
+    <if test="cid != -1">
+      AND cid = #{cid}
+    </if>
+    ORDER BY
+    ${orderCol}
+    ${orderDir}
+  </select>
+  <select id="selectItemByMultiCondition" resultMap="BaseResultMap">
+    SELECT * FROM tb_item
+    WHERE (title LIKE #{search}
+    OR
+    sell_point LIKE #{search}
+    OR
+    price LIKE #{search})
+    <if test="cid != -1">
+      AND cid = #{cid}
+    </if>
+    <if test="minDate != null and minDate != '' and maxDate != null and maxDate != ''">
+      AND created BETWEEN #{minDate} AND #{maxDate}
+    </if>
+    ORDER BY
+    ${orderCol}
+    ${orderDir}
+  </select>
+  <select id="selectItemFront" resultMap="BaseResultMap">
+    SELECT * FROM tb_item
+    WHERE status = 1
+    <if test="priceGt != null and priceGt >= 0 and priceLte != null and priceLte >= 0">
+      AND price BETWEEN #{priceGt} AND #{priceLte}
+    </if>
+    ORDER BY
+    ${orderCol}
+    ${orderDir}
+  </select>
 </mapper>

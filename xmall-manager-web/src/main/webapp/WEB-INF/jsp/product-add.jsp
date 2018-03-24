@@ -181,19 +181,17 @@
         focusCleanup:false,
         success:"valid",
         submitHandler:function(form){
-            $("#saveButton").html("保存中...");
-            $("#saveButton").attr("disabled","disabled");
             if(images==null){
                 layer.alert('请上传商品展示缩略图! ', {title: '错误信息',icon: 0});
-                $("#saveButton").html("保存并发布");
-                $("#saveButton").removeAttr("disabled");
                 return;
             }
+            var index = layer.load(3);
             editor.sync();
             $(form).ajaxSubmit({
                 url: "/item/add",
                 type: "POST",
                 success: function(data) {
+                    layer.close(index);
                     if(data.success==true){
                         if(parent.location.pathname!='/'){
                             parent.product_count();
@@ -211,14 +209,11 @@
                         }
                     }else{
                         layer.alert(data.message, {title: '错误信息',icon: 2});
-                        $("#saveButton").html("保存并发布");
-                        $("#saveButton").removeAttr("disabled");
                     }
                 },
                 error:function(XMLHttpRequest) {
-                    $("#saveButton").html("保存并发布");
-                    $("#saveButton").removeAttr("disabled");
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
             });
         }
@@ -779,15 +774,21 @@
             };
             // 文件上传成功
             uploader.on( 'uploadSuccess', function( file,data ) {
+
                 if(data.success==true){
                     if(images==null){
                         images=data.result;
                     }else{
                         images+=","+data.result;
                     }
+                    $("#image").val(images);
+                }else{
+                    alert("上传失败");
                 }
-                $("#image").val(images);
+
             });
+
+
 
             uploader.on('all', function (type) {
                 var stats;

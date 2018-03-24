@@ -49,11 +49,6 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
         </dependency>
-        <!-- Quartz任务调度框架 -->
-        <dependency>
-            <groupId>org.quartz-scheduler</groupId>
-            <artifactId>quartz</artifactId>
-        </dependency>
         <!-- 单元测试 -->
         <dependency>
             <groupId>junit</groupId>

@@ -62,13 +62,8 @@
 <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="lib/datatables/dataTables.colReorder.min.js"></script>
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="lib/common.js"></script>
 <script type="text/javascript">
-
-    /*刷新表格*/
-    function refresh(){
-        var table = $('.table').DataTable();
-        table.ajax.reload(null,false);// 刷新表格数据，分页信息不会重置
-    }
 
     /*datatables配置*/
     $(document).ready(function () {
@@ -76,10 +71,7 @@
             "processing": true,//加载显示提示
             "ajax": {
                 url:"/user/roleList/",
-                type: 'GET',
-                error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
-                }
+                type: 'GET'
             },
             "columns": [
                 { "data": null,
@@ -108,9 +100,9 @@
             },
             colReorder: true
         });
-
-        roleCount();
     });
+
+    roleCount();
 
     function roleCount() {
         $.ajax({

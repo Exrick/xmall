@@ -77,12 +77,12 @@
         focusCleanup:false,
         success:"valid",
         submitHandler:function(form){
-            $("#saveButton").html("保存中...");
-            $("#saveButton").attr("disabled","disabled");
+            var index = layer.load(3);
             $(form).ajaxSubmit({
                 url: "/user/addPermission",
                 type: "POST",
                 success: function(data) {
+                    layer.close(index);
                     if(data.success==true){
                         parent.permissionCount();
                         parent.refresh();
@@ -90,14 +90,11 @@
                         var index = parent.layer.getFrameIndex(window.name);
                         parent.layer.close(index);
                     }else{
-                        $("#saveButton").html("提交");
-                        $("#saveButton").removeAttr("disabled");
                         layer.alert(data.message, {title: '错误信息',icon: 2});
                     }
                 },
                 error:function(XMLHttpRequest) {
-                    $("#saveButton").html("提交");
-                    $("#saveButton").removeAttr("disabled");
+                    layer.close(index);
                     layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
                 }
             });

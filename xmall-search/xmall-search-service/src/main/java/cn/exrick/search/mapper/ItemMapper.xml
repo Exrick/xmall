@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.exrick.search.mapper.ItemMapper">
-	<select id="getItemList" resultType="cn.exrick.common.pojo.SearchItem">
+	<select id="getItemList" resultType="cn.exrick.manager.dto.front.SearchItem">
 		SELECT
 		a.id productId,
 		a.title productName,
@@ -15,7 +15,7 @@
 		WHERE
 		a.`status` = 1
 	</select>
-	<select id="getItemById" resultType="cn.exrick.common.pojo.SearchItem">
+	<select id="getItemById" resultType="cn.exrick.manager.dto.front.SearchItem">
 		SELECT
 		a.id productId,
 		a.title productName,
