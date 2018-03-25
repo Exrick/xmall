@@ -12,10 +12,10 @@
 ### 前台页面为基于Vue的独立项目 请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库查看
 ### 开发中，敬请期待！
 - Spring Cloud版
-    - [X-Cloud](https://github.com/Exrick/x-cloud)框架开发中
+    - [X-Cloud](https://github.com/Exrick/x-cloud) 框架开发中
 - 微信小程序APP
 
-    ![](http://oweupqzdv.bkt.clouddn.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A2%84%E8%A7%88.png)
+    ![](http://oweupqzdv.bkt.clouddn.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A2%84%E8%A7%881.png)
 
 - XMall开放平台(仿微信开放平台)
 
@@ -29,11 +29,11 @@
 - [x] 单点登录系统：为多个系统之间提供用户登录凭证以及查询登录用户的信息
 
 ### v1.1更新日志
-- [x] 接入XPay支付系统
+- [x] 接入[XPay支付系统](https://github.com/Exrick/xpay)
 - [x] 更新Dubbo等依赖版本
 - [x] 修复后台统计热卖商品SQL错误
-- [x] front-web模块支持SpringMVC文件上传
-- [x] ES默认集群名改为原elasticsearch
+- [x] xmall-front-web模块支持SpringMVC文件上传配置
+- [x] ES默认配置集群名改为原elasticsearch
 - [x] 修改金额字段类型
 - [x] 优化后台页面
 - [ ] 修复用户修改BUG
@@ -42,6 +42,7 @@
 - [ ] 完成订单打印发货等功能
 - [ ] 完成SKU设计
 - [ ] 增添报表
+...
 
 ![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171119130819.jpg "登录界面")
 
@@ -107,7 +108,7 @@
     - [阿里JAVA开发规约插件](https://github.com/alibaba/p3c)
 
 ### 文件说明
-- `dependency` 文件夹提供部分依赖与sql文件
+- `xmall` 文件夹提供部分依赖与sql文件
     - xmall.sql：数据库文件
     - dubbo.xsd：需手动配置避免报错
     - redis-3.0.0.gem：Redis集群搭建所需Ruby库
