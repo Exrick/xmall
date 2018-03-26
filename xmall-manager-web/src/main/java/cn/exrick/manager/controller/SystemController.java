@@ -62,11 +62,13 @@ public class SystemController {
         return new ResultUtil<Object>().setData(null);
     }
 
-    @RequestMapping(value = "/sys/shiro/del/{id}",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/sys/shiro/del/{ids}",method = RequestMethod.DELETE)
     @ApiOperation(value = "删除shiro过滤链")
-    public Result<Object> delShiro(@PathVariable int id){
+    public Result<Object> delShiro(@PathVariable int[] ids){
 
-        systemService.deleteShiroFilter(id);
+        for(int id:ids){
+            systemService.deleteShiroFilter(id);
+        }
         return new ResultUtil<Object>().setData(null);
     }
 
@@ -118,11 +120,13 @@ public class SystemController {
         return new ResultUtil<Object>().setData(result);
     }
 
-    @RequestMapping(value = "/sys/log/del/{id}",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/sys/log/del/{ids}",method = RequestMethod.DELETE)
     @ApiOperation(value = "删除系统日志")
-    public Result<Object> delLog(@PathVariable int id){
+    public Result<Object> delLog(@PathVariable int[] ids){
 
-        systemService.deleteLog(id);
+        for(int id:ids){
+            systemService.deleteLog(id);
+        }
         return new ResultUtil<Object>().setData(null);
     }
 }

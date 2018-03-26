@@ -4,7 +4,9 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * Created by Exrick on 2017/8/25.
+ *
+ * @author Exrick
+ * @date 2017/8/25
  */
 public class MemberDto implements Serializable{
 
@@ -116,22 +118,5 @@ public class MemberDto implements Serializable{
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    @Override
-    public String toString() {
-        return "MemberDto{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                ", sex='" + sex + '\'' +
-                ", province='" + province + '\'' +
-                ", city='" + city + '\'' +
-                ", district='" + district + '\'' +
-                ", state=" + state +
-                ", memberfile='" + memberfile + '\'' +
-                ", description='" + description + '\'' +
-                '}';
     }
 }

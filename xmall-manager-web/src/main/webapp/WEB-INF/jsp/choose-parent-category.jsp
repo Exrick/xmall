@@ -41,7 +41,7 @@
     var setting = {
         view: {
             dblClickExpand: true,
-            showLine: false,
+            showLine: true,
             selectedMulti: false
         },
         data: {

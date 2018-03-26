@@ -28,17 +28,19 @@
 - [x] 搜索系统：提供商品的搜索功能
 - [x] 单点登录系统：为多个系统之间提供用户登录凭证以及查询登录用户的信息
 
-### v1.1更新日志
+### v1.1更新日志(需更新前后台代码及SQL)
 - [x] 接入[XPay支付系统](https://github.com/Exrick/xpay)
-- [x] 更新Dubbo等依赖版本
+- [x] 更新Dubbo(2.6.1)、ES(6.2.3)等依赖版本
+- [x] 取消ES需在页面中配置及跨域问题
+- [x] ES默认配置集群名改为原elasticsearch
 - [x] 修复后台统计热卖商品SQL错误
 - [x] xmall-front-web模块支持SpringMVC文件上传配置
-- [x] ES默认配置集群名改为原elasticsearch
-- [x] 修改金额字段类型
+- [x] 修改金额字段类型优化SQL
 - [x] 优化后台页面
-- [ ] 修复用户修改BUG
-- [ ] 优化批量删除
-- [ ] 优化分类管理
+- [x] 修复用户修改BUG
+- [x] 优化批量删除
+- [x] 优化分类添加
+- [ ] 重构首页设计
 - [ ] 完成订单打印发货等功能
 - [ ] 完成SKU设计
 - [ ] 增添报表
@@ -116,12 +118,12 @@
 ### 本地开发运行部署
 - 下载zip直接解压或安装git后执行克隆命令 `git clone https://github.com/Exrick/xmall.git`
 - 依赖安装：[ZooKeeper](https://github.com/Exrick/xmall/blob/master/study/Zookeeper.md)、[Redis](https://github.com/Exrick/xmall/blob/master/study/Redis.md)、[ActiveMQ](https://github.com/Exrick/xmall/blob/master/study/ActiveMQ.md)、[Elasticsearch](https://github.com/Exrick/xmall/blob/master/study/Elasticsearch.md)
-- 修改各依赖相应IP配置(默认本地127.0.0.1)，以及七牛云、极验配置在 `xmall-common - utils` 中找到修改，同步索引在`xmall-manager-web\src\main\webapp\WEB-INF\jsp\refresh-index.jsp`两处ajax中修改Elsticsearch对应IP
+- 修改各配置文件相应依赖IP配置(默认本地127.0.0.1)，以及七牛云、极验配置在 `xmall-common - utils` 中找到修改
 - [Maven安装和在IDEA中配置](https://github.com/Exrick/xmall/blob/master/study/Maven.md)
 - 使用IDEA([破解/免费注册](http://idea.lanyus.com/)) `File-Open` 直接打开xmall项目，点击右下角 `Import Changes` 等待安装完依赖即可
-- MySQL数据库新建 `xmall` 数据库，运行sql文件，注意在 `xmall-manager-service/resources/conf/db.properties` 中修改你的数据库连接配置
+- MySQL数据库新建 `xmall` 数据库，运行sql文件，注意在有 `db.properties` 的模块中修改你的数据库连接配置
 - 按照依赖顺序分别在每个模块文件夹根目录执行 `mvn install` 命令
-- 项目需按照依赖顺序运行除 `xmall-parent` `xmall-common` 以外其它所有服务，且都已配置好Tomcat插件, 执行命令 `mvn tomcat7:run` 或在IDEA中使用插件(`View - Tool Buttons - 右侧菜单Maven Projects - tomcat7 - tomcat7:run`)运行即可，当然可自行配置
+- 项目需按照依赖顺序运行除 `xmall-parent` `xmall-common` 以外其它所有6个服务，且都已配置好Tomcat插件, 执行命令 `mvn tomcat7:run` 或在IDEA中使用插件(`View - Tool Buttons - 右侧菜单Maven Projects - tomcat7 - tomcat7:run`)运行即可，当然可自行配置
 - 后端管理系统默认端口8888 http://localhost:8888 管理员账密admin|123456
 - 前端项目接口默认端口7777 前台页面请启动基于Vue的 [xmall-front](https://github.com/Exrick/xmall-front) 项目，并修改其接口配置
 ### 技术疑问交流

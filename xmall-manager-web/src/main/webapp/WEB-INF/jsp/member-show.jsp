@@ -68,57 +68,24 @@
 <script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
 <script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
 <script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="lib/common.js"></script>
 <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript">
 
-    var getId=window.location.search.slice(window.location.search.lastIndexOf("?")+1);
+    $("#username").html(parent.username);
+    $("#sex").html(parent.sex);
+    $("#phone").html(parent.phone);
+    $("#email").html(parent.email);
+    $("#description").html(parent.description);
+    $("#phone").html(parent.phone);
+    $("#created").html(dateAll(parent.created));
+    $("#balance").html(parent.balance);
+    $("#points").html(parent.points);
+    $("#phone").html(parent.phone);
+    $("#avatar").attr("src", parent.file);
 
-    /*时间转换*/
-    function date(data){
-        var time = new Date(data);
-        var y = time.getFullYear();//年
-        var m = time.getMonth() + 1;//月
-        var d = time.getDate();//日
-        var h = time.getHours();//时
-        if (h >= 0 && h <= 9) {
-            h = "0" + h;
-        }
-        var mm = time.getMinutes();//分
-        if (mm >= 0 && mm <= 9) {
-            mm = "0" + mm;
-        }
-        var s = time.getSeconds();//秒
-        if (s >= 0 && s <= 9) {
-            s = "0" + s;
-        }
-        return (y+"-"+m+"-"+d+" "+h+":"+mm+":"+s);
-    }
-
-    $.ajax({
-        url:"/member/"+getId,
-        type:"GET",
-        success:function (data) {
-            document.getElementById("username").innerHTML = data.result.username;
-            document.getElementById("sex").innerHTML = data.result.sex;
-            document.getElementById("phone").innerHTML = data.result.phone;
-            document.getElementById("email").innerHTML = data.result.email;
-            document.getElementById("address").innerHTML = data.result.address;
-            document.getElementById("created").innerHTML = date(data.result.created);
-            if(data.result.description!=null){
-                document.getElementById("description").innerHTML = data.result.description;
-            }
-            document.getElementById("balance").innerHTML = data.result.balance;
-            document.getElementById("points").innerHTML = data.result.points;
-            if(data.result.file!=null&&data.result.file!=""){
-                $("#avatar").attr("src", data.result.file);
-            }
-        },
-        error:function(XMLHttpRequest){
-            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
-        }
-    });
 </script>
 </body>
 </html>

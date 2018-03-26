@@ -194,7 +194,7 @@
                     layer.close(index);
                     if(data.success==true){
                         if(parent.location.pathname!='/'){
-                            parent.product_count();
+                            parent.productCount();
                             parent.refresh();
                             parent.msgSuccess("添加成功!");
                             var index = parent.layer.getFrameIndex(window.name);

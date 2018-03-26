@@ -119,4 +119,5 @@
     <dubbo:reference interface="cn.exrick.content.service.ContentService" id="contentService" />
     <dubbo:reference interface="cn.exrick.content.service.ContentCatService" id="contentCatService" />
     <dubbo:reference interface="cn.exrick.content.service.ContentImageService" id="contentImageService" />
+    <dubbo:reference interface="cn.exrick.search.service.SearchItemService" id="searchItemService" />
 </beans>

@@ -137,9 +137,9 @@
             colReorder: true
         });
 
-        userCount();
     });
 
+    userCount();
     function userCount() {
         $.ajax({
             url:"/user/userCount",
@@ -167,11 +167,13 @@
     /*管理员-删除*/
     function admin_del(obj,id){
         layer.confirm('确认要删除ID为\''+id+'\'的用户吗？',{icon:0},function(index){
+            var index = layer.load(3);
             $.ajax({
                 type: 'DELETE',
-                url: '/user/delUser/'+id,
+                url: '/user/delUser?ids='+id,
                 dataType: 'json',
                 success: function(data){
+                    layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
                         return;
@@ -181,7 +183,8 @@
                     layer.msg('已删除!',{icon:1,time:1000});
                 },
                 error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
             });
         });
@@ -190,37 +193,42 @@
     /*批量删除*/
     function datadel() {
         var cks=document.getElementsByName("checkbox");
-        var count=0;
+        var count=0,ids="";
         for(var i=0;i<cks.length;i++){
             if(cks[i].checked){
                 count++;
+                ids+=cks[i].value+",";
             }
         }
         if(count==0){
             layer.msg('您还未勾选任何数据!',{icon:5,time:3000});
             return;
         }
+        /*去除末尾逗号*/
+        if(ids.length>0){
+            ids=ids.substring(0,ids.length-1);
+        }
         layer.confirm('确认要删除所选的'+count+'条数据吗？',{icon:0},function(index){
-            for(var i=0;i<cks.length;i++){
-                if(cks[i].checked){
-                    $.ajax({
-                        type: 'DELETE',
-                        url: '/user/delUser/'+cks[i].value,
-                        dataType: 'json',
-                        success:function(data){
-                            if(data.success!=true){
-                                layer.alert(data.message,{title: '错误信息',icon: 2});
-                            }
-                        },
-                        error:function(XMLHttpRequest){
-                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
-                        }
-                    });
+            var index = layer.load(3);
+            $.ajax({
+                type: 'DELETE',
+                url: '/user/delUser?ids='+ids,
+                dataType: 'json',
+                success:function(data){
+                    layer.close(index);
+                    if(data.success!=true){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                    }
+                    layer.msg('已删除!',{icon:1,time:1000});
+                    userCount();
+                    refresh();
+                },
+                error:function(XMLHttpRequest){
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
-            }
-            layer.msg('已删除!',{icon:1,time:1000});
-            userCount();
-            refresh();
+            });
+
         });
     }
 
@@ -248,17 +256,19 @@
         $('.table tbody').on( 'click', 'tr', function () {
             username = table.row(this).data().username;
         });
-        layer_show(title,url+'?'+id,w,h);
+        layer_show(title,url,w,h);
     }
 
     /*用户-停用*/
     function admin_stop(obj,id){
         layer.confirm('确认要停用ID为\''+id+'\'的用户吗？',{icon:0},function(index){
+            var index = layer.load(3);
             $.ajax({
                 type: 'PUT',
                 url: '/user/stop/'+id,
                 dataType: 'json',
                 success: function(data){
+                    layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
                         return;
@@ -267,7 +277,8 @@
                     layer.msg('已停用!',{icon: 5,time:1000});
                 },
                 error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
             });
         });
@@ -276,11 +287,13 @@
     /*管理员-启用*/
     function admin_start(obj,id){
         layer.confirm('确认要启用ID为\''+id+'\'的用户吗？',{icon:3},function(index){
+            var index = layer.load(3);
             $.ajax({
                 type: 'PUT',
                 url: '/user/start/'+id,
                 dataType: 'json',
                 success: function(data){
+                    layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
                         return;
@@ -289,7 +302,8 @@
                     layer.msg('已启用!',{icon: 6,time:1000});
                 },
                 error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
             });
         });

@@ -48,50 +48,54 @@
           <element id="library" level="project" name="Maven: jline:jline:0.9.94" />
           <element id="library" level="project" name="Maven: io.netty:netty:3.10.5.Final" />
           <element id="library" level="project" name="Maven: com.github.sgroschupf:zkclient:0.1" />
-          <element id="library" level="project" name="Maven: org.elasticsearch.client:transport:5.6.2" />
-          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch:5.6.2" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-core:6.6.1" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-analyzers-common:6.6.1" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-backward-codecs:6.6.1" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-grouping:6.6.1" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-highlighter:6.6.1" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-join:6.6.1" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-memory:6.6.1" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-misc:6.6.1" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-queries:6.6.1" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-queryparser:6.6.1" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-sandbox:6.6.1" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-spatial:6.6.1" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-spatial-extras:6.6.1" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-spatial3d:6.6.1" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-suggest:6.6.1" />
-          <element id="library" level="project" name="Maven: org.elasticsearch:securesm:1.1" />
+          <element id="library" level="project" name="Maven: org.elasticsearch.client:transport:6.2.3" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch:6.2.3" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-core:6.2.3" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-core:7.2.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-analyzers-common:7.2.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-backward-codecs:7.2.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-grouping:7.2.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-highlighter:7.2.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-join:7.2.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-memory:7.2.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-misc:7.2.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-queries:7.2.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-queryparser:7.2.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-sandbox:7.2.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-spatial:7.2.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-spatial-extras:7.2.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-spatial3d:7.2.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-suggest:7.2.1" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:securesm:1.2" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-cli:6.2.3" />
           <element id="library" level="project" name="Maven: net.sf.jopt-simple:jopt-simple:5.0.2" />
           <element id="library" level="project" name="Maven: com.carrotsearch:hppc:0.7.1" />
-          <element id="library" level="project" name="Maven: org.yaml:snakeyaml:1.15" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-smile:2.8.6" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.8.6" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.8.6" />
+          <element id="library" level="project" name="Maven: org.yaml:snakeyaml:1.17" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-smile:2.8.10" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.8.10" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.8.10" />
           <element id="library" level="project" name="Maven: com.tdunning:t-digest:3.0" />
           <element id="library" level="project" name="Maven: org.hdrhistogram:HdrHistogram:2.1.9" />
-          <element id="library" level="project" name="Maven: org.elasticsearch:jna:4.4.0-1" />
-          <element id="library" level="project" name="Maven: org.elasticsearch.plugin:transport-netty3-client:5.6.2" />
-          <element id="library" level="project" name="Maven: org.elasticsearch.plugin:transport-netty4-client:5.6.2" />
-          <element id="library" level="project" name="Maven: io.netty:netty-buffer:4.1.13.Final" />
-          <element id="library" level="project" name="Maven: io.netty:netty-codec:4.1.13.Final" />
-          <element id="library" level="project" name="Maven: io.netty:netty-codec-http:4.1.13.Final" />
-          <element id="library" level="project" name="Maven: io.netty:netty-common:4.1.13.Final" />
-          <element id="library" level="project" name="Maven: io.netty:netty-handler:4.1.13.Final" />
-          <element id="library" level="project" name="Maven: io.netty:netty-resolver:4.1.13.Final" />
-          <element id="library" level="project" name="Maven: io.netty:netty-transport:4.1.13.Final" />
-          <element id="library" level="project" name="Maven: org.elasticsearch.plugin:reindex-client:5.6.2" />
-          <element id="library" level="project" name="Maven: org.elasticsearch.client:elasticsearch-rest-client:5.6.2" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:jna:4.5.1" />
+          <element id="library" level="project" name="Maven: org.elasticsearch.plugin:transport-netty4-client:6.2.3" />
+          <element id="library" level="project" name="Maven: io.netty:netty-buffer:4.1.16.Final" />
+          <element id="library" level="project" name="Maven: io.netty:netty-codec:4.1.16.Final" />
+          <element id="library" level="project" name="Maven: io.netty:netty-codec-http:4.1.16.Final" />
+          <element id="library" level="project" name="Maven: io.netty:netty-common:4.1.16.Final" />
+          <element id="library" level="project" name="Maven: io.netty:netty-handler:4.1.16.Final" />
+          <element id="library" level="project" name="Maven: io.netty:netty-resolver:4.1.16.Final" />
+          <element id="library" level="project" name="Maven: io.netty:netty-transport:4.1.16.Final" />
+          <element id="library" level="project" name="Maven: org.locationtech.spatial4j:spatial4j:0.6" />
+          <element id="library" level="project" name="Maven: com.vividsolutions:jts:1.13" />
+          <element id="library" level="project" name="Maven: org.elasticsearch.plugin:reindex-client:6.2.3" />
+          <element id="library" level="project" name="Maven: org.elasticsearch.client:elasticsearch-rest-client:6.2.3" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpasyncclient:4.1.2" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore-nio:4.4.5" />
-          <element id="library" level="project" name="Maven: org.elasticsearch.plugin:lang-mustache-client:5.6.2" />
+          <element id="library" level="project" name="Maven: org.elasticsearch.plugin:lang-mustache-client:6.2.3" />
           <element id="library" level="project" name="Maven: com.github.spullara.mustache.java:compiler:0.9.3" />
-          <element id="library" level="project" name="Maven: org.elasticsearch.plugin:percolator-client:5.6.2" />
-          <element id="library" level="project" name="Maven: org.elasticsearch.plugin:parent-join-client:5.6.2" />
+          <element id="library" level="project" name="Maven: org.elasticsearch.plugin:percolator-client:6.2.3" />
+          <element id="library" level="project" name="Maven: org.elasticsearch.plugin:parent-join-client:6.2.3" />
+          <element id="library" level="project" name="Maven: org.elasticsearch.plugin:rank-eval-client:6.2.3" />
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-core:2.9.1" />
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.9.1" />
           <element id="library" level="project" name="Maven: org.apache.activemq:activemq-all:5.11.2" />

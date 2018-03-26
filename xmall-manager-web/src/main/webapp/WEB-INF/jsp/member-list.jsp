@@ -37,7 +37,13 @@
         <input type="text" class="input-text" style="width:250px" placeholder="输入会员名称、电话、邮箱等信息" id="searchKey" name="searchKey">
         <button id="searchButton" type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
     </form>
-    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a href="javascript:;" onclick="member_add('添加用户','member-add','','510')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加用户</a></span> <span class="r">共有数据：<strong id="memberListCount">0</strong> 条</span> </div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20">
+        <span class="l">
+            <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
+            <a href="javascript:;" onclick="member_add('添加用户','member-add','','600')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加用户</a>
+        </span>
+        <span class="r">共有数据：<strong id="memberListCount">0</strong> 条</span>
+    </div>
     <div class="mt-20" style="margin-bottom: 70px">
         <table class="table table-border table-bordered table-hover table-bg table-sort" width="100%">
             <thead>
@@ -71,29 +77,8 @@
 <script type="text/javascript" src="lib/datatables/dataTables.colReorder.min.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="lib/common.js"></script>
 <script type="text/javascript">
-    /*刷新表格*/
-    function refresh(){
-        var table = $('.table').DataTable();
-        table.ajax.reload(null,false);// 刷新表格数据，分页信息不会重置
-    }
-
-    /*时间转换*/
-    function date(data){
-        var time = new Date(data);
-        var y = time.getFullYear();//年
-        var m = time.getMonth() + 1;//月
-        var d = time.getDate();//日
-        var h = time.getHours();//时
-        if (h >= 0 && h <= 9) {
-            h = "0" + h;
-        }
-        var mm = time.getMinutes();//分
-        if (mm >= 0 && mm <= 9) {
-            mm = "0" + mm;
-        }
-        return (y+"-"+m+"-"+d+" "+h+":"+mm);
-    }
 
     $(function() {
         $('.table').dataTable({
@@ -107,9 +92,6 @@
                     "minDate": "",
                     "maxDate": "",
                 },
-                error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
-                }
             },
             "columns": [
                 { "data": null,
@@ -120,7 +102,7 @@
                 { "data": "id"},
                 { "data": "username",
                     render: function(data,type, row, meta){
-                        return "<u style=\"cursor:pointer\" class=\"text-primary\" onclick=\"member_show('用户详情','member-show',"+row.id+",'360','400')\">"+data+"</a>";
+                        return "<u style=\"cursor:pointer\" class=\"text-primary\" onclick=\"member_show('用户详情','member-show','360','400')\">"+data+"</a>";
                     }
                 },
                 { "data": "sex"},
@@ -182,28 +164,45 @@
                 $("#memberListCount").html(data.recordsTotal);
             },
             error:function(XMLHttpRequest){
-                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
             }
         });
     }
+
+    var Id="",username="",phone="",email="",description="",sex="",address="",created="",balance="",points="",file="";
 
     /*用户-添加*/
     function member_add(title,url,w,h){
         layer_show(title,url,w,h);
     }
     /*用户-查看*/
-    function member_show(title,url,id,w,h){
-        layer_show(title,url+'?'+id,w,h);
+    function member_show(title,url,w,h){
+        var table = $('.table').DataTable();
+        $('.table tbody').on( 'click', 'tr', function () {
+            username = table.row(this).data().username;
+            phone = table.row(this).data().phone;
+            email = table.row(this).data().email;
+            description = table.row(this).data().description;
+            sex = table.row(this).data().sex;
+            address = table.row(this).data().address;
+            created = table.row(this).data().created;
+            balance = table.row(this).data().balance;
+            points = table.row(this).data().points;
+            file = table.row(this).data().file;
+        });
+        layer_show(title,url,w,h);
     }
 
     /*用户-停用*/
     function member_stop(obj,id){
         layer.confirm('确认要停用ID为\''+id+'\'的会员吗？',{icon:0},function(index){
+            var index = layer.load(3);
             $.ajax({
                 type: 'PUT',
                 url: '/member/stop/'+id,
                 dataType: 'json',
                 success: function(data){
+                    layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
                         return;
@@ -212,7 +211,8 @@
                     layer.msg('已停用!',{icon: 5,time:1000});
                 },
                 error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
             });
         });
@@ -221,11 +221,13 @@
     /*用户-启用*/
     function member_start(obj,id){
         layer.confirm('确认要启用ID为\''+id+'\'的会员吗？',{icon:3},function(index){
+            var index = layer.load(3);
             $.ajax({
                 type: 'PUT',
                 url: '/member/start/'+id,
                 dataType: 'json',
                 success: function(data){
+                    layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
                         return;
@@ -234,27 +236,48 @@
                     layer.msg('已启用!',{icon: 6,time:1000});
                 },
                 error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
             });
         });
     }
+
     /*用户-编辑*/
     function member_edit(title,url,id,w,h){
-        layer_show(title,url+'?'+id,w,h);
+        Id=id;
+        var table = $('.table').DataTable();
+        $('.table tbody').on( 'click', 'tr', function () {
+            username = table.row(this).data().username;
+            phone = table.row(this).data().phone;
+            email = table.row(this).data().email;
+            description = table.row(this).data().description;
+            sex = table.row(this).data().sex;
+            address = table.row(this).data().address;
+        });
+        layer_show(title,url,w,h);
     }
+
     /*密码-修改*/
     function change_password(title,url,id,w,h){
-        layer_show(title,url+'?'+id,w,h);
+        Id=id;
+        var table = $('.table').DataTable();
+        $('.table tbody').on( 'click', 'tr', function () {
+            username = table.row(this).data().username;
+        });
+        layer_show(title,url,w,h);
     }
+
     /*用户-删除*/
     function member_del(obj,id){
         layer.confirm('确认要删除ID为\''+id+'\'的会员吗？',{icon:0},function(index){
+            var index = layer.load(3);
             $.ajax({
                 type: 'PUT',
-                url: '/member/remove/'+id,
+                url: '/member/remove?ids='+id,
                 dataType: 'json',
                 success: function(data){
+                    layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
                         return;
@@ -264,7 +287,8 @@
                     layer.msg('已删除!',{icon:1,time:1000});
                 },
                 error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
             });
         });
@@ -273,38 +297,41 @@
     /*批量删除*/
     function datadel() {
         var cks=document.getElementsByName("checkbox");
-        var count=0;
+        var count=0,ids="";
         for(var i=0;i<cks.length;i++){
             if(cks[i].checked){
                 count++;
+                ids+=cks[i].value+",";
             }
         }
         if(count==0){
             layer.msg('您还未勾选任何数据!',{icon:5,time:3000});
             return;
         }
+        /*去除末尾逗号*/
+        if(ids.length>0){
+            ids=ids.substring(0,ids.length-1);
+        }
         layer.confirm('确认要删除所选的'+count+'条数据吗？',{icon:0},function(index){
-            for(var i=0;i<cks.length;i++){
-                if(cks[i].checked){
-                    $.ajax({
-                        type: 'PUT',
-                        url: '/member/remove/'+cks[i].value,
-                        dataType: 'json',
-                        success:function(data){
-                            if(data.success!=true){
-                                layer.alert(data.message,{title: '错误信息',icon: 2});
-                                return;
-                            }
-                        },
-                        error:function(XMLHttpRequest){
-                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
-                        }
-                    });
+            var index = layer.load(3);
+            $.ajax({
+                type: 'PUT',
+                url: '/member/remove/?ids='+ids,
+                dataType: 'json',
+                success:function(data){
+                    layer.close(index);
+                    if(data.success!=true){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                    }
+                    layer.msg('已删除!',{icon:1,time:1000});
+                    member_count();
+                    refresh();
+                },
+                error:function(XMLHttpRequest){
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
-            }
-            layer.msg('已删除!',{icon:1,time:1000});
-            member_count();
-            refresh();
+            });
         });
     }
 

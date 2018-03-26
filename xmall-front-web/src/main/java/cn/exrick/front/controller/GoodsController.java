@@ -25,8 +25,6 @@ public class GoodsController {
     private ContentService contentService;
     @Autowired
     private SearchService searchService;
-    @Autowired
-    private SearchItemService searchItemService;
 
     @RequestMapping(value = "/goods/productHome",method = RequestMethod.GET)
     @ApiOperation(value = "首页商品展示")
@@ -67,14 +65,6 @@ public class GoodsController {
 
         SearchResult searchResult=searchService.search(key,page,size,sort,priceGt,priceLte);
         return new ResultUtil<SearchResult>().setData(searchResult);
-    }
-
-    @RequestMapping(value = "/goods/importIndex",method = RequestMethod.GET)
-    @ApiOperation(value = "导入商品索引至ES")
-    public String searchProduct(){
-
-        searchItemService.importAllItems();
-        return "callback({})";
     }
 
 }

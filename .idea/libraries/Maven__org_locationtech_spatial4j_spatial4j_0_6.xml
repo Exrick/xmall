@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.locationtech.spatial4j:spatial4j:0.6">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/locationtech/spatial4j/spatial4j/0.6/spatial4j-0.6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/locationtech/spatial4j/spatial4j/0.6/spatial4j-0.6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/locationtech/spatial4j/spatial4j/0.6/spatial4j-0.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

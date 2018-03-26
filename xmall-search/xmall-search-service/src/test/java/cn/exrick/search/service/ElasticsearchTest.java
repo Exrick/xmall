@@ -5,7 +5,7 @@ import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
-import org.elasticsearch.common.transport.InetSocketTransportAddress;
+import org.elasticsearch.common.transport.TransportAddress;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
 import org.junit.Test;
 
@@ -22,7 +22,7 @@ public class ElasticsearchTest {
             Settings settings = Settings.builder()
                     .put("cluster.name", "xmall").build();
             TransportClient client = new PreBuiltTransportClient(settings)
-                    .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("123.207.121.135"), 9300));
+                    .addTransportAddress(new TransportAddress(InetAddress.getByName("127.0.0.1"), 9300));
 
             IndexResponse response = client.prepareIndex("item", "itemList", "830972")
                     .setSource(jsonBuilder()

@@ -25,14 +25,20 @@
 </head>
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品管理 <span class="c-gray en">&gt;</span> 商品分类 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
-<div style="margin-left: 1vw;margin-right: 1vw" class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="category_del()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 删除所选分类</a> <a class="btn btn-primary radius" onclick="category_add('添加商品分类','product-category-add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加商品分类</a></span> </div>
+<div style="margin-left: 1vw;margin-right: 1vw" class="cl pd-5 bg-1 bk-gray mt-20">
+    <span class="l">
+        <a href="javascript:;" onclick="category_del()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 删除所选分类</a>
+        <a class="btn btn-primary radius" onclick="categoryAdd('添加子级分类','product-category-add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加子级分类</a>
+        <a class="btn btn-primary radius" onclick="categoryRootAdd('添加根节点分类','product-category-add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加根节点分类</a>
+    </span>
+</div>
 <table class="table">
     <tr>
         <td style="padding-left: 4vw" width="200" class="va-t"><ul id="treeDemo" class="ztree"></ul></td>
         <td class="va-t">
             <div class="page-container">
                 <form action="" method="post" class="form form-horizontal" id="category-edit">
-                    <input type="text" hidden class="input-text" value="-1" id="id" name="id">
+                    <input type="text" hidden class="input-text" id="id" name="id">
                     <input type="text" hidden class="input-text" value="0" id="parentId" name="parentId">
                     <input type="text" hidden class="input-text" value="1" id="status" name="status">
                     <input type="text" hidden class="input-text" value="true" id="isParent" name="isParent">
@@ -110,23 +116,16 @@
         maxlength:100
     });
 
-    function refresh(){
-        location.reload();
-    }
-
     function chooseParent(){
         layer_show("选择父节点分类","choose-parent-category",300,510);
     }
-    
-    function setParentId(id,name) {
-        $("#parentName").val(name);
-        $("#parentId").val(id);
-    }
+
+    var isParent=false,id="",name="";
 
     var setting = {
         view: {
             dblClickExpand: true,
-            showLine: false,
+            showLine: true,
             selectedMulti: false
         },
         data: {
@@ -146,36 +145,28 @@
         },
         callback: {
             beforeClick: function(treeId, treeNode) {
-                var zTree = $.fn.zTree.getZTreeObj("tree");
-                if (treeNode.isParent) {
-                    $("#name").val(treeNode.name);
-                    $("#id").val(treeNode.id);
-                    $("#sortOrder").val(treeNode.sortOrder);
-                    $("#remark").val(treeNode.remark);
-                    $("#parentId").val(treeNode.pId);
-                    if($("#parentId").val()==""){
-                        $("#parentId").val(0);
-                    }
-                    changeSwitch1(1);
-                    changeSwitch2(treeNode.status);
-                    id=treeNode.id;
-                    name=treeNode.name;
+                $("#name").val(treeNode.name);
+                $("#id").val(treeNode.id);
+                $("#sortOrder").val(treeNode.sortOrder);
+                $("#remark").val(treeNode.remark);
+                $("#parentId").val(treeNode.pId);
+                if($("#parentId").val()==""){
+                    $("#parentId").val(0);
+                }
+                if(treeNode.pId!=0){
                     $("#parentName").val(treeNode.getParentNode().name);
+                }
+                changeSwitch2(treeNode.status);
+                id=treeNode.id;
+                name=treeNode.name;
+
+                if (treeNode.isParent) {
+                    isParent=true;
+                    changeSwitch1(1);
                     return false;
                 } else {
-                    $("#name").val(treeNode.name);
-                    $("#id").val(treeNode.id);
-                    $("#sortOrder").val(treeNode.sortOrder);
-                    $("#remark").val(treeNode.remark);
-                    $("#parentId").val(treeNode.pId);
-                    if($("#parentId").val()==""){
-                        $("#parentId").val(0);
-                    }
+                    isParent=false;
                     changeSwitch1(0);
-                    changeSwitch2(treeNode.status);
-                    id=treeNode.id;
-                    name=treeNode.name;
-                    $("#parentName").val(treeNode.getParentNode().name);
                     return true;
                 }
             }
@@ -214,14 +205,14 @@
         }
     });
 
-    $(document).ready(function(){
+    initTree();
+
+    function initTree(){
         var t = $("#treeDemo");
         t = $.fn.zTree.init(t, setting);
         demoIframe = $("#testIframe");
-        //demoIframe.on("load", loadReady);
         var zTree = $.fn.zTree.getZTreeObj("tree");
-        //zTree.selectNode(zTree.getNodeByParam("id",'11'));
-    });
+    }
 
     //保存提交
     $("#category-edit").validate({
@@ -241,35 +232,43 @@
         focusCleanup:false,
         success:"valid",
         submitHandler:function(form){
-//            if($("#isParent").val()=="false"&&$("#parentId").val()==""){
-//                layer.alert('请点击选择父节点分类! ', {title: '错误信息',icon: 0});
-//                return;
-//            }
+            var index = layer.load(3);
             $(form).ajaxSubmit({
                 url: "/item/cat/update",
                 type: "POST",
                 success: function(data) {
+                    layer.close(index);
                     if(data.success==true){
+                        initTree();
                         msgSuccess("编辑成功!");
                     }else{
                         layer.alert('添加失败! '+data.message, {title: '错误信息',icon: 2});
                     }
                 },
                 error:function(XMLHttpRequest) {
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
             });
         }
     });
 
-    /*分类-添加*/
-    function category_add(title,url){
-        var index = layer.open({
-            type: 2,
-            title: title,
-            content: url
-        });
-        layer.full(index);
+    var isRoot=false;
+
+    /*子分类-添加*/
+    function categoryAdd(title,url){
+        if(!isParent){
+            layer.alert('请点击选择一父分类! ', {title: '错误信息',icon: 0});
+            return;
+        }
+        isRoot=false;
+        layer_show(title,url,700,350);
+    }
+
+    /*根节点分类-添加*/
+    function categoryRootAdd(title,url){
+        isRoot=true;
+        layer_show(title,url,700,350);
     }
 
     /*分类-删除*/
@@ -280,19 +279,23 @@
             return;
         }
         layer.confirm('确认要删除所选的\''+name+'\'分类吗？',{icon:0},function(index){
+            var index = layer.load(3);
             $.ajax({
                 type: 'DELETE',
                 url: '/item/cat/del/' +id,
                 dataType: 'json',
                 success: function(data) {
+                    layer.close(index);
                     if(data.success==true){
+                        initTree();
                         msgSuccess("删除成功!");
                     }else{
-                        layer.alert('修改失败! '+data.message, {title: '错误信息',icon: 2});
+                        layer.alert('删除失败! '+data.message, {title: '错误信息',icon: 2});
                     }
                 },
                 error: function (XMLHttpRequest) {
-                    layer.alert('数据处理失败! 错误码:' + XMLHttpRequest.status + ' 错误信息:' + JSON.parse(XMLHttpRequest.responseText).message, {
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:' + XMLHttpRequest.status, {
                         title: '错误信息',
                         icon: 2
                     });
@@ -302,9 +305,7 @@
     }
 
     function msgSuccess(content){
-        layer.alert(content,{icon: 1}, function(index){
-            refresh();
-        });
+        layer.alert(content,{icon: 1});
     }
 </script>
 </body>

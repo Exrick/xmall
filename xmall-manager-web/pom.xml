@@ -130,6 +130,11 @@
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-all</artifactId>
         </dependency>
+        <dependency>
+            <groupId>cn.exrick</groupId>
+            <artifactId>xmall-search-interface</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <!-- 配置tomcat插件 -->

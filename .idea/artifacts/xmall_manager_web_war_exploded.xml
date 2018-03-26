@@ -108,6 +108,9 @@
           <element id="library" level="project" name="Maven: org.apache.shiro:shiro-quartz:1.4.0" />
           <element id="library" level="project" name="Maven: org.opensymphony.quartz:quartz:1.6.1" />
           <element id="library" level="project" name="Maven: org.apache.shiro:shiro-spring:1.4.0" />
+          <element id="archive" name="xmall-search-interface-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="xmall-search-interface" />
+          </element>
         </element>
       </element>
       <element id="directory" name="META-INF">

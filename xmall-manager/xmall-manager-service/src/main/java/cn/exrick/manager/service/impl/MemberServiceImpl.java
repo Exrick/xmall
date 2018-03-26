@@ -242,13 +242,11 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public TbMember changePassMember(Long id, MemberDto memberDto) {
 
-        TbMember tbMember=getMemberById(id);
-        if(tbMember.getPassword()==null||tbMember.getPassword()==""){
-            tbMember.setPassword(tbMember.getPassword());
-        }else{
-            String md5Pass = DigestUtils.md5DigestAsHex(tbMember.getPassword().getBytes());
-            tbMember.setPassword(md5Pass);
-        }
+        TbMember tbMember=tbMemberMapper.selectByPrimaryKey(id);
+
+        String md5Pass = DigestUtils.md5DigestAsHex(memberDto.getPassword().getBytes());
+        tbMember.setPassword(md5Pass);
+        tbMember.setUpdated(new Date());
 
         if (tbMemberMapper.updateByPrimaryKey(tbMember) != 1){
             throw new XmallException("修改会员密码失败");
@@ -259,7 +257,7 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public TbMember alertMemberState(Long id,Integer state) {
 
-        TbMember tbMember = getMemberById(id);
+        TbMember tbMember = tbMemberMapper.selectByPrimaryKey(id);
         tbMember.setState(state);
         tbMember.setUpdated(new Date());
 

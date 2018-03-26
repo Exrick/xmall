@@ -70,23 +70,8 @@
 <script type="text/javascript" src="lib/datatables/dataTables.colReorder.min.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="lib/common.js"></script>
 <script type="text/javascript">
-    /*刷新表格*/
-    function refresh(){
-        var table = $('.table').DataTable();
-        table.ajax.reload(null,false);// 刷新表格数据，分页信息不会重置
-    }
-    /*时间转换*/
-    function date(data){
-        var time = new Date(data);
-        var y = time.getFullYear();//年
-        var m = time.getMonth() + 1;//月
-        var d = time.getDate();//日
-        var h = time.getHours();//时
-        var mm = time.getMinutes();//分
-        var s = time.getSeconds();//秒
-        return (y+"-"+m+"-"+d+" "+h+":"+mm+":"+s);
-    }
 
     $(function(){
         $('.table').dataTable({
@@ -151,11 +136,12 @@
             colReorder: true
         });
 
-        memberRemove_count();
     });
 
+    memberRemoveCount();
+
     /*统计移除用户数*/
-    function memberRemove_count(){
+    function memberRemoveCount(){
         $.ajax({
             url:"/member/count/remove",
             type:"GET",
@@ -180,7 +166,7 @@
                         layer.alert(data.message,{title: '错误信息',icon: 2});
                         return ;
                     }
-                    memberRemove_count();
+                    memberRemoveCount();
                     refresh();
                     layer.msg('已还原!',{icon: 6,time:1000});
                 },
@@ -196,14 +182,14 @@
         layer.confirm('确认要彻底删除ID为\''+id+'\'的会员吗？',{icon:0},function(index){
             $.ajax({
                 type: 'DELETE',
-                url: '/member/del/'+id,
+                url: '/member/del?ids='+id,
                 dataType: 'json',
                 success: function(data){
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
                         return ;
                     }
-                    memberRemove_count();
+                    memberRemoveCount();
                     refresh();
                     layer.msg('已删除!',{icon:1,time:1000});
                 },
@@ -213,78 +199,87 @@
             });
         });
     }
+
     /*批量删除*/
     function datadel() {
         var cks=document.getElementsByName("checkbox");
-        var count=0;
+        var count=0,ids="";
         for(var i=0;i<cks.length;i++){
             if(cks[i].checked){
                 count++;
+                ids+=cks[i].value+",";
             }
         }
         if(count==0){
             layer.msg('您还未勾选任何数据!',{icon:5,time:3000});
             return;
         }
+        /*去除末尾逗号*/
+        if(ids.length>0){
+            ids=ids.substring(0,ids.length-1);
+        }
         layer.confirm('确认要彻底删除所选的'+count+'条数据吗？',{icon:0},function(index){
-            for(var i=0;i<cks.length;i++){
-                if(cks[i].checked){
-                    $.ajax({
-                        type: 'DELETE',
-                        url: '/member/del/'+cks[i].value,
-                        dataType: 'json',
-                        success:function(data){
-                            if(data.success!=true){
-                                layer.alert(data.message,{title: '错误信息',icon: 2});
-                                return;
-                            }
-                        },
-                        error:function(XMLHttpRequest){
-                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
-                        }
-                    });
+            var index = layer.load(3);
+            $.ajax({
+                type: 'DELETE',
+                url: '/member/del?ids='+ids,
+                dataType: 'json',
+                success:function(data){
+                    layer.close(index);
+                    if(data.success!=true){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                    }
+                    memberRemoveCount();
+                    refresh();
+                    layer.msg('已删除!',{icon:1,time:1000});
+                },
+                error:function(XMLHttpRequest){
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
-            }
-            memberRemove_count();
-            refresh();
-            layer.msg('已删除!',{icon:1,time:1000});
+            });
         });
     }
+
     /*批量还原*/
     function restoreAll(obj,id){
         var cks=document.getElementsByName("checkbox");
-        var count=0;
+        var count=0,ids="";
         for(var i=0;i<cks.length;i++){
             if(cks[i].checked){
                 count++;
+                ids+=cks[i].value+",";
             }
         }
         if(count==0){
             layer.msg('您还未勾选任何数据!',{icon:5,time:3000});
             return;
         }
+        /*去除末尾逗号*/
+        if(ids.length>0){
+            ids=ids.substring(0,ids.length-1);
+        }
         layer.confirm('确认要还原所选的'+count+'条数据吗？',{icon:0},function(index){
-            for(var i=0;i<cks.length;i++){
-                if(cks[i].checked){
-                    $.ajax({
-                        type: 'PUT',
-                        url: '/member/start/'+cks[i].value,
-                        dataType: 'json',
-                        success:function(data){
-                            if(data.success!=true){
-                                layer.alert(data.message,{title: '错误信息',icon: 2});
-                                return;
-                            }
-                        },
-                        error:function(XMLHttpRequest){
-                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
-                        }
-                    });
+            var index = layer.load(3);
+            $.ajax({
+                type: 'PUT',
+                url: '/member/start/'+ids,
+                dataType: 'json',
+                success:function(data){
+                    layer.close(index);
+                    if(data.success!=true){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                    }
+                    memberRemoveCount();
+                    refresh();
+                    layer.msg('已还原!',{icon:1,time:1000});
+                },
+                error:function(XMLHttpRequest){
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
-            }
-            memberRemove_count();
-            refresh();
-            layer.msg('已还原!',{icon:1,time:1000});
+            });
+
         });
     }
     /*多条件查询*/

@@ -111,47 +111,41 @@
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <script type="text/javascript" src="lib/province/distpicker.data.js"></script>
 <script type="text/javascript" src="lib/province/distpicker.js"></script>
+<script type="text/javascript" src="lib/common.js"></script>
 <script type="text/javascript">
-    var getId=window.location.search.slice(window.location.search.lastIndexOf("?")+1);
+    var id=parent.Id;
 
-    $.ajax({
-        url:"/member/"+getId,
-        type:"GET",
-        success:function (data) {
-            document.getElementById("username").value = data.result.username;
-            document.getElementById("phone").value = data.result.phone;
-            document.getElementById("email").value = data.result.email;
-            document.getElementById("description").value = data.result.description;
-            if(data.result.sex=='男'){
-                $("#sex-1").attr('checked', 'checked');
-                radioCheck();
-            }else if(data.result.sex=='女'){
-                $("#sex-2").attr('checked', 'checked');
-                radioCheck();
-            }else if(data.result.sex=='保密'){
-                $("#sex-3").attr('checked', 'checked');
-                radioCheck();
-            }
-            var arr,a,b,c;
-            if(data.result.address!=null){
-                 arr = data.result.address.split(" ");
-                 a=arr[0];
-                 b=arr[1];
-                 c=arr[2];
-            }
-            if(a==null){
-                a='北京市';
-            }
-            /*城市选择控件*/
-            $("#distpicker1").distpicker({
-                province: a,
-                city: b,
-                district: c,
-            });
-        },
-        error:function(XMLHttpRequest){
-            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
-        }
+    $("#username").val(parent.username);
+    $("#phone").val(parent.phone);
+    $("#email").val(parent.email);
+    $("#description").val(parent.description);
+    $("#phone").val(parent.phone);
+
+    if(parent.sex=='男'){
+        $("#sex-1").attr('checked', 'checked');
+        radioCheck();
+    }else if(parent.sex=='女'){
+        $("#sex-2").attr('checked', 'checked');
+        radioCheck();
+    }else if(parent.sex=='保密'){
+        $("#sex-3").attr('checked', 'checked');
+        radioCheck();
+    }
+    var arr,a,b,c;
+    if(parent.address!=null){
+        arr = parent.address.split(" ");
+        a=arr[0];
+        b=arr[1];
+        c=arr[2];
+    }
+    if(a==null){
+        a='北京市';
+    }
+    /*城市选择控件*/
+    $("#distpicker1").distpicker({
+        province: a,
+        city: b,
+        district: c,
     });
 
     /*文本输入限制*/
@@ -176,7 +170,7 @@
                     required:true,
                     minlength:2,
                     maxlength:16,
-                    remote: "/member/edit/"+getId+"/username"
+                    remote: "/member/edit/"+id+"/username"
                 },
                 password:{
                     required:true,
@@ -190,12 +184,12 @@
                 phone:{
                     required:true,
                     isMobile:true,
-                    remote: "/member/edit/"+getId+"/phone"
+                    remote: "/member/edit/"+id+"/phone"
                 },
                 email:{
                     required:true,
                     email:true,
-                    remote: "/member/edit/"+getId+"/email"
+                    remote: "/member/edit/"+id+"/email"
                 },
                 sex:{
                     required:true,
@@ -222,10 +216,12 @@
             focusCleanup:false,
             success:"valid",
             submitHandler:function(form){
+                var index = layer.load(3);
                 $(form).ajaxSubmit({
-                    url: "/member/update/"+getId,
+                    url: "/member/update/"+id,
                     type: "POST",
                     success: function(data) {
+                        layer.close(index);
                         if(data.success==true){
                             parent.refresh();
                             parent.msgSuccess("编辑成功!");
@@ -236,7 +232,8 @@
                         }
                     },
                     error:function(XMLHttpRequest) {
-                        layer.alert('数据处理失败! 错误码:' + XMLHttpRequest.status + ' 错误信息:' + JSON.parse(XMLHttpRequest.responseText).message, {title: '错误信息', icon: 2});
+                        layer.close(index);
+                        layer.alert('数据处理失败! 错误码:' + XMLHttpRequest.status, {title: '错误信息', icon: 2});
                     }
                 });
             }

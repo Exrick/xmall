@@ -220,7 +220,7 @@ public class UserServiceImpl implements UserService {
         if(list==null){
             throw new XmallException("查询用户角色失败");
         }
-        if(list.size()!=0){
+        if(list.size()>0){
             return 0;
         }
         if(tbRoleMapper.deleteByPrimaryKey(id)!=1){

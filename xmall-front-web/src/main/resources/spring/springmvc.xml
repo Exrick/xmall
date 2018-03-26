@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
@@ -27,10 +27,8 @@
     <!-- 引用dubbo服务 -->
     <dubbo:application name="xmall-front-web"/>
     <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>
-
     <dubbo:reference interface="cn.exrick.content.service.ContentService" id="contentService" />
     <dubbo:reference interface="cn.exrick.search.service.SearchService" id="searchService" />
-    <dubbo:reference interface="cn.exrick.search.service.SearchItemService" id="searchItemService" />
     <dubbo:reference interface="cn.exrick.sso.service.RegisterService" id="registerService" />
     <dubbo:reference interface="cn.exrick.sso.service.LoginService" id="loginService" />
     <dubbo:reference interface="cn.exrick.sso.service.CartService" id="cartService" />
@@ -38,5 +36,4 @@
     <dubbo:reference interface="cn.exrick.sso.service.AddressService" id="addressService" />
     <dubbo:reference interface="cn.exrick.sso.service.MemberService" id="memberService" />
     <dubbo:reference interface="cn.exrick.manager.service.ThanksService" id="thanksService" />
-
 </beans>

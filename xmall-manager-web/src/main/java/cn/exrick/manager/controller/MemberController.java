@@ -30,9 +30,11 @@ public class MemberController {
 
     @RequestMapping(value = "/member/list",method = RequestMethod.GET)
     @ApiOperation(value = "分页多条件搜索获取会员列表")
-    public DataTablesResult getMemberList(int draw, int start, int length, String searchKey, @RequestParam("search[value]") String search,
+    public DataTablesResult getMemberList(int draw, int start, int length, String searchKey,
                                           String minDate, String maxDate,
-                                          @RequestParam("order[0][column]") int orderCol, @RequestParam("order[0][dir]") String orderDir){
+                                          @RequestParam("search[value]") String search,
+                                          @RequestParam("order[0][column]") int orderCol,
+                                          @RequestParam("order[0][dir]") String orderDir){
 
         //获取客户端需要排序的列
         String[] cols = {"checkbox","id", "username","sex", "phone", "email", "address", "created", "updated", "state"};
@@ -54,9 +56,11 @@ public class MemberController {
 
     @RequestMapping(value = "/member/list/remove",method = RequestMethod.GET)
     @ApiOperation(value = "分页多条件搜索已删除会员列表")
-    public DataTablesResult getDelMemberList(int draw, int start, int length,String searchKey,@RequestParam("search[value]") String search,
+    public DataTablesResult getDelMemberList(int draw, int start, int length, String searchKey,
                                              String minDate, String maxDate,
-                                             @RequestParam("order[0][column]") int orderCol, @RequestParam("order[0][dir]") String orderDir){
+                                             @RequestParam("search[value]") String search,
+                                             @RequestParam("order[0][column]") int orderCol,
+                                             @RequestParam("order[0][dir]") String orderDir){
 
         //获取客户端需要排序的列
         String[] cols = {"checkbox","id", "username","sex", "phone", "email", "address", "created", "updated", "state"};
@@ -106,27 +110,33 @@ public class MemberController {
         return new ResultUtil<TbMember>().setData(tbMember);
     }
 
-    @RequestMapping(value = "/member/start/{id}",method = RequestMethod.PUT)
+    @RequestMapping(value = "/member/start/{ids}",method = RequestMethod.PUT)
     @ApiOperation(value = "启用会员")
-    public Result<TbMember> startMember(@PathVariable Long id){
+    public Result<TbMember> startMember(@PathVariable Long[] ids){
 
-        TbMember tbMember = memberService.alertMemberState(id,1);
-        return new ResultUtil<TbMember>().setData(tbMember);
+        for(Long id:ids){
+            memberService.alertMemberState(id,1);
+        }
+        return new ResultUtil<TbMember>().setData(null);
     }
 
-    @RequestMapping(value = "/member/remove/{id}",method = RequestMethod.PUT)
+    @RequestMapping(value = "/member/remove",method = RequestMethod.PUT)
     @ApiOperation(value = "移除会员")
-    public Result<TbMember> removeMember(@PathVariable Long id){
+    public Result<TbMember> removeMember(@RequestParam Long[] ids){
 
-        TbMember tbMember = memberService.alertMemberState(id,2);
-        return new ResultUtil<TbMember>().setData(tbMember);
+        for(Long id:ids){
+            memberService.alertMemberState(id,2);
+        }
+        return new ResultUtil<TbMember>().setData(null);
     }
 
-    @RequestMapping(value = "/member/del/{id}",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/member/del",method = RequestMethod.DELETE)
     @ApiOperation(value = "彻底删除会员")
-    public Result<TbMember> deleteMember(@PathVariable Long id){
+    public Result<TbMember> deleteMember(@RequestParam Long[] ids){
 
-        memberService.deleteMember(id);
+        for(Long id:ids){
+            memberService.deleteMember(id);
+        }
         return new ResultUtil<TbMember>().setData(null);
     }
 

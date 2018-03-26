@@ -67,56 +67,48 @@
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <script type="text/javascript">
-    $(function(){
-        var getId=window.location.search.slice(window.location.search.lastIndexOf("?")+1);
 
-        $.ajax({
-            url:"/member/"+getId,
-            type:"GET",
-            success:function (data) {
-                $("#username").html(data.result.username);
-            },
-            error:function(XMLHttpRequest){
-                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
-            }
-        });
+    var id=parent.Id;
+    $("#username").html(parent.username);
 
-        $("#form-change-password").validate({
-            rules:{
-                password:{
-                    required:true,
-                    minlength:6,
-                    maxlength:16
-                },
-                password2:{
-                    required:true,
-                    minlength:6,
-                    maxlength:16,
-                    equalTo: "#password"
-                },
+    $("#form-change-password").validate({
+        rules:{
+            password:{
+                required:true,
+                minlength:6,
+                maxlength:16
             },
-            onkeyup:false,
-            focusCleanup:false,
-            success:"valid",
-            submitHandler:function(form){
-                $(form).ajaxSubmit({
-                    url: "/member/changePass/"+getId,
-                    type: "POST",
-                    success: function(data) {
-                        if(data.success==true){
-                            parent.msgSuccess("修改成功!");
-                            var index = parent.layer.getFrameIndex(window.name);
-                            parent.layer.close(index);
-                        }else{
-                            layer.alert('提交失败! '+data.message, {title: '错误信息',icon: 2});
-                        }
-                    },
-                    error:function(XMLHttpRequest) {
-                        layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+            password2:{
+                required:true,
+                minlength:6,
+                maxlength:16,
+                equalTo: "#password"
+            },
+        },
+        onkeyup:false,
+        focusCleanup:false,
+        success:"valid",
+        submitHandler:function(form){
+            var index = layer.load(3);
+            $(form).ajaxSubmit({
+                url: "/member/changePass/"+id,
+                type: "POST",
+                success: function(data) {
+                    layer.close(index);
+                    if(data.success==true){
+                        parent.msgSuccess("修改成功!");
+                        var index = parent.layer.getFrameIndex(window.name);
+                        parent.layer.close(index);
+                    }else{
+                        layer.alert('提交失败! '+data.message, {title: '错误信息',icon: 2});
                     }
-                });
-            }
-        });
+                },
+                error:function(XMLHttpRequest) {
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
+                }
+            });
+        }
     });
 </script>
 <!--/请在上方写此页面业务相关的脚本-->

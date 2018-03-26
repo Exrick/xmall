@@ -3,6 +3,9 @@ package cn.exrick.manager.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * @author Exrickx
+ */
 public class ContentCatDto implements Serializable {
 
     private Long id;

@@ -127,9 +127,7 @@
         },
         error:function(XMLHttpRequest){
             layer.close(index);
-            if(XMLHttpRequest.status!=200){
-                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
-            }
+            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
         }
     });
 

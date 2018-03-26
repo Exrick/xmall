@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * @author Exrickx
+ */
 public class ItemDto implements Serializable{
 
     private Long id;

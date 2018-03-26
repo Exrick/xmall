@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.elasticsearch:jna:4.5.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/elasticsearch/jna/4.5.1/jna-4.5.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/elasticsearch/jna/4.5.1/jna-4.5.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/elasticsearch/jna/4.5.1/jna-4.5.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

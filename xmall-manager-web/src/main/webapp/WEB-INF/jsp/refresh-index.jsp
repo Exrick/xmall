@@ -25,7 +25,7 @@
 </head>
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商城管理 <span class="c-gray en">&gt;</span> 同步索引 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
-<div style="margin-left: 1vw;margin-right: 1vw" class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"> <a class="btn btn-primary radius" onclick="refresh_index()" href="javascript:;"><i class="Hui-iconfont">&#xe645;</i> 一键手动同步索引</a></span> <span id="loading" hidden>&nbsp;&nbsp;&nbsp;同步中...</span> </div>
+<div style="margin-left: 1vw;margin-right: 1vw" class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"> <a class="btn btn-primary radius" onclick="refresh_index()" href="javascript:;"><i class="Hui-iconfont">&#xe645;</i> 一键手动同步索引</a></span> </div>
 <table class="table">
     <tr>
         <td class="va-t">
@@ -41,6 +41,13 @@
                     </div>
                     <div class="row cl">
                         <label class="form-label col-xs-4 col-sm-2">
+                            健康状态：</label>
+                        <div class="formControls col-xs-6 col-sm-6">
+                            <input type="text" class="input-text" value="" readonly id="health">
+                        </div>
+                    </div>
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-2">
                             集群名：</label>
                         <div class="formControls col-xs-6 col-sm-6">
                             <input type="text" class="input-text" value="" readonly id="cluster_name">
@@ -48,16 +55,16 @@
                     </div>
                     <div class="row cl">
                         <label class="form-label col-xs-4 col-sm-2">
-                            节点名：</label>
+                            节点数：</label>
                         <div class="formControls col-xs-6 col-sm-6">
-                            <input type="text" class="input-text" value="" readonly id="name">
+                            <input type="text" class="input-text" value="" readonly id="number_of_nodes">
                         </div>
                     </div>
                     <div class="row cl">
                         <label class="form-label col-xs-4 col-sm-2">
                             文档数：</label>
                         <div class="formControls col-xs-6 col-sm-6">
-                            <input type="text" class="input-text" value="" readonly id="num" name="num">
+                            <input type="text" class="input-text" value="" readonly id="count">
                         </div>
                     </div>
                 </form>
@@ -75,60 +82,66 @@
 <script type="text/javascript">
 
     function refresh(){
-        location.reload();
+        getInfo();
     }
 
-    $.ajax({
-        type: 'GET',
-        url: 'http://127.0.0.1:9200',
-        dataType: 'json',
-        success: function(data) {
-            $("#cluster_name").val(data.cluster_name);
-            $("#name").val(data.name);
-            $("#success").css('display','block');
-        },
-        error: function (XMLHttpRequest) {
-            $("#fail").css('display','block');
-        }
-    });
-
-    $.ajax({
-        type: 'GET',
-        url: 'http://127.0.0.1:9200/_search',
-        dataType: 'json',
-        success: function(data) {
-            $("#num").val(data.hits.total);
-        },
-        error: function (XMLHttpRequest) {
-            layer.alert('连接失败! 错误码:' + XMLHttpRequest.status, {
-                title: '错误信息',
-                icon: 2
-            });
-        }
-    });
-
-    /*同步索引*/
-    function refresh_index(){
-        $("#loading").removeAttr("hidden");
+    getInfo();
+    function getInfo() {
+        var index = layer.load(3);
         $.ajax({
             type: 'GET',
-            url: 'http://localhost:7777/goods/importIndex',
-            dataType: 'JSONP',
-            jsonpCallback: "callback",
+            url: '/es/getInfo',
+            dataType: 'json',
             success: function(data) {
-                $("#loading").attr("hidden","hidden");
-                msgSuccess("同步成功");
+                layer.close(index);
+                if(data.success!=true){
+                    layer.alert(data.message,{title: '错误信息',icon: 2});
+                    $("#fail").css('display','block');
+                    return;
+                }
+                $("#success").css('display','block');
+                var health=data.result.status;
+                if(health=="green"){
+                    $("#health").val("green(所有主要分片和复制分片都可用)");
+                }else if(health=="yellow"){
+                    $("#health").val("yellow(所有主要分片可用，但不是所有复制分片都可用)");
+                }else if(health=="red"){
+                    $("#health").val("red(不是所有的主要分片都可用)");
+                }
+                $("#cluster_name").val(data.result.cluster_name);
+                $("#number_of_nodes").val(data.result.number_of_nodes);
+                $("#count").val(data.result.count);
             },
-            error:function(XMLHttpRequest){
-                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
+            error: function (XMLHttpRequest) {
+                layer.close(index);
+                $("#fail").css('display','block');
             }
         });
     }
 
-    function msgSuccess(content){
-        layer.alert(content,{icon: 1}, function(index){
-            refresh();
+    /*同步索引*/
+    function refresh_index(){
+        layer.confirm('确认要同步数据库中商品数据至ES索引库吗？',{icon:3},function(index){
+            var index = layer.load(3);
+            $.ajax({
+                type: 'GET',
+                url: '/item/importIndex',
+                success: function(data) {
+                    layer.close(index);
+                    if(data.success!=true){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
+                    }
+                    refresh();
+                    layer.alert("同步成功",{icon: 1});
+                },
+                error:function(XMLHttpRequest){
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
+                }
+            });
         });
+
     }
 </script>
 </body>

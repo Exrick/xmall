@@ -6,19 +6,20 @@ import cn.exrick.manager.pojo.TbItem;
 
 
 /**
- * Created by Exrick on 2017/7/29.
+ * @author Exrick
+ * @date 2017/7/29
  */
 public interface ItemService {
 
     /**
-     * 通过ID获取商品
+     * 通过ID获取商品包含详情
      * @param itemId
      * @return
      */
     ItemDto getItemById(Long itemId);
 
     /**
-     * 
+     * 通过ID获取不包含详情
      * @param id
      * @return
      */
@@ -29,8 +30,10 @@ public interface ItemService {
      * @param draw
      * @param start
      * @param length
+     * @param cid
      * @param search
      * @param orderCol
+     * @param orderDir
      * @return
      */
     DataTablesResult getItemList(int draw, int start, int length, int cid,
@@ -41,6 +44,7 @@ public interface ItemService {
      * @param draw
      * @param start
      * @param length
+     * @param cid
      * @param search
      * @param minDate
      * @param maxDate
@@ -82,6 +86,7 @@ public interface ItemService {
 
     /**
      * 更新商品
+     * @param id
      * @param itemDto
      * @return
      */

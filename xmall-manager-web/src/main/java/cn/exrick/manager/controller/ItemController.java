@@ -2,10 +2,12 @@ package cn.exrick.manager.controller;
 
 import cn.exrick.common.pojo.Result;
 import cn.exrick.common.utils.ResultUtil;
+import cn.exrick.manager.dto.EsInfo;
 import cn.exrick.manager.dto.ItemDto;
 import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.manager.pojo.TbItem;
 import cn.exrick.manager.service.ItemService;
+import cn.exrick.search.service.SearchItemService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
@@ -14,7 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * Created by Exrick on 2017/7/29.
+ * @author Exrick
+ * @date 2017/7/29
  */
 @RestController
 @Api(description = "商品列表信息")
@@ -24,6 +27,8 @@ public class ItemController{
 
     @Autowired
     private ItemService itemService;
+    @Autowired
+    private SearchItemService searchItemService;
 
     @RequestMapping(value = "/item/{itemId}",method = RequestMethod.GET)
     @ApiOperation(value = "通过ID获取商品")
@@ -102,11 +107,13 @@ public class ItemController{
         return new ResultUtil<TbItem>().setData(tbItem);
     }
 
-    @RequestMapping(value = "/item/del/{id}",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/item/del",method = RequestMethod.DELETE)
     @ApiOperation(value = "删除商品")
-    public Result<TbItem> deleteItem(@PathVariable Long id){
+    public Result<TbItem> deleteItem(@RequestParam Long[] ids){
 
-        itemService.deleteItem(id);
+        for(Long id:ids){
+            itemService.deleteItem(id);
+        }
         return new ResultUtil<TbItem>().setData(null);
     }
 
@@ -125,4 +132,21 @@ public class ItemController{
         TbItem tbItem=itemService.updateItem(id,itemDto);
         return new ResultUtil<TbItem>().setData(tbItem);
     }
+
+    @RequestMapping(value = "/item/importIndex",method = RequestMethod.GET)
+    @ApiOperation(value = "导入商品索引至ES")
+    public Result<Object> importIndex(){
+
+        searchItemService.importAllItems();
+        return new ResultUtil<Object>().setData(null);
+    }
+
+    @RequestMapping(value = "/es/getInfo",method = RequestMethod.GET)
+    @ApiOperation(value = "获取ES信息")
+    public Result<Object> getESInfo(){
+
+        EsInfo esInfo=searchItemService.getEsInfo();
+        return new ResultUtil<Object>().setData(esInfo);
+    }
+
 }

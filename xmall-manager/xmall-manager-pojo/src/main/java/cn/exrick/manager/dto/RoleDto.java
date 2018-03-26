@@ -3,6 +3,9 @@ package cn.exrick.manager.dto;
 
 import java.io.Serializable;
 
+/**
+ * @author Exrickx
+ */
 public class RoleDto implements Serializable{
 
     private int id;

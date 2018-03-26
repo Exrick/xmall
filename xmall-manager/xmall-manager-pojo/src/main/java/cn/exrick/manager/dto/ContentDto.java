@@ -3,6 +3,9 @@ package cn.exrick.manager.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * @author Exrickx
+ */
 public class ContentDto implements Serializable{
 
     private Long id;
@@ -16,18 +19,6 @@ public class ContentDto implements Serializable{
     private Date updated;
 
     private String image;
-
-    @Override
-    public String toString() {
-        return "ContentDto{" +
-                "id=" + id +
-                ", category='" + category + '\'' +
-                ", productId='" + productId + '\'' +
-                ", created=" + created +
-                ", updated=" + updated +
-                ", image='" + image + '\'' +
-                '}';
-    }
 
     public Long getId() {
         return id;

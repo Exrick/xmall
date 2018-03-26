@@ -25,9 +25,7 @@
 <body>
 <div class="page-container">
     <form action="" method="post" class="form form-horizontal" id="category-add">
-        <input type="text" hidden class="input-text" id="id" name="id">
         <input type="text" hidden class="input-text" value="0" id="parentId" name="parentId">
-        <input type="text" hidden class="input-text" value="1" id="status" name="status">
         <input type="text" hidden class="input-text" value="true" id="isParent" name="isParent">
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">
@@ -45,29 +43,6 @@
                 </div>
             </div>
         </div>
-        <div class="row cl" id="choose-parent">
-            <label class="form-label col-xs-4 col-sm-2">选择父节点：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" onclick="chooseParent()" readonly class="input-text" value="" placeholder="请点击选择其父节点分类" id="parentName" name="parentName" style="width:48%">
-                <input type="button" onclick="chooseParent()" class="btn btn-secondary radius" value="选择父节点分类">
-            </div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">
-                <span class="c-red">*</span>
-                排序优先值：</label>
-            <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" value="" placeholder="请输入0~9999，值越小排序越前" id="sortOrder" name="sortOrder">
-            </div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>是否启用：</label>
-            <div class="formControls col-xs-6 col-sm-6">
-                <div id="mySwitch" class="switch" data-on-label="启用" data-on="info" data-off-label="禁用">
-                    <input type="checkbox" checked />
-                </div>
-            </div>
-        </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">备注：</label>
             <div class="formControls col-xs-6 col-sm-6">
@@ -75,7 +50,7 @@
             </div>
         </div>
         <div class="row cl">
-            <div class="col-9 col-offset-2">
+            <div class="col-7 col-offset-4">
                 <input id="saveButton" class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;保存并提交&nbsp;&nbsp;">
             </div>
         </div>
@@ -98,8 +73,16 @@
         maxlength:100
     });
 
-    function chooseParent(){
-        layer_show("选择父节点分类","choose-parent-category",300,510);
+    if(!parent.isRoot){
+        $('#parentSwitch').bootstrapSwitch('setState', false);
+        $("#isParent").val(0);
+    }else{
+        $('#parentSwitch').bootstrapSwitch('setState', true);
+        $("#isParent").val(1);
+    }
+
+    if(parent.id!=""){
+        $("#parentId").val(parent.id);
     }
 
     $('#parentSwitch').on('switch-change', function (e, data) {
@@ -110,19 +93,6 @@
         }
     });
 
-    $('#mySwitch').on('switch-change', function (e, data) {
-        if(data.value==true){
-            $("#status").val(1);
-        }else{
-            $("#status").val(0);
-        }
-    });
-
-    function setParentId(id,name) {
-        $("#parentName").val(name);
-        $("#parentId").val(id);
-    }
-
     //保存发布
     $("#category-add").validate({
         rules:{
@@ -130,42 +100,29 @@
                 required:true,
                 minlength:1,
                 maxlength:25,
-            },
-            sortOrder:{
-                required:true,
-                digits:true,
-                maxlength:4,
-            },
+            }
         },
         onkeyup:false,
         focusCleanup:false,
         success:"valid",
         submitHandler:function(form){
-//            if($("#isParent").val()=="false"&&$("#parentId").val()==""){
-//                layer.alert('请点击选择父节点分类! ', {title: '错误信息',icon: 0});
-//                return;
-//            }
-            $("#saveButton").val("保存中...");
-            $("#saveButton").attr("disabled","disabled");
+            var index = layer.load(3);
             $(form).ajaxSubmit({
                 url: "/item/cat/add",
                 type: "POST",
                 success: function(data) {
                     if(data.success==true){
-                        parent.refresh();
+                        parent.initTree();
                         parent.msgSuccess("添加成功!");
                         var index = parent.layer.getFrameIndex(window.name);
                         parent.layer.close(index);
                     }else{
-                        $("#saveButton").val("保存并发布");
-                        $("#saveButton").removeAttr("disabled");
                         layer.alert('添加失败! '+data.message, {title: '错误信息',icon: 2});
                     }
                 },
                 error:function(XMLHttpRequest) {
-                    $("#saveButton").val("保存并发布");
-                    $("#saveButton").removeAttr("disabled");
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
             });
         }

@@ -264,7 +264,7 @@
     tb_order_item i
     LEFT JOIN tb_order o ON i.order_id = o.order_id
     WHERE
-    YEARWEEK(date_format(o.create_time,'%Y-%m-%d')) = YEARWEEK(now())-1
+    YEARWEEK(date_format(o.create_time,'%Y-%m-%d')) = YEARWEEK(now())
     AND
     o.status = 4
     GROUP BY

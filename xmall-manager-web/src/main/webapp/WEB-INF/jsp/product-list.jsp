@@ -53,8 +53,8 @@
                         <th width="30"><input name="" type="checkbox" value=""></th>
                         <th width="40">ID</th>
                         <th width="70">缩略图</th>
-                        <th width="100">商品名称</th>
-                        <th width="150">描述</th>
+                        <th width="150">商品名称</th>
+                        <th width="100">描述</th>
                         <th width="60">单价</th>
                         <th width="95">创建日期</th>
                         <th width="95">更新日期</th>
@@ -82,30 +82,8 @@
 <script type="text/javascript" src="lib/datatables/dataTables.colReorder.min.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="lib/common.js"></script>
 <script type="text/javascript">
-
-    /*刷新表格*/
-    function refresh(){
-        var table = $('.table').DataTable();
-        table.ajax.reload(null,false);// 刷新表格数据，分页信息不会重置
-    }
-
-    /*时间转换*/
-    function date(data){
-        var time = new Date(data);
-        var y = time.getFullYear();//年
-        var m = time.getMonth() + 1;//月
-        var d = time.getDate();//日
-        var h = time.getHours();//时
-        if (h >= 0 && h <= 9) {
-            h = "0" + h;
-        }
-        var mm = time.getMinutes();//分
-        if (mm >= 0 && mm <= 9) {
-            mm = "0" + mm;
-        }
-        return (y+"-"+m+"-"+d+" "+h+":"+mm);
-    }
 
     function imageShow(data){
         var images= new Array(); //定义一数组
@@ -148,7 +126,7 @@
                     render: function(data, type, row, meta) {
                         if (type === 'display') {
                             if (data.length > 20) {
-                                return '<span title=' + data + '>' + data.substr(0, 19) + '...</span>';
+                                return '<span title=' + data + '>' + data.substr(0, 50) + '...</span>';
                             } else {
                                 return '<span title=' + data + '>' + data + '</span>';
                             }
@@ -160,7 +138,7 @@
                     render: function(data, type, row, meta) {
                         if (type === 'display') {
                             if (data.length > 25) {
-                                return '<span title=' + data + '>' + data.substr(0, 24) + '...</span>';
+                                return '<span title=' + data + '>' + data.substr(0, 25) + '...</span>';
                             } else {
                                 return '<span title=' + data + '>' + data + '</span>';
                             }
@@ -212,10 +190,11 @@
             colReorder: true
         });
 
-        product_count();
     });
 
-    function product_count(){
+    productCount();
+
+    function productCount(){
         $.ajax({
             url:"/item/count",
             type: 'GET',
@@ -306,10 +285,7 @@
     $(document).ready(function(){
         var t = $("#treeDemo");
         t = $.fn.zTree.init(t, setting);
-        //demoIframe = $("#testIframe");
-        //demoIframe.on("load", loadReady);
         var zTree = $.fn.zTree.getZTreeObj("tree");
-        //zTree.selectNode(zTree.getNodeByParam("id",'11'));
     });
 
     /*产品-添加*/
@@ -334,11 +310,13 @@
     /*产品-下架*/
     function product_stop(obj,id){
         layer.confirm('确认要下架ID为\''+id+'\'的商品吗？',{icon:0},function(index){
+            var index = layer.load(3);
             $.ajax({
                 type: 'PUT',
                 url: '/item/stop/'+id,
                 dataType: 'json',
                 success: function(data){
+                    layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
                         return;
@@ -347,7 +325,8 @@
                     layer.msg('已下架!',{icon: 5,time:1000});
                 },
                 error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
             });
 
@@ -357,11 +336,13 @@
     /*产品-发布*/
     function product_start(obj,id){
         layer.confirm('确认要发布ID为\''+id+'\'的商品吗？',{icon:3},function(index){
+            var index = layer.load(3);
             $.ajax({
                 type: 'PUT',
                 url: '/item/start/'+id,
                 dataType: 'json',
                 success: function(data){
+                    layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
                         return;
@@ -370,7 +351,8 @@
                     layer.msg('已发布!',{icon: 6,time:1000});
                 },
                 error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
             });
         });
@@ -398,21 +380,24 @@
     /*产品-删除*/
     function product_del(obj,id){
         layer.confirm('确认要删除ID为\''+id+'\'的商品吗？',{icon:0},function(index){
+            var index = layer.load(3);
             $.ajax({
                 type: 'DELETE',
-                url: '/item/del/'+id,
+                url: '/item/del?ids='+id,
                 dataType: 'json',
                 success: function(data){
+                    layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
                         return;
                     }
-                    product_count();
+                    productCount();
                     refresh();
                     layer.msg('已删除!',{icon:1,time:1000});
                 },
                 error:function(XMLHttpRequest) {
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 },
             });
         });
@@ -421,37 +406,41 @@
     /*批量删除*/
     function datadel() {
         var cks=document.getElementsByName("checkbox");
-        var count=0;
+        var count=0,ids="";
         for(var i=0;i<cks.length;i++){
             if(cks[i].checked){
                 count++;
+                ids+=cks[i].value+",";
             }
         }
         if(count==0){
             layer.msg('您还未勾选任何数据!',{icon:5,time:3000});
             return;
         }
+        /*去除末尾逗号*/
+        if(ids.length>0){
+            ids=ids.substring(0,ids.length-1);
+        }
         layer.confirm('确认要删除所选的'+count+'条数据吗？',{icon:0},function(index){
-            for(var i=0;i<cks.length;i++){
-                if(cks[i].checked){
-                    $.ajax({
-                        type: 'DELETE',
-                        url: '/item/del/'+cks[i].value,
-                        dataType: 'json',
-                        success:function(data){
-                            if(data.success!=true){
-                                layer.alert(data.message,{title: '错误信息',icon: 2});
-                            }
-                        },
-                        error:function(XMLHttpRequest){
-                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
-                        }
-                    });
+            var index = layer.load(3);
+            $.ajax({
+                type: 'DELETE',
+                url: '/item/del/?ids='+ids,
+                dataType: 'json',
+                success:function(data){
+                    layer.close(index);
+                    if(data.success!=true){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                    }
+                    layer.msg('已删除!',{icon:1,time:1000});
+                    productCount();
+                    refresh();
+                },
+                error:function(XMLHttpRequest){
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
-            }
-            layer.msg('已删除!',{icon:1,time:1000});
-            product_count();
-            refresh();
+            });
         });
     }
 

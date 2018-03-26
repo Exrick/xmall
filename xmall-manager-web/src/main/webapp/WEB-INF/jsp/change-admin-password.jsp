@@ -90,10 +90,12 @@
             focusCleanup:false,
             success:"valid",
             submitHandler:function(form){
+                var index = layer.load(3);
                 $(form).ajaxSubmit({
                     url: "/user/changePass",
                     type: "POST",
                     success: function(data) {
+                        layer.close(index);
                         if(data.success==true){
                             parent.msgSuccess("修改成功!");
                             var index = parent.layer.getFrameIndex(window.name);
@@ -103,7 +105,8 @@
                         }
                     },
                     error:function(XMLHttpRequest) {
-                        layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                        layer.close(index);
+                        layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                     }
                 });
             }

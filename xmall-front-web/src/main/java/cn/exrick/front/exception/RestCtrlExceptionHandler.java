@@ -52,11 +52,10 @@ public class RestCtrlExceptionHandler {
         String errorMsg="exception: ";
         if (e!=null){
             log.warn(e.getMessage()+" exception getMessage");
-            log.warn(e.getLocalizedMessage()+" exception getMessage");
-            if(e.getLocalizedMessage()!=null&&e.getLocalizedMessage().contains("Maximum upload size")){
+            if(e.getMessage()!=null&&e.getMessage().contains("Maximum upload size")){
                 errorMsg="上传文件大小超过5MB限制";
             }else{
-                errorMsg=e.getLocalizedMessage();
+                errorMsg=e.getMessage();
             }
         }
         return new ResultUtil<>().setErrorMsg(errorMsg);

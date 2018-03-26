@@ -16,16 +16,14 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by Exrick on 2017/8/2.
+ * @author Exrick
+ * @date 2017/8/2
  */
 @Service
 public class ItemCatServiceImpl implements ItemCatService {
 
     @Autowired
     private TbItemCatMapper tbItemCatMapper;
-
-    @Value("${RDEIS_ITEM}")
-    private String RDEIS_ITEM;
 
     @Override
     public TbItemCat getItemCatById(Long id) {
@@ -39,6 +37,7 @@ public class ItemCatServiceImpl implements ItemCatService {
 
     @Override
     public List<ZTreeNode> getItemCatList(int parentId) {
+
         TbItemCatExample example=new TbItemCatExample();
         TbItemCatExample.Criteria criteria=example.createCriteria();
         //排序
@@ -63,8 +62,18 @@ public class ItemCatServiceImpl implements ItemCatService {
     @Override
     public int addItemCat(TbItemCat tbItemCat) {
 
-        tbItemCat.setCreated(new Date());
-        tbItemCat.setUpdated(new Date());
+        if(tbItemCat.getParentId()==0){
+            //根节点
+            tbItemCat.setSortOrder(0);
+            tbItemCat.setStatus(1);
+        }else{
+            TbItemCat parent=tbItemCatMapper.selectByPrimaryKey(tbItemCat.getParentId());
+            tbItemCat.setSortOrder(0);
+            tbItemCat.setStatus(1);
+            tbItemCat.setCreated(new Date());
+            tbItemCat.setUpdated(new Date());
+        }
+
 
         if(tbItemCatMapper.insert(tbItemCat)!=1){
             throw new XmallException("添加商品分类失败");

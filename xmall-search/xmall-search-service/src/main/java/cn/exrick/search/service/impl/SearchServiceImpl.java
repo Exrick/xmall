@@ -9,7 +9,7 @@ import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
-import org.elasticsearch.common.transport.InetSocketTransportAddress;
+import org.elasticsearch.common.transport.TransportAddress;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
@@ -51,7 +51,7 @@ public class SearchServiceImpl implements SearchService {
 			Settings settings = Settings.builder()
 					.put("cluster.name", ES_CLUSTER_NAME).build();
 			TransportClient client = new PreBuiltTransportClient(settings)
-					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(ES_CONNECT_IP), 9300));
+					.addTransportAddress(new TransportAddress(InetAddress.getByName(ES_CONNECT_IP), 9300));
 
 			SearchResult searchResult=new SearchResult();
 
