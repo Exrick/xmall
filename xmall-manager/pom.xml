@@ -17,7 +17,6 @@
         <module>xmall-manager-dao</module>
         <module>xmall-manager-interface</module>
         <module>xmall-manager-service</module>
-        <module>../xmall-content</module>
     </modules>
 
     <dependencies>

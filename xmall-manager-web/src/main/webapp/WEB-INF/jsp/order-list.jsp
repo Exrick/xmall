@@ -71,33 +71,8 @@
 <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="lib/datatables/dataTables.colReorder.min.js"></script>
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="lib/common.js"></script>
 <script type="text/javascript">
-
-    /*刷新表格*/
-    function refresh(){
-        var table = $('.table').DataTable();
-        table.ajax.reload(null,false);// 刷新表格数据，分页信息不会重置
-    }
-
-    /*时间转换*/
-    function date(data){
-        if(data==null||data==""){
-            return "";
-        }
-        var time = new Date(data);
-        var y = time.getFullYear();//年
-        var m = time.getMonth() + 1;//月
-        var d = time.getDate();//日
-        var h = time.getHours();//时
-        if (h >= 0 && h <= 9) {
-            h = "0" + h;
-        }
-        var mm = time.getMinutes();//分
-        if (mm >= 0 && mm <= 9) {
-            mm = "0" + mm;
-        }
-        return (y+"-"+m+"-"+d+" "+h+":"+mm);
-    }
 
     /*datatables配置*/
     $(document).ready(function () {
@@ -106,9 +81,6 @@
             "ajax": {
                 url:"/order/list",
                 type: 'GET',
-                error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
-                }
             },
             "columns": [
                 { "data": null,
@@ -150,7 +122,9 @@
                     render : function(data,type, row, meta) {
                         if(data==0){
                             return "<span class=\"label label-defant radius td-status\">待支付</span>";
-                        }else if(data==2){
+                        }else if(data==1){
+                            return "<span class=\"label label-warning radius td-status\">已支付</span>";
+                        } else if(data==2){
                             return "<span class=\"label label-primary radius td-status\">待发货</span>";
                         }else if(data==3){
                             return "<span class=\"label label-secondary radius td-status\">已发货</span>";
@@ -158,6 +132,8 @@
                             return "<span class=\"label label-success radius td-status\">交易成功</span>";
                         }else if(data==5){
                             return "<span class=\"label label-danger radius td-status\">交易关闭</span>";
+                        }else if(data==6){
+                            return "<span class=\"label label-defant radius td-status\">支付失败</span>";
                         }else{
                             return "<span class=\"label label-warning radius td-status\">其它态</span>";
                         }
@@ -181,8 +157,9 @@
             colReorder: true
         });
 
-        orderCount();
     });
+
+    orderCount();
 
     function orderCount() {
         $.ajax({
@@ -206,11 +183,13 @@
     /*订单-删除*/
     function order_del(obj,id){
         layer.confirm('确认要删除ID为\''+id+'\'的订单吗？',{icon:0},function(index){
+            var index = layer.load(3);
             $.ajax({
                 type: 'DELETE',
                 url: '/order/del/'+id,
                 dataType: 'json',
                 success: function(data){
+                    layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
                         return;
@@ -220,7 +199,8 @@
                     layer.msg('已删除!',{icon:1,time:1000});
                 },
                 error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
             });
         });
@@ -229,37 +209,41 @@
     /*批量删除*/
     function datadel() {
         var cks=document.getElementsByName("checkbox");
-        var count=0;
+        var count=0,ids="";
         for(var i=0;i<cks.length;i++){
             if(cks[i].checked){
                 count++;
+                ids+=cks[i].value+",";
             }
         }
         if(count==0){
             layer.msg('您还未勾选任何数据!',{icon:5,time:3000});
             return;
         }
+        /*去除末尾逗号*/
+        if(ids.length>0){
+            ids=ids.substring(0,ids.length-1);
+        }
         layer.confirm('确认要删除所选的'+count+'条数据吗？',{icon:0},function(index){
-            for(var i=0;i<cks.length;i++){
-                if(cks[i].checked){
-                    $.ajax({
-                        type: 'DELETE',
-                        url: '/order/del/'+cks[i].value,
-                        dataType: 'json',
-                        success:function(data){
-                            if(data.success!=true){
-                                layer.alert(data.message,{title: '错误信息',icon: 2});
-                            }
-                        },
-                        error:function(XMLHttpRequest){
-                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
-                        }
-                    });
+            var index = layer.load(3);
+            $.ajax({
+                type: 'DELETE',
+                url: '/order/del/'+ids,
+                dataType: 'json',
+                success:function(data){
+                    layer.close(index);
+                    if(data.success!=true){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                    }
+                    layer.msg('已删除!',{icon:1,time:1000});
+                    orderCount();
+                    refresh();
+                },
+                error:function(XMLHttpRequest){
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
-            }
-            layer.msg('已删除!',{icon:1,time:1000});
-            orderCount();
-            refresh();
+            });
         });
     }
 

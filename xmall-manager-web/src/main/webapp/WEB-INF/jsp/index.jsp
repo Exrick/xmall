@@ -41,6 +41,7 @@
                         </ul>
                         <li class="navbar-levelone current"><a href="javascript:;">平台</a></li>
                         <li class="navbar-levelone"><a href="javascript:;">财务</a></li>
+                        <li ><a href="http://xpay.exrick.cn" target="_blank">XPay支付系统</a></li>
                         <li ><a href="http://xmall.exrick.cn" target="_blank">商城前台</a></li>
                     </li>
                 </ul>

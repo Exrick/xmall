@@ -38,11 +38,13 @@ public class OrderController {
         return new ResultUtil<Object>().setData(result);
     }
 
-    @RequestMapping(value = "/order/del/{id}",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/order/del/{ids}",method = RequestMethod.DELETE)
     @ApiOperation(value = "删除订单")
-    public Result<Object> getUserInfo(@PathVariable String id){
+    public Result<Object> getUserInfo(@PathVariable String[] ids){
 
-        orderService.deleteOrder(id);
+        for(String id:ids){
+            orderService.deleteOrder(id);
+        }
         return new ResultUtil<Object>().setData(null);
     }
 }

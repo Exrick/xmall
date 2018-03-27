@@ -40,14 +40,17 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-messaging:4.3.12.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.3.12.RELEASE" />
           <element id="library" level="project" name="Maven: com.alibaba:dubbo:2.6.1" />
-          <element id="library" level="project" name="Maven: org.javassist:javassist:3.21.0-GA" />
+          <element id="library" level="project" name="Maven: org.javassist:javassist:3.20.0-GA" />
+          <element id="library" level="project" name="Maven: org.jboss.netty:netty:3.2.5.Final" />
           <element id="library" level="project" name="Maven: org.apache.zookeeper:zookeeper:3.4.10" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.1" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.8.0-alpha2" />
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.16" />
           <element id="library" level="project" name="Maven: jline:jline:0.9.94" />
           <element id="library" level="project" name="Maven: io.netty:netty:3.10.5.Final" />
-          <element id="library" level="project" name="Maven: com.github.sgroschupf:zkclient:0.1" />
+          <element id="library" level="project" name="Maven: org.apache.curator:curator-framework:4.0.1" />
+          <element id="library" level="project" name="Maven: org.apache.curator:curator-client:4.0.1" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:20.0" />
           <element id="library" level="project" name="Maven: org.elasticsearch.client:transport:6.2.3" />
           <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch:6.2.3" />
           <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-core:6.2.3" />
@@ -71,6 +74,7 @@
           <element id="library" level="project" name="Maven: net.sf.jopt-simple:jopt-simple:5.0.2" />
           <element id="library" level="project" name="Maven: com.carrotsearch:hppc:0.7.1" />
           <element id="library" level="project" name="Maven: org.yaml:snakeyaml:1.17" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.1" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-smile:2.8.10" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.8.10" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.8.10" />
@@ -106,9 +110,6 @@
           <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.3.2" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:1.3.2" />
           <element id="library" level="project" name="Maven: commons-net:commons-net:3.3" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.1" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.1" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.1" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.5.3" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.4.6" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />

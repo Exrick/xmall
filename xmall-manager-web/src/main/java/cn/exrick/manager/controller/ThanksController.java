@@ -52,11 +52,13 @@ public class ThanksController {
         return new ResultUtil<Object>().setData(null);
     }
 
-    @RequestMapping(value = "/thanks/del/{id}",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/thanks/del/{ids}",method = RequestMethod.DELETE)
     @ApiOperation(value = "删除捐赠")
-    public Result<Object> delThanks(@PathVariable int id){
+    public Result<Object> delThanks(@PathVariable int[] ids){
 
-        thanksService.deleteThanks(id);
+        for(int id:ids){
+            thanksService.deleteThanks(id);
+        }
         return new ResultUtil<Object>().setData(null);
     }
 

@@ -69,12 +69,6 @@
 <script type="text/javascript" src="lib/common.js"></script>
 <script type="text/javascript">
 
-    /*刷新表格*/
-    function refresh(){
-        var table = $('.table').DataTable();
-        table.ajax.reload(null,false);// 刷新表格数据，分页信息不会重置
-    }
-
     /*datatables配置*/
     $(document).ready(function () {
         $('.table').DataTable({
@@ -82,9 +76,6 @@
             "ajax": {
                 url:"/thanks/list",
                 type: 'GET',
-                error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
-                }
             },
             "columns": [
                 { "data": null,
@@ -120,8 +111,9 @@
             colReorder: true
         });
 
-        thanksCount();
     });
+
+    thanksCount();
 
     function thanksCount() {
         $.ajax({
@@ -150,11 +142,13 @@
     /*捐赠-删除*/
     function thanks_del(obj,id){
         layer.confirm('确认要删除ID为\''+id+'\'的数据吗？',{icon:0},function(index){
+            var index = layer.load(3);
             $.ajax({
                 type: 'DELETE',
                 url: '/thanks/del/'+id,
                 dataType: 'json',
                 success: function(data){
+                    layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
                         return;
@@ -164,7 +158,8 @@
                     layer.msg('已删除!',{icon:1,time:1000});
                 },
                 error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
             });
         });
@@ -173,37 +168,41 @@
     /*批量删除*/
     function datadel() {
         var cks=document.getElementsByName("checkbox");
-        var count=0;
+        var count=0,ids="";
         for(var i=0;i<cks.length;i++){
             if(cks[i].checked){
                 count++;
+                ids+=cks[i].value+",";
             }
         }
         if(count==0){
             layer.msg('您还未勾选任何数据!',{icon:5,time:3000});
             return;
         }
+        /*去除末尾逗号*/
+        if(ids.length>0){
+            ids=ids.substring(0,ids.length-1);
+        }
         layer.confirm('确认要删除所选的'+count+'条数据吗？',{icon:0},function(index){
-            for(var i=0;i<cks.length;i++){
-                if(cks[i].checked){
-                    $.ajax({
-                        type: 'DELETE',
-                        url: '/thanks/del/'+cks[i].value,
-                        dataType: 'json',
-                        success:function(data){
-                            if(data.success!=true){
-                                layer.alert(data.message,{title: '错误信息',icon: 2});
-                            }
-                        },
-                        error:function(XMLHttpRequest){
-                            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
-                        }
-                    });
+            var index = layer.load(3);
+            $.ajax({
+                type: 'DELETE',
+                url: '/thanks/del/'+ids,
+                dataType: 'json',
+                success:function(data){
+                    layer.close(index);
+                    if(data.success!=true){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                    }
+                    layer.msg('已删除!',{icon:1,time:1000});
+                    thanksCount();
+                    refresh();
+                },
+                error:function(XMLHttpRequest){
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
-            }
-            layer.msg('已删除!',{icon:1,time:1000});
-            thanksCount();
-            refresh();
+            });
         });
     }
 
