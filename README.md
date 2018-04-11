@@ -12,7 +12,8 @@
 ### 开发中，敬请期待！
 - Spring Cloud版
     - [X-Cloud](https://github.com/Exrick/x-cloud) 框架开发中
-- 微信小程序APP
+- 微信小程序APP 
+    - 捐赠≥10可加群私聊群主提前下载前台源码 [预览视频](https://v.qq.com/x/page/f0627kf4x1e.html)
 
     ![](http://oweupqzdv.bkt.clouddn.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A2%84%E8%A7%881.png)
 
