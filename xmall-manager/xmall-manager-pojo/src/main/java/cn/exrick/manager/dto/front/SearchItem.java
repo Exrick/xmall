@@ -17,14 +17,24 @@ public class SearchItem implements Serializable {
 
     private String productImageBig;
 
-    private String category_name;
+    private String categoryName;
 
-    public String getCategory_name() {
-        return category_name;
+    private Integer cid;
+
+    public Integer getCid() {
+        return cid;
     }
 
-    public void setCategory_name(String category_name) {
-        this.category_name = category_name;
+    public void setCid(Integer cid) {
+        this.cid = cid;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
     public Long getProductId() {

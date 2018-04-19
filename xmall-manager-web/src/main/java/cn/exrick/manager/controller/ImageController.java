@@ -1,5 +1,6 @@
 package cn.exrick.manager.controller;
 
+import cn.exrick.common.exception.XmallUploadException;
 import cn.exrick.common.pojo.KindEditorResult;
 import cn.exrick.common.pojo.Result;
 import cn.exrick.common.utils.QiniuUtil;
@@ -16,6 +17,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * @author Exrickx
+ */
 @RestController
 @Api(description = "图片上传统一接口")
 public class ImageController {
@@ -37,7 +41,7 @@ public class ImageController {
             //上传七牛云服务器
             imagePath= QiniuUtil.qiniuUpload(filePath);
             if(imagePath.contains("error")){
-                return new ResultUtil<Object>().setErrorMsg("上传失败");
+               throw new XmallUploadException("上传失败");
             }
             // 路径为文件且不为空则进行删除
             if (file.isFile() && file.exists()) {

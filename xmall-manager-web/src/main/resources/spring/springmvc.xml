@@ -117,7 +117,6 @@
     <dubbo:reference interface="cn.exrick.manager.service.ThanksService" id="thanksService" />
     <dubbo:reference interface="cn.exrick.manager.service.SystemService" id="systemService" />
     <dubbo:reference interface="cn.exrick.content.service.ContentService" id="contentService" />
-    <dubbo:reference interface="cn.exrick.content.service.ContentCatService" id="contentCatService" />
-    <dubbo:reference interface="cn.exrick.content.service.ContentImageService" id="contentImageService" />
+    <dubbo:reference interface="cn.exrick.content.service.PanelService" id="panelService" />
     <dubbo:reference interface="cn.exrick.search.service.SearchItemService" id="searchItemService" />
 </beans>

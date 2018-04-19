@@ -7,14 +7,14 @@
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="email" jdbcType="VARCHAR" property="email" />
-    <result column="created" jdbcType="TIMESTAMP" property="created" />
-    <result column="updated" jdbcType="TIMESTAMP" property="updated" />
     <result column="sex" jdbcType="VARCHAR" property="sex" />
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="state" jdbcType="INTEGER" property="state" />
     <result column="description" jdbcType="VARCHAR" property="description" />
     <result column="role_id" jdbcType="INTEGER" property="roleId" />
     <result column="file" jdbcType="VARCHAR" property="file" />
+    <result column="created" jdbcType="TIMESTAMP" property="created" />
+    <result column="updated" jdbcType="TIMESTAMP" property="updated" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -75,8 +75,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, username, password, phone, email, created, updated, sex, address, state, description, 
-    role_id, file
+    id, username, password, phone, email, sex, address, state, description, role_id, 
+    file, created, updated
   </sql>
   <select id="selectByExample" parameterType="cn.exrick.manager.pojo.TbUserExample" resultMap="BaseResultMap">
     select
@@ -110,15 +110,15 @@
   </delete>
   <insert id="insert" parameterType="cn.exrick.manager.pojo.TbUser">
     insert into tb_user (id, username, password, 
-      phone, email, created, 
-      updated, sex, address, 
-      state, description, role_id, 
-      file)
+      phone, email, sex, 
+      address, state, description, 
+      role_id, file, created, 
+      updated)
     values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, 
-      #{updated,jdbcType=TIMESTAMP}, #{sex,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
-      #{state,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, #{roleId,jdbcType=INTEGER}, 
-      #{file,jdbcType=VARCHAR})
+      #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, 
+      #{roleId,jdbcType=INTEGER}, #{file,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, 
+      #{updated,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="cn.exrick.manager.pojo.TbUser">
     insert into tb_user
@@ -138,12 +138,6 @@
       <if test="email != null">
         email,
       </if>
-      <if test="created != null">
-        created,
-      </if>
-      <if test="updated != null">
-        updated,
-      </if>
       <if test="sex != null">
         sex,
       </if>
@@ -162,6 +156,12 @@
       <if test="file != null">
         file,
       </if>
+      <if test="created != null">
+        created,
+      </if>
+      <if test="updated != null">
+        updated,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -178,12 +178,6 @@
       </if>
       <if test="email != null">
         #{email,jdbcType=VARCHAR},
-      </if>
-      <if test="created != null">
-        #{created,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updated != null">
-        #{updated,jdbcType=TIMESTAMP},
       </if>
       <if test="sex != null">
         #{sex,jdbcType=VARCHAR},
@@ -202,6 +196,12 @@
       </if>
       <if test="file != null">
         #{file,jdbcType=VARCHAR},
+      </if>
+      <if test="created != null">
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null">
+        #{updated,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -229,12 +229,6 @@
       <if test="record.email != null">
         email = #{record.email,jdbcType=VARCHAR},
       </if>
-      <if test="record.created != null">
-        created = #{record.created,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.updated != null">
-        updated = #{record.updated,jdbcType=TIMESTAMP},
-      </if>
       <if test="record.sex != null">
         sex = #{record.sex,jdbcType=VARCHAR},
       </if>
@@ -253,6 +247,12 @@
       <if test="record.file != null">
         file = #{record.file,jdbcType=VARCHAR},
       </if>
+      <if test="record.created != null">
+        created = #{record.created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updated != null">
+        updated = #{record.updated,jdbcType=TIMESTAMP},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -265,14 +265,14 @@
       password = #{record.password,jdbcType=VARCHAR},
       phone = #{record.phone,jdbcType=VARCHAR},
       email = #{record.email,jdbcType=VARCHAR},
-      created = #{record.created,jdbcType=TIMESTAMP},
-      updated = #{record.updated,jdbcType=TIMESTAMP},
       sex = #{record.sex,jdbcType=VARCHAR},
       address = #{record.address,jdbcType=VARCHAR},
       state = #{record.state,jdbcType=INTEGER},
       description = #{record.description,jdbcType=VARCHAR},
       role_id = #{record.roleId,jdbcType=INTEGER},
-      file = #{record.file,jdbcType=VARCHAR}
+      file = #{record.file,jdbcType=VARCHAR},
+      created = #{record.created,jdbcType=TIMESTAMP},
+      updated = #{record.updated,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -292,12 +292,6 @@
       <if test="email != null">
         email = #{email,jdbcType=VARCHAR},
       </if>
-      <if test="created != null">
-        created = #{created,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updated != null">
-        updated = #{updated,jdbcType=TIMESTAMP},
-      </if>
       <if test="sex != null">
         sex = #{sex,jdbcType=VARCHAR},
       </if>
@@ -316,6 +310,12 @@
       <if test="file != null">
         file = #{file,jdbcType=VARCHAR},
       </if>
+      <if test="created != null">
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null">
+        updated = #{updated,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -325,14 +325,14 @@
       password = #{password,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
-      created = #{created,jdbcType=TIMESTAMP},
-      updated = #{updated,jdbcType=TIMESTAMP},
       sex = #{sex,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
       state = #{state,jdbcType=INTEGER},
       description = #{description,jdbcType=VARCHAR},
       role_id = #{roleId,jdbcType=INTEGER},
-      file = #{file,jdbcType=VARCHAR}
+      file = #{file,jdbcType=VARCHAR},
+      created = #{created,jdbcType=TIMESTAMP},
+      updated = #{updated,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

@@ -90,6 +90,9 @@ public class EmailUtil {
             content+="编辑捐赠数据：<br><a href='"+editUrl+"'>"+editUrl+"</a><br><br>";
             System.out.println(editUrl);
 
+            String delNotNotify=SERVER_URL+"/pay/delNotNotify?tokenName="+tokenName+"&token="+token+"&id="+tbThanks.getId();
+            content+="删除该捐赠数据不发送通知邮件：<br><a href='"+delNotNotify+"'>"+delNotNotify+"</a><br><br>";
+
             String delUrl=SERVER_URL+"/pay/del?tokenName="+tokenName+"&token="+token+"&id="+tbThanks.getId();
             content+="删除该捐赠数据：<br><a href='"+delUrl+"'>"+delUrl+"</a><br><br>";
 

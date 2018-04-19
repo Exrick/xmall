@@ -5,7 +5,6 @@ import cn.exrick.common.jedis.JedisClient;
 import cn.exrick.manager.dto.front.AllGoodsResult;
 import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.content.service.ContentService;
-import cn.exrick.manager.dto.ContentDto;
 import cn.exrick.manager.dto.DtoUtil;
 import cn.exrick.manager.dto.front.*;
 import cn.exrick.manager.mapper.*;
@@ -13,6 +12,8 @@ import cn.exrick.manager.pojo.*;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,55 +24,53 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * @author Exrickx
+ */
 @Service
 public class ContentServiceImpl implements ContentService {
 
-    private final static Logger log= LoggerFactory.getLogger(ContentCatServiceImpl.class);
+    private final static Logger log= LoggerFactory.getLogger(PanelServiceImpl.class);
 
     @Autowired
-    private TbContentMapper tbContentMapper;
+    private TbPanelMapper tbPanelMapper;
     @Autowired
-    private TbContentCategoryMapper tbContentCategoryMapper;
+    private TbPanelContentMapper tbPanelContentMapper;
     @Autowired
     private TbItemMapper tbItemMapper;
     @Autowired
     private TbItemDescMapper tbItemDescMapper;
-    @Autowired
-    private TbImageMapper tbImageMapper;
     @Autowired
     private JedisClient jedisClient;
 
     @Value("${PRODUCT_HOME}")
     private String PRODUCT_HOME;
 
-    @Value("${HOT_ID}")
-    private Long HOT_ID;
+    @Value("${PRODUCT_ITEM}")
+    private String PRODUCT_ITEM;
 
-    @Value("${OFFICIAL_ID}")
-    private Long OFFICIAL_ID;
+    @Value("${RECOMEED_PANEL_ID}")
+    private Integer RECOMEED_PANEL_ID;
 
-    @Value("${BRAND_ID}")
-    private Long BRAND_ID;
+    @Value("${THANK_PANEL_ID}")
+    private Integer THANK_PANEL_ID;
 
-    @Value("${OFFICIAL_IMAGE_ID}")
-    private int OFFICIAL_IMAGE_ID;
+    @Value("${RECOMEED_PANEL}")
+    private String RECOMEED_PANEL;
 
-    @Value("${BRAND_IMAGE_ID}")
-    private int BRAND_IMAGE_ID;
-
-    @Value("${RDEIS_ITEM}")
-    private String RDEIS_ITEM;
+    @Value("${THANK_PANEL}")
+    private String THANK_PANEL;
 
     @Value("${ITEM_EXPIRE}")
     private int ITEM_EXPIRE;
 
     @Override
-    public int addContent(TbContent tbContent) {
+    public int addPanelContent(TbPanelContent tbPanelContent) {
 
-        tbContent.setCreated(new Date());
-        tbContent.setUpdated(new Date());
-        if(tbContentMapper.insert(tbContent)!=1){
-            throw new XmallException("添加内容失败");
+        tbPanelContent.setCreated(new Date());
+        tbPanelContent.setUpdated(new Date());
+        if(tbPanelContentMapper.insert(tbPanelContent)!=1){
+            throw new XmallException("添加首页板块内容失败");
         }
         //同步缓存
         deleteHomeRedis();
@@ -79,23 +78,23 @@ public class ContentServiceImpl implements ContentService {
     }
 
     @Override
-    public DataTablesResult getContentListByCid(Long cid) {
+    public DataTablesResult getPanelContentListByPanelId(int panelId) {
 
         DataTablesResult result=new DataTablesResult();
-        List<ContentDto> list=new ArrayList<>();
+        List<TbPanelContent> list=new ArrayList<>();
 
-        TbContentExample example=new TbContentExample();
-        TbContentExample.Criteria criteria=example.createCriteria();
+        TbPanelContentExample example=new TbPanelContentExample();
+        TbPanelContentExample.Criteria criteria=example.createCriteria();
         //条件查询
-        criteria.andCategoryIdEqualTo(cid);
-        List<TbContent> listTbContent=tbContentMapper.selectByExample(example);
-
-        TbContentCategory tbContentCategory=tbContentCategoryMapper.selectByPrimaryKey(cid);
-
-        for(int i=0;i<listTbContent.size();i++){
-            ContentDto contentDto= DtoUtil.TbContent2ContentDto(listTbContent.get(i));
-            contentDto.setCategory(tbContentCategory.getName());
-            list.add(contentDto);
+        criteria.andPanelIdEqualTo(panelId);
+        list=tbPanelContentMapper.selectByExample(example);
+        for(TbPanelContent content:list){
+            if(content.getProductId()!=null){
+                TbItem tbItem=tbItemMapper.selectByPrimaryKey(content.getProductId());
+                content.setProductName(tbItem.getTitle());
+                content.setSalePrice(tbItem.getPrice());
+                content.setSubTitle(tbItem.getSellPoint());
+            }
         }
 
         result.setData(list);
@@ -103,10 +102,10 @@ public class ContentServiceImpl implements ContentService {
     }
 
     @Override
-    public int deleteContent(Long id) {
+    public int deletePanelContent(int id) {
 
-        if(tbContentMapper.deleteByPrimaryKey(id)!=1){
-            throw new XmallException("删除内容失败");
+        if(tbPanelContentMapper.deleteByPrimaryKey(id)!=1){
+            throw new XmallException("删除首页板块失败");
         }
         //同步缓存
         deleteHomeRedis();
@@ -114,16 +113,22 @@ public class ContentServiceImpl implements ContentService {
     }
 
     @Override
-    public int updateContent(TbContent tbContent) {
+    public int updateContent(TbPanelContent tbPanelContent) {
 
-        TbContent old=getContentById(tbContent.getId());
-        if(tbContent.getImage().isEmpty()){
-            tbContent.setImage(old.getImage());
+        TbPanelContent old=getTbPanelContentById(tbPanelContent.getId());
+        if(StringUtils.isBlank(tbPanelContent.getPicUrl())){
+            tbPanelContent.setPicUrl(old.getPicUrl());
         }
-        tbContent.setCreated(old.getCreated());
-        tbContent.setUpdated(new Date());
-        if(tbContentMapper.updateByPrimaryKey(tbContent)!=1){
-            throw new XmallException("更新内容失败");
+        if(StringUtils.isBlank(tbPanelContent.getPicUrl2())){
+            tbPanelContent.setPicUrl2(old.getPicUrl2());
+        }
+        if(StringUtils.isBlank(tbPanelContent.getPicUrl3())){
+            tbPanelContent.setPicUrl3(old.getPicUrl3());
+        }
+        tbPanelContent.setCreated(old.getCreated());
+        tbPanelContent.setUpdated(new Date());
+        if(tbPanelContentMapper.updateByPrimaryKey(tbPanelContent)!=1){
+            throw new XmallException("更新板块内容失败");
         }
         //同步缓存
         deleteHomeRedis();
@@ -131,145 +136,154 @@ public class ContentServiceImpl implements ContentService {
     }
 
     @Override
-    public TbContent getContentById(Long id) {
+    public TbPanelContent getTbPanelContentById(int id) {
 
-        TbContent tbContent=tbContentMapper.selectByPrimaryKey(id);
-        if(tbContent==null){
-            throw new XmallException("通过id获取内容失败");
+        TbPanelContent tbPanelContent=tbPanelContentMapper.selectByPrimaryKey(id);
+        if(tbPanelContent==null){
+            throw new XmallException("通过id获取板块内容失败");
         }
-        return tbContent;
+        return tbPanelContent;
     }
 
     @Override
-    public ProductHome getProductHome() {
+    public List<TbPanel> getHome() {
+
+        List<TbPanel> list=new ArrayList<>();
 
         //查询缓存
         try{
             //有缓存则读取
-            String json=jedisClient.hget(PRODUCT_HOME,PRODUCT_HOME);
+            String json=jedisClient.get(PRODUCT_HOME);
             if(json!=null){
-                ProductHome productHome= new Gson().fromJson(json,ProductHome.class);
+                list = new Gson().fromJson(json, new TypeToken<List<TbPanel>>(){}.getType());
                 log.info("读取了首页缓存");
-                return productHome;
+                return list;
             }
         }catch (Exception e){
             e.printStackTrace();
         }
 
         //没有缓存
-        ProductHome productHome =new ProductHome();
+        TbPanelExample example=new TbPanelExample();
+        TbPanelExample.Criteria criteria=example.createCriteria();
+        //条件查询
+        criteria.andPositionEqualTo(0);
+        criteria.andStatusEqualTo(1);
+        example.setOrderByClause("sort_order");
+        list=tbPanelMapper.selectByExample(example);
+        for(TbPanel tbPanel:list){
+            TbPanelContentExample exampleContent=new TbPanelContentExample();
+            exampleContent.setOrderByClause("sort_order");
+            TbPanelContentExample.Criteria criteriaContent=exampleContent.createCriteria();
+            //条件查询
+            criteriaContent.andPanelIdEqualTo(tbPanel.getId());
+            List<TbPanelContent> contentList=tbPanelContentMapper.selectByExample(exampleContent);
+            for(TbPanelContent content:contentList){
+                if(content.getProductId()!=null){
+                    TbItem tbItem=tbItemMapper.selectByPrimaryKey(content.getProductId());
+                    content.setProductName(tbItem.getTitle());
+                    content.setSalePrice(tbItem.getPrice());
+                    content.setSubTitle(tbItem.getSellPoint());
+                }
+            }
 
-        productHome.setHomeHot(getHotProduct());
-        productHome.setHomeFloors(getFloorProduct());
+            tbPanel.setPanelContents(contentList);
+        }
 
         //把结果添加至缓存
         try{
-            jedisClient.hset(PRODUCT_HOME,PRODUCT_HOME,new Gson().toJson(productHome));
+            jedisClient.set(PRODUCT_HOME, new Gson().toJson(list));
             log.info("添加了首页缓存");
         }catch (Exception e){
             e.printStackTrace();
         }
-        return productHome;
-    }
-
-    public List<Product> getHotProduct() {
-
-        //热门商品
-        TbContentExample example=new TbContentExample();
-        TbContentExample.Criteria criteria=example.createCriteria();
-        criteria.andCategoryIdEqualTo(HOT_ID);
-        List<TbContent> listHot=tbContentMapper.selectByExample(example);
-
-        List<Product> productHotList=new ArrayList<>();
-        for(int i=0;i<listHot.size();i++){
-
-            TbItem tbItem=tbItemMapper.selectByPrimaryKey(Long.valueOf(listHot.get(i).getProductId()));
-
-            Product product=new Product();
-
-            product.setProductId(tbItem.getId());
-            product.setProductName(tbItem.getTitle());
-            product.setSalePrice(tbItem.getPrice());
-            product.setSubTitle(tbItem.getSellPoint());
-            product.setProductImageBig(listHot.get(i).getImage());
-
-            productHotList.add(product);
-        }
-
-        return productHotList;
-    }
-
-    public List<HomeFloors> getFloorProduct() {
-
-        List<HomeFloors> list=new ArrayList<>();
-
-        //官方精选
-        HomeFloors homeFloors1=new HomeFloors();
-
-        TbContentExample example1=new TbContentExample();
-        TbContentExample.Criteria criteria1=example1.createCriteria();
-        criteria1.andCategoryIdEqualTo(OFFICIAL_ID);
-        List<TbContent> listFloor1=tbContentMapper.selectByExample(example1);
-
-        List<Product> productFloorList1=new ArrayList<>();
-        for(int i=0;i<listFloor1.size();i++) {
-
-            TbItem tbItem = tbItemMapper.selectByPrimaryKey(Long.valueOf(listFloor1.get(i).getProductId()));
-
-            Product product = new Product();
-
-            product.setProductId(tbItem.getId());
-            product.setProductName(tbItem.getTitle());
-            product.setSalePrice(tbItem.getPrice());
-            product.setSubTitle(tbItem.getSellPoint());
-            product.setProductImageBig(listFloor1.get(i).getImage());
-
-            productFloorList1.add(product);
-        }
-
-        homeFloors1.setTabs(productFloorList1);
-        TbImage image1=tbImageMapper.selectByPrimaryKey(OFFICIAL_IMAGE_ID);
-        homeFloors1.setImage(image1);
-        TbContentCategory tbContentCategory1=tbContentCategoryMapper.selectByPrimaryKey(OFFICIAL_ID);
-        homeFloors1.setTitle(tbContentCategory1.getName());
-
-        list.add(homeFloors1);
-
-        //品牌精选
-        HomeFloors homeFloors2=new HomeFloors();
-
-        TbContentExample example2=new TbContentExample();
-        TbContentExample.Criteria criteria2=example2.createCriteria();
-        criteria2.andCategoryIdEqualTo(BRAND_ID);
-        List<TbContent> listFloor2=tbContentMapper.selectByExample(example2);
-
-        List<Product> productFloorList2=new ArrayList<>();
-        for(int i=0;i<listFloor2.size();i++) {
-
-            TbItem tbItem = tbItemMapper.selectByPrimaryKey(Long.valueOf(listFloor2.get(i).getProductId()));
-
-            Product product = new Product();
-
-            product.setProductId(tbItem.getId());
-            product.setProductName(tbItem.getTitle());
-            product.setSalePrice(tbItem.getPrice());
-            product.setSubTitle(tbItem.getSellPoint());
-            product.setProductImageBig(listFloor2.get(i).getImage());
-
-            productFloorList2.add(product);
-        }
-
-        homeFloors2.setTabs(productFloorList2);
-        TbImage image2=tbImageMapper.selectByPrimaryKey(BRAND_IMAGE_ID);
-        homeFloors2.setImage(image2);
-        TbContentCategory tbContentCategory2=tbContentCategoryMapper.selectByPrimaryKey(BRAND_ID);
-        homeFloors2.setTitle(tbContentCategory2.getName());
-
-        list.add(homeFloors2);
-
         return list;
     }
 
+    @Override
+    public List<TbPanel> getRecommendGoods() {
+
+
+        List<TbPanel> list = new ArrayList<>();
+        //查询缓存
+        try{
+            //有缓存则读取
+            String json=jedisClient.get(RECOMEED_PANEL);
+            if(json!=null){
+                list = new Gson().fromJson(json, new TypeToken<List<TbPanel>>(){}.getType());
+                log.info("读取了推荐板块缓存");
+                return list;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        list = getTbPanelAndContentsById(RECOMEED_PANEL_ID);
+        //把结果添加至缓存
+        try{
+            jedisClient.set(RECOMEED_PANEL, new Gson().toJson(list));
+            log.info("添加了推荐板块缓存");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    @Override
+    public List<TbPanel> getThankGoods() {
+
+        List<TbPanel> list = new ArrayList<>();
+        //查询缓存
+        try{
+            //有缓存则读取
+            String json=jedisClient.get(THANK_PANEL);
+            if(json!=null){
+                list = new Gson().fromJson(json, new TypeToken<List<TbPanel>>(){}.getType());
+                log.info("读取了捐赠板块缓存");
+                return list;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        list = getTbPanelAndContentsById(THANK_PANEL_ID);
+        //把结果添加至缓存
+        try{
+            jedisClient.set(THANK_PANEL, new Gson().toJson(list));
+            log.info("添加了捐赠板块缓存");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    List<TbPanel> getTbPanelAndContentsById(Integer panelId){
+
+        List<TbPanel> list=new ArrayList<>();
+        TbPanelExample example=new TbPanelExample();
+        TbPanelExample.Criteria criteria=example.createCriteria();
+        //条件查询
+        criteria.andIdEqualTo(panelId);
+        criteria.andStatusEqualTo(1);
+        list=tbPanelMapper.selectByExample(example);
+        for(TbPanel tbPanel:list){
+            TbPanelContentExample exampleContent=new TbPanelContentExample();
+            exampleContent.setOrderByClause("sort_order");
+            TbPanelContentExample.Criteria criteriaContent=exampleContent.createCriteria();
+            //条件查询
+            criteriaContent.andPanelIdEqualTo(tbPanel.getId());
+            List<TbPanelContent> contentList=tbPanelContentMapper.selectByExample(exampleContent);
+            for(TbPanelContent content:contentList){
+                if(content.getProductId()!=null){
+                    TbItem tbItem=tbItemMapper.selectByPrimaryKey(content.getProductId());
+                    content.setProductName(tbItem.getTitle());
+                    content.setSalePrice(tbItem.getPrice());
+                    content.setSubTitle(tbItem.getSellPoint());
+                }
+            }
+
+            tbPanel.setPanelContents(contentList);
+        }
+        return list;
+    }
 
     @Override
     public ProductDet getProductDet(Long id) {
@@ -277,12 +291,12 @@ public class ContentServiceImpl implements ContentService {
         //查询缓存
         try{
             //有缓存则读取
-            String json=jedisClient.get(RDEIS_ITEM+":"+id);
+            String json=jedisClient.get(PRODUCT_ITEM+":"+id);
             if(json!=null){
                 ProductDet productDet= new Gson().fromJson(json,ProductDet.class);
                 log.info("读取了商品"+id+"详情缓存");
                 //重置商品缓存时间
-                jedisClient.expire(RDEIS_ITEM+":"+id,ITEM_EXPIRE);
+                jedisClient.expire(PRODUCT_ITEM+":"+id,ITEM_EXPIRE);
                 return productDet;
             }
         }catch (Exception e){
@@ -315,9 +329,9 @@ public class ContentServiceImpl implements ContentService {
         }
         //无缓存 把结果添加至缓存
         try{
-            jedisClient.set(RDEIS_ITEM+":"+id,new Gson().toJson(productDet));
+            jedisClient.set(PRODUCT_ITEM+":"+id,new Gson().toJson(productDet));
             //设置过期时间
-            jedisClient.expire(RDEIS_ITEM+":"+id,ITEM_EXPIRE);
+            jedisClient.expire(PRODUCT_ITEM+":"+id,ITEM_EXPIRE);
             log.info("添加了商品"+id+"详情缓存");
         }catch (Exception e){
             e.printStackTrace();
@@ -326,7 +340,7 @@ public class ContentServiceImpl implements ContentService {
     }
 
     @Override
-    public AllGoodsResult getAllProduct(int page, int size, String sort, int priceGt, int priceLte) {
+    public AllGoodsResult getAllProduct(int page, int size, String sort, Long cid, int priceGt, int priceLte) {
 
         AllGoodsResult allGoodsResult=new AllGoodsResult();
         List<Product> list=new ArrayList<>();
@@ -339,18 +353,18 @@ public class ContentServiceImpl implements ContentService {
         //判断条件
         String orderCol="created";
         String orderDir="desc";
-        if(sort.isEmpty()||sort==null){
-            orderCol="created";
-            orderDir="desc";
-        }else if(sort.equals("1")){
+        if(sort.equals("1")){
             orderCol="price";
             orderDir="asc";
         }else if(sort.equals("-1")){
             orderCol="price";
             orderDir="desc";
+        }else{
+            orderCol="created";
+            orderDir="desc";
         }
 
-        List<TbItem> tbItemList = tbItemMapper.selectItemFront(orderCol,orderDir,priceGt,priceLte);
+        List<TbItem> tbItemList = tbItemMapper.selectItemFront(cid,orderCol,orderDir,priceGt,priceLte);
         PageInfo<TbItem> pageInfo=new PageInfo<>(tbItemList);
 
         for(TbItem tbItem:tbItemList){
@@ -364,10 +378,77 @@ public class ContentServiceImpl implements ContentService {
         return allGoodsResult;
     }
 
-    //同步首页缓存
+    @Override
+    public String getIndexRedis() {
+
+        try{
+            String json=jedisClient.get(PRODUCT_HOME);
+            return json;
+        }catch (Exception e){
+            log.error(e.toString());
+        }
+        return "";
+    }
+
+    @Override
+    public int updateIndexRedis() {
+
+        deleteHomeRedis();
+        return 1;
+    }
+
+    @Override
+    public String getRecommendRedis() {
+
+        try{
+            String json=jedisClient.get(RECOMEED_PANEL);
+            return json;
+        }catch (Exception e){
+            log.error(e.toString());
+        }
+        return "";
+    }
+
+    @Override
+    public int updateRecommendRedis() {
+
+        try {
+            jedisClient.del(RECOMEED_PANEL);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return 1;
+    }
+
+    @Override
+    public String getThankRedis() {
+
+        try{
+            String json=jedisClient.get(THANK_PANEL);
+            return json;
+        }catch (Exception e){
+            log.error(e.toString());
+        }
+        return "";
+    }
+
+    @Override
+    public int updateThankRedis() {
+
+        try {
+            jedisClient.del(THANK_PANEL);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return 1;
+    }
+
+    /**
+     * 同步首页缓存
+     */
     public void deleteHomeRedis(){
         try {
-            jedisClient.hdel(PRODUCT_HOME,PRODUCT_HOME);
+            jedisClient.del(PRODUCT_HOME);
         }catch (Exception e){
             e.printStackTrace();
         }

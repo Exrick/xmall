@@ -8,10 +8,10 @@
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="sort_order" jdbcType="INTEGER" property="sortOrder" />
     <result column="is_parent" jdbcType="BIT" property="isParent" />
-    <result column="created" jdbcType="TIMESTAMP" property="created" />
-    <result column="updated" jdbcType="TIMESTAMP" property="updated" />
     <result column="icon" jdbcType="VARCHAR" property="icon" />
     <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="created" jdbcType="TIMESTAMP" property="created" />
+    <result column="updated" jdbcType="TIMESTAMP" property="updated" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -72,7 +72,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, parent_id, name, status, sort_order, is_parent, created, updated, icon, remark
+    id, parent_id, name, status, sort_order, is_parent, icon, remark, created, updated
   </sql>
   <select id="selectByExample" parameterType="cn.exrick.manager.pojo.TbItemCatExample" resultMap="BaseResultMap">
     select
@@ -107,12 +107,12 @@
   <insert id="insert" parameterType="cn.exrick.manager.pojo.TbItemCat">
     insert into tb_item_cat (id, parent_id, name, 
       status, sort_order, is_parent, 
-      created, updated, icon, 
-      remark)
+      icon, remark, created, 
+      updated)
     values (#{id,jdbcType=BIGINT}, #{parentId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, 
       #{status,jdbcType=INTEGER}, #{sortOrder,jdbcType=INTEGER}, #{isParent,jdbcType=BIT}, 
-      #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}, #{icon,jdbcType=VARCHAR}, 
-      #{remark,jdbcType=VARCHAR})
+      #{icon,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, 
+      #{updated,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="cn.exrick.manager.pojo.TbItemCat">
     insert into tb_item_cat
@@ -135,17 +135,17 @@
       <if test="isParent != null">
         is_parent,
       </if>
-      <if test="created != null">
-        created,
-      </if>
-      <if test="updated != null">
-        updated,
-      </if>
       <if test="icon != null">
         icon,
       </if>
       <if test="remark != null">
         remark,
+      </if>
+      <if test="created != null">
+        created,
+      </if>
+      <if test="updated != null">
+        updated,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -167,17 +167,17 @@
       <if test="isParent != null">
         #{isParent,jdbcType=BIT},
       </if>
-      <if test="created != null">
-        #{created,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updated != null">
-        #{updated,jdbcType=TIMESTAMP},
-      </if>
       <if test="icon != null">
         #{icon,jdbcType=VARCHAR},
       </if>
       <if test="remark != null">
         #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="created != null">
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null">
+        #{updated,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -208,17 +208,17 @@
       <if test="record.isParent != null">
         is_parent = #{record.isParent,jdbcType=BIT},
       </if>
-      <if test="record.created != null">
-        created = #{record.created,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.updated != null">
-        updated = #{record.updated,jdbcType=TIMESTAMP},
-      </if>
       <if test="record.icon != null">
         icon = #{record.icon,jdbcType=VARCHAR},
       </if>
       <if test="record.remark != null">
         remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.created != null">
+        created = #{record.created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updated != null">
+        updated = #{record.updated,jdbcType=TIMESTAMP},
       </if>
     </set>
     <if test="_parameter != null">
@@ -233,10 +233,10 @@
       status = #{record.status,jdbcType=INTEGER},
       sort_order = #{record.sortOrder,jdbcType=INTEGER},
       is_parent = #{record.isParent,jdbcType=BIT},
-      created = #{record.created,jdbcType=TIMESTAMP},
-      updated = #{record.updated,jdbcType=TIMESTAMP},
       icon = #{record.icon,jdbcType=VARCHAR},
-      remark = #{record.remark,jdbcType=VARCHAR}
+      remark = #{record.remark,jdbcType=VARCHAR},
+      created = #{record.created,jdbcType=TIMESTAMP},
+      updated = #{record.updated,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -259,17 +259,17 @@
       <if test="isParent != null">
         is_parent = #{isParent,jdbcType=BIT},
       </if>
-      <if test="created != null">
-        created = #{created,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updated != null">
-        updated = #{updated,jdbcType=TIMESTAMP},
-      </if>
       <if test="icon != null">
         icon = #{icon,jdbcType=VARCHAR},
       </if>
       <if test="remark != null">
         remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="created != null">
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null">
+        updated = #{updated,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
@@ -281,10 +281,10 @@
       status = #{status,jdbcType=INTEGER},
       sort_order = #{sortOrder,jdbcType=INTEGER},
       is_parent = #{isParent,jdbcType=BIT},
-      created = #{created,jdbcType=TIMESTAMP},
-      updated = #{updated,jdbcType=TIMESTAMP},
       icon = #{icon,jdbcType=VARCHAR},
-      remark = #{remark,jdbcType=VARCHAR}
+      remark = #{remark,jdbcType=VARCHAR},
+      created = #{created,jdbcType=TIMESTAMP},
+      updated = #{updated,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

@@ -80,9 +80,10 @@ public class ItemESMessageListener implements MessageListener {
 								.field("productId", searchItem.getProductId())
 								.field("salePrice", searchItem.getSalePrice())
 								.field("productName", searchItem.getProductName())
-								.field("sub_title", searchItem.getSubTitle())
+								.field("subTitle", searchItem.getSubTitle())
 								.field("productImageBig", searchItem.getProductImageBig())
-								.field("category_name", searchItem.getCategory_name())
+								.field("categoryName", searchItem.getCategoryName())
+								.field("cid", searchItem.getCid())
 								.endObject()
 						).get();
 			}else if("delete".equals(text[0])){

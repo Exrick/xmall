@@ -18,7 +18,6 @@
     <!-- 用dubbo协议在20880端口暴露服务 -->
     <dubbo:protocol name="dubbo" port="20881" />
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="cn.exrick.content.service.ContentCatService" ref="contentCatServiceImpl" timeout="10000"/>
+    <dubbo:service interface="cn.exrick.content.service.PanelService" ref="panelServiceImpl" timeout="10000"/>
     <dubbo:service interface="cn.exrick.content.service.ContentService" ref="contentServiceImpl" timeout="10000"/>
-    <dubbo:service interface="cn.exrick.content.service.ContentImageService" ref="contentImageServiceImpl" timeout="10000"/>
 </beans>

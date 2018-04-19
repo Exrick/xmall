@@ -85,7 +85,8 @@ public class SearchItemServiceImpl implements SearchItemService {
 								.field("productName", searchItem.getProductName())
 								.field("subTitle", searchItem.getSubTitle())
 								.field("productImageBig", searchItem.getProductImageBig())
-								.field("categoryName", searchItem.getCategory_name())
+								.field("categoryName", searchItem.getCategoryName())
+								.field("cid", searchItem.getCid())
 								.endObject()
 						)
 				);
@@ -98,7 +99,7 @@ public class SearchItemServiceImpl implements SearchItemService {
 			client.close();
 		}catch (Exception e){
 			e.printStackTrace();
-			throw new XmallException("导入ES索引库出错");
+			throw new XmallException("导入ES索引库出错，请再次尝试");
 		}
 
 		return 1;

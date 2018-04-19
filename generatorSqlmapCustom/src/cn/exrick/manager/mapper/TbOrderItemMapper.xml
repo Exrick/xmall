@@ -255,21 +255,4 @@
       pic_path = #{picPath,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <select id="getWeekHot" resultType="cn.exrick.manager.pojo.TbOrderItem">
-    SELECT
-    i.title,
-    i.pic_path picPath,
-    count(*) total
-    FROM
-    tb_order_item i
-    LEFT JOIN tb_order o ON i.order_id = o.order_id
-    WHERE
-    YEARWEEK(date_format(o.create_time,'%Y-%m-%d')) = YEARWEEK(now())-1
-    AND
-    o.status = 4
-    GROUP BY
-    i.item_id
-    ORDER BY
-    COUNT(*) DESC
-  </select>
 </mapper>

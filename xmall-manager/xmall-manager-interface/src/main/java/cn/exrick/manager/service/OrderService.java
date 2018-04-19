@@ -70,6 +70,15 @@ public interface OrderService {
     int editPay(String tokenName,String token,TbThanks tbThanks);
 
     /**
+     * 捐赠删除不回邮件
+     * @param tokenName
+     * @param token
+     * @param id
+     * @return
+     */
+    int payDelNotNotify(String tokenName,String token,String id);
+
+    /**
      * 捐赠删除
      * @param tokenName
      * @param token

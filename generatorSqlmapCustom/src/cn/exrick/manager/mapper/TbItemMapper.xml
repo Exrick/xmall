@@ -10,7 +10,7 @@
     <result column="limit_num" jdbcType="INTEGER" property="limitNum" />
     <result column="image" jdbcType="VARCHAR" property="image" />
     <result column="cid" jdbcType="BIGINT" property="cid" />
-    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="status" jdbcType="INTEGER" property="status" />
     <result column="created" jdbcType="TIMESTAMP" property="created" />
     <result column="updated" jdbcType="TIMESTAMP" property="updated" />
   </resultMap>
@@ -112,7 +112,7 @@
       created, updated)
     values (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{sellPoint,jdbcType=VARCHAR}, 
       #{price,jdbcType=DECIMAL}, #{num,jdbcType=INTEGER}, #{limitNum,jdbcType=INTEGER}, 
-      #{image,jdbcType=VARCHAR}, #{cid,jdbcType=BIGINT}, #{status,jdbcType=TINYINT}, 
+      #{image,jdbcType=VARCHAR}, #{cid,jdbcType=BIGINT}, #{status,jdbcType=INTEGER}, 
       #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="cn.exrick.manager.pojo.TbItem">
@@ -178,7 +178,7 @@
         #{cid,jdbcType=BIGINT},
       </if>
       <if test="status != null">
-        #{status,jdbcType=TINYINT},
+        #{status,jdbcType=INTEGER},
       </if>
       <if test="created != null">
         #{created,jdbcType=TIMESTAMP},
@@ -222,7 +222,7 @@
         cid = #{record.cid,jdbcType=BIGINT},
       </if>
       <if test="record.status != null">
-        status = #{record.status,jdbcType=TINYINT},
+        status = #{record.status,jdbcType=INTEGER},
       </if>
       <if test="record.created != null">
         created = #{record.created,jdbcType=TIMESTAMP},
@@ -245,7 +245,7 @@
       limit_num = #{record.limitNum,jdbcType=INTEGER},
       image = #{record.image,jdbcType=VARCHAR},
       cid = #{record.cid,jdbcType=BIGINT},
-      status = #{record.status,jdbcType=TINYINT},
+      status = #{record.status,jdbcType=INTEGER},
       created = #{record.created,jdbcType=TIMESTAMP},
       updated = #{record.updated,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
@@ -277,7 +277,7 @@
         cid = #{cid,jdbcType=BIGINT},
       </if>
       <if test="status != null">
-        status = #{status,jdbcType=TINYINT},
+        status = #{status,jdbcType=INTEGER},
       </if>
       <if test="created != null">
         created = #{created,jdbcType=TIMESTAMP},
@@ -297,52 +297,9 @@
       limit_num = #{limitNum,jdbcType=INTEGER},
       image = #{image,jdbcType=VARCHAR},
       cid = #{cid,jdbcType=BIGINT},
-      status = #{status,jdbcType=TINYINT},
+      status = #{status,jdbcType=INTEGER},
       created = #{created,jdbcType=TIMESTAMP},
       updated = #{updated,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <select id="selectItemByCondition" resultMap="BaseResultMap">
-    SELECT * FROM tb_item
-    WHERE (title LIKE #{search}
-    OR
-    sell_point LIKE #{search}
-    OR
-    price LIKE #{search}
-    OR
-    id LIKE #{search})
-    <if test="cid != -1">
-      AND cid = #{cid}
-    </if>
-    ORDER BY
-    ${orderCol}
-    ${orderDir}
-  </select>
-  <select id="selectItemByMultiCondition" resultMap="BaseResultMap">
-    SELECT * FROM tb_item
-    WHERE (title LIKE #{search}
-    OR
-    sell_point LIKE #{search}
-    OR
-    price LIKE #{search})
-    <if test="cid != -1">
-      AND cid = #{cid}
-    </if>
-    <if test="minDate != null and minDate != '' and maxDate != null and maxDate != ''">
-      AND created BETWEEN #{minDate} AND #{maxDate}
-    </if>
-    ORDER BY
-    ${orderCol}
-    ${orderDir}
-  </select>
-  <select id="selectItemFront" resultMap="BaseResultMap">
-    SELECT * FROM tb_item
-    WHERE status = 1
-    <if test="priceGt != null and priceGt >= 0 and priceLte != null and priceLte >= 0">
-      AND price BETWEEN #{priceGt} AND #{priceLte}
-    </if>
-    ORDER BY
-    ${orderCol}
-    ${orderDir}
-  </select>
 </mapper>

@@ -5,10 +5,11 @@
 		SELECT
 		a.id productId,
 		a.title productName,
-		a.sell_point sub_title,
+		a.sell_point subTitle,
 		a.price salePrice,
 		a.image productImageBig,
-		b.name category_name
+		a.cid cid,
+		b.name categoryName
 		FROM
 		tb_item a
 		LEFT JOIN tb_item_cat b ON a.cid = b.id
@@ -19,10 +20,11 @@
 		SELECT
 		a.id productId,
 		a.title productName,
-		a.sell_point sub_title,
+		a.sell_point subTitle,
 		a.price salePrice,
 		a.image productImageBig,
-		b.name category_name
+		a.cid cid,
+		b.name categoryName
 		FROM
 		tb_item a
 		LEFT JOIN tb_item_cat b ON a.cid = b.id

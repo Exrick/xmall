@@ -195,7 +195,7 @@ public class OrderServiceImpl implements OrderService {
         }
         //发送通知邮箱
         if(StringUtils.isNotBlank(tbThanks.getEmail())&& EmailUtil.checkEmail(tbThanks.getEmail())){
-            String content="抱歉，您的订单支付失败，请尝试重新支付！<br>Powered By XPay. Exrick Present.";
+            String content="抱歉，由于您支付不起或其他原因，您的订单支付失败，请尝试重新支付！<br>Powered By XPay. Exrick Present.";
             emailUtil.sendEmailPayResult(tbThanks.getEmail(),"【XMall商城】支付失败通知",content);
         }
         return 1;
@@ -266,6 +266,39 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public int payDelNotNotify(String tokenName, String token, String id) {
+
+        //验证token
+        if(StringUtils.isBlank(tokenName)||StringUtils.isBlank(tokenName)||StringUtils.isBlank(id)){
+            return -1;
+        }
+        String value=jedisClient.get(tokenName);
+        if(!value.equals(token)){
+            return -1;
+        }
+        //获得捐赠
+        TbThanks tbThanks=tbThanksMapper.selectByPrimaryKey(Integer.valueOf(id));
+        if(tbThanks==null){
+            return 0;
+        }
+        //删除捐赠
+        if(tbThanksMapper.deleteByPrimaryKey(Integer.valueOf(id))!=1){
+            return 0;
+        }
+        //修改订单状态
+        TbOrder tbOrder=tbOrderMapper.selectByPrimaryKey(tbThanks.getOrderId());
+        if(tbOrder!=null){
+            tbOrder.setStatus(6);
+            tbOrder.setCloseTime(new Date());
+            tbOrder.setUpdateTime(new Date());
+            if(tbOrderMapper.updateByPrimaryKey(tbOrder)!=1){
+                return 0;
+            }
+        }
+        return 1;
+    }
+
+    @Override
     public int payDel(String tokenName, String token, String id) {
 
         //验证token
@@ -297,11 +330,10 @@ public class OrderServiceImpl implements OrderService {
         }
         //发送通知邮箱
         if(StringUtils.isNotBlank(tbThanks.getEmail())&& EmailUtil.checkEmail(tbThanks.getEmail())){
-            String content="抱歉，您的订单支付失败，请尝试重新支付！<br>Powered By XPay. Exrick Present.";
+            String content="抱歉，由于您支付不起或其他原因，您的订单支付失败，请尝试重新支付！<br>Powered By XPay. Exrick Present.";
             emailUtil.sendEmailPayResult(tbThanks.getEmail(),"【XMall商城】支付失败通知",content);
         }
         return 1;
     }
-
 
 }

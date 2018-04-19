@@ -3,7 +3,9 @@ package cn.exrick.common.pojo;
 import java.io.Serializable;
 
 /**
- * Created by Exrick on 2017/8/2.
+ *
+ * @author Exrick
+ * @date 2017/8/2
  */
 public class ZTreeNode implements Serializable {
 
@@ -25,14 +27,30 @@ public class ZTreeNode implements Serializable {
 
     private String remark;
 
-    private int num;
+    /**
+     * 板块限制商品数量
+     */
+    private int limitNum;
 
-    public int getNum() {
-        return num;
+    /**
+     * 板块类型
+     */
+    private int type;
+
+    public int getType() {
+        return type;
     }
 
-    public void setNum(int num) {
-        this.num = num;
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public int getLimitNum() {
+        return limitNum;
+    }
+
+    public void setLimitNum(int limitNum) {
+        this.limitNum = limitNum;
     }
 
     public String getRemark() {

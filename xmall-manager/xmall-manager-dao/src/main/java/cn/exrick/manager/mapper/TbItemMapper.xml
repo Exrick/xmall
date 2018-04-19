@@ -341,6 +341,9 @@
     <if test="priceGt != null and priceGt >= 0 and priceLte != null and priceLte >= 0">
       AND price BETWEEN #{priceGt} AND #{priceLte}
     </if>
+    <if test="cid != null">
+      AND cid = #{cid}
+    </if>
     ORDER BY
     ${orderCol}
     ${orderDir}

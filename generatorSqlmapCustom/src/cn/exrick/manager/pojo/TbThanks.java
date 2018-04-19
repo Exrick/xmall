@@ -14,8 +14,6 @@ public class TbThanks {
 
     private String info;
 
-    private Date date;
-
     private String email;
 
     private Integer state;
@@ -23,6 +21,8 @@ public class TbThanks {
     private String payType;
 
     private String orderId;
+
+    private Date date;
 
     public Integer getId() {
         return id;
@@ -64,14 +64,6 @@ public class TbThanks {
         this.info = info == null ? null : info.trim();
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -102,5 +94,13 @@ public class TbThanks {
 
     public void setOrderId(String orderId) {
         this.orderId = orderId == null ? null : orderId.trim();
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

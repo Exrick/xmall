@@ -214,7 +214,7 @@ public class OrderServiceImpl implements OrderService {
         order.setPayment(orderInfo.getOrderTotal());
         order.setCreateTime(new Date());
         order.setUpdateTime(new Date());
-        //0、未付款，1、已付款，2、未发货，3、已发货，4、交易成功，5、交易关闭
+        //0、未付款，1、已付款，2、未发货，3、已发货，4、交易成功，5、交易关闭，6、交易失败
         order.setStatus(0);
 
         if(tbOrderMapper.insert(order)!=1){

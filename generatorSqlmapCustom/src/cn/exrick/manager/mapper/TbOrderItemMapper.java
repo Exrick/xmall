@@ -27,6 +27,4 @@ public interface TbOrderItemMapper {
     int updateByPrimaryKeySelective(TbOrderItem record);
 
     int updateByPrimaryKey(TbOrderItem record);
-
-    List<TbOrderItem> getWeekHot();
 }

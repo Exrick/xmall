@@ -2,6 +2,9 @@ package cn.exrick.common.pojo;
 
 import java.io.Serializable;
 
+/**
+ * @author Exrickx
+ */
 public class KindEditorResult implements Serializable{
 
     private int error;
