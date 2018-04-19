@@ -50,8 +50,8 @@ public class ItemServiceImpl implements ItemService {
     @Autowired
     private JedisClient jedisClient;
 
-    @Value("${RDEIS_ITEM}")
-    private String RDEIS_ITEM;
+    @Value("${PRODUCT_ITEM}")
+    private String PRODUCT_ITEM;
 
     @Override
     public ItemDto getItemById(Long id) {
@@ -231,7 +231,7 @@ public class ItemServiceImpl implements ItemService {
      */
     public void deleteProductDetRedis(Long id){
         try {
-            jedisClient.del(RDEIS_ITEM+":"+id);
+            jedisClient.del(PRODUCT_ITEM+":"+id);
         }catch (Exception e){
             e.printStackTrace();
         }
