@@ -22,7 +22,7 @@ import java.util.List;
 @Api(description = "板块列表")
 public class PanelController {
 
-    private final static Logger log= LoggerFactory.getLogger(DtoUtil.class);
+    private final static Logger log= LoggerFactory.getLogger(PanelController.class);
 
     @Autowired
     private PanelService panelService;
