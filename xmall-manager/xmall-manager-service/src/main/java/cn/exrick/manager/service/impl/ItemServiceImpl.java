@@ -145,7 +145,11 @@ public class ItemServiceImpl implements ItemService {
             throw new XmallException("删除商品详情失败");
         }
         //发送消息同步索引库
-        sendRefreshESMessage("delete",id);
+        try {
+            sendRefreshESMessage("delete",id);
+        }catch (Exception e){
+            log.error("同步索引出错");
+        }
         return 0;
     }
 
@@ -174,7 +178,11 @@ public class ItemServiceImpl implements ItemService {
             throw new XmallException("添加商品详情失败");
         }
         //发送消息同步索引库
-        sendRefreshESMessage("add",id);
+        try {
+            sendRefreshESMessage("add",id);
+        }catch (Exception e){
+            log.error("同步索引出错");
+        }
         return getNormalItemById(id);
     }
 
@@ -209,11 +217,18 @@ public class ItemServiceImpl implements ItemService {
         //同步缓存
         deleteProductDetRedis(id);
         //发送消息同步索引库
-        sendRefreshESMessage("add",id);
+        try {
+            sendRefreshESMessage("add",id);
+        }catch (Exception e){
+            log.error("同步索引出错");
+        }
         return getNormalItemById(id);
     }
 
-    //同步商品详情缓存
+    /**
+     * 同步商品详情缓存
+     * @param id
+     */
     public void deleteProductDetRedis(Long id){
         try {
             jedisClient.del(RDEIS_ITEM+":"+id);
@@ -222,7 +237,11 @@ public class ItemServiceImpl implements ItemService {
         }
     }
 
-    //发送消息同步索引库
+    /**
+     * 发送消息同步索引库
+     * @param type
+     * @param id
+     */
     public void sendRefreshESMessage(String type,Long id) {
         jmsTemplate.send(topicDestination, new MessageCreator() {
             @Override
