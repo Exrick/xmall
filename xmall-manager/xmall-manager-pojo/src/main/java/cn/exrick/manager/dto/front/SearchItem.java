@@ -1,6 +1,7 @@
 package cn.exrick.manager.dto.front;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * @author Exrickx
@@ -9,7 +10,7 @@ public class SearchItem implements Serializable {
 
     private Long productId;
 
-    private Long salePrice;
+    private BigDecimal salePrice;
 
     private String productName;
 
@@ -45,11 +46,11 @@ public class SearchItem implements Serializable {
         this.productId = productId;
     }
 
-    public Long getSalePrice() {
+    public BigDecimal getSalePrice() {
         return salePrice;
     }
 
-    public void setSalePrice(Long salePrice) {
+    public void setSalePrice(BigDecimal salePrice) {
         this.salePrice = salePrice;
     }
 
