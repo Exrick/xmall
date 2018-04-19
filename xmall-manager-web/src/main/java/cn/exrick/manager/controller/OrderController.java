@@ -7,10 +7,7 @@ import cn.exrick.manager.service.OrderService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author Exrickx
@@ -24,9 +21,21 @@ public class OrderController {
 
     @RequestMapping(value = "/order/list",method = RequestMethod.GET)
     @ApiOperation(value = "获取订单列表")
-    public DataTablesResult getOrderList(){
+    public DataTablesResult getOrderList(int draw, int start, int length,@RequestParam("search[value]") String search,
+                                         @RequestParam("order[0][column]") int orderCol, @RequestParam("order[0][dir]") String orderDir){
 
-        DataTablesResult result=orderService.getOrderList();
+        //获取客户端需要排序的列
+        String[] cols = {"checkbox","order_id", "payment","shipping_code", "user_id", "buyer_nick", "create_time", "update_time", "payment_time", "close_time","end_time","status"};
+        String orderColumn = cols[orderCol];
+        //默认排序列
+        if(orderColumn == null) {
+            orderColumn = "create_time";
+        }
+        //获取排序方式 默认为desc(asc)
+        if(orderDir == null) {
+            orderDir = "desc";
+        }
+        DataTablesResult result= orderService.getOrderList(draw,start,length,search,orderColumn,orderDir);
         return result;
     }
 

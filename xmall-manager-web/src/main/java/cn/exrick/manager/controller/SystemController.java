@@ -114,7 +114,7 @@ public class SystemController {
         String orderColumn = cols[orderCol];
         //默认排序列
         if(orderColumn == null) {
-            orderColumn = "createDate";
+            orderColumn = "create_date";
         }
         //获取排序方式 默认为desc(asc)
         if(orderDir == null) {

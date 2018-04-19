@@ -9,6 +9,8 @@ import cn.exrick.manager.mapper.TbOrderShippingMapper;
 import cn.exrick.manager.mapper.TbThanksMapper;
 import cn.exrick.manager.pojo.*;
 import cn.exrick.manager.service.OrderService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,15 +42,18 @@ public class OrderServiceImpl implements OrderService {
     private EmailUtil emailUtil;
 
     @Override
-    public DataTablesResult getOrderList() {
+    public DataTablesResult getOrderList(int draw, int start, int length, String search, String orderCol, String orderDir) {
 
         DataTablesResult result=new DataTablesResult();
-        TbOrderExample example=new TbOrderExample();
-        List<TbOrder> list=tbOrderMapper.selectByExample(example);
-        if(list==null){
-            throw new XmallException("获取订单列表失败");
-        }
-        result.setSuccess(true);
+        //分页
+        PageHelper.startPage(start/length+1,length);
+        List<TbOrder> list = tbOrderMapper.selectByMulti("%"+search+"%",orderCol,orderDir);
+        PageInfo<TbOrder> pageInfo=new PageInfo<>(list);
+
+        result.setRecordsFiltered((int)pageInfo.getTotal());
+        result.setRecordsTotal(Math.toIntExact(cancelOrder()));
+
+        result.setDraw(draw);
         result.setData(list);
         return result;
     }
