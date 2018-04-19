@@ -143,6 +143,11 @@ public class OrderServiceImpl implements OrderService {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         String createDate = formatter.format(tbOrder.getCreateTime());
         order.setCreateDate(createDate);
+        //payDate
+        if(tbOrder.getPaymentTime()!=null){
+            String payDate = formatter.format(tbOrder.getPaymentTime());
+            order.setPayDate(payDate);
+        }
         //closeDate
         if(tbOrder.getCloseTime()!=null){
             String closeDate = formatter.format(tbOrder.getCloseTime());
@@ -291,6 +296,7 @@ public class OrderServiceImpl implements OrderService {
         }
         return 1;
     }
+
     @Override
     public int payOrder(TbThanks tbThanks) {
 

@@ -40,13 +40,13 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>产品标题：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="" placeholder="" id="" name="title">
+                <input type="text" class="input-text" value="" placeholder="" name="title">
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>简介描述：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="" placeholder="" id="" name="sellPoint">
+                <input type="text" class="input-text" value="" placeholder="" name="sellPoint">
             </div>
         </div>
         <div class="row cl">
@@ -60,7 +60,7 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>产品展示价格：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" name="price" id="" placeholder="请输入正确金额" value="" class="input-text" style="width:50%">
+                <input type="text" name="price" placeholder="请输入正确金额" value="" class="input-text" style="width:50%">
                 元</div>
         </div>
         <div class="row cl">
@@ -655,7 +655,7 @@
                 } else if (state === 'confirm') {
                     stats = uploader.getStats();
                     if (stats.uploadFailNum) {
-                        text = '已成功上传' + stats.successNum + '张照片至XX相册，' +
+                        text = '已成功上传' + stats.successNum + '张照片，' +
                             stats.uploadFailNum + '张照片上传失败，<a class="retry" href="#">重新上传</a>失败图片或<a class="ignore" href="#">忽略</a>'
                     }
 
@@ -783,7 +783,7 @@
                     }
                     $("#image").val(images);
                 }else{
-                    alert("上传失败");
+                    alert("上传失败:"+data.message)
                 }
 
             });

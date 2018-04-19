@@ -171,7 +171,7 @@
                 challenge: data.challenge,
                 new_captcha: data.new_captcha, // 用于宕机时表示是新验证码的宕机
                 offline: !data.success, // 表示用户后台检测极验服务器是否宕机，一般不需要关注
-                product: "popup", // 产品形式，包括：float(点击汉字)，popup(滑动)
+                product: "popup", // 产品形式，包括：float，popup
                 width: "100%"
             }, handler);
         }
@@ -199,9 +199,7 @@
             }
         },
         error:function(XMLHttpRequest){
-            if(XMLHttpRequest.status!=200){
-                layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
-            }
+            layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
         }
     });
 </script>

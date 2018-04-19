@@ -122,6 +122,8 @@
 
     var isParent=false,id="",name="";
 
+    var index = layer.load(3);
+
     var setting = {
         view: {
             dblClickExpand: true,
@@ -144,6 +146,9 @@
             autoParam: ["id"]
         },
         callback: {
+            onAsyncSuccess: function(){
+                layer.close(index);
+            },
             beforeClick: function(treeId, treeNode) {
                 $("#name").val(treeNode.name);
                 $("#id").val(treeNode.id);
@@ -305,7 +310,7 @@
     }
 
     function msgSuccess(content){
-        layer.alert(content,{icon: 1});
+        layer.msg(content, {icon: 1,time:3000});
     }
 </script>
 </body>

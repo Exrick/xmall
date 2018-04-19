@@ -63,33 +63,11 @@
 <script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
 <script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
 <script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="lib/common.js"></script>
 <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript">
-
-    var getId=window.location.search.slice(window.location.search.lastIndexOf("?")+1);
-
-    /*时间转换*/
-    function date(data){
-        var time = new Date(data);
-        var y = time.getFullYear();//年
-        var m = time.getMonth() + 1;//月
-        var d = time.getDate();//日
-        var h = time.getHours();//时
-        if (h >= 0 && h <= 9) {
-            h = "0" + h;
-        }
-        var mm = time.getMinutes();//分
-        if (mm >= 0 && mm <= 9) {
-            mm = "0" + mm;
-        }
-        var s = time.getSeconds();//秒
-        if (s >= 0 && s <= 9) {
-            s = "0" + s;
-        }
-        return (y+"-"+m+"-"+d+" "+h+":"+mm+":"+s);
-    }
 
     $("#username").html(parent.username);
     $("#sex").html(parent.sex);

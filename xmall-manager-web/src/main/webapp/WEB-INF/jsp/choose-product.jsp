@@ -35,8 +35,8 @@
         <tr class="text-c">
             <th width="70">ID</th>
             <th width="70">缩略图</th>
-            <th width="90">商品名称</th>
-            <th width="130">描述</th>
+            <th width="130">商品名称</th>
+            <th width="90">描述</th>
             <th width="60">单价</th>
             <th width="95">创建日期</th>
             <th width="95">更新日期</th>
@@ -54,25 +54,13 @@
 
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="lib/common.js"></script>
 <script type="text/javascript">
-    /*时间转换*/
-    function date(data){
-        var time = new Date(data);
-        var y = time.getFullYear();//年
-        var m = time.getMonth() + 1;//月
-        var d = time.getDate();//日
-        var h = time.getHours();//时
-        if (h >= 0 && h <= 9) {
-            h = "0" + h;
-        }
-        var mm = time.getMinutes();//分
-        if (mm >= 0 && mm <= 9) {
-            mm = "0" + mm;
-        }
-        return (y+"-"+m+"-"+d+" "+h+":"+mm);
-    }
 
     function imageShow(data){
+        if(data==""||data==null){
+            return "http://ow2h3ee9w.bkt.clouddn.com/nopic.jpg";
+        }
         var images= new Array(); //定义一数组
         images=data.split(","); //字符分割
         if(images.length>0){
@@ -93,22 +81,19 @@
                 data:{
                     "cid":-1
                 },
-                error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
-                }
             },
             "columns": [
                 { "data": "id"},
                 { "data": "image",
                     render: function(data, type, row, meta) {
-                        return '<img src="'+imageShow(data)+'" style="width: 80px;height: 50px" alt="" />';
+                        return '<img src="'+imageShow(data)+'" style="width: 80px;height: 60px" alt="" />';
                     }
                 },
                 { "data": "title",
                     render: function(data, type, row, meta) {
                         if (type === 'display') {
                             if (data.length > 20) {
-                                return '<span title=' + data + '>' + data.substr(0, 19) + '...</span>';
+                                return '<span title=' + data + '>' + data.substr(0, 50) + '...</span>';
                             } else {
                                 return '<span title=' + data + '>' + data + '</span>';
                             }
@@ -120,7 +105,7 @@
                     render: function(data, type, row, meta) {
                         if (type === 'display') {
                             if (data.length > 20) {
-                                return '<span title=' + data + '>' + data.substr(0, 19) + '...</span>';
+                                return '<span title=' + data + '>' + data.substr(0, 20) + '...</span>';
                             } else {
                                 return '<span title=' + data + '>' + data + '</span>';
                             }
@@ -160,8 +145,9 @@
            "aaSorting": [[ 5, "asc" ]],//默认第几个排序
             "bStateSave": false,//状态保存
             "aoColumnDefs": [
-                {"orderable":false,"aTargets":[1,3,8]}// 制定列不参与排序
+                {"orderable":false,"aTargets":[1,8]}// 制定列不参与排序
             ],
+            "lengthMenu": [ 5, 10, 25, 50, 100 ],
             language: {
                 url: '/lib/datatables/Chinese.json'
             }

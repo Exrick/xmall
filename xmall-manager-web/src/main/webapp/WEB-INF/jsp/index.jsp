@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <link rel="Bookmark" href="favicon.ico" >
-    <link rel="Shortcut Icon" href="icon/all.png" />
+    <link rel="Shortcut Icon" href="icon/x.png" />
     <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/html5shiv.js"></script>
     <script type="text/javascript" src="lib/respond.min.js"></script>
@@ -22,22 +22,22 @@
     <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
-    <title>XMall后台管理系统 v1.0</title>
-    <meta name="keywords" content="XMall后台管理系统 v1.0,XMall,XMall购物商城后台管理系统">
-    <meta name="description" content="XMall后台管理系统 v1.0，是一款电商后台管理系统，适合中小型CMS后台系统。">
+    <title>XMall后台管理系统 v1.1</title>
+    <meta name="keywords" content="XMall后台管理系统 v1.1,XMall,XMall购物商城后台管理系统">
+    <meta name="description" content="XMall后台管理系统 v1.1，是一款电商后台管理系统，适合中小型CMS后台系统。">
 </head>
 <body>
 <header class="navbar-wrapper">
     <div class="navbar navbar-fixed-top">
-        <div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/">XMall后台管理系统</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/">H-ui</a>
-            <span class="logo navbar-slogan f-l mr-10 hidden-xs">v1.0</span>
+        <div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/">XMall后台管理系统</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/">XMall后台管理系统</a>
+            <span class="logo navbar-slogan f-l mr-10 hidden-xs">v1.1</span>
             <a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
             <nav class="nav navbar-nav">
                 <ul class="cl">
                     <li class="dropDown dropDown_hover"><a href="javascript:;" class="dropDown_A"><i class="Hui-iconfont">&#xe600;</i> 新增 <i class="Hui-iconfont">&#xe6d5;</i></a>
                         <ul class="dropDown-menu menu radius box-shadow">
                             <li><a href="javascript:;" onclick="product_add('添加商品','product-add')"><i class="Hui-iconfont">&#xe620;</i> 商品</a></li>
-                            <li><a href="javascript:;" onclick="member_add('添加用户','member-add','','510')"><i class="Hui-iconfont">&#xe60d;</i> 用户</a></li>
+                            <li><a href="javascript:;" onclick="member_add('添加用户','member-add','','630')"><i class="Hui-iconfont">&#xe60d;</i> 用户</a></li>
                         </ul>
                         <li class="navbar-levelone current"><a href="javascript:;">平台</a></li>
                         <li class="navbar-levelone"><a href="javascript:;">财务</a></li>
@@ -81,16 +81,19 @@
             <dt><i class="Hui-iconfont">&#xe616;</i> 商城管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="content-category" data-title="栏目管理" href="javascript:void(0)">栏目管理</a></li>
-                    <li><a data-href="content-list" data-title="内容管理" href="javascript:void(0)">内容管理</a></li>
+                    <li><a data-href="content-panel" data-title="首页板块管理" href="javascript:void(0)">首页板块管理</a></li>
+                    <li><a data-href="content-banner-list" data-title="首页轮播图管理" href="javascript:void(0)">首页轮播图管理</a></li>
+                    <li><a data-href="content-index-list" data-title="首页板块内容管理" href="javascript:void(0)">首页板块内容管理</a></li>
+                    <li><a data-href="content-other-list" data-title="其它板块内容管理" href="javascript:void(0)">其它板块内容管理</a></li>
                 </ul>
             </dd>
         </dl>
         <dl id="menu-picture">
-            <dt><i class="Hui-iconfont">&#xe613;</i> 图片管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dt><i class="Hui-iconfont">&#xe634;</i> 缓存管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="picture-list.html" data-title="图片管理" href="javascript:void(0)">图片管理</a></li>
+                    <li><a data-href="refresh-index-redis" data-title="首页缓存管理" href="javascript:void(0)">首页缓存管理</a></li>
+                    <li><a data-href="refresh-other-redis" data-title="其它板块缓存管理" href="javascript:void(0)">其它板块缓存管理</a></li>
                 </ul>
             </dd>
         </dl>
@@ -100,6 +103,14 @@
                 <ul>
                     <li><a data-href="product-category" data-title="分类管理" href="javascript:void(0)">分类管理</a></li>
                     <li><a data-href="product-list" data-title="商品列表" href="javascript:void(0)">商品列表</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl id="menu-order">
+            <dt><i class="Hui-iconfont">&#xe627;</i> 订单管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a data-href="order-list" data-title="订单列表" href="javascript:void(0)">订单列表</a></li>
                 </ul>
             </dd>
         </dl>
@@ -138,6 +149,14 @@
                 </ul>
             </dd>
         </dl>
+        <dl id="menu-chart">
+            <dt><i class="Hui-iconfont">&#xe61e;</i> 统计报表<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+
+                </ul>
+            </dd>
+        </dl>
         <dl id="menu-system">
             <dt><i class="Hui-iconfont">&#xe62e;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
@@ -151,15 +170,7 @@
     </div>
 
     <div class="menu_dropdown bk_2" style="display:none">
-        <dl id="menu-a">
-            <dt><i class="Hui-iconfont">&#xe627;</i> 订单管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-            <dd>
-                <ul>
-                    <li><a data-href="order-list" data-title="订单列表" href="javascript:void(0)">订单列表</a></li>
-                </ul>
-            </dd>
-        </dl>
-        <dl id="menu-b">
+        <dl id="menu-thank">
             <dt><i class="Hui-iconfont">&#xe6b7;</i> 捐赠管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>

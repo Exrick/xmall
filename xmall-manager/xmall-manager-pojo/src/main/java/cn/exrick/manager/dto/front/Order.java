@@ -24,6 +24,16 @@ public class Order implements Serializable{
 
     private String finishDate;
 
+    private String payDate;
+
+    public String getPayDate() {
+        return payDate;
+    }
+
+    public void setPayDate(String payDate) {
+        this.payDate = payDate;
+    }
+
     public String getCloseDate() {
         return closeDate;
     }

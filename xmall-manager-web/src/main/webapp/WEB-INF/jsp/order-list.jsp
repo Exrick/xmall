@@ -41,8 +41,8 @@
                     <thead>
                     <tr class="text-c">
                         <th width="25"><input type="checkbox" name="" value=""></th>
-                        <th width="80">ID</th>
-                        <th width="50">支付金额</th>
+                        <th width="80">订单号</th>
+                        <th width="80">支付金额(￥)</th>
                         <th width="80">物流号</th>
                         <th width="50">用户ID</th>
                         <th width="80">用户账号</th>

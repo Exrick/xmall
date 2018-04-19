@@ -201,7 +201,7 @@
                                                 <span id="hello"></span>
                                                 现在时间是：<span id="currentTime"></span></a>
                                             <p><br>XMall是基于SOA架构的大型开源分布式电商B2C购物商城，前后端开发分离，前台
-                                                基于Vue全家桶开发，前台商城演示地址：<a href="http://blog.exrick.cn" target="_blank">点我查看</a><br><br>
+                                                基于Vue全家桶开发，前台商城演示地址：<a href="http://xmall.exrick.cn" target="_blank">点我查看</a><br><br>
                                                 后台几乎完成所有功能开发，你所看到的几乎皆为真实后台数据，为避免数据遭恶意修改，测试体验账号只具备查看权限。
                                                 后台主要使用技术有Dubbo/SSM/Elasticsearch/Redis/MySQL/ActiveMQ/Shiro/Zookeeper等<br><br>
                                                 Github后台源码：<a href="https://github.com/Exrick/xmall" target="_blank">

@@ -60,9 +60,9 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3">角色：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <span class="select-box" style="width:150px;">
-                    <select id="select" class="select" name="roleId" size="1"></select>
-			    </span>
+                <select id="select" name="roleId" class="select-box" style="width:150px;">
+
+			    </select>
             </div>
         </div>
         <div class="row cl">
