@@ -77,6 +77,7 @@
     /*datatables配置*/
     $(document).ready(function () {
         $('.table').DataTable({
+            serverSide: true,//开启服务器模式
             "processing": true,//加载显示提示
             "ajax": {
                 url:"/sys/log",
