@@ -49,7 +49,8 @@
             <div class="formControls col-xs-6 col-sm-3">
                 <select id="type" class="select-box" name="type" onchange="showOption()">
                     <option value="0">关联商品</option>
-                    <option id="bannerImage" value="2">关联商品(封面)</option>
+                    <option id="bannerImage1" value="2">封面(关联商品)</option>
+                    <option id="bannerImage2" value="3">封面(其他链接)</option>
                     <option id="otherUrl" value="1">其他链接</option>
                 </select>
             </div>
@@ -71,6 +72,7 @@
             <div class="formControls col-xs-8 col-sm-6">
                 <input type="text" onclick="chooseProduct()" readonly class="input-text" placeholder="请点击选择按钮选择关联商品" id="title" name="title" style="width: 65%">
                 <input type="button" onclick="chooseProduct()" class="btn btn-secondary radius" value="选择关联商品">
+                <input type="button" onclick="clearChooseProduct()" class="btn btn-default radius" value="清空">
             </div>
         </div>
         <div class="row cl">
@@ -138,19 +140,27 @@
     var panelType = parent.panelType;
     if(panelType==2||panelType==3){
         $("#otherUrl").hide();
-        $("#inputOtherUrl").hide();
+        showOption();
         if(panelType==2){
-            $("#bannerImage").hide();
+            $("#bannerImage1").show();
+            $("#bannerImage2").show();
         }
+    }else{
+        $("#bannerImage1").hide();
+        $("#bannerImage2").hide();
     }
 
     function showOption() {
         var v = $("#type").val();
-        if(v==0){
+        if(v==0||v==2){
             $("#inputOtherUrl").hide();
         }else{
             $("#inputOtherUrl").show();
         }
+    }
+
+    function clearChooseProduct() {
+        setIdAndTitle("","");
     }
 
     function chooseProduct(){
@@ -182,7 +192,7 @@
                 layer.alert('请选择关联商品! ', {title: '错误信息',icon: 0});
                 return;
             }
-            if(type==1&&fullUrl==""){
+            if((type==1&&fullUrl=="")||(type==3&&fullUrl=="")){
                 layer.alert('请填写跳转链接! ', {title: '错误信息',icon: 0});
                 return;
             }
