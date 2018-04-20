@@ -9,7 +9,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4f3498c-c7a8-433e-85bb-4c00387d3dab" name="Default" comment="">
+    <list default="true" id="c4f3498c-c7a8-433e-85bb-4c00387d3dab" name="Default" comment="[UPDATE]添加hotjar">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/xmall-parent/target/" />
@@ -61,7 +61,7 @@
       <file leaf-file-name="login.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
+            <state relative-caret-position="108">
               <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
@@ -225,7 +225,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="144" />
     <option name="width" value="1720" />
     <option name="height" value="970" />
@@ -2186,7 +2186,7 @@
       <workItem from="1524117338431" duration="23748000" />
       <workItem from="1524191278835" duration="4125000" />
       <workItem from="1524210284145" duration="1711000" />
-      <workItem from="1524215713965" duration="302000" />
+      <workItem from="1524215713965" duration="935000" />
     </task>
     <task id="LOCAL-00001" summary="[UPDATE]v1.1重构首页完成 优化功能 修复BUG">
       <created>1524125534890</created>
@@ -2209,7 +2209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524216006570</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="[UPDATE]添加hotjar">
+      <created>1524216042902</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1524216042902</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -2245,7 +2252,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1473374000" />
+    <option name="totallyTimeSpent" value="1474007000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2257,7 +2264,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2744,7 +2751,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
+        <state relative-caret-position="108">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
