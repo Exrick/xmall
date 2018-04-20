@@ -25,6 +25,25 @@
     <script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.js"></script>
     <script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
     <script type="text/javascript" src="lib/gt.js"></script>
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:695920,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?90194188523e0a2d04ad3ad170c83f30";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 
     <style>
         .title,h6{
