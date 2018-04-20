@@ -61,7 +61,7 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">审核状态：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <select id="state" class="state" name="state" size="1" disabled>
+                <select id="state" class="state" name="state" size="1">
                     <option value="1">审核通过</option>
                     <option value="2">审核不通过</option>
                     <option value="0">待审核</option>
