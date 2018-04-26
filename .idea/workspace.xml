@@ -11,8 +11,15 @@
   <component name="ChangeListManager">
     <list default="true" id="c4f3498c-c7a8-433e-85bb-4c00387d3dab" name="Default" comment="[UPDATE]添加hotjar">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-add.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-add.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-edit.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-edit.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/ItemController.java" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/ItemController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/MemberController.java" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/MemberController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/UserController.java" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/UserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-list.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-list.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-permission.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-permission.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-role.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-role.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-del.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-del.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-list.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-list.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/xmall-parent/target/" />
@@ -61,80 +68,171 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/login.jsp">
+      <file leaf-file-name="product-list.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="42">
+              <caret line="439" column="31" lean-forward="false" selection-start-line="439" selection-start-column="31" selection-end-line="439" selection-end-column="31" />
+              <folding>
+                <marker date="1524714895203" expanded="true" signature="6546:6570" ph="..." />
+                <marker date="1524714895203" expanded="true" signature="8943:8963" ph="..." />
+                <marker date="1524714895203" expanded="true" signature="9069:9077" ph="&amp;##xe6de;" />
+                <marker date="1524714895203" expanded="true" signature="9097:9117" ph="..." />
+                <marker date="1524714895203" expanded="true" signature="9255:9263" ph="&amp;##xe6df;" />
+                <marker date="1524714895203" expanded="true" signature="9283:9303" ph="..." />
+                <marker date="1524714895203" expanded="true" signature="9423:9431" ph="&amp;##xe6e2;" />
+                <marker date="1524714895203" expanded="true" signature="9522:9542" ph="..." />
+                <marker date="1524714895203" expanded="true" signature="9649:9657" ph="&amp;##xe603;" />
+                <marker date="1524714895203" expanded="true" signature="9677:9697" ph="..." />
+                <marker date="1524714895203" expanded="true" signature="9835:9843" ph="&amp;##xe6df;" />
+                <marker date="1524714895203" expanded="true" signature="9863:9883" ph="..." />
+                <marker date="1524714895203" expanded="true" signature="10003:10011" ph="&amp;##xe6e2;" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyPermissionFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/shiro/MyPermissionFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="29" column="52" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="29" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="thanks-list.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="thanks-list.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="225" column="13" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="245" selection-end-column="7" />
+            <state relative-caret-position="2673">
+              <caret line="210" column="31" lean-forward="false" selection-start-line="210" selection-start-column="31" selection-end-line="210" selection-end-column="31" />
               <folding>
-                <marker date="1524399664893" expanded="true" signature="5731:5751" ph="..." />
-                <marker date="1524399664893" expanded="true" signature="5780:5788" ph="&amp;##xe6df;" />
-                <marker date="1524399664893" expanded="true" signature="5898:5918" ph="..." />
-                <marker date="1524399664893" expanded="true" signature="5947:5955" ph="&amp;##xe6e2;" />
+                <marker date="1524718462637" expanded="true" signature="5731:5751" ph="..." />
+                <marker date="1524718462637" expanded="true" signature="5780:5788" ph="&amp;##xe6df;" />
+                <marker date="1524718462637" expanded="true" signature="5898:5918" ph="..." />
+                <marker date="1524718462637" expanded="true" signature="5947:5955" ph="&amp;##xe6e2;" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="thanks-add.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-add.jsp">
+      <file leaf-file-name="admin-edit.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-edit.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="48" column="64" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="139" selection-end-column="7" />
+            <state relative-caret-position="270">
+              <caret line="202" column="0" lean-forward="false" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="thanks-edit.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-edit.jsp">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="100" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="147" selection-end-column="7" />
+            <state relative-caret-position="168">
+              <caret line="333" column="47" lean-forward="false" selection-start-line="333" selection-start-column="47" selection-end-line="333" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="order-list.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/order-list.jsp">
+      <file leaf-file-name="MemberController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/MemberController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="125" column="69" lean-forward="false" selection-start-line="125" selection-start-column="62" selection-end-line="125" selection-end-column="69" />
+            <state relative-caret-position="-1803">
+              <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin-list.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-list.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2037">
+              <caret line="220" column="31" lean-forward="false" selection-start-line="220" selection-start-column="31" selection-end-line="220" selection-end-column="31" />
               <folding>
-                <marker date="1524110573343" expanded="true" signature="7079:7099" ph="..." />
-                <marker date="1524110573343" expanded="true" signature="7128:7136" ph="&amp;##xe6e2;" />
+                <marker date="1524715391384" expanded="true" signature="5911:5931" ph="..." />
+                <marker date="1524715391384" expanded="true" signature="6035:6043" ph="&amp;##xe631;" />
+                <marker date="1524715391384" expanded="true" signature="6173:6193" ph="..." />
+                <marker date="1524715391384" expanded="true" signature="6222:6230" ph="&amp;##xe6df;" />
+                <marker date="1524715391384" expanded="true" signature="6250:6270" ph="..." />
+                <marker date="1524715391384" expanded="true" signature="6434:6442" ph="&amp;##xe63f;" />
+                <marker date="1524715391384" expanded="true" signature="6551:6571" ph="..." />
+                <marker date="1524715391384" expanded="true" signature="6600:6608" ph="&amp;##xe6e2;" />
+                <marker date="1524715391384" expanded="true" signature="6715:6735" ph="..." />
+                <marker date="1524715391384" expanded="true" signature="6840:6848" ph="&amp;##xe6e1;" />
+                <marker date="1524715391384" expanded="true" signature="6978:6998" ph="..." />
+                <marker date="1524715391384" expanded="true" signature="7027:7035" ph="&amp;##xe6df;" />
+                <marker date="1524715391384" expanded="true" signature="7055:7075" ph="..." />
+                <marker date="1524715391384" expanded="true" signature="7239:7247" ph="&amp;##xe63f;" />
+                <marker date="1524715391384" expanded="true" signature="7356:7376" ph="..." />
+                <marker date="1524715391384" expanded="true" signature="7405:7413" ph="&amp;##xe6e2;" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FilterUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/shiro/FilterUtil.java">
+      <file leaf-file-name="admin-permission.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-permission.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1107">
-              <caret line="49" column="5" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="49" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="42">
+              <caret line="186" column="31" lean-forward="false" selection-start-line="186" selection-start-column="31" selection-end-line="186" selection-end-column="31" />
+              <folding>
+                <marker date="1524715444919" expanded="true" signature="4322:4342" ph="..." />
+                <marker date="1524715444919" expanded="true" signature="4500:4508" ph="&amp;##xe6df;" />
+                <marker date="1524715444919" expanded="true" signature="4528:4548" ph="..." />
+                <marker date="1524715444919" expanded="true" signature="4671:4679" ph="&amp;##xe6e2;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin-role.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-role.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-282">
+              <caret line="181" column="46" lean-forward="true" selection-start-line="181" selection-start-column="46" selection-end-line="181" selection-end-column="46" />
+              <folding>
+                <marker date="1524715469538" expanded="true" signature="4402:4422" ph="..." />
+                <marker date="1524715469538" expanded="true" signature="4566:4574" ph="&amp;##xe6df;" />
+                <marker date="1524715469538" expanded="true" signature="4594:4614" ph="..." />
+                <marker date="1524715469538" expanded="true" signature="4737:4745" ph="&amp;##xe6e2;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="member-del.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-del.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4065">
+              <caret line="230" column="31" lean-forward="false" selection-start-line="230" selection-start-column="31" selection-end-line="230" selection-end-column="31" />
+              <folding>
+                <marker date="1524718391330" expanded="true" signature="6354:6374" ph="..." />
+                <marker date="1524718391330" expanded="true" signature="6482:6490" ph="&amp;##xe66b;" />
+                <marker date="1524718391330" expanded="true" signature="6602:6622" ph="..." />
+                <marker date="1524718391330" expanded="true" signature="6651:6659" ph="&amp;##xe6e2;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="member-list.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-768">
+              <caret line="324" column="31" lean-forward="false" selection-start-line="324" selection-start-column="31" selection-end-line="324" selection-end-column="31" />
+              <folding>
+                <marker date="1524718434101" expanded="true" signature="5483:5497" ph="..." />
+                <marker date="1524718434101" expanded="true" signature="6927:6947" ph="..." />
+                <marker date="1524718434101" expanded="true" signature="7052:7060" ph="&amp;##xe631;" />
+                <marker date="1524718434101" expanded="true" signature="7194:7214" ph="..." />
+                <marker date="1524718434101" expanded="true" signature="7243:7251" ph="&amp;##xe6df;" />
+                <marker date="1524718434101" expanded="true" signature="7271:7291" ph="..." />
+                <marker date="1524718434101" expanded="true" signature="7449:7457" ph="&amp;##xe63f;" />
+                <marker date="1524718434101" expanded="true" signature="7567:7587" ph="..." />
+                <marker date="1524718434101" expanded="true" signature="7616:7624" ph="&amp;##xe6e2;" />
+                <marker date="1524718434101" expanded="true" signature="7731:7751" ph="..." />
+                <marker date="1524718434101" expanded="true" signature="7857:7865" ph="&amp;##xe6e1;" />
+                <marker date="1524718434101" expanded="true" signature="7999:8019" ph="..." />
+                <marker date="1524718434101" expanded="true" signature="8048:8056" ph="&amp;##xe6df;" />
+                <marker date="1524718434101" expanded="true" signature="8076:8096" ph="..." />
+                <marker date="1524718434101" expanded="true" signature="8254:8262" ph="&amp;##xe63f;" />
+                <marker date="1524718434101" expanded="true" signature="8372:8392" ph="..." />
+                <marker date="1524718434101" expanded="true" signature="8421:8429" ph="&amp;##xe6e2;" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -209,16 +307,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/exception/RestCtrlExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/exception/RestCtrlExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp" />
-        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/index.jsp" />
-        <option value="$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/java/cn/exrick/search/mapper/ItemMapper.xml" />
-        <option value="$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/java/cn/exrick/search/message/ItemESMessageListener.java" />
-        <option value="$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/java/cn/exrick/search/service/impl/SearchItemServiceImpl.java" />
-        <option value="$PROJECT_DIR$/xmall-search/xmall-search-interface/src/main/java/cn/exrick/search/service/SearchService.java" />
-        <option value="$PROJECT_DIR$/xmall-content/xmall-content-interface/src/main/java/cn/exrick/content/service/ContentService.java" />
-        <option value="$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/GoodsController.java" />
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/manager/mapper/TbItemMapper.java" />
         <option value="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/manager/mapper/TbItemMapper.xml" />
         <option value="$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/java/cn/exrick/search/service/impl/SearchServiceImpl.java" />
@@ -259,7 +347,17 @@
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/login.jsp" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-add.jsp" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-edit.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/ItemController.java" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/MemberController.java" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-list.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-permission.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-role.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-del.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-list.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-edit.jsp" />
       </list>
     </option>
   </component>
@@ -297,8 +395,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-28" />
-    <option name="y" value="61" />
+    <option name="x" value="202" />
+    <option name="y" value="329" />
     <option name="width" value="1720" />
     <option name="height" value="970" />
   </component>
@@ -654,8 +752,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -673,6 +769,30 @@
               <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
@@ -702,8 +822,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2260,7 +2382,8 @@
       <workItem from="1524210284145" duration="1711000" />
       <workItem from="1524215713965" duration="935000" />
       <workItem from="1524300566239" duration="765000" />
-      <workItem from="1524398500406" duration="1394000" />
+      <workItem from="1524398500406" duration="1437000" />
+      <workItem from="1524710410826" duration="3317000" />
     </task>
     <task id="LOCAL-00001" summary="[UPDATE]v1.1重构首页完成 优化功能 修复BUG">
       <created>1524125534890</created>
@@ -2326,7 +2449,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1476166000" />
+    <option name="totallyTimeSpent" value="1479526000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2363,7 +2486,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53017753" sideWeight="0.4946352" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37633136" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27682403" sideWeight="0.4189349" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2805794" sideWeight="0.4189349" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26770386" sideWeight="0.5810651" order="2" side_tool="true" content_ui="tabs" />
@@ -2446,50 +2569,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/RedisController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-889">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/ImageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-content/xmall-content-interface/src/main/java/cn/exrick/content/service/ContentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1566">
-          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/OrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-front-web/src/main/java/cn/exrick/front/controller/GoodsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="29" column="6" lean-forward="true" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-interface/src/main/java/cn/exrick/manager/service/SystemService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="84" column="112" lean-forward="false" selection-start-line="84" selection-start-column="112" selection-end-line="84" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/java/cn/exrick/manager/service/impl/SystemServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -2567,22 +2646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/MemberController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="911">
-          <caret line="140" column="5" lean-forward="true" selection-start-line="112" selection-start-column="4" selection-end-line="140" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="339" column="5" lean-forward="true" selection-start-line="331" selection-start-column="4" selection-end-line="339" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/ThanksController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -2606,14 +2669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/OrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/java/cn/exrick/manager/mapper/TbOrderMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -2632,14 +2687,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="679">
           <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/ItemController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="109" column="4" lean-forward="true" selection-start-line="109" selection-start-column="4" selection-end-line="117" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2761,7 +2808,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="513">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
@@ -2777,7 +2824,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/shiro/MyPermissionFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
+        <state relative-caret-position="567">
           <caret line="29" column="52" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="29" selection-end-column="52" />
           <folding />
         </state>
@@ -2785,7 +2832,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/order-list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="3375">
           <caret line="125" column="69" lean-forward="false" selection-start-line="125" selection-start-column="62" selection-end-line="125" selection-end-column="69" />
           <folding>
             <marker date="1524110573343" expanded="true" signature="7079:7099" ph="..." />
@@ -2802,14 +2849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-edit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="64" column="25" lean-forward="true" selection-start-line="62" selection-start-column="16" selection-end-line="64" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/content-banner-edit.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -2820,30 +2859,182 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-add.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="48" column="64" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="139" selection-end-column="7" />
+        <state relative-caret-position="1296">
+          <caret line="48" column="64" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="139" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-edit.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="100" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="147" selection-end-column="7" />
+        <state relative-caret-position="2700">
+          <caret line="100" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="147" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/ItemController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-471">
+          <caret line="98" column="56" lean-forward="true" selection-start-line="98" selection-start-column="56" selection-end-line="98" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="439" column="31" lean-forward="false" selection-start-line="439" selection-start-column="31" selection-end-line="439" selection-end-column="31" />
+          <folding>
+            <marker date="1524714895203" expanded="true" signature="6546:6570" ph="..." />
+            <marker date="1524714895203" expanded="true" signature="8943:8963" ph="..." />
+            <marker date="1524714895203" expanded="true" signature="9069:9077" ph="&amp;##xe6de;" />
+            <marker date="1524714895203" expanded="true" signature="9097:9117" ph="..." />
+            <marker date="1524714895203" expanded="true" signature="9255:9263" ph="&amp;##xe6df;" />
+            <marker date="1524714895203" expanded="true" signature="9283:9303" ph="..." />
+            <marker date="1524714895203" expanded="true" signature="9423:9431" ph="&amp;##xe6e2;" />
+            <marker date="1524714895203" expanded="true" signature="9522:9542" ph="..." />
+            <marker date="1524714895203" expanded="true" signature="9649:9657" ph="&amp;##xe603;" />
+            <marker date="1524714895203" expanded="true" signature="9677:9697" ph="..." />
+            <marker date="1524714895203" expanded="true" signature="9835:9843" ph="&amp;##xe6df;" />
+            <marker date="1524714895203" expanded="true" signature="9863:9883" ph="..." />
+            <marker date="1524714895203" expanded="true" signature="10003:10011" ph="&amp;##xe6e2;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="333" column="47" lean-forward="false" selection-start-line="333" selection-start-column="47" selection-end-line="333" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/OrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-75">
+          <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/controller/MemberController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1803">
+          <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2037">
+          <caret line="220" column="31" lean-forward="false" selection-start-line="220" selection-start-column="31" selection-end-line="220" selection-end-column="31" />
+          <folding>
+            <marker date="1524715391384" expanded="true" signature="5911:5931" ph="..." />
+            <marker date="1524715391384" expanded="true" signature="6035:6043" ph="&amp;##xe631;" />
+            <marker date="1524715391384" expanded="true" signature="6173:6193" ph="..." />
+            <marker date="1524715391384" expanded="true" signature="6222:6230" ph="&amp;##xe6df;" />
+            <marker date="1524715391384" expanded="true" signature="6250:6270" ph="..." />
+            <marker date="1524715391384" expanded="true" signature="6434:6442" ph="&amp;##xe63f;" />
+            <marker date="1524715391384" expanded="true" signature="6551:6571" ph="..." />
+            <marker date="1524715391384" expanded="true" signature="6600:6608" ph="&amp;##xe6e2;" />
+            <marker date="1524715391384" expanded="true" signature="6715:6735" ph="..." />
+            <marker date="1524715391384" expanded="true" signature="6840:6848" ph="&amp;##xe6e1;" />
+            <marker date="1524715391384" expanded="true" signature="6978:6998" ph="..." />
+            <marker date="1524715391384" expanded="true" signature="7027:7035" ph="&amp;##xe6df;" />
+            <marker date="1524715391384" expanded="true" signature="7055:7075" ph="..." />
+            <marker date="1524715391384" expanded="true" signature="7239:7247" ph="&amp;##xe63f;" />
+            <marker date="1524715391384" expanded="true" signature="7356:7376" ph="..." />
+            <marker date="1524715391384" expanded="true" signature="7405:7413" ph="&amp;##xe6e2;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-permission.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="186" column="31" lean-forward="false" selection-start-line="186" selection-start-column="31" selection-end-line="186" selection-end-column="31" />
+          <folding>
+            <marker date="1524715444919" expanded="true" signature="4322:4342" ph="..." />
+            <marker date="1524715444919" expanded="true" signature="4500:4508" ph="&amp;##xe6df;" />
+            <marker date="1524715444919" expanded="true" signature="4528:4548" ph="..." />
+            <marker date="1524715444919" expanded="true" signature="4671:4679" ph="&amp;##xe6e2;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-role.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-282">
+          <caret line="181" column="46" lean-forward="true" selection-start-line="181" selection-start-column="46" selection-end-line="181" selection-end-column="46" />
+          <folding>
+            <marker date="1524715469538" expanded="true" signature="4402:4422" ph="..." />
+            <marker date="1524715469538" expanded="true" signature="4566:4574" ph="&amp;##xe6df;" />
+            <marker date="1524715469538" expanded="true" signature="4594:4614" ph="..." />
+            <marker date="1524715469538" expanded="true" signature="4737:4745" ph="&amp;##xe6e2;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-del.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4065">
+          <caret line="230" column="31" lean-forward="false" selection-start-line="230" selection-start-column="31" selection-end-line="230" selection-end-column="31" />
+          <folding>
+            <marker date="1524718391330" expanded="true" signature="6354:6374" ph="..." />
+            <marker date="1524718391330" expanded="true" signature="6482:6490" ph="&amp;##xe66b;" />
+            <marker date="1524718391330" expanded="true" signature="6602:6622" ph="..." />
+            <marker date="1524718391330" expanded="true" signature="6651:6659" ph="&amp;##xe6e2;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-768">
+          <caret line="324" column="31" lean-forward="false" selection-start-line="324" selection-start-column="31" selection-end-line="324" selection-end-column="31" />
+          <folding>
+            <marker date="1524718434101" expanded="true" signature="5483:5497" ph="..." />
+            <marker date="1524718434101" expanded="true" signature="6927:6947" ph="..." />
+            <marker date="1524718434101" expanded="true" signature="7052:7060" ph="&amp;##xe631;" />
+            <marker date="1524718434101" expanded="true" signature="7194:7214" ph="..." />
+            <marker date="1524718434101" expanded="true" signature="7243:7251" ph="&amp;##xe6df;" />
+            <marker date="1524718434101" expanded="true" signature="7271:7291" ph="..." />
+            <marker date="1524718434101" expanded="true" signature="7449:7457" ph="&amp;##xe63f;" />
+            <marker date="1524718434101" expanded="true" signature="7567:7587" ph="..." />
+            <marker date="1524718434101" expanded="true" signature="7616:7624" ph="&amp;##xe6e2;" />
+            <marker date="1524718434101" expanded="true" signature="7731:7751" ph="..." />
+            <marker date="1524718434101" expanded="true" signature="7857:7865" ph="&amp;##xe6e1;" />
+            <marker date="1524718434101" expanded="true" signature="7999:8019" ph="..." />
+            <marker date="1524718434101" expanded="true" signature="8048:8056" ph="&amp;##xe6df;" />
+            <marker date="1524718434101" expanded="true" signature="8076:8096" ph="..." />
+            <marker date="1524718434101" expanded="true" signature="8254:8262" ph="&amp;##xe63f;" />
+            <marker date="1524718434101" expanded="true" signature="8372:8392" ph="..." />
+            <marker date="1524718434101" expanded="true" signature="8421:8429" ph="&amp;##xe6e2;" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="225" column="13" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="245" selection-end-column="7" />
+        <state relative-caret-position="2673">
+          <caret line="210" column="31" lean-forward="false" selection-start-line="210" selection-start-column="31" selection-end-line="210" selection-end-column="31" />
           <folding>
-            <marker date="1524399664893" expanded="true" signature="5731:5751" ph="..." />
-            <marker date="1524399664893" expanded="true" signature="5780:5788" ph="&amp;##xe6df;" />
-            <marker date="1524399664893" expanded="true" signature="5898:5918" ph="..." />
-            <marker date="1524399664893" expanded="true" signature="5947:5955" ph="&amp;##xe6e2;" />
+            <marker date="1524718462637" expanded="true" signature="5731:5751" ph="..." />
+            <marker date="1524718462637" expanded="true" signature="5780:5788" ph="&amp;##xe6df;" />
+            <marker date="1524718462637" expanded="true" signature="5898:5918" ph="..." />
+            <marker date="1524718462637" expanded="true" signature="5947:5955" ph="&amp;##xe6e2;" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/admin-edit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="202" column="0" lean-forward="false" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

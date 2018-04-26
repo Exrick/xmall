@@ -389,7 +389,7 @@
             var index = layer.load(3);
             $.ajax({
                 type: 'DELETE',
-                url: '/item/del?ids='+id,
+                url: '/item/del/'+id,
                 dataType: 'json',
                 success: function(data){
                     layer.close(index);
@@ -431,12 +431,13 @@
             var index = layer.load(3);
             $.ajax({
                 type: 'DELETE',
-                url: '/item/del/?ids='+ids,
+                url: '/item/del/'+ids,
                 dataType: 'json',
                 success:function(data){
                     layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
                     }
                     layer.msg('已删除!',{icon:1,time:1000});
                     productCount();
