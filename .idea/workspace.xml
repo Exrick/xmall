@@ -11,11 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c4f3498c-c7a8-433e-85bb-4c00387d3dab" name="Default" comment="[UPDATE]添加hotjar">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/content-banner-list.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/content-banner-list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/content-index-list.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/content-index-list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/content-other-list.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/content-other-list.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/order-list.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/order-list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/system-log.jsp" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/system-log.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/xmall-parent/target/" />
     <ignored path="$PROJECT_DIR$/xmall-common/target/" />
@@ -62,124 +58,15 @@
     <favorites_list name="xmall" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="content-index-list.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/content-index-list.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="353" column="31" lean-forward="false" selection-start-line="353" selection-start-column="31" selection-end-line="353" selection-end-column="31" />
-              <folding>
-                <marker date="1524719742619" expanded="true" signature="7916:7940" ph="..." />
-                <marker date="1524719742619" expanded="true" signature="8719:8739" ph="..." />
-                <marker date="1524719742619" expanded="true" signature="8874:8882" ph="&amp;##xe6df;" />
-                <marker date="1524719742619" expanded="true" signature="8902:8922" ph="..." />
-                <marker date="1524719742619" expanded="true" signature="9042:9050" ph="&amp;##xe6e2;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content-other-list.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/content-other-list.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="351" column="31" lean-forward="false" selection-start-line="351" selection-start-column="31" selection-end-line="351" selection-end-column="31" />
-              <folding>
-                <marker date="1524719763338" expanded="true" signature="7758:7782" ph="..." />
-                <marker date="1524719763338" expanded="true" signature="8561:8581" ph="..." />
-                <marker date="1524719763338" expanded="true" signature="8716:8724" ph="&amp;##xe6df;" />
-                <marker date="1524719763338" expanded="true" signature="8744:8764" ph="..." />
-                <marker date="1524719763338" expanded="true" signature="8884:8892" ph="&amp;##xe6e2;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="thanks-list.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/thanks-list.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-390">
-              <caret line="210" column="31" lean-forward="false" selection-start-line="210" selection-start-column="31" selection-end-line="210" selection-end-column="31" />
-              <folding>
-                <marker date="1524718462637" expanded="true" signature="5731:5751" ph="..." />
-                <marker date="1524718462637" expanded="true" signature="5780:5788" ph="&amp;##xe6df;" />
-                <marker date="1524718462637" expanded="true" signature="5898:5918" ph="..." />
-                <marker date="1524718462637" expanded="true" signature="5947:5955" ph="&amp;##xe6e2;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content-panel.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/content-panel.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7140">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="member-del.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/member-del.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-930">
-              <caret line="230" column="31" lean-forward="false" selection-start-line="230" selection-start-column="31" selection-end-line="230" selection-end-column="31" />
-              <folding>
-                <marker date="1524718391330" expanded="true" signature="6354:6374" ph="..." />
-                <marker date="1524718391330" expanded="true" signature="6482:6490" ph="&amp;##xe66b;" />
-                <marker date="1524718391330" expanded="true" signature="6602:6622" ph="..." />
-                <marker date="1524718391330" expanded="true" signature="6651:6659" ph="&amp;##xe6e2;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="order-list.jsp" pinned="false" current-in-tab="false">
+    <leaf>
+      <file leaf-file-name="order-list.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/order-list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="236" column="24" lean-forward="false" selection-start-line="236" selection-start-column="24" selection-end-line="236" selection-end-column="31" />
+            <state relative-caret-position="143">
+              <caret line="79" column="38" lean-forward="false" selection-start-line="79" selection-start-column="38" selection-end-line="79" selection-end-column="38" />
               <folding>
-                <marker date="1524719798328" expanded="true" signature="7079:7099" ph="..." />
-                <marker date="1524719798328" expanded="true" signature="7128:7136" ph="&amp;##xe6e2;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product-list.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/product-list.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="439" column="31" lean-forward="false" selection-start-line="439" selection-start-column="31" selection-end-line="439" selection-end-column="31" />
-              <folding>
-                <marker date="1524714895203" expanded="true" signature="6546:6570" ph="..." />
-                <marker date="1524714895203" expanded="true" signature="8943:8963" ph="..." />
-                <marker date="1524714895203" expanded="true" signature="9069:9077" ph="&amp;##xe6de;" />
-                <marker date="1524714895203" expanded="true" signature="9097:9117" ph="..." />
-                <marker date="1524714895203" expanded="true" signature="9255:9263" ph="&amp;##xe6df;" />
-                <marker date="1524714895203" expanded="true" signature="9283:9303" ph="..." />
-                <marker date="1524714895203" expanded="true" signature="9423:9431" ph="&amp;##xe6e2;" />
-                <marker date="1524714895203" expanded="true" signature="9522:9542" ph="..." />
-                <marker date="1524714895203" expanded="true" signature="9649:9657" ph="&amp;##xe603;" />
-                <marker date="1524714895203" expanded="true" signature="9677:9697" ph="..." />
-                <marker date="1524714895203" expanded="true" signature="9835:9843" ph="&amp;##xe6df;" />
-                <marker date="1524714895203" expanded="true" signature="9863:9883" ph="..." />
-                <marker date="1524714895203" expanded="true" signature="10003:10011" ph="&amp;##xe6e2;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="system-log.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/system-log.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="211" column="31" lean-forward="false" selection-start-line="211" selection-start-column="31" selection-end-line="211" selection-end-column="31" />
-              <folding>
-                <marker date="1524719819215" expanded="true" signature="5790:5810" ph="..." />
-                <marker date="1524719819215" expanded="true" signature="5839:5847" ph="&amp;##xe6e2;" />
+                <marker date="1525424263861" expanded="true" signature="7118:7138" ph="..." />
+                <marker date="1525424263861" expanded="true" signature="7167:7175" ph="&amp;##xe6e2;" />
               </folding>
             </state>
           </provider>
@@ -304,8 +191,8 @@
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/content-banner-list.jsp" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/content-index-list.jsp" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/content-other-list.jsp" />
-        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/order-list.jsp" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/system-log.jsp" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/order-list.jsp" />
       </list>
     </option>
   </component>
@@ -700,6 +587,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -770,10 +658,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2331,7 +2218,8 @@
       <workItem from="1524215713965" duration="935000" />
       <workItem from="1524300566239" duration="765000" />
       <workItem from="1524398500406" duration="1437000" />
-      <workItem from="1524710410826" duration="3837000" />
+      <workItem from="1524710410826" duration="4181000" />
+      <workItem from="1525424145494" duration="102000" />
     </task>
     <task id="LOCAL-00001" summary="[UPDATE]v1.1重构首页完成 优化功能 修复BUG">
       <created>1524125534890</created>
@@ -2397,7 +2285,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1480046000" />
+    <option name="totallyTimeSpent" value="1480492000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2434,7 +2322,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53017753" sideWeight="0.4946352" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37633136" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2805794" sideWeight="0.4189349" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28433478" sideWeight="0.4189349" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26770386" sideWeight="0.5810651" order="2" side_tool="true" content_ui="tabs" />
@@ -2673,7 +2561,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="142" column="5" lean-forward="false" selection-start-line="142" selection-start-column="5" selection-end-line="142" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2681,7 +2568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="150" column="5" lean-forward="false" selection-start-line="150" selection-start-column="5" selection-end-line="150" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2704,7 +2590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="63" column="70" lean-forward="false" selection-start-line="63" selection-start-column="70" selection-end-line="63" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2720,7 +2605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1107">
           <caret line="49" column="5" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="49" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2728,7 +2612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="29" column="52" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="29" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2744,7 +2627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="52" column="25" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="52" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2851,25 +2733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-750">
           <caret line="324" column="31" lean-forward="false" selection-start-line="324" selection-start-column="31" selection-end-line="324" selection-end-column="31" />
-          <folding>
-            <marker date="1524718434101" expanded="true" signature="5483:5497" ph="..." />
-            <marker date="1524718434101" expanded="true" signature="6927:6947" ph="..." />
-            <marker date="1524718434101" expanded="true" signature="7052:7060" ph="&amp;##xe631;" />
-            <marker date="1524718434101" expanded="true" signature="7194:7214" ph="..." />
-            <marker date="1524718434101" expanded="true" signature="7243:7251" ph="&amp;##xe6df;" />
-            <marker date="1524718434101" expanded="true" signature="7271:7291" ph="..." />
-            <marker date="1524718434101" expanded="true" signature="7449:7457" ph="&amp;##xe63f;" />
-            <marker date="1524718434101" expanded="true" signature="7567:7587" ph="..." />
-            <marker date="1524718434101" expanded="true" signature="7616:7624" ph="&amp;##xe6e2;" />
-            <marker date="1524718434101" expanded="true" signature="7731:7751" ph="..." />
-            <marker date="1524718434101" expanded="true" signature="7857:7865" ph="&amp;##xe6e1;" />
-            <marker date="1524718434101" expanded="true" signature="7999:8019" ph="..." />
-            <marker date="1524718434101" expanded="true" signature="8048:8056" ph="&amp;##xe6df;" />
-            <marker date="1524718434101" expanded="true" signature="8076:8096" ph="..." />
-            <marker date="1524718434101" expanded="true" signature="8254:8262" ph="&amp;##xe63f;" />
-            <marker date="1524718434101" expanded="true" signature="8372:8392" ph="..." />
-            <marker date="1524718434101" expanded="true" signature="8421:8429" ph="&amp;##xe6e2;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2885,15 +2748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="361" column="31" lean-forward="false" selection-start-line="361" selection-start-column="31" selection-end-line="361" selection-end-column="31" />
-          <folding>
-            <marker date="1524719727401" expanded="true" signature="7815:7839" ph="..." />
-            <marker date="1524719727401" expanded="true" signature="8063:8087" ph="..." />
-            <marker date="1524719727401" expanded="true" signature="8311:8335" ph="..." />
-            <marker date="1524719727401" expanded="true" signature="9074:9094" ph="..." />
-            <marker date="1524719727401" expanded="true" signature="9228:9236" ph="&amp;##xe6df;" />
-            <marker date="1524719727401" expanded="true" signature="9256:9276" ph="..." />
-            <marker date="1524719727401" expanded="true" signature="9396:9404" ph="&amp;##xe6e2;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2901,13 +2755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="353" column="31" lean-forward="false" selection-start-line="353" selection-start-column="31" selection-end-line="353" selection-end-column="31" />
-          <folding>
-            <marker date="1524719742619" expanded="true" signature="7916:7940" ph="..." />
-            <marker date="1524719742619" expanded="true" signature="8719:8739" ph="..." />
-            <marker date="1524719742619" expanded="true" signature="8874:8882" ph="&amp;##xe6df;" />
-            <marker date="1524719742619" expanded="true" signature="8902:8922" ph="..." />
-            <marker date="1524719742619" expanded="true" signature="9042:9050" ph="&amp;##xe6e2;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2915,21 +2762,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="351" column="31" lean-forward="false" selection-start-line="351" selection-start-column="31" selection-end-line="351" selection-end-column="31" />
-          <folding>
-            <marker date="1524719763338" expanded="true" signature="7758:7782" ph="..." />
-            <marker date="1524719763338" expanded="true" signature="8561:8581" ph="..." />
-            <marker date="1524719763338" expanded="true" signature="8716:8724" ph="&amp;##xe6df;" />
-            <marker date="1524719763338" expanded="true" signature="8744:8764" ph="..." />
-            <marker date="1524719763338" expanded="true" signature="8884:8892" ph="&amp;##xe6e2;" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/content-panel.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7140">
+        <state relative-caret-position="-7122">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2937,23 +2776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-930">
           <caret line="230" column="31" lean-forward="false" selection-start-line="230" selection-start-column="31" selection-end-line="230" selection-end-column="31" />
-          <folding>
-            <marker date="1524718391330" expanded="true" signature="6354:6374" ph="..." />
-            <marker date="1524718391330" expanded="true" signature="6482:6490" ph="&amp;##xe66b;" />
-            <marker date="1524718391330" expanded="true" signature="6602:6622" ph="..." />
-            <marker date="1524718391330" expanded="true" signature="6651:6659" ph="&amp;##xe6e2;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/order-list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="236" column="24" lean-forward="false" selection-start-line="236" selection-start-column="24" selection-end-line="236" selection-end-column="31" />
-          <folding>
-            <marker date="1524719798328" expanded="true" signature="7079:7099" ph="..." />
-            <marker date="1524719798328" expanded="true" signature="7128:7136" ph="&amp;##xe6e2;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2961,21 +2783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="447">
           <caret line="439" column="31" lean-forward="false" selection-start-line="439" selection-start-column="31" selection-end-line="439" selection-end-column="31" />
-          <folding>
-            <marker date="1524714895203" expanded="true" signature="6546:6570" ph="..." />
-            <marker date="1524714895203" expanded="true" signature="8943:8963" ph="..." />
-            <marker date="1524714895203" expanded="true" signature="9069:9077" ph="&amp;##xe6de;" />
-            <marker date="1524714895203" expanded="true" signature="9097:9117" ph="..." />
-            <marker date="1524714895203" expanded="true" signature="9255:9263" ph="&amp;##xe6df;" />
-            <marker date="1524714895203" expanded="true" signature="9283:9303" ph="..." />
-            <marker date="1524714895203" expanded="true" signature="9423:9431" ph="&amp;##xe6e2;" />
-            <marker date="1524714895203" expanded="true" signature="9522:9542" ph="..." />
-            <marker date="1524714895203" expanded="true" signature="9649:9657" ph="&amp;##xe603;" />
-            <marker date="1524714895203" expanded="true" signature="9677:9697" ph="..." />
-            <marker date="1524714895203" expanded="true" signature="9835:9843" ph="&amp;##xe6df;" />
-            <marker date="1524714895203" expanded="true" signature="9863:9883" ph="..." />
-            <marker date="1524714895203" expanded="true" signature="10003:10011" ph="&amp;##xe6e2;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2999,6 +2806,17 @@
             <marker date="1524718462637" expanded="true" signature="5780:5788" ph="&amp;##xe6df;" />
             <marker date="1524718462637" expanded="true" signature="5898:5918" ph="..." />
             <marker date="1524718462637" expanded="true" signature="5947:5955" ph="&amp;##xe6e2;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/webapp/WEB-INF/jsp/order-list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="79" column="38" lean-forward="false" selection-start-line="79" selection-start-column="38" selection-end-line="79" selection-end-column="38" />
+          <folding>
+            <marker date="1525424263861" expanded="true" signature="7118:7138" ph="..." />
+            <marker date="1525424263861" expanded="true" signature="7167:7175" ph="&amp;##xe6e2;" />
           </folding>
         </state>
       </provider>
