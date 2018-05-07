@@ -4,6 +4,8 @@
 [![](https://img.shields.io/badge/version-1.0-brightgreen.svg)](https://github.com/Exrick/xmall)
 [![GitHub stars](https://img.shields.io/github/stars/Exrick/xmall.svg?style=social&label=Stars)](https://github.com/Exrick/xmall)
 [![GitHub forks](https://img.shields.io/github/forks/Exrick/xmall.svg?style=social&label=Fork)](https://github.com/Exrick/xmall)
+### [宣传视频](https://www.bilibili.com/video/av23121122/)
+- 作者亲自制作 可接单做视频... 视频已上传至[B站](https://www.bilibili.com/video/av23121122/)
 ### 项目已部署，在线Demo
 - 前台商城：http://xmall.exrick.cn/
 - 后台管理系统：http://xmadmin.exrick.cn/
