@@ -8,6 +8,8 @@ import cn.exrick.manager.mapper.TbOrderItemMapper;
 import cn.exrick.manager.mapper.TbShiroFilterMapper;
 import cn.exrick.manager.pojo.*;
 import cn.exrick.manager.service.SystemService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -128,15 +130,18 @@ public class SystemServiceImpl implements SystemService {
     }
 
     @Override
-    public DataTablesResult getLogList() {
+    public DataTablesResult getLogList(int draw, int start, int length, String search,String orderCol,String orderDir) {
 
         DataTablesResult result=new DataTablesResult();
-        TbLogExample example=new TbLogExample();
-        List<TbLog> list=tbLogMapper.selectByExample(example);
-        if(list==null){
-            throw new XmallException("获取日志列表失败");
-        }
-        result.setSuccess(true);
+        //分页
+        PageHelper.startPage(start/length+1,length);
+        List<TbLog> list = tbLogMapper.selectByMulti("%"+search+"%",orderCol,orderDir);
+        PageInfo<TbLog> pageInfo=new PageInfo<>(list);
+
+        result.setRecordsFiltered((int)pageInfo.getTotal());
+        result.setRecordsTotal(Math.toIntExact(countLog()));
+
+        result.setDraw(draw);
         result.setData(list);
         return result;
     }

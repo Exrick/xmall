@@ -9,6 +9,8 @@ import cn.exrick.manager.mapper.TbOrderShippingMapper;
 import cn.exrick.manager.mapper.TbThanksMapper;
 import cn.exrick.manager.pojo.*;
 import cn.exrick.manager.service.OrderService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,15 +42,18 @@ public class OrderServiceImpl implements OrderService {
     private EmailUtil emailUtil;
 
     @Override
-    public DataTablesResult getOrderList() {
+    public DataTablesResult getOrderList(int draw, int start, int length, String search, String orderCol, String orderDir) {
 
         DataTablesResult result=new DataTablesResult();
-        TbOrderExample example=new TbOrderExample();
-        List<TbOrder> list=tbOrderMapper.selectByExample(example);
-        if(list==null){
-            throw new XmallException("获取订单列表失败");
-        }
-        result.setSuccess(true);
+        //分页
+        PageHelper.startPage(start/length+1,length);
+        List<TbOrder> list = tbOrderMapper.selectByMulti("%"+search+"%",orderCol,orderDir);
+        PageInfo<TbOrder> pageInfo=new PageInfo<>(list);
+
+        result.setRecordsFiltered((int)pageInfo.getTotal());
+        result.setRecordsTotal(Math.toIntExact(cancelOrder()));
+
+        result.setDraw(draw);
         result.setData(list);
         return result;
     }
@@ -195,7 +200,7 @@ public class OrderServiceImpl implements OrderService {
         }
         //发送通知邮箱
         if(StringUtils.isNotBlank(tbThanks.getEmail())&& EmailUtil.checkEmail(tbThanks.getEmail())){
-            String content="抱歉，您的订单支付失败，请尝试重新支付！<br>Powered By XPay. Exrick Present.";
+            String content="抱歉，由于您支付不起或其他原因，您的订单支付失败，请尝试重新支付！<br>Powered By XPay. Exrick Present.";
             emailUtil.sendEmailPayResult(tbThanks.getEmail(),"【XMall商城】支付失败通知",content);
         }
         return 1;
@@ -266,6 +271,39 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public int payDelNotNotify(String tokenName, String token, String id) {
+
+        //验证token
+        if(StringUtils.isBlank(tokenName)||StringUtils.isBlank(tokenName)||StringUtils.isBlank(id)){
+            return -1;
+        }
+        String value=jedisClient.get(tokenName);
+        if(!value.equals(token)){
+            return -1;
+        }
+        //获得捐赠
+        TbThanks tbThanks=tbThanksMapper.selectByPrimaryKey(Integer.valueOf(id));
+        if(tbThanks==null){
+            return 0;
+        }
+        //删除捐赠
+        if(tbThanksMapper.deleteByPrimaryKey(Integer.valueOf(id))!=1){
+            return 0;
+        }
+        //修改订单状态
+        TbOrder tbOrder=tbOrderMapper.selectByPrimaryKey(tbThanks.getOrderId());
+        if(tbOrder!=null){
+            tbOrder.setStatus(6);
+            tbOrder.setCloseTime(new Date());
+            tbOrder.setUpdateTime(new Date());
+            if(tbOrderMapper.updateByPrimaryKey(tbOrder)!=1){
+                return 0;
+            }
+        }
+        return 1;
+    }
+
+    @Override
     public int payDel(String tokenName, String token, String id) {
 
         //验证token
@@ -297,11 +335,10 @@ public class OrderServiceImpl implements OrderService {
         }
         //发送通知邮箱
         if(StringUtils.isNotBlank(tbThanks.getEmail())&& EmailUtil.checkEmail(tbThanks.getEmail())){
-            String content="抱歉，您的订单支付失败，请尝试重新支付！<br>Powered By XPay. Exrick Present.";
+            String content="抱歉，由于您支付不起或其他原因，您的订单支付失败，请尝试重新支付！<br>Powered By XPay. Exrick Present.";
             emailUtil.sendEmailPayResult(tbThanks.getEmail(),"【XMall商城】支付失败通知",content);
         }
         return 1;
     }
-
 
 }

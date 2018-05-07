@@ -86,6 +86,9 @@
 <script type="text/javascript">
 
     function imageShow(data){
+        if(data==""||data==null){
+            return "http://ow2h3ee9w.bkt.clouddn.com/nopic.jpg";
+        }
         var images= new Array(); //定义一数组
         images=data.split(","); //字符分割
         if(images.length>0){
@@ -106,9 +109,6 @@
                 data:{
                     "cid":-1
                 },
-                error:function(XMLHttpRequest){
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
-                }
             },
             "columns": [
                 { "data": null,
@@ -119,7 +119,7 @@
                 { "data": "id"},
                 { "data": "image",
                     render: function(data, type, row, meta) {
-                        return '<img src="'+imageShow(data)+'" style="width: 80px;height: 50px" alt="" />';
+                        return '<img src="'+imageShow(data)+'" style="width: 80px;height: 70px" alt="" />';
                     }
                 },
                 { "data": "title",
@@ -182,7 +182,7 @@
             "aaSorting": [[ 6, "desc" ]],//默认第几个排序
             "bStateSave": false,//状态保存
             "aoColumnDefs": [
-                {"orderable":false,"aTargets":[0,2,4,9]}// 制定列不参与排序
+                {"orderable":false,"aTargets":[0,2,9]}// 制定列不参与排序
             ],
             language: {
                 url: '/lib/datatables/Chinese.json'
@@ -208,6 +208,7 @@
             }
         });
     }
+
     /*初始化类别数据*/
     var cid=-1;
     /*多条件查询*/
@@ -242,6 +243,8 @@
         }
     });
 
+    var index = layer.load(3);
+
     var setting = {
         view: {
             dblClickExpand: true,
@@ -264,6 +267,9 @@
             autoParam: ["id"],
         },
         callback: {
+            onAsyncSuccess: function(){
+                layer.close(index);
+            },
             beforeClick: function(treeId, treeNode) {
                 if (treeNode.isParent) {
                     return false;
@@ -383,7 +389,7 @@
             var index = layer.load(3);
             $.ajax({
                 type: 'DELETE',
-                url: '/item/del?ids='+id,
+                url: '/item/del/'+id,
                 dataType: 'json',
                 success: function(data){
                     layer.close(index);
@@ -425,12 +431,13 @@
             var index = layer.load(3);
             $.ajax({
                 type: 'DELETE',
-                url: '/item/del/?ids='+ids,
+                url: '/item/del/'+ids,
                 dataType: 'json',
                 success:function(data){
                     layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
                     }
                     layer.msg('已删除!',{icon:1,time:1000});
                     productCount();

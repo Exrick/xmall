@@ -13,10 +13,6 @@ public class TbUser {
 
     private String email;
 
-    private Date created;
-
-    private Date updated;
-
     private String sex;
 
     private String address;
@@ -28,6 +24,10 @@ public class TbUser {
     private Integer roleId;
 
     private String file;
+
+    private Date created;
+
+    private Date updated;
 
     public Long getId() {
         return id;
@@ -67,22 +67,6 @@ public class TbUser {
 
     public void setEmail(String email) {
         this.email = email == null ? null : email.trim();
-    }
-
-    public Date getCreated() {
-        return created;
-    }
-
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    public Date getUpdated() {
-        return updated;
-    }
-
-    public void setUpdated(Date updated) {
-        this.updated = updated;
     }
 
     public String getSex() {
@@ -131,5 +115,21 @@ public class TbUser {
 
     public void setFile(String file) {
         this.file = file == null ? null : file.trim();
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Date updated) {
+        this.updated = updated;
     }
 }

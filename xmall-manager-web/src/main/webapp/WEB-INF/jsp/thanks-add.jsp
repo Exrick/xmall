@@ -50,6 +50,17 @@
             </div>
         </div>
         <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">审核状态：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <select id="state" class="select-box" name="state">
+                    <option value="0">待审核</option>
+                    <option value="1">审核通过</option>
+                    <option value="2">审核驳回</option>
+                    <option value="3">通过不展示</option>
+                </select>
+            </div>
+        </div>
+        <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">捐赠时间：</label>
             <div class="formControls col-xs-8 col-sm-9">
                 <input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss' })" id="time" name="time" class="input-text Wdate" style="width:180px;">

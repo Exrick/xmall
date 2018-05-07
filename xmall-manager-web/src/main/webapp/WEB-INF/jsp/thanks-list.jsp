@@ -47,6 +47,7 @@
                         <th width="90">捐赠金额</th>
                         <th width="150">捐赠信息</th>
                         <th width="130">捐赠时间</th>
+                        <th width="100">状态</th>
                         <th width="100">操作</th>
                     </tr>
                     </thead>
@@ -91,6 +92,20 @@
                 { "data": "date",
                     render : function(data,type, row, meta) {
                         return dateAll(data);
+                    }
+                },
+                {
+                    "data": "state",
+                    render : function(data,type, row, meta) {
+                        if(data==0){
+                            return "<span class=\"label label-defant radius td-status\">待审核</span>";
+                        }else if(data==1){
+                            return "<span class=\"label label-success radius td-status\">审核通过</span>";
+                        }else if(data==3){
+                            return "<span class=\"label label-warning radius td-status\">通过不展示</span>";
+                        }else if(data==2){
+                            return "<span class=\"label label-danger radius td-status\">审核不通过</span>";
+                        }
                     }
                 },
                 {
@@ -193,6 +208,7 @@
                     layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
                     }
                     layer.msg('已删除!',{icon:1,time:1000});
                     thanksCount();
@@ -206,7 +222,7 @@
         });
     }
 
-    var nickName="",thanksId=-1,username="",money="",info="",time="";
+    var nickName="",thanksId=-1,username="",money="",info="",time="",state=0;
 
     /*捐赠-编辑*/
     function thanks_edit(title,url,id,w,h){
@@ -217,6 +233,7 @@
             username = table.row(this).data().username;
             money = table.row(this).data().money;
             info = table.row(this).data().info;
+            state = table.row(this).data().state;
             time = dateAll(table.row(this).data().date);
         });
         layer_show(title,url,w,h);

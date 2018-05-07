@@ -15,13 +15,13 @@ public class TbItemCat {
 
     private Boolean isParent;
 
-    private Date created;
-
-    private Date updated;
-
     private String icon;
 
     private String remark;
+
+    private Date created;
+
+    private Date updated;
 
     public Long getId() {
         return id;
@@ -71,22 +71,6 @@ public class TbItemCat {
         this.isParent = isParent;
     }
 
-    public Date getCreated() {
-        return created;
-    }
-
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    public Date getUpdated() {
-        return updated;
-    }
-
-    public void setUpdated(Date updated) {
-        this.updated = updated;
-    }
-
     public String getIcon() {
         return icon;
     }
@@ -101,5 +85,21 @@ public class TbItemCat {
 
     public void setRemark(String remark) {
         this.remark = remark == null ? null : remark.trim();
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Date updated) {
+        this.updated = updated;
     }
 }

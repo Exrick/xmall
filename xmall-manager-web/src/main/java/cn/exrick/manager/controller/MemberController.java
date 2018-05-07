@@ -120,9 +120,9 @@ public class MemberController {
         return new ResultUtil<TbMember>().setData(null);
     }
 
-    @RequestMapping(value = "/member/remove",method = RequestMethod.PUT)
+    @RequestMapping(value = "/member/remove/{ids}",method = RequestMethod.PUT)
     @ApiOperation(value = "移除会员")
-    public Result<TbMember> removeMember(@RequestParam Long[] ids){
+    public Result<TbMember> removeMember(@PathVariable Long[] ids){
 
         for(Long id:ids){
             memberService.alertMemberState(id,2);
@@ -130,9 +130,9 @@ public class MemberController {
         return new ResultUtil<TbMember>().setData(null);
     }
 
-    @RequestMapping(value = "/member/del",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/member/del/{ids}",method = RequestMethod.DELETE)
     @ApiOperation(value = "彻底删除会员")
-    public Result<TbMember> deleteMember(@RequestParam Long[] ids){
+    public Result<TbMember> deleteMember(@PathVariable Long[] ids){
 
         for(Long id:ids){
             memberService.deleteMember(id);

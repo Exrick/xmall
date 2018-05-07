@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * Created by Exrick on 2017/8/2.
+ * @author Exrick
+ * @date 2017/8/2
  */
 @RestController
 @Api(description = "商品分类信息")

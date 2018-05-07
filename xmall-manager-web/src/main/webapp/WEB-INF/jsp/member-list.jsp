@@ -40,7 +40,7 @@
     <div class="cl pd-5 bg-1 bk-gray mt-20">
         <span class="l">
             <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
-            <a href="javascript:;" onclick="member_add('添加用户','member-add','','600')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加用户</a>
+            <a href="javascript:;" onclick="member_add('添加用户','member-add','','630')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加用户</a>
         </span>
         <span class="r">共有数据：<strong id="memberListCount">0</strong> 条</span>
     </div>
@@ -274,7 +274,7 @@
             var index = layer.load(3);
             $.ajax({
                 type: 'PUT',
-                url: '/member/remove?ids='+id,
+                url: '/member/remove/'+id,
                 dataType: 'json',
                 success: function(data){
                     layer.close(index);
@@ -316,12 +316,13 @@
             var index = layer.load(3);
             $.ajax({
                 type: 'PUT',
-                url: '/member/remove/?ids='+ids,
+                url: '/member/remove/'+ids,
                 dataType: 'json',
                 success:function(data){
                     layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
                     }
                     layer.msg('已删除!',{icon:1,time:1000});
                     member_count();

@@ -11,9 +11,15 @@ public interface OrderService {
 
     /**
      * 获得订单列表
+     * @param draw
+     * @param start
+     * @param length
+     * @param search
+     * @param orderCol
+     * @param orderDir
      * @return
      */
-    DataTablesResult getOrderList();
+    DataTablesResult getOrderList(int draw, int start, int length, String search, String orderCol, String orderDir);
 
     /**
      * 统计订单数
@@ -68,6 +74,15 @@ public interface OrderService {
      * @return
      */
     int editPay(String tokenName,String token,TbThanks tbThanks);
+
+    /**
+     * 捐赠删除不回邮件
+     * @param tokenName
+     * @param token
+     * @param id
+     * @return
+     */
+    int payDelNotNotify(String tokenName,String token,String id);
 
     /**
      * 捐赠删除

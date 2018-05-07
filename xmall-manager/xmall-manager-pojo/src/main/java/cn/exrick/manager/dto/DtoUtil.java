@@ -10,7 +10,8 @@ import org.slf4j.LoggerFactory;
 
 
 /**
- * Created by Exrick on 2017/8/25.
+ * @author Exrick
+ * @date 2017/8/25
  */
 public class DtoUtil{
 
@@ -86,49 +87,22 @@ public class DtoUtil{
         return itemDto;
     }
 
-    public static ContentDto TbContent2ContentDto(TbContent tbContent){
 
-        ContentDto contentDto =new ContentDto();
-
-        contentDto.setId(tbContent.getId());
-        contentDto.setProductId(tbContent.getProductId());
-        contentDto.setImage(tbContent.getImage());
-        contentDto.setCreated(tbContent.getCreated());
-        contentDto.setUpdated(tbContent.getUpdated());
-
-        return contentDto;
-    }
-
-    public static ZTreeNode TbContentCategory2ZTreeNode(TbContentCategory tbContentCategory){
+    public static ZTreeNode TbPanel2ZTreeNode(TbPanel tbPanel){
 
         ZTreeNode zTreeNode =new ZTreeNode();
 
-        zTreeNode.setId(Math.toIntExact(tbContentCategory.getId()));
-        zTreeNode.setIsParent(tbContentCategory.getIsParent());
-        zTreeNode.setpId(Math.toIntExact(tbContentCategory.getParentId()));
-        zTreeNode.setName(tbContentCategory.getName());
-        zTreeNode.setIcon(tbContentCategory.getIcon());
-        zTreeNode.setSortOrder(tbContentCategory.getSortOrder());
-        zTreeNode.setStatus(tbContentCategory.getStatus());
-        zTreeNode.setRemark(tbContentCategory.getRemark());
-        zTreeNode.setNum(tbContentCategory.getNum());
+        zTreeNode.setId(tbPanel.getId());
+        zTreeNode.setIsParent(false);
+        zTreeNode.setpId(0);
+        zTreeNode.setName(tbPanel.getName());
+        zTreeNode.setSortOrder(tbPanel.getSortOrder());
+        zTreeNode.setStatus(tbPanel.getStatus());
+        zTreeNode.setRemark(tbPanel.getRemark());
+        zTreeNode.setLimitNum(tbPanel.getLimitNum());
+        zTreeNode.setType(tbPanel.getType());
 
         return zTreeNode;
-    }
-
-    public static TbContentCategory ContentCatDto2TbContentCategory(ContentCatDto contentCatDto){
-
-        TbContentCategory tbContentCategory =new TbContentCategory();
-
-        tbContentCategory.setId(contentCatDto.getId());
-        tbContentCategory.setName(contentCatDto.getName());
-        tbContentCategory.setIsParent(contentCatDto.getIsParent());
-        tbContentCategory.setSortOrder(contentCatDto.getSortOrder());
-        tbContentCategory.setNum(contentCatDto.getNum());
-        tbContentCategory.setRemark(contentCatDto.getRemark());
-        tbContentCategory.setStatus(contentCatDto.getStatus());
-
-        return tbContentCategory;
     }
 
 
@@ -145,20 +119,6 @@ public class DtoUtil{
         zTreeNode.setRemark(tbItemCat.getRemark());
 
         return zTreeNode;
-    }
-
-    public static ImageDto TbImage2ImageDto(TbImage tbImage){
-
-        ImageDto imageDto =new ImageDto();
-
-        imageDto.setId(tbImage.getId());
-        imageDto.setImage(tbImage.getImage());
-        imageDto.setImageMobile(tbImage.getImageMobile());
-        imageDto.setLink(tbImage.getLink());
-        imageDto.setCreated(tbImage.getCreated());
-        imageDto.setUpdated(tbImage.getUpdated());
-
-        return imageDto;
     }
 
     public static Product TbItem2Product(TbItem tbItem){

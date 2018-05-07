@@ -182,7 +182,7 @@
         layer.confirm('确认要彻底删除ID为\''+id+'\'的会员吗？',{icon:0},function(index){
             $.ajax({
                 type: 'DELETE',
-                url: '/member/del?ids='+id,
+                url: '/member/del/'+id,
                 dataType: 'json',
                 success: function(data){
                     if(data.success!=true){
@@ -222,12 +222,13 @@
             var index = layer.load(3);
             $.ajax({
                 type: 'DELETE',
-                url: '/member/del?ids='+ids,
+                url: '/member/del/'+ids,
                 dataType: 'json',
                 success:function(data){
                     layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
                     }
                     memberRemoveCount();
                     refresh();
@@ -269,6 +270,7 @@
                     layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
                     }
                     memberRemoveCount();
                     refresh();

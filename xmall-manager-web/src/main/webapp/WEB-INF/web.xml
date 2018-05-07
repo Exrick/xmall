@@ -5,7 +5,7 @@
          id="WebApp_ID" version="2.5">
     <display-name>xmall-manager-web</display-name>
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
     <!-- Shiro过滤器 -->
@@ -48,6 +48,7 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
+
     <!--"/"拦截所有请求-->
     <servlet-mapping>
         <servlet-name>xmall-manager-web</servlet-name>

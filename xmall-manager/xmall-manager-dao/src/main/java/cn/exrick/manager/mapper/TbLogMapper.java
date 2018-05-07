@@ -27,4 +27,6 @@ public interface TbLogMapper {
     int updateByPrimaryKeySelective(TbLog record);
 
     int updateByPrimaryKey(TbLog record);
+
+    List<TbLog> selectByMulti(@Param("search") String search,@Param("orderCol") String orderCol, @Param("orderDir") String orderDir);
 }

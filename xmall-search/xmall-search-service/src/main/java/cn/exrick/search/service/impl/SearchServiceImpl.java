@@ -24,7 +24,9 @@ import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.elasticsearch.index.query.QueryBuilders.matchAllQuery;
 import static org.elasticsearch.index.query.QueryBuilders.matchQuery;
+import static org.elasticsearch.index.query.QueryBuilders.multiMatchQuery;
 
 /**
  * @author Exrickx
@@ -44,6 +46,13 @@ public class SearchServiceImpl implements SearchService {
 	@Value("${ITEM_TYPE}")
 	private String ITEM_TYPE;
 
+	/**
+	 * 使用QueryBuilder
+	 * termQuery("key", obj) 完全匹配
+	 * termsQuery("key", obj1, obj2..)   一次匹配多个值
+	 * matchQuery("key", Obj) 单个匹配, field不支持通配符, 前缀具高级特性
+	 * multiMatchQuery("text", "field1", "field2"..);  匹配多个字段, field有通配符忒行
+	 */
 	@Override
 	public SearchResult search(String key, int page, int size,String sort,int priceGt,int priceLte) {
 
@@ -56,7 +65,9 @@ public class SearchServiceImpl implements SearchService {
 			SearchResult searchResult=new SearchResult();
 
 			//设置查询条件
+			//单字段搜索
 			QueryBuilder qb = matchQuery("productName",key);
+
 			//设置分页
 			if (page <=0 ){
 				page =1;
@@ -152,6 +163,7 @@ public class SearchServiceImpl implements SearchService {
 				}
 			}
 			searchResult.setItemList(list);
+			//因个人服务器配置过低此处取消关闭减轻搜索压力增快搜索速度
 			//client.close();
 
 			return searchResult;

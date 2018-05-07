@@ -1,5 +1,6 @@
 package cn.exrick.common.utils;
 
+import cn.exrick.common.exception.XmallUploadException;
 import com.google.gson.Gson;
 import com.qiniu.common.QiniuException;
 import com.qiniu.common.Zone;
@@ -19,9 +20,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.UUID;
 
 /**
  * @author Exrickx
@@ -38,6 +41,11 @@ public class QiniuUtil {
     private static String bucket = "你的存储空间，如新建xmall";
     private static String origin="你的图片访问前部分链接，如http://ow2h3ee9w.bkt.clouddn.com/";
     private static  Auth auth = Auth.create(accessKey, secretKey);
+
+
+    public static String getUpToken() {
+        return auth.uploadToken(bucket, null, 3600, new StringMap().put("insertOnly", 1));
+    }
 
     public static String qiniuUpload(String filePath){
 
@@ -61,17 +69,43 @@ public class QiniuUtil {
             Response r = ex.response;
             log.warn(r.toString());
             try {
-                log.warn(r.bodyString());
                 return r.bodyString();
-            } catch (QiniuException ex2) {
-                //ignore
+            } catch (QiniuException e) {
+                throw new XmallUploadException(e.toString());
             }
         }
-        return null;
     }
 
-    public static String getUpToken() {
-        return auth.uploadToken(bucket, null, 3600, new StringMap().put("insertOnly", 1));
+    /**
+     * 文件流上传
+     * @param file
+     * @param key 文件名
+     * @return
+     */
+    public static String qiniuInputStreamUpload(FileInputStream file, String key){
+
+        //构造一个带指定Zone对象的配置类 zone2华南
+        Configuration cfg = new Configuration(Zone.zone2());
+
+        UploadManager uploadManager = new UploadManager(cfg);
+
+        Auth auth = Auth.create(accessKey, secretKey);
+        String upToken = auth.uploadToken(bucket);
+
+        try {
+            Response response = uploadManager.put(file,key,upToken,null, null);
+            //解析上传成功的结果
+            DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
+            return origin+putRet.key;
+        } catch (QiniuException ex) {
+            Response r = ex.response;
+            log.warn(r.toString());
+            try {
+                return r.bodyString();
+            } catch (QiniuException e) {
+                throw new XmallUploadException(e.toString());
+            }
+        }
     }
 
     public static String qiniuBase64Upload(String data64){
@@ -87,7 +121,6 @@ public class QiniuUtil {
                 addHeader("Content-Type", "application/octet-stream")
                 .addHeader("Authorization", "UpToken " + getUpToken())
                 .post(rb).build();
-        System.out.println(request.headers());
         OkHttpClient client = new OkHttpClient();
         okhttp3.Response response = null;
         try {
@@ -95,7 +128,6 @@ public class QiniuUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(response);
         return origin+key;
     }
 
@@ -109,13 +141,13 @@ public class QiniuUtil {
     }
 
     /**
-     * 以时间戳重命名
+     * 以UUID重命名
      * @param fileName
      * @return
      */
     public static String renamePic(String fileName){
         String extName = fileName.substring(fileName.lastIndexOf("."));
-        return System.currentTimeMillis()+extName;
+        return UUID.randomUUID().toString().replace("-","")+extName;
     }
 
     public static String isValidImage(HttpServletRequest request, MultipartFile file){

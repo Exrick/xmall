@@ -138,7 +138,7 @@
         layer.confirm('确认要删除ID为\''+id+'\'的数据吗？',{icon:0},function(index){
             $.ajax({
                 type: 'DELETE',
-                url: '/user/delPermission?ids='+id,
+                url: '/user/delPermission/'+id,
                 dataType: 'json',
                 success: function(data){
                     if(data.success!=true){
@@ -178,12 +178,13 @@
             var index = layer.load(3);
             $.ajax({
                 type: 'DELETE',
-                url: '/user/delPermission/?ids='+ids,
+                url: '/user/delPermission/'+ids,
                 dataType: 'json',
                 success:function(data){
                     layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
                     }
                     layer.msg('已删除!',{icon:1,time:1000});
                     permissionCount();

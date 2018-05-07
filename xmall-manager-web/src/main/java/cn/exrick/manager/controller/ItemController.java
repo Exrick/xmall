@@ -107,9 +107,9 @@ public class ItemController{
         return new ResultUtil<TbItem>().setData(tbItem);
     }
 
-    @RequestMapping(value = "/item/del",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/item/del/{ids}",method = RequestMethod.DELETE)
     @ApiOperation(value = "删除商品")
-    public Result<TbItem> deleteItem(@RequestParam Long[] ids){
+    public Result<TbItem> deleteItem(@PathVariable Long[] ids){
 
         for(Long id:ids){
             itemService.deleteItem(id);

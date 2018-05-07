@@ -77,6 +77,7 @@
     /*datatables配置*/
     $(document).ready(function () {
         $('.table').DataTable({
+            serverSide: true,//开启服务器模式
             "processing": true,//加载显示提示
             "ajax": {
                 url:"/sys/log",
@@ -208,6 +209,7 @@
                     layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
                     }
                     layer.msg('已删除!',{icon:1,time:1000});
                     logCount();

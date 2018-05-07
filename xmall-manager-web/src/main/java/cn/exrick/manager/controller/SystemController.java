@@ -105,10 +105,22 @@ public class SystemController {
     }
 
     @RequestMapping(value = "/sys/log",method = RequestMethod.GET)
-    @ApiOperation(value = "获取系统日志")
-    public DataTablesResult getLog(){
+    @ApiOperation(value = "分页获取系统日志")
+    public DataTablesResult getLog(int draw, int start, int length,@RequestParam("search[value]") String search,
+                                   @RequestParam("order[0][column]") int orderCol, @RequestParam("order[0][dir]") String orderDir){
 
-        DataTablesResult result= systemService.getLogList();
+        //获取客户端需要排序的列
+        String[] cols = {"checkbox","id", "name","type", "url", "request_type", "request_param", "user", "ip", "ip_info","time","create_date"};
+        String orderColumn = cols[orderCol];
+        //默认排序列
+        if(orderColumn == null) {
+            orderColumn = "create_date";
+        }
+        //获取排序方式 默认为desc(asc)
+        if(orderDir == null) {
+            orderDir = "desc";
+        }
+        DataTablesResult result= systemService.getLogList(draw,start,length,search,orderColumn,orderDir);
         return result;
     }
 

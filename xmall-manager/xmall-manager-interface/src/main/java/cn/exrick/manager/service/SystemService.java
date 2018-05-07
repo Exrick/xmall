@@ -74,9 +74,15 @@ public interface SystemService {
 
     /**
      * 获取日志列表
+     * @param draw
+     * @param start
+     * @param length
+     * @param search
+     * @param orderCol
+     * @param orderDir
      * @return
      */
-    DataTablesResult getLogList();
+    DataTablesResult getLogList(int draw, int start, int length, String search,String orderCol,String orderDir);
 
     /**
      * 统计日志数量

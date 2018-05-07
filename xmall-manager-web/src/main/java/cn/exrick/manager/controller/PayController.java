@@ -82,6 +82,20 @@ public class PayController {
         return new ResultUtil<Object>().setData("处理成功");
     }
 
+    @RequestMapping(value = "/pay/delNotNotify",method = RequestMethod.GET)
+    @ApiOperation(value = "支付删除不发送邮件通知")
+    public Result<Object> delNotNotify(String tokenName,String token,String id){
+
+        int result=orderService.payDelNotNotify(tokenName,token,id);
+        if(result==-1){
+            return new ResultUtil<Object>().setErrorMsg("无效的Token或链接");
+        }
+        if(result==0){
+            return new ResultUtil<Object>().setErrorMsg("数据处理出错");
+        }
+        return new ResultUtil<Object>().setData("处理成功");
+    }
+
     @RequestMapping(value = "/pay/del",method = RequestMethod.GET)
     @ApiOperation(value = "支付删除")
     public Result<Object> payDel(String tokenName,String token,String id){

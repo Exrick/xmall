@@ -143,7 +143,7 @@
             var index = layer.load(3);
             $.ajax({
                 type: 'DELETE',
-                url: '/user/delRole?ids='+id,
+                url: '/user/delRole/'+id,
                 dataType: 'json',
                 success: function(data){
                     layer.close(index);
@@ -185,12 +185,13 @@
             var index = layer.load(3);
             $.ajax({
                 type: 'DELETE',
-                url: '/user/delRole?ids='+ids,
+                url: '/user/delRole/'+ids,
                 dataType: 'json',
                 success:function(data){
                     layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
                     }
                     layer.msg('已删除!',{icon:1,time:1000});
                     roleCount();

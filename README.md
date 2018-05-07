@@ -4,6 +4,8 @@
 [![](https://img.shields.io/badge/version-1.0-brightgreen.svg)](https://github.com/Exrick/xmall)
 [![GitHub stars](https://img.shields.io/github/stars/Exrick/xmall.svg?style=social&label=Stars)](https://github.com/Exrick/xmall)
 [![GitHub forks](https://img.shields.io/github/forks/Exrick/xmall.svg?style=social&label=Fork)](https://github.com/Exrick/xmall)
+### [宣传视频](https://www.bilibili.com/video/av23121122/)
+- 作者亲自制作 可接单做视频... 视频已上传至[B站](https://www.bilibili.com/video/av23121122/)
 ### 项目已部署，在线Demo
 - 前台商城：http://xmall.exrick.cn/
 - 后台管理系统：http://xmadmin.exrick.cn/
@@ -12,7 +14,8 @@
 ### 开发中，敬请期待！
 - Spring Cloud版
     - [X-Cloud](https://github.com/Exrick/x-cloud) 框架开发中
-- 微信小程序APP
+- 微信小程序APP 
+    - 捐赠≥19.9可加群私聊群主提前下载前台源码 [预览视频](https://v.qq.com/x/page/f0627kf4x1e.html)
 
     ![](http://oweupqzdv.bkt.clouddn.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A2%84%E8%A7%881.png)
 
@@ -30,19 +33,19 @@
 ### v1.1更新日志(需更新前后台代码及SQL)
 - [x] 接入[XPay支付系统](https://github.com/Exrick/xpay)
 - [x] 更新Dubbo(2.6.1)、ES(6.2.3)等依赖版本
-- [x] 取消ES需在页面中配置及跨域问题
-- [x] ES默认配置集群名改为原elasticsearch
-- [x] 修复后台统计热卖商品SQL错误
-- [x] xmall-front-web模块支持SpringMVC文件上传配置
-- [x] 修改金额字段类型优化SQL
+- [x] 取消ES需在页面中配置及跨域问题，ES默认配置集群名改为原elasticsearch
+- [x] 修复后台统计热卖商品SQL错误，xmall-front-web模块支持SpringMVC文件上传配置
+- [x] 修改金额字段类型优化SQL与备注
 - [x] 优化后台页面
 - [x] 修复用户修改BUG
 - [x] 优化批量删除
-- [x] 优化分类添加
-- [ ] 重构首页设计
+- [x] 优化商品分类添加
+- [x] 重构首页，后台可配置，包括3D轮播图
+- [x] 新增缓存管理功能菜单
 - [ ] 完成订单打印发货等功能
 - [ ] 完成SKU设计
 - [ ] 增添报表
+
 ...
 
 ![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171119130819.jpg "登录界面")

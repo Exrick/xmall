@@ -41,8 +41,8 @@
                     <thead>
                     <tr class="text-c">
                         <th width="25"><input type="checkbox" name="" value=""></th>
-                        <th width="80">ID</th>
-                        <th width="50">支付金额</th>
+                        <th width="80">订单号</th>
+                        <th width="80">支付金额(￥)</th>
                         <th width="80">物流号</th>
                         <th width="50">用户ID</th>
                         <th width="80">用户账号</th>
@@ -77,6 +77,7 @@
     /*datatables配置*/
     $(document).ready(function () {
         $('.table').DataTable({
+            serverSide: true,//开启服务器模式
             "processing": true,//加载显示提示
             "ajax": {
                 url:"/order/list",
@@ -234,6 +235,7 @@
                     layer.close(index);
                     if(data.success!=true){
                         layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
                     }
                     layer.msg('已删除!',{icon:1,time:1000});
                     orderCount();

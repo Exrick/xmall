@@ -302,4 +302,32 @@
       create_date = #{createDate,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectByMulti" resultMap="BaseResultMap">
+    SELECT * FROM tb_log
+    WHERE
+    id LIKE #{search}
+    OR
+    name LIKE #{search}
+    OR
+    type LIKE #{search}
+    OR
+    url LIKE #{search}
+    OR
+    request_type LIKE #{search}
+    OR
+    request_param LIKE #{search}
+    OR
+    user LIKE #{search}
+    OR
+    ip LIKE #{search}
+    OR
+    ip_info LIKE #{search}
+    OR
+    time LIKE #{search}
+    OR
+    create_date LIKE #{search}
+    ORDER BY
+    ${orderCol}
+    ${orderDir}
+  </select>
 </mapper>

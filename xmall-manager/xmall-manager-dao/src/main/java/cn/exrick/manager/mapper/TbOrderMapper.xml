@@ -398,4 +398,32 @@
       buyer_comment = #{buyerComment,jdbcType=BIT}
     where order_id = #{orderId,jdbcType=VARCHAR}
   </update>
+  <select id="selectByMulti" resultMap="BaseResultMap">
+    SELECT * FROM tb_order
+    WHERE
+    order_id LIKE #{search}
+    OR
+    payment LIKE #{search}
+    OR
+    shipping_code LIKE #{search}
+    OR
+    user_id LIKE #{search}
+    OR
+    buyer_nick LIKE #{search}
+    OR
+    create_time LIKE #{search}
+    OR
+    update_time LIKE #{search}
+    OR
+    payment_time LIKE #{search}
+    OR
+    close_time LIKE #{search}
+    OR
+    end_time LIKE #{search}
+    OR
+    status LIKE #{search}
+    ORDER BY
+    ${orderCol}
+    ${orderDir}
+  </select>
 </mapper>

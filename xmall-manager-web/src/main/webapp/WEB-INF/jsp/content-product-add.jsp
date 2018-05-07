@@ -33,27 +33,54 @@
 <body>
 <div class="page-container">
     <form name="product-add" action="" method="post" class="form form-horizontal" id="product-add">
-        <input type="text" hidden class="input-text" id="categoryId" name="categoryId">
+        <input type="text" hidden class="input-text" id="panelId" name="panelId">
+        <input type="text" hidden class="input-text" id="position" name="position">
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">所属栏目：</label>
+            <label class="form-label col-xs-4 col-sm-2">所属板块：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <span id="category" name="category"></span>
+                <span id="name" name="name"></span>
             </div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>选择展示商品：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-				<input type="text" onclick="chooseProduct()" readonly class="input-text" value="" placeholder="请点击选择按钮选择关联商品" id="title" name="title" style="width:50%">
+            <label class="form-label col-xs-4 col-sm-2">
+                <span class="c-red">*</span>
+                类型：</label>
+            <div class="formControls col-xs-6 col-sm-3">
+                <select id="type" class="select-box" name="type" onchange="showOption()">
+                    <option value="0">关联商品</option>
+                    <option id="bannerImage1" value="2">封面(关联商品)</option>
+                    <option id="bannerImage2" value="3">封面(其他链接)</option>
+                    <option id="otherUrl" value="1">其他链接</option>
+                </select>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>排序优先值：</label>
+            <div class="formControls col-xs-8 col-sm-4">
+                <input type="text" class="input-text" placeholder="请输入0~9999，值越小排序越前" id="sortOrder" name="sortOrder">
+            </div>
+        </div>
+        <div id="inputOtherUrl" class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">其他链接：</label>
+            <div class="formControls col-xs-8 col-sm-4">
+                <input type="text" class="input-text" placeholder="http://" id="fullUrl" name="fullUrl">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">选择展示商品：</label>
+            <div class="formControls col-xs-8 col-sm-6">
+				<input type="text" onclick="chooseProduct()" readonly class="input-text" placeholder="请点击选择按钮选择关联商品" id="title" name="title" style="width: 65%">
                 <input type="button" onclick="chooseProduct()" class="btn btn-secondary radius" value="选择关联商品">
+                <input type="button" onclick="clearChooseProduct()" class="btn btn-default radius" value="清空">
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">所选商品ID：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" onclick="chooseProduct()" readonly placeholder="请点击选择按钮选择关联商品" class="input-text" id="productId" name="productId" style="width:50%">
+            <div class="formControls col-xs-8 col-sm-4">
+                <input type="text" onclick="chooseProduct()" readonly placeholder="请点击选择按钮选择关联商品" class="input-text" id="productId" name="productId">
             </div>
         </div>
-        <input type="text" name="image" id="image" hidden/>
+        <input type="text" name="picUrl" id="picUrl" hidden/>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>展示缩略图片上传：</label>
             <div class="formControls col-xs-8 col-sm-9">
@@ -98,8 +125,35 @@
 <script type="text/javascript" src="lib/webuploader/0.1.5/webuploader.min.js"></script>
 <script type="text/javascript">
 
-    $("#category").html(parent.category);
-    $("#categoryId").val(parent.cid);
+    $("#name").html(parent.name);
+    $("#panelId").val(parent.panelId);
+    $("#position").val(parent.position);
+
+    var panelType = parent.panelType;
+    if(panelType==2||panelType==3){
+        $("#otherUrl").hide();
+        showOption();
+        if(panelType==2){
+            $("#bannerImage1").show();
+            $("#bannerImage2").show();
+        }
+    }else{
+        $("#bannerImage1").hide();
+        $("#bannerImage2").hide();
+    }
+    
+    function showOption() {
+        var v = $("#type").val();
+        if(v==0||v==2){
+            $("#inputOtherUrl").hide();
+        }else{
+            $("#inputOtherUrl").show();
+        }
+    }
+
+    function clearChooseProduct() {
+        setIdAndTitle("","");
+    }
 
     function chooseProduct(){
         layer_show("选择展示商品","choose-product",900,600);
@@ -110,60 +164,61 @@
         $("#title").val(title);
     }
 
-    var images=null;
+    //默认图片
+    var images="";
 
     //保存发布
     $("#product-add").validate({
         rules:{
-            title:{
+            sortOrder:{
+                digits:true,
                 required:true,
-            },
-            productId:{
-                required:true,
+                maxlength:3,
             },
         },
         onkeyup:false,
         focusCleanup:false,
         success:"valid",
         submitHandler:function(form){
-            $("#saveButton").html("保存中...");
-            $("#saveButton").attr("disabled","disabled");
-            if(images==null){
-                $("#saveButton").html("保存并发布");
-                $("#saveButton").removeAttr("disabled");
+            var type=$("#type").val();
+            var fullUrl=$("#fullUrl").val();
+            var selectProductId=$("#productId").val();
+            if((type==0&&selectProductId=="")||(type==2&&selectProductId=="")){
+                layer.alert('请选择关联商品! ', {title: '错误信息',icon: 0});
+                return;
+            }
+            if((type==1&&fullUrl=="")||(type==3&&fullUrl=="")){
+                layer.alert('请填写跳转链接! ', {title: '错误信息',icon: 0});
+                return;
+            }
+            if(images==""){
                 layer.alert('请上传商品展示缩略图! ', {title: '错误信息',icon: 0});
                 return;
             }
+            var index = layer.load(3);
             $(form).ajaxSubmit({
                 url: "/content/add",
                 type: "POST",
                 success: function(data) {
+                    layer.close(index);
                     if(data.success==true){
                         parent.refresh();
                         parent.msgSuccess("添加成功!");
                         var index = parent.layer.getFrameIndex(window.name);
                         parent.layer.close(index);
                     }else{
-                        $("#saveButton").html("保存并发布");
-                        $("#saveButton").removeAttr("disabled");
                         layer.alert('添加失败! '+data.message, {title: '错误信息',icon: 2});
                     }
                 },
                 error:function(XMLHttpRequest) {
-                    $("#saveButton").html("保存并发布");
-                    $("#saveButton").removeAttr("disabled");
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status+' 错误信息:'+JSON.parse(XMLHttpRequest.responseText).message,{title: '错误信息',icon: 2});
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
             });
         }
     });
 
     (function ($) {
-        $('.skin-minimal input').iCheck({
-            checkboxClass: 'icheckbox-blue',
-            radioClass: 'iradio-blue',
-            increaseArea: '20%'
-        });
 
         // 当domReady的时候开始初始化
         $(function () {
@@ -554,7 +609,7 @@
                 } else if (state === 'confirm') {
                     stats = uploader.getStats();
                     if (stats.uploadFailNum) {
-                        text = '已成功上传' + stats.successNum + '张照片至XX相册，' +
+                        text = '已成功上传' + stats.successNum + '张照片，' +
                             stats.uploadFailNum + '张照片上传失败，<a class="retry" href="#">重新上传</a>失败图片或<a class="ignore" href="#">忽略</a>'
                     }
 
@@ -674,13 +729,11 @@
             // 文件上传成功
             uploader.on( 'uploadSuccess', function( file,data ) {
                 if(data.success==true){
-                    if(images==null){
-                        images=data.result;
-                    }else{
-                        images+=","+data.result;
-                    }
+                    images=data.result;
+                    $("#picUrl").val(images);
+                }else{
+                    alert("上传失败:"+data.message)
                 }
-                $("#image").val(images);
             });
 
             uploader.on('all', function (type) {

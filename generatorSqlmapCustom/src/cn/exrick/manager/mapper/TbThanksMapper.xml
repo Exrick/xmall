@@ -7,11 +7,11 @@
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="money" jdbcType="DECIMAL" property="money" />
     <result column="info" jdbcType="VARCHAR" property="info" />
-    <result column="date" jdbcType="TIMESTAMP" property="date" />
     <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="state" jdbcType="INTEGER" property="state" />
     <result column="pay_type" jdbcType="VARCHAR" property="payType" />
     <result column="order_id" jdbcType="VARCHAR" property="orderId" />
+    <result column="date" jdbcType="TIMESTAMP" property="date" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -72,7 +72,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, nick_name, username, money, info, date, email, state, pay_type, order_id
+    id, nick_name, username, money, info, email, state, pay_type, order_id, date
   </sql>
   <select id="selectByExample" parameterType="cn.exrick.manager.pojo.TbThanksExample" resultMap="BaseResultMap">
     select
@@ -106,13 +106,13 @@
   </delete>
   <insert id="insert" parameterType="cn.exrick.manager.pojo.TbThanks">
     insert into tb_thanks (id, nick_name, username, 
-      money, info, date, 
-      email, state, pay_type, 
-      order_id)
+      money, info, email, 
+      state, pay_type, order_id, 
+      date)
     values (#{id,jdbcType=INTEGER}, #{nickName,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
-      #{money,jdbcType=DECIMAL}, #{info,jdbcType=VARCHAR}, #{date,jdbcType=TIMESTAMP}, 
-      #{email,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, #{payType,jdbcType=VARCHAR}, 
-      #{orderId,jdbcType=VARCHAR})
+      #{money,jdbcType=DECIMAL}, #{info,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{state,jdbcType=INTEGER}, #{payType,jdbcType=VARCHAR}, #{orderId,jdbcType=VARCHAR}, 
+      #{date,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="cn.exrick.manager.pojo.TbThanks">
     insert into tb_thanks
@@ -132,9 +132,6 @@
       <if test="info != null">
         info,
       </if>
-      <if test="date != null">
-        date,
-      </if>
       <if test="email != null">
         email,
       </if>
@@ -146,6 +143,9 @@
       </if>
       <if test="orderId != null">
         order_id,
+      </if>
+      <if test="date != null">
+        date,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -164,9 +164,6 @@
       <if test="info != null">
         #{info,jdbcType=VARCHAR},
       </if>
-      <if test="date != null">
-        #{date,jdbcType=TIMESTAMP},
-      </if>
       <if test="email != null">
         #{email,jdbcType=VARCHAR},
       </if>
@@ -178,6 +175,9 @@
       </if>
       <if test="orderId != null">
         #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -205,9 +205,6 @@
       <if test="record.info != null">
         info = #{record.info,jdbcType=VARCHAR},
       </if>
-      <if test="record.date != null">
-        date = #{record.date,jdbcType=TIMESTAMP},
-      </if>
       <if test="record.email != null">
         email = #{record.email,jdbcType=VARCHAR},
       </if>
@@ -219,6 +216,9 @@
       </if>
       <if test="record.orderId != null">
         order_id = #{record.orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.date != null">
+        date = #{record.date,jdbcType=TIMESTAMP},
       </if>
     </set>
     <if test="_parameter != null">
@@ -232,11 +232,11 @@
       username = #{record.username,jdbcType=VARCHAR},
       money = #{record.money,jdbcType=DECIMAL},
       info = #{record.info,jdbcType=VARCHAR},
-      date = #{record.date,jdbcType=TIMESTAMP},
       email = #{record.email,jdbcType=VARCHAR},
       state = #{record.state,jdbcType=INTEGER},
       pay_type = #{record.payType,jdbcType=VARCHAR},
-      order_id = #{record.orderId,jdbcType=VARCHAR}
+      order_id = #{record.orderId,jdbcType=VARCHAR},
+      date = #{record.date,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -256,9 +256,6 @@
       <if test="info != null">
         info = #{info,jdbcType=VARCHAR},
       </if>
-      <if test="date != null">
-        date = #{date,jdbcType=TIMESTAMP},
-      </if>
       <if test="email != null">
         email = #{email,jdbcType=VARCHAR},
       </if>
@@ -271,6 +268,9 @@
       <if test="orderId != null">
         order_id = #{orderId,jdbcType=VARCHAR},
       </if>
+      <if test="date != null">
+        date = #{date,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -280,11 +280,11 @@
       username = #{username,jdbcType=VARCHAR},
       money = #{money,jdbcType=DECIMAL},
       info = #{info,jdbcType=VARCHAR},
-      date = #{date,jdbcType=TIMESTAMP},
       email = #{email,jdbcType=VARCHAR},
       state = #{state,jdbcType=INTEGER},
       pay_type = #{payType,jdbcType=VARCHAR},
-      order_id = #{orderId,jdbcType=VARCHAR}
+      order_id = #{orderId,jdbcType=VARCHAR},
+      date = #{date,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

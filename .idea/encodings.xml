@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="GBK">
     <file url="file://$PROJECT_DIR$/generatorSqlmapCustom" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xmall-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xmall-content" charset="UTF-8" />
@@ -20,5 +20,6 @@
     <file url="file://$PROJECT_DIR$/xmall-sso" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xmall-sso/xmall-sso-interface" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xmall-sso/xmall-sso-service" charset="UTF-8" />
+    <file url="PROJECT" charset="GBK" />
   </component>
 </project>

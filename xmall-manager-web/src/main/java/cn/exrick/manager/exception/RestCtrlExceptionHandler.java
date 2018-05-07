@@ -1,8 +1,10 @@
 package cn.exrick.manager.exception;
 
+import cn.exrick.common.exception.XmallUploadException;
 import cn.exrick.common.exception.XmallException;
 import cn.exrick.common.pojo.Result;
 import cn.exrick.common.utils.ResultUtil;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,8 +43,8 @@ public class RestCtrlExceptionHandler {
     public Result<Object> handleXmallException(XmallException e) {
         String errorMsg="Xmall exception: ";
         if (e!=null){
-            errorMsg=e.getMessage();
-            log.warn(errorMsg);
+            errorMsg=e.getMsg();
+            log.warn(e.getMessage());
         }
         return new ResultUtil<>().setErrorMsg(errorMsg);
     }
@@ -53,12 +55,28 @@ public class RestCtrlExceptionHandler {
     public Result<Object> handleException(Exception e) {
         String errorMsg="Exception: ";
         if (e!=null){
-            log.warn(e.getMessage()+" exception getMessage");
+            log.warn(e.getMessage());
             if(e.getMessage()!=null&&e.getMessage().contains("Maximum upload size")){
                 errorMsg="上传文件大小超过5MB限制";
-            }else{
+            } else if(e.getMessage().contains("XmallException")){
+                errorMsg = e.getMessage();
+                errorMsg = StringUtils.substringAfter(errorMsg,"XmallException:");
+                errorMsg = StringUtils.substringBefore(errorMsg,"\n");
+            } else{
                 errorMsg=e.getMessage();
             }
+        }
+        return new ResultUtil<>().setErrorMsg(errorMsg);
+    }
+
+    @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
+    @ExceptionHandler(XmallUploadException.class)
+    @ResponseBody
+    public Result<Object> handleUploadException(XmallUploadException e) {
+        String errorMsg="Xmall upload exception: ";
+        if (e!=null){
+            errorMsg=e.getMsg();
+            log.warn(errorMsg);
         }
         return new ResultUtil<>().setErrorMsg(errorMsg);
     }

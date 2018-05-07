@@ -176,9 +176,9 @@ public class UserController {
         return new ResultUtil<Object>().setData(null);
     }
 
-    @RequestMapping(value = "/user/delRole",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/user/delRole/{ids}",method = RequestMethod.DELETE)
     @ApiOperation(value = "删除角色")
-    public Result<Object> delRole(@RequestParam int[] ids){
+    public Result<Object> delRole(@PathVariable int[] ids){
 
         for(int id:ids){
             int result=userService.deleteRole(id);
@@ -221,9 +221,9 @@ public class UserController {
         return new ResultUtil<Object>().setData(null);
     }
 
-    @RequestMapping(value = "/user/delPermission",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/user/delPermission/{ids}",method = RequestMethod.DELETE)
     @ApiOperation(value = "删除权限")
-    public Result<Object> delPermission(@RequestParam int[] ids){
+    public Result<Object> delPermission(@PathVariable int[] ids){
 
         for(int id:ids){
             userService.deletePermission(id);
@@ -329,9 +329,9 @@ public class UserController {
         return new ResultUtil<Object>().setData(null);
     }
 
-    @RequestMapping(value = "/user/delUser",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/user/delUser/{ids}",method = RequestMethod.DELETE)
     @ApiOperation(value = "删除用户")
-    public Result<Object> delUser(@RequestParam Long[] ids){
+    public Result<Object> delUser(@PathVariable Long[] ids){
 
         for(Long id:ids){
             userService.deleteUser(id);

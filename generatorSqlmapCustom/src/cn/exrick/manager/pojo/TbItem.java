@@ -20,7 +20,7 @@ public class TbItem {
 
     private Long cid;
 
-    private Byte status;
+    private Integer status;
 
     private Date created;
 
@@ -90,11 +90,11 @@ public class TbItem {
         this.cid = cid;
     }
 
-    public Byte getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Byte status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

@@ -651,7 +651,7 @@
                 } else if (state === 'confirm') {
                     stats = uploader.getStats();
                     if (stats.uploadFailNum) {
-                        text = '已成功上传' + stats.successNum + '张照片至XX相册，' +
+                        text = '已成功上传' + stats.successNum + '张照片，' +
                             stats.uploadFailNum + '张照片上传失败，<a class="retry" href="#">重新上传</a>失败图片或<a class="ignore" href="#">忽略</a>'
                     }
 
@@ -778,7 +778,7 @@
                     }
                     $("#image").val(images);
                 }else{
-                    alert("上传失败");
+                    alert("上传失败:"+data.message)
                 }
             });
 
