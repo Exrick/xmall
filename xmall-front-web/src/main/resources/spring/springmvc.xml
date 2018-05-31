@@ -11,6 +11,17 @@
 
     <context:component-scan base-package="cn.exrick.front" />
 
+    <context:property-placeholder location="classpath:conf/*.properties"/>
+
+    <!-- 连接redis单机版 -->
+    <bean id="jedisClientPool" class="cn.exrick.common.jedis.JedisClientPool">
+        <property name="jedisPool" ref="jedisPool"></property>
+    </bean>
+    <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+        <constructor-arg name="host" value="127.0.0.1"/>
+        <constructor-arg name="port" value="6379"/>
+    </bean>
+
     <!-- 配置多媒体解析器 -->
     <!-- 定义文件上传解析器 -->
     <bean id="multipartResolver"

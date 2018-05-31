@@ -1,5 +1,7 @@
 package cn.exrick.front.controller;
 
+import cn.exrick.common.jedis.JedisClient;
+import cn.exrick.common.pojo.GeetInit;
 import cn.exrick.common.utils.GeetestLib;
 import cn.exrick.manager.dto.front.CommonDto;
 import cn.exrick.manager.dto.front.MemberLoginRegist;
@@ -9,6 +11,7 @@ import cn.exrick.manager.dto.front.Member;
 import cn.exrick.sso.service.LoginService;
 import cn.exrick.sso.service.MemberService;
 import cn.exrick.sso.service.RegisterService;
+import com.google.gson.Gson;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
@@ -18,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.UUID;
 
 /**
  * @author Exrickx
@@ -34,6 +38,8 @@ public class MemberController {
     private RegisterService registerService;
     @Autowired
     private MemberService memberService;
+    @Autowired
+    private JedisClient jedisClient;
 
     @RequestMapping(value = "/member/geetestInit",method = RequestMethod.GET)
     @ApiOperation(value = "极验初始化")
@@ -49,12 +55,16 @@ public class MemberController {
         //进行验证预处理
         int gtServerStatus = gtSdk.preProcess(param);
 
-        //将服务器状态设置到session中
-        request.getSession().setAttribute(gtSdk.gtServerStatusSessionKey, gtServerStatus);
+        //将服务器状态设置到redis中
+        //request.getSession().setAttribute(gtSdk.gtServerStatusSessionKey, gtServerStatus);
+        String key = UUID.randomUUID().toString();
+        jedisClient.set(key,gtServerStatus+"");
+        jedisClient.expire(key,360);
 
         resStr = gtSdk.getResponseStr();
-
-        return resStr;
+        GeetInit geetInit = new Gson().fromJson(resStr,GeetInit.class);
+        geetInit.setStatusKey(key);
+        return new Gson().toJson(geetInit);
     }
 
     @RequestMapping(value = "/member/login",method = RequestMethod.POST)
@@ -69,8 +79,9 @@ public class MemberController {
         String validate=memberLoginRegist.getValidate();
         String seccode=memberLoginRegist.getSeccode();
 
-        //从session中获取gt-server状态
-        int gt_server_status_code = (Integer) request.getSession().getAttribute(gtSdk.gtServerStatusSessionKey);
+        //从redis中获取gt-server状态
+        //int gt_server_status_code = (Integer) request.getSession().getAttribute(gtSdk.gtServerStatusSessionKey);
+        int gt_server_status_code = Integer.parseInt(jedisClient.get(memberLoginRegist.getStatusKey()));
 
         //自定义参数,可选择添加
         HashMap<String, String> param = new HashMap<String, String>();
@@ -129,8 +140,9 @@ public class MemberController {
         String validate=memberLoginRegist.getValidate();
         String seccode=memberLoginRegist.getSeccode();
 
-        //从session中获取gt-server状态
-        int gt_server_status_code = (Integer) request.getSession().getAttribute(gtSdk.gtServerStatusSessionKey);
+        //从redis中获取gt-server状态
+        //int gt_server_status_code = (Integer) request.getSession().getAttribute(gtSdk.gtServerStatusSessionKey);
+        int gt_server_status_code = Integer.parseInt(jedisClient.get(memberLoginRegist.getStatusKey()));
 
         //自定义参数,可选择添加
         HashMap<String, String> param = new HashMap<String, String>();

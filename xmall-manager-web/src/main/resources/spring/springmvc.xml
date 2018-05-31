@@ -10,7 +10,6 @@
     http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
 
-
     <!-- 启动对@AspectJ注解的支持 -->
     <aop:aspectj-autoproxy/>
 
@@ -18,6 +17,15 @@
 
     <!-- task任务扫描注解 -->
     <task:annotation-driven/>
+
+    <!-- 连接redis单机版 -->
+    <bean id="jedisClientPool" class="cn.exrick.common.jedis.JedisClientPool">
+        <property name="jedisPool" ref="jedisPool"></property>
+    </bean>
+    <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+        <constructor-arg name="host" value="127.0.0.1"/>
+        <constructor-arg name="port" value="6379"/>
+    </bean>
 
     <!-- 配置自定义Realm -->
     <bean id="myRealm" class="cn.exrick.manager.shiro.MyRealm"/>
@@ -119,4 +127,7 @@
     <dubbo:reference interface="cn.exrick.content.service.ContentService" id="contentService" />
     <dubbo:reference interface="cn.exrick.content.service.PanelService" id="panelService" />
     <dubbo:reference interface="cn.exrick.search.service.SearchItemService" id="searchItemService" />
+    <dubbo:reference interface="cn.exrick.manager.service.DictService" id="dictService"/>
+    <dubbo:reference interface="cn.exrick.manager.service.ExpressService" id="expressService"/>
+    <dubbo:reference interface="cn.exrick.manager.service.CountService" id="countService"/>
 </beans>

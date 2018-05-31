@@ -17,6 +17,9 @@ import org.springframework.util.DigestUtils;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * @author Exrickx
+ */
 @Service
 public class LoginServiceImpl implements LoginService {
 

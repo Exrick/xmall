@@ -1,10 +1,10 @@
 package cn.exrick.manager.controller;
 
+import cn.exrick.common.annotation.SystemControllerLog;
 import cn.exrick.common.pojo.DataTablesResult;
 import cn.exrick.common.pojo.Result;
 import cn.exrick.common.utils.GeetestLib;
 import cn.exrick.common.utils.ResultUtil;
-import cn.exrick.manager.annotation.SystemControllerLog;
 import cn.exrick.manager.dto.RoleDto;
 import cn.exrick.manager.pojo.TbPermission;
 import cn.exrick.manager.pojo.TbRole;

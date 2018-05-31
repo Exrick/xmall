@@ -17,6 +17,16 @@ public class MemberLoginRegist implements Serializable {
 
     private String seccode;
 
+    private String statusKey;
+
+    public String getStatusKey() {
+        return statusKey;
+    }
+
+    public void setStatusKey(String statusKey) {
+        this.statusKey = statusKey;
+    }
+
     public String getChallenge() {
         return challenge;
     }

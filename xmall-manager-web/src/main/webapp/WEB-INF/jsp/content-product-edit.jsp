@@ -159,12 +159,12 @@
         }
     }
 
-    function clearChooseProduct() {
-        setIdAndTitle("","");
-    }
-
     function chooseProduct(){
         layer_show("选择展示商品","choose-product",900,600);
+    }
+
+    function clearChooseProduct() {
+        setIdAndTitle("","");
     }
 
     function setIdAndTitle(id,title){

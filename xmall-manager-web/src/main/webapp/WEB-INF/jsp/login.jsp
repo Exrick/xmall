@@ -25,6 +25,7 @@
     <script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.js"></script>
     <script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
     <script type="text/javascript" src="lib/gt.js"></script>
+    <!-- Hotjar Tracking Code for http://xmadmin.exirck.cn -->
     <script>
         (function(h,o,t,j,a,r){
             h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -50,7 +51,7 @@
             font-family: "黑体";
         }
         .layui-layer-title {
-            padding-right: 220px;
+            padding-right: 305px;
             font-family:"Microsoft Yahei"
         }
         .layui-layer-dialog .layui-layer-content{
@@ -99,7 +100,7 @@
                     </div>
 
                     <div class="sub-w3l">
-                        <h6 onclick="forgetPass()" style="cursor: pointer"><a>忘记密码?</a></h6>
+                        <h6 onclick="forgetPass()" style="cursor: pointer"><a>游客体验账号密码?</a></h6>
                         <div class="right-w3l">
                             <input id="loginButton" type="button" class="login" value="登录">
                         </div>

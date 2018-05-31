@@ -61,4 +61,12 @@ public class CartController {
         int result=cartService.deleteCartItem(cart.getUserId(),cart.getProductId());
         return new ResultUtil<Object>().setData(result);
     }
+
+    @RequestMapping(value = "/member/delCartChecked",method = RequestMethod.POST)
+    @ApiOperation(value = "删除购物车选中商品")
+    public Result<Object> delChecked(@RequestBody Cart cart){
+
+        cartService.delChecked(cart.getUserId());
+        return new ResultUtil<Object>().setData(null);
+    }
 }

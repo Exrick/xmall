@@ -34,7 +34,7 @@
 <div>
     <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 捐赠管理 <span class="c-gray en">&gt;</span> 捐赠列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
     <form class="page-container">
-        <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="thanks_add('添加捐赠','thanks-add','',400)" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加捐赠</a></span> <span class="r">共有数据：<strong id="num">0</strong> 条</span> </div>
+        <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="thanks_add('添加捐赠','thanks-add','',500)" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加捐赠</a></span> <span class="r">共有数据：<strong id="num">0</strong> 条</span> </div>
         <div class="mt-20">
             <div class="mt-20" style="margin-bottom: 70px">
                 <table class="table table-border table-bordered table-bg table-hover table-sort" width="100%">
@@ -45,6 +45,7 @@
                         <th width="150">昵称</th>
                         <th width="50">登录账号</th>
                         <th width="90">捐赠金额</th>
+                        <th width="90">捐赠方式</th>
                         <th width="150">捐赠信息</th>
                         <th width="130">捐赠时间</th>
                         <th width="100">状态</th>
@@ -88,6 +89,7 @@
                 { "data": "nickName"},
                 { "data": "username"},
                 { "data": "money"},
+                { "data": "payType"},
                 { "data": "info"},
                 { "data": "date",
                     render : function(data,type, row, meta) {
@@ -111,11 +113,11 @@
                 {
                     "data": null,
                     render : function(data,type, row, meta) {
-                        return "<a title=\"编辑\" href=\"javascript:;\" onclick=\"thanks_edit('编辑','thanks-edit',"+row.id+",'',400)\" class=\"ml-5\" style=\"text-decoration:none\"><i class=\"Hui-iconfont\">&#xe6df;</i></a> <a title=\"删除\" href=\"javascript:;\" onclick=\"thanks_del(this,"+row.id+")\" class=\"ml-5\" style=\"text-decoration:none\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>";
+                        return "<a title=\"编辑\" href=\"javascript:;\" onclick=\"thanks_edit('编辑','thanks-edit',"+row.id+",'',500)\" class=\"ml-5\" style=\"text-decoration:none\"><i class=\"Hui-iconfont\">&#xe6df;</i></a> <a title=\"删除\" href=\"javascript:;\" onclick=\"thanks_del(this,"+row.id+")\" class=\"ml-5\" style=\"text-decoration:none\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>";
                     }
                 }
             ],
-            "aaSorting": [[ 6, "desc" ]],//默认第几个排序
+            "aaSorting": [[ 7, "desc" ]],//默认第几个排序
             "bStateSave": false,//状态保存
             "aoColumnDefs": [
                 {"orderable":false,"aTargets":[0,7]}// 制定列不参与排序
@@ -222,7 +224,7 @@
         });
     }
 
-    var nickName="",thanksId=-1,username="",money="",info="",time="",state=0;
+    var nickName="",thanksId=-1,username="",money="",info="",time="",state="",payType;
 
     /*捐赠-编辑*/
     function thanks_edit(title,url,id,w,h){
@@ -234,6 +236,7 @@
             money = table.row(this).data().money;
             info = table.row(this).data().info;
             state = table.row(this).data().state;
+            payType = table.row(this).data().payType;
             time = dateAll(table.row(this).data().date);
         });
         layer_show(title,url,w,h);

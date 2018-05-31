@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.PrintWriter;
 import java.util.Map;
 
+/**
+ * @author Exrickx
+ */
 public class FilterUtil {
 
     private static final Logger log= LoggerFactory.getLogger(FilterUtil.class);

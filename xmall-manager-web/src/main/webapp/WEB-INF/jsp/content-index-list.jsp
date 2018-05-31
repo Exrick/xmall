@@ -156,7 +156,7 @@
                         }else if(data==1){
                             return "<span class=\"label label-warning radius td-status\">其他链接</span>";
                         }else if(data==2){
-                            return "<span class=\"label label-primary radius td-status\">关联商品(封面)</span>";
+                            return "<span class=\"label label-primary radius td-status\">封面(关联商品)</span>";
                         }else if(data==3){
                             return "<span class=\"label label-primary radius td-status\">封面(其它链接)</span>";
                         }

@@ -7,6 +7,9 @@ import cn.exrick.manager.pojo.TbThanks;
 
 import java.util.List;
 
+/**
+ * @author Exrickx
+ */
 public interface OrderService {
 
     /**

@@ -126,6 +126,7 @@
             $.ajax({
                 type: 'GET',
                 url: '/item/importIndex',
+                dataType: 'json',
                 success: function(data) {
                     layer.close(index);
                     if(data.success!=true){

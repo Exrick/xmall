@@ -23,7 +23,9 @@ public class MyShiroFilterFactoryBean extends ShiroFilterFactoryBean {
      */
     public static String definitions;
 
-    //权限service
+    /**
+     * 权限service
+     */
     @Autowired
     private SystemService systemService;
 

@@ -10,6 +10,9 @@ import javax.servlet.ServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author Exrickx
+ */
 public class MyPermissionFilter extends AuthorizationFilter {
 
     private static final Logger log= LoggerFactory.getLogger(MyPermissionFilter.class);

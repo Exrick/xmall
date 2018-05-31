@@ -426,4 +426,22 @@
     ${orderCol}
     ${orderDir}
   </select>
+  <select id="selectOrderChart" resultType="cn.exrick.manager.dto.OrderChartData">
+    select
+    sum(payment) money,DATE(create_time) time
+    FROM tb_order
+    WHERE
+    create_time BETWEEN #{startTime} and #{endTime}
+    and status = 4
+    GROUP BY DAY(create_time)
+  </select>
+  <select id="selectOrderChartByYear" resultType="cn.exrick.manager.dto.OrderChartData">
+    select
+    sum(payment) money,DATE(create_time) time
+    FROM tb_order
+    WHERE
+    YEAR(create_time) = #{year}
+    and status = 4
+    GROUP BY MONTH(create_time)
+  </select>
 </mapper>

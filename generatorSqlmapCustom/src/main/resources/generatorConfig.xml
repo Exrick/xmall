@@ -62,6 +62,7 @@
 		<table schema="" tableName="tb_shiro_filter"></table>
 		<table schema="" tableName="tb_base"></table>
 		<table schema="" tableName="tb_log"></table>
-
+		<table schema="" tableName="tb_express"></table>
+		<table schema="" tableName="tb_dict"></table>
 	</context>
 </generatorConfiguration>

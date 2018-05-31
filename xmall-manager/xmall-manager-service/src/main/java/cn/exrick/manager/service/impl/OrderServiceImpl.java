@@ -3,6 +3,7 @@ package cn.exrick.manager.service.impl;
 import cn.exrick.common.exception.XmallException;
 import cn.exrick.common.jedis.JedisClient;
 import cn.exrick.common.pojo.DataTablesResult;
+import cn.exrick.manager.dto.OrderDetail;
 import cn.exrick.manager.mapper.TbOrderItemMapper;
 import cn.exrick.manager.mapper.TbOrderMapper;
 import cn.exrick.manager.mapper.TbOrderShippingMapper;
@@ -15,6 +16,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -67,6 +69,62 @@ public class OrderServiceImpl implements OrderService {
             throw new XmallException("统计订单数目失败");
         }
         return result;
+    }
+
+    @Override
+    public OrderDetail getOrderDetail(String orderId) {
+
+        OrderDetail orderDetail = new OrderDetail();
+        TbOrder tbOrder = tbOrderMapper.selectByPrimaryKey(orderId);
+
+        TbOrderItemExample example=new TbOrderItemExample();
+        TbOrderItemExample.Criteria criteria= example.createCriteria();
+        criteria.andOrderIdEqualTo(orderId);
+        List<TbOrderItem> orderItemList = tbOrderItemMapper.selectByExample(example);
+
+        TbOrderShipping tbOrderShipping=tbOrderShippingMapper.selectByPrimaryKey(orderId);
+
+        orderDetail.setTbOrder(tbOrder);
+        orderDetail.setTbOrderItem(orderItemList);
+        orderDetail.setTbOrderShipping(tbOrderShipping);
+        return orderDetail;
+    }
+
+    @Override
+    public int deliver(String orderId, String shippingName, String shippingCode, BigDecimal postFee) {
+
+        TbOrder o = tbOrderMapper.selectByPrimaryKey(orderId);
+        o.setShippingName(shippingName);
+        o.setShippingCode(shippingCode);
+        o.setPostFee(postFee);
+        o.setConsignTime(new Date());
+        o.setUpdateTime(new Date());
+        //之前忘记设置常量了 将就这样看吧 0、未付款，1、已付款，2、未发货，3、已发货，4、交易成功，5、交易关闭
+        o.setStatus(3);
+        tbOrderMapper.updateByPrimaryKey(o);
+        return 1;
+    }
+
+    @Override
+    public int remark(String orderId, String message) {
+
+        TbOrder o = tbOrderMapper.selectByPrimaryKey(orderId);
+        o.setBuyerMessage(message);
+        o.setUpdateTime(new Date());
+        tbOrderMapper.updateByPrimaryKey(o);
+        return 1;
+    }
+
+    @Override
+    public int cancelOrderByAdmin(String orderId) {
+
+        TbOrder o = tbOrderMapper.selectByPrimaryKey(orderId);
+        o.setCloseTime(new Date());
+        o.setUpdateTime(new Date());
+        //之前忘记设置常量了 将就这样看吧 0、未付款，1、已付款，2、未发货，3、已发货，4、交易成功，5、交易关闭
+        o.setStatus(5);
+        tbOrderMapper.updateByPrimaryKey(o);
+        return 1;
     }
 
     @Override

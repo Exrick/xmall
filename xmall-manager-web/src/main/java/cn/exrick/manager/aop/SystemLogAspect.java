@@ -1,9 +1,9 @@
 package cn.exrick.manager.aop;
 
+import cn.exrick.common.annotation.SystemControllerLog;
+import cn.exrick.common.annotation.SystemServiceLog;
 import cn.exrick.common.utils.IPInfoUtil;
 import cn.exrick.common.utils.ThreadPoolUtil;
-import cn.exrick.manager.annotation.SystemControllerLog;
-import cn.exrick.manager.annotation.SystemServiceLog;
 import cn.exrick.manager.pojo.TbLog;
 import cn.exrick.manager.service.SystemService;
 import org.apache.shiro.SecurityUtils;
@@ -41,7 +41,7 @@ public class SystemLogAspect {
      * Controller层切点,注解方式
      */
     //@Pointcut("execution(* *..controller..*Controller*.*(..))")
-    @Pointcut("@annotation(cn.exrick.manager.annotation.SystemControllerLog)")
+    @Pointcut("@annotation(cn.exrick.common.annotation.SystemControllerLog)")
     public void controllerAspect() {
         log.info("========controllerAspect===========");
     }
@@ -49,7 +49,7 @@ public class SystemLogAspect {
     /**
      * Service层切点,注解方式
      */
-    @Pointcut("@annotation(cn.exrick.manager.annotation.SystemServiceLog)")
+    @Pointcut("@annotation(cn.exrick.common.annotation.SystemServiceLog)")
     public void serviceAspect() {
         log.info("========ServiceAspect===========");
     }
@@ -212,7 +212,8 @@ public class SystemLogAspect {
                 continue;
             }
             Class[] clazzs = method.getParameterTypes();
-            if(clazzs.length != arguments.length) {//比较方法中参数个数与从切点中获取的参数个数是否相同，原因是方法可以重载哦
+            if(clazzs.length != arguments.length) {
+                //比较方法中参数个数与从切点中获取的参数个数是否相同，原因是方法可以重载哦
                 continue;
             }
             description = method.getAnnotation(SystemControllerLog.class).description();
@@ -245,7 +246,8 @@ public class SystemLogAspect {
                 continue;
             }
             Class[] clazzs = method.getParameterTypes();
-            if(clazzs.length != arguments.length) {//比较方法中参数个数与从切点中获取的参数个数是否相同，原因是方法可以重载哦
+            if(clazzs.length != arguments.length) {
+                //比较方法中参数个数与从切点中获取的参数个数是否相同，原因是方法可以重载哦
                 continue;
             }
             description = method.getAnnotation(SystemServiceLog.class).description();

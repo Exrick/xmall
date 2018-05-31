@@ -14,6 +14,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
 
+/**
+ * @author Exrickx
+ */
 @Service
 public class RegisterServiceImpl implements RegisterService {
 	

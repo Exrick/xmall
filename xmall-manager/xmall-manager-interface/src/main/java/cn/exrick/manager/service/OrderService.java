@@ -1,7 +1,10 @@
 package cn.exrick.manager.service;
 
 import cn.exrick.common.pojo.DataTablesResult;
+import cn.exrick.manager.dto.OrderDetail;
 import cn.exrick.manager.pojo.TbThanks;
+
+import java.math.BigDecimal;
 
 
 /**
@@ -26,6 +29,38 @@ public interface OrderService {
      * @return
      */
     Long countOrder();
+
+    /**
+     * 获取订单详情
+     * @param orderId
+     * @return
+     */
+    OrderDetail getOrderDetail(String orderId);
+
+    /**
+     * 发货
+     * @param orderId
+     * @param shippingName
+     * @param shippingCode
+     * @param postFee
+     * @return
+     */
+    int deliver(String orderId,String shippingName,String shippingCode,BigDecimal postFee);
+
+    /**
+     * 备注
+     * @param orderId
+     * @param message
+     * @return
+     */
+    int remark(String orderId, String message);
+
+    /**
+     * 取消订单
+     * @param orderId
+     * @return
+     */
+    int cancelOrderByAdmin(String orderId);
 
     /**
      * 删除订单

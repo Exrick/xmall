@@ -155,7 +155,6 @@
         });
     }
 
-    /*订单-删除*/
     function log_del(obj,id){
         layer.confirm('确认要删除ID为\''+id+'\'的日志吗？',{icon:0},function(index){
             var index = layer.load(3);

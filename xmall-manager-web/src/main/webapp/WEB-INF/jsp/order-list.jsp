@@ -34,7 +34,13 @@
 <div>
     <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 订单管理 <span class="c-gray en">&gt;</span> 订单列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
     <form class="page-container">
-        <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a></span> <span class="r">共有数据：<strong id="num">0</strong> 条</span> </div>
+        <div class="cl pd-5 bg-1 bk-gray mt-20">
+            <span class="l">
+                <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
+                <a href="javascript:;" onclick="orderPrint()" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe652;</i> 订单打印</a>
+            </span>
+            <span class="r">共有数据：<strong id="num">0</strong> 条</span>
+        </div>
         <div class="mt-20">
             <div class="mt-20" style="margin-bottom: 70px">
                 <table class="table table-border table-bordered table-bg table-hover table-sort" width="100%">
@@ -43,16 +49,15 @@
                         <th width="25"><input type="checkbox" name="" value=""></th>
                         <th width="80">订单号</th>
                         <th width="80">支付金额(￥)</th>
-                        <th width="80">物流号</th>
-                        <th width="50">用户ID</th>
-                        <th width="80">用户账号</th>
+                        <th width="70">用户账号</th>
+                        <th width="100">物流号</th>
+                        <th width="100">备注</th>
                         <th width="100">创建时间</th>
-                        <th width="100">更新时间</th>
                         <th width="100">支付时间</th>
                         <th width="100">关闭时间</th>
                         <th width="100">完成时间</th>
-                        <th width="100">订单状态</th>
-                        <th width="50">操作</th>
+                        <th width="80">订单状态</th>
+                        <th width="100">操作</th>
                     </tr>
                     </thead>
                 </table>
@@ -91,15 +96,10 @@
                 },
                 { "data": "orderId"},
                 { "data": "payment"},
-                { "data": "shippingCode"},
-                { "data": "userId"},
                 { "data": "buyerNick"},
+                { "data": "shippingCode"},
+                { "data": "buyerMessage"},
                 { "data": "createTime",
-                    render : function(data,type, row, meta) {
-                        return date(data);
-                    }
-                },
-                { "data": "updateTime",
                     render : function(data,type, row, meta) {
                         return date(data);
                     }
@@ -143,14 +143,17 @@
                 {
                     "data": null,
                     render : function(data,type, row, meta) {
-                        return "<a title=\"删除\" href=\"javascript:;\" onclick=\"order_del(this,"+row.orderId+")\" class=\"ml-5\" style=\"text-decoration:none\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>";
+                        return "<a title=\"发货\" href=\"javascript:;\" onclick=\"order_deliver("+row.orderId+")\" class=\"ml-5\" style=\"text-decoration:none\"><i class=\"Hui-iconfont\">&#xe603;</i></a>"+
+                            "<a title=\"备注\" href=\"javascript:;\" onclick=\"order_remark('"+row.buyerMessage+"',"+row.orderId+")\" class=\"ml-5\" style=\"text-decoration:none\"><i class=\"Hui-iconfont\">&#xe647;</i></a>"+
+                            "<a title=\"取消订单\" href=\"javascript:;\" onclick=\"order_cancel("+row.orderId+")\" class=\"ml-5\" style=\"text-decoration:none\"><i class=\"Hui-iconfont\">&#xe60b;</i></a>"+
+                            "<a title=\"删除\" href=\"javascript:;\" onclick=\"order_del(this,"+row.orderId+")\" class=\"ml-5\" style=\"text-decoration:none\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>";
                     }
                 }
             ],
             "aaSorting": [[ 6, "desc" ]],//默认第几个排序
             "bStateSave": false,//状态保存
             "aoColumnDefs": [
-                {"orderable":false,"aTargets":[0,12]}// 制定列不参与排序
+                {"orderable":false,"aTargets":[0,11]}// 制定列不参与排序
             ],
             language: {
                 url: '/lib/datatables/Chinese.json'
@@ -178,6 +181,69 @@
                     layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
                 }
             }
+        });
+    }
+
+    var orderId="";
+    function orderPrint() {
+        var cks=document.getElementsByName("checkbox");
+        var count=0;
+        for(var i=0;i<cks.length;i++){
+            if(cks[i].checked){
+                orderId = cks[i].value;
+                count++;
+            }
+        }
+        if(count==0){
+            layer.msg('您还未勾选任何数据!',{icon:5,time:3000});
+            return;
+        }else if(count>1){
+            layer.msg('所选订单不属于同一订单!',{icon:5,time:3000});
+            return;
+        }
+
+        var index = layer.open({
+            type: 2,
+            title: '打印预览',
+            content: 'order-print'
+        });
+        layer.full(index);
+    }
+
+    function order_deliver(id){
+        orderId=id;
+        layer_show("发货","order-deliver",500,280);
+    }
+
+    var oldRemark="";
+    function order_remark(message,id){
+        oldRemark=message;
+        orderId=id;
+        layer_show("备注","order-remark",500,250);
+    }
+
+    /*订单-取消*/
+    function order_cancel(id){
+        layer.confirm('确认要取消ID为\''+id+'\'的订单吗？',{icon:0},function(index){
+            var index = layer.load(3);
+            $.ajax({
+                type: 'GET',
+                url: '/order/cancel/'+id,
+                dataType: 'json',
+                success: function(data){
+                    layer.close(index);
+                    if(data.success!=true){
+                        layer.alert(data.message,{title: '错误信息',icon: 2});
+                        return;
+                    }
+                    refresh();
+                    layer.msg('取消成功!',{icon:1,time:1000});
+                },
+                error:function(XMLHttpRequest){
+                    layer.close(index);
+                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
+                }
+            });
         });
     }
 

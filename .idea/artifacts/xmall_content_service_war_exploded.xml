@@ -51,7 +51,7 @@
           <element id="library" level="project" name="Maven: org.apache.curator:curator-framework:4.0.1" />
           <element id="library" level="project" name="Maven: org.apache.curator:curator-client:4.0.1" />
           <element id="library" level="project" name="Maven: com.google.guava:guava:20.0" />
-          <element id="library" level="project" name="Maven: com.qiniu:qiniu-java-sdk:7.2.11" />
+          <element id="library" level="project" name="Maven: com.qiniu:qiniu-java-sdk:7.2.12" />
           <element id="library" level="project" name="Maven: com.squareup.okhttp3:okhttp:3.9.1" />
           <element id="library" level="project" name="Maven: com.squareup.okio:okio:1.13.0" />
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.2" />

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Exrick">
-    <link rel="Shortcut Icon" href="icon/all.png" />
+    <link rel="Shortcut Icon" href="icon/x.png" />
     <title>XMall后台管理系统 v1.0</title>
     <meta name="keywords" content="XMall后台管理系统 v1.0,XMall,XMall购物商城后台管理系统">
     <meta name="description" content="XMall后台管理系统 v1.0，是一款电商后台管理系统，适合中小型CMS后台系统。">
@@ -341,7 +341,7 @@
                                     前台商城系统
                                 </td>
                                 <td>
-                                    <span class="badge bg-success">85%</span>
+                                    <span class="badge bg-success">90%</span>
                                 </td>
                                 <td>
                                     <div id="work-progress2"></div>
@@ -353,7 +353,7 @@
                                     支付系统
                                 </td>
                                 <td>
-                                    <span class="badge bg-info">67%</span>
+                                    <span class="badge bg-info">90%</span>
                                 </td>
                                 <td>
                                     <div id="work-progress3"></div>
@@ -374,10 +374,10 @@
                             <tr>
                                 <td>5</td>
                                 <td>
-                                    宣传视频
+                                    <a href="https://www.bilibili.com/video/av23121122/" target="_blank">宣传视频(点我观看)</a>
                                 </td>
                                 <td>
-                                    <span class="badge bg-primary">15%</span>
+                                    <span class="badge bg-primary">100%</span>
                                 </td>
                                 <td>
                                     <div id="work-progress5"></div>
@@ -748,7 +748,7 @@
         url:"/sys/weather",
         type: 'GET',
         success:function (data) {
-            if(data.result==null||data.result==""||data.result.indexOf('错误')>=0){
+            if(data.result==null||data.result==""||data.result.indexOf('错误')>=0||data.result.indexOf('不合法')>=0){
                 layer.msg("无法获取您的IP，天气信息获取失败");
                 return ;
             }
@@ -821,7 +821,7 @@
         layer.open({
             type: 1
             ,title:'通知'
-            ,area: ['350px', '230px']
+            //,area: ['350px', '230px']
             ,content: '<div style="margin: 10px 20px 10px 20px;">'+data+'</div>'
             ,btn: ['知道了']
             ,shade: 0 //不显示遮罩

@@ -45,6 +45,12 @@
             </div>
         </div>
         <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">捐赠方式：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" id="payType" name="payType">
+            </div>
+        </div>
+        <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">捐赠信息：</label>
             <div class="formControls col-xs-8 col-sm-9">
                 <input type="text" class="input-text" placeholder="" name="info" id="info">
@@ -88,17 +94,15 @@
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <script type="text/javascript" src="lib/common.js"></script>
 <script type="text/javascript">
-
     $("#id").val(parent.thanksId);
     $("#username").val(parent.username);
     $("#nickName").val(parent.nickName);
     $("#money").val(parent.money);
     $("#info").val(parent.info);
+    $("#payType").val(parent.payType);
     $("#time").val(parent.time);
     $("#state").val(parent.state);
-
     $(function(){
-
         $("#form-admin-add").validate({
             rules:{
                 nickName:{

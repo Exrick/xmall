@@ -16,6 +16,9 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Exrickx
+ */
 @Service
 public class CartServiceImpl implements CartService {
 
@@ -108,6 +111,19 @@ public class CartServiceImpl implements CartService {
     public int deleteCartItem(long userId, long itemId) {
 
         jedisClient.hdel(CART_PRE + ":" + userId, itemId + "");
+        return 1;
+    }
+
+    @Override
+    public int delChecked(long userId) {
+
+        List<String> jsonList = jedisClient.hvals(CART_PRE+":"+userId);
+        for (String json : jsonList) {
+            CartProduct cartProduct = new Gson().fromJson(json,CartProduct.class);
+            if("1".equals(cartProduct.getChecked())) {
+                jedisClient.hdel(CART_PRE+":"+userId, cartProduct.getProductId()+"");
+            }
+        }
         return 1;
     }
 
