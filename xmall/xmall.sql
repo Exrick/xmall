@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50527
 File Encoding         : 65001
 
-Date: 2018-04-20 12:35:05
+Date: 2018-05-31 23:28:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -63,6 +63,42 @@ CREATE TABLE `tb_base` (
 -- Records of tb_base
 -- ----------------------------
 INSERT INTO `tb_base` VALUES ('1', 'XMall后台管理系统 v1.0', 'XMall后台管理系统 v1.0,XMall,XMall购物商城后台管理系统', 'XMall后台管理系统 v1.0，是一款电商后台管理系统，适合中小型CMS后台系统。', '', '', '', '', '0', 'test login notice', '0', 'test all notice', '', '', 'http://blog.exrick.cn');
+
+-- ----------------------------
+-- Table structure for tb_dict
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_dict`;
+CREATE TABLE `tb_dict` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dict` varchar(255) DEFAULT NULL,
+  `type` int(1) DEFAULT NULL COMMENT '1扩展词 0停用词',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of tb_dict
+-- ----------------------------
+INSERT INTO `tb_dict` VALUES ('1', 'Exrick', '1');
+INSERT INTO `tb_dict` VALUES ('2', 'xmall', '1');
+INSERT INTO `tb_dict` VALUES ('4', 'test', '0');
+
+-- ----------------------------
+-- Table structure for tb_express
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_express`;
+CREATE TABLE `tb_express` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '快递ID',
+  `express_name` varchar(255) DEFAULT NULL COMMENT '商品描述',
+  `sort_order` int(11) DEFAULT NULL COMMENT '排序',
+  `created` datetime DEFAULT NULL COMMENT '创建时间',
+  `updated` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='商品描述表';
+
+-- ----------------------------
+-- Records of tb_express
+-- ----------------------------
+INSERT INTO `tb_express` VALUES ('1', '京东快递', '1', '2018-05-31 11:45:10', null);
 
 -- ----------------------------
 -- Table structure for tb_item
@@ -1381,57 +1417,6 @@ INSERT INTO `tb_item_desc` VALUES ('150642571432851', '<img src=\"https://resour
 INSERT INTO `tb_item_desc` VALUES ('150642571432852', '<img src=\"https://resource.smartisan.com/resource/a86e4fc110fbb0bf72095a6ea78de841.jpg\" style=\"width:1220px;height:13362px;\" alt=\"\" />', '2018-04-19 22:38:59', '2018-04-20 00:18:17');
 
 -- ----------------------------
--- Table structure for tb_item_param
--- ----------------------------
-DROP TABLE IF EXISTS `tb_item_param`;
-CREATE TABLE `tb_item_param` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `item_cat_id` bigint(20) DEFAULT NULL COMMENT '商品类目ID',
-  `param_data` text COMMENT '参数数据 格式为json格式',
-  `created` datetime DEFAULT NULL,
-  `updated` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `item_cat_id` (`item_cat_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COMMENT='商品规则参数';
-
--- ----------------------------
--- Records of tb_item_param
--- ----------------------------
-INSERT INTO `tb_item_param` VALUES ('1', '3', '[{\"group\":\"组名1\",\"params\":[\"组员1\",\"组员2\"]},{\"group\":\"组名2\",\"params\":[\"组员1\",\"组员2\"]},{\"group\":\"组名3\",\"params\":[\"组员1\",\"组员2\",\"组员3\",\"组员4\"]}]', '2015-04-03 10:21:22', '2015-04-03 10:21:22');
-INSERT INTO `tb_item_param` VALUES ('2', '560', '[{\"group\":\"主体\",\"params\":[\"品牌\",\"型号\",\"颜色\",\"上市年份\"]},{\"group\":\"网络\",\"params\":[\"4G网络制式\",\"3G网络制式\",\"2G网络制式\"]},{\"group\":\"存储\",\"params\":[\"机身内存\",\"储存卡类型\"]}]', '2015-04-03 10:40:12', '2015-04-03 10:40:12');
-INSERT INTO `tb_item_param` VALUES ('3', '298', '[{\"group\":\"g1\",\"params\":[\"aa\",\"bb\",\"cc\"]},{\"group\":\"g2\",\"params\":[\"ad\",\"sd\"]},{\"group\":\"g3\",\"params\":[\"sdd\",\"sdfs\",\"dfg\"]}]', '2015-06-05 11:59:45', '2015-06-05 11:59:45');
-INSERT INTO `tb_item_param` VALUES ('21', '440', '[{\"group\":\"1\",\"params\":[\"2w\"]},{\"group\":\"2\",\"params\":[\"1\"]},{\"group\":\"3\",\"params\":[\"1\"]},{\"group\":\"4\",\"params\":[\"1\"]}]', '2015-06-05 12:04:41', '2015-06-05 12:04:41');
-INSERT INTO `tb_item_param` VALUES ('22', '298', '[{\"group\":\"f1\",\"params\":[\"1\"]},{\"group\":\"f2\",\"params\":[\"2\"]}]', '2015-06-05 12:08:07', '2015-06-05 12:08:07');
-INSERT INTO `tb_item_param` VALUES ('23', '257', '[{\"group\":\"12\",\"params\":[\"12\"]}]', '2015-06-05 12:10:45', '2015-06-05 12:10:45');
-INSERT INTO `tb_item_param` VALUES ('24', '443', '[{\"group\":\"股氯气\",\"params\":[\"撒旦法\"]}]', '2015-06-05 12:11:16', '2015-06-05 12:11:16');
-INSERT INTO `tb_item_param` VALUES ('25', '298', '[{\"group\":\"1\",\"params\":[\"1\"]}]', '2015-06-05 12:21:01', '2015-06-05 12:21:01');
-INSERT INTO `tb_item_param` VALUES ('26', '582', '[{\"group\":\"分组1\",\"params\":[\"参数1\",\"参数2\",\"参数3\",\"参数4\",\"参数5\"]},{\"group\":\"分组2\",\"params\":[\"参数21\",\"参数22\",\"参数23\",\"参数24\"]}]', '2015-07-23 16:44:32', '2015-07-23 16:44:32');
-
--- ----------------------------
--- Table structure for tb_item_param_item
--- ----------------------------
-DROP TABLE IF EXISTS `tb_item_param_item`;
-CREATE TABLE `tb_item_param_item` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `item_id` bigint(20) DEFAULT NULL COMMENT '商品ID',
-  `param_data` text COMMENT '参数数据 格式为json格式',
-  `created` datetime DEFAULT NULL,
-  `updated` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `item_id` (`item_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='商品规格和商品的关系表';
-
--- ----------------------------
--- Records of tb_item_param_item
--- ----------------------------
-INSERT INTO `tb_item_param_item` VALUES ('1', '48', '[{\"group\":\"主体\",\"params\":[{\"k\":\"品牌\",\"v\":\"苹果（Apple）\"},{\"k\":\"型号\",\"v\":\"iPhone 6 A1586\"},{\"k\":\"颜色\",\"v\":\"金色\"},{\"k\":\"上市年份\",\"v\":\"2014\"}]},{\"group\":\"网络\",\"params\":[{\"k\":\"4G网络制式\",\"v\":\"移动4G(TD-LTE)/联通4G(FDD-LTE)/电信4G(FDD-LTE)\"},{\"k\":\"3G网络制式\",\"v\":\"移动3G(TD-SCDMA)/联通3G(WCDMA)/电信3G（CDMA2000）\"},{\"k\":\"2G网络制式\",\"v\":\"移动2G/联通2G(GSM)/电信2G(CDMA)\"}]},{\"group\":\"存储\",\"params\":[{\"k\":\"机身内存\",\"v\":\"16GB ROM\"},{\"k\":\"储存卡类型\",\"v\":\"不支持\"}]}]', '2015-04-03 10:52:55', '2015-04-03 10:52:55');
-INSERT INTO `tb_item_param_item` VALUES ('2', '1188043', '[{\"group\":\"主体\",\"params\":[{\"k\":\"品牌\",\"v\":\"锤子\"},{\"k\":\"型号\",\"v\":\"T1(SM705)\"},{\"k\":\"颜色\",\"v\":\"黑色\"},{\"k\":\"上市年份\",\"v\":\"2014年\"}]},{\"group\":\"网络\",\"params\":[{\"k\":\"4G网络制式\",\"v\":\"移动4G（TD-LTE）/联通4G（FDD-LTE）\"},{\"k\":\"3G网络制式\",\"v\":\"移动3G(TD-SCDMA)/联通3G(WCDMA)\"},{\"k\":\"2G网络制式\",\"v\":\"移动2G/联通2G(GSM)\"}]},{\"group\":\"存储\",\"params\":[{\"k\":\"机身内存\",\"v\":\"32GB ROM\"},{\"k\":\"储存卡类型\",\"v\":\"2GB RAM\"}]}]', '2015-04-06 11:24:10', '2015-04-06 11:24:10');
-INSERT INTO `tb_item_param_item` VALUES ('3', '1433500495290', '[{\"group\":\"主体\",\"params\":[{\"k\":\"品牌\",\"v\":\"1\"},{\"k\":\"型号\",\"v\":\"2\"},{\"k\":\"颜色\",\"v\":\"3\"},{\"k\":\"上市年份\",\"v\":\"4\"}]},{\"group\":\"网络\",\"params\":[{\"k\":\"4G网络制式\",\"v\":\"a\"},{\"k\":\"3G网络制式\",\"v\":\"b\"},{\"k\":\"2G网络制式\",\"v\":\"c\"}]},{\"group\":\"存储\",\"params\":[{\"k\":\"机身内存\",\"v\":\"de\"},{\"k\":\"储存卡类型\",\"v\":\"ef\"}]}]', '2015-06-05 18:34:52', '2015-06-05 18:34:52');
-INSERT INTO `tb_item_param_item` VALUES ('4', '1001434271015869', '[{\"group\":\"主体\",\"params\":[{\"k\":\"品牌\",\"v\":\"华为（HUAWEI）\"},{\"k\":\"型号\",\"v\":\"P8\"},{\"k\":\"颜色\",\"v\":\"皓月银\"},{\"k\":\"上市年份\",\"v\":\"2015年\"}]},{\"group\":\"网络\",\"params\":[{\"k\":\"4G网络制式\",\"v\":\"移动4G(TDD-LTE)/联通4G(TDD-LTE/FDD-LTE)\"},{\"k\":\"3G网络制式\",\"v\":\"移动3G(TD-SCDMA)/联通3G(WCDMA)\"},{\"k\":\"2G网络制式\",\"v\":\"移动2G/联通2G(GSM)\"}]},{\"group\":\"存储\",\"params\":[{\"k\":\"机身内存\",\"v\":\"16GB ROM\"},{\"k\":\"储存卡类型\",\"v\":\"MicroSD(TF)\"}]}]', '2015-06-14 16:36:55', '2015-06-14 16:36:55');
-INSERT INTO `tb_item_param_item` VALUES ('5', '101434521126763', '[{\"group\":\"组名1\",\"params\":[{\"k\":\"组员1\",\"v\":\"a\"},{\"k\":\"组员2\",\"v\":\"a\"}]},{\"group\":\"组名2\",\"params\":[{\"k\":\"组员1\",\"v\":\"sd\"},{\"k\":\"组员2\",\"v\":\"ss\"}]},{\"group\":\"组名3\",\"params\":[{\"k\":\"组员1\",\"v\":\"sd\"},{\"k\":\"组员2\",\"v\":\"sd\"},{\"k\":\"组员3\",\"v\":\"sd\"},{\"k\":\"组员4\",\"v\":\"sda\"}]}]', '2015-06-17 14:05:26', '2015-06-17 14:05:26');
-INSERT INTO `tb_item_param_item` VALUES ('8', '143771131488369', '[{\"group\":\"主体\",\"params\":[{\"k\":\"品牌\",\"v\":\"1\"},{\"k\":\"型号\",\"v\":\"1\"},{\"k\":\"颜色\",\"v\":\"2\"},{\"k\":\"上市年份\",\"v\":\"3\"}]},{\"group\":\"网络\",\"params\":[{\"k\":\"4G网络制式\",\"v\":\"1\"},{\"k\":\"3G网络制式\",\"v\":\"2\"},{\"k\":\"2G网络制式\",\"v\":\"3\"}]},{\"group\":\"存储\",\"params\":[{\"k\":\"机身内存\",\"v\":\"4\"},{\"k\":\"储存卡类型\",\"v\":\"2\"}]}]', '2015-07-24 12:15:14', '2015-07-24 12:15:14');
-
--- ----------------------------
 -- Table structure for tb_log
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_log`;
@@ -1448,11 +1433,14 @@ CREATE TABLE `tb_log` (
   `time` int(11) DEFAULT NULL,
   `create_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_log
 -- ----------------------------
+INSERT INTO `tb_log` VALUES ('3', '登录系统', '1', '/user/login', 'POST', '{\"password\":\"你是看不见我的\",\"t\":\"1527739246798\",\"challenge\":\"1c383cd30b7c298ab50293adfecb7b18d1\",\"seccode\":\"9f1a1b37a93b33524ef33924f73e1e26|jordan\",\"username\":\"test\",\"validate\":\"9f1a1b37a93b33524ef33924f73e1e26\"}', 'test', '192.168.95.2', '未知', '501', '2018-05-31 12:00:46');
+INSERT INTO `tb_log` VALUES ('4', '登录系统', '1', '/user/login', 'POST', '{\"password\":\"你是看不见我的\",\"t\":\"1527739351438\",\"challenge\":\"8f14e45fceea167a5a36dedd4bea254332\",\"seccode\":\"9366f4a83e3eb8faef139a11b1f7d8ec|jordan\",\"username\":\"admin\",\"validate\":\"9366f4a83e3eb8faef139a11b1f7d8ec\"}', 'admin', '192.168.95.2', '未知', '357', '2018-05-31 12:02:31');
+INSERT INTO `tb_log` VALUES ('5', '登录系统', '1', '/user/login', 'POST', '{\"password\":\"你是看不见我的\",\"t\":\"1527739462850\",\"challenge\":\"6512bd43d9caa6e02c990b0a82652dca03\",\"seccode\":\"6202355ecc555ae83a659c6a9374da83|jordan\",\"username\":\"test\",\"validate\":\"6202355ecc555ae83a659c6a9374da83\"}', 'test', '192.168.95.2', '未知', '2233', '2018-05-31 12:04:23');
 
 -- ----------------------------
 -- Table structure for tb_member
@@ -1520,9 +1508,6 @@ CREATE TABLE `tb_order` (
 -- Records of tb_order
 -- ----------------------------
 INSERT INTO `tb_order` VALUES ('150787555927616', '1.00', null, null, '5', '2017-10-13 14:19:19', '2017-10-13 14:19:19', null, null, null, '2017-10-13 14:19:35', null, null, '63', null, 'admin', null);
-INSERT INTO `tb_order` VALUES ('152189811089285', '49.00', null, null, '1', '2018-03-24 21:28:30', '2018-03-24 21:32:28', '2018-03-24 21:32:28', null, null, null, null, null, '62', null, 'test', null);
-INSERT INTO `tb_order` VALUES ('152190022212320', '1.00', null, null, '6', '2018-03-24 22:03:42', '2018-03-24 22:21:02', '2018-03-24 22:03:49', null, null, '2018-03-24 22:21:02', null, null, '62', null, 'test', null);
-INSERT INTO `tb_order` VALUES ('152212603026105', '1.00', null, null, '4', '2018-03-27 12:47:10', '2018-03-27 12:48:23', '2018-03-27 12:47:22', null, '2018-03-27 12:48:23', null, null, null, '62', null, 'test', null);
 
 -- ----------------------------
 -- Table structure for tb_order_item
@@ -1546,9 +1531,6 @@ CREATE TABLE `tb_order_item` (
 -- Records of tb_order_item
 -- ----------------------------
 INSERT INTO `tb_order_item` VALUES ('150787555927880', '150642571432835', '150787555927616', '1', '捐赠商品', '1.00', '1.00', 'http://ow2h3ee9w.bkt.clouddn.com/FgwHSk1Rnd-8FKqNJhFSSdcq2QVB');
-INSERT INTO `tb_order_item` VALUES ('152189811096002', '635906', '152189811089285', '1', 'Smartisan M1 软胶保护套', '49.00', '49.00', 'http://image.smartisanos.cn/resource/1410440c8a690ec361e6e77de59939c6.png');
-INSERT INTO `tb_order_item` VALUES ('152190022215406', '150635087972564', '152190022212320', '1', '支付测试商品 IPhone X 全面屏 全面绽放', '1.00', '1.00', 'http://ow2h3ee9w.bkt.clouddn.com/FuMpJKl7eTLaSAZCY0wS_ZfA9nZu');
-INSERT INTO `tb_order_item` VALUES ('152212603031720', '150635087972564', '152212603026105', '1', '支付测试商品 IPhone X 全面屏 全面绽放', '1.00', '1.00', 'http://ow2h3ee9w.bkt.clouddn.com/FuMpJKl7eTLaSAZCY0wS_ZfA9nZu');
 
 -- ----------------------------
 -- Table structure for tb_order_shipping
@@ -1573,9 +1555,6 @@ CREATE TABLE `tb_order_shipping` (
 -- Records of tb_order_shipping
 -- ----------------------------
 INSERT INTO `tb_order_shipping` VALUES ('150787555927616', '4', '4', null, null, null, null, '4', null, '2017-10-13 14:19:19', '2017-10-13 14:19:19');
-INSERT INTO `tb_order_shipping` VALUES ('152189811089285', '1', '1', null, null, null, null, '1', null, '2018-03-24 21:28:30', '2018-03-24 21:28:30');
-INSERT INTO `tb_order_shipping` VALUES ('152190022212320', '1', '1', null, null, null, null, '1', null, '2018-03-24 22:03:42', '2018-03-24 22:03:42');
-INSERT INTO `tb_order_shipping` VALUES ('152212603026105', '1', '1', null, null, null, null, '1', null, '2018-03-27 12:47:10', '2018-03-27 12:47:10');
 
 -- ----------------------------
 -- Table structure for tb_panel
@@ -1656,7 +1635,7 @@ INSERT INTO `tb_panel_content` VALUES ('29', '2', '2', '150642571432843', '0', '
 INSERT INTO `tb_panel_content` VALUES ('30', '3', '2', '150642571432850', '0', '', 'https://resource.smartisan.com/resource/a/acillouceng1220856.jpg', null, null, '2018-04-15 20:15:18', '2018-04-20 11:18:03');
 INSERT INTO `tb_panel_content` VALUES ('32', '7', '0', '150635087972564', '1', '', 'http://static.smartisanos.cn/index/img/store/home/banner-3d-item-1-box-1_61bdc2f4f9.png', 'http://static.smartisanos.cn/index/img/store/home/banner-3d-item-1-box-3_8fa7866d59.png', 'http://ow2h3ee9w.bkt.clouddn.com/banner-3d-item-1-box-33.png', '2018-04-17 20:41:02', '2018-04-17 20:58:41');
 INSERT INTO `tb_panel_content` VALUES ('33', '7', '0', '150642571432835', '2', '', 'http://oweupqzdv.bkt.clouddn.com/bg_left.png', 'http://ow2h3ee9w.bkt.clouddn.com/phone_left2.png', 'http://oweupqzdv.bkt.clouddn.com/erji_left.png', '2018-04-17 21:08:22', '2018-04-20 10:47:19');
-INSERT INTO `tb_panel_content` VALUES ('34', '7', '0', '150635087972564', '3', null, 'http://oweupqzdv.bkt.clouddn.com/red-left.png', 'http://oweupqzdv.bkt.clouddn.com/word-left.png', 'http://oweupqzdv.bkt.clouddn.com/time-left.png', '2018-04-17 21:08:30', '2018-04-17 21:08:32');
+INSERT INTO `tb_panel_content` VALUES ('34', '7', '0', '150635087972564', '3', null, 'https://s1.ax1x.com/2018/05/19/Ccdiid.png', '', '', '2018-04-17 21:08:30', '2018-04-17 21:08:32');
 INSERT INTO `tb_panel_content` VALUES ('35', '7', '0', '150642571432843', '4', '', 'http://ow2h3ee9w.bkt.clouddn.com/24401108web1.png', null, null, '2018-04-18 23:44:48', '2018-04-20 11:41:46');
 INSERT INTO `tb_panel_content` VALUES ('36', '9', '0', '150635087972564', '1', 'https://www.smartisan.com/pr/#/video/conference-jianguopro2', 'https://resource.smartisan.com/resource/88684d7ed5eee77e34f044fa32a9121b.png', null, null, '2018-04-18 23:51:45', '2018-04-20 12:03:05');
 INSERT INTO `tb_panel_content` VALUES ('37', '9', '0', '150642571432835', '2', 'https://www.smartisan.com/os/#/4-x', 'https://resource.smartisan.com/resource/6/610400dibu.jpg', null, null, '2018-04-18 23:51:51', '2018-04-20 12:03:19');
@@ -1684,13 +1663,11 @@ CREATE TABLE `tb_permission` (
   `name` varchar(255) DEFAULT NULL,
   `permission` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_permission
 -- ----------------------------
-INSERT INTO `tb_permission` VALUES ('15', '添加栏目', '/content/cat/add');
-INSERT INTO `tb_permission` VALUES ('16', '编辑栏目', '/content/cat/update');
 INSERT INTO `tb_permission` VALUES ('17', '添加栏目内容', '/content/add');
 INSERT INTO `tb_permission` VALUES ('18', '删除栏目内容', '/content/del/*');
 INSERT INTO `tb_permission` VALUES ('19', '编辑栏目内容', '/content/update');
@@ -1704,7 +1681,6 @@ INSERT INTO `tb_permission` VALUES ('28', '商品删除', '/item/del/*');
 INSERT INTO `tb_permission` VALUES ('29', '启用商品', '/item/start/*');
 INSERT INTO `tb_permission` VALUES ('30', '停用商品', '/item/stop/*');
 INSERT INTO `tb_permission` VALUES ('31', '编辑商品', '/item/update/*');
-INSERT INTO `tb_permission` VALUES ('32', '同步索引页面', '/refresh-index');
 INSERT INTO `tb_permission` VALUES ('33', '会员添加', '/member/add');
 INSERT INTO `tb_permission` VALUES ('34', '修改会员密码', '/member/changePass/*');
 INSERT INTO `tb_permission` VALUES ('35', '会员删除', '/member/del/*');
@@ -1740,6 +1716,16 @@ INSERT INTO `tb_permission` VALUES ('64', '更新首页缓存', '/redis/index/up
 INSERT INTO `tb_permission` VALUES ('65', '更新推荐板块缓存', '/redis/recommend/update');
 INSERT INTO `tb_permission` VALUES ('66', '更新捐赠板块缓存', '/redis/thank/update');
 INSERT INTO `tb_permission` VALUES ('67', '同步索引', '/item/importIndex');
+INSERT INTO `tb_permission` VALUES ('69', '订单备注', '/order/remark');
+INSERT INTO `tb_permission` VALUES ('70', '订单发货', '/order/deliver');
+INSERT INTO `tb_permission` VALUES ('71', '取消订单', '/order/cancel/*');
+INSERT INTO `tb_permission` VALUES ('72', '快递添加', '/express/add');
+INSERT INTO `tb_permission` VALUES ('73', '快递编辑', '/express/update');
+INSERT INTO `tb_permission` VALUES ('74', '快递删除', '/express/del/*');
+INSERT INTO `tb_permission` VALUES ('75', '词典添加', '/dict/add');
+INSERT INTO `tb_permission` VALUES ('76', '词典编辑', '/dict/update');
+INSERT INTO `tb_permission` VALUES ('77', '词典删除', '/dict/del/*');
+INSERT INTO `tb_permission` VALUES ('78', '捐赠管理页面', '/thanks-list');
 
 -- ----------------------------
 -- Table structure for tb_role
@@ -1767,62 +1753,69 @@ CREATE TABLE `tb_role_perm` (
   `role_id` int(11) DEFAULT NULL,
   `permission_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=188 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=304 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_role_perm
 -- ----------------------------
-INSERT INTO `tb_role_perm` VALUES ('137', '1', '15');
-INSERT INTO `tb_role_perm` VALUES ('138', '1', '16');
-INSERT INTO `tb_role_perm` VALUES ('139', '1', '17');
-INSERT INTO `tb_role_perm` VALUES ('140', '1', '18');
-INSERT INTO `tb_role_perm` VALUES ('141', '1', '19');
-INSERT INTO `tb_role_perm` VALUES ('142', '1', '20');
-INSERT INTO `tb_role_perm` VALUES ('143', '1', '21');
-INSERT INTO `tb_role_perm` VALUES ('144', '1', '23');
-INSERT INTO `tb_role_perm` VALUES ('145', '1', '24');
-INSERT INTO `tb_role_perm` VALUES ('146', '1', '25');
-INSERT INTO `tb_role_perm` VALUES ('147', '1', '27');
-INSERT INTO `tb_role_perm` VALUES ('148', '1', '28');
-INSERT INTO `tb_role_perm` VALUES ('149', '1', '29');
-INSERT INTO `tb_role_perm` VALUES ('150', '1', '30');
-INSERT INTO `tb_role_perm` VALUES ('151', '1', '31');
-INSERT INTO `tb_role_perm` VALUES ('152', '1', '32');
-INSERT INTO `tb_role_perm` VALUES ('153', '1', '33');
-INSERT INTO `tb_role_perm` VALUES ('154', '1', '34');
-INSERT INTO `tb_role_perm` VALUES ('155', '1', '35');
-INSERT INTO `tb_role_perm` VALUES ('156', '1', '36');
-INSERT INTO `tb_role_perm` VALUES ('157', '1', '37');
-INSERT INTO `tb_role_perm` VALUES ('158', '1', '38');
-INSERT INTO `tb_role_perm` VALUES ('159', '1', '39');
-INSERT INTO `tb_role_perm` VALUES ('160', '1', '40');
-INSERT INTO `tb_role_perm` VALUES ('161', '1', '41');
-INSERT INTO `tb_role_perm` VALUES ('162', '1', '42');
-INSERT INTO `tb_role_perm` VALUES ('163', '1', '43');
-INSERT INTO `tb_role_perm` VALUES ('164', '1', '44');
-INSERT INTO `tb_role_perm` VALUES ('165', '1', '45');
-INSERT INTO `tb_role_perm` VALUES ('166', '1', '46');
-INSERT INTO `tb_role_perm` VALUES ('167', '1', '47');
-INSERT INTO `tb_role_perm` VALUES ('168', '1', '48');
-INSERT INTO `tb_role_perm` VALUES ('169', '1', '49');
-INSERT INTO `tb_role_perm` VALUES ('170', '1', '50');
-INSERT INTO `tb_role_perm` VALUES ('171', '1', '51');
-INSERT INTO `tb_role_perm` VALUES ('172', '1', '52');
-INSERT INTO `tb_role_perm` VALUES ('173', '1', '53');
-INSERT INTO `tb_role_perm` VALUES ('174', '1', '54');
-INSERT INTO `tb_role_perm` VALUES ('175', '1', '55');
-INSERT INTO `tb_role_perm` VALUES ('176', '1', '56');
-INSERT INTO `tb_role_perm` VALUES ('177', '1', '57');
-INSERT INTO `tb_role_perm` VALUES ('178', '1', '58');
-INSERT INTO `tb_role_perm` VALUES ('179', '1', '59');
-INSERT INTO `tb_role_perm` VALUES ('180', '1', '60');
-INSERT INTO `tb_role_perm` VALUES ('181', '1', '61');
-INSERT INTO `tb_role_perm` VALUES ('182', '1', '62');
-INSERT INTO `tb_role_perm` VALUES ('183', '1', '63');
-INSERT INTO `tb_role_perm` VALUES ('184', '1', '64');
-INSERT INTO `tb_role_perm` VALUES ('185', '1', '65');
-INSERT INTO `tb_role_perm` VALUES ('186', '1', '66');
-INSERT INTO `tb_role_perm` VALUES ('187', '1', '67');
+INSERT INTO `tb_role_perm` VALUES ('246', '1', '17');
+INSERT INTO `tb_role_perm` VALUES ('247', '1', '18');
+INSERT INTO `tb_role_perm` VALUES ('248', '1', '19');
+INSERT INTO `tb_role_perm` VALUES ('249', '1', '20');
+INSERT INTO `tb_role_perm` VALUES ('250', '1', '21');
+INSERT INTO `tb_role_perm` VALUES ('251', '1', '23');
+INSERT INTO `tb_role_perm` VALUES ('252', '1', '24');
+INSERT INTO `tb_role_perm` VALUES ('253', '1', '25');
+INSERT INTO `tb_role_perm` VALUES ('254', '1', '27');
+INSERT INTO `tb_role_perm` VALUES ('255', '1', '28');
+INSERT INTO `tb_role_perm` VALUES ('256', '1', '29');
+INSERT INTO `tb_role_perm` VALUES ('257', '1', '30');
+INSERT INTO `tb_role_perm` VALUES ('258', '1', '31');
+INSERT INTO `tb_role_perm` VALUES ('259', '1', '33');
+INSERT INTO `tb_role_perm` VALUES ('260', '1', '34');
+INSERT INTO `tb_role_perm` VALUES ('261', '1', '35');
+INSERT INTO `tb_role_perm` VALUES ('262', '1', '36');
+INSERT INTO `tb_role_perm` VALUES ('263', '1', '37');
+INSERT INTO `tb_role_perm` VALUES ('264', '1', '38');
+INSERT INTO `tb_role_perm` VALUES ('265', '1', '39');
+INSERT INTO `tb_role_perm` VALUES ('266', '1', '40');
+INSERT INTO `tb_role_perm` VALUES ('267', '1', '41');
+INSERT INTO `tb_role_perm` VALUES ('268', '1', '42');
+INSERT INTO `tb_role_perm` VALUES ('269', '1', '43');
+INSERT INTO `tb_role_perm` VALUES ('270', '1', '44');
+INSERT INTO `tb_role_perm` VALUES ('271', '1', '45');
+INSERT INTO `tb_role_perm` VALUES ('272', '1', '46');
+INSERT INTO `tb_role_perm` VALUES ('273', '1', '47');
+INSERT INTO `tb_role_perm` VALUES ('274', '1', '48');
+INSERT INTO `tb_role_perm` VALUES ('275', '1', '49');
+INSERT INTO `tb_role_perm` VALUES ('276', '1', '50');
+INSERT INTO `tb_role_perm` VALUES ('277', '1', '51');
+INSERT INTO `tb_role_perm` VALUES ('278', '1', '52');
+INSERT INTO `tb_role_perm` VALUES ('279', '1', '53');
+INSERT INTO `tb_role_perm` VALUES ('280', '1', '54');
+INSERT INTO `tb_role_perm` VALUES ('281', '1', '55');
+INSERT INTO `tb_role_perm` VALUES ('282', '1', '56');
+INSERT INTO `tb_role_perm` VALUES ('283', '1', '57');
+INSERT INTO `tb_role_perm` VALUES ('284', '1', '58');
+INSERT INTO `tb_role_perm` VALUES ('285', '1', '59');
+INSERT INTO `tb_role_perm` VALUES ('286', '1', '60');
+INSERT INTO `tb_role_perm` VALUES ('287', '1', '61');
+INSERT INTO `tb_role_perm` VALUES ('288', '1', '62');
+INSERT INTO `tb_role_perm` VALUES ('289', '1', '63');
+INSERT INTO `tb_role_perm` VALUES ('290', '1', '64');
+INSERT INTO `tb_role_perm` VALUES ('291', '1', '65');
+INSERT INTO `tb_role_perm` VALUES ('292', '1', '66');
+INSERT INTO `tb_role_perm` VALUES ('293', '1', '67');
+INSERT INTO `tb_role_perm` VALUES ('294', '1', '69');
+INSERT INTO `tb_role_perm` VALUES ('295', '1', '70');
+INSERT INTO `tb_role_perm` VALUES ('296', '1', '71');
+INSERT INTO `tb_role_perm` VALUES ('297', '1', '72');
+INSERT INTO `tb_role_perm` VALUES ('298', '1', '73');
+INSERT INTO `tb_role_perm` VALUES ('299', '1', '74');
+INSERT INTO `tb_role_perm` VALUES ('300', '1', '75');
+INSERT INTO `tb_role_perm` VALUES ('301', '1', '76');
+INSERT INTO `tb_role_perm` VALUES ('302', '1', '77');
+INSERT INTO `tb_role_perm` VALUES ('303', '1', '78');
 
 -- ----------------------------
 -- Table structure for tb_shiro_filter
@@ -1834,7 +1827,7 @@ CREATE TABLE `tb_shiro_filter` (
   `perms` varchar(255) DEFAULT NULL,
   `sort_order` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_shiro_filter
@@ -1903,6 +1896,16 @@ INSERT INTO `tb_shiro_filter` VALUES ('72', '/redis/index/update', 'perms[/redis
 INSERT INTO `tb_shiro_filter` VALUES ('73', '/redis/recommend/update', 'perms[/redis/recommend/update]', '60');
 INSERT INTO `tb_shiro_filter` VALUES ('74', '/redis/thank/update', 'perms[/redis/thank/update]', '61');
 INSERT INTO `tb_shiro_filter` VALUES ('75', '/item/importIndex', 'perms[/item/importIndex]', '62');
+INSERT INTO `tb_shiro_filter` VALUES ('76', '/order/remark', 'perms[/order/remark]', '63');
+INSERT INTO `tb_shiro_filter` VALUES ('77', '/order/deliver', 'perms[/order/deliver]', '64');
+INSERT INTO `tb_shiro_filter` VALUES ('78', '/order/cancel/*', 'perms[/order/cancel/*]', '65');
+INSERT INTO `tb_shiro_filter` VALUES ('79', '/express/add', 'perms[/express/add]', '66');
+INSERT INTO `tb_shiro_filter` VALUES ('80', '/express/update', 'perms[/express/update]', '67');
+INSERT INTO `tb_shiro_filter` VALUES ('81', '/express/del/*', 'perms[/express/del/*]', '68');
+INSERT INTO `tb_shiro_filter` VALUES ('82', '/dict/add', 'perms[/dict/add]', '69');
+INSERT INTO `tb_shiro_filter` VALUES ('83', '/dict/update', 'perms[/dict/update]', '70');
+INSERT INTO `tb_shiro_filter` VALUES ('84', '/dict/del/*', 'perms[/dict/del/*]', '71');
+INSERT INTO `tb_shiro_filter` VALUES ('85', '/thanks-list', 'perms[/thanks-list]', '72');
 
 -- ----------------------------
 -- Table structure for tb_thanks
@@ -1925,7 +1928,7 @@ CREATE TABLE `tb_thanks` (
 -- ----------------------------
 -- Records of tb_thanks
 -- ----------------------------
-INSERT INTO `tb_thanks` VALUES ('6', '小黄鱼', '18782059038@163.com', '1.00', '无', null, null, null, null, '2018-03-30 19:03:07');
+INSERT INTO `tb_thanks` VALUES ('6', '小黄鱼', '18782059038@163.com', '1.00', '无', null, '1', 'Alipay', null, '2018-03-30 19:03:07');
 
 -- ----------------------------
 -- Table structure for tb_user
