@@ -67,11 +67,11 @@
 
 ### 项目架构及功能模块图
 
-![](https://s1.ax1x.com/2018/05/31/CIaPkq.png)
+![](https://s1.ax1x.com/2018/06/01/CIdaMF.png)
 
-![](https://s1.ax1x.com/2018/05/31/CIaFhV.md.png)
+![](http://p77xsahe9.bkt.clouddn.com/18-6-1/49622822.jpg)
 
-![](https://s1.ax1x.com/2018/05/31/CIaApT.md.png)
+![](http://p77xsahe9.bkt.clouddn.com/18-6-1/94786569.jpg)
 
 ### 前端所用技术
 - 后台页面
@@ -142,6 +142,7 @@
 - ES-IK分词插件词典库扩展
     - 详见 [elasticsearch-analysis-ik插件作者项目README说明](https://github.com/medcl/elasticsearch-analysis-ik)
     - 本项目中扩展接口和禁用词接口分别为 `http:localhost:8888/getDictList` 和 `http:localhost:8888/getStopDictList`，将以上2个接口配置进IK插件扩展配置文件{conf}/analysis-ik/config/IKAnalyzer.cfg.xml 或者 {plugins}/elasticsearch-analysis-ik-*/config/IKAnalyzer.cfg.xml中即可，示例：
+
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
@@ -154,20 +155,21 @@
     </properties>
     ```
 - 限流
-- `xmall-front-web` 中已配置限流，配置文件 `resource.properties` 中可配置全局限流，示例：
-    ```
-    #启用全局限流
-    xmall.rateLimit.enable=true
-    #每1秒内
-    xmall.rateLimit.timeout=1000
-    #限制10个请求
-    xmall.rateLimit.limit=20
-    ```
-- 指定方法限流注解
-    ```java
-    @RateLimiter(limit = 1, timeout = 5000)
-    ```
-- 支持多维度IP、uid等限流 详见代码
+    - `xmall-front-web` 中已配置限流，配置文件 `resource.properties` 中可配置全局限流，示例：
+
+        ```
+        #启用全局限流
+        xmall.rateLimit.enable=true
+        #每1秒内
+        xmall.rateLimit.timeout=1000
+        #限制10个请求
+        xmall.rateLimit.limit=20
+        ```
+    - 指定方法限流注解
+        ```java
+        @RateLimiter(limit = 1, timeout = 5000)
+        ```
+    - 支持多维度IP、uid等限流 详见代码
 ### 技术疑问交流
 - 给作者项目Star或捐赠后可加入交流群 `475743731`，还可免费获取最新源码和 [UI框架](https://github.com/Exrick/xmall/blob/master/study/FlatLab.md) [![](http://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=7b60cec12ba93ebed7568b0a63f22e6e034c0d1df33125ac43ed753342ec6ce7)
 - 作者博客：[http://blog.exrick.cn](http://blog.exrick.cn)
