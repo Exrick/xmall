@@ -115,7 +115,7 @@
     - [hotjar](https://github.com/Exrick/xmall/blob/master/study/hotjar.md)：一体化分析和反馈
     - [搜狐畅言评论插件](http://changyan.kuaizhan.com/)
 - 第三方接口
-    - [Mob全国天气预报接口](http://api.mob.com/#/apiwiki/weather)
+    - [Mob全国天气预报接口](http://api.mob.com/#/apiwiki/weather)：需注册账号创建应用后申请填入AppKey
 - 其它开发工具
     - Jenkins：持续集成
     - [JRebel](https://github.com/Exrick/xmall/blob/master/study/JRebel.md)：开发热部署
@@ -130,7 +130,7 @@
 ### 本地开发运行部署
 - 下载zip直接解压或安装git后执行克隆命令 `git clone https://github.com/Exrick/xmall.git`
 - 安装各中间件并启动：[ZooKeeper](https://github.com/Exrick/xmall/blob/master/study/Zookeeper.md)、[Redis](https://github.com/Exrick/xmall/blob/master/study/Redis.md)、[ActiveMQ](https://github.com/Exrick/xmall/blob/master/study/ActiveMQ.md)、[Elasticsearch](https://github.com/Exrick/xmall/blob/master/study/Elasticsearch.md)
-- 修改各配置文件相应依赖IP配置(默认本地127.0.0.1)，以及七牛云、极验配置在 `xmall-common - utils` 中找到修改，XPay邮箱配置在 `manager-service与sso-service` 中
+- 修改各配置文件相应依赖IP配置(默认本地127.0.0.1)，以及七牛云、极验配置、天气接口在 `xmall-common - utils` 中找到修改，XPay邮箱配置在 `manager-service与sso-service` 中
 - [Maven安装和在IDEA中配置](https://github.com/Exrick/xmall/blob/master/study/Maven.md)
 - 使用IDEA([破解/免费注册](http://idea.lanyus.com/)) `File-Open` 直接打开xmall项目，点击右下角 `Import Changes` 等待安装完依赖即可
 - MySQL数据库新建 `xmall` 数据库，运行sql文件，注意在有 `db.properties` 的模块中修改你的数据库连接配置
@@ -157,13 +157,13 @@
 - 限流
     - `xmall-front-web` 中已配置限流，配置文件 `resource.properties` 中可配置全局限流，示例：
 
-        ```
+        ```properties
         #启用全局限流
         xmall.rateLimit.enable=true
         #每1秒内
         xmall.rateLimit.timeout=1000
         #限制10个请求
-        xmall.rateLimit.limit=20
+        xmall.rateLimit.limit=10
         ```
     - 指定方法限流注解
         ```java
@@ -171,7 +171,7 @@
         ```
     - 支持多维度IP、uid等限流 详见代码
 ### 技术疑问交流
-- 给作者项目Star或捐赠后可加入交流群 `475743731`，还可免费获取最新源码和 [UI框架](https://github.com/Exrick/xmall/blob/master/study/FlatLab.md) [![](http://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=7b60cec12ba93ebed7568b0a63f22e6e034c0d1df33125ac43ed753342ec6ce7)
+- 给作者项目Star或捐赠后可加入交流群 `475743731`，还可免费获取 [慕课网学习资源](https://coding.imooc.com/class/203.html) 和 [UI框架](https://github.com/Exrick/xmall/blob/master/study/FlatLab.md) [![](http://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=7b60cec12ba93ebed7568b0a63f22e6e034c0d1df33125ac43ed753342ec6ce7)
 - 作者博客：[http://blog.exrick.cn](http://blog.exrick.cn)
 ### 捐赠
 ![](http://oweupqzdv.bkt.clouddn.com/FgwHSk1Rnd-8FKqNJhFSSdcq2QVB.png)
