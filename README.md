@@ -4,13 +4,15 @@
 [![](https://img.shields.io/badge/version-1.0-brightgreen.svg)](https://github.com/Exrick/xmall)
 [![GitHub stars](https://img.shields.io/github/stars/Exrick/xmall.svg?style=social&label=Stars)](https://github.com/Exrick/xmall)
 [![GitHub forks](https://img.shields.io/github/forks/Exrick/xmall.svg?style=social&label=Fork)](https://github.com/Exrick/xmall)
+
+> 作者本科毕业设计项目 期待您的捐赠支持 若需要论文请联系作者付费获取
+
 ### [宣传视频](https://www.bilibili.com/video/av23121122/)
 - 作者亲自制作 [点我观看](https://www.bilibili.com/video/av23121122/)
 
 ### 项目已部署，在线Demo
 - 前台商城：http://xmall.exrick.cn/
 - 后台管理系统：http://xmadmin.exrick.cn/
-- 此项目将作为作者2018本科毕业设计，单体系统版本(一台tomcat可运行)以及详细文档后续放出
 
 ### 前台页面为基于Vue的独立项目 请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库查看
 
@@ -18,13 +20,13 @@
 - Spring Cloud版
     - [X-Cloud](https://github.com/Exrick/x-cloud) 框架开发中
 - 微信小程序APP 
-    - 捐赠≥19.9可加群私聊群主提前下载前台源码 [预览视频](https://v.qq.com/x/page/f0627kf4x1e.html) 赠送[慕课网SpringCloud学习资源](https://coding.imooc.com/class/187.html)
+    - [前台源码点我提前获取](http://xpay.exrick.cn/pay) [预览视频](https://v.qq.com/x/page/f0627kf4x1e.html)
 
-    ![](http://oweupqzdv.bkt.clouddn.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A2%84%E8%A7%881.png)
+    ![](https://i.loli.net/2018/07/21/5b52e1de385e7.png)
 
 - [X-Boot前后端分离开发平台](https://github.com/Exrick/x-boot)
 
-    ![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20180504215601.png)
+    ![](https://i.loli.net/2018/07/21/5b52e274d2085.png)
 
 ### 基于SOA架构的分布式购物电商商城
 - [x] 后台管理系统：管理商品、订单、类目、商品规格属性、用户、权限、系统统计、系统日志以及前台内容等功能
@@ -35,43 +37,40 @@
 - [x] 单点登录系统：为多个系统之间提供用户登录凭证以及查询登录用户的信息
 
 ### v1.1更新日志(需更新前后台代码及SQL)
-- [x] 接入[XPay支付系统](https://github.com/Exrick/xpay)
+- [x] 接入自己开源的[XPay个人免签收款支付系统](https://github.com/Exrick/xpay)
 - [x] 更新Dubbo(2.6.1)、ES(6.2.3)等依赖版本 
 - [x] 取消ES需在页面中配置及跨域问题，ES默认配置集群名改为原elasticsearch
 - [x] 修复后台统计热卖商品SQL错误，xmall-front-web模块支持SpringMVC文件上传配置
 - [x] 修改金额字段类型优化SQL与备注
-- [x] 优化后台页面
-- [x] 修复用户修改BUG
-- [x] 优化批量删除
-- [x] 优化商品分类添加
+- [x] 优化后台页面 修复用户修改BUG 优化批量删除 优化商品分类添加
 - [x] 重构首页，后台可配置，包括3D轮播图
-- [x] 新增缓存管理功能菜单
-- [x] 完成订单打印发货等功能，实现快递管理
+- [x] 后台新增缓存管理功能菜单 完成订单打印发货等功能，实现快递管理
 - [x] 增添订单统计报表
 - [x] 修复前后端分离极验验证码session存储问题
 - [x] 实现ES IK分词插件扩展词典库管理
 - [x] 增添限流
+- [x] 2018.7.22 取消快速搜索接口需前端配置 发送邮件端口改为465
 - 注：SKU设计预计将在开源小程序后台实现
 
-![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171119130819.jpg "登录界面")
+![](https://i.loli.net/2018/07/22/5b5460eb23cb9.jpg "登录界面")
 
-![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171022174034.jpg "后台首页")
+![](https://i.loli.net/2018/07/22/5b5461099039e.jpg "后台首页")
 
-![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171022224322.jpg "商品管理")
+![](https://i.loli.net/2018/07/22/5b546125886ca.jpg "商品管理")
 
-![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171022225418.jpg "管理员编辑")
+![](https://i.loli.net/2018/07/22/5b54613bc866f.jpg "管理员编辑")
 
-![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171022183906.jpg "前台首页")
+![](https://i.loli.net/2018/07/22/5b54615b95788.jpg "前台首页")
 
-![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20171109215656.jpg "ES分词搜索")
+![](https://i.loli.net/2018/07/22/5b5461756b2b0.jpg "ES分词搜索")
 
 ### 项目架构及功能模块图
 
-![](https://s1.ax1x.com/2018/06/01/CIdaMF.png)
+![](https://i.loli.net/2018/07/22/5b5461926969b.png)
 
-![](http://p77xsahe9.bkt.clouddn.com/18-6-1/49622822.jpg)
+![](https://i.loli.net/2018/07/22/5b5461aa2fdee.jpg)
 
-![](http://p77xsahe9.bkt.clouddn.com/18-6-1/94786569.jpg)
+![](https://i.loli.net/2018/07/22/5b5461c54cb55.jpg)
 
 ### 前端所用技术
 - 后台页面
@@ -171,13 +170,13 @@
         ```
     - 支持多维度IP、uid等限流 详见代码
 ### 技术疑问交流
-- 给作者项目Star或捐赠后可加入交流群 `475743731`，还可免费获取 [慕课网学习资源](https://coding.imooc.com/class/203.html) 和 [UI框架](https://github.com/Exrick/xmall/blob/master/study/FlatLab.md) [![](http://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=7b60cec12ba93ebed7568b0a63f22e6e034c0d1df33125ac43ed753342ec6ce7)
+- 给作者项目Star或捐赠后可加入交流群 `475743731`，还可获取共享学习资源和 和 [UI框架](https://github.com/Exrick/xmall/blob/master/study/FlatLab.md) [![](http://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=7b60cec12ba93ebed7568b0a63f22e6e034c0d1df33125ac43ed753342ec6ce7)
 - 作者博客：[http://blog.exrick.cn](http://blog.exrick.cn)
 ### 商用授权
 - 个人学习使用遵循GPL开源协议
 - 商用需联系作者低价授权
 ### 捐赠
-![](http://oweupqzdv.bkt.clouddn.com/FgwHSk1Rnd-8FKqNJhFSSdcq2QVB.png)
+![](http://p77xsahe9.bkt.clouddn.com/18-7-20/54731550.jpg)
 
 ![](http://p77xsahe9.bkt.clouddn.com/18-6-28/32845239.jpg)
 

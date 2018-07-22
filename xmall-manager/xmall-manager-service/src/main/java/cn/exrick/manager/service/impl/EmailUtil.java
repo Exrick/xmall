@@ -49,6 +49,10 @@ public class EmailUtil {
         prop.put("mail.smtp.timeout", "20000");
         //qq邮箱需开启
         prop.put("mail.smtp.ssl.enable", "true");
+        //邮箱发送服务器端口,这里设置为465端口 避免服务器解封25端口
+        prop.setProperty("mail.smtp.port", "465");
+        prop.setProperty("mail.smtp.socketFactory.port", "465");
+        prop .put("mail.smtp.auth", "true");
         senderImpl.setJavaMailProperties(prop);
 
         //发送html邮件

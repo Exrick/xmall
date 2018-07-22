@@ -84,4 +84,11 @@ public class GoodsController {
         List<TbPanel> list=contentService.getThankGoods();
         return new ResultUtil<List<TbPanel>>().setData(list);
     }
+
+    @RequestMapping(value = "/goods/quickSearch",produces= "text/plain;charset=UTF-8",method = RequestMethod.GET)
+    @ApiOperation(value = "快速搜索")
+    public String getQuickSearch(@RequestParam(defaultValue = "") String key){
+
+        return searchService.quickSearch(key);
+    }
 }

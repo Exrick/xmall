@@ -1,6 +1,7 @@
 package cn.exrick.search.service.impl;
 
 import cn.exrick.common.exception.XmallException;
+import cn.exrick.common.utils.HttpUtil;
 import cn.exrick.manager.dto.front.SearchItem;
 import cn.exrick.manager.dto.front.SearchResult;
 import cn.exrick.search.service.SearchService;
@@ -36,6 +37,9 @@ public class SearchServiceImpl implements SearchService {
 
 	@Value("${ES_CONNECT_IP}")
 	private String ES_CONNECT_IP;
+
+	@Value("${ES_NODE_CLIENT_PORT}")
+	private String ES_NODE_CLIENT_PORT;
 
 	@Value("${ES_CLUSTER_NAME}")
 	private String ES_CLUSTER_NAME;
@@ -171,5 +175,17 @@ public class SearchServiceImpl implements SearchService {
 			e.printStackTrace();
 			throw new XmallException("查询ES索引库出错");
 		}
+	}
+
+	@Override
+	public String quickSearch(String key) {
+
+		String result = null;
+		try {
+			result = HttpUtil.sendGet("http://"+ES_CONNECT_IP+":"+ES_NODE_CLIENT_PORT+"/item/itemList/_search?q=productName:"+key);
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		return result;
 	}
 }
