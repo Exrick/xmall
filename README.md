@@ -16,7 +16,7 @@
 
 ### 前台页面为基于Vue的独立项目 请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库查看
 
-### 开发中，敬请期待！
+### 作者其他项目推荐
 - Spring Cloud版
     - [X-Cloud](https://github.com/Exrick/x-cloud) 框架开发中
 - 微信小程序APP 
@@ -27,6 +27,12 @@
 - [X-Boot前后端分离开发平台](https://github.com/Exrick/x-boot)
 
     ![](https://i.loli.net/2018/07/21/5b52e274d2085.png)
+
+- [XPay个人免签收款支付系统v1.2](https://github.com/Exrick/x-boot)
+
+    - 现已支持移动端支付 手机扫码体验
+
+    ![](http://p77xsahe9.bkt.clouddn.com/18-7-21/16350122.jpg)
 
 ### 基于SOA架构的分布式购物电商商城
 - [x] 后台管理系统：管理商品、订单、类目、商品规格属性、用户、权限、系统统计、系统日志以及前台内容等功能
