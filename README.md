@@ -20,7 +20,7 @@
 - Spring Cloud版
     - [X-Cloud](https://github.com/Exrick/x-cloud) 框架开发中
 
-- [XPay个人免签收款支付系统v1.2](https://github.com/Exrick/x-boot)
+- [XPay个人免签收款支付系统v1.2](https://github.com/Exrick/xpay)
 
     - 现已支持移动端支付 手机扫码体验
 
