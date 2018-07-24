@@ -120,7 +120,7 @@
         layer_show("选择父节点分类","choose-parent-category",300,510);
     }
 
-    var isParent=false,id="",name="";
+    var isParent=false,id="",name="",clickCatName="";
 
     var index = layer.load(3);
 
@@ -164,6 +164,7 @@
                 changeSwitch2(treeNode.status);
                 id=treeNode.id;
                 name=treeNode.name;
+				clickCatName=treeNode.name;
 
                 if (treeNode.isParent) {
                     isParent=true;
@@ -267,7 +268,7 @@
             return;
         }
         isRoot=false;
-        layer_show(title,url,700,350);
+        layer_show(title,url,700,380);
     }
 
     /*根节点分类-添加*/
