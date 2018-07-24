@@ -57,6 +57,7 @@
 - [x] 实现ES IK分词插件扩展词典库管理
 - [x] 增添限流
 - [x] 2018.7.22 取消快速搜索接口需前端配置 发送邮件端口改为465
+- [x] 2018.7.24 修复添加分类BUG
 - 注：SKU设计预计将在开源小程序后台实现
 
 ![](https://i.loli.net/2018/07/22/5b5460eb23cb9.jpg "登录界面")
@@ -124,7 +125,7 @@
     - [Mob全国天气预报接口](http://api.mob.com/#/apiwiki/weather)：需注册账号创建应用后申请填入AppKey
 - 其它开发工具
     - Jenkins：持续集成
-    - [JRebel](https://github.com/Exrick/xmall/blob/master/study/JRebel.md)：开发热部署
+    - ~~[JRebel](https://github.com/Exrick/xmall/blob/master/study/JRebel.md)：开发热部署~~ 现已无法免费使用
     - [阿里JAVA开发规约插件](https://github.com/alibaba/p3c)
 
 ### 文件说明
