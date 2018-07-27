@@ -120,4 +120,10 @@ public interface ContentService {
      * @return
      */
     int updateThankRedis();
+
+    /**
+     * 获取导航栏
+     * @return
+     */
+    List<TbPanelContent> getNavList();
 }

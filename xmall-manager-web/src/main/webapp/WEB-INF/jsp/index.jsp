@@ -81,6 +81,7 @@
             <dt><i class="Hui-iconfont">&#xe616;</i> 商城管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
+                    <li><a data-href="content-header-list" data-title="首页导航栏管理" href="javascript:void(0)">首页导航栏管理</a></li>
                     <li><a data-href="content-panel" data-title="首页板块管理" href="javascript:void(0)">首页板块管理</a></li>
                     <li><a data-href="content-banner-list" data-title="首页轮播图管理" href="javascript:void(0)">首页轮播图管理</a></li>
                     <li><a data-href="content-index-list" data-title="首页板块内容管理" href="javascript:void(0)">首页板块内容管理</a></li>

@@ -64,6 +64,12 @@ public class ContentServiceImpl implements ContentService {
     @Value("${ITEM_EXPIRE}")
     private int ITEM_EXPIRE;
 
+    @Value("${HEADER_PANEL_ID}")
+    private int HEADER_PANEL_ID;
+
+    @Value("${HEADER_PANEL}")
+    private String HEADER_PANEL;
+
     @Override
     public int addPanelContent(TbPanelContent tbPanelContent) {
 
@@ -71,6 +77,10 @@ public class ContentServiceImpl implements ContentService {
         tbPanelContent.setUpdated(new Date());
         if(tbPanelContentMapper.insert(tbPanelContent)!=1){
             throw new XmallException("添加首页板块内容失败");
+        }
+        //同步导航栏缓存
+        if(tbPanelContent.getPanelId()==HEADER_PANEL_ID){
+            updateNavListRedis();
         }
         //同步缓存
         deleteHomeRedis();
@@ -107,6 +117,10 @@ public class ContentServiceImpl implements ContentService {
         if(tbPanelContentMapper.deleteByPrimaryKey(id)!=1){
             throw new XmallException("删除首页板块失败");
         }
+        //同步导航栏缓存
+        if(id==HEADER_PANEL_ID){
+            updateNavListRedis();
+        }
         //同步缓存
         deleteHomeRedis();
         return 1;
@@ -129,6 +143,10 @@ public class ContentServiceImpl implements ContentService {
         tbPanelContent.setUpdated(new Date());
         if(tbPanelContentMapper.updateByPrimaryKey(tbPanelContent)!=1){
             throw new XmallException("更新板块内容失败");
+        }
+        //同步导航栏缓存
+        if(tbPanelContent.getPanelId()==HEADER_PANEL_ID){
+            updateNavListRedis();
         }
         //同步缓存
         deleteHomeRedis();
@@ -441,6 +459,50 @@ public class ContentServiceImpl implements ContentService {
             e.printStackTrace();
         }
         return 1;
+    }
+
+    public void updateNavListRedis() {
+
+        try {
+            jedisClient.del(HEADER_PANEL);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public List<TbPanelContent> getNavList() {
+
+        List<TbPanelContent> list = new ArrayList<>();
+        //查询缓存
+        try{
+            //有缓存则读取
+            String json=jedisClient.get(HEADER_PANEL);
+            if(json!=null){
+                list = new Gson().fromJson(json, new TypeToken<List<TbPanelContent>>(){}.getType());
+                log.info("读取了导航栏缓存");
+                return list;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        TbPanelContentExample exampleContent=new TbPanelContentExample();
+        exampleContent.setOrderByClause("sort_order");
+        TbPanelContentExample.Criteria criteriaContent=exampleContent.createCriteria();
+        //条件查询
+        criteriaContent.andPanelIdEqualTo(HEADER_PANEL_ID);
+        list=tbPanelContentMapper.selectByExample(exampleContent);
+
+        //把结果添加至缓存
+        try{
+            jedisClient.set(HEADER_PANEL, new Gson().toJson(list));
+            log.info("添加了导航栏缓存");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return list;
     }
 
     /**

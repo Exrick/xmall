@@ -35,7 +35,7 @@
     <ul id="treeDemo" style="margin-left: 10px" class="ztree"></ul>
 </div>
 <div style="margin-left:200px;">
-    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品管理 <span class="c-gray en">&gt;</span> 其它板块内容管理 <span class="c-gray en">&gt;</span><span id="name"></span> <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商城管理 <span class="c-gray en">&gt;</span> 其它板块内容管理 <span class="c-gray en">&gt;</span><span id="name"></span> <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
     <form id="form-search" class="page-container">
         <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="product_add('添加展示内容','content-product-add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加展示商品</a></span> <span class="r">最大容纳商品数：<strong id="num">2</strong></span> </div>
         <div class="mt-20">

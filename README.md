@@ -34,6 +34,9 @@
 - [X-Boot前后端分离开发平台](https://github.com/Exrick/x-boot)
 
     ![](https://i.loli.net/2018/07/21/5b52e274d2085.png)
+    
+- 机器学习笔记
+    - [Machine-Learning](https://github.com/Exrick/Machine-Learning)
 
 ### 基于SOA架构的分布式购物电商商城
 - [x] 后台管理系统：管理商品、订单、类目、商品规格属性、用户、权限、系统统计、系统日志以及前台内容等功能
@@ -58,6 +61,7 @@
 - [x] 增添限流
 - [x] 2018.7.22 取消快速搜索接口需前端配置 发送邮件端口改为465
 - [x] 2018.7.24 修复添加分类BUG
+- [x] 2018.7.27 首页导航栏可后台配置
 - 注：SKU设计预计将在开源小程序后台实现
 
 ![](https://i.loli.net/2018/07/22/5b5460eb23cb9.jpg "登录界面")
@@ -178,7 +182,7 @@
         ```
     - 支持多维度IP、uid等限流 详见代码
 ### 技术疑问交流
-- QQ交流群 `475743731`，可获取详细文档、共享付费学习资源和 和 [UI框架](https://github.com/Exrick/xmall/blob/master/study/FlatLab.md) [![](http://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=7b60cec12ba93ebed7568b0a63f22e6e034c0d1df33125ac43ed753342ec6ce7)
+- QQ交流群 `475743731`，可获取详细文档、共享学习资源 和 [UI框架](https://github.com/Exrick/xmall/blob/master/study/FlatLab.md) [![](http://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=7b60cec12ba93ebed7568b0a63f22e6e034c0d1df33125ac43ed753342ec6ce7)
 - 作者博客：[http://blog.exrick.cn](http://blog.exrick.cn)
 ### 商用授权
 - 个人学习使用遵循GPL开源协议
