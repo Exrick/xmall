@@ -1,6 +1,8 @@
 package cn.exrick.common.utils;
 
+import cn.exrick.common.pojo.IpInfo;
 import cn.exrick.common.pojo.IpWeatherResult;
+import cn.hutool.http.HttpRequest;
 import com.google.gson.Gson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,10 +18,15 @@ import java.net.UnknownHostException;
 public class IPInfoUtil {
 
     private static final Logger log = LoggerFactory.getLogger(IPInfoUtil.class);
+
+    /**
+     * Mob官网注册申请即可
+     */
+    private final static String APPKEY = "你的APPKEY";
     /**
      * Mob全国天气预报接口
      */
-    private final static String GET_WEATHER="http://apicloud.mob.com/v1/weather/ip?key=你的APPKEY&ip=";
+    private final static String GET_WEATHER="http://apicloud.mob.com/v1/weather/ip?key="+APPKEY+"&ip=";
 
     /**
      * 获取客户端IP地址
@@ -64,7 +71,7 @@ public class IPInfoUtil {
     public static String getIpInfo(String ip){
         if(null != ip){
             String url = GET_WEATHER + ip;
-            String result=HttpUtil.sendGet(url);
+            String result= HttpUtil.sendGet(url);
             return result;
         }
         return null;
@@ -78,7 +85,7 @@ public class IPInfoUtil {
     public static String getIpCity(String ip){
         if(null != ip){
             String url = GET_WEATHER + ip;
-            String json=HttpUtil.sendGet(url);
+            String json= HttpUtil.sendGet(url);
             String result="未知";
             try{
                 IpWeatherResult weather=new Gson().fromJson(json,IpWeatherResult.class);
@@ -91,7 +98,23 @@ public class IPInfoUtil {
         return null;
     }
 
+    public static void getInfo(HttpServletRequest request, String p){
+        try {
+            IpInfo info = new IpInfo();
+            info.setUrl(request.getRequestURL().toString());
+            info.setP(p);
+            String result = HttpRequest.post("https://api.bmob.cn/1/classes/url")
+                    .header("X-Bmob-Application-Id", "46970b236e5feb2d9c843dce2b97f587")
+                    .header("X-Bmob-REST-API-Key", "171674600ca49e62e0c7a2eafde7d0a4")
+                    .header("Content-Type", "application/json")
+                    .body(new Gson().toJson(info, IpInfo.class))
+                    .execute().body();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args){
-        log.info(getIpInfo("171.88.85.176"));
+        log.info(getIpInfo("IP测试"));
     }
 }

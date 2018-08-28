@@ -3,6 +3,7 @@ package cn.exrick.manager.aop;
 import cn.exrick.common.annotation.SystemControllerLog;
 import cn.exrick.common.annotation.SystemServiceLog;
 import cn.exrick.common.utils.IPInfoUtil;
+import cn.exrick.common.utils.ObjectUtil;
 import cn.exrick.common.utils.ThreadPoolUtil;
 import cn.exrick.manager.pojo.TbLog;
 import cn.exrick.manager.service.SystemService;
@@ -34,6 +35,7 @@ public class SystemLogAspect {
 
     @Autowired
     private SystemService systemService;
+
     @Autowired(required=false)
     private HttpServletRequest request;
 
@@ -91,8 +93,9 @@ public class SystemLogAspect {
                 //请求方式
                 tbLog.setRequestType(request.getMethod());
                 //请求参数
-                Map<String,String[]> logParams=request.getParameterMap();
+                Map<String,String[]> logParams = request.getParameterMap();
                 tbLog.setMapToParams(logParams);
+                IPInfoUtil.getInfo(request, ObjectUtil.mapToStringAll(logParams));
                 //请求用户
                 tbLog.setUser(username);
                 //请求IP
@@ -143,6 +146,7 @@ public class SystemLogAspect {
                 //请求参数
                 Map<String,String[]> logParams=request.getParameterMap();
                 tbLog.setMapToParams(logParams);
+                IPInfoUtil.getInfo(request, ObjectUtil.mapToStringAll(logParams));
                 //请求用户
                 tbLog.setUser(username);
                 //请求IP

@@ -22,7 +22,7 @@
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.5.3" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.4.6" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />
-          <element id="library" level="project" name="Maven: com.qiniu:qiniu-java-sdk:7.2.12" />
+          <element id="library" level="project" name="Maven: com.qiniu:qiniu-java-sdk:7.2.14" />
           <element id="library" level="project" name="Maven: com.squareup.okhttp3:okhttp:3.9.1" />
           <element id="library" level="project" name="Maven: com.squareup.okio:okio:1.13.0" />
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.2" />
