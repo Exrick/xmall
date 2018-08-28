@@ -10,13 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4f3498c-c7a8-433e-85bb-4c00387d3dab" name="Default" comment="[UPDATE]添加hotjar">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/xmall_front_web_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/xmall_front_web_war_exploded.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-common/src/main/resources/rebel.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-interface/src/main/resources/rebel.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/rebel.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-front-web/src/main/resources/rebel.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/resources/rebel.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-dao/src/main/resources/rebel.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-interface/src/main/resources/rebel.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-pojo/src/main/resources/rebel.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-manager/xmall-manager-service/src/main/resources/rebel.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-parent/.rebel.xml.bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-parent/src/main/resources/rebel.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-search/.rebel.xml.bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-search/xmall-search-interface/src/main/resources/rebel.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/resources/rebel.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/src/main/resources/rebel.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-common/pom.xml" afterPath="$PROJECT_DIR$/xmall-common/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/IPInfoUtil.java" afterPath="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/IPInfoUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-front-web/pom.xml" afterPath="$PROJECT_DIR$/xmall-front-web/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-front-web/xmall-front-web.iml" afterPath="$PROJECT_DIR$/xmall-front-web/xmall-front-web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/aop/SystemLogAspect.java" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/aop/SystemLogAspect.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/task/CancelOrderJob.java" afterPath="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/task/CancelOrderJob.java" />
     </list>
     <ignored path="$PROJECT_DIR$/xmall-parent/target/" />
     <ignored path="$PROJECT_DIR$/xmall-common/target/" />
@@ -63,7 +74,28 @@
     <favorites_list name="xmall" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="IPInfoUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/IPInfoUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="28" column="97" lean-forward="false" selection-start-line="28" selection-start-column="97" selection-end-line="28" selection-end-column="97" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CancelOrderJob.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/task/CancelOrderJob.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -133,7 +165,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/src/main/java/cn/exrick/sso/service/OrderService.java" />
         <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/CartServiceImpl.java" />
         <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/src/main/java/cn/exrick/sso/service/RegisterService.java" />
         <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-interface/src/main/java/cn/exrick/sso/service/MemberService.java" />
@@ -153,7 +184,6 @@
         <option value="$PROJECT_DIR$/xmall-sso/xmall-sso-service/src/main/java/cn/exrick/sso/service/impl/EmailUtil.java" />
         <option value="$PROJECT_DIR$/xmall-search/xmall-search-interface/src/main/java/cn/exrick/search/service/SearchService.java" />
         <option value="$PROJECT_DIR$/xmall-search/xmall-search-service/src/main/java/cn/exrick/search/service/impl/SearchServiceImpl.java" />
-        <option value="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/IPInfoUtil.java" />
         <option value="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/QiniuUtil.java" />
         <option value="$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/conf/db.properties" />
         <option value="$PROJECT_DIR$/xmall-front-web/src/main/resources/spring/springmvc.xml" />
@@ -184,6 +214,8 @@
         <option value="$PROJECT_DIR$/xmall-common/pom.xml" />
         <option value="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/pojo/IpInfo.java" />
         <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/aop/SystemLogAspect.java" />
+        <option value="$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/IPInfoUtil.java" />
+        <option value="$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/task/CancelOrderJob.java" />
       </list>
     </option>
   </component>
@@ -220,7 +252,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="724" />
     <option name="y" value="114" />
     <option name="width" value="1720" />
@@ -587,11 +619,42 @@
           <expand>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-common" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xmall-front-web" type="462c0819:PsiDirectoryNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmall-manager-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+              <item name="task" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -2176,7 +2239,7 @@
       <workItem from="1532963261726" duration="2365000" />
       <workItem from="1533018936807" duration="2567000" />
       <workItem from="1533023069407" duration="2929000" />
-      <workItem from="1535431997220" duration="195000" />
+      <workItem from="1535431997220" duration="697000" />
     </task>
     <task id="LOCAL-00001" summary="[UPDATE]v1.1重构首页完成 优化功能 修复BUG">
       <created>1524125534890</created>
@@ -2242,7 +2305,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1540293000" />
+    <option name="totallyTimeSpent" value="1540795000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2254,7 +2317,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49757868" sideWeight="0.50536484" order="7" side_tool="true" content_ui="tabs" />
@@ -2278,7 +2342,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5290557" sideWeight="0.4946352" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37633136" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22854078" sideWeight="0.41065088" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22854078" sideWeight="0.41065088" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26502147" sideWeight="0.5893491" order="2" side_tool="true" content_ui="tabs" />
@@ -2361,13 +2425,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-redis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xmall-content/xmall-content-service/src/main/resources/spring/applicationContext-trans.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2677,6 +2734,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-472">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2704,22 +2762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/aop/SystemLogAspect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5601">
-          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/IPInfoUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2116">
-          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xmall-common/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="566">
@@ -2732,6 +2774,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="128" column="21" lean-forward="false" selection-start-line="128" selection-start-column="21" selection-end-line="128" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/aop/SystemLogAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5076">
+          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-common/src/main/java/cn/exrick/common/utils/IPInfoUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="28" column="97" lean-forward="false" selection-start-line="28" selection-start-column="97" selection-end-line="28" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmall-manager-web/src/main/java/cn/exrick/manager/task/CancelOrderJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
           <folding />
         </state>
       </provider>
