@@ -14,6 +14,10 @@
 - 前台商城：http://xmall.exrick.cn/
 - 后台管理系统：http://xmadmin.exrick.cn/
 
+### 单体版获取
+- 单体XMall系统 非分布式 可跑在1g1核服务器上
+- 获取方式：进入商城 http://xmall.exrick.cn/ 登陆后随意测试支付商品 填写捐赠信息 支付成功后将自动发至您填写的邮箱
+
 ### 前台页面为基于Vue的独立项目 请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库查看
 
 ### 作者其他项目推荐
