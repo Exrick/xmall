@@ -5,7 +5,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/Exrick/xmall.svg?style=social&label=Stars)](https://github.com/Exrick/xmall)
 [![GitHub forks](https://img.shields.io/github/forks/Exrick/xmall.svg?style=social&label=Fork)](https://github.com/Exrick/xmall)
 
-> 作者本科毕业设计项目 期待您的捐赠支持 若需要论文请联系作者付费获取
+> 作者本科毕业设计项目 期待您的捐赠支持
 
 ### [宣传视频](https://www.bilibili.com/video/av23121122/)
 - 作者亲自制作 [点我观看](https://www.bilibili.com/video/av23121122/)
