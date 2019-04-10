@@ -37,7 +37,7 @@ Redis是c语言开发的，安装需要c语言的编译环境,如果没有gcc需
 ### Redis-cluster集群搭建
 由于容错机制，Redis集群中至少应该有三个节点。要保证集群的高可用，需要每个节点有一个备份机，因此，Redis集群至少需要6台服务器。
 
-![](http://oweupqzdv.bkt.clouddn.com/redis-cluster%E5%AE%B9%E9%94%99.jpg)
+![2bba02ae-da6c-3747-987d-6a4a3851ec6f.jpg](https://i.loli.net/2019/04/10/5cae0b055889f.jpg)
 
 由于个人只有一台服务器，只有搭建伪分布式：一台服务器运行6个redis实例，需要修改Redis的端口号7001-7006
 
