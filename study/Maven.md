@@ -30,7 +30,7 @@
 
     该文件中配置来maven本地仓库的地址
 
-    ![](https://github.com/Exrick/Exrick/blob/master/pics/Maven/QQ%E6%88%AA%E5%9B%BE20170907135455.png)
+    ![QQ截图20170907135455.png](https://i.loli.net/2019/04/10/5cae098de1031.png)
 
     默认在系统的用户目录下的m2/repository中，该目录是本地仓库的目录。
 
@@ -92,4 +92,4 @@
 
 5. IDEA中Maven配置
 
-    ![QQ截图20170907135455.png](https://i.loli.net/2019/04/10/5cae098de1031.png)
+    ![图片 1.png](https://i.loli.net/2019/04/10/5cae0a1fdec01.png)
