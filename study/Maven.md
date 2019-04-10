@@ -13,11 +13,11 @@
 
 - 第三步：配置maven的环境变量MAVEN_HOME
 
-    ![](https://github.com/Exrick/Exrick/blob/master/pics/Maven/QQ%E6%88%AA%E5%9B%BE20170907135302.png)
+    ![QQ截图20170907135302.png](https://i.loli.net/2019/04/10/5cae098dc36bd.png)
 
 - 第四步：配置maven的环境变量PATH
 
-    ![](https://github.com/Exrick/Exrick/blob/master/pics/Maven/QQ%E6%88%AA%E5%9B%BE20170907135330.png)
+    ![QQ截图20170907135330.png](https://i.loli.net/2019/04/10/5cae098db0fbe.png)
 
 - 第五步：测试maven是否安装成功，在系统命令行中执行命令：mvn –v
 
@@ -92,4 +92,4 @@
 
 5. IDEA中Maven配置
 
-    ![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170901140327.png)
+    ![QQ截图20170907135455.png](https://i.loli.net/2019/04/10/5cae098de1031.png)
