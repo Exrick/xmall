@@ -1,6 +1,6 @@
 # Dubbo架构
 
-![](http://otabkoy17.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170902124944.png)
+![](http://dubbo.apache.org/docs/zh-cn/dev/sources/images/dubbo-relation.jpg)
  
 - 节点角色说明：
     - Provider: 暴露服务的服务提供方。
@@ -17,5 +17,3 @@
     - 5、服务消费者和提供者，在内存中累计调用次数和调用时间，定时每分钟发送一次统计数据到监控中心。
 
 ### [Dubbo官方文档](http://dubbo.io/)
-
-### Dubbo-Admin
