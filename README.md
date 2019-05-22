@@ -68,6 +68,8 @@
 - [x] 2018.7.27 首页导航栏可后台配置
 - 注：SKU设计预计将在开源小程序后台实现
 
+- [极验验证码移除文档](https://github.com/Exrick/xmall/wiki/%E6%9E%81%E9%AA%8C%E7%A7%BB%E9%99%A4%E6%96%87%E6%A1%A3)
+
 ![](https://i.loli.net/2018/07/22/5b5460eb23cb9.jpg "登录界面")
 
 ![](https://i.loli.net/2018/07/22/5b5461099039e.jpg "后台首页")
@@ -125,7 +127,7 @@
 - [Maven](https://github.com/Exrick/xmall/blob/master/study/Maven.md)
 - 第三方SDK
     - [七牛云文件存储服务](https://developer.qiniu.com/kodo/sdk/1239/java)
-    - [极验Test-button人机验证码](http://www.geetest.com/Test-button.html)
+    - ~~[极验Test-button人机验证码](http://www.geetest.com/Test-button.html)~~ 因其收费见[极验验证码移除文档](https://github.com/Exrick/xmall/wiki/%E6%9E%81%E9%AA%8C%E7%A7%BB%E9%99%A4%E6%96%87%E6%A1%A3)
 - 第三方插件
     - [hotjar](https://github.com/Exrick/xmall/blob/master/study/hotjar.md)：一体化分析和反馈
     - [搜狐畅言评论插件](http://changyan.kuaizhan.com/)
