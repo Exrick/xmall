@@ -67,7 +67,6 @@
 - [x] 2018.7.24 修复添加分类BUG
 - [x] 2018.7.27 首页导航栏可后台配置
 - 注：SKU设计预计将在开源小程序后台实现
-
 - [极验验证码移除文档](https://github.com/Exrick/xmall/wiki/%E6%9E%81%E9%AA%8C%E7%A7%BB%E9%99%A4%E6%96%87%E6%A1%A3)
 
 ![](https://i.loli.net/2018/07/22/5b5460eb23cb9.jpg "登录界面")
