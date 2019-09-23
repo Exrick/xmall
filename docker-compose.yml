@@ -1,0 +1,111 @@
+version: '3'
+
+services:
+  db:
+    image: bitnami/mysql:5
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: xmall
+    ports:
+      - 3306
+
+  flyway:
+    image: flyway/flyway:6-alpine
+    command: -url=jdbc:mysql://db -schemas=xmall -user=root -password=123456 -connectRetries=60 migrate
+    volumes:
+      - ./xmall/xmall.sql:/flyway/sql/V1__init.sql
+    depends_on:
+      - db
+
+  zookeeper:
+    image: bitnami/zookeeper:3.5.5
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=true
+
+  redis:
+    image: redis:3.0.0
+    ports:
+      - 6379
+  activemq:
+    image: webcenter/activemq:5.14.3
+    ports:
+      - 61616:61616
+      - 8161:8161
+    environment:
+      - ACTIVEMQ_CONFIG_QUEUES_queue1=spring-queue
+      - ACTIVEMQ_CONFIG_TOPICS_topic1=itemAddTopic
+  elasticsearch:
+    image: bitnami/elasticsearch:6
+    ports:
+      - 9200
+      - 9300
+    environment:
+      - es.set.netty.runtime.available.processors=false
+
+  dubbo-admin:
+    image: apache/dubbo-admin:0.1.0
+    ports:
+      - 8080:8080
+    depends_on:
+      - zookeeper
+    environment:
+      - admin.registry.address=zookeeper://zookeeper:2181
+      - admin.config-center=zookeeper://zookeeper:2181
+      - admin.metadata-report.address=zookeeper://zookeeper:2181
+
+  xmall-search:
+    build: xmall-search
+    depends_on:
+      - db
+    environment:
+      - JDBC_URL=jdbc:mysql://db:3306/xmall?characterEncoding=utf-8
+      - ES_CONNECT_IP=elasticsearch
+      - DUBBO_REGISTRY_ADDRESS=zookeeper:2181
+      - MQ_ADDRESS=tcp://activemq:61616
+  xmall-sso:
+    build: xmall-sso
+    depends_on:
+      - db
+    environment:
+      - JDBC_URL=jdbc:mysql://db:3306/xmall?characterEncoding=utf-8
+      - DUBBO_REGISTRY_ADDRESS=zookeeper:2181
+      - MQ_ADDRESS=tcp://activemq:61616
+      - REDIS_HOST=redis
+  xmall-content:
+    build: xmall-content
+    depends_on:
+      - db
+    environment:
+      - JDBC_URL=jdbc:mysql://db:3306/xmall?characterEncoding=utf-8
+      - DUBBO_REGISTRY_ADDRESS=zookeeper:2181
+      - MQ_ADDRESS=tcp://activemq:61616
+      - REDIS_HOST=redis
+  xmall-manager:
+    build: xmall-manager
+    depends_on:
+      - db
+    environment:
+      - JDBC_URL=jdbc:mysql://db:3306/xmall?characterEncoding=utf-8
+      - DUBBO_REGISTRY_ADDRESS=zookeeper:2181
+      - MQ_ADDRESS=tcp://activemq:61616
+      - REDIS_HOST=redis
+
+  xmall-front-web:
+    build: xmall-front-web
+    environment:
+      - DUBBO_REGISTRY_ADDRESS=zookeeper:2181
+      - REDIS_HOST=redis
+    ports:
+      - 7777:8080
+
+  xmall-manager-web:
+    build: xmall-manager-web
+    depends_on:
+      - xmall-manager
+    environment:
+      - DUBBO_REGISTRY_ADDRESS=zookeeper:2181
+      - REDIS_HOST=redis
+    ports:
+      - 8888:8080
+

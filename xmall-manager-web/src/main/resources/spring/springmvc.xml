@@ -15,6 +15,8 @@
 
     <context:component-scan base-package="cn.exrick.manager" />
 
+    <context:property-placeholder location="classpath:conf/*.properties"/>
+
     <!-- task任务扫描注解 -->
     <task:annotation-driven/>
 
@@ -23,7 +25,7 @@
         <property name="jedisPool" ref="jedisPool"></property>
     </bean>
     <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
-        <constructor-arg name="host" value="127.0.0.1"/>
+        <constructor-arg name="host" value="${REDIS_HOST}"/>
         <constructor-arg name="port" value="6379"/>
     </bean>
 
@@ -116,7 +118,7 @@
 
     <!-- 引用dubbo服务 -->
     <dubbo:application name="xmall-manager-web"/>
-    <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>
+    <dubbo:registry protocol="zookeeper" address="${DUBBO_REGISTRY_ADDRESS}"/>
     <dubbo:reference interface="cn.exrick.manager.service.ItemService" id="itemService" />
     <dubbo:reference interface="cn.exrick.manager.service.MemberService" id="memberService" />
     <dubbo:reference interface="cn.exrick.manager.service.ItemCatService" id="itemCatService" />
