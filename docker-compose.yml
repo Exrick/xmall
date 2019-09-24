@@ -96,8 +96,6 @@ services:
     environment:
       - DUBBO_REGISTRY_ADDRESS=zookeeper:2181
       - REDIS_HOST=redis
-    ports:
-      - 7777:8080
 
   xmall-manager-web:
     build: xmall-manager-web
@@ -108,4 +106,11 @@ services:
       - REDIS_HOST=redis
     ports:
       - 8888:8080
+
+  xmall-front:
+    image: htynkn/xmall-front
+    depends_on:
+      - xmall-front-web
+    ports:
+      - 9999:8080
 
