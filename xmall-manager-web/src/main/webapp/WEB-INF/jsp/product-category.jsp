@@ -120,7 +120,7 @@
         layer_show("选择父节点分类","choose-parent-category",300,510);
     }
 
-    var isParent=false,id="",name="",clickCatName="";
+    var isParent=false,id="",name="";
 
     var index = layer.load(3);
 
@@ -164,7 +164,6 @@
                 changeSwitch2(treeNode.status);
                 id=treeNode.id;
                 name=treeNode.name;
-				clickCatName=treeNode.name;
 
                 if (treeNode.isParent) {
                     isParent=true;
@@ -263,12 +262,12 @@
 
     /*子分类-添加*/
     function categoryAdd(title,url){
-        if(!isParent){
+        if(!isParent||!$("#id").val()){
             layer.alert('请点击选择一父分类! ', {title: '错误信息',icon: 0});
             return;
         }
         isRoot=false;
-        layer_show(title,url,700,380);
+        layer_show(title,url,700,350);
     }
 
     /*根节点分类-添加*/
@@ -280,7 +279,7 @@
     /*分类-删除*/
     function category_del() {
         var id=$("#id").val();
-        if(id==-1){
+        if(!id){
             layer.alert('请点击选择要删除的分类! ', {title: '错误信息',icon: 0});
             return;
         }
@@ -294,6 +293,7 @@
                     layer.close(index);
                     if(data.success==true){
                         initTree();
+                        $("#id").val("");
                         msgSuccess("删除成功!");
                     }else{
                         layer.alert('删除失败! '+data.message, {title: '错误信息',icon: 2});

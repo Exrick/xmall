@@ -27,16 +27,8 @@
     <form action="" method="post" class="form form-horizontal" id="category-add">
         <input type="text" hidden class="input-text" value="0" id="parentId" name="parentId">
         <input type="text" hidden class="input-text" value="true" id="isParent" name="isParent">
-		<input type="text" hidden class="input-text" value="1" id="status" name="status">
-		<input type="text" hidden class="input-text" value="1" id="sortOrder" name="sortOrder">
-		<div class="row cl" id="parentName" style="display:none">
-            <label class="form-label col-xs-4 col-sm-2">
-                <span class="c-red">*</span>
-                上级名称：</label>
-            <div class="formControls col-xs-6 col-sm-6">
-                <span id="parentCatName"></span>
-            </div>
-        </div>
+        <input type="text" hidden class="input-text" value="1" id="status" name="status">
+        <input type="text" hidden class="input-text" value="1" id="sortOrder" name="sortOrder">
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">
                 <span class="c-red">*</span>
@@ -83,20 +75,14 @@
         maxlength:100
     });
 
-	if(parent.id!=""){
-        $("#parentId").val(parent.id);
-    }
-
     if(!parent.isRoot){
-		// 不是根节点
         $('#parentSwitch').bootstrapSwitch('setState', false);
         $("#isParent").val(0);
-		$("#parentName").css("display","block");
-		$("#parentCatName").html(parent.clickCatName);
+        $("#parentId").val(parent.id);
     }else{
         $('#parentSwitch').bootstrapSwitch('setState', true);
         $("#isParent").val(1);
-		$("#parentId").val(0);
+        $("#parentId").val(0);
     }
 
     $('#parentSwitch').on('switch-change', function (e, data) {

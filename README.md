@@ -1,13 +1,13 @@
 # XMall
-[![AUR](https://img.shields.io/aur/license/yaourt.svg)](https://github.com/Exrick/xmall/blob/master/License)
+[![AUR](https://img.shields.io/badge/GPL-v3-red)](https://github.com/Exrick/xmall/blob/master/License)
 [![](https://img.shields.io/badge/Author-Exrick-orange.svg)](http://blog.exrick.cn)
-[![](https://img.shields.io/badge/version-1.0-brightgreen.svg)](https://github.com/Exrick/xmall)
+[![](https://img.shields.io/badge/version-1.1-brightgreen)](https://github.com/Exrick/xmall)
 [![GitHub stars](https://img.shields.io/github/stars/Exrick/xmall.svg?style=social&label=Stars)](https://github.com/Exrick/xmall)
 [![GitHub forks](https://img.shields.io/github/forks/Exrick/xmall.svg?style=social&label=Fork)](https://github.com/Exrick/xmall)
 
 > 作者本科毕业设计项目 期待您的捐赠支持
 
-### [宣传视频](https://www.bilibili.com/video/av23121122/)
+### [X系列项目宣传视频](https://www.bilibili.com/video/av23121122/)
 - 作者亲自制作 [点我观看](https://www.bilibili.com/video/av23121122/)
 
 ### 项目已部署，在线Demo
@@ -21,27 +21,21 @@
 ### 前台页面为基于Vue的独立项目 请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库查看
 
 ### 作者其他项目推荐
-- Spring Cloud版
-    - [X-Cloud](https://github.com/Exrick/x-cloud) 框架开发中
+- [XPay个人免签收款支付系统](https://github.com/Exrick/xpay) 无需挂机App 自动回调
 
-- [XPay个人免签收款支付系统v1.2](https://github.com/Exrick/xpay)
-
-    - 现已支持移动端支付 手机扫码体验
-
-    ![](http://p77xsahe9.bkt.clouddn.com/18-7-21/16350122.jpg)
-
-- 微信小程序APP 
-    - [前台源码点我提前获取](http://xpay.exrick.cn/pay) [预览视频](https://v.qq.com/x/page/f0627kf4x1e.html)
-
-    ![](https://i.loli.net/2018/07/21/5b52e1de385e7.png)
+- [XMall微信小程序APP前端 现已开源！](https://github.com/Exrick/xmall-weapp)
+    
+    [![WX20190924-234416@2x.png](https://s2.ax1x.com/2019/10/06/ucEsBD.md.png)](https://www.bilibili.com/video/av70226175)
 
 - [X-Boot前后端分离开发平台](https://github.com/Exrick/x-boot)
 
     ![](https://i.loli.net/2018/07/21/5b52e274d2085.png)
     
-- 机器学习笔记
+- 个人机器学习笔记
     - [Machine-Learning](https://github.com/Exrick/Machine-Learning)
 
+- Spring Cloud版
+    - [X-Cloud](https://github.com/Exrick/x-cloud) 框架开发中
 ### 基于SOA架构的分布式购物电商商城
 - [x] 后台管理系统：管理商品、订单、类目、商品规格属性、用户、权限、系统统计、系统日志以及前台内容等功能
 - [x] 前台系统：用户可以在前台系统中进行注册、登录、浏览商品、首页、下单等操作
@@ -61,15 +55,12 @@
 - [x] 后台新增缓存管理功能菜单 完成订单打印发货等功能，实现快递管理
 - [x] 增添订单统计报表
 - [x] 修复前后端分离极验验证码session存储问题
-- [x] 实现ES IK分词插件扩展词典库管理
-- [x] 增添限流
+- [x] 实现ES IK分词插件扩展词典库管理 增添限流
 - [x] 2018.7.22 取消快速搜索接口需前端配置 发送邮件端口改为465
-- [x] 2018.7.24 修复添加分类BUG
 - [x] 2018.7.27 首页导航栏可后台配置
-- 注：SKU设计预计将在开源小程序后台实现
+- [x] 2019.10.06 修复分类管理BUG 开源小程序前端
+- 注：SKU设计预计将在小程序后台实现
 - [极验验证码移除文档](https://github.com/Exrick/xmall/wiki/%E6%9E%81%E9%AA%8C%E7%A7%BB%E9%99%A4%E6%96%87%E6%A1%A3)
-
-![](https://i.loli.net/2018/07/22/5b5460eb23cb9.jpg "登录界面")
 
 ![](https://i.loli.net/2018/07/22/5b5461099039e.jpg "后台首页")
 
@@ -187,15 +178,12 @@
         ```
     - 支持多维度IP、uid等限流 详见代码
 ### 技术疑问交流
-- QQ交流群 `475743731(付费)`，可获取各项目详细图文文档、xmall毕设PPT、疑问解答 [![](http://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=7b60cec12ba93ebed7568b0a63f22e6e034c0d1df33125ac43ed753342ec6ce7)
+- QQ交流群 `475743731(付费)`，可获取各项目详细图文文档、xmall毕设PPT [![](http://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=7b60cec12ba93ebed7568b0a63f22e6e034c0d1df33125ac43ed753342ec6ce7)
 - 免费交流群 `562962309` [![](http://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=52f6003e230b26addeed0ba6cf343fcf3ba5d97829d17f5b8fa5b151dba7e842)
 
 - 作者博客：[http://blog.exrick.cn](http://blog.exrick.cn)
 ### 商用授权
 - 个人学习使用遵循GPL开源协议
 - 商用需联系作者低价授权
-### 捐赠
-![](http://p77xsahe9.bkt.clouddn.com/18-7-20/54731550.jpg)
-
-![](http://p77xsahe9.bkt.clouddn.com/18-6-28/32845239.jpg)
+### [捐赠](http://xmall.exrick.cn)
 
