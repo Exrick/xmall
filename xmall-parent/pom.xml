@@ -38,8 +38,7 @@
         <activemq.version>5.11.2</activemq.version>
         <swagger2.version>2.7.0</swagger2.version>
         <swagger-ui.version>2.7.0</swagger-ui.version>
-        <!--指定了版本范围，每次会尝试去下载最新版本-->
-        <qiniu.version>[7.2.0, 7.2.99]</qiniu.version>
+        <qiniu.version>7.2.23</qiniu.version>
         <elasticsearch.version>6.2.3</elasticsearch.version>
         <log4j.version>2.9.1</log4j.version>
         <shiro.version>1.4.0</shiro.version>
