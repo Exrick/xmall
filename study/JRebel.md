@@ -19,7 +19,7 @@ JRebel是一款热部署插件。当你的Java-Web项目在Tomcat中run/debug的
 
 2. 激活
 
-    [网友分享激活链接](https://blog.csdn.net/xingbaozhen1210/article/details/81093041)
+    [网友分享激活链接](https://jrebel.qekang.com/)
 
 ### JRebel使用
 
