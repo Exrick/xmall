@@ -125,7 +125,7 @@
     - [Mob全国天气预报接口](http://api.mob.com/#/apiwiki/weather)：需注册账号创建应用后申请填入AppKey
 - 其它开发工具
     - Jenkins：持续集成
-    - ~~[JRebel](https://github.com/Exrick/xmall/blob/master/study/JRebel.md)：开发热部署~~ 现已无法免费使用
+    - [JRebel](https://github.com/Exrick/xmall/blob/master/study/JRebel.md)：开发热更新
     - [阿里JAVA开发规约插件](https://github.com/alibaba/p3c)
 
 ### 文件说明
