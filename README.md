@@ -148,7 +148,7 @@
 ### 相关技术点说明
 - ES-IK分词插件词典库扩展
     - 详见 [elasticsearch-analysis-ik插件作者项目README说明](https://github.com/medcl/elasticsearch-analysis-ik)
-    - 本项目中扩展接口和禁用词接口分别为 `http:localhost:8888/getDictList` 和 `http:localhost:8888/getStopDictList`，将以上2个接口配置进IK插件扩展配置文件{conf}/analysis-ik/config/IKAnalyzer.cfg.xml 或者 {plugins}/elasticsearch-analysis-ik-*/config/IKAnalyzer.cfg.xml中即可，示例：
+    - 本项目中扩展接口和禁用词接口分别为 `http://localhost:8888/getDictList` 和 `http://localhost:8888/getStopDictList`，将以上2个接口配置进IK插件扩展配置文件{conf}/analysis-ik/config/IKAnalyzer.cfg.xml 或者 {plugins}/elasticsearch-analysis-ik-*/config/IKAnalyzer.cfg.xml中即可，示例：
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -156,9 +156,9 @@
     <properties>
         <comment>IK Analyzer 扩展配置</comment>
         <!--用户可以在这里配置远程扩展字典 -->
-        <entry key="remote_ext_dict">http:localhost:8888/getDictList</entry>
+        <entry key="remote_ext_dict">http://localhost:8888/getDictList</entry>
         <!--用户可以在这里配置远程扩展停止词字典-->
-        <entry key="remote_ext_stopwords">http:localhost:8888/getStopDictList</entry>
+        <entry key="remote_ext_stopwords">http://localhost:8888/getStopDictList</entry>
     </properties>
     ```
 - 限流
