@@ -114,6 +114,7 @@
     CentOS 7
     wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
     ```
+    - 更新缓存：`yum clean all`
     - 生成缓存：`yum makecache`
 - 端口开放与关闭
     - 以防火墙开放3306端口为例 `firewall-cmd --add-port=3306/tcp --permanent`
