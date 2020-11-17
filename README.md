@@ -29,7 +29,7 @@
 
 - [X-Boot前后端分离开发平台](https://github.com/Exrick/x-boot)
 
-    ![](https://i.loli.net/2020/03/13/rQGAWv1h8VMeIdi.png)
+    ![](https://ooo.0o0.ooo/2020/03/13/rQGAWv1h8VMeIdi.png)
     
 - 个人机器学习笔记
     - [Machine-Learning](https://github.com/Exrick/Machine-Learning)
@@ -62,23 +62,23 @@
 - 注：SKU设计预计将在小程序后台实现
 - [极验验证码移除文档](https://github.com/Exrick/xmall/wiki/%E6%9E%81%E9%AA%8C%E7%A7%BB%E9%99%A4%E6%96%87%E6%A1%A3)
 
-![](https://i.loli.net/2018/07/22/5b5461099039e.jpg "后台首页")
+![](https://ooo.0o0.ooo/2018/07/22/5b5461099039e.jpg "后台首页")
 
-![](https://i.loli.net/2018/07/22/5b546125886ca.jpg "商品管理")
+![](https://ooo.0o0.ooo/2018/07/22/5b546125886ca.jpg "商品管理")
 
-![](https://i.loli.net/2018/07/22/5b54613bc866f.jpg "管理员编辑")
+![](https://ooo.0o0.ooo/2018/07/22/5b54613bc866f.jpg "管理员编辑")
 
-![](https://i.loli.net/2018/07/22/5b54615b95788.jpg "前台首页")
+![](https://ooo.0o0.ooo/2018/07/22/5b54615b95788.jpg "前台首页")
 
-![](https://i.loli.net/2018/07/22/5b5461756b2b0.jpg "ES分词搜索")
+![](https://ooo.0o0.ooo/2018/07/22/5b5461756b2b0.jpg "ES分词搜索")
 
 ### 项目架构及功能模块图
 
-![](https://i.loli.net/2018/07/22/5b5461926969b.png)
+![](https://ooo.0o0.ooo/2018/07/22/5b5461926969b.png)
 
-![](https://i.loli.net/2018/07/22/5b5461aa2fdee.jpg)
+![](https://ooo.0o0.ooo/2018/07/22/5b5461aa2fdee.jpg)
 
-![](https://i.loli.net/2018/07/22/5b5461c54cb55.jpg)
+![](https://ooo.0o0.ooo/2018/07/22/5b5461c54cb55.jpg)
 
 ### 前端所用技术
 - 后台页面
