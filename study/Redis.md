@@ -11,6 +11,17 @@ Redis是c语言开发的，安装需要c语言的编译环境,如果没有gcc需
 - 第四步：安装: `make install PREFIX=/usr/local/redis`
 
     PREFIX参数指定redis的安装目录,一般软件安装到/usr目录下
+### Redis 6.0安装踩坑
+- 查看gcc版本：`gcc -v`若是4.8.5版本，由于版本太低，如果执行make则会报错
+- 更新gcc
+```shell
+yum -y install gcc gcc-c++ make tcl
+yum -y install centos-release-scl
+yum -y install devtoolset-9-gcc devtoolset-9-gcc-c++ devtoolset-9-binutils
+scl enable devtoolset-9 bash
+```
+- 再执行`gcc -v`查看gcc更新后的版本
+- 其余编译安装命令同上
 ### Redis的启动：
 - 前端启动：在redis的安装目录下直接启动redis-server
 `[root@localhost bin]# ./redis-server`
