@@ -124,12 +124,12 @@
     - `yum -y install git`
     - `git --version`
 - Nodejs安装1 推荐
-    - 安装更新一些依赖：`yum -y install gcc gcc-c++ openssl-devel make`
-    - [官网](https://nodejs.org/en/download/) 找到较新版本下载地址：`wget https://nodejs.org/dist/v8.9.1/node-v8.9.1.tar.gz`
-    - 解压：`tar -zvxf node-v8.9.1.tar.gz`
-    - 进入解压后文件夹后执行：`./configure`
-    - 编译安装：`make && make install`
-    - `node -v`
+    - [官网](https://nodejs.org/en/download/) 找到较新版本下载Linux Binaries (x64)：`wget https://nodejs.org/dist/v14.15.4/node-v14.15.4-linux-x64.tar.xz`
+    - 解压：`tar -xvf node-v14.15.4-linux-x64.tar.xz`
+    - 更名：`mv node-v14.15.4-linux-x64 nodejs`
+    - 配置环境变量：`vim /etc/profile`加入`export PATH=$PATH:/usr/local/nodejs/bin`
+    - 使环境变量生效：`source /etc/profile`
+    - 查看版本判断是否配置成都：`node -v`
 - Nodejs安装2
     - `yum -y install nodejs`
     - `node -v`
