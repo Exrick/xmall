@@ -10,11 +10,11 @@
     - zlib `yum install -y zlib zlib-devel`
     - openssl `yum install -y openssl openssl-devel`
 3. 安装
-    - 解压 `[root@localhost ~]# tar zxf nginx-1.8.0.tar.gz`
+    - 解压 `[root@localhost ~]# tar zxf nginx-1.18.0.tar.gz`
     - 进入解压后文件夹复制执行以下命令
     `./configure  --prefix=/usr/local/nginx  --sbin-path=/usr/local/nginx/sbin/nginx --conf-path=/usr/local/nginx/conf/nginx.conf --error-log-path=/var/log/nginx/error.log  --http-log-path=/var/log/nginx/access.log  --pid-path=/var/run/nginx/nginx.pid --lock-path=/var/lock/nginx.lock  --user=nginx --group=nginx --with-http_ssl_module --with-http_stub_status_module --with-http_gzip_static_module --http-client-body-temp-path=/var/tmp/nginx/client/ --http-proxy-temp-path=/var/tmp/nginx/proxy/ --http-fastcgi-temp-path=/var/tmp/nginx/fcgi/ --http-uwsgi-temp-path=/var/tmp/nginx/uwsgi --http-scgi-temp-path=/var/tmp/nginx/scgi --with-pcre`
-    - `[root@localhost nginx-1.8.0]# make`
-    - `[root@localhost nginx-1.8.0]# make install`
+    - `[root@localhost nginx-1.18.0]# make`
+    - `[root@localhost nginx-1.18.0]# make install`
     - `[root@localhost sbin]# mkdir /var/tmp/nginx/client -p`
     - 进入目录 `cd /usr/local/nginx/` 
     - 启动 `[root@localhost sbin]# ./nginx`
