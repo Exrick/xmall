@@ -108,11 +108,11 @@
     - 输入exit或Ctrl+c退出，重启MySQL：`service mariadb restart`
     - 设置开机启动：`systemctl enable mariadb`
 - Maven安装(可不用安装)
-    - [官网](http://maven.apache.org/download.cgi) 找到较新版本下载地址：`wget http://mirror.bit.edu.cn/apache/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz`
-    - 解压：`tar -zvxf apache-maven-3.5.2-bin.tar.gz`
+    - [官网](http://maven.apache.org/download.cgi) 找到较新版本下载地址：`wget hhttps://ftp.tsukuba.wide.ad.jp/software/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz`
+    - 解压：`tar -zvxf apache-maven-3.6.3-bin.tar.gz`
     - 打开/etc/profile，配置环境变量，在末尾加入：
     ```
-    MAVEN_HOME=/usr/local/maapache-maven-3.5.2
+    MAVEN_HOME=/usr/local/apache-maven-3.6.3
 
     PATH=$PATH:$MAVEN_HOME/bin
 
