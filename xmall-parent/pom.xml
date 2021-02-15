@@ -33,7 +33,7 @@
         <commons-fileupload.version>1.3.3</commons-fileupload.version>
         <jedis.version>2.9.0</jedis.version>
         <dubbo.version>2.6.1</dubbo.version>
-        <zookeeper.version>3.4.10</zookeeper.version>
+        <zookeeper.version>3.4.14</zookeeper.version>
         <curator.version>4.0.1</curator.version>
         <activemq.version>5.11.2</activemq.version>
         <swagger2.version>2.7.0</swagger2.version>
