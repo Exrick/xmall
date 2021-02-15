@@ -40,7 +40,7 @@
         <swagger-ui.version>2.7.0</swagger-ui.version>
         <qiniu.version>7.2.23</qiniu.version>
         <elasticsearch.version>6.2.3</elasticsearch.version>
-        <log4j.version>2.9.1</log4j.version>
+        <log4j.version>2.13.2</log4j.version>
         <shiro.version>1.4.0</shiro.version>
         <json.version>20171018</json.version>
         <mail.version>1.5.0-b01</mail.version>
