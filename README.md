@@ -4,6 +4,7 @@
 [![](https://img.shields.io/badge/version-1.1-brightgreen)](https://github.com/Exrick/xmall)
 [![GitHub stars](https://img.shields.io/github/stars/Exrick/xmall.svg?style=social&label=Stars)](https://github.com/Exrick/xmall)
 [![GitHub forks](https://img.shields.io/github/forks/Exrick/xmall.svg?style=social&label=Fork)](https://github.com/Exrick/xmall)
+[![Maintainability](https://cloud.quality-gate.com/dashboard/api/badge?projectName=Exrick_xmall&branchName=master)](https://cloud.quality-gate.com/dashboard/branches/397305#overview)
 
 > 作者本科毕业设计项目 期待您的捐赠支持
 
